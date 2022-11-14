@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "devops-notepad-api",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": ""
+    },
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/server": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "example server",
+                "ipAddress": "google.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "server": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "ipAddress": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "online": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "server created successfully",
+                  "server": {
+                    "id": "fbb86a25-641e-11ed-b772-8cdcd4798fc6",
+                    "name": "example server",
+                    "ipAddress": "google.com",
+                    "created_at": "2022-11-14T13:19:35.000Z",
+                    "updated_at": "2022-11-14T13:19:35.000Z"
+                  },
+                  "online": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
