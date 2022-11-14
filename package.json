@@ -38,14 +38,7 @@
     "stoppable": "^1.1.0",
     "supertest": "^6.3.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "test"
-    }
-  },
   "lint-staged": {
-    "*.{js,json,md}": "prettier --write",
-    "*.{js}": "eslint --fix"
+    "*.{js,md}": ["prettier --write", "eslint --fix"]
   }
 }
