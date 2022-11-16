@@ -65,7 +65,7 @@ describe("Server", () => {
     expect(res.body.message).to.include("server deleted successfully");
     docmaker.addEndpoint(res);
   });
-  it("Should delete an array existing servers", async () => {
+  it("Should delete an array of existing servers", async () => {
     const data = await request.post("/server").send({
       name: "Apache server",
       ipAddress: "apache.com",
