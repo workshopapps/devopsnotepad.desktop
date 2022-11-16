@@ -1,0 +1,12 @@
+{
+    "exit": true,
+    "extension": ["js"],
+    "package": "./package.json",
+    "parallel": false,
+    "recursive": true,
+    "require": "test/setup.js",
+    "slow": 200,
+    "spec": ["test/**/*.test.js"],
+    "timeout": 50000000
+  }
+  
