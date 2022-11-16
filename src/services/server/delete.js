@@ -7,10 +7,8 @@ export async function deleteSeverById(params) {
 }
 export async function deleteSeversById(params) {
   const { serverIds } = params;
-  let servers = [];
-  serverIds.forEach(async (id, i) => {
+  serverIds.forEach(async (id) => {
     await ServerRepo.deleteById(id);
-    servers.push(i);
   });
-  return `${servers.length} servers deleted`;
+  return "servers deleted";
 }
