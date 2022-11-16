@@ -11,7 +11,8 @@
     "migration:create": "knex migrate:make",
     "migration:run": "knex migrate:latest --knexfile knexfile.js",
     "test": "cross-env APP_ENV=test NODE_ENV=test mocha",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,9 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",

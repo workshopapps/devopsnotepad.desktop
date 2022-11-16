@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": ""
+      "url": "http://localhost:5000"
     },
     {
       "url": "http://localhost:3000"
@@ -87,7 +87,7 @@
                         }
                       }
                     },
-                    "online": {
+                    "isOnline": {
                       "type": "boolean"
                     }
                   }
@@ -96,13 +96,63 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "fbb86a25-641e-11ed-b772-8cdcd4798fc6",
+                    "id": "43ad5090-650e-11ed-97e8-8cdcd4798fc6",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-14T13:19:35.000Z",
-                    "updated_at": "2022-11-14T13:19:35.000Z"
+                    "created_at": "2022-11-15T17:52:25.000Z",
+                    "updated_at": "2022-11-15T17:52:25.000Z"
                   },
-                  "online": false
+                  "isOnline": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "43ad5090-650e-11ed-97e8-8cdcd4798fc6",
+                "name": "updated server name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Server updated successfully"
                 }
               }
             }

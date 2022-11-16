@@ -9,6 +9,7 @@ export default async function create(params) {
     if (existingServer) throw new ServiceError("Server already exists");
 
     await ServerRepo.create(params);
+
     const server = await ServerRepo.getServerByName(name);
 
     const isOnline = await check_ip_status(ipAddress);
