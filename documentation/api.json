@@ -96,13 +96,13 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "29aac31e-65f7-11ed-ba32-101f74cdb425",
+                    "id": "4e671376-65fa-11ed-ba32-101f74cdb425",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-16T21:39:34.000Z",
-                    "updated_at": "2022-11-16T21:39:34.000Z"
+                    "created_at": "2022-11-16T22:02:04.000Z",
+                    "updated_at": "2022-11-16T22:02:04.000Z"
                   },
-                  "isOnline": true
+                  "isOnline": false
                 }
               }
             }
@@ -128,7 +128,7 @@
                 }
               },
               "example": {
-                "id": "29aac31e-65f7-11ed-ba32-101f74cdb425",
+                "id": "4e671376-65fa-11ed-ba32-101f74cdb425",
                 "name": "updated server name"
               }
             }
@@ -160,7 +160,7 @@
         }
       }
     },
-    "/server/29aac31e-65f7-11ed-ba32-101f74cdb425": {
+    "/server/4e671376-65fa-11ed-ba32-101f74cdb425": {
       "delete": {
         "description": "",
         "tags": [],
@@ -212,7 +212,7 @@
               },
               "example": {
                 "serverIds": [
-                  "29ff6036-65f7-11ed-ba32-101f74cdb425"
+                  "52ef820e-65fa-11ed-ba32-101f74cdb425"
                 ]
               }
             }
