@@ -1,85 +1,85 @@
 export const Links = [
   {
-    title: "COMPANY",
+    title: 'COMPANY',
     list: [
       {
-        title: "About Us",
-        slug: "",
+        title: 'About Us',
+        slug: '',
       },
       {
-        title: "Privacy Policy",
-        slug: "",
+        title: 'Privacy Policy',
+        slug: '',
       },
       {
-        title: "Careers",
-        slug: "",
+        title: 'Careers',
+        slug: '',
       },
       {
-        title: "Terms of Service",
-        slug: "",
+        title: 'Terms of Service',
+        slug: '',
       },
       {
-        title: "FAQs",
-        slug: "",
+        title: 'FAQs',
+        slug: '',
       },
     ],
   },
   {
-    title: "RESOURCES",
+    title: 'RESOURCES',
     list: [
       {
-        title: "Coming Soon",
-        slug: "",
+        title: 'Coming Soon',
+        slug: '',
       },
       {
-        title: "FAQs",
-        slug: "",
+        title: 'FAQs',
+        slug: '',
       },
       {
-        title: "Blog",
-        slug: "",
+        title: 'Blog',
+        slug: '',
       },
       {
-        title: "Best Practices",
-        slug: "",
+        title: 'Best Practices',
+        slug: '',
       },
     ],
   },
   {
-    title: "PRODUCT",
+    title: 'PRODUCT',
     list: [
       {
-        title: "Features",
-        slug: "",
+        title: 'Features',
+        slug: '',
       },
       {
-        title: "Integrations",
-        slug: "",
+        title: 'Integrations',
+        slug: '',
       },
       {
-        title: "Prices",
-        slug: "",
+        title: 'Prices',
+        slug: '',
       },
       {
-        title: "Demo",
-        slug: "",
+        title: 'Demo',
+        slug: '',
       },
     ],
   },
   {
-    title: "COMMUNITY",
+    title: 'COMMUNITY',
     list: [
       {
-        title: "DevOps Community",
-        slug: "",
+        title: 'DevOps Community',
+        slug: '',
       },
       {
-        title: "News Room",
-        slug: "",
+        title: 'News Room',
+        slug: '',
       },
       {
-        title: "Podcasts",
-        slug: "",
+        title: 'Podcasts',
+        slug: '',
       },
     ],
   },
