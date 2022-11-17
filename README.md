@@ -21,6 +21,8 @@ node -v
 ```bash
 npm install
 ```
+* Run server using `npm run dev`. servers runs at port 5000
+
 ## Contributing
 1. Ensure you are on the dev branch.
 2. Checkout to your branch with a descriptive name, example: working on an enpoint like add notification. Your branch name could be
