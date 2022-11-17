@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import logo from "./assets/logo.svg";
-import { MenuList } from "./menuData";
-import { Squash as Hamburger } from "hamburger-react";
-import "./Header.css";
+import React, { useState } from 'react';
+import logo from './assets/logo.svg';
+import { MenuList } from './menuData';
+import { Squash as Hamburger } from 'hamburger-react';
+import './Navigation.css';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
           </div>
         </div>
 
-        <nav className={"menuBar " + (isOpen && "openMenu")}>
+        <nav className={'menuBar ' + (isOpen && 'openMenu')}>
           <ul className="menuUlList">
             {MenuList.map((menuLists, i) => (
               <li key={i}>
@@ -31,8 +31,12 @@ const Header = () => {
 
         <div className="right">
           <div className="navAuthBtn">
-            <a className="login_link" href="/">Login</a>
-            <a className="download_link" href="/">Download App</a>
+            <a className="login_link" href="/">
+              Login
+            </a>
+            <a className="download_link" href="/">
+              Download App
+            </a>
           </div>
           <div className="hamburgerBar">
             <Hamburger toggled={isOpen} toggle={setOpen} />
@@ -40,7 +44,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
