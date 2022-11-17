@@ -1,4 +1,5 @@
 import create from "../services/server/create.js";
+import read from "../services/server/read.js";
 import update from "../services/server/update.js";
 
 export default class ServerController {
@@ -9,6 +10,18 @@ export default class ServerController {
             res.send({
                 success: true,
                 message: "server created successfully",
+                ...result,
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    static read = async (req, res, next) => {
+        try {
+            const result = await read(req.query);
+            res.send({
+                success: true,
                 ...result,
             });
         } catch (error) {
