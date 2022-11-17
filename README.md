@@ -18,10 +18,11 @@ node -v
 * Checkout to the dev branch
 * Change directory to the backend folder
 * Install necessary packages using
+* Update the environment variable credentials
 ```bash
 npm install
 ```
-* Run server using `npm run dev`. servers runs at port 5000
+* Run server using `npm run dev`.
 
 ## Contributing
 1. Ensure you are on the dev branch.
