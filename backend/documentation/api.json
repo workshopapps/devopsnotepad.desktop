@@ -96,11 +96,11 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
+                    "id": "b9a366e4-671e-11ed-bd06-fc3fdbff49c4",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-16T15:40:24.000Z",
-                    "updated_at": "2022-11-16T15:40:24.000Z"
+                    "created_at": "2022-11-18T08:55:17.000Z",
+                    "updated_at": "2022-11-18T08:55:17.000Z"
                   },
                   "isOnline": true
                 }
@@ -128,7 +128,7 @@
                 }
               },
               "example": {
-                "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
+                "id": "b9a366e4-671e-11ed-bd06-fc3fdbff49c4",
                 "name": "updated server name"
               }
             }
@@ -153,6 +153,62 @@
                 "example": {
                   "success": true,
                   "message": "Server updated successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/b8dd17e2-671e-11ed-bd06-fc3fdbff49c4/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "server_id": {
+                    "type": "string"
+                  },
+                  "log": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "server_id": "b8dd17e2-671e-11ed-bd06-fc3fdbff49c4",
+                "log": "add data points"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "serverLog": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "successful",
+                  "serverLog": "add data points"
                 }
               }
             }
