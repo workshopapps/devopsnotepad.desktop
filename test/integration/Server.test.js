@@ -58,20 +58,14 @@ describe("Server", () => {
         assert.equal(res.status, 404);
         assert.include(res.body.message, "Server does not exist");
     });
-    it("Should delete an existing server", async () => {
-        const res = await request.delete("/server/" + serverId).send();
 
-        expect(res.status).to.equal(200);
-        expect(res.body.message).to.include("server deleted successfully");
-        docmaker.addEndpoint(res);
-    });
-    it("Should delete an array of existing servers", async () => {
+    it("Should delete a server from an array of existing servers", async () => {
         const data = await request.post("/server").send({
             name: "Apache server",
             ipAddress: "apache.com",
         });
         let new_id = data.body.server.id;
-        const res = await request.post("/server/remove_all").send({
+        const res = await request.delete("/server/delete").send({
             serverIds: [new_id],
         });
 
