@@ -3,6 +3,6 @@ import NotificationController from "../controllers/NotificationController.js";
 
 const router = express.Router();
 
-router.post("/:server_id/notifications", NotificationController.create);
+router.post("/notifications", NotificationController.create);
 
 export default router;

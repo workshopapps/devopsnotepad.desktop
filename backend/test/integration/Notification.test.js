@@ -40,9 +40,9 @@ describe("Notification", () => {
 
     it("should create new notification for a server", async () => {
         const res = await request
-            .post("/server/" + serverId + "/notifications")
+            .post("/server/notifications")
             .send({
-                server_id: serverId,
+                serverId,
                 log: "add data points",
             });
 
@@ -52,8 +52,9 @@ describe("Notification", () => {
 
     it("should throw error when creating a notification with an invalid server_id", async () => {
         const res = await request
-            .post("/server/:server_id/notifications")
+            .post("/server/notifications")
             .send({
+                serverId: "sdsds",
                 log: "add data points"
             });
 
