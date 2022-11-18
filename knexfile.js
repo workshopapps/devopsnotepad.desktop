@@ -18,9 +18,6 @@ export const development = {
     migrations: {
         directory: path.resolve(__dirname, "src", "database/migrations"),
     },
-    seeds: {
-        directory: path.resolve(__dirname, "src", "database/seeds"),
-    },
 };
 // export const staging = {
 //   client: 'postgresql',

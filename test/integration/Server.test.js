@@ -8,8 +8,7 @@ export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
-//let userId;
-//userId not necessary
+let serverId;
 
 //Deletes every record from servers table before any test is run to avoid collisions.
 before(async () => {
@@ -17,6 +16,7 @@ before(async () => {
 });
 
 describe("Server", () => {
+    //2 Tests for Create server endpoint
     it("should create new server", async () => {
         const res = await request.post("/server").send({
             name: "example server",
@@ -25,8 +25,7 @@ describe("Server", () => {
             id: "8392029hbdvyw798-88ehe8-82992",
         });
 
-        //userId = res.body.server.id; ??
-        //userId not being used anymore
+        serverId = res.body.server.id;
 
         assert.equal(res.status, 200);
         docmaker.addEndpoint(res);
@@ -36,7 +35,7 @@ describe("Server", () => {
         const res = await request.post("/server").send({
             name: "example server",
             ipAddress: "google.com",
-            device_id: "3e4r5677g",
+            deviceId: "3e4r5677g",
         });
 
         assert.equal(res.status, 400);
@@ -54,8 +53,8 @@ describe("Server", () => {
         assert.equal(res.status, 404);
     });
 
-    //2 Tests for Get single server by Server_id
-    it("should get server with requested server_id param", async () => {
+    //2 Tests for Get single server by serverId
+    it("should get server with requested serverId param", async () => {
         const res = await request.get("/server/8392029hbdvyw798-88ehe8-82992");
         assert.equal(res.status, 200);
     });
@@ -65,17 +64,17 @@ describe("Server", () => {
         assert.equal(res.status, 404);
     });
 
-    //this test needs to be rewritten
-    // it("should update server", async () => {
-    //     const res = await request.patch("/server").send({
-    //         id: userId,
-    //         name: "updated server name",
-    //     });
+    //2 Tests for Update Server Endpoints
+    it("should update server", async () => {
+        const res = await request.patch("/server").send({
+            id: serverId,
+            name: "updated server name",
+        });
 
-    //     assert.equal(res.status, 200);
-    //     assert.include(res.body.message, "Server updated successfully");
-    //     docmaker.addEndpoint(res);
-    // });
+        assert.equal(res.status, 200);
+        assert.include(res.body.message, "Server updated successfully");
+        docmaker.addEndpoint(res);
+    });
 
     it("should not update server if server is not found", async () => {
         const res = await request.patch("/server").send({

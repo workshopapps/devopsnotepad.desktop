@@ -1,5 +1,5 @@
 import create from "../services/server/create.js";
-import readMany from "../services/server/readMany.js";
+import getAllServers from "../services/server/getAll.js";
 import readOne from "../services/server/readOne.js";
 import update from "../services/server/update.js";
 
@@ -18,9 +18,9 @@ export default class ServerController {
         }
     };
 
-    static readMany = async (req, res, next) => {
+    static getAllServers = async (req, res, next) => {
         try {
-            const result = await readMany(req.query);
+            const result = await getAllServers(req.query);
             res.send({
                 success: true,
                 ...result,

@@ -111,10 +111,60 @@
                     "name": "example server",
                     "device_id": "80988579",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T08:57:04.000Z",
-                    "updated_at": "2022-11-18T08:57:04.000Z"
+                    "created_at": "2022-11-18T11:06:27.000Z",
+                    "updated_at": "2022-11-18T11:06:27.000Z"
                   },
                   "isOnline": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "8392029hbdvyw798-88ehe8-82992",
+                "name": "updated server name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Server updated successfully"
                 }
               }
             }
