@@ -3,14 +3,16 @@ import get from "../services/notification/get.js";
 export default class NotificationController {
     static get = async (req, res, next) => {
         const { serverId } = req.params;
-        const { page, range } = req.query;
+
         let query = {};
-        if (page) {
-            query.page = page;
+        for (let queryParameter of Object.keys(req.query)) {
+            if (queryParameter === "limit" || 
+            queryParameter === "page" || 
+            queryParameter === "range" || 
+            queryParameter === "range");
+            query[queryParameter] = req.query[queryParameter];
         }
-        if (range) {
-            query.range = range;
-        }
+
         try {
             const result = await get(serverId, query);
             res.send({
