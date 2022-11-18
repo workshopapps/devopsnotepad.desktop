@@ -2,7 +2,7 @@ import NotificationRepo from "../../database/repositories/NotificationRepo.js";
 import ServerRepo from "../../database/repositories/ServerRepo.js";
 import { ServiceError } from "../../lib/errors/index.js";
 
-export default async function create( params) {
+export default async function create(params) {
     const { serverId, log } = params;
 
     const serverExists = await ServerRepo.getServerById(serverId);
