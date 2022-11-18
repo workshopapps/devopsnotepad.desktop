@@ -99,12 +99,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "7094da3e-6735-11ed-bd06-fc3fdbff49c4",
-                    "notification": "7094da67-6735-11ed-bd06-fc3fdbff49c4",
+                    "id": "535820cc-6778-11ed-bd06-fc3fdbff49c4",
+                    "notification": "535820f0-6778-11ed-bd06-fc3fdbff49c4",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T11:37:53.000Z",
-                    "updated_at": "2022-11-18T11:37:53.000Z"
+                    "created_at": "2022-11-18T19:36:41.000Z",
+                    "updated_at": "2022-11-18T19:36:41.000Z"
                   },
                   "isOnline": true
                 }
@@ -132,7 +132,7 @@
                 }
               },
               "example": {
-                "id": "7094da3e-6735-11ed-bd06-fc3fdbff49c4",
+                "id": "535820cc-6778-11ed-bd06-fc3fdbff49c4",
                 "name": "updated server name"
               }
             }
@@ -184,7 +184,7 @@
                 }
               },
               "example": {
-                "serverId": "7040e18d-6735-11ed-bd06-fc3fdbff49c4",
+                "serverId": "5233cb4c-6778-11ed-bd06-fc3fdbff49c4",
                 "log": "add data points"
               }
             }
