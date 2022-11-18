@@ -60,13 +60,8 @@ describe("Server", () => {
     });
 
     it("Should delete a server from an array of existing servers", async () => {
-        const data = await request.post("/server").send({
-            name: "Apache server",
-            ipAddress: "apache.com",
-        });
-        let new_id = data.body.server.id;
-        const res = await request.delete("/server/delete").send({
-            serverIds: [new_id],
+        const res = await request.delete("/server").send({
+            serverIds: [serverId],
         });
 
         expect(res.status).to.equal(200);
