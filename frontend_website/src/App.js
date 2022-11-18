@@ -6,6 +6,7 @@ import { ErrorBoundary } from "react-error-boundary";
 
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
+import Integration from "./Pages/Integration/Integration";
 import Faq from './Pages/Faq/Faq';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
@@ -30,7 +31,6 @@ function App() {
   return (
     <React.Fragment>
       <Navigation />
-
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -38,15 +38,14 @@ function App() {
         }}
       >
         <Routes>
-          {/* <Route path="/" exact element={<Integration />} /> */}
+          <Route path="/integration" element={<Integration />} />
           <Route path="/faq" exact element={<Faq />} />
           <Route path="/comingsoon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
         </Routes>
       </ErrorBoundary>
-
       <Footer />
-    </React.Fragment >
+    </React.Fragment>
   );
 }
 
