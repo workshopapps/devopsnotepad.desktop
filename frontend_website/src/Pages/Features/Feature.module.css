@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+/* GENERAL STYLING */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root{
+    --colorB: #292929;
+    --colorL: #202020;
+    --bluePrimary: #102A63;
+    --backgroundL: #F6F9FF;
+    --white: #FFFFFF;
+}
+
+button{
+    cursor: pointer;
+}
+
+.featureWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.feature{
+    width: min(1300px, 95%);
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*======================= MINI LANDING PAGE STYLING STARTS HERE =======================================*/
+.opspadfeaturesminilandingpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 49px;
+    gap: 20px;
+}
+
+.minilandpageheading{
+    color: var(--bluePrimary);
+    font-weight: 700;
+    font-size: 56px;
+    font-weight: 76.5px;
+}
+
+.minilandpageheading span{
+    font-weight: 400;
+}
+
+.minilandpageparagraph{
+    color: var(--colorL);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* opacity: 80%; */
+}
+
+.minilandpagebtn{
+    padding: 15px 30px;
+    background: none;
+    border-radius: 6px;
+    border: 1px solid var(--colorL);
+    font-weight: 600;
+}
+
+/* ===============================SERVER SECTION STYLING STARTS HERE ========================*/
+.servers{
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-start;
+    gap: 82px;
+    /* background-color: pink; */
+}
+
+.serverImg{
+    width: min(782px, 90%);
+    display: block;
+}
+
+.serversText{
+    width: 330px;
+    height: 100%;
+    margin-top: 30px;
+    /* background-color: red; */
+}
+
+.serversTextHeading{
+    color: var(--bluePrimary);
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.serversTextParagraph{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: var(--colorB);
+}
+
+/* =======================================NOTE SECTION STYLING STARTS HERE ===============================*/
+.notesSection{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--backgroundL);
+}
+
+.noteImg{
+    width: min(700px, 100%);
+    display: block;
+}
+
+.notesText{
+    width: min(350px);
+    align-self: center;
+}
+
+.notesTextHeading{
+    color: var(--bluePrimary);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+    width: min(350px);
+}
+
+.notesTextparagraph{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--colorB);
+    margin-top: 12px;
+}
+
+
+/* =========================================== PASSWORD SECTION STYLING STARTS HERE ====================================*/
+.password{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.passwordText{
+    width: 350px;
+}
+
+.passwordTextHeading{
+    color: var(--bluePrimary);
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.passwordTextParagraph{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: var(--colorB);
+}
+
+/* ======================================= AUTHENTICATION SECTIN STYLING STARTS HERE */
+.autentication{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--backgroundL);
+    padding-left: 100px;
+}
+
+.autenticationText{
+    width: 360px;
+}
+
+.autenticationTextHeading{
+    color: var(--bluePrimary);
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.autenticationTextParagraoh{
+    width: 360px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: var(--colorB);
+}
+
+.authenImg{
+    align-self: flex-end;
+}
+
+
+
+/* ============================================================================ MEDIA QUERIES =================================================================================================== */
+
+@media (max-width: 1250px) {
+    .servers{
+        gap: 22px;
+    }
+}
+
+/* ============== MAX-WIDTH OF 800PX ========================== */
+
+@media (max-width: 800px) {
+    .servers{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .serverImg{
+        display: inline;
+    }
+}
