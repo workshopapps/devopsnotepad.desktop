@@ -1,20 +1,25 @@
-.footer{
-    padding: 23.5px 80px 23.5px 80px;
+.footer {
+    padding: 0px 80px 0px 80px;
 }
 
-.inFooter .logo {
+.footer .inFooter .logo {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 31.5px;
 }
 
-.inFooter .dInFooter {
+.footer .inFooter {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.footer .inFooter .dInFooter {
     display: flex;
     justify-content: space-between;
 }
 
-.inFooter .dInFooter h4 {
+.footer .inFooter .dInFooter h4 {
     font-weight: 800;
     font-size: 18px;
     line-height: 27px;
@@ -23,14 +28,14 @@
     margin-bottom: 20px;
 }
 
-.inFooter .dInFooter .footerLink {
+.footer .inFooter .dInFooter .footerLink {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 5px;
 }
 
-.inFooter .dInFooter .footerLink li a {
+.footer .inFooter .dInFooter .footerLink li a {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -40,80 +45,101 @@
 
 }
 
-.inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
+.footer .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
     display: flex;
     gap: 26.26px;
 }
 
-.inFooter .dInFooter .footerLink .miUM .right .fDownloadAppLink img {
+.footer .inFooter .dInFooter .footerLink .miUM .right .fDownloadAppLink img {
     max-width: 159px;
     height: auto;
 }
 
+.footer .bottomFooter {
+    border-top: 1px solid #E5E5E5;
+    padding: 23.5px 0px 23.5px 0px;
+}
+
+.footer .bottomFooter span.f_copyright {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #202020;
+}
+
 @media screen and (max-width: 767px) {
-    .inFooter .dInFooter {
+    .footer .inFooter .dInFooter {
         flex-direction: column;
     }
 
-    .inFooter .dInFooter .footerLink {
+    .footer .inFooter .dInFooter .footerLink {
         row-gap: 20px;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .inFooter .dInFooter .footerLink {
+    .footer .inFooter .dInFooter .footerLink {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 20px;
         row-gap: 117px;
     }
 
-    .inFooter .dInFooter .footerLink .miUM.right {
+    .footer .inFooter .dInFooter .footerLink .miUM.right {
         margin-left: 30px;
     }
 }
 
 @media screen and (max-width: 767px) {
 
-    .inFooter .dInFooter .footerLink {
+    .footer .inFooter .dInFooter .footerLink {
         grid-template-columns: 1fr 1fr;
         gap: 24px
     }
 
-    .inFooter .dInFooter .footerLink .miUM.right {
+    .footer .inFooter .dInFooter .footerLink .miUM.right {
         margin-left: 0px;
     }
 
-    .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
+    .footer .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
         display: flex;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .inFooter .dInFooter .footerLink {
+    .footer .inFooter .dInFooter .footerLink {
         grid-template-columns: 1fr;
     }
 
-    .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
+    .footer .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink {
         display: flex;
         flex-direction: row;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .inFooter .dInFooter .footerLink .miUM.right {
+    .footer .inFooter .dInFooter .footerLink .miUM.right {
         margin-right: 10px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .footer {
-        padding: 23.5px 40px 23.5px 40px;
+        padding: 23.5px 40px 0px 40px;
     }
 }
 
 @media screen and (max-width: 400px) {
     .footer {
-        padding: 23.5px 16px 23.5px 16px;
+        padding: 23.5px 16px 0px 16px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .footer .inFooter .dInFooter .footerLink .miUM .fDownloadAppLink img{
+        max-width: 100px;
     }
 }

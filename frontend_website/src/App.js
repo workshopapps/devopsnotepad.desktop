@@ -2,14 +2,15 @@ import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Component/Footer/Footer";
-import Header from "./Component/Header/Header";
+import Navigation from "./Component/Navigation/Navigation";
+import Integration from "./Pages/Integration/Integration";
 
 function App() {
   return (
     <React.Fragment>
-      <Header/>
+      <Navigation/>
       <Routes>
-        {/* <Route path="/" exact element={<Integration />} /> */}
+        <Route path="/" exact element={<Integration />} />
       </Routes>
       <Footer />
     </React.Fragment>
