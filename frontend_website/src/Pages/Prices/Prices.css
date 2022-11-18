@@ -1,0 +1,40 @@
+:root{
+    --darkblue-color: #102A63;
+    --grey-color: #6F6F6F;
+}
+
+.prices-container{
+    padding: 23.5px 80px 23.5px 80px;
+}
+
+.prices-header-container{
+    margin: auto;
+    text-align: center;
+}
+
+.prices-header{
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 76.5px;
+}
+
+.prices-header-blue{
+    color: var(--darkblue-color)
+}
+
+.prices-subheader{
+    font-weight: 500;
+    color: var(--grey-color);
+    font-size: 24px;
+    line-height: 32.78px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.prices-header-container .toggle-component{
+    margin: auto;
+}
+
+.price-sample-grid{
+    color: var(--darkblue-color);
+}

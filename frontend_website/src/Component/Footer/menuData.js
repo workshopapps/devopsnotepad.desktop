@@ -58,7 +58,7 @@ export const Links = [
       },
       {
         title: 'Prices',
-        slug: '',
+        slug: '/prices',
       },
       {
         title: 'Demo',
