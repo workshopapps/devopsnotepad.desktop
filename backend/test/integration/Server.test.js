@@ -8,7 +8,7 @@ export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
-let userId;
+let serverId;
 
 //Deletes every record from servers table before any test is run to avoid collisions.
 before(async () => {
@@ -22,7 +22,7 @@ describe("Server", () => {
             ipAddress: "google.com",
         });
 
-        userId = res.body.server.id;
+        serverId = res.body.server.id;
 
         assert.equal(res.status, 200);
         docmaker.addEndpoint(res);
@@ -40,7 +40,7 @@ describe("Server", () => {
 
     it("should update server", async () => {
         const res = await request.patch("/server").send({
-            id: userId,
+            id: serverId,
             name: "updated server name",
         });
 
