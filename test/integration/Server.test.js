@@ -42,9 +42,20 @@ describe("Server", () => {
         assert.include(res.body.message, "Server already exists");
     });
 
+    it("should get all servers added on a particular device", async () => {
+        const res = await request.get("/server?device=80988579");
+        assert.equal(res.status, 200);
+    });
+
+    it("should throw error if there is no server from the requesting device", async () => {
+        const res = await request.get("/server?device=00102939");
+        assert.equal(res.status, 404);
+    });
+
+    //this test needs to be rewritten
     // it("should update server", async () => {
     //     const res = await request.patch("/server").send({
-    //         id: "a63cc7e0-66cb-11ed-bb99-c4651695acd9",
+    //         id: userId,
     //         name: "updated server name",
     //     });
 
