@@ -96,11 +96,11 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "0e228d18-6728-11ed-ac1d-101f74cdb425",
+                    "id": "502e1919-6729-11ed-ac1d-101f74cdb425",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T10:02:05.000Z",
-                    "updated_at": "2022-11-18T10:02:05.000Z"
+                    "created_at": "2022-11-18T10:11:05.000Z",
+                    "updated_at": "2022-11-18T10:11:05.000Z"
                   },
                   "isOnline": true
                 }
@@ -128,7 +128,7 @@
                 }
               },
               "example": {
-                "id": "0e228d18-6728-11ed-ac1d-101f74cdb425",
+                "id": "502e1919-6729-11ed-ac1d-101f74cdb425",
                 "name": "updated server name"
               }
             }
@@ -179,7 +179,7 @@
               },
               "example": {
                 "serverIds": [
-                  "0e228d18-6728-11ed-ac1d-101f74cdb425"
+                  "502e1919-6729-11ed-ac1d-101f74cdb425"
                 ]
               }
             }
