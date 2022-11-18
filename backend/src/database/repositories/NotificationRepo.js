@@ -1,21 +1,32 @@
-import knex from "knex";
 import connection from "../setup.js";
+import APIFeatures from "../../middleware/application/apiFeatures.js";
 
 export default class NotificationRepo {
-    static getNotification = async (id, query) => {
-        return connection("notifications")
-            .where((qb) => {
-                qb.where("serverId", id);
+    static getNotifications = async (id, query) => {
+        return new APIFeatures(connection("notifications")
+            .where("serverId", id), query)
+            .paginate()
+            .sort()
+            .query; 
+    };
 
-                //query notifications based on start and end date, url will be in this format:
-                //http://localhost:3000/server/1/notifications?to=2022-11-19T00:57:21:000z&from=2022-11-16
-                if (query.range) {
-                    qb.where("createdAt", ">", knex.raw(`CURRENT_DATE - '7 DAY'::INTERVAL`));
-                    // qb.where("createdAt", [query.from, new Date().toISOString()]);
-                }
-            })
-            .limit(10)
-            .offset((parseInt(query.page) - 1) * 10 || 0)
-            .orderBy("createdAt", "desc");
+    static getWeeklyNotifications = async (id, query) => {
+        return new APIFeatures(connection("notifications")
+            .where("serverId", id)
+            .andWhere(connection.raw(`createdAt BETWEEN NOW() - INTERVAL 1 WEEK AND NOW()`)),
+        query)
+            .paginate()
+            .sort()
+            .query;
+    };
+
+    static getMonthlyNotifications = async (id, query) => {
+        return new APIFeatures(connection("notifications")
+            .where("serverId", id)
+            .andWhere(connection.raw(`createdAt BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()`)),
+        query)
+            .paginate()
+            .sort()
+            .query;
     };
 }
