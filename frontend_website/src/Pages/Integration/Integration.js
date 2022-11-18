@@ -7,7 +7,7 @@ const Integration = () => {
     <div className="integration">
       <div className="banner">
         <div className="subtitle">
-          <h1>Get more from <span>opspad app</span> with our integrations</h1>
+          <h1>Get more from opspad app with our integrations</h1>
         </div>
         <div className="banner_img">
           <img src={bannerImg} alt="bannerImg" />
@@ -33,22 +33,22 @@ const Integration = () => {
       <div className="get_more">
         <div className="inGet_more">
           <div className="subtitle">
-            <h4>Connect your <span>favorite apps</span></h4>
+            <h4>Connect your favorite apps</h4>
             <p>Opspad is the hub of your productivity - integrating the tools you rely on to get things done.</p>
           </div>
           <div className="inGet_more_box">
           {getMore.map((item, i) => {
             return(
               <div className="box" key={i}>
-              <div className="boxImg">
-                <img src={item.img} alt="" />
+                <div className="boxImg">
+                  <img src={item.img} alt="" />
+                </div>
+                <h3>{item.heading}</h3>
+                <p>
+                  {item.content}
+                </p>
+                <a className={`${item.gmail ? 'learnMore learnMoreGmail' : 'learnMore'}`} href={item.slug}>Learn More</a>
               </div>
-              <h3>{item.heading}</h3>
-              <p>
-                {item.content}
-              </p>
-              <a className='learnMore' href={item.slug}>Learn More</a>
-            </div>
             )
           })}
           </div>
