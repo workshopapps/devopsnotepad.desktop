@@ -4,10 +4,10 @@
  */
  export async function up(knex) {
     return knex.schema.createTable('notifications', (table) => {
-      table.uuid('id').primary().defaultTo(knex.schema.raw('(UUID())'));
-      table.string('notificationLog', 900).notNullable();
-      table.uuid('serverId').references('id').inTable('servers').onUpdate('CASCADE').onDelete('CASCADE');
-      table.timestamp('createdAt').defaultTo(knex.fn.now());
+        table.uuid('id').primary().defaultTo(knex.schema.raw('(UUID())'));
+        table.string('notificationLog', 900).notNullable();
+        table.uuid('serverId').references('id').inTable('servers').onUpdate('CASCADE').onDelete('CASCADE');
+        table.timestamp('createdAt').defaultTo(knex.fn.now());
     });
   }
   
