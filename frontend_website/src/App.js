@@ -1,16 +1,20 @@
-import { Routes, Route } from "react-router-dom"
-import './App.css';
-import Feature from './Pages/Features/Feature'
-
-console.log('checking husky');
+import "./App.css";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Footer from "./Component/Footer/Footer";
+import Header from "./Component/Header/Header";
+import LandingPage from "./Pages/Landing page/LandingPage";
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
+      <Header/>
       <Routes>
-        <Route path="/feature" element={ <Feature/> } />
+        {/* <Route path="/" exact element={<Integration />} /> */}
       </Routes>
-    </div>
+      <Footer />
+      <LandingPage />
+    </React.Fragment>
   );
 }
 
