@@ -34,3 +34,9 @@ npm install
 6. Go to github and make a PR to the dev branch. Add description stating what the PR achieves. Add your linear link to the PR description also.
 7. Request for review from your team leads or mentors in the PR.
 8. Now wait for it to be merged by the team leads or mentors
+
+Remember to always rebase the work from dev branch
+
+`git pull -r origin dev`
+
+If your work is merged and you are to handle another ticket, pull from dev again and checkout using the above steps
