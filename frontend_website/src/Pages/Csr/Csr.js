@@ -70,5 +70,4 @@ const csr = () => {
     </div>
   );
 };
-
 export default csr;
