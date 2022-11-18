@@ -6,7 +6,7 @@ import noteimg from './Images/noteimage.png'
 import serversImg from './Images/serverImg.png'
 import passwordImg from './Images/passwordImg.png'
 import authenimg from './Images/authenticationImg.png'
-import abOpsImg from './Images/aboutopspad.png'
+// import abOpsImg from './Images/aboutopspad.png'
 
 
 // ======================= RENAMING THE STYLING FOR BETTER USAGE AND READABILITY ===========================
