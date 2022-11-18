@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Faq from './Pages/Faq/Faq';
+import Prices from './Pages/Prices/Prices';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         {/* <Route path="/" exact element={<Integration />} /> */}
         <Route path="/faq" exact element={<Faq />} />
+        <Route path="/prices" element={<Prices />} />
       </Routes>
       <Footer />
     </React.Fragment>
