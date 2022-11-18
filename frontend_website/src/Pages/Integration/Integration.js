@@ -1,9 +1,7 @@
-import "./integration.css"
+import './integration.css';
 
 const Integration = () => {
-  return (
-    <div>Integration</div>
-  )
-}
+  return <div>Integration</div>;
+};
 
-export default Integration
+export default Integration;

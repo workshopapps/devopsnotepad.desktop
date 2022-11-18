@@ -1,0 +1,10 @@
+.comingsoon {
+  width: 100%;
+  padding: 0 6rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .comingsoon {
+    padding: 0 2rem;
+  }
+}
