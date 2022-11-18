@@ -73,6 +73,9 @@
                         "id": {
                           "type": "string"
                         },
+                        "notification": {
+                          "type": "string"
+                        },
                         "name": {
                           "type": "string"
                         },
@@ -96,11 +99,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "b9a366e4-671e-11ed-bd06-fc3fdbff49c4",
+                    "id": "7094da3e-6735-11ed-bd06-fc3fdbff49c4",
+                    "notification": "7094da67-6735-11ed-bd06-fc3fdbff49c4",
                     "name": "example server",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T08:55:17.000Z",
-                    "updated_at": "2022-11-18T08:55:17.000Z"
+                    "created_at": "2022-11-18T11:37:53.000Z",
+                    "updated_at": "2022-11-18T11:37:53.000Z"
                   },
                   "isOnline": true
                 }
@@ -128,7 +132,7 @@
                 }
               },
               "example": {
-                "id": "b9a366e4-671e-11ed-bd06-fc3fdbff49c4",
+                "id": "7094da3e-6735-11ed-bd06-fc3fdbff49c4",
                 "name": "updated server name"
               }
             }
@@ -160,7 +164,7 @@
         }
       }
     },
-    "/server/b8dd17e2-671e-11ed-bd06-fc3fdbff49c4/notifications": {
+    "/server/notifications": {
       "post": {
         "description": "",
         "tags": [],
@@ -171,7 +175,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "server_id": {
+                  "serverId": {
                     "type": "string"
                   },
                   "log": {
@@ -180,7 +184,7 @@
                 }
               },
               "example": {
-                "server_id": "b8dd17e2-671e-11ed-bd06-fc3fdbff49c4",
+                "serverId": "7040e18d-6735-11ed-bd06-fc3fdbff49c4",
                 "log": "add data points"
               }
             }

@@ -4,7 +4,7 @@ export default class NotificationRepo {
       
     static create = async (data) => {
         return await connection("notifications")
-            .insert(data)
+            .insert(data);
     };
 
     static getNotificationById = async (id) => {

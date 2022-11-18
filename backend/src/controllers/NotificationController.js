@@ -3,7 +3,7 @@ import create from "../services/notification/create.js";
 export default class NotificationController {
     static create = async (req, res, next) => {
         try {
-            const result = await create(req.body, req.params);
+            const result = await create(req.body);
             
             res.send({
                 success: true,
@@ -12,7 +12,7 @@ export default class NotificationController {
             });
 
         } catch (error) {
-            next(error)
+            next(error);
         }
-    }
+    };
 }
