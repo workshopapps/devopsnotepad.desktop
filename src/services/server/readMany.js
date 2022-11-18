@@ -1,7 +1,7 @@
 import ServerRepo from "../../database/repositories/ServerRepo.js";
 import { NotFoundError } from "../../lib/errors/index.js";
 
-export default async function read(query) {
+export default async function readMany(query) {
     const { device } = query;
 
     const servers = await ServerRepo.getServersByDevice(device);

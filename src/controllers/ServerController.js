@@ -1,5 +1,6 @@
 import create from "../services/server/create.js";
-import read from "../services/server/read.js";
+import readMany from "../services/server/readMany.js";
+import readOne from "../services/server/readOne.js";
 import update from "../services/server/update.js";
 
 export default class ServerController {
@@ -17,9 +18,21 @@ export default class ServerController {
         }
     };
 
-    static read = async (req, res, next) => {
+    static readMany = async (req, res, next) => {
         try {
-            const result = await read(req.query);
+            const result = await readMany(req.query);
+            res.send({
+                success: true,
+                ...result,
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    static readOne = async (req, res, next) => {
+        try {
+            const result = await readOne(req.params);
             res.send({
                 success: true,
                 ...result,

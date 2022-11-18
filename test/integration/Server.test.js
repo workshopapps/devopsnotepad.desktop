@@ -22,6 +22,7 @@ describe("Server", () => {
             name: "example server",
             ipAddress: "google.com",
             device_id: 80988579,
+            id: "8392029hbdvyw798-88ehe8-82992",
         });
 
         //userId = res.body.server.id; ??
@@ -42,6 +43,7 @@ describe("Server", () => {
         assert.include(res.body.message, "Server already exists");
     });
 
+    //2 Tests for Get All Servers by Device
     it("should get all servers added on a particular device", async () => {
         const res = await request.get("/server?device=80988579");
         assert.equal(res.status, 200);
@@ -49,6 +51,17 @@ describe("Server", () => {
 
     it("should throw error if there is no server from the requesting device", async () => {
         const res = await request.get("/server?device=00102939");
+        assert.equal(res.status, 404);
+    });
+
+    //2 Tests for Get single server by Server_id
+    it("should get server with requested server_id param", async () => {
+        const res = await request.get("/server/8392029hbdvyw798-88ehe8-82992");
+        assert.equal(res.status, 200);
+    });
+
+    it("should throw error if there is no server with that id", async () => {
+        const res = await request.get("/server/83930dbhduu3i3");
         assert.equal(res.status, 404);
     });
 
