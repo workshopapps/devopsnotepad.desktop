@@ -22,9 +22,4 @@ export default class APIFeatures {
         this.query = this.query.limit(limit).offset(skip);     
         return this;   
     }
-
-    getQuery () {
-        return this.query;
-    }
-
 }
