@@ -33,15 +33,19 @@ const Navbar = ({ isOpen, setOpen }) => {
           </button>
           <div className={`dropdown ${productDropdown ? 'show' : ''}`}>
             {menuList.map((menu, i) => (
-              <div key={i}>
-                {menu.product && (
-                  <li>
-                    {menu.product.map((b, i) => (
-                      <a href={`${b.slug}`} key={i}>
-                        {b.title}
-                      </a>
+              <div key={i} className={styles.sMki}>
+                <button className={styles.menu_title} onClick={() => handleMenuToggle(i)} type="button">
+                  {menu.title} <i className='fa-solid fa-angle-down'></i>
+                </button>
+                {menu.subMenu && (
+                  <div className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
+                    {menu.subMenu.map((sMenu, i) => (
+                      <li><Link to={`${sMenu.slug}`} key={i} onClick={() => {
+                        handleMenuToggle(false) 
+                        setOpen(false)
+                        }}>{sMenu.title}</Link></li>
                     ))}
-                  </li>
+                  </div>
                 )}
               </div>
             ))}
