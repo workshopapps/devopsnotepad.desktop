@@ -1,25 +1,9 @@
 import React from 'react';
-import {
-      Link
-  } from 'react-router-dom';
+
 const PrivacyPolicy = () => {
   return (
-  
-      <div className="container">
-<div className="container--head">Legal</div>
-<div className="container--content">
-        
-     
-        
-        
-        <ul className="nav--section">
-              <li>
-                <Link to="/terms">Terms of Use</Link>
-              </li>
-              <li>
-                <Link to="/privacy">Privacy Policy</Link>
-              </li>
-            </ul>
+    <>
+
 <div className="box">
 <div className='content'>
           <h4 className="content--title">Opspad Privacy Policy</h4>
@@ -130,6 +114,7 @@ const PrivacyPolicy = () => {
             routine as defined in Opspad’s record of processing activities
             created and maintained in accordance to Article 30 of the GDPR.
           </p>
+          <>
           <h4>Information Collected Automatically</h4>
           <p>
             Opspad may automatically collect and store information about how
@@ -165,6 +150,7 @@ const PrivacyPolicy = () => {
             is further required to abide by the Opspad data protection policy at
             all times.
           </p>
+          </>
           <h4>What are my rights?</h4>
           <p>
             You have the following rights in respect to the Personal Data you
@@ -302,9 +288,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </div>
-      </div>
-      </div>
-    
+    </>
             )
   };
 

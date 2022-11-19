@@ -1,22 +1,10 @@
 import React from 'react';
 import './Terms.css';
-import {
-      Link
-  } from 'react-router-dom';
+
 const Terms = () => {
-  return (
-    <div className="container">
-      <div className="container--head" >Legal</div>
-      <div className="container--content">
-        
-      <ul className="nav--section">
-              <li>
-                <Link to="/terms" >Terms of Use</Link>
-              </li>
-              <li className='li2'>
-                <Link to="/privacy">Privacy Policy</Link>
-              </li>
-            </ul>
+  return (    
+    <>
+  
           <div className="box">
             <div className='content'>
             <h4 className='content--title'>Opspad Terms of Use</h4>
@@ -268,9 +256,8 @@ const Terms = () => {
           </div>
           </div>
       
-        {/* <div>Pricavy policy</div> */}
-      </div>
-    </div>
+          </>
+      
   );
 };
 
