@@ -1,6 +1,12 @@
 .navigation {
     border-bottom: 0.5px solid #E5E5E5;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0px;
     background-color: #ffffff;
+    z-index: 9999;
 }
 
 .navigation .inNavigation {
@@ -185,16 +191,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .navigation {
-        border-bottom: 0.5px solid #E5E5E5;
-        position: fixed;
-        width: 100%;
-        left: 0;
-        right: 0;
-        top: 0px;
-        background-color: #ffffff;
-    }
-
     .navigation .mainNavigation .inMenuBar {
         flex-direction: column;
     }
@@ -205,6 +201,7 @@
         right: 0;
         top: 90px;
         width: 100%;
+        z-index: 9999;
         height: 100vh;
         background-color: #ffffff;
         filter: drop-shadow(rgba(0, 0, 0, 0.185) 0px 4px 4px);

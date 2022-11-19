@@ -38,10 +38,11 @@ const types = [
     title: 'Translations',
   },
 ];
+
 const SignUp = () => {
   const [email, setEmail] = useState('');
   return (
-    <section className={classes.section}>
+    <section className={classes.section} data-testid='career__sign--up'>
       <div className={classes.left}>
         <h3 className={classes.h3}>Nothing here that matches your skillset?</h3>
         <h1 className={classes.h1}>Sign up for future updates</h1>
@@ -49,7 +50,7 @@ const SignUp = () => {
         <Input
           className={classes.input}
           type='email'
-          placeholder='Email@example.com'
+          placeholder='email@example.com'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

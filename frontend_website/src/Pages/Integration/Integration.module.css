@@ -1,10 +1,6 @@
-/* .integration {
-    padding-top: 110px;
-} */
-
 .integration .banner {
     width: 100%;
-    padding-top: 110px;
+    padding-top: 160px;
     padding-bottom: 90px;
     background-color: #F6F9FF;
 }
@@ -43,7 +39,6 @@
 }
 
 .integration .hM_content {
-    padding-top: 79.5px;
     background-image:
         url("./assets/spira1.svg"),
         url("./assets/spira2.svg");
@@ -51,12 +46,8 @@
     background-position: left 370px, right 780px;
     background-repeat: no-repeat, no-repeat;
     background-size: 70px, 60px;
-}
-
-.integration .hM_content .inHM_content {
-    max-width: 1104.93px;
-    margin: auto;
-    overflow: hidden;
+    padding: 0px 40px 0px 40px;
+    padding-top: 79.5px;
 }
 
 .integration .hM_content .inHM_box {
@@ -67,7 +58,6 @@
     align-items: center;
     gap: 50px;
     margin-bottom: 89.2px;
-    padding: 0px 40px 0px 40px;
 }
 
 .integration .hM_content .inHM_box.flexDirection {
@@ -76,7 +66,6 @@
 
 .integration .hM_content .inHM_box .inHmL {
     width: 458px;
-    min-height: 196px;
 }
 
 .integration .hM_content .inHM_box .inHmL h3 {
@@ -95,7 +84,9 @@
 
 .integration .hM_content .inHM_box .inHmR {
     width: 600.15px;
-    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .integration .hM_content .inHM_box .inHmR img {
@@ -112,15 +103,16 @@
 }
 
 .get_more .inGet_more .subtitle {
-    max-width: 792.8px;
+    max-width: 671.25px;
     margin: auto;
     text-align: center;
 }
 
 .get_more .inGet_more .subtitle h4 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 50px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 58px;
+    text-align: center;
     color: #202020;
     margin: 0;
     margin-bottom: 12px;
@@ -135,6 +127,7 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
+    text-align: center;
     color: #292929;
     margin: 0;
     padding: 0;
@@ -275,7 +268,7 @@
     }
 
     .integration .hM_content {
-        background-position: left 240px, right 520px;
+        background-position: left 220px, right 450px;
         background-size: 40px, 40px;
     }
 
@@ -285,7 +278,8 @@
     }
 
     .integration .hM_content .inHM_box {
-        max-width: 650px;
+        max-width: 100%;
+        margin-bottom: 50px;
     }
 
     .integration .hM_content .inHM_box .inHmL {
@@ -294,7 +288,6 @@
 
     .integration .hM_content .inHM_box .inHmR {
         width: 290px;
-        height: 200px;
     }
 
     .get_more .inGet_more .inGet_more_box .box .boxImg {
@@ -320,9 +313,18 @@
         margin-top: 40px;
     }
 
+    .get_more .inGet_more .subtitle {
+        max-width: 536.89px;
+    }
+
     .get_more .inGet_more .subtitle h4 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 32px;
+        line-height: 44px
+    }
+
+    .get_more .inGet_more .subtitle p {
+        font-size: 18px;
+        line-height: 28px;
     }
 
     .get_more .inGet_more .inGet_more_box .box {
@@ -354,6 +356,16 @@
         line-height: 32px;
         max-width: 399.22px;
     }
+
+    .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
+        top: 17px;
+    }
+}
+
+@media screen and (max-width: 713px) {
+    /* .integration .hM_content .inHM_box {
+        padding: 0px 40px 0px 40px;
+    } */
 }
 
 @media screen and (max-width: 600px) {
@@ -382,6 +394,10 @@
 
     .getMoret .inGetMoret h4 {
         width: 100%;
+    }
+
+    .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
+        top: 0px;
     }
 }
 
@@ -420,4 +436,19 @@
     .integration .hM_content {
         background-image: none;
     }
+
+    .get_more .inGet_more .subtitle {
+        max-width: 100%;
+    }
+
+    .get_more .inGet_more .subtitle h4 {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    .get_more .inGet_more .subtitle p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
 }
