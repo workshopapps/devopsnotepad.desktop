@@ -3,11 +3,11 @@ name: Frontend-CI
 on:
   workflow_dispatch:
   push:
-    branches: ["stynhaq-patch-1"]
+    branches: ["feat/DEV-8-CI-front-end"]
     paths:
       - frontend_website/**
   pull_request:
-    branches: ["stynhaq-patch-1"]
+    branches: ["feat/DEV-8-CI-front-end"]
     paths:
       - frontend_website/**
 
