@@ -5,6 +5,7 @@ import { BsArrowRightShort } from 'react-icons/bs';
 import womanwhite from './images/womanwhite.png';
 import womanblack from './images/womanblack.png';
 import classes from './About.module.css';
+
 export const About = () => {
   return (
     <div className={classes.container}>

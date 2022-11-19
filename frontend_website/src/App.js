@@ -3,7 +3,7 @@ import LandingPage from './Pages/Landing page/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
-import About from './Pages/About/About';
+import {About} from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
