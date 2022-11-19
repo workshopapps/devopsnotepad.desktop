@@ -71,7 +71,6 @@ const Navbar = ({ isOpen, setOpen }) => {
             ))}
           </div>
         </div>
-
         <div className="menuBox">
           <button className="menu_title"
             onClick={() => {
@@ -128,6 +127,7 @@ const Navbar = ({ isOpen, setOpen }) => {
           <a className="login_link" href="/login">Login</a>
           <a className="download_link" href="/">Download App</a>
         </div>
+        
       </ul>
     </nav>
   );

@@ -3,7 +3,7 @@ import LandingPage from './Pages/Landing page/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
-
+import { ContactUs } from './Pages/ContactUs/ContactUs';
 import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
@@ -46,6 +46,7 @@ function App() {
           <Route path='/comingsoon' exact element={<ComingSoon />} />
           <Route path='/career' exact element={<CareerPage />} />
           <Route path='/contactus' exact element={<ContactUs />} />
+          <Route path='/about-us' exact element={<About />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
