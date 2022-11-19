@@ -1,61 +1,96 @@
-import { assert } from "chai";
-import supertest from "supertest";
-import app from "../../src/initialize.js";
-import Documentator from "../../src/utils/documentator/index.js";
-import connection from "../../src/database/setup.js";
+import { assert, expect } from 'chai';
+import supertest from 'supertest';
+import app from '../../src/initialize.js';
+import Documentator from '../../src/utils/documentator/index.js';
+import connection from '../../src/database/setup.js';
 
 export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
-let userId;
+let serverId;
 
 //Deletes every record from servers table before any test is run to avoid collisions.
 before(async () => {
-    await connection.raw("delete from servers");
+  await connection.raw('delete from servers');
 });
 
-describe("Server", () => {
-    it("should create new server", async () => {
-        const res = await request.post("/server").send({
-            name: "example server",
-            ipAddress: "google.com",
-        });
-
-        userId = res.body.server.id;
-
-        assert.equal(res.status, 200);
-        docmaker.addEndpoint(res);
+describe('Server', () => {
+  //2 Tests for Create server endpoint
+  it('should create new server', async () => {
+    const res = await request.post('/server').send({
+      name: 'example server',
+      ipAddress: 'google.com',
+      device_id: 80988579,
+      id: '8392029hbdvyw798-88ehe8-82992',
     });
 
-    it("should throw error when creating a server with an existing name", async () => {
-        const res = await request.post("/server").send({
-            name: "example server",
-            ipAddress: "google.com",
-        });
-
-        assert.equal(res.status, 400);
-        assert.include(res.body.message, "Server already exists");
+    serverId = res.body.server.id;
+  });
+  it('should throw error when creating a server with an existing name', async () => {
+    const res = await request.post('/server').send({
+      name: 'example server',
+      ipAddress: 'google.com',
     });
 
-    it("should update server", async () => {
-        const res = await request.patch("/server").send({
-            id: userId,
-            name: "updated server name",
-        });
+    assert.equal(res.status, 400);
+    assert.include(res.body.message, 'Server already exists');
+  });
 
-        assert.equal(res.status, 200);
-        assert.include(res.body.message, "Server updated successfully");
-        docmaker.addEndpoint(res);
+  it('should update server', async () => {
+    const res = await request.patch('/server').send({
+      id: serverId,
+      name: 'updated server name',
     });
 
-    it("should not update server if server is not found", async () => {
-        const res = await request.patch("/server").send({
-            id: "33344knkn323j5kln23l4n3l4n",
-            name: "updated server name",
-        });
+    assert.equal(res.status, 200);
+    assert.include(res.body.message, 'Server updated successfully');
+    docmaker.addEndpoint(res);
+  });
 
-        assert.equal(res.status, 404);
-        assert.include(res.body.message, "Server does not exist");
+  //2 Tests for Get All Servers by Device
+  it('should get all servers added on a particular device', async () => {
+    const res = await request.get('/server?device=80988579');
+    assert.equal(res.status, 200);
+  });
+
+  it('should throw error if there is no server from the requesting device', async () => {
+    const res = await request.get('/server?device=00102939');
+    assert.equal(res.status, 404);
+  });
+
+  //2 Tests for Get single server by serverId
+  it('should get server with requested serverId param', async () => {
+    const res = await request.get('/server/8392029hbdvyw798-88ehe8-82992');
+    assert.equal(res.status, 200);
+  });
+
+  it('should throw error if there is no server with that id', async () => {
+    const res = await request.get('/server/83930dbhduu3i3');
+    assert.equal(res.status, 404);
+  });
+
+  it('should not update server if server is not found', async () => {
+    const res = await request.patch('/server').send({
+      id: '33344knkn323j5kln23l4n3l4n',
+      name: 'updated server name',
     });
+
+    assert.equal(res.status, 404);
+    assert.include(res.body.message, 'Server does not exist');
+  });
+
+  it('Should delete a server from an array of existing servers', async () => {
+    const res = await request.delete('/server').send({
+      serverIds: [serverId],
+    });
+    expect(res.status).to.equal(200);
+    expect(res.body.message).to.include('servers deleted successfully');
+    docmaker.addEndpoint(res);
+  });
+
+  it('Should confirm if server was deleted successfully', async () => {
+    const res = await request.get('/server/' + serverId).send();
+    expect(res.status).to.equal(404);
+  });
 });

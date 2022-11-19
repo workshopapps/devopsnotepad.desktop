@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import LandingPage from "./Pages/Landing page/LandingPage";
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from "react-error-boundary";
@@ -39,9 +40,10 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/integration" element={<Integration />} />
+          <Route path="/" exact element={<LandingPage />} />
+          <Route path="/integrations" element={<Integration />} />
           <Route path="/faq" exact element={<Faq />} />
-          <Route path="/comingsoon" exact element={<ComingSoon />} />
+          <Route path="/coming-soon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
           <Route path='/newsroom' exact element={<NewsRoom/>}/>
         </Routes>
