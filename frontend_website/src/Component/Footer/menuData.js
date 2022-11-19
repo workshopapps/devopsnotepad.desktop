@@ -4,7 +4,7 @@ export const Links = [
     list: [
       {
         title: 'About Us',
-        slug: '',
+        slug: '/about-us',
       },
       {
         title: 'Privacy Policy',
