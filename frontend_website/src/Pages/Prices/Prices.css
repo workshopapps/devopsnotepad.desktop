@@ -3,11 +3,18 @@
     --grey-color: #6F6F6F;
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .prices-container{
-    padding: 23.5px 80px 23.5px 80px;
+   width: 100%;
 }
 
 .prices-header-container{
+    padding: 23.5px 80px 23.5px 80px;
     margin: auto;
     text-align: center;
 }
@@ -33,8 +40,131 @@
 
 .prices-header-container .toggle-component{
     margin: auto;
+    margin-bottom: 30px;
 }
 
-.price-sample-grid{
+.prices-sample-grid{
+    padding: 23.5px 80px 23.5px 80px;
     color: var(--darkblue-color);
+    display: grid;
+    text-align: center;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 30px;
 }
+
+.compare-price{
+    padding: 23.5px 80px 23.5px 80px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    border-top: 1px solid #E7E6E6;
+}
+
+.compare-price h1{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48.41px;
+    margin-bottom: 30px;
+}
+
+.table-container{
+    margin: auto;
+    width: 846px;
+
+}
+
+.table-container ul{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 30px 0;
+}
+
+.table-container li {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.32px;
+    width: 169px;
+}
+
+.table-container .grid-table{
+    display: grid;
+    padding: 20px;
+    place-items: center;
+    background: #F6F9FF;
+    grid-template-columns: 40% 20% 20% 20% ;
+}
+
+.grid-table .grid-header-flex{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.table-container .grid-table .grid-item{
+    margin: auto;
+}
+
+.table-container .grid-table .grid-header{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27.32px;
+    color: #202020;
+    justify-self: left;
+    padding: 15px 0 15px 10px;
+}
+
+
+
+@media(max-width:1098px ){
+    .prices-container {
+            padding: 23.5px 40px 23.5px 40px;
+    }
+    
+    .prices-header-container{
+        padding: 23.5px 40px 23.5px 40px;
+    }
+
+    .compare-price{
+        padding: 23.5px 40px 23.5px 40px;
+    }
+
+    .prices-sample-grid{
+        padding: 23.5px 40px 23.5px 40px;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 1000px){
+    .table-container{
+        width: 100%;
+    }
+}
+
+@media(max-width:835px){
+
+    /* .prices-container{
+        padding: 23.5px 40px 23.5px 40px;
+    } */
+    
+    .prices-sample-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .prices-header {
+        font-size: 35px;
+        line-height: 38.73px;
+    }
+
+    .prices-subheader {
+        font-size: 22px;
+        line-height: 32.78px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* @media(max-width: 400px){
+
+} */

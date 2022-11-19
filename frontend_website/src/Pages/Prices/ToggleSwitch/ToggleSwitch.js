@@ -48,7 +48,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const ToggleSwitch = () => {
+const ToggleSwitch = ({ toggleMonthly, handleToggle }) => {
   return (
     <Stack
       direction="row"
@@ -57,7 +57,11 @@ const ToggleSwitch = () => {
       alignItems="center"
     >
       <h4 className>Monthly</h4>
-      <AntSwitch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
+      <AntSwitch
+        checked={toggleMonthly}
+        onChange={handleToggle}
+        inputProps={{ 'aria-label': 'ant design' }}
+      />
       <h4>Yearly</h4>
     </Stack>
   );
