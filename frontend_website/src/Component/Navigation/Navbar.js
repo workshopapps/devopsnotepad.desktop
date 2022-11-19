@@ -2,144 +2,52 @@ import { useState } from 'react';
 import { menuList } from './NavData';
 import { IoClose } from 'react-icons/io5';
 import logo from './assets/logo.svg';
+import styles from './Navigation.module.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ isOpen, setOpen }) => {
   const [menuOpen, setMenuOpen] = useState({});
 
-  const handleMenuToggle = (index) =>
-    setMenuOpen((state) => ({ [index]: !state[index] }));
+  const handleMenuToggle = (index) => setMenuOpen(state => ({ [index]: !state[index] }));
 
   return (
-    <nav className={`inMenuBar ${isOpen ? 'openMenu' : ''}`}>
-      <div className='logo'>
-        <div className='inLogo'>
-          <img src={logo} alt='' />
-          <IoClose className='closeIcon' onClick={() => setOpen(false)} />
+    <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
+      <div className={styles.logo}>
+        <div className={styles.inLogo}>
+          <Link to="/">
+            <img src={logo} alt='' />
+          </Link>
+          <IoClose
+            className={styles.closeIcon}
+            onClick={() => setOpen(false)}
+          />
         </div>
       </div>
-      <ul className='menuUlList'>
-        {/* <li><a href="/">Home</a></li> */}
-        <div className='menuBox'>
-          <button
-            className='menu_title'
-            onClick={() => {
-              setProductDropdown(!productDropdown);
-              setCompanyDropdown(false);
-              setResourcesDropdown(false);
-              setCommunityDropdown(false);
-            }}
-          >
-            Product <i className='fa-solid fa-angle-down'></i>
-          </button>
-          <div className={`dropdown ${productDropdown ? 'show' : ''}`}>
+      <ul className={styles.menuUlList}>
+        <div className={styles.menuBox}>
             {menuList.map((menu, i) => (
-              <div key={i}>
-                {menu.product && (
-                  <li>
-                    {menu.product.map((b, i) => (
-                      <a href={`${b.slug}`} key={i}>
-                        {b.title}
-                      </a>
+              <div key={i} className={styles.sMki}>
+                <button className={styles.menu_title} onClick={() => handleMenuToggle(i)} type="button">
+                  {menu.title} <i className='fa-solid fa-angle-down'></i>
+                </button>
+                {menu.subMenu && (
+                  <div className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
+                    {menu.subMenu.map((sMenu, i) => (
+                      <li><Link to={`${sMenu.slug}`} key={i} onClick={() => handleMenuToggle(false)}>{sMenu.title}</Link></li>
                     ))}
-                  </li>
+                  </div>
                 )}
               </div>
             ))}
-          </div>
         </div>
 
-        <div className='menuBox'>
-          <button
-            className='menu_title'
-            onClick={() => {
-              setCompanyDropdown(!companyDropdown);
-              setProductDropdown(false);
-              setResourcesDropdown(false);
-              setCommunityDropdown(false);
-            }}
-          >
-            Company <i className='fa-solid fa-angle-down'></i>
-          </button>
-          <div className={`dropdown ${companyDropdown ? 'show' : ''}`}>
-            {menuList.map((menu, i) => (
-              <div key={i}>
-                {menu.company && (
-                  <li>
-                    {menu.company.map((b, i) => (
-                      <a href={`${b.slug}`} key={i}>
-                        {b.title}
-                      </a>
-                    ))}
-                  </li>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className='menuBox'>
-          <button
-            className='menu_title'
-            onClick={() => {
-              setResourcesDropdown(!resourcesDropdown);
-              setProductDropdown(false);
-              setCompanyDropdown(false);
-              setCommunityDropdown(false);
-            }}
-          >
-            Resources <i className='fa-solid fa-angle-down'></i>
-          </button>
-          <div className={`dropdown ${resourcesDropdown ? 'show' : ''}`}>
-            {menuList.map((menu, i) => (
-              <div key={i}>
-                {menu.resources && (
-                  <li>
-                    {menu.resources.map((b, i) => (
-                      <a href={`${b.slug}`} key={i}>
-                        {b.title}
-                      </a>
-                    ))}
-                  </li>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className='menuBox'>
-            <button
-              className='menu_title'
-              onClick={() => {
-                setCommunityDropdown(!communityDropdown);
-                setProductDropdown(false);
-                setCompanyDropdown(false);
-                setResourcesDropdown(false);
-              }}
-            >
-              Community <i className='fa-solid fa-angle-down'></i>
-            </button>
-            <div className={`dropdown ${communityDropdown ? 'show' : ''}`}>
-              {menuList.map((menu, i) => (
-                <div key={i}>
-                  {menu.community && (
-                    <li>
-                      {menu.community.map((b, i) => (
-                        <a href={`${b.slug}`} key={i}>
-                          {b.title}
-                        </a>
-                      ))}
-                    </li>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className='navAuthBtn'>
-            <a className='login_link' href='/login'>
-              Login
-            </a>
-            <a className='download_link' href='/'>
-              Download App
-            </a>
-          </div>
+        <div className={styles.navAuthBtn}>
+          <Link className={styles.login_link} to='/login'>
+            Login
+          </Link>
+          <Link className={styles.download_link} to='/'>
+            Download App
+          </Link>
         </div>
       </ul>
     </nav>
