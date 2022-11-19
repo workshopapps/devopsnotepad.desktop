@@ -65,7 +65,7 @@ const Integration = () => {
             <h4>Get more from your app with opspad integrations</h4>
           </div>
           <div className={styles.btn}>
-            <Link to="/sign-up">Sign up for free</Link>
+            <Link to="/signup">Sign up for free</Link>
           </div>
         </div>
       </div>
