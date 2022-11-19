@@ -7,20 +7,20 @@ export const Links = [
         slug: '/about-us',
       },
       {
-        title: 'Privacy Policy',
-        slug: '',
+        title: 'Our Team',
+        slug: '/our-team',
+      },
+      {
+        title: 'Partners',
+        slug: '/partners',
+      },
+      {
+        title: 'Contact Us',
+        slug: '/contact-us',
       },
       {
         title: 'Careers',
-        slug: '',
-      },
-      {
-        title: 'Terms of Service',
-        slug: '',
-      },
-      {
-        title: 'FAQs',
-        slug: '',
+        slug: '/careers',
       },
     ],
   },
@@ -29,19 +29,19 @@ export const Links = [
     list: [
       {
         title: 'Coming Soon',
-        slug: '',
+        slug: '/coming-soon',
       },
       {
         title: 'FAQs',
-        slug: '',
+        slug: '/FAQs',
       },
       {
         title: 'Blog',
-        slug: '',
+        slug: '/blog',
       },
       {
         title: 'Best Practices',
-        slug: '',
+        slug: '/best-practices',
       },
     ],
   },
@@ -50,19 +50,19 @@ export const Links = [
     list: [
       {
         title: 'Features',
-        slug: '',
+        slug: '/features',
       },
       {
         title: 'Integrations',
-        slug: '',
+        slug: '/integrations',
       },
       {
         title: 'Prices',
-        slug: '',
+        slug: '/prices',
       },
       {
         title: 'Demo',
-        slug: '',
+        slug: '/demo',
       },
     ],
   },
@@ -71,15 +71,15 @@ export const Links = [
     list: [
       {
         title: 'DevOps Community',
-        slug: '',
+        slug: '/devops-community',
       },
       {
         title: 'News Room',
-        slug: '',
+        slug: '/news-room',
       },
       {
         title: 'Podcasts',
-        slug: '',
+        slug: '/podcasts',
       },
     ],
   },
