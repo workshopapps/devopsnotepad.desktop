@@ -72,27 +72,60 @@
                       "id": "1",
                       "notificationLog": "easfhgrehegj//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
                       "serverId": "2",
-                      "createdAt": "2022-11-19T03:02:12.000Z"
+                      "createdAt": "2022-11-19T15:48:33.000Z"
                     },
                     {
                       "id": "7",
                       "notificationLog": "ekfsdfwoeu842dnveihfiewfrqknvsV RWG3  T59UYPRS//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
                       "serverId": "2",
-                      "createdAt": "2022-11-19T03:02:12.000Z"
+                      "createdAt": "2022-11-19T15:48:33.000Z"
                     },
                     {
                       "id": "4",
                       "notificationLog": "ekfsdfwoeu8428sf ://lorem upsuarhgr//patch/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
                       "serverId": "2",
-                      "createdAt": "2022-11-12T03:02:12.000Z"
+                      "createdAt": "2022-11-12T15:48:33.000Z"
                     },
                     {
                       "id": "6",
                       "notificationLog": "ekfsdfwoeu8428sf fgwer329t/post/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
                       "serverId": "2",
-                      "createdAt": "2022-10-19T03:02:12.000Z"
+                      "createdAt": "2022-10-19T15:48:33.000Z"
                     }
                   ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {}
+      }
+    },
+    "/server/3/notifications": {
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "notifications": []
                 }
               }
             }
