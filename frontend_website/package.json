@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install backend/.husky"
   },
   "browserslist": {
     "production": [
