@@ -1,6 +1,6 @@
 import bannerImg from './assets/hero-section-image.png';
 import { getMore, list } from './data';
-import './Integration.css';
+import './integration.css';
 
 const Integration = () => {
   return (
