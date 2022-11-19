@@ -11,7 +11,7 @@ import classes from './CareerPage.module.css';
 
 const CareerPage = () => {
   return (
-    <div className={classes.careerpage}>
+    <div className={classes.careerpage} data-testid='career__page'>
       <Header />
       <LeftAligned />
       <RightAligned />

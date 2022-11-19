@@ -1,4 +1,6 @@
+
 import iphone13_14 from './iphone13_14.png';
+import iphone13 from './iPhone-13-Pro-Front.png';
 import iphone14 from './iPhone 14 Pro-front.png';
 import iphonep2 from './iPhone-13-P2.png';
 import iphonegrouped from './Iphones.png';
@@ -33,5 +35,5 @@ export {
   titi,
   prosper,
   tim,
-  chinonso,
+  chinonso, iphone13
 };
