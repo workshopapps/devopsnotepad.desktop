@@ -16,31 +16,32 @@ before(async () => {
 });
 
 describe("Notification", () => {
-    it("should create new server", async () => {
-        const res = await request.post("/server").send({
-            name: "new server",
-            ipAddress: "chissle.com",
-        });
+    //2 Tests for Create server endpoint
+    it('should create new server', async () => {
+      const res = await request.post('/server').send({
+        name: 'example server',
+        ipAddress: 'google.com',
+        deviceId: 80988579,
+        id: '8392029hbdvyw798-88ehe8-82992',
+      });
 
-        serverId = res.body.server.id;
-
-        assert.equal(res.status, 200);
-        docmaker.addEndpoint(res);
+      serverId = res.body.server.id;
     });
 
-    it("should throw error when creating a server with an existing name", async () => {
-        const res = await request.post("/server").send({
-            name: "new server",
-            ipAddress: "chissle.com",
-        });
+    it('should throw error when creating a server with an existing name', async () => {
+      const res = await request.post('/server').send({
+        name: 'example server',
+        ipAddress: 'google.com',
+      });
 
-        assert.equal(res.status, 400);
-        assert.include(res.body.message, "Server already exists");
+      assert.equal(res.status, 400);
+      assert.include(res.body.message, 'Server already exists');
     });
 
+    //test for notifications
     it("should create new notification for a server", async () => {
         const res = await request
-            .post("/server/notifications")
+            .post("/server/" + serverId + "/notifications")
             .send({
                 serverId,
                 log: "add data points",
@@ -52,9 +53,8 @@ describe("Notification", () => {
 
     it("should throw error when creating a notification with an invalid server_id", async () => {
         const res = await request
-            .post("/server/notifications")
+            .post("/server/sdsdds/notifications")
             .send({
-                serverId: "sdsds",
                 log: "add data points"
             });
 

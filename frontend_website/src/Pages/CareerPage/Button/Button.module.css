@@ -1,0 +1,7 @@
+.button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+}

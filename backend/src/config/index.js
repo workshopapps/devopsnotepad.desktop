@@ -1,6 +1,6 @@
 import env from "dotenv";
 
-env.config({path: process.env.ENV_FILE_PATH});
+env.config({ path: process.env.ENV_FILE_PATH });
 
 export const AppEnvironment = {
     TEST: "test",
