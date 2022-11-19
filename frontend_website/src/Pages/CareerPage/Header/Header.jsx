@@ -14,11 +14,11 @@ const Header = () => {
     <div className={classes.leftAligned} data-testid='header' id='header'>
       <div className={classes.left}>
         <h1 className={classes.h1}>
-          Be Part Of Something <span className={classes.span}>Big</span>{' '}
+          Join <span className={classes.span}>Our Team</span>
         </h1>
         <p className={classes.p}>
           Team Sandpaper is guided by respect, transparency and direct feedback.
-          We are a customer based company committed to creating a safe working
+          We are a customer-based company committed to creating a safe working
           environment for our user. We’re building a culture at Team Sandpaper
           where amazing people (like you) can do their best work. Get started
           with us today!
