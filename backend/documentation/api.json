@@ -44,10 +44,7 @@
                   "ipAddress": {
                     "type": "string"
                   },
-                  "device_id": {
-                    "type": "number"
-                  },
-                  "id": {
+                  "deviceId": {
                     "type": "string"
                   }
                 }
@@ -55,8 +52,7 @@
               "example": {
                 "name": "example server",
                 "ipAddress": "google.com",
-                "device_id": 80988579,
-                "id": "8392029hbdvyw798-88ehe8-82992"
+                "deviceId": "80988579"
               }
             }
           }
@@ -84,10 +80,10 @@
                         "name": {
                           "type": "string"
                         },
-                        "device_id": {
+                        "ipAddress": {
                           "type": "string"
                         },
-                        "ipAddress": {
+                        "deviceId": {
                           "type": "string"
                         },
                         "created_at": {
@@ -107,12 +103,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "8392029hbdvyw798-88ehe8-82992",
+                    "id": "75e1a3ac-6827-11ed-9b53-8cdcd4798fc6",
                     "name": "example server",
-                    "device_id": "80988579",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T11:07:45.000Z",
-                    "updated_at": "2022-11-18T11:07:45.000Z"
+                    "deviceId": "80988579",
+                    "created_at": "2022-11-19T16:30:20.000Z",
+                    "updated_at": "2022-11-19T16:30:20.000Z"
                   },
                   "isOnline": true
                 }
@@ -140,7 +136,7 @@
                 }
               },
               "example": {
-                "id": "8392029hbdvyw798-88ehe8-82992",
+                "id": "75e1a3ac-6827-11ed-9b53-8cdcd4798fc6",
                 "name": "updated server name"
               }
             }
