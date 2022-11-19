@@ -1,0 +1,277 @@
+.landPage_container {
+}
+
+.landPage_flex {
+  display: flex;
+  padding: 0 80px;
+}
+
+.landPage_imgFlex {
+  display: flex;
+  width: 50%;
+}
+
+.landPage_imgFlex img:nth-child(1) {
+  object-fit: none;
+  transform: translate(25%, 2%);
+}
+
+.landPage_col1 {
+  width: 50%;
+}
+
+.landPage_h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 60px;
+  color: #000000;
+}
+.landPage_span {
+  color: #225ad6;
+}
+.landPage_p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.landPage_btn {
+  display: flex;
+  flex-direction: row;
+  gap: 12.14px;
+}
+
+.landPage_btn button:nth-child(1) {
+  padding: 24.2767px 40px;
+  background: #202020;
+  border-radius: 7.28302px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  border: 0;
+}
+.landPage_btn button:nth-child(2) {
+  padding: 24.2767px 40px;
+  background: #fff;
+  border-radius: 7.28302px;
+  color: #000;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  border: 1.5px solid #202020;
+}
+
+.landPage_section2 {
+  padding-top: 78px;
+  background: #f6f9ff;
+}
+
+.landPage_sectionItems {
+  display: grid;
+  place-content: center;
+  margin: 0 114px;
+}
+
+.landPage_sectionItems h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 52px;
+}
+.landPage_sectionItems p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.landPage_section3 {
+  padding-top: 78px;
+  background: #f8f8f8;
+}
+
+.landPage_sectionItems1 {
+  display: grid;
+  place-content: center;
+  margin: 0 114px 0 0;
+  width: 75%;
+}
+
+.landPage_sectionItems1 h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 52px;
+}
+.landPage_sectionItems1 p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+}
+.landPage_groupedImg img {
+  width: 100%;
+}
+
+.landPage_section4 {
+  background: #202020;
+  margin-top: 130px;
+}
+.landPage_section4col {
+  padding-top: 130px;
+}
+.landPage_section4 h2 {
+  color: #fff;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 72px;
+}
+
+.landPage_section4Items {
+  display: flex;
+  flex-direction: row;
+  padding-top: 42px;
+}
+
+.landPage_section4Items img {
+  width: 160px;
+}
+
+.landPage_section4img {
+  transform: translate(20%, -20%);
+}
+
+.landPage_section4img img {
+  width: 80%;
+}
+
+.landPage_section5 {
+  padding: 0 80px;
+  background: #f6f9ff;
+}
+
+.landPage_section5grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.7fr;
+  gap: 90px;
+}
+
+.landPage_section5_div1 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.landPage_section5_div1 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+.landPage_section5_div2 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 75%;
+}
+
+.landPage_section5_div2 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+.landPage_section5_div3 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  transform: translate(-15%, 0%);
+  height: 75%;
+}
+
+.landPage_section5_div3 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+.landPage_section5_div4 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  transform: translate(0%, -55%);
+}
+
+.landPage_section5_div4 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+.landPage_section5_div5 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  transform: translate(-17%, -36%);
+  width: 100%;
+  height: 52%;
+
+}
+
+.landPage_section5_div5 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+.landPage_section5_div6 {
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+  border-radius: 32px;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  transform: translate(-17%, -25%);
+  width: 100%;
+}
+
+.landPage_section5_div6 p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
