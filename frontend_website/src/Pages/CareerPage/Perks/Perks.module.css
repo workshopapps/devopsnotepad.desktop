@@ -1,5 +1,5 @@
 .perks {
-  padding: 0 6rem;
+  padding: 0 4rem;
 }
 
 .h1 {
@@ -21,9 +21,8 @@
   flex-wrap: wrap;
 }
 .svg {
-  height: 3rem;
-  width: 3rem;
-  fill: #5182ef;
+  height: 3.5rem;
+  width: 3.5rem;
   flex-basis: 20%;
 }
 
