@@ -197,7 +197,8 @@
 .landPage_imgFlex {
   display: flex;
   width: 50%;
-  padding-bottom: 63px;
+  padding: 47px 0 65px;
+  transform: translate(15%, 0%);
 }
 
 .landPage_imgFlex img:nth-child(1) {
@@ -209,7 +210,7 @@
 }
 
 .landPage_col1 {
-  width: 50%;
+  width: 61%;
 }
 .landPagebtn_mob {
   display: none;
@@ -219,7 +220,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  font-size: 47px;
+  font-size: 57px;
   line-height: 60px;
   color: #000000;
   padding-top: 162px;
@@ -234,6 +235,7 @@
   font-size: 24px;
   line-height: 32px;
   color: #000000;
+  padding: 32px 0 48px;
 }
 
 .landPage_btn {
