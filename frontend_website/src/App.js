@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-import "./App.css";
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Footer from "./Component/Footer/Footer";
-import Header from "./Component/Header/Header";
 import LandingPage from "./Pages/Landing page/LandingPage";
-import Csr from "./Pages/Csr/Csr";
-=======
-import React from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from "react-error-boundary";
@@ -32,7 +24,6 @@ const ErrorFallback = (props) => {
     </div>
   );
 };
->>>>>>> 7e6a4a31e56efa2a157bd493e00ca2a252f1094e
 
 function App() {
 
@@ -40,12 +31,6 @@ function App() {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <Header/>
-      <Routes>
-        <Route path="/" exact element={<Csr />} />
-      </Routes>
-=======
       <Navigation />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
@@ -54,15 +39,14 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/integration" element={<Integration />} />
+          <Route path="/" exact element={<LandingPage />} />
+          <Route path="/integrations" element={<Integration />} />
           <Route path="/faq" exact element={<Faq />} />
-          <Route path="/comingsoon" exact element={<ComingSoon />} />
+          <Route path="/coming-soon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
         </Routes>
       </ErrorBoundary>
->>>>>>> 7e6a4a31e56efa2a157bd493e00ca2a252f1094e
       <Footer />
-      <LandingPage />
     </React.Fragment>
   );
 }

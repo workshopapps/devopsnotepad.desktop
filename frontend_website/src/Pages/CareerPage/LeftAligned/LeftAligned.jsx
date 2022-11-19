@@ -1,10 +1,10 @@
-import img5 from "../../../assets/career_page-assets/Images/img5.png";
+import img5 from '../../../assets/career_page-assets/Images/img5.png';
 
-import classes from "./LeftAligned.module.css";
+import classes from './LeftAligned.module.css';
 
 const LeftAligned = () => {
   return (
-    <>
+    <section data-testid='left__aligned'>
       <h1 className={classes.h1}>
         Make a lasting impact on the future of work
       </h1>
@@ -25,12 +25,12 @@ const LeftAligned = () => {
         <figure className={classes.right}>
           <img
             src={img5}
-            alt="our app solves our problem"
+            alt='our app solves our problem'
             className={classes.img}
           />
         </figure>
       </li>
-    </>
+    </section>
   );
 };
 export default LeftAligned;
