@@ -1,24 +1,15 @@
-export const product = [
-  {
-    title: 'Features',
-    slug: '/features',
-  },
-  {
-    title: 'Prices',
-    slug: '/prices',
-  },
-  {
-    title: 'Demo',
-    slug: '/demo',
-  },
-];
-
 export const menuList = [
   {
-    product: [
+    title: "Product",
+    type: "button",
+    subMenu: [
       {
         title: 'Features',
         slug: '/features',
+      },
+      {
+        title: 'Integrations',
+        slug: '/integrations',
       },
       {
         title: 'Prices',
@@ -31,7 +22,9 @@ export const menuList = [
     ],
   },
   {
-    company: [
+    title: "Company",
+    type: "button",
+    subMenu: [
       {
         title: 'About Us',
         slug: '/about-us',
@@ -55,7 +48,9 @@ export const menuList = [
     ],
   },
   {
-    resources: [
+    title: "Resources",
+    type: "button",
+    subMenu: [
       {
         title: 'Coming Soon',
         slug: '/coming-soon',
@@ -75,7 +70,9 @@ export const menuList = [
     ],
   },
   {
-    community: [
+    title: "Community",
+    type: "button",
+    subMenu: [
       {
         title: 'DevOps Community',
         slug: '/devops-community',
