@@ -9,6 +9,8 @@ import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
 import Faq from './Pages/Faq/Faq';
+import OurTeam from './Pages/TeamPage/OurTeam';
+import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import Features from './Pages/Features/Features';
@@ -17,7 +19,7 @@ import classes from './App.module.css';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
-import DemoPage from "./Pages/DemoPage/DemoPage";
+import DemoPage from './Pages/DemoPage/DemoPage';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -38,6 +40,7 @@ function App() {
   return (
     <React.Fragment>
       <Navigation />
+      <Navigation />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -45,11 +48,11 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/" exact element={<LandingPage />} />
-          <Route path="/integrations" element={<Integration />} />
-          <Route path="/faq" exact element={<Faq />} />
-          <Route path="/coming-soon" exact element={<ComingSoon />} />
-          <Route path="/career" exact element={<CareerPage />} />
+          <Route path='/' exact element={<LandingPage />} />
+          <Route path='/integrations' element={<Integration />} />
+          <Route path='/faq' exact element={<Faq />} />
+          <Route path='/coming-soon' exact element={<ComingSoon />} />
+          <Route path='/career' exact element={<CareerPage />} />
           <Route path='/' exact element={<LandingPage />} />
           <Route path='/integrations' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
@@ -64,6 +67,7 @@ function App() {
           <Route path='/demo' exact element={<DemoPage />} />
         </Routes>
       </ErrorBoundary>
+      <Footer />
       <Footer />
     </React.Fragment>
   );
