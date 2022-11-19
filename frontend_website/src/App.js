@@ -12,7 +12,6 @@ import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import Contact from './Pages/ContactUs/ContactUs';
 
-
 import classes from './App.module.css';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
