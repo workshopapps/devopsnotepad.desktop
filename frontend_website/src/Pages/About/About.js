@@ -31,7 +31,7 @@ export const About = () => {
             className={classes.flexrow}
             style={{ marginTop: '20px', paddingLeft: '0px' }}
           >
-            <img src={circle} width='95px' height='80px' />
+            <img src={circle} width='95px' height='80px' alt='img' />
             <p
               style={{
                 maxWidth: '441px',
@@ -107,12 +107,12 @@ export const About = () => {
           </div>
         </div>
         <div>
-          <img src={man} className={classes.imgsize} />
+          <img src={man} className={classes.imgsize} alt='img' />
         </div>
       </div>
       <div className={classes.flexrow}>
         <div>
-          <img src={womanwhite} className={classes.imgsize} />
+          <img src={womanwhite} className={classes.imgsize} alt='img' />
         </div>
         <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
           <p
@@ -176,7 +176,7 @@ export const About = () => {
           <button className={classes.btn3}>Contact us</button>
         </div>
         <div>
-          <img src={womanblack} className={classes.imgsize} />
+          <img src={womanblack} className={classes.imgsize} alt='img' />
         </div>
       </div>
     </div>
