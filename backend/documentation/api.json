@@ -28,87 +28,6 @@
   ],
   "paths": {
     "/server": {
-      "post": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "ipAddress": {
-                    "type": "string"
-                  }
-                }
-              },
-              "example": {
-                "name": "example server",
-                "ipAddress": "google.com"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "server": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "ipAddress": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "isOnline": {
-                      "type": "boolean"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "server created successfully",
-                  "server": {
-                    "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
-                    "name": "example server",
-                    "ipAddress": "google.com",
-                    "created_at": "2022-11-16T15:40:24.000Z",
-                    "updated_at": "2022-11-16T15:40:24.000Z"
-                  },
-                  "isOnline": true
-                }
-              }
-            }
-          }
-        }
-      },
       "patch": {
         "description": "",
         "tags": [],
@@ -128,7 +47,7 @@
                 }
               },
               "example": {
-                "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
+                "id": "8392029hbdvyw798-88ehe8-82992",
                 "name": "updated server name"
               }
             }
@@ -153,6 +72,61 @@
                 "example": {
                   "success": true,
                   "message": "Server updated successfully"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  "8392029hbdvyw798-88ehe8-82992"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
                 }
               }
             }

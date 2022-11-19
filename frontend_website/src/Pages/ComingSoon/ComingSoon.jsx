@@ -7,7 +7,7 @@ import classes from './ComingSoon.module.css';
 
 const ComingSoon = () => {
   return (
-    <section className={classes.comingsoon}>
+    <section className={classes.comingsoon} data-testid='coming__soon'>
       <Header />
       <LeftAligned />
       <RightAligned />

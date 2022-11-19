@@ -17,7 +17,7 @@ const words = [
 ];
 const Words = () => {
   return (
-    <section className={classes.words}>
+    <section className={classes.words} data-testid='career__words'>
       <h1 className={classes.h1}>Words from our Team</h1>
       <ul className={classes.ul}>
         {words.map((word, index) => (
