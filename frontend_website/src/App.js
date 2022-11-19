@@ -12,6 +12,7 @@ import Faq from './Pages/Faq/Faq';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import classes from './App.module.css'
+import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 
@@ -50,6 +51,7 @@ function App() {
           <Route path='/careers' exact element={<CareerPage />} />
           <Route path='/contact-us' exact element={<ContactUs />} />
           <Route path='/about-us' exact element={<About />} />
+          <Route path='/features' exact element={<Features />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
