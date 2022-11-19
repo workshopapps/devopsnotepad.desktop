@@ -43,13 +43,13 @@ function App() {
       >
         <Routes>
           <Route path='/' exact element={<LandingPage />} />
-          <Route path='/integration' element={<Integration />} />
+          <Route path='/integrations' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
-          <Route path='/comingsoon' exact element={<ComingSoon />} />
           <Route path='/signup' exact element={<SignUp />} />
           <Route path='/login' exact element={<Login />} />
+          <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/career' exact element={<CareerPage />} />
-          <Route path='/contactus' exact element={<ContactUs />} />
+          <Route path='/contact-us' exact element={<ContactUs />} />
           <Route path='/about-us' exact element={<About />} />
         </Routes>
       </ErrorBoundary>
