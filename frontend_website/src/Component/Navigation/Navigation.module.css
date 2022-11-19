@@ -1,3 +1,13 @@
+/* .navigation {
+    border-bottom: 0.5px solid #E5E5E5;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0px;
+    background-color: #ffffff;
+    z-index: 9999;
+} */
 .navigation {
     border-bottom: 0.5px solid #E5E5E5;
     background-color: #ffffff;
@@ -42,7 +52,6 @@
 .navigation .mainNavigation .inMenuBar .menuUlList {
     display: flex;
     align-items: center;
-    gap: 25px;
     position: relative;
 }
 
@@ -58,6 +67,12 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .sMki {
     position: relative;
 }
 
@@ -105,14 +120,21 @@
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
     border-bottom: 0.5px solid #E5E5E5;
     text-align: center;
+    width: 100%;
 }
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a:last-child {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
+    border: 0.5px solid #E5E5E5;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line:last-child {
     border: none;
 }
-/* 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a:hover {
-    background-color: rgb(240, 240, 240);
+
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a:last-child {
+    color: red;
 } */
 
 .navigation .mainNavigation .right {
@@ -128,14 +150,12 @@
 
 .navigation .mainNavigation .right .hamburgerBar {
     display: none;
+    position: relative;
+    top: 2px;
 }
 
-.navigation .mainNavigation .right .hamburgerBar .fa-bars {
-    font-size: 35px;
-}
-
-.navigation .mainNavigation .right .hamburgerBar .hamburger-react div {
-    width: 30px !important;
+.navigation .mainNavigation .right .hamburgerBar img {
+    width: 35px;
 }
 
 .navAuthBtn {
@@ -173,20 +193,9 @@
     .navigation .inNavigation {
         padding: 23.5px 50px 23.5px 50px;
     }
-
 }
 
-@media screen and (max-width: 1050px) {
-    .navigation {
-        border-bottom: 0.5px solid #E5E5E5;
-        position: fixed;
-        width: 100%;
-        left: 0;
-        right: 0;
-        top: 0px;
-        background-color: #ffffff;
-    }
-
+@media screen and (max-width: 1000px) {
     .navigation .mainNavigation .inMenuBar {
         flex-direction: column;
     }
@@ -197,11 +206,12 @@
         right: 0;
         top: 90px;
         width: 100%;
+        z-index: 9999;
         height: 100vh;
         background-color: #ffffff;
         filter: drop-shadow(rgba(0, 0, 0, 0.185) 0px 4px 4px);
         padding-top: 23.5px;
-        transition: 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s;
+        transition: 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
     }
 
     .navigation .mainNavigation .inMenuBar .logo {
@@ -218,7 +228,7 @@
 
     .navigation .mainNavigation .inMenuBar.openMenu {
         left: 0px;
-        transition: 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s;
+        transition: 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
     }
 
     .navigation .mainNavigation .inMenuBar {
@@ -249,6 +259,8 @@
 
     .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
         width: 100%;
+        flex-direction: column;
+        gap: 0px;
     }
 
     .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {

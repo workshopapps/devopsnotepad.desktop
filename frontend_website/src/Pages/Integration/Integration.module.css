@@ -1,20 +1,23 @@
-.integration {
+.integration .banner {
+    width: 100%;
     padding-top: 110px;
+    padding-bottom: 90px;
+    background-color: #F6F9FF;
 }
 
-.integration .banner {
+.integration .inBanner {
     max-width: 1156px;
     margin: auto;
     padding: 0px 80px 0px 80px;
 }
 
-.integration .banner .subtitle {
+.integration .inBanner .subtitle {
     max-width: 776px;
     margin: auto;
     text-align: center;
 }
 
-.integration .banner .subtitle h1 {
+.integration .inBanner .subtitle h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
@@ -22,33 +25,29 @@
     color: #292929;
 }
 
-.integration .banner .subtitle h1 span {
+.integration .inBanner .subtitle h1 span {
     color: #2563EB;
 }
 
-.integration .banner .banner_img {
+.integration .inBanner .banner_img {
     width: 100%;
     margin-top: 40px;
 }
 
-.integration .banner .banner_img img {
+.integration .inBanner .banner_img img {
     width: 100%;
 }
 
 .integration .hM_content {
-    padding-top: 79.5px;
     background-image:
         url("./assets/spira1.svg"),
         url("./assets/spira2.svg");
 
     background-position: left 370px, right 780px;
     background-repeat: no-repeat, no-repeat;
-}
-
-.integration .hM_content .inHM_content {
-    max-width: 1104.93px;
-    margin: auto;
-    overflow: hidden;
+    background-size: 70px, 60px;
+    padding: 0px 40px 0px 40px;
+    padding-top: 79.5px;
 }
 
 .integration .hM_content .inHM_box {
@@ -59,7 +58,6 @@
     align-items: center;
     gap: 50px;
     margin-bottom: 89.2px;
-    padding: 0px 40px 0px 40px;
 }
 
 .integration .hM_content .inHM_box.flexDirection {
@@ -68,7 +66,6 @@
 
 .integration .hM_content .inHM_box .inHmL {
     width: 458px;
-    min-height: 196px;
 }
 
 .integration .hM_content .inHM_box .inHmL h3 {
@@ -87,7 +84,9 @@
 
 .integration .hM_content .inHM_box .inHmR {
     width: 600.15px;
-    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .integration .hM_content .inHM_box .inHmR img {
@@ -104,16 +103,17 @@
 }
 
 .get_more .inGet_more .subtitle {
-    max-width: 792.8px;
+    max-width: 671.25px;
     margin: auto;
     text-align: center;
 }
 
 .get_more .inGet_more .subtitle h4 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 50px;
-    color: #060A12;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 58px;
+    text-align: center;
+    color: #202020;
     margin: 0;
     margin-bottom: 12px;
     padding: 0;
@@ -127,6 +127,7 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
+    text-align: center;
     color: #292929;
     margin: 0;
     padding: 0;
@@ -179,7 +180,12 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 16px;
-    color: #202020;
+    color: #1A46A7;
+}
+
+.get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
+    position: relative;
+    top: 55px;
 }
 
 .getMoret {
@@ -189,27 +195,39 @@
 
 .getMoret .inGetMoret {
     max-width: 458px;
+    height: max-content;
     margin: auto;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.getMoret .inGetMoret h4 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 50px;
+.getMoret .inGetMoret .subtitle {
+    width: 100%;
+    margin: auto;
     text-align: center;
-    color: #202020;
     margin-bottom: 30px;
 }
 
-.getMoret .inGetMoret a {
+.getMoret .inGetMoret .subtitle h4 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 50px;
+    color: #202020;
+}
+
+.getMoret .inGetMoret .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+}
+
+.getMoret .inGetMoret .btn a {
     padding: 20px 30px;
+    gap: 10px;
     width: 176px;
-    height: max-content;
-    background: #202020;
+    height: min-content;
+    background: #102A63;
+    border-radius: 6px;
     border-radius: 6px;
     font-family: 'Inter';
     font-style: normal;
@@ -221,36 +239,45 @@
 
 @media screen and (max-width: 1050px) {
     .integration .hM_content {
-        background-size: 80px, 50px;
+        background-size: 50px, 50px;
     }
-    .integration {
-        padding-top: 150px;
+
+    .integration .banner {
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 }
 
 @media screen and (max-width: 800px) {
     .integration .hM_content {
-        background-position: -45px 230px, 740px 500px;
+        background-position: 0px 380px, 740px 820px;
+        background-size: 40px, 40px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .integration .banner {
+    .integration .inBanner {
         max-width: 604px;
         padding: 0px 40px 0px 40px;
     }
 
-    .integration .banner .subtitle {
+    .integration .inBanner .subtitle {
         max-width: 538.73px;
     }
 
-    .integration .banner .subtitle h1 {
+    .integration .hM_content {
+        background-position: left 220px, right 450px;
+        background-size: 40px, 40px;
+    }
+
+    .integration .inBanner .subtitle h1 {
         font-size: 40px;
         line-height: 52px;
     }
 
     .integration .hM_content .inHM_box {
-        max-width: 650px;
+        max-width: 100%;
+        margin-bottom: 50px;
     }
 
     .integration .hM_content .inHM_box .inHmL {
@@ -259,7 +286,6 @@
 
     .integration .hM_content .inHM_box .inHmR {
         width: 290px;
-        height: 200px;
     }
 
     .get_more .inGet_more .inGet_more_box .box .boxImg {
@@ -285,9 +311,18 @@
         margin-top: 40px;
     }
 
+    .get_more .inGet_more .subtitle {
+        max-width: 536.89px;
+    }
+
     .get_more .inGet_more .subtitle h4 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 32px;
+        line-height: 44px
+    }
+
+    .get_more .inGet_more .subtitle p {
+        font-size: 18px;
+        line-height: 28px;
     }
 
     .get_more .inGet_more .inGet_more_box .box {
@@ -310,23 +345,36 @@
         line-height: 16px;
     }
 
-    .getMoret .inGetMoret h4 {
+    .getMoret .inGetMoret .subtitle {
+        max-width: 399.22px;
+    }
+
+    .getMoret .inGetMoret .subtitle h4 {
         font-size: 24px;
         line-height: 32px;
-        max-width: 399.22px;
+    }
+
+    .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
+        top: 17px;
     }
 }
 
+@media screen and (max-width: 713px) {
+    /* .integration .hM_content .inHM_box {
+        padding: 0px 40px 0px 40px;
+    } */
+}
+
 @media screen and (max-width: 600px) {
-    .integration .banner {
+    .integration .inBanner {
         max-width: 381.61px;
     }
 
-    .integration .banner .subtitle {
+    .integration .inBanner .subtitle {
         max-width: 335.48px;
     }
 
-    .integration .banner .subtitle h1 {
+    .integration .inBanner .subtitle h1 {
         font-size: 32px;
         line-height: 42px;
     }
@@ -344,14 +392,18 @@
     .getMoret .inGetMoret h4 {
         width: 100%;
     }
+
+    .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
+        top: 0px;
+    }
 }
 
 @media screen and (max-width: 375px) {
-    .integration .banner .subtitle {
+    .integration .inBanner .subtitle {
         max-width: 100%;
     }
 
-    .integration .banner .subtitle h1 {
+    .integration .inBanner .subtitle h1 {
         font-size: 23px;
         line-height: 35px;
     }
@@ -381,4 +433,19 @@
     .integration .hM_content {
         background-image: none;
     }
+
+    .get_more .inGet_more .subtitle {
+        max-width: 100%;
+    }
+
+    .get_more .inGet_more .subtitle h4 {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    .get_more .inGet_more .subtitle p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
 }
