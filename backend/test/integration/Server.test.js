@@ -84,7 +84,6 @@ describe('Server', () => {
     const res = await request.delete('/server').send({
       serverIds: [serverId],
     });
-
     expect(res.status).to.equal(200);
     expect(res.body.message).to.include('servers deleted successfully');
     docmaker.addEndpoint(res);
@@ -92,8 +91,6 @@ describe('Server', () => {
 
   it('Should confirm if server was deleted successfully', async () => {
     const res = await request.get('/server/' + serverId).send();
-
-    // expect(res.status).to.equal(200);
-    // expect(res.body.message).to.include('servers deleted successfully');
+    expect(res.status).to.equal(404);
   });
 });
