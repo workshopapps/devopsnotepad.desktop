@@ -33,7 +33,10 @@ const Navbar = ({ isOpen, setOpen }) => {
                 {menu.subMenu && (
                   <div className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
                     {menu.subMenu.map((sMenu, i) => (
-                      <li><Link to={`${sMenu.slug}`} key={i} onClick={() => handleMenuToggle(false)}>{sMenu.title}</Link></li>
+                      <li><Link to={`${sMenu.slug}`} key={i} onClick={() => {
+                        handleMenuToggle(false) 
+                        setOpen(false)
+                        }}>{sMenu.title}</Link></li>
                     ))}
                   </div>
                 )}
