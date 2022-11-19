@@ -93,13 +93,46 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "registrationToken": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Subscription successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/8392029hbdvyw798-88ehe8-82992/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverId": {
+                    "type": "string"
+                  },
+                  "log": {
                     "type": "string"
                   }
                 }
               },
               "example": {
-                "registrationToken": "670ca230-67e2-11ed-a65b2-1458d0028583"
+                "serverIds": [
+                  "8392029hbdvyw798-88ehe8-82992"
+                ]
               }
             }
           }
@@ -117,12 +150,72 @@
                     },
                     "message": {
                       "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
                     }
                   }
                 },
                 "example": {
                   "success": true,
-                  "message": "Subscription successful"
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/8392029hbdvyw798-88ehe8-82992/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverId": {
+                    "type": "string"
+                  },
+                  "log": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "serverId": "8392029hbdvyw798-88ehe8-82992",
+                "log": "add data points"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "serverLog": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "successful",
+                  "serverLog": "add data points"
                 }
               }
             }
