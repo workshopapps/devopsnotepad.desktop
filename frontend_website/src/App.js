@@ -12,6 +12,7 @@ import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 
 import classes from './App.module.css'
+import LandingPage from './Pages/Landing page/LandingPage';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -31,6 +32,7 @@ function App() {
   return (
     <React.Fragment>
       <Navigation />
+      <LandingPage />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
