@@ -1,26 +1,54 @@
-import React from 'react';
+import { Carousel } from 'antd';
 import style from './carousel.module.css';
-import { frank,right, left } from '../Images';
+import { frank, left, right } from '../Images';
+import { useRef } from 'react';
 
-const Carousel = () => {
+const Carousl = () => {
+  const ref = useRef()
   return (
-    <div className={style.wrapper}>
-      <div className={style.landPage_section5_div1}>
-        <img src={frank} alt="" />
-        <p>
-          I’ve been able to move around more, knowing I can track my servers on
-          the go!
-          <br />
-          <span>-</span>
-        </p>
-        <h4>Frank Etim</h4>
-      </div>
+    <div className={{ margin: '0' ,padding: '0'}}>
+      <Carousel autoplay pauseOnHover={true} draggable dot={true} ref={ref}>
+        <div className={style.landPage_section5_div1}>
+          <img src={frank} alt='' />
+          <p>
+            I’ve been able to move around more, knowing I can track my servers
+            on the go!
+            <br />
+            <span>-</span>
+          </p>
+          <h4>Frank Etim</h4>
+        </div>
+        <div className={style.landPage_section5_div1}>
+          <img src={frank} alt='' />
+          <p>
+            I’ve been able to move around more, knowing I can track my servers
+            on the go!
+            <br />
+            <span>-</span>
+          </p>
+          <h4>Frank Etim</h4>
+        </div>
+        <div className={style.landPage_section5_div1}>
+          <img src={frank} alt='' />
+          <p>
+            I’ve been able to move around more, knowing I can track my servers
+            on the go!
+            <br />
+            <span>-</span>
+          </p>
+          <h4>Frank Etim</h4>
+        </div>
+      </Carousel>
       <div>
-        <img src={left} alt="" className={style.prevC}  />
-        <img src={right} alt="" className={style.nextC} />
+        <img src={left} alt="" className={style.prevC} onClick={() => (
+          ref.current.prev()
+        )} />
+        <img src={right} alt="" className={style.nextC} onClick={() => (
+          ref.current.next()
+        )} />
       </div>
     </div>
   );
 };
 
-export default Carousel;
+export default Carousl;

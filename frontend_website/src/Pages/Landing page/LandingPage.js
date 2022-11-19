@@ -1,5 +1,5 @@
 import {
-    iphone13,
+  iphone13_14,
     iphone14,
     iphonegrouped,
     iphonep2,
@@ -16,7 +16,7 @@ import {
     iphoneslopemob,
   } from "./Images";
   import style from "../Landing page/landingpage.module.css";
-  import Carousel from "../Landing page/carousel/carousel";
+  import Carousl from "../Landing page/carousel/carousel";
   
   const LandingPage = () => {
     return (
@@ -37,8 +37,7 @@ import {
             </div>
           </div>
           <div className={style.landPage_imgFlex}>
-            <img src={iphone13} alt="iPhone 13" />
-            <img src={iphone14} alt="" />
+            <img src={iphone13_14} alt="iPhone 13" />
             <img src={grouped} alt="" />
           </div>
           <div className={style.landPagebtn_mob}>
@@ -59,7 +58,7 @@ import {
         </div>
         <div className={`${style.landPage_flex} ${style.landPage_section3}`}>
           <div className={style.landPage_sectionItems1}>
-            <h2>Notes. Passwords. Notifications.</h2>
+            <h2>Notes. <br/>  Passwords. <br/> Notifications.</h2>
             <p>
               It really is just that easy to use. Create notes for specific
               servers. Format the text to suit you. Your passwords for the servers
@@ -89,7 +88,7 @@ import {
             <h2>We’re already getting lots of love!</h2>
           </div>
           <div className={style.Carousel}>
-            <Carousel />
+            <Carousl />
           </div>
   
           <div className={style.landPage_section5grid}>

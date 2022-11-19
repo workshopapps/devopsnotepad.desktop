@@ -6,6 +6,7 @@
   }
   .landPage_section1 {
     padding-bottom: 69px !important;
+    margin-top: 80px !important;
   }
   .landPage_h1 {
     font-size: 24px !important;
@@ -35,14 +36,11 @@
     display: none;
   }
   .landPage_imgFlex img:nth-child(2) {
-    display: none;
-  }
-  .landPage_imgFlex img:nth-child(3) {
     display: block !important;
   }
   .landPage_imgFlex {
     align-items: center !important;
-    width: 100% !important;
+    width: 72% !important;
     place-content: center;
   }
   .landPagebtn_mob button:nth-child(1) {
@@ -54,7 +52,7 @@
     border: 0;
     font-size: 14px;
     line-height: 16px;
-    font-weight: 400;
+    font-weight: 600;
   }
   .landPagebtn_mob button:nth-child(2) {
     padding: 16px 22px;
@@ -66,6 +64,7 @@
     border: 0;
     font-size: 14px;
     line-height: 16px;
+    font-weight: 600;
     background: #fff;
   }
   .landPage_section2 {
@@ -75,7 +74,7 @@
     place-items: center;
   }
   .landPage_section2 img {
-    width: 40%;
+    width: 200px !important;
   }
   .landPage_sectionItems {
     margin: 0 32px !important;
@@ -85,11 +84,13 @@
     font-size: 24px !important;
     line-height: 140% !important;
     font-weight: 800 !important;
+    padding: 0 !important;
   }
   .landPage_sectionItems p {
     font-size: 14px !important;
     line-height: 22px !important;
     text-align: center;
+    padding: 32px 0 53px;
   }
   .landPage_section3 {
     padding: 82px 32px 0 !important;
@@ -99,6 +100,9 @@
     flex-direction: column;
     place-items: center;
     width: 100% !important;
+  }
+  .landPage_sectionItems1 br {
+    display: block !important;
   }
   .landPage_sectionItems1 h2 {
     font-size: 24px !important;
@@ -191,7 +195,7 @@
 }
 
 .landPage_section1 {
-  padding-bottom: 112pz;
+  background: #f8f8f8;
 }
 
 .landPage_imgFlex {
@@ -203,9 +207,9 @@
 
 .landPage_imgFlex img:nth-child(1) {
   object-fit: none;
-  transform: translate(25%, 2%);
+  transform: translate(10%, 2%);
 }
-.landPage_imgFlex img:nth-child(3) {
+.landPage_imgFlex img:nth-child(2) {
   display: none;
 }
 
@@ -253,9 +257,12 @@
   font-size: 20px;
   line-height: 19px;
   border: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
 }
 .landPage_btn button:nth-child(2) {
-  padding: 24.2767px 40px;
+  padding: 24.2767px 70px;
   background: #fff;
   border-radius: 7.28302px;
   color: #000;
@@ -263,54 +270,66 @@
   font-size: 20px;
   line-height: 19px;
   border: 1.5px solid #202020;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
 }
 
 .landPage_section2 {
-  padding-top: 78px;
+  padding-top: 139px;
   background: #f6f9ff;
 }
 
 .landPage_sectionItems {
-  display: grid;
-  place-content: center;
-  margin: 0 114px;
+  margin: 0 0 0 162px;
+}
+.landPage_section2 img {
+  width: 333.89px;
+}
+.landPage_sectionItems1 br {
+  display: none;
 }
 
 .landPage_sectionItems h2 {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 52px;
+  padding: 40px 0 30px;
 }
 .landPage_sectionItems p {
   font-weight: 400;
   font-size: 24px;
   line-height: 40px;
+  font-family: 'Inter';
 }
 
 .landPage_section3 {
-  padding-top: 78px;
+  padding-top: 139px;
   background: #f8f8f8;
 }
 
 .landPage_sectionItems1 {
-  display: grid;
-  place-content: center;
   margin: 0 114px 0 0;
   width: 75%;
 }
 
 .landPage_sectionItems1 h2 {
   font-style: normal;
+  font-family: 'Inter';
   font-weight: 600;
   font-size: 40px;
   line-height: 52px;
+  padding: 10px 0 30px;
 }
 .landPage_sectionItems1 p {
   font-weight: 400;
+  font-family: 'Inter';
   font-size: 24px;
   line-height: 40px;
 }
+
 .landPage_groupedImg img {
   width: 100%;
 }
@@ -321,6 +340,7 @@
 }
 .landPage_section4col {
   padding-top: 130px;
+  width: 60%;
 }
 .landPage_section4 h2 {
   color: #fff;
@@ -332,7 +352,7 @@
 .landPage_section4Items {
   display: flex;
   flex-direction: row;
-  padding-top: 42px;
+  padding: 42px 0 100px;
 }
 
 .landPage_section4Items img {
@@ -347,11 +367,14 @@
 }
 
 .landPage_section4img img {
-  width: 80%;
+  width: 300px;
+  top: -3%;
+  position: absolute;
+  right: -479px;
 }
 
 .landPage_section5 {
-  padding: 131px 80px;
+  padding: 131px 80px 0;
   background: #f6f9ff;
 }
 .landPage_section5 h2 {
@@ -377,7 +400,7 @@
   place-content: center;
   place-items: center;
   width: 100%;
-  height: 58%;
+  height: 64%;
 }
 
 .landPage_section5_div1 p {
@@ -406,7 +429,7 @@
   display: grid;
   place-content: center;
   place-items: center;
-  height: 90%;
+  height: 98%;
   width: 90%;
   transform: translate(2%, 0%);
 }
@@ -438,7 +461,7 @@
   place-content: center;
   place-items: center;
   transform: translate(-6%, 0%);
-  height: 90%;
+  height: 98%;
   width: 100%;
 }
 
@@ -469,9 +492,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  transform: translate(0%, -43%);
+  transform: translate(0%, -35%);
   width: 65%;
-  height: 93%;
+  height: 98%;
 }
 
 .landPage_section5_div4 p {
@@ -500,9 +523,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  transform: translate(-42%, -13%);
+  transform: translate(-42%, -2%);
   width: 106%;
-  height: 61%;
+  height: 65%;
 }
 
 .landPage_section5_div5 p {
@@ -531,9 +554,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  transform: translate(-25%, -13%);
+  transform: translate(-25%, -2%);
   width: 126%;
-  height: 61%;
+  height: 65%;
 }
 .landPage_section5_div6 p {
   font-weight: 300;
@@ -568,25 +591,26 @@
   font-weight: 800;
   font-size: 64px;
   line-height: 40px;
-  color: #202020;
+  color: #102A63;
 }
 .landPage_section6items p {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
   color: #000000;
+  padding: 32px 0 68px;
 }
 .landPage_section6items button {
-  background: #202020;
+  background: #102A63;
   border-radius: 7.28302px;
   color: #fff;
   padding: 24.2767px 40px;
   gap: 12.14px;
   border: 0;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
   line-height: 19px;
-  margin-top: 45px;
+  font-family: 'Inter';
 }
 .Carousel {
   display: none;
