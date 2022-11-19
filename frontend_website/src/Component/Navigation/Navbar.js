@@ -48,7 +48,7 @@ const Navbar = ({ isOpen, setOpen }) => {
           <Link className={styles.login_link} to='/login'>
             Login
           </Link>
-          <Link className={styles.download_link} to='/'>
+          <Link className={styles.download_link} to='/signup'>
             Download App
           </Link>
         </div>

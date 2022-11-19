@@ -191,11 +191,6 @@
     color: #1A46A7;
 }
 
-/* .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreLink {
-    position: absolute;
-    bottom: 30px;
-} */
-
 .getMoret {
     padding: 76px 80px 76px 80px;
     background: rgba(233, 239, 253, 0.6);
@@ -226,13 +221,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 56px;
 }
 
 .getMoret .inGetMoret .btn a {
-    padding: 20px 30px;
+    padding: 20px 25px;
     gap: 10px;
+    display: block;
     width: 176px;
+    height: 56px;
     height: min-content;
     background: #102A63;
     border-radius: 6px;
@@ -361,16 +357,6 @@
         font-size: 24px;
         line-height: 32px;
     }
-
-    /* .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreLink {
-        top: 17px;
-    } */
-}
-
-@media screen and (max-width: 713px) {
-    /* .integration .hM_content .inHM_box {
-        padding: 0px 40px 0px 40px;
-    } */
 }
 
 @media screen and (max-width: 600px) {
@@ -389,7 +375,7 @@
 
     .get_more .inGet_more .inGet_more_box .box {
         max-width: 382px;
-        height: 309px;
+        min-height: 309px;
     }
 
     .get_more .inGet_more .inGet_more_box {
@@ -405,11 +391,6 @@
     .getMoret .inGetMoret h4 {
         width: 100%;
     }
-
-    /* .get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreLink {
-        top: 0px;
-    } */
-
 }
 
 @media screen and (max-width: 375px) {
