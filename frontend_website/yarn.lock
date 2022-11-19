@@ -4533,8 +4533,6 @@ fork-ts-checker-webpack-plugin@^6.5.0:
     schema-utils "2.7.0"
     semver "^7.3.2"
     tapable "^1.0.0"
-<<<<<<< HEAD
-=======
 
 form-data@^3.0.0:
   version "3.0.1"
@@ -4867,7 +4865,6 @@ html-webpack-plugin@^5.5.0:
     "schema-utils" "2.7.0"
     "semver" "^7.3.2"
     "tapable" "^1.0.0"
->>>>>>> 18e2348150682bc18fd92228bbd53dcba38d2d5f
 
 form-data@^3.0.0:
   version "3.0.1"
@@ -7917,8 +7914,6 @@ react-dev-utils@^12.0.1:
     shell-quote "^1.7.3"
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
-<<<<<<< HEAD
-=======
 
 react-dom@^18.2.0:
   version "18.2.0"
@@ -7985,7 +7980,6 @@ react-router-dom@^6.4.3:
     "shell-quote" "^1.7.3"
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
->>>>>>> 18e2348150682bc18fd92228bbd53dcba38d2d5f
 
 react-dom@^18.2.0:
   version "18.2.0"
