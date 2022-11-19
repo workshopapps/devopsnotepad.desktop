@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { menuList } from './NavData';
-import { IoClose } from 'react-icons/io5';
+import { AiOutlineClose } from 'react-icons/ai';
 import logo from './assets/logo.svg';
 import styles from './Navigation.module.css';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,7 @@ const Navbar = ({ isOpen, setOpen }) => {
           <Link to="/" onClick={() => {setOpen(false)}}>
             <img src={logo} alt='' />
           </Link>
-          <IoClose
+          <AiOutlineClose
             className={styles.closeIcon}
             onClick={() => setOpen(false)}
           />
