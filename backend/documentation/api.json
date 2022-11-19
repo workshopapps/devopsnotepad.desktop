@@ -27,6 +27,113 @@
     }
   ],
   "paths": {
+    "/server": {
+      "patch": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "8392029hbdvyw798-88ehe8-82992",
+                "name": "updated server name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Server updated successfully"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  "8392029hbdvyw798-88ehe8-82992"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/server/8392029hbdvyw798-88ehe8-82992/notifications": {
       "post": {
         "description": "",
@@ -76,61 +183,6 @@
                   "success": true,
                   "message": "successful",
                   "serverLog": "add data points"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/server": {
-      "delete": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "serverIds": {
-                    "type": "array",
-                    "items": {}
-                  }
-                }
-              },
-              "example": {
-                "serverIds": [
-                  null
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "result": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "servers deleted successfully",
-                  "result": "1 servers deleted!"
                 }
               }
             }
