@@ -26,5 +26,109 @@
       "bearerAuth": []
     }
   ],
-  "paths": {}
+  "paths": {
+    "/server": {
+      "delete": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {}
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  null
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/a927b435-6835-11ed-995c-1458d0028583/subscribe": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "registrationToken": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "registrationToken": "670ca230-67e2-11ed-a65b2-1458d0028583"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Subscription successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

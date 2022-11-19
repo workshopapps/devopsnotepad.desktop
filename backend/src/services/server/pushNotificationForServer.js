@@ -6,6 +6,9 @@ import cron from "node-cron";
 import { NotFoundError, ServiceError } from "../../lib/errors/index.js";
 import firebaseConfig from "../../utils/firebaseConfig.js";
 
+const FCM = new fcm(admin.credential.cert(firebaseConfig));
+
+
 export default async function pushNotificationForServer(request){
 
     const server = await ServerRepo.getServerById(request.params.server_id);
@@ -15,7 +18,9 @@ export default async function pushNotificationForServer(request){
     if(request.body.registrationToken == "") throw new ServiceError("no registration token present");
 
     cron.schedule("*/5 * * * *", async () =>{
+
         let ipstatus = await ping.promise.probe(server.ipAddress);
+
         if (!ipstatus.alive) sendNotification({ipstatus, request})
     })
 
@@ -23,20 +28,24 @@ export default async function pushNotificationForServer(request){
 
 function sendNotification(payload){
 
-    let FCM = new fcm(admin.credential.cert(JSON.stringify(firebaseConfig)));
+    try{
 
-    let message = {
-        android: {
-            notification: {
-                title: "IMPORTANT",
-                body: `Server - ${payload.ipstatus.host} is still down`,
+        let message = {
+            android: {
+                notification: {
+                    title: "IMPORTANT",
+                    body: `Server - ${payload.ipstatus.host} is still down`,
+                },
             },
-        },
-        token: payload.request.body.registrationToken
-    };
+            token: payload.request.body.registrationToken
+        };
+    
+        FCM.send(message, (err, response) => {
+            if(err)
+                throw new ServiceError(err);
+        });
 
-    FCM.send(message, function(err, resp) {
-        if(err)
-            console.log("Error sending notification");
-    });
+    }catch(err){
+        throw new ServiceError("Error sending notification")
+    }
 }

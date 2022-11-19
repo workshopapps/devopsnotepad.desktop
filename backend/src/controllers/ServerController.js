@@ -3,6 +3,7 @@ import deleteSeversById from '../services/server/delete.js';
 import update from '../services/server/update.js';
 import getAllServers from '../services/server/getAll.js';
 import readOne from '../services/server/readOne.js';
+import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
 
 export default class ServerController {
   static create = async (req, res, next) => {
