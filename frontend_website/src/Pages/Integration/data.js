@@ -39,7 +39,7 @@ export const getMore = [
         "With our slack integration, you’ll be able to update slack channels with the server’s notes and details of a specific event on each server. With this, your team is always aware of potential or happening risks.",
       img: slack,
       linkLabel: "Learn More",
-      slug: ""
+      slug: "/slack"
     },
     {
       heading: "Google Drive",
@@ -47,7 +47,7 @@ export const getMore = [
         "With our Google driveintegration, you’ll be able to update  with the server’s notes and details of a specific event on each server. With this, your team is always aware of potential or happening risks.",
       img: googleDrive,
       linkLabel: "Learn More",
-      slug: ""
+      slug: "/google-drive"
     },
     {
       heading: "Gmail",
@@ -55,7 +55,8 @@ export const getMore = [
         "With gmail integration, you wiill be able to send emails with server notes and details of specific event on each servers",
       img: gmail,
       linkLabel: "Learn More",
-      slug: ""
+      gmail: true,
+      slug: "/gmail"
     },
     {
       heading: "JIra",
@@ -63,7 +64,7 @@ export const getMore = [
         "With our jira integration, you’ll be able to update create tasks with the server’s notes and details of a specific event on each server. With this, your team is always aware of potential or happening risks.",
       img: jira,
       linkLabel: "Learn More",
-      slug: ""
+      slug: "/jira"
     },
     {
       heading: "Trello",
@@ -71,7 +72,7 @@ export const getMore = [
         "With our trello integration, you’ll be able to update slack channels with the server’s notes and details of a specific event on each server. ",
       img: trello,
       linkLabel: "Learn More",
-      slug: ""
+      slug: "/trello"
     },
     {
       heading: "Google Meet",
@@ -79,6 +80,6 @@ export const getMore = [
         "With our google meet integration, you’ll be able to take notes easily on an event  with the server’s notes and details of a specific event on each server. ",
       img: googleMeet,
       linkLabel: "Learn More",
-      slug: ""
+      slug: "/google-meet"
     },
   ];
