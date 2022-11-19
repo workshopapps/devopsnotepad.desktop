@@ -11,12 +11,12 @@
 
 .h3 {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.9rem;
 }
 .h1 {
   font-size: 4rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 4.8rem;
   margin: 1.5rem 0 2rem;
 }
@@ -24,7 +24,7 @@
 .label {
   font-family: 'Roboto';
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.6rem;
 }
 .input {
@@ -44,7 +44,7 @@
 }
 
 .right {
-  flex-basis: 30%;
+  flex-basis: 25%;
   height: 50vh;
   position: relative;
 }
@@ -75,20 +75,24 @@
   background: #62b781;
 }
 .button {
-  background: #2563eb;
+  width: 16.1rem;
+  height: 4.8rem;
+  font-size: 1.4rem;
+  background: #102a63;
   color: #ffffff;
   transition: all 0.3s;
 }
 
 .button:hover {
-  background: #2564ebb3;
+  background: #102a63dc;
 }
+
 @media only screen and (max-width: 850px) {
   .section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10rem 2rem;
+    padding: 10rem 4rem;
   }
 
   .right {
@@ -98,7 +102,7 @@
 
 @media only screen and (max-width: 450px) {
   .section {
-    padding: 10rem 2rem;
+    padding: 10rem 3rem;
   }
   .h1 {
     font-size: 3.2rem;

@@ -1,6 +1,6 @@
 import bannerImg from './assets/hero-section-image.png';
 import { getMore, list } from './data';
-import './Integration.css';
+import './integration.css';
 
 const Integration = () => {
   return (
@@ -37,20 +37,20 @@ const Integration = () => {
             <p>Opspad is the hub of your productivity - integrating the tools you rely on to get things done.</p>
           </div>
           <div className="inGet_more_box">
-          {getMore.map((item, i) => {
-            return(
-              <div className="box" key={i}>
-                <div className="boxImg">
-                  <img src={item.img} alt="" />
+            {getMore.map((item, i) => {
+              return (
+                <div className="box" key={i}>
+                  <div className="boxImg">
+                    <img src={item.img} alt="" />
+                  </div>
+                  <h3>{item.heading}</h3>
+                  <p>
+                    {item.content}
+                  </p>
+                  <a className={`${item.gmail ? 'learnMore learnMoreGmail' : 'learnMore'}`} href={item.slug}>Learn More</a>
                 </div>
-                <h3>{item.heading}</h3>
-                <p>
-                  {item.content}
-                </p>
-                <a className={`${item.gmail ? 'learnMore learnMoreGmail' : 'learnMore'}`} href={item.slug}>Learn More</a>
-              </div>
-            )
-          })}
+              )
+            })}
           </div>
         </div>
       </div>

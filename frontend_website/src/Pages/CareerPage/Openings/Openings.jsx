@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TbArrowDownLeft } from 'react-icons/tb';
-import Button from '../../ComingSoon/Button/Button';
+import Button from '../../CareerPage/Button/Button';
 
 import Opening from './Opening';
 import classes from './Openings.module.css';
@@ -24,11 +24,6 @@ const openings = [
   {
     location: 'Remote',
     title: 'Fullstack Software Engineer',
-    department: 'Engineering',
-  },
-  {
-    location: 'Remote',
-    title: 'Backend Software Engineer',
     department: 'Engineering',
   },
   {
@@ -73,29 +68,18 @@ const openings = [
   },
   {
     location: 'Remote',
-    title: 'Fullstack Software Engineer',
-    department: 'Engineering',
-  },
-  {
-    location: 'Remote',
     title: 'Senior Product Manager',
     department: 'Engineering',
-  },
-  {
-    location: 'Remote',
-    title: 'Mobile(IOS) Software Developer',
-    department: 'Engineering',
-  },
-  {
-    location: 'Onsite',
-    title: 'Social Media Manager',
-    department: 'People Operations',
   },
 ];
 const Openings = () => {
   const [end, setEnd] = useState(7);
   return (
-    <section className={classes.openings}>
+    <section
+      className={classes.openings}
+      data-testid='opening__list'
+      id='openings'
+    >
       <div className={classes.div}>
         <h1 className={classes.h1}>See Current Openings</h1>
         <div className={classes.sub}>
@@ -103,8 +87,8 @@ const Openings = () => {
           <TbArrowDownLeft className={classes.svg} />
         </div>
       </div>
-      <ul className={classes.ul}>
-        {openings.slice(0, end).map((opening, index) => (
+      <ul className={`${classes.ul} ${classes.desktop}`}>
+        {openings.map((opening, index) => (
           <Opening
             key={index}
             location={opening.location}
@@ -113,19 +97,31 @@ const Openings = () => {
           />
         ))}
       </ul>
-      <div className={classes.btn_box}>
-        {end < openings.length ? (
-          <Button
-            onClick={() => setEnd(openings.length)}
-            className={classes.button}
-          >
-            See more...
-          </Button>
-        ) : (
-          <Button onClick={() => setEnd(7)} className={classes.button}>
-            See less
-          </Button>
-        )}
+      <div className={classes.mobile}>
+        <ul className={classes.ul}>
+          {openings.slice(0, end).map((opening, index) => (
+            <Opening
+              key={index}
+              location={opening.location}
+              title={opening.title}
+              department={opening.department}
+            />
+          ))}
+        </ul>
+        <div className={classes.btn_box}>
+          {end < openings.length ? (
+            <Button
+              onClick={() => setEnd(openings.length)}
+              className={classes.button}
+            >
+              See more...
+            </Button>
+          ) : (
+            <Button onClick={() => setEnd(7)} className={classes.button}>
+              See less
+            </Button>
+          )}
+        </div>
       </div>
     </section>
   );
