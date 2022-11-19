@@ -42,13 +42,17 @@
   column-gap: 15rem;
 }
 
+.mobile {
+  display: none;
+}
+
 .btn_box {
   margin: 3rem auto 0;
   width: 70%;
   text-align: right;
 }
 .button {
-  width: fit-content;
+  padding: 1.3rem 1.8rem;
   background: #ffffff;
   border: 0.2rem dashed #149443;
   color: #149443;
@@ -69,11 +73,8 @@
     column-gap: 5rem;
     padding: 3rem 2rem;
   }
-}
 
-@media only screen and (max-width: 850px) {
   .ul {
-    grid-template-columns: 1fr;
     row-gap: 5rem;
   }
   .div {
@@ -87,5 +88,18 @@
 
   .p {
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .ul {
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
   }
 }
