@@ -145,8 +145,9 @@
   }
   .banner {
     max-width: 1276px;
+    margin: 0 auto;
     width: 100%;
-    min-height: 918px;
+    min-height: 700px;
     height: fit-content;
     left: 82px;
     top: 121px;
@@ -268,7 +269,7 @@ p {
 }
 
 ol {
-  list-style-type: 1;
+  list-style-type: decimal-leading-zero;
   color: #000000;
 }
 
@@ -276,7 +277,7 @@ li {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 40px;
   display: flex;
   align-items: center;
