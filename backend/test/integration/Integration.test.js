@@ -45,7 +45,8 @@ describe("Notification", () => {
         let notifications = res.body.notifications;
         assert.equal(res.status, 200);
         assert.equal(notifications.length, 2);
-        assert.include(notifications[0].id, 4);    
+        assert.include(notifications[0].id, 4); 
+        docmaker.addEndpoint(res);   
     });
 
     it("should return notifications for the last 1 week and check ordering in asc order", async () => {
@@ -54,7 +55,8 @@ describe("Notification", () => {
         let notifications = res.body.notifications;
         assert.equal(res.status, 200);
         assert.equal(notifications.length, 3);
-        assert.include(notifications[0].id, 4);    
+        assert.include(notifications[0].id, 4);  
+        docmaker.addEndpoint(res);  
     });
 
     it("should return notifications for the last 1 month", async () => {
@@ -64,15 +66,7 @@ describe("Notification", () => {
         assert.equal(res.status, 200);
         assert.equal(notifications.length, 4);
         assert.include(notifications[3].id, 6);    
-    });
-
-    it("should return notifications for the last 1 month", async () => {
-        const res = await request.get("/server/2/notifications?range=monthly");
-
-        let notifications = res.body.notifications;
-        assert.equal(res.status, 200);
-        assert.equal(notifications.length, 4);
-        assert.include(notifications[3].id, 6);    
+        docmaker.addEndpoint(res);
     });
 
     it("should return empty notification", async () => {
@@ -80,7 +74,8 @@ describe("Notification", () => {
 
         let notifications = res.body.notifications;
         assert.equal(res.status, 200);
-        assert.equal(notifications.length, 0);  
+        assert.equal(notifications.length, 0);
+        docmaker.addEndpoint(res);  
     });
 
     it("should return default notifications if query parameter is invalid", async () => {
@@ -89,6 +84,7 @@ describe("Notification", () => {
         let notifications = res.body.notifications;
         assert.equal(res.status, 200);
         assert.equal(notifications.length, 4);  
+        docmaker.addEndpoint(res);
     });
 });
 
