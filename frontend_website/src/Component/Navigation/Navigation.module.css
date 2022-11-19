@@ -120,6 +120,7 @@
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
     border-bottom: 0.5px solid #E5E5E5;
     text-align: center;
+    width: 100%;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
