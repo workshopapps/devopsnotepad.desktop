@@ -3,7 +3,8 @@ import LandingPage from './Pages/Landing page/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
-import {About} from './Pages/About/About';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
@@ -40,13 +41,13 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/" exact element={<LandingPage />} />
-          <Route path="/integrations" element={<Integration />} />
-          <Route path="/faq" exact element={<Faq />} />
-          <Route path="/coming-soon" exact element={<ComingSoon />} />
-          <Route path="/career" exact element={<CareerPage />} />
-          <Route path="/contact" exact element={<Contact />} />
-          <Route path="/about-us" exact element={<About />} />
+          <Route path='/' exact element={<LandingPage />} />
+          <Route path='/integrations' element={<Integration />} />
+          <Route path='/faq' exact element={<Faq />} />
+          <Route path='/coming-soon' exact element={<ComingSoon />} />
+          <Route path='/career' exact element={<CareerPage />} />
+          <Route path='/contact-us' exact element={<ContactUs />} />
+          <Route path='/about-us' exact element={<About />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
