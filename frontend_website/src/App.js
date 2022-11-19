@@ -11,7 +11,6 @@ import Integration from "./Pages/Integration/Integration";
 import Faq from './Pages/Faq/Faq';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
-import ContactUs from './Pages/ContactUs/ContactUs';
 
 import classes from './App.module.css'
 
@@ -41,11 +40,10 @@ function App() {
       >
         <Routes>
           <Route path="/" exact element={<LandingPage />} />
-          <Route path="/integration" element={<Integration />} />
+          <Route path="/integrations" element={<Integration />} />
           <Route path="/faq" exact element={<Faq />} />
-          <Route path="/comingsoon" exact element={<ComingSoon />} />
+          <Route path="/coming-soon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
-          <Route path="/contactus" exact element={<ContactUs />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
