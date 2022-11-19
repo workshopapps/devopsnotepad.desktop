@@ -1,0 +1,358 @@
+/* .navigation {
+    border-bottom: 0.5px solid #E5E5E5;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0px;
+    background-color: #ffffff;
+    z-index: 9999;
+} */
+.navigation {
+    border-bottom: 0.5px solid #E5E5E5;
+    background-color: #ffffff;
+}
+
+.navigation .inNavigation {
+    padding: 23.5px 80px 23.5px 80px;
+}
+
+.navigation .mainNavigation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.navigation .mainNavigation .left {
+    display: flex;
+    align-items: center;
+}
+
+.navigation .mainNavigation .left .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation .mainNavigation .inMenuBar {
+    display: flex;
+    align-items: center;
+}
+
+.navigation .mainNavigation .inMenuBar .logo {
+    display: none;
+    width: 100%;
+}
+
+.navigation .mainNavigation .inMenuBar .logo .closeIcon {
+    font-size: 40px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList li a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #202020;
+    padding: 10px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .sMki {
+    position: relative;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #202020;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
+    margin-left: 8px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 0.5px solid #E5E5E5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown.show {
+    display: block;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
+    border-bottom: 0.5px solid #E5E5E5;
+    text-align: center;
+    width: 100%;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
+    border: 0.5px solid #E5E5E5;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line:last-child {
+    border: none;
+}
+
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a:last-child {
+    color: red;
+} */
+
+.navigation .mainNavigation .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 15px;
+}
+
+.navigation .mainNavigation .inMenuBar .menuUlList .navAuthBtn {
+    display: none;
+}
+
+.navigation .mainNavigation .right .hamburgerBar {
+    display: none;
+    position: relative;
+    top: 2px;
+}
+
+.navigation .mainNavigation .right .hamburgerBar img {
+    width: 35px;
+}
+
+.navAuthBtn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login_link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1B1830;
+}
+
+.download_link {
+    width: 132px;
+    height: 44px;
+    background: #102A63;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1060px) {
+    .navigation .inNavigation {
+        padding: 23.5px 50px 23.5px 50px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navigation .mainNavigation .inMenuBar {
+        flex-direction: column;
+    }
+
+    .navigation .mainNavigation .inMenuBar {
+        position: absolute;
+        left: -100%;
+        right: 0;
+        top: 90px;
+        width: 100%;
+        z-index: 9999;
+        height: 100vh;
+        background-color: #ffffff;
+        filter: drop-shadow(rgba(0, 0, 0, 0.185) 0px 4px 4px);
+        padding-top: 23.5px;
+        transition: 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+    }
+
+    .navigation .mainNavigation .inMenuBar .logo {
+        display: block;
+        margin-bottom: 23.5px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .logo .inLogo {
+        padding-left: 50px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigation .mainNavigation .inMenuBar.openMenu {
+        left: 0px;
+        transition: 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+    }
+
+    .navigation .mainNavigation .inMenuBar {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0px;
+        width: 100%;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList li {
+        width: 100%;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList li a {
+        display: block;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        display: flex;
+        padding-left: 50px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
+        width: 100%;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
+        width: 100%;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 60px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
+        padding-left: 70px;
+    }
+
+    .navigation .mainNavigation .right .hamburgerBar {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .navigation .mainNavigation .inMenuBar {
+        top: 84px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navigation .inNavigation {
+        padding: 23.5px 32px 23.5px 32px;
+    }
+
+    .navigation .mainNavigation .inMenuBar {
+        top: 85px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList li a,
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
+        padding-left: 40px;
+        padding-right: 45px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .logo .inLogo {
+        padding-left: 40px;
+        padding-right: 30px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
+        padding-left: 60px;
+    }
+
+    .navigation .mainNavigation .right .navAuthBtn {
+        display: none;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .navAuthBtn {
+        display: block;
+        padding-left: 40px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navigation .inNavigation {
+        padding: 23.5px 16px 23.5px 16px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList li a,
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
+        padding-left: 16px;
+        padding-right: 30px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .logo .inLogo,
+    .navigation .mainNavigation .inMenuBar .menuUlList .navAuthBtn {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
+        padding-left: 40px;
+    }
+
+}
