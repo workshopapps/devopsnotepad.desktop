@@ -18,6 +18,7 @@ export default class NotificationController {
             res.send({
                 success: true,
                 ...result,
+                page: query.page || 1,
             });
         } catch (error) {
             next(error);
