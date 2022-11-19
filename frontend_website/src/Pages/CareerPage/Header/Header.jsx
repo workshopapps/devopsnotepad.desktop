@@ -5,10 +5,17 @@ import Button from '../Button/Button';
 import classes from './Header.module.css';
 
 const Header = () => {
+  const scrollHandler = () => {
+    const section = document.querySelector('#openings');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <div className={classes.leftAligned} data-testid='header'>
+    <div className={classes.leftAligned} data-testid='header' id='header'>
       <div className={classes.left}>
-        <h1 className={classes.h1}>Be Part Of Something Big</h1>
+        <h1 className={classes.h1}>
+          Be Part Of Something <span className={classes.span}>Big</span>{' '}
+        </h1>
         <p className={classes.p}>
           Team Sandpaper is guided by respect, transparency and direct feedback.
           We are a customer based company committed to creating a safe working
@@ -17,7 +24,9 @@ const Header = () => {
           with us today!
         </p>
 
-        <Button className={classes.button}>View Open Positions</Button>
+        <Button className={classes.button} onClick={scrollHandler}>
+          View Open Positions
+        </Button>
       </div>
       <figure className={classes.right}>
         <img src={img4} alt='updates' className={classes.img} />

@@ -12,7 +12,7 @@
 }
 
 .right {
-  flex-basis: 40%;
+  flex-basis: 47%;
 }
 
 .h2 {
@@ -39,19 +39,23 @@
 }
 
 .button {
-  background: #2563eb;
+  width: 16.1rem;
+  height: 4.8rem;
+  font-size: 1.4rem;
+  background: #102a63;
   color: #ffffff;
   transition: all 0.3s;
 }
 
 .button:hover {
-  background: #2564ebb3;
+  background: #102a63e4;
 }
+
 @media only screen and (max-width: 850px) {
   .rightaligned {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 4rem 3rem;
+    padding: 4rem 6rem;
   }
 
   .right {
