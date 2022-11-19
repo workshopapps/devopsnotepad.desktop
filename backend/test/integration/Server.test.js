@@ -53,18 +53,6 @@ describe("Server", () => {
         assert.equal(res.status, 404);
     });
 
-    //2 Tests for Get single server by serverId
-    it("should get server with requested serverId param", async () => {
-        const res = await request.get("/server/8392029hbdvyw798-88ehe8-82992");
-        assert.equal(res.status, 200);
-        docmaker.addEndpoint(res);
-    });
-
-    it("should throw error if there is no server with that id", async () => {
-        const res = await request.get("/server/83930dbhduu3i3");
-        assert.equal(res.status, 404);
-    });
-
     //2 Tests for Update Server Endpoints
     it("should update server", async () => {
         const res = await request.patch("/server").send({
