@@ -63,4 +63,4 @@ jobs:
           context: "frontend_website/"
           file: "frontend_website/Dockerfile"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app-hng:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/opspad-frontend:latest
