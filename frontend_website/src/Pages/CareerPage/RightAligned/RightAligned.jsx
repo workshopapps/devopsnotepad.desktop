@@ -20,7 +20,7 @@ const RightAligned = () => {
         <h2 className={classes.h2}>Who we are</h2>
         <p className={classes.p}>
           We are a small team of highly dedicated and ambitious people. We are
-          curious, funny radicall honest yet kind, and we thrive on
+          curious, funny radically honest yet kind, and we thrive on
           collaboration and transparency.If you are interested in working in a
           fast growth environnment see our openings below.
         </p>

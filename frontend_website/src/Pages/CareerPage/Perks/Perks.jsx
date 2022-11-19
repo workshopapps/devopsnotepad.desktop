@@ -19,7 +19,7 @@ const perks = [
     icon: <img src={auto} alt='icon_2' className={classes.svg} />,
     title: 'Work-life balance',
     description:
-      'At Opspad, we value you. We offer flexible holidays and working hours.',
+      'At Team Sandpaper, we value you. We offer flexible holidays and working hours.',
   },
   {
     icon: <img src={hospital} alt='icon_2' className={classes.svg} />,
