@@ -370,6 +370,7 @@ button{
 .abOpsImg{
     width: 100%;
     display: block;
+    mix-blend-mode: color-burn;
 }
 
 
