@@ -55,6 +55,7 @@ export const getMore = [
         "With gmail integration, you wiill be able to send emails with server notes and details of specific event on each servers",
       img: gmail,
       linkLabel: "Learn More",
+      gmail: true,
       slug: ""
     },
     {
