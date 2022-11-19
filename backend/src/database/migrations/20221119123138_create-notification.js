@@ -1,4 +1,3 @@
-
 export async function up(knex) {
     return knex.schema.createTable('notifications', table => {
         table.uuid("notificationId").primary().defaultTo(knex.raw("(UUID())"));

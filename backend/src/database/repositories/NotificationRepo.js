@@ -8,7 +8,6 @@ export default class NotificationRepo {
     };
 
     static getNotificationById = async (id) => {
-        console.log(id);
         return connection("notifications").where("notification_id", id).first();
     };
 
