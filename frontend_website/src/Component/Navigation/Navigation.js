@@ -3,6 +3,7 @@ import logo from "./assets/logo.svg";
 import menuIcon from "./assets/menu-icon.svg"
 import styles from "./Navigation.module.css";
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
@@ -13,9 +14,9 @@ const Navigation = () => {
         <div className={styles.mainNavigation}>
           <div className={styles.left}>
             <div className={styles.logo}>
-              <a href="/">
+              <Link to="/">
                 <img src={logo} alt="" />
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -23,8 +24,8 @@ const Navigation = () => {
 
           <div className={styles.right}>
             <div className={styles.navAuthBtn}>
-              <a className={styles.login_link} href="/login">Login</a>
-              <a className={styles.download_link} href="/">Download App</a>
+              <Link className={styles.login_link} to="/login">Login</Link>
+              <Link className={styles.download_link} to="/">Download App</Link>
             </div>
             <div className={styles.hamburgerBar}>
               <img src={menuIcon} onClick={() => setOpen(true)} alt="menuIcon" />

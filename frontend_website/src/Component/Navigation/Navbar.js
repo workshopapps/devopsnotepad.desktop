@@ -3,6 +3,7 @@ import { menuList } from './NavData';
 import { IoClose } from 'react-icons/io5';
 import logo from './assets/logo.svg';
 import styles from './Navigation.module.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ isOpen, setOpen }) => {
   const [menuOpen, setMenuOpen] = useState({});
@@ -13,7 +14,9 @@ const Navbar = ({ isOpen, setOpen }) => {
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
       <div className={styles.logo}>
         <div className={styles.inLogo}>
-          <img src={logo} alt='' />
+          <Link to="/">
+            <img src={logo} alt='' />
+          </Link>
           <IoClose
             className={styles.closeIcon}
             onClick={() => setOpen(false)}
@@ -30,7 +33,7 @@ const Navbar = ({ isOpen, setOpen }) => {
                 {menu.subMenu && (
                   <div className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
                     {menu.subMenu.map((sMenu, i) => (
-                      <li><a href={`${sMenu.slug}`} key={i}>{sMenu.title}</a></li>
+                      <li><Link to={`${sMenu.slug}`} key={i} onClick={() => handleMenuToggle(false)}>{sMenu.title}</Link></li>
                     ))}
                   </div>
                 )}
@@ -39,12 +42,12 @@ const Navbar = ({ isOpen, setOpen }) => {
         </div>
 
         <div className={styles.navAuthBtn}>
-          <a className={styles.login_link} href='/login'>
+          <Link className={styles.login_link} to='/login'>
             Login
-          </a>
-          <a className={styles.download_link} href='/'>
+          </Link>
+          <Link className={styles.download_link} to='/'>
             Download App
-          </a>
+          </Link>
         </div>
       </ul>
     </nav>
