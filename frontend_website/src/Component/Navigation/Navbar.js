@@ -14,7 +14,7 @@ const Navbar = ({ isOpen, setOpen }) => {
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
       <div className={styles.logo}>
         <div className={styles.inLogo}>
-          <Link to="/">
+          <Link to="/" onClick={() => {setOpen(false)}}>
             <img src={logo} alt='' />
           </Link>
           <IoClose

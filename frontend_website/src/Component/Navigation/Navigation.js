@@ -14,7 +14,7 @@ const Navigation = () => {
         <div className={styles.mainNavigation}>
           <div className={styles.left}>
             <div className={styles.logo}>
-              <Link to="/">
+              <Link to="/" onClick={() => {setOpen(false)}}>
                 <img src={logo} alt="" />
               </Link>
             </div>
