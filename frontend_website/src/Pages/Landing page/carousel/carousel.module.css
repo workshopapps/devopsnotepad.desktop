@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid !important;
+  place-content: center;
+  place-items: center;
+}
+
+.landPage_section5_div1 {
+  background: #ffffff;
+  padding: 30px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  width: 63%;
+  background: #ffffff;
+  border: 0.841082px solid #f4f4f4;
+  border-radius: 26.9146px;
+}
+.landPage_section5_div1 p {
+    font-weight: 300;
+font-size: 20.186px !important;
+line-height: 27px;
+text-align: center;
+  }
+
+  .prevC {
+    transform: translate(-1920%, -1340%);
+}
+.nextC {
+    transform: translate(1920%, -1340%);
+}
+
+@media screen and (max-width: 768px) {
+    .Carousel {
+        display: block !important;
+    }
+}
