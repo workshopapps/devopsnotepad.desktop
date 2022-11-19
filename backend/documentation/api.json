@@ -133,6 +133,62 @@
           }
         }
       }
+    },
+    "/server/8392029hbdvyw798-88ehe8-82992/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverId": {
+                    "type": "string"
+                  },
+                  "log": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "serverId": "8392029hbdvyw798-88ehe8-82992",
+                "log": "add data points"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "serverLog": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "successful",
+                  "serverLog": "add data points"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
