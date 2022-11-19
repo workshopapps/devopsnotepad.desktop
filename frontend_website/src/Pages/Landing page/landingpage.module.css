@@ -40,7 +40,11 @@
     text-align: center;
     padding-bottom: 40px;
   }
-  .landPage_section3 {
+  .landPage_section4Items img {
+    width: 14% ;
+  }
+  .landPage_section4Items {
+    gap: 4px !important;
   }
   .landPage_sectionItems1 {
     margin: 0 !important;
@@ -83,9 +87,9 @@
   }
   .landPage_section4img img:nth-child(2) {
     display: block !important;
-    width: 220px !important;
+    width: 280px !important;
     right: -190px !important;
-    top: -281px !important;
+    top: -358px !important;
     position: absolute;
   }
   .landPage_section5 {
@@ -115,7 +119,7 @@
   }
   .landPage_section1 {
     padding-bottom: 69px !important;
-    margin-top: 80px !important;
+    padding-top: 80px !important;
   }
   .landPage_h1 {
     font-size: 24px !important;
@@ -243,10 +247,18 @@
     text-align: center;
     font-weight: 800 !important;
     width: 100% !important;
+    margin: 0 !important;
+  }
+  .landPage_section4 h2 {
+    margin: 0 !important;
   }
   .landPage_section4col {
     padding-top: 71px !important;
     width: 100% !important;
+  }
+  .landPage_section4Items img {
+    width: 30% !important;
+    margin-bottom: 60px !important;
   }
   .landPage_section4img {
     transform: translate(20%, -20%);
@@ -256,7 +268,7 @@
   }
   .landPage_section4img img:nth-child(2) {
     display: block !important ;
-    transform: translate(-90%, 19%);
+    transform: translate(-62%, 19%)
   }
   .landPage_section4Items {
     padding-bottom: 265px !important;
@@ -470,7 +482,7 @@
   font-weight: 800;
   font-size: 64px;
   line-height: 72px;
-  margin: 0 0 30px !important;
+  margin: 0 0 30px;
 }
 
 .landPage_section4Items {
@@ -492,7 +504,7 @@
 
 .landPage_section4img img {
   width: 292px;
-  top: 20px;
+  top: 19px;
   position: absolute;
   right: -455px;
 }
@@ -734,7 +746,7 @@
   font-size: 64px;
   line-height: 40px;
   color: #102a63;
-  margin: 0 ;
+  margin: 0;
 }
 .landPage_section6items p {
   font-weight: 400;
