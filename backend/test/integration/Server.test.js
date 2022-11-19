@@ -21,7 +21,7 @@ describe('Server', () => {
     const res = await request.post('/server').send({
       name: 'example server',
       ipAddress: 'google.com',
-      deviceId: 80988579,
+      device_id: 80988579,
       id: '8392029hbdvyw798-88ehe8-82992',
     });
 
