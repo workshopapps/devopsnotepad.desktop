@@ -65,11 +65,9 @@ const Input = () => {
             onChange={onChange}
           />
         ))}
-        <div className="btn__submit btn">
-            <button className="btn__link submit">
-              Send message
-            </button>
-          </div>
+        <div className='btn__submit btn'>
+          <button className='btn__link submit'>Send message</button>
+        </div>
       </form>
     </div>
   );
