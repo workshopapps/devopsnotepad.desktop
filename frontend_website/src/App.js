@@ -9,12 +9,11 @@ import Feature from "./Pages/Features/Feature";
 function App() {
   return (
     <React.Fragment>
-      <Header/>
+      {/* <Header/> */}
       <Routes>
-        <Route path="/" exact element={<Feature />} />
+        <Route path="/feature" exact element={<Feature />} />
       </Routes>
-      <Footer />
-      <LandingPage />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 }

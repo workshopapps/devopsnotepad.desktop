@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
+    /* border: 1px solid green; */
 }
 
 :root{
@@ -14,6 +15,8 @@
     --bluePrimary: #102A63;
     --backgroundL: #F6F9FF;
     --white: #FFFFFF;
+    --gray: #6F6F6F;
+    --light: #EDEDED;
 }
 
 button{
@@ -26,11 +29,12 @@ button{
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
+    flex-direction: column;
 }
 
 .feature{
-    width: min(1300px, 95%);
-    margin-top: 140px;
+    width: min(1300px, 90%);
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,31 +66,35 @@ button{
     color: var(--colorL);
     font-weight: 400;
     font-size: 16px;
-    line-height: 22px;
-    /* opacity: 80%; */
 }
 
 .minilandpagebtn{
-    padding: 15px 30px;
+    padding: 20px 30px;
     background: none;
     border-radius: 6px;
-    border: 1px solid var(--colorL);
+    border: 1px solid var(--bluePrimary);
     font-weight: 600;
+    color: var(--bluePrimary);
 }
 
 /* ===============================SERVER SECTION STYLING STARTS HERE ========================*/
 .servers{
     width: 100%;
-    min-height: 350px;
+    min-height: 277px;
     display: flex;
     align-items: flex-start;
     gap: 82px;
     /* background-color: pink; */
+
+}
+
+.serverImgWrapper{
+    width: min(782px, 70%);
 }
 
 .serverImg{
-    width: min(782px, 90%);
     display: block;
+    width: 100%;
 }
 
 .serversText{
@@ -99,7 +107,6 @@ button{
 .serversTextHeading{
     color: var(--bluePrimary);
     font-size: 40px;
-    line-height: 55px;
     margin-bottom: 12px;
     font-weight: 700;
 }
@@ -118,10 +125,15 @@ button{
     justify-content: space-evenly;
     width: 100%;
     background-color: var(--backgroundL);
+    padding-top: 40px;
+}
+
+.noteImgWrapper{
+    width: min(700px, 50%);
 }
 
 .noteImg{
-    width: min(700px, 100%);
+    width: 100%;
     display: block;
 }
 
@@ -134,8 +146,6 @@ button{
     color: var(--bluePrimary);
     font-weight: 700;
     font-size: 40px;
-    line-height: 54px;
-    width: min(350px);
 }
 
 .notesTextparagraph{
@@ -153,6 +163,15 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.passwordImgWrapper{
+    width: min(550px, 80%); 
+}
+
+.passwordImg{
+    width: 100%;
+    display: block;
 }
 
 .passwordText{
@@ -184,6 +203,22 @@ button{
     padding-left: 100px;
 }
 
+.authenImgWrapper{
+    width: min(737px, 47%);
+}
+
+.authenImg{
+    width: 100%;
+    display: block;
+}
+
+.authenImgMobile{
+    width: 100%;
+    display: none;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 .autenticationText{
     width: 360px;
 }
@@ -191,7 +226,6 @@ button{
 .autenticationTextHeading{
     color: var(--bluePrimary);
     font-size: 40px;
-    line-height: 55px;
     margin-bottom: 12px;
     font-weight: 700;
 }
@@ -209,26 +243,600 @@ button{
 }
 
 
+/* =================================================== NOTIFICATIONS AND SIGN IN OPTIONS STYLING STARTS HERE */
 
-/* ============================================================================ MEDIA QUERIES =================================================================================================== */
+.notificationandsigninoption{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 103px;
+    flex-direction: column;
+}
 
+.notificationandsigninoptionFlex{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.notifications{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: min(300px, 90%);
+    align-items: center;
+}
+
+.notificationsHeading{
+    font-size: 20px;
+    color: var(--bluePrimary);
+    text-align: center;
+}
+
+.notificationsParagraph{
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--colorB);
+}
+
+.profile{
+    width: min(300px,90%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.profileImg{
+    width: 70px;
+}
+
+.profileHeading{
+    font-size: 20px;
+    color: var(--bluePrimary);
+    text-align: center;
+}
+
+.profileParagraph{
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--colorB);
+}
+
+.notificationProfileText{
+    font-size: 36px;
+    color: var(--gray);
+    margin-top: 46px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/* ============================================ ABOUT OPSPAD SECTION STYLING STARTS HERE */
+.aboutOpspad{
+    width: 100%;
+    background-color: var(--bluePrimary);
+    margin-top: 88px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 62px 0 ;
+}
+
+.aboutOpspadContent{
+    width: min(676px, 100%);
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+.aboutOpspadContentHeading{
+    font-size: 36px;
+    color: var(--white);
+}
+
+.aboutOpspadContent hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--white);
+}
+
+.aboutOpspadContentParagraph{
+    font-size: 20px;
+    color: var(--light);
+    font-weight: 500;
+    line-height: 32px;
+    opacity: 0.8;
+}
+
+.aboutOpspadContentButton{
+    background: none;
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.aboutOpspadImgWrapper{
+    width: min(352px, 40%);
+}
+
+.abOpsImg{
+    width: 100%;
+    display: block;
+}
+
+
+
+
+/* ====================================================================================================== MEDIA QUERIES =================================================================================================== */
+
+/*============================================= MEDIA QUERY FOR MINI LANDING PAGE SECTION  */
+
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (max-width: 800px) {
+    .opspadfeaturesminilandingpage{
+        gap: 12px;
+    }
+
+    .minilandpageheading{
+       font-size: 32px;
+       text-align: center;
+    }
+    
+    .minilandpageparagraph{
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .minilandpagebtn{
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+/*======================================================== MEDIA QUERY FOR SERVER SECTION */
 @media (max-width: 1250px) {
     .servers{
         gap: 22px;
     }
 }
 
-/* ============== MAX-WIDTH OF 800PX ========================== */
+/* ============== TABLET AND IPADS SCREENS */
 
-@media (max-width: 800px) {
-    .servers{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 22px;
+@media (min-width: 530px) and (max-width: 800px) {
+    .serversTextHeading{
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+    
+    .serversTextParagraph{
+        font-size: 12px;
+        line-height: 19px;
     }
 
+    .serverImgWrapper{
+        width: min(782px, 90%);
+    }
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){
+    .serversText{
+        width: min(330px, 95%);
+        align-self: flex-end;
+    }
+
+    .servers{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 22px;
+        border-radius: 10px;
+    }
+
+    .serversTextHeading{
+        font-size: 32px;
+    }
+    
+    .serversTextParagraph{
+        font-size: 14px;
+        line-height: 19px;
+        width: min(195px, 95%);
+    }
+
+    .serverImgWrapper{
+        width: 90%;
+    }
+    
     .serverImg{
-        display: inline;
+        border-radius: 8px;
+    }
+}
+
+
+
+
+/* =========================================== MEDIA QUERY FOR NOTES SECTION */
+
+@media (max-width: 1295px) {
+    /* .notesText{
+        width: min(202px);
+        align-self: center;
+        margin-left: 60px;
+    } */
+}
+
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (min-width: 530px) and (max-width: 800px) {
+    .noteImgWrapper{
+        width: min(700px, 50%);
+    }
+    
+    .notesText{
+        width: min(202px);
+        align-self: center;
+
+    }
+    
+    .notesTextHeading{
+        font-size: 24px;
+    }
+    
+    .notesTextparagraph{    
+       font-size: 12px;
+       line-height: 18px;
+    }    
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){
+    .notesSection{
+        margin-top: 33px;
+        flex-direction: column;
+        border-radius: 8px;
+        padding: 15px;
+        padding-bottom: 0;
+    }
+
+    .noteImgWrapper{
+        width: min(700px, 90%);
+    }
+
+    .notesText{
+        width: min(240px, 90%);
+        align-self: flex-start;
+        padding: 18px;
+    }
+
+    .notesTextHeading{
+        font-size: 32px;
+    }
+    
+    .notesTextparagraph{
+       font-size: 14px;
+       line-height: 20px;
+    }  
+}
+
+/* ================================================= MEDIA QUERY FOR PASSWORD SECTION  */
+
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (min-width: 530px) and (max-width: 800px) {
+    .password{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* background-color: pink; */
+    }
+    
+    .passwordText{
+        width: 230px;
+    }
+    
+    .passwordImgWrapper{
+        width: min(736px, 50%); 
+    }
+    
+
+    .passwordTextHeading{
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+    
+    .passwordTextParagraph{
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){
+    .password{
+        flex-direction: column-reverse;
+        padding-top: 54px;
+    }
+
+    .passwordImgWrapper{
+        width: min(736px, 100%); 
+    }
+    
+    .passwordTextHeading{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .passwordText{
+        width: min(240px, 95%);
+        padding-bottom: 18px;
+    }
+
+    .passwordTextParagraph{
+        font-size: 14px;
+        width: min(240px, 95%);
+        line-height: 19px;
+    }
+}
+
+/* ========================================= MEDIA QUERY FOR AUTHENTICATION SECTION  */
+
+@media (max-width: 1080px) {
+    .autentication{
+        padding-left: 50px;
+    }
+}
+
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (min-width: 530px) and (max-width: 800px) {
+    .autenticationText{
+        width: 230px;
+    }
+
+    .authenImgWrapper{
+        width: min(737px, 50%);
+    }
+    
+    .autenticationTextHeading{
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+    
+    .autenticationTextParagraoh{
+       font-size: 12px;
+       line-height: 18px;
+       width: 230px;
+    }
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){
+    .autentication{
+        flex-direction: column;
+        padding-left: 20px;
+        gap: 30px;
+    }
+
+    .authenImg{
+        width: 100%;
+        display: none;
+    }
+    
+    .authenImgMobile{
+        width: 100%;
+        display: block;
+    }
+
+    .autenticationText{
+        width: min(310px, 95%);
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+
+    .autenticationTextHeading{
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .autenticationTextParagraoh{
+        font-size: 14px;
+        width: 100%;
+        line-height: 19px;
+     }
+
+     .authenImgWrapper{
+        width: min(737px, 60%);
+        align-self: flex-end;
+    }
+}
+
+
+/* =================================================== MEDIA QUERY FOR NOTIFICATIONS AND SIGN IN OPTIONS */
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (min-width: 530px) and (max-width: 800px) {
+    .Bell{
+        width: 40px;
+    }
+
+    .notifications{
+        width: min(168px, 90%);
+        gap: 11px;
+    }
+
+    .notificationsHeading{
+        font-size: 12px;
+    }
+    
+    .notificationsParagraph{
+       font-size: 10px;
+       line-height: 13px;
+    }
+
+    .profile{
+        width: min(168px, 90%);
+        gap: 11px;
+    }
+
+    .profileImg{
+        width: 40px;
+    }
+    
+    .profileHeading{
+        font-size: 12px;
+    }
+    
+    .profileParagraph{
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    .notificationProfileText{
+        font-size: 20px;
+    }
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){
+    .notificationandsigninoptionFlex{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .notifications{
+        width: min(290px, 90%);
+        gap: 11px;
+    }
+
+    .notificationsHeading{
+        font-size: 20px;
+    }
+    
+    .notificationsParagraph{
+       font-size: 14px;
+       line-height: 19px;
+    }
+
+    .profile{
+        width: min(290px, 90%);
+        gap: 11px;
+    }
+
+    .profileImg{
+        width: 40px;
+    }
+    
+    .profileHeading{
+        font-size: 20px;
+    }
+    
+    .profileParagraph{
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .notificationProfileText{
+        margin-top: 90px;
+        font-size: 24px;
+    }
+}
+
+/* ============================================ MEDIA QUERY FOR ABOUT OPSPAD SECTION */
+
+@media (max-width: 1200px) {
+    .aboutOpspad{
+        padding: 62px 50px;
+        gap: 40px;
+    }
+}
+
+/* ============== TABLET AND IPADS SCREENS */
+
+@media (min-width: 530px) and (max-width: 800px) {
+    .aboutOpspadContent{
+        gap: 20px;
+    }
+
+    .aboutOpspadContentHeading{
+        font-size: 20px;
+    }
+
+    .aboutOpspadContentParagraph{
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .aboutOpspadContentButton{
+       padding: 9px 10px;
+       font-size: 11px;
+    }
+}
+
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px){  
+    .aboutOpspad{
+        flex-direction: column;
+        max-height: 496px;
+        overflow: hidden;
+        position: relative;
+    }
+    .aboutOpspadContent{
+        align-items: center;
+        gap: 40px;
+    }
+
+    .aboutOpspadContentHeading{
+        font-size: 32px;
+    }
+
+    .aboutOpspadContentParagraph{
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+    }
+
+    .aboutOpspadContentButton{
+       padding: 16px 18px;
+       font-size: 20px;
+    }
+
+    .aboutOpspadImgWrapper{
+        width: min(352px, 100%);
+        position: absolute;
+        bottom: -230px;
+    }
+}
+
+@media (max-width: 350px) {
+    .aboutOpspadContent{
+        align-items: center;
+        gap: 15px;
+    }
+
+    .aboutOpspad{
+        padding: 30px 20px;
+        gap: 40px;
     }
 }
