@@ -43,12 +43,20 @@
                   },
                   "ipAddress": {
                     "type": "string"
+                  },
+                  "device_id": {
+                    "type": "number"
+                  },
+                  "id": {
+                    "type": "string"
                   }
                 }
               },
               "example": {
                 "name": "example server",
-                "ipAddress": "google.com"
+                "ipAddress": "google.com",
+                "device_id": 80988579,
+                "id": "8392029hbdvyw798-88ehe8-82992"
               }
             }
           }
@@ -76,6 +84,9 @@
                         "name": {
                           "type": "string"
                         },
+                        "device_id": {
+                          "type": "string"
+                        },
                         "ipAddress": {
                           "type": "string"
                         },
@@ -96,11 +107,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
+                    "id": "8392029hbdvyw798-88ehe8-82992",
                     "name": "example server",
+                    "device_id": "80988579",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-16T15:40:24.000Z",
-                    "updated_at": "2022-11-16T15:40:24.000Z"
+                    "created_at": "2022-11-18T11:07:45.000Z",
+                    "updated_at": "2022-11-18T11:07:45.000Z"
                   },
                   "isOnline": true
                 }
@@ -128,7 +140,7 @@
                 }
               },
               "example": {
-                "id": "fc95cc62-65c4-11ed-93a4-8cdcd4798fc6",
+                "id": "8392029hbdvyw798-88ehe8-82992",
                 "name": "updated server name"
               }
             }
