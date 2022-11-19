@@ -46,17 +46,13 @@
                   },
                   "device_id": {
                     "type": "number"
-                  },
-                  "id": {
-                    "type": "string"
                   }
                 }
               },
               "example": {
                 "name": "example server",
                 "ipAddress": "google.com",
-                "device_id": 80988579,
-                "id": "8392029hbdvyw798-88ehe8-82992"
+                "device_id": 80988579
               }
             }
           }
@@ -107,14 +103,87 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "8392029hbdvyw798-88ehe8-82992",
+                    "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
                     "name": "example server",
                     "device_id": "80988579",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-18T11:07:45.000Z",
-                    "updated_at": "2022-11-18T11:07:45.000Z"
+                    "created_at": "2022-11-19T15:44:38.000Z",
+                    "updated_at": "2022-11-19T15:44:38.000Z"
                   },
                   "isOnline": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "servers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "device_id": {
+                            "type": "string"
+                          },
+                          "ipAddress": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "1 servers found on this device",
+                  "servers": [
+                    {
+                      "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
+                      "name": "example server",
+                      "device_id": "80988579",
+                      "ipAddress": "google.com",
+                      "created_at": "2022-11-19T15:44:38.000Z",
+                      "updated_at": "2022-11-19T15:44:38.000Z"
+                    }
+                  ]
                 }
               }
             }
@@ -140,7 +209,7 @@
                 }
               },
               "example": {
-                "id": "8392029hbdvyw798-88ehe8-82992",
+                "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
                 "name": "updated server name"
               }
             }
