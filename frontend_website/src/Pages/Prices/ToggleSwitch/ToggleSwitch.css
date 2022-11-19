@@ -3,3 +3,9 @@ h4{
     font-size: 20px;
     color:#6F6F6F;
 }
+
+@media(max-width: 835px){
+    h4{
+        font-size: 18px;
+    }
+}
