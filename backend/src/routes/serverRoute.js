@@ -8,5 +8,6 @@ router.patch('/', ServerController.update);
 router.get('/', ServerController.getAllServers);
 router.get('/:serverId', ServerController.readOne);
 router.delete('/', ServerController.deleteServersById);
+router.post('/:server_id/subscribe', ServerController.subscribe);
 
 export default router;
