@@ -20,7 +20,7 @@ const Button = (props) => {
 Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
-  disabled: PropTypes.string,
+  disabled: PropTypes?.bool,
   type: PropTypes.string,
 };
 

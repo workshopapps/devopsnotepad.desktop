@@ -6,13 +6,15 @@ import { ErrorBoundary } from 'react-error-boundary';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
-import Navigation from './Component/Navigation/Navigation';
+// import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
 import Faq from './Pages/Faq/Faq';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 
 import classes from './App.module.css';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/SignUp/SignUp';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -32,7 +34,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navigation />
+      {/* <Navigation /> */}
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -44,6 +46,8 @@ function App() {
           <Route path='/integration' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
           <Route path='/comingsoon' exact element={<ComingSoon />} />
+          <Route path='/signup' exact element={<SignUp />} />
+          <Route path='/login' exact element={<Login />} />
           <Route path='/career' exact element={<CareerPage />} />
           <Route path='/contactus' exact element={<ContactUs />} />
           <Route path='/about-us' exact element={<About />} />
