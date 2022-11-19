@@ -33,9 +33,9 @@
   display: block;
 }
 
-.btn {
+.btn, .btnColored {
   font-family: 'Manrope';
-  height: 60px;
+  height: 65px;
   width: 100%;
   border-radius: 8px;
   margin: 3% 0 0 0;
@@ -50,6 +50,11 @@
   cursor: pointer;
 }
 
+.btnColored{
+  background-color: #143681;
+  color: white;
+}
+
 .grid2Header {
   font-weight: 700;
   font-size: 55px;
@@ -62,7 +67,7 @@
   background-color: #e9effd;
   border-radius: 8px;
   padding: 3%;
-  height: 335px;
+  height: 450px;
   font-weight: 400;
   font-size: 20px;
   line-height: 33px;

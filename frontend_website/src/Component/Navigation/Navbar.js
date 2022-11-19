@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { menuList } from './MenuData';
+import { menuList } from './menuData';
 import { IoClose } from 'react-icons/io5';
 import logo from "./assets/logo.svg";
 
@@ -21,11 +21,11 @@ const Navbar = ({ isOpen, setOpen }) => {
         {/* <li><a href="/">Home</a></li> */}
         <div className="menuBox">
           <button className="menu_title"
-          onClick={() => {
-            setProductDropdown(!productDropdown)
-            setCompanyDropdown(false)
-            setResourcesDropdown(false)
-            setCommunityDropdown(false)
+            onClick={() => {
+              setProductDropdown(!productDropdown)
+              setCompanyDropdown(false)
+              setResourcesDropdown(false)
+              setCommunityDropdown(false)
             }}>
             Product <i className="fa-solid fa-angle-down"></i>
           </button>
@@ -48,11 +48,11 @@ const Navbar = ({ isOpen, setOpen }) => {
 
         <div className="menuBox">
           <button className="menu_title"
-          onClick={() => {
-            setCompanyDropdown(!companyDropdown)
-            setProductDropdown(false)
-            setResourcesDropdown(false)
-            setCommunityDropdown(false)
+            onClick={() => {
+              setCompanyDropdown(!companyDropdown)
+              setProductDropdown(false)
+              setResourcesDropdown(false)
+              setCommunityDropdown(false)
             }}>
             Company <i className="fa-solid fa-angle-down"></i>
           </button>
@@ -75,11 +75,11 @@ const Navbar = ({ isOpen, setOpen }) => {
 
         <div className="menuBox">
           <button className="menu_title"
-          onClick={() => {
-            setResourcesDropdown(!resourcesDropdown)
-            setProductDropdown(false)
-            setCompanyDropdown(false)
-            setCommunityDropdown(false)
+            onClick={() => {
+              setResourcesDropdown(!resourcesDropdown)
+              setProductDropdown(false)
+              setCompanyDropdown(false)
+              setCommunityDropdown(false)
             }}>
             Resources <i className="fa-solid fa-angle-down"></i>
           </button>
@@ -101,12 +101,12 @@ const Navbar = ({ isOpen, setOpen }) => {
         </div>
 
         <div className="menuBox">
-          <button className="menu_title" 
-          onClick={() => {
-            setCommunityDropdown(!communityDropdown)
-            setProductDropdown(false)
-            setCompanyDropdown(false)
-            setResourcesDropdown(false)
+          <button className="menu_title"
+            onClick={() => {
+              setCommunityDropdown(!communityDropdown)
+              setProductDropdown(false)
+              setCompanyDropdown(false)
+              setResourcesDropdown(false)
             }}>
             Community <i className="fa-solid fa-angle-down"></i>
           </button>
