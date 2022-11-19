@@ -33,13 +33,13 @@ const Footer = () => {
                 </div>
               ))}
 
-              <li className={`${styles.miUM} ${styles.right}`}>
+              <div className={`${styles.miUM} ${styles.right}`}>
                 <h4>DOWNLOAD APP</h4>
                 <div className={styles.fDownloadAppLink}>
                   <Link to="/"><img src={googlePlay} alt="googlePlay" /></Link>
                   <Link to="/"><img src={appStore} alt="appStore" /></Link>
                 </div>
-              </li>
+              </div>
             </ul>
           </div>
         </div>
