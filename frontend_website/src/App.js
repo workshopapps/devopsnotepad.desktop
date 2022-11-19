@@ -14,6 +14,7 @@ import CareerPage from './Pages/CareerPage/CareerPage';
 
 import classes from './App.module.css'
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
+import DemoPage from "./Pages/DemoPage/DemoPage";
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -45,7 +46,8 @@ function App() {
           <Route path="/faq" exact element={<Faq />} />
           <Route path="/coming-soon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
-          <Route path='/newsroom' exact element={<NewsRoom/>}/>
+          <Route path='/news-room' exact element={<NewsRoom/>}/>
+          <Route path='/demo' exact element={<DemoPage/>}/>
         </Routes>
       </ErrorBoundary>
       <Footer />
