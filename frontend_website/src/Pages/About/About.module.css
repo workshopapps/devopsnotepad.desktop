@@ -127,7 +127,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
     row-gap: 20px;
   }
   .bluerow {
@@ -139,7 +142,10 @@
     width: 100%;
     min-height: 796px;
     height: fit-content;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
     background-color: #102a63;
     row-gap: 20px;
   }
@@ -266,11 +272,6 @@ p {
   align-items: center;
   color: #202020;
   padding-bottom: 10px;
-}
-
-ol {
-  list-style-type: decimal-leading-zero;
-  color: #000000;
 }
 
 li {

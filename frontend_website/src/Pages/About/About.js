@@ -43,7 +43,7 @@ export const About = () => {
           </div>
         </div>
         <div className={classes.flexcol} style={{ maxWidth: '362px' }}>
-          <ol type='1'>
+          <ol style={{ listStyleType: 'decimal-leading-zero' }}>
             <li>
               <ul>
                 <li>
