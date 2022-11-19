@@ -1,7 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Csr.css';
 
-const csr = () => {
+const Csr = () => {
+  const [isShown, setIsShown] = useState(false)
+   
+  //Handle navbar
+  const handleNavbar = (e) => {
+    e.preventDefault();
+    setIsShown(prev => !prev)
+  }
+  const style = {
+    display: 'flex',
+    alignItems: 'left',
+    flexDirection: 'column',
+    justifyContent: 'left',
+    backgroundColor: '#212121',
+    color: '#ffffff',
+    position: 'sticky',
+    marginRight: '-40px',
+    borderRadius: '10px',
+    fontSize: '12px',
+    marginTop: '150px',
+    padding: '5px 30px',
+    paddingRight: '150px'
+  }
   return (
     <div className="csrWrapper">
       <nav className="csrNavbar">
@@ -14,6 +36,13 @@ const csr = () => {
           <li>FAQs</li>
         </ul>
         <button className="csrBtn">Download App</button>
+        <img src='Vector (13).png' alt='menu' className='csrMenuImg' onClick={handleNavbar} />
+        <div className='navbar' style={isShown ? style : {} } onMouseLeave={handleNavbar}>
+          <li>ABout Us</li>
+          <li>Blog</li>
+          <li>Contact</li>
+          <li>FAQs</li>
+        </div>
       </nav>
       <div className="csrMain">
         <div className="csrMainSection1">
@@ -70,4 +99,4 @@ const csr = () => {
     </div>
   );
 };
-export default csr;
+export default Csr;
