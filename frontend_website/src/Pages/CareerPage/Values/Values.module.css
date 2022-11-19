@@ -1,0 +1,115 @@
+.section {
+  height: 80vh;
+  position: relative;
+}
+
+.box {
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Manrope';
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+}
+
+.box_1,
+.box_2 {
+  width: 13rem;
+  height: 13rem;
+}
+
+.box_1 {
+  background: #b6dec5;
+  top: 5%;
+  left: 10%;
+}
+
+.box_2 {
+  background: #f6e6c7;
+  top: 15%;
+  left: 40%;
+}
+
+.box_3,
+.box_4,
+.box_5,
+.box_6 {
+  width: 17rem;
+  height: 17rem;
+}
+.box_3 {
+  background: #93cea9;
+  top: 5%;
+  right: 10%;
+}
+.box_4 {
+  background: #bbcff9;
+  bottom: 10%;
+  left: 15%;
+}
+.box_5 {
+  background: #ededed;
+  bottom: 5%;
+  right: 40%;
+}
+.box_6 {
+  background: #6d96f2;
+  bottom: 10%;
+  right: 15%;
+}
+
+@media only screen and (max-width: 850px) {
+  .section {
+    height: 60vh;
+  }
+  .box_1,
+  .box_2 {
+    width: 8rem;
+    height: 8rem;
+  }
+  .box_3,
+  .box_4,
+  .box_5,
+  .box_6 {
+    width: 12rem;
+    height: 12rem;
+  }
+  .box {
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .section {
+    height: 50vh;
+    width: 100vw;
+  }
+  .box_1,
+  .box_2 {
+    width: 8rem;
+    height: 8rem;
+  }
+  .box_3,
+  .box_4,
+  .box_5,
+  .box_6 {
+    width: 9rem;
+    height: 9rem;
+  }
+  .box {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .box_4 {
+    left: 8%;
+    bottom: 15%;
+  }
+  .box_6 {
+    bottom: 10%;
+    right: 8%;
+  }
+}
