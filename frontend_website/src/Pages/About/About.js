@@ -101,7 +101,11 @@ export const About = () => {
           </p>
           <div
             className={classes.flexrow}
-            style={{ maxWidth: '400px', paddingLeft: '0px' }}
+            style={{
+              maxWidth: '400px',
+              paddingLeft: '0px',
+              justifyContent: 'space-between',
+            }}
           >
             <p style={{ fontSize: '30px', fontWeght: '700' }}>76%</p>
             <p style={{ fontSize: '30px', fontWeght: '700' }}>50M+</p>
@@ -135,6 +139,9 @@ export const About = () => {
         </div>
       </div>
       <div className={classes.bluerow}>
+        <div className={classes.colorbgsm}>
+          <img src={womanblack} className={classes.imgsize} alt='img' />
+        </div>
         <div className={classes.flexcol}>
           <p
             style={{
@@ -176,7 +183,7 @@ export const About = () => {
           <hr style={{ color: '#fcf7ed', maxWidth: '540px' }} />
           <button className={classes.btn3}>Contact us</button>
         </div>
-        <div className={classes.colorbg}>
+        <div className={classes.colorbglg}>
           <img src={womanblack} className={classes.imgsize} alt='img' />
         </div>
       </div>
