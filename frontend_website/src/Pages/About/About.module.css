@@ -31,6 +31,9 @@
     height: fit-content;
     left: 82px;
     top: 121px;
+    background-image: url('./images/banner.png');
+    background-position: center center;
+    background-repeat: no-repeat;
     background: #ffffff;
     opacity: 0.8;
     border: 0.5px solid #c7c7c7;
@@ -153,11 +156,12 @@
     max-width: 1276px;
     margin: 0 auto;
     width: 100%;
-    min-height: 700px;
+    min-height: 916px;
     height: fit-content;
-    left: 82px;
-    top: 121px;
-    background: #ffffff;
+    background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     opacity: 0.8;
     border: 0.5px solid #c7c7c7;
     border-radius: 4px;
