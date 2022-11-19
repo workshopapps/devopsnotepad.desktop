@@ -1,7 +1,7 @@
 @media only screen and (max-width: 768px) {
   .imgsize {
-    max-width: 300px;
-    min-height: 300px;
+    max-width: 300px !important;
+    min-height: 300px !important;
   }
   .flexrow {
     display: flex;
@@ -10,6 +10,12 @@
     flex-wrap: wrap;
     padding: 10px;
     row-gap: 15px;
+  }
+  .hide {
+    display: block !important;
+  }
+  .show {
+    display: none !important;
   }
   .bluerow {
     display: flex;
@@ -124,8 +130,8 @@
 }
 @media only screen and (min-width: 769px) {
   .imgsize {
-    max-width: 543px;
-    min-height: 433px;
+    max-width: 433px !important;
+    min-height: 403px !important;
   }
   .flexrow {
     display: flex;
@@ -248,6 +254,12 @@
     width: 100%;
     justify-content: space-between;
   }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
 }
 
 .container {
@@ -290,4 +302,13 @@ li {
   display: flex;
   align-items: center;
   color: #000000;
+}
+.colorbg {
+  max-width: 540px !important;
+  width: 100%;
+  min-height: 450px !important;
+  height: fit-content;
+  background-image: url('./images/colorbg.png');
+  background-position: center right;
+  background-size: contain;
 }

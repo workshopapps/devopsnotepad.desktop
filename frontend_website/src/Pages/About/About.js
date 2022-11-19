@@ -83,7 +83,9 @@ export const About = () => {
         </div>
       </div>
       <div className={classes.flexrow}>
-        {' '}
+        <div className={classes.hide}>
+          <img src={man} className={classes.imgsize} alt='img' />
+        </div>
         <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
           <p
             className={classes.storyhead}
@@ -106,7 +108,7 @@ export const About = () => {
             <p style={{ fontSize: '30px', fontWeght: '700' }}>5K+</p>{' '}
           </div>
         </div>
-        <div>
+        <div className={classes.show}>
           <img src={man} className={classes.imgsize} alt='img' />
         </div>
       </div>
@@ -133,7 +135,6 @@ export const About = () => {
         </div>
       </div>
       <div className={classes.bluerow}>
-        {' '}
         <div className={classes.flexcol}>
           <p
             style={{
@@ -175,7 +176,7 @@ export const About = () => {
           <hr style={{ color: '#fcf7ed', maxWidth: '540px' }} />
           <button className={classes.btn3}>Contact us</button>
         </div>
-        <div>
+        <div className={classes.colorbg}>
           <img src={womanblack} className={classes.imgsize} alt='img' />
         </div>
       </div>
