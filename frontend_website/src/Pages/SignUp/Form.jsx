@@ -104,7 +104,11 @@ const Form = () => {
   };
 
   return (
-    <form className={classes.login__form} onSubmit={submitHandler} data-testid='login__form'>
+    <form
+      className={classes.login__form}
+      onSubmit={submitHandler}
+      data-testid='login__form'
+    >
       <Input
         id='name'
         label='Name'
@@ -116,7 +120,9 @@ const Form = () => {
         onBlur={nameOnBlurHandler}
       />
       {form.nameIsFocus && !form.nameIsValid && (
-        <pre className='invalid__input'>Enter a name of length 4 or above</pre>
+        <pre className={classes.invalid__input}>
+          Enter a name of length 4 or above
+        </pre>
       )}
       <Input
         id='email'
