@@ -188,7 +188,7 @@
     display: none;
   }
   .logoText {
-    margin-left: 1%;
+    margin-left: 7%;
   }
   .csrBtn {
     display: none;
@@ -203,6 +203,7 @@
     border-radius: 8px;
     margin: 0;
     padding: 10px;
-    margin-right: 2%;
+    margin-right: 7%;
   }
+  
 }

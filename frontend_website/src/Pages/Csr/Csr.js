@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Csr.css';
 
 const Csr = () => {
-  const [isShown, setIsShown] = useState(false)
-   
+  const [isShown, setIsShown] = useState(false);
+
   //Handle navbar
   const handleNavbar = (e) => {
     e.preventDefault();
-    setIsShown(prev => !prev)
-  }
+    setIsShown((prev) => !prev);
+  };
   const style = {
     display: 'flex',
     alignItems: 'left',
@@ -22,12 +22,14 @@ const Csr = () => {
     fontSize: '12px',
     marginTop: '150px',
     padding: '5px 30px',
-    paddingRight: '150px'
-  }
+    paddingRight: '150px',
+  };
   return (
     <div className="csrWrapper">
       <nav className="csrNavbar">
-        <h2 className="logoText">Ops<span id='logoText'>pad</span></h2>
+        <h2 className="logoText">
+          Ops<span id="logoText">pad</span>
+        </h2>
         <img src="servers (3) 4.png" alt="logo" className="logo" />
         <ul>
           <li>About Us</li>
@@ -36,8 +38,17 @@ const Csr = () => {
           <li>FAQs</li>
         </ul>
         <button className="csrBtn">Download App</button>
-        <img src='Vector (13).png' alt='menu' className='csrMenuImg' onClick={handleNavbar} />
-        <div className='navbar' style={isShown ? style : {} } onMouseLeave={handleNavbar}>
+        <img
+          src="Vector (13).png"
+          alt="menu"
+          className="csrMenuImg"
+          onClick={handleNavbar}
+        />
+        <div
+          className="navbar"
+          style={isShown ? style : {}}
+          onMouseLeave={handleNavbar}
+        >
           <li>ABout Us</li>
           <li>Blog</li>
           <li>Contact</li>
@@ -88,13 +99,13 @@ const Csr = () => {
         </div>
       </div>
       <div className="csrMainSection5">
-        <div className='rule'></div>
+        <div className="rule"></div>
         <p>
           As a team, we recognize that we must integrate our business values and
           operation to meet the expectation of our user in relation to the
           community and the society at large.
         </p>
-        <button className='csrSectionBtn'>SIGN UP</button>
+        <button className="csrSectionBtn">SIGN UP</button>
       </div>
     </div>
   );
