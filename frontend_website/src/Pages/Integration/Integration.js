@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import bannerImg from './assets/hero-section-image.png';
 import { getMore, list } from './data';
 import styles from './Integration.module.css';
@@ -49,7 +50,7 @@ const Integration = () => {
                 <p>
                   {item.content}
                 </p>
-                <a className={`${item.gmail ? `${styles.learnMore} ${styles.learnMoreGmail}` : styles.learnMore}`} href={item.slug}>Learn More</a>
+                <Link className={`${item.gmail ? `${styles.learnMore} ${styles.learnMoreGmail}` : styles.learnMore}`} to={item.slug}>{item.linkLabel}</Link>
               </div>
             )
           })}
@@ -62,7 +63,7 @@ const Integration = () => {
             <h4>Get more from your app with opspad integrations</h4>
           </div>
           <div className={styles.btn}>
-            <a href="/">Sign up for free</a>
+            <Link to="/sign-up">Sign up for free</Link>
           </div>
         </div>
       </div>

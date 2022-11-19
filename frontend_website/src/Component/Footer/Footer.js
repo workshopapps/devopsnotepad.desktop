@@ -3,6 +3,7 @@ import googlePlay from './assets/googleplay.svg';
 import appStore from './assets/appstore.svg';
 import { Links } from './menuData';
 import styles from "./Footer.module.css";
+import { Link } from 'react-router-dom';
 // import './Footer.css';
 
 const Footer = () => {
@@ -11,9 +12,9 @@ const Footer = () => {
       <div className={styles.inFooter}>
         <div className={styles.mainFooter}>
           <div className={styles.logo}>
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="" />
-            </a>
+            </Link>
           </div>
           <div className={styles.dMFooter}>
             <ul className={styles.footerLink}>
@@ -24,7 +25,7 @@ const Footer = () => {
                     <div>
                       {link.list.map((b, i) => (
                         <li key={i}>
-                          <a href={`${b.slug}`}>{b.title}</a>
+                          <Link to={`${b.slug}`}>{b.title}</Link>
                         </li>
                       ))}
                     </div>
@@ -35,8 +36,8 @@ const Footer = () => {
               <li className={`${styles.miUM} ${styles.right}`}>
                 <h4>DOWNLOAD APP</h4>
                 <div className={styles.fDownloadAppLink}>
-                  <a href="/"><img src={googlePlay} alt="googlePlay" /></a>
-                  <a href="/"><img src={appStore} alt="appStore" /></a>
+                  <Link to="/"><img src={googlePlay} alt="googlePlay" /></Link>
+                  <Link to="/"><img src={appStore} alt="appStore" /></Link>
                 </div>
               </li>
             </ul>

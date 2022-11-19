@@ -38,9 +38,9 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/integration" element={<Integration />} />
+          <Route path="/integrations" element={<Integration />} />
           <Route path="/faq" exact element={<Faq />} />
-          <Route path="/comingsoon" exact element={<ComingSoon />} />
+          <Route path="/coming-soon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
         </Routes>
       </ErrorBoundary>

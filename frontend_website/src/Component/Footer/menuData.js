@@ -7,20 +7,20 @@ export const Links = [
         slug: '/about-us',
       },
       {
-        title: 'Privacy Policy',
-        slug: '/privacy-policy',
+        title: 'Our Team',
+        slug: '/our-team',
+      },
+      {
+        title: 'Partners',
+        slug: '/partners',
+      },
+      {
+        title: 'Contact Us',
+        slug: '/contact-us',
       },
       {
         title: 'Careers',
         slug: '/careers',
-      },
-      {
-        title: 'Terms of Service',
-        slug: '/terms-of-service',
-      },
-      {
-        title: 'FAQs',
-        slug: '/FAQs',
       },
     ],
   },
