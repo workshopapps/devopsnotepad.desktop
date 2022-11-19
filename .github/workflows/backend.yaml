@@ -62,4 +62,4 @@ jobs:
           context: "backend/"
           file: "backend/Dockerfile"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend-app-hng:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/opspad-backend:latest
