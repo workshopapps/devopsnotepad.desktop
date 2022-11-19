@@ -33,7 +33,6 @@ function App() {
   return (
     <React.Fragment>
       {/* <Navigation /> */}
-      <LandingPage />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
