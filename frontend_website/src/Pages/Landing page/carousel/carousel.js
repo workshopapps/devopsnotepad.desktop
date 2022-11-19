@@ -6,7 +6,7 @@ import { useRef } from 'react';
 const Carousl = () => {
   const ref = useRef()
   return (
-    <div className={{ margin: '0' ,padding: '0'}}>
+    <div className={{width: '300%', margin: '0' ,padding: '0'}}>
       <Carousel autoplay pauseOnHover={true} draggable dot={true} ref={ref}>
         <div className={style.landPage_section5_div1}>
           <img src={frank} alt='' />
@@ -39,7 +39,7 @@ const Carousl = () => {
           <h4>Frank Etim</h4>
         </div>
       </Carousel>
-      <div>
+      <div className={style.Carousel_btn}>
         <img src={left} alt="" className={style.prevC} onClick={() => (
           ref.current.prev()
         )} />
