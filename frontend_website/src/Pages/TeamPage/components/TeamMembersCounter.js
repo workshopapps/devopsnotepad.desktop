@@ -2,12 +2,12 @@ import React from 'react';
 
 const TeamMembersCounter = ({ icon, counts, position }) => {
   return (
-    <div className="team__counter">
-      <div className="icon">
+    <div className='team__counter'>
+      <div className='icon'>
         <img src={icon} alt={icon} />
       </div>
-      <h5 className="current__count">{counts}</h5>
-      <p className="position">{position}</p>
+      <h5 className='current__count'>{counts}</h5>
+      <p className='position text-light'>{position}</p>
     </div>
   );
 };
