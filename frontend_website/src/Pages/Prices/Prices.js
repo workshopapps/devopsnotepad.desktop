@@ -5,6 +5,7 @@ import Data from './Data';
 import PriceCard from './components/PriceCard/PriceCard';
 import bad from './x.svg';
 import good from './good.svg';
+import SingleGridTable from './components/SingleGridTable/SingleGridTable';
 
 const Prices = () => {
   const [toggleMonthly, setToggleMonthly] = useState(true);
@@ -40,16 +41,17 @@ const Prices = () => {
       </div>
 
       <div className="compare-price">
-        <h1>
+        <h1 className="compare-price-header">
           Compare <span className="prices-header-blue">Our Plans</span>
         </h1>
-        <div className="table-container">
+        <div className="table-container hidden">
           <ul>
             <li>Starter</li>
             <li>Professional</li>
             <li>Organization</li>
           </ul>
 
+          {/* FOR DESKTOP SCREENS */}
           <div className="grid-table">
             <h9 className="grid-header">Unlimited Number of servers</h9>
             <img className="grid-item bad" src={bad} alt="" />
@@ -76,7 +78,10 @@ const Prices = () => {
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
           </div>
+
+          {/* /FOR MOBILE / TABLET SCREEN */}
         </div>
+        <SingleGridTable />
       </div>
     </section>
   );
