@@ -1,9 +1,10 @@
-import create from '../services/server/create.js';
+import create from "../services/server/create.js";
+import getAllServers from "../services/server/getAll.js";
+import update from "../services/server/update.js";
 import deleteSeversById from '../services/server/delete.js';
-import update from '../services/server/update.js';
-import getAllServers from '../services/server/getAll.js';
-import readOne from '../services/server/readOne.js';
+
 import { validatePayload } from '../utils/index.js';
+import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
 
 export default class ServerController {
   static create = async (req, res, next) => {
@@ -30,18 +31,6 @@ export default class ServerController {
   static getAllServers = async (req, res, next) => {
     try {
       const result = await getAllServers(req.query);
-      res.send({
-        success: true,
-        ...result,
-      });
-    } catch (error) {
-      next(error);
-    }
-  };
-
-  static readOne = async (req, res, next) => {
-    try {
-      const result = await readOne(req.params);
       res.send({
         success: true,
         ...result,
@@ -83,4 +72,20 @@ export default class ServerController {
       next(error);
     }
   };
+
+  static subscribe = async (req, res, next) => {
+    try{
+
+        await pushNotificationForServer(req);
+
+        res.send({
+            success: true,
+            message: "Subscription successful"
+        })
+
+    }catch(error){
+        next(error)
+    }
+}
+
 }

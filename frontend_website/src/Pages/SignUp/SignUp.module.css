@@ -1,0 +1,92 @@
+.login {
+  width: 35%;
+  margin: 6rem auto 4rem;
+  font-family: 'Manrope';
+  font-style: normal;
+}
+.h1 {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 6.6rem;
+  color: #353535;
+  text-align: center;
+}
+.p__box {
+  margin: 5rem 0 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.div {
+  flex-basis: 30%;
+  background-color: #333333;
+  height: 0.1rem;
+}
+
+.p {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: -0.408px;
+}
+
+.svg__box {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.svg {
+  fill: #1877f2;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+}
+.h4 {
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  text-align: center;
+  color: #333333;
+}
+.a:link,
+.a:visited {
+  text-decoration: none;
+  color: #5182ef;
+}
+
+@media only screen and (max-width: 1000px) {
+  .login {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .login {
+    width: 60%;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .login {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .login {
+    width: 75%;
+  }
+  .h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
