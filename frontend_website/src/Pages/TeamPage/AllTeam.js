@@ -1,15 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import { TeamData, TeamMembers } from './data/team-members';
+import { TeamData } from './data/team-members';
 
 const AllTeam = () => {
   const [activeTab, setActiveTab] = useState('product-managers');
 
   return (
-    <div className="all__teams">
-      <header className="container mt-4">
+    <div className='all__teams'>
+      <header className='container mt-4'>
         <nav>
-          <ul className="p-0">
+          <ul className='p-0'>
             <li
               className={activeTab === 'product-managers' ? 'active' : ''}
               onClick={() => setActiveTab('product-managers')}
@@ -59,14 +59,14 @@ export default AllTeam;
 
 const ProductManagers = () => {
   return (
-    <div className="container">
+    <div className='container'>
       {TeamData.filter(
         (team) => team.role === 'product manager',
       )[0].members.map((member, i) => (
-        <div className="member__wrapper" key={i}>
+        <div className='member__wrapper' key={i}>
           <div>
             <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-            <p className="p-0 m-0">Product Manager</p>
+            <p className='p-0 m-0'>Product Manager</p>
           </div>
           <p>LinkedIn</p>
         </div>
@@ -77,13 +77,13 @@ const ProductManagers = () => {
 
 const Marketers = () => {
   return (
-    <div className="container">
+    <div className='container'>
       {TeamData.filter((team) => team.role === 'marketer')[0].members.map(
         (member, i) => (
-          <div className="member__wrapper" key={i}>
+          <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className="p-0 m-0">Marketer</p>
+              <p className='p-0 m-0'>Marketer</p>
             </div>
             <p>LinkedIn</p>
           </div>
@@ -95,13 +95,13 @@ const Marketers = () => {
 
 const Designers = () => {
   return (
-    <div className="container">
+    <div className='container'>
       {TeamData.filter((team) => team.role === 'designer')[0].members.map(
         (member, i) => (
-          <div className="member__wrapper" key={i}>
+          <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className="p-0 m-0">Designer</p>
+              <p className='p-0 m-0'>Designer</p>
             </div>
             <p>LinkedIn</p>
           </div>
@@ -113,13 +113,13 @@ const Designers = () => {
 
 const Developers = () => {
   return (
-    <div className="container">
+    <div className='container'>
       {TeamData.filter((team) => team.role === 'developer')[0].members.map(
         (member, i) => (
-          <div className="member__wrapper" key={i}>
+          <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className="p-0 m-0">Developer</p>
+              <p className='p-0 m-0'>Developer</p>
             </div>
             <p>LinkedIn</p>
           </div>
