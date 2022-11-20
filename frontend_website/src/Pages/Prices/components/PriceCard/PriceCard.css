@@ -48,7 +48,7 @@ overflow: hidden;
 
 .inner-card-container a {
     text-decoration: none;
-    width: 90%;
+    width: 100%;
     height: 56px;
     border-radius: 6px;
     padding: 20px;

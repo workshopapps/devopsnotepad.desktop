@@ -140,6 +140,27 @@
     .table-container{
         width: 100%;
     }
+
+    .table-container li {
+        width: 155px;
+    }
+}
+
+@media(max-width: 950px){
+    .table-container .grid-table .grid-header{
+        font-size: 17px;
+    }
+
+    .table-container .grid-table .grid-item{
+        width: 13px;
+        height: 12px;
+    }
+}
+
+@media(max-width: 915px){
+    .table-container li{
+        width: 145px;
+    }
 }
 
 @media(max-width:835px){
