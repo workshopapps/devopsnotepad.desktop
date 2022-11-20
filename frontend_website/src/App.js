@@ -65,6 +65,8 @@ function App() {
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
           <Route path='/demo' exact element={<DemoPage />} />
+          <Route path='/our-team' exact element={<OurTeam />} />
+          <Route path='/our-team/all-teams' exact element={<AllTeam />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
