@@ -1,0 +1,25 @@
+name: Deploy DEV
+
+on:
+  pull_request:
+  push:
+    branches: ['dev', 'main']
+  
+  workflow_run:
+    workflows: [Frontend-CI, Backend-CI]
+    types: [completed]
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Push to server and deploy
+        uses: godchosen/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          USERNAME: ${{ secrets.DEV_USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.DEV_SSHKEY }}
+          script: cd ${{ secrets.DEV_PATH }} && sudo docker compose up --build -d

@@ -1,0 +1,28 @@
+.li {
+  width: max-content;
+}
+
+.h1 {
+  color: #0e6930;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-align: left;
+}
+
+.p {
+  font-weight: 700;
+  margin: 0 1rem 0 0;
+}
+.span {
+  font-weight: 400;
+  color: #353535;
+}
