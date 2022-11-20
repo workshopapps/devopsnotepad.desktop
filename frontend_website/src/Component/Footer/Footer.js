@@ -34,6 +34,16 @@ const Footer = () => {
                   </div>
                 ))}
 
+<<<<<<< HEAD
+              <div className={`${styles.miUM} ${styles.right}`}>
+                <h4>DOWNLOAD APP</h4>
+                <div className={styles.fDownloadAppLink}>
+                  <Link to="/"><img src={googlePlay} alt="googlePlay" /></Link>
+                  <Link to="/"><img src={appStore} alt="appStore" /></Link>
+                </div>
+              </div>
+            </ul>
+=======
                 <div className={`${styles.miUM} ${styles.right}`}>
                   <h4>DOWNLOAD APP</h4>
                   <div className={styles.fDownloadAppLink}>
@@ -52,6 +62,7 @@ const Footer = () => {
             <span className={styles.f_copyright}>
               All rights reserved &copy; 2022
             </span>
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
           </div>
         </div>
       </div>
