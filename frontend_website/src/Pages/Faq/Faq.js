@@ -12,8 +12,6 @@ const Faq = () => {
     setAnswer(description)
   }
 
-  console.log(answer)
-
   return (
     <div className={faq.faqContainer}>
       <div className={faq.faqHeader}>
@@ -28,8 +26,8 @@ const Faq = () => {
             <div>
               <img src={cloud} alt="cloud" />
             </div>
-            <div>
-             {/* <Ans answer={answer} /> */}
+            <div className={faq.ansScroll}>
+             <Ans answer={answer} />
             </div>
           </div>
         </div>
@@ -95,7 +93,6 @@ const Faq = () => {
             <button 
              className={btnName === "btn9" ? faq.btnColored : faq.btn}
             onClick={()=>setAns("btn9","We have specific rules for how and when we use the information we collect and receive. We are committed to protecting the privacy of your information. We use the information we collect and receive to provide, maintain, and improve the Opspad Service, to provide troubleshooting and customer support, to protect the OpsPad Service for all our users, and to contact you")}
-            
             >
             How Does OpsPad Use My Information?
             </button>
