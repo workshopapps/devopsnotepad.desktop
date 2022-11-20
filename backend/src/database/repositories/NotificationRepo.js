@@ -2,6 +2,15 @@ import connection from "../setup";
 import APIFeatures from "../../utils/apiFeatures.js";
 
 export default class NotificationRepo {
+    static create = async (data) => {
+        return await connection("notifications")
+            .insert(data);
+    };
+
+    static getNotificationById = async (id) => {
+        return connection("notifications").where("notification_id", id).first();
+    };
+
     static getNotifications = async (id, query) => {
         const dbQuery = connection("notifications")
             .where("serverId", id);
