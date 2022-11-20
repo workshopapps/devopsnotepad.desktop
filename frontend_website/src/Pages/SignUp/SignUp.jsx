@@ -1,13 +1,13 @@
 import { BsFacebook } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Form from './Form';
 import classes from './SignUp.module.css';
 
 const SignUp = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const navigateHandler = () => {
-    // navigate('/login')
+    navigate('/facebook');
   };
   return (
     <div className={classes.login} data-testid='signup__page'>
@@ -22,7 +22,10 @@ const SignUp = () => {
         <BsFacebook className={classes.svg} onClick={navigateHandler} />
       </div>
       <h4 className={classes.h4}>
-        Already have an acount? <Link className={classes.a}>Sign In</Link>
+        Already have an acount?{' '}
+        <Link to='/login' className={classes.a}>
+          Sign In
+        </Link>
       </h4>
     </div>
   );
