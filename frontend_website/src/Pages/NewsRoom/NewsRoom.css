@@ -1,0 +1,158 @@
+:root{
+  --topic: #102A63;
+  --text: #444444;
+}
+
+
+
+
+
+.newsrooms {
+      margin-top: 3rem;
+}
+.newsroom__container {
+    width: 88%;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  .newsroom__container h2, .newsroom__container > p{
+    text-align: center;
+    color: var(--topic);
+    font-size: 2.8rem;
+  }
+  .newsroom__container p{
+    color: var(--text);
+    font-size: 0.99rem;
+  }
+
+
+  img{
+    display: block;
+    width: 100%;
+  }
+  small{
+    color: var(--text);
+  }
+
+  h4{
+    color: var(--topic);
+  }
+
+  .TS__CNV{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #E5E5E5;
+    color: var(--topic);
+    margin-bottom: 3rem;
+    margin-top: 3.5rem;
+  }
+  
+
+  .TS__CNV h4{
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .TS__CNV small{
+    font-size: 0.9rem;
+    font-weight: 900;
+  }
+
+  .newsroom__RT{
+    display: grid;
+    grid-template-columns: 48% 50%;
+    gap: 1.5%;
+    border-bottom: 0.5px solid #E5E5E5;
+    justify-items: center;
+  }
+
+    .left__newsroom-lish small{
+      font-size: 0.99rem;
+      font-weight: 500;
+    }
+
+    .left__newsroom-lish h4{
+      font-size: 3rem;
+      margin-top: 1rem;
+    }
+
+  .newsroom__rights-right{
+    display: flex;
+    align-items: center;
+    gap: 3rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .newsroom__rights-right:nth-child(1){
+    border-bottom: 0.5px solid #E5E5E5;
+    padding-bottom:2rem;
+  }
+
+  .newsroom__rights-right:nth-child(2){
+    border-bottom: 0.5px solid #E5E5E5;
+    padding-bottom:2rem;
+  }
+
+  .newsroom__DT small{
+    font-size: 0.99rem;
+    font-weight: 500;
+  }
+  .newsroom__DT h4{
+    font-size: 2.39rem;
+    margin-top: 1rem;
+  }
+ 
+  
+  .v3_0{
+    width: 25.5rem;
+  }
+
+
+  .down__wrapper-room{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    margin: auto;
+    gap: 2rem;
+        height: 120rem;
+  }
+
+  .newsroom__DT-down small{
+    font-size: 0.99rem;
+    font-weight: 500;
+  }
+  .newsroom__DT-down h4{
+    font-size: 1.39rem;
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 1024px){
+    .left__newsroom-lish h4 {
+      font-size: 2rem;
+  }
+  .newsroom__DT h4 {
+    font-size: 1.5rem;
+}
+  }
+
+
+
+   @media screen and (max-width: 750px){
+    .newsroom__RT {
+      grid-template-columns: 1fr;
+      gap: 6.5%;
+   }
+
+   .v3_0 {
+    width: inherit;
+}
+
+.left__newsroom-lish {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+  }

@@ -22,27 +22,36 @@ describe('Server', () => {
       name: 'example server',
       ipAddress: 'google.com',
       deviceId: 80988579,
-      id: '8392029hbdvyw798-88ehe8-82992',
     });
 
     serverId = res.body.server.id;
+    assert.equal(res.status, 200);
+    assert.include(res.body.message, 'server created successfully');
+    docmaker.addEndpoint(res);
   });
   it('should throw error when creating a server with an existing name', async () => {
     const res = await request.post('/server').send({
       name: 'example server',
       ipAddress: 'google.com',
     });
-
-    assert.equal(res.status, 400);
+    
+       assert.equal(res.status, 400);
     assert.include(res.body.message, 'Server already exists');
   });
 
-  it('should update server', async () => {
-    const res = await request.patch('/server').send({
-      id: serverId,
-      name: 'updated server name',
+    //2 Tests for Get All Servers by Device
+    it("should get all servers added on a particular device", async () => {
+        const res = await request.get("/server?device=80988579");
+        assert.equal(res.status, 200);
+        docmaker.addEndpoint(res);
     });
 
+    //2 Tests for Update Server Endpoints
+    it("should update server", async () => {
+        const res = await request.patch("/server").send({
+            id: serverId,
+            name: "updated server name",
+          });
     assert.equal(res.status, 200);
     assert.include(res.body.message, 'Server updated successfully');
     docmaker.addEndpoint(res);
@@ -59,9 +68,9 @@ describe('Server', () => {
 
     assert.equal(res.status, 200);
     docmaker.addEndpoint(res);
-});
+  });
 
-it("should throw error when creating a notification with an invalid server_id", async () => {
+  it("should throw error when creating a notification with an invalid server_id", async () => {
     const res = await request
         .post("/server/sdsdds/notifications")
         .send({
@@ -70,27 +79,10 @@ it("should throw error when creating a notification with an invalid server_id", 
 
     assert.equal(res.status, 400);
     assert.include(res.body.message, "An error occured while creating new logs, server do not exist");
-});
-
-  //2 Tests for Get All Servers by Device
-  it('should get all servers added on a particular device', async () => {
-    const res = await request.get('/server?device=80988579');
-    assert.equal(res.status, 200);
   });
 
   it('should throw error if there is no server from the requesting device', async () => {
     const res = await request.get('/server?device=00102939');
-    assert.equal(res.status, 404);
-  });
-
-  //2 Tests for Get single server by serverId
-  it('should get server with requested serverId param', async () => {
-    const res = await request.get('/server/8392029hbdvyw798-88ehe8-82992');
-    assert.equal(res.status, 200);
-  });
-
-  it('should throw error if there is no server with that id', async () => {
-    const res = await request.get('/server/83930dbhduu3i3');
     assert.equal(res.status, 404);
   });
 
@@ -105,7 +97,7 @@ it("should throw error when creating a notification with an invalid server_id", 
   });
 
   it('Should delete a server from an array of existing servers', async () => {
-    const res = await request.delete('/server').send({
+    const res = await request.post('/server/delete').send({
       serverIds: [serverId],
     });
     expect(res.status).to.equal(200);
@@ -116,7 +108,6 @@ it("should throw error when creating a notification with an invalid server_id", 
   it('Should confirm if server was deleted successfully', async () => {
     const res = await request.get('/server/' + serverId).send();
     expect(res.status).to.equal(404);
+    console.log(res.body);
   });
-
-  
 });

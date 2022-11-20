@@ -24,30 +24,35 @@ services:
       dockerfile: Dockerfile
     image: godchosen/opspad-backend:latest
     environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE='$MYSQL_DATABASE'
+      - MYSQL_ROOT_PASSWORD='$MYSQL_ROOT_PASSWORD'
+      - MYSQL_HOST='$MYSQL_HOST'
+      - MYSQL_USER=$MYSQL_USER
+      - MYSQL_PASSWORD='root'
     volumes:
       - './backend:/app'
       - '/app/node_modules'
     ports:
-      - 8081:8081
+      - '8081:8081'
     depends_on:
-      - db-mysql
+      - db
 
 
-  db-mysql:
+  db:
     image: mysql:5.7
-    container_name: opspad-db-mysql
+    container_name: db-mysql
     environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE='$MYSQL_DATABASE'
+      - MYSQL_ROOT_PASSWORD='$MYSQL_ROOT_PASSWORD'
+      - MYSQL_USER=$MYSQL_USER
+      - MYSQL_PASSWORD='root'
     ports:
       - 3306:3306
     tty: true
     volumes:
-      - my-db:/var/lib/db
+      - db:/var/lib/db
       - ./db:/docker-entrypoint-initdb.d/:rw
 
 volumes:
-  my-db:
+  db:
+
