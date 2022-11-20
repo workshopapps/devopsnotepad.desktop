@@ -42,7 +42,7 @@
     padding-bottom: 40px;
   }
   .landPage_section4Items img {
-    width: 14% ;
+    width: 14%;
   }
   .landPage_section4Items {
     gap: 4px !important;
@@ -177,7 +177,7 @@
   .landPagebtn_mob a:nth-child(2) {
     padding: 16px 22px;
     gap: 10px !important;
-    border: 1px solid #102A63 !important;
+    border: 1px solid #102a63 !important;
     border-radius: 6px;
     border-radius: 6px;
     color: #202020;
@@ -186,7 +186,7 @@
     line-height: 16px;
     font-weight: 600;
     background: #fff;
-    color: #102A63;
+    color: #102a63;
   }
   .landPage_section2 {
     padding: 88px 0 0px !important;
@@ -270,7 +270,7 @@
   }
   .landPage_section4img img:nth-child(2) {
     display: block !important ;
-    transform: translate(-62%, 19%)
+    transform: translate(-62%, 19%);
   }
   .landPage_section4Items {
     padding-bottom: 265px !important;
@@ -340,7 +340,7 @@
 
 .landPage_imgFlex img:nth-child(1) {
   object-fit: none;
-  transform: translate(10%, 2%);
+  transform: translate(0%, 2%)
 }
 .landPage_imgFlex img:nth-child(2) {
   display: none;
@@ -400,11 +400,11 @@
   padding: 24.2767px 70px !important;
   background: #fff !important;
   border-radius: 7.28302px;
-  color: #102A63;
+  color: #102a63;
   font-weight: 400;
   font-size: 20px;
   line-height: 19px;
-  border: 1.5px solid #102A63;
+  border: 1.5px solid #102a63;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
@@ -506,7 +506,7 @@
 
 .landPage_section4img img {
   width: 292px;
-  top: 20px;
+  top: 19px;
   position: absolute;
   right: -455px;
   transform: skew(-9deg, 0deg);
@@ -529,7 +529,10 @@
   grid-template-columns: 2fr 1.5fr 1.7fr;
   gap: 20px;
 }
-
+.landPage_section5grid img {
+  max-width: 70px;
+  padding-bottom: 16px;
+}
 .landPage_section5_div1 {
   background: #ffffff;
   border: 1px solid #c2c2c2;
@@ -539,7 +542,7 @@
   place-content: center;
   place-items: center;
   width: 100%;
-  height: 42%;
+  height: 64%;
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
@@ -571,9 +574,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  height: 78%;
-  width: 73%;
-  transform: translate(13%, 0%);
+  height: 96%;
+  width: 86%;
+  transform: translate(5%, 0%);
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
@@ -606,8 +609,8 @@
   place-content: center;
   place-items: center;
   transform: translate(-4%, 0%);
-  height: 81%;
-  width: 74%;
+  height: 96%;
+  width: 100%;
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
@@ -641,8 +644,8 @@
   place-content: center;
   place-items: center;
   transform: translate(0%, -31%);
-  width: 53%;
-  height: 85%;
+  width: 66%;
+  height: 100%;
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
@@ -674,9 +677,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  transform: translate(-46%, 12%);
-  width: 100%;
-  height: 47%;
+  transform: translate(-36%, 3%);
+  width: 114%;
+  height: 67%;
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
@@ -708,9 +711,9 @@
   display: grid;
   place-content: center;
   place-items: center;
-  transform: translate(-25%, 12%);
-  width: 126%;
-  height: 47%;
+  transform: translate(-17%, 3%);
+  width: 116%;
+  height: 67%;
   box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -webkit-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
   -moz-box-shadow: 0px 8px 1px 0px rgba(194, 194, 194, 0.75);
