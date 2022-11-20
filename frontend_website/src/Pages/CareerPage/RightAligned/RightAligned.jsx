@@ -1,4 +1,4 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import img6 from '../../../assets/career_page-assets/Images/img6.png';
 
 import Button from '../Button/Button';
@@ -6,10 +6,10 @@ import Button from '../Button/Button';
 import classes from './RightAligned.module.css';
 
 const RightAligned = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const navigateHandler = () => {
-    // navigate('/about');
+    navigate('/about-us');
   };
   return (
     <li className={classes.rightaligned} data-testid='right__aligned'>
