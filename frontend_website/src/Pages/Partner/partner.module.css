@@ -32,11 +32,11 @@
     font-size: 20px;
 }
 
-.holdingHands {
+/* .holdingHands {
     width: 100%;
     margin: auto;
     Height: 264px;
-}
+} */
 
 .holdingHands img {
     width:100%;
@@ -53,6 +53,11 @@
     background-color: #102A63;
     color: #fff;
     margin: 2rem 1rem 2rem 1rem;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
 }
 
 .partnersTechnology {
@@ -73,6 +78,9 @@
     margin-bottom: 1rem;
 }
 
+.partnersTechnologyCardDesktop {
+    display: none;
+}
 .cardDetails {
     flex-direction: column;
     display: flex;
@@ -164,14 +172,14 @@
 
 @media only screen and (min-width: 768px) {
     .introContainer{
-        padding: 2.5rem 2rem  1rem 1rem;
+        padding: 2.5rem 2rem  5rem 1rem;
+        margin-bottom: 8rem;
         flex-direction: row;
     }
 
     .holdingHands {
-        width: 650px;
         position: relative;
-        left: 64%;
+        left: 49%;
     }
 
     .partnerButton {
@@ -181,7 +189,7 @@
     .introGroup {
         display: flex;
         position: relative;
-        right: 51%;
+        right: 42%;
         display: flex;
         width: 38%;
         flex-direction: column;
@@ -194,5 +202,74 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+  .partnersTechnologyCard {
+    display: none;
+  }
+
+  .partnersTechnologyCardDesktop {
+    display: block;
+    width: fit-content;
+    padding: 2rem 6rem 2rem 4rem;
+    cursor: pointer;
+    margin: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .partnersTechnologyCardContainerDesktop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardHeaderContainer {
+    display: flex;
+    background-color: #fff;
+    margin-top: -35px;
+    margin-bottom: 61px;
+    box-shadow: 4px 4px 29px 16px rgba(50, 50, 50, 0.03);
+    border-radius: 6px;
+  }
+
+  .technologyDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cardText {
+    width: 51%;
+  }
+
+  .partnerButton {
+    width: 31%;
+    padding: 1.210rem;
+  }
+
+  .partnerButtonTechnology {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.210rem;
+    border-radius: 10px;
+    background-color: #102A63;
+    color: #fff;
+    margin: 2rem 0rem 2rem 1rem;
+    width: 13%; 
+    margin-left: 0px;
+  }
+
+  .partnerCardHeading {
+     font-size: 32px;
+  }
+
+  .partnerCardContainer {
+     display: flex;
+     flex-direction: row;
+     gap: 20px;
+     padding: 3rem;
+     justify-content: center;
+     width: 100%;
+  }
+
     
 }
