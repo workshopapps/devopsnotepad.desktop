@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+section.container {
+
+    padding-bottom: 50px;
+    background: linear-gradient(to top,
+            #E9EFFD 0%,
+            #E9EFFD 80%,
+            white 80%,
+            white 100%);
+
+}
+
+section.contact {
+
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin: 0
+}
+
+section.contact .contactUs {
+
+    color: #2563EB;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+section.contact .inTouch {
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+section.contact .help {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32.4px;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+section.wrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+
+section.wrapper form {
+
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    background-color: white;
+    padding: 30px 16px;
+    width: 90%;
+}
+
+section.wrapper form label {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.94px;
+    margin-bottom: 10px;
+}
+
+section.wrapper form input {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 25px;
+    padding: 9px;
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    outline: none;
+
+}
+
+section.wrapper form .row {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media screen and (min-width:768px) {
+
+    section.wrapper form .row {
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    section.wrapper form .row .col {
+
+        width: 100%;
+    }
+
+    section.wrapper form .row .end {
+
+        margin-right: 15px;
+    }
+
+    section.wrapper form {
+
+        width: 80%;
+    }
+
+    section.contact .inTouch {
+
+        font-size: 48px;
+        line-height: 65.57px;
+
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+
+    section.wrapper form {
+
+        width: 50%;
+        padding: 30px 50px;
+    }
+
+    section.wrapp {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    section.wrapp .comp {
+
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+
+    section.wrapp .comp img {
+
+        padding-left: 10px;
+    }
+
+    section.wrapp .comp1 {
+        margin-right: 40px;
+    }
+
+    section.wrapp .comp p.opsPad {
+
+        margin-left: 30px;
+    }
+
+    section.contact .in-touch {
+
+        font-size: 54px;
+        line-height: 73.76px;
+    }
+
+    section.wrapper form .row .end {
+
+        margin-right: 25px;
+    }
+
+    /* section.wrapper form .row .start {
+
+        margin-left: 10px;
+    } */
+
+}
+
+@media screen and (min-width:1300px) {
+
+    section.wrapp .comp {
+
+        width: 25%;
+
+    }
+}
+
+section.wrapper form .col {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+section.wrapper form .col textarea.message {
+
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    outline: none;
+    padding: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+section.wrapper form .btn {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #102A63;
+    color: white;
+    padding: 15px;
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+section.wrap {
+
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+section.wrap .reachOut {
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+
+}
+
+section.wrap .canHelp {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #777777;
+    margin: 15px 0;
+}
+
+section.wrapp .comp p.opspad {
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px;
+
+}
+
+section.wrapp .comp p.opsPad {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: #2563EB;
+}
+
+@media screen and (max-width:767px) {
+
+    section.wrapp {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.wrapp .comp {
+        margin: 0 20px;
+    }
+
+
+}
+
+@media screen and (min-width:481px) {
+
+    section.wrapp .comp {
+        margin: 0 10px;
+    }
+}
+
+section.wrapp .comp {
+
+    border-radius: 5px;
+    border: 1.5px solid #DFE1EB;
+    text-align: center;
+    padding: 25px 0;
+    margin-bottom: 25px;
+    background-color: white;
+
+}
+
+p.errorMsg {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+    color: red;
+    white-space: nowrap;
+}
+
+section.support div.card {
+
+    background-color: white;
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 20px;
+    padding: 40px 20px;
+}
+
+@media screen and (min-width:640px) {
+
+    section.support div.card {
+
+        width: 80%;
+        margin: 10px 20px;
+        
+    }
+
+    section.support {
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col1 {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+section.support div.card p.supportP {
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27.32px;
+    margin: 15px;
+    text-align: center;
+}
+
+section.support div.card p.assistance {
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #444444;
+    text-align: center;
+}
+
+.btns {
+
+    background-color: #102A63;
+    color: white;
+    width: 100%;
+    border: 1.5px solid #DFE1EB;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+
+}
+
+@media screen and (min-width:768px){
+
+    .col1 {
+
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        
+    }
+
+    .support {
+
+        padding: 0 55px;
+    }
+}
+
+@media screen and (min-width:1024px){
+
+    .support {
+
+        padding: 0 200px;
+    }
+}
+
+@media screen and (min-width:1280px){
+
+    .support {
+
+        padding: 0 250px;
+    }
+}
+

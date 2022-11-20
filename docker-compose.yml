@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+  frontend:
+    container_name: opspad-frontend-website
+    build:
+      context: frontend_website/
+      dockerfile: Dockerfile
+    image: godchosen/opspad-frontend:latest
+    volumes:
+      - './frontend_website:/app'
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    depends_on:
+      - backend
+
+  backend:
+    container_name: opspad-backend
+    build:
+      context: backend/
+      dockerfile: Dockerfile
+    image: godchosen/opspad-backend:latest
+    environment:
+      - MYSQL_DATABASE='db'
+      - MYSQL_ROOT_PASSWORD='root'
+      - MYSQL_HOST='172.21.0.4'
+      - CLIENT_ORIGIN='http://172.21.0.4:8081'
+    volumes:
+      - './backend:/app'
+      - '/app/node_modules'
+    ports:
+      - '8081:8081'
+    depends_on:
+      - db
+
+
+  db:
+    image: mysql:5.7
+    container_name: db-mysql
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_ROOT_PASSWORD='root'
+    ports:
+      - 3306:3306
+    tty: true
+    volumes:
+      - db:/var/lib/db
+      - ./db:/docker-entrypoint-initdb.d/:rw
+
+volumes:
+  db:
+

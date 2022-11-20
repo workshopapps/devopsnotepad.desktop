@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1,
+h2,
+p{
+    color: #202020;
+    font-family: 'Manrope', sans-serif;
+}
+
+
+.blogHero{
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        flex-direction: column;
+        padding: 0 25px;
+        margin-top: 80px;
+
+      
+        
+    }
+.blogHero h2{
+        font-size: 1.5em;
+        color: #2563EB;
+        font-weight: 600;
+        
+    }
+.blogHero h1{
+        font-size: 2em;
+        font-weight:bolder;
+        padding: 20px 0 ;
+    }
+.blogHero p{
+        font-size: 1em;
+        font-weight: 500;
+        color: #777777;
+    }
+
+/* .blog-hero .blog-hero-img{
+
+} */
+.blogHero .blogHeroImg img{
+    width: 100%;
+    height: 366px;
+    background:#E9EFFD;
+    border-radius: 10px;
+    margin-top: 80px;
+    /* background: url("./img/blog-hero.png") no-repeat; */
+    object-position: center;
+    object-fit: cover;
+    background-position: center;
+}
+
+.blogPost{
+    margin-top: 60px;
+    padding: 0 25px;
+
+}
+
+.blogPost h1{
+   font-size: 1.5em;
+    font-weight: 800;
+    padding: 80px 0;
+}
+
+.blogPostCard .cardImage img{
+    width: 100%;
+    height: 296px;
+    /* background:#E9EFFD; */
+    border-radius: 10px;
+    object-position: center;
+    object-fit: cover;
+    background-position: center;
+}
+
+.blogPostCard h2{
+    font-size: 1.2em;
+    padding: 20px 0;
+}
+.blogPostCard p{
+    font-size: 0.9em;
+    color: #777777;
+    font-weight: 500;
+}
+
+.blogCaption p span{
+    color: #2563EB;
+    font-weight: 700;
+}
+.profile{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 80px;
+}
+
+.profile img{
+    margin-right: 20px;
+}
+.profile .profileInfo h2{
+    padding: 0;
+}
+
+
+.blogPostCard{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.newsletter{
+    margin-top: 80px;
+    background: #000000;
+    padding: 80px 25px;
+}
+.newsletter .newsletterImg{
+    display:none;
+}
+
+.newsletter h1{
+    color: #fff;
+    margin: 20px 0;
+}
+.newsletter p{
+    color: #8C8C8C;
+    margin-bottom: 80px;
+}
+
+.newsletterEmail{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    row-gap: 20px;
+   
+    
+}
+
+.newsletterEmail input{
+    width: 100%;
+    height: 61px;
+    border-radius: 5px;
+    background: #FAFAFA33;
+    border: 0px;
+    font-size: 0.9em;
+    padding: 14px 16px;
+    
+    color: #fff;
+    
+}
+
+.newsletterEmail button{
+    outline: none;
+    border: 0;
+    height: 61px;
+    background: #2563EB;
+    padding: 14px 16px;
+    border-radius: 5px;
+    width: 50%;
+    color: #fff;
+    font-size: 0.9em;
+  
+}
+
+
+ 
+@media (min-width:640px) {
+
+
+    .blogHero h2{
+        font-size: 2em; 
+    }
+.blogHero h1{
+        font-size: 3em;
+ 
+    }
+.blogHero p{
+        font-size: 1.5em;
+        
+    }
+
+    .blogHero .blogHeroImg img{
+        height: 608px;
+    }
+    
+    .blogPostCard{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+    .blogHero{
+        text-align: center;
+
+    }
+    .newsletter h1{
+       font-size: 64px;
+    }
+    .newsletter p{
+        font-size: 24px;
+        margin-bottom: 80px;
+    }
+    .newsletterEmail input{
+       font-size: 20px;
+    }
+    .newsletterEmail button{
+       font-size: 20px;
+        width: 30%;
+    }
+}
+
+@media (min-width:1024px) {
+
+    .blogPostCard{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 80px;
+    }
+    .blogHero{
+        padding: 0 50px;
+    }
+
+    .blogPost{
+        padding: 0 50px;
+    }
+
+    .newsletter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 40px;
+        padding: 80px 50px;
+    }
+
+    .newsletter .newsletterImg{
+        display: block;
+        /* width: 50%; */
+    }
+    .newsletterSub{
+        width: 50%;
+    }
+    
+    .newsletterEmail{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+        justify-content: space-between;
+        column-gap: 20px;
+        align-items: center;
+    }
+
+    .newsletterEmail input{
+    
+        padding: 14px 16px;
+        /* margin-right: 30px; */
+        color: #fff;
+    
+    }
+    
+    .newsletterEmail button{
+        outline: none;
+        border: 0;
+        background: #2563EB;
+        padding: 14px 16px;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
