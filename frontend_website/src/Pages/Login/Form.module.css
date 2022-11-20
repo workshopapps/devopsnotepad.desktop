@@ -36,6 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #3d3d3ddb;
 }
 .password:link,
 .password:visited {
@@ -51,6 +52,7 @@
   margin-left: 1.5rem;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
+  color: #3d3d3dba;
 }
 
 .checkbox__input:hover {
@@ -63,7 +65,7 @@
 }
 
 .button {
-  width: 105%;
+  width: 100%;
   font-size: 1.4rem;
   padding: 1.4rem;
   background: #102a63;
