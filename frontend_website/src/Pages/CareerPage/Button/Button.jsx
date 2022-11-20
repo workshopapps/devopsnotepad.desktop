@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import classes from './Button.module.css';
 
 const Button = (props) => {
@@ -13,4 +15,13 @@ const Button = (props) => {
     </button>
   );
 };
+
+// Typechecking
+Button.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes?.bool,
+  type: PropTypes.string,
+};
+
 export default Button;

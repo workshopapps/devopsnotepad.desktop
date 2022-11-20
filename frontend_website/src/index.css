@@ -17,6 +17,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -36,7 +37,6 @@ h5 {
   margin: 0;
   padding: 0;
 }
-
-li {
+a li {
   list-style: none;
 }

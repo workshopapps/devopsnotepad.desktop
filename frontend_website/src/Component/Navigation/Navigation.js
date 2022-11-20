@@ -1,50 +1,43 @@
-import React, { useState } from 'react';
-import logo from './assets/logo.svg';
-import { MenuList } from './menuData';
-import { Squash as Hamburger } from 'hamburger-react';
-import './Navigation.css';
+import React, { useState } from 'react'
+import logo from "./assets/logo.svg";
+import menuIcon from "./assets/menu-icon.svg"
+import styles from "./Navigation.module.css";
+import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="section header">
-      <div className="overlay"></div>
-      <div className="container inHeader">
-        <div className="left">
-          <div className="logo">
-            <img src={logo} alt="" />
-          </div>
-        </div>
+    <section className='navigation__container'>
+      <div className={styles.navigation}>
+        <div className={styles.inNavigation}>
+          <div className={styles.mainNavigation}>
+            <div className={styles.left}>
+              <div className={styles.logo}>
+                <Link to="/" onClick={() => {setOpen(false)}}>
+                  <img src={logo} alt="" />
+                </Link>
+              </div>
+            </div>
+            
+            <Navbar isOpen={isOpen} setOpen={setOpen} />
 
-        <nav className={'menuBar ' + (isOpen && 'openMenu')}>
-          <ul className="menuUlList">
-            {MenuList.map((menuLists, i) => (
-              <li key={i}>
-                <a href={menuLists.slug}>
-                  {menuLists.label} <i className="fa-solid fa-angle-down"></i>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="right">
-          <div className="navAuthBtn">
-            <a className="login_link" href="/">
-              Login
-            </a>
-            <a className="download_link" href="/">
-              Download App
-            </a>
-          </div>
-          <div className="hamburgerBar">
-            <Hamburger toggled={isOpen} toggle={setOpen} />
+            <div className={styles.right}>
+              <div className={styles.navAuthBtn}>
+                <Link className={styles.login_link} to="/login">Login</Link>
+                <Link className={styles.download_link} to="/">Download App</Link>
+              </div>
+              <div className={styles.hamburgerBar}>
+                <img src={menuIcon} onClick={() => setOpen(true)} alt="menuIcon" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+    
+  )
+}
 
-export default Header;
+export default Navigation
