@@ -2,7 +2,6 @@ import { Carousel } from 'antd';
 import style from './carousel.module.css';
 import { frank, left, right } from '../Images';
 import { useRef } from 'react';
-import './carousel.css'
 
 const Carousl = () => {
   const ref = useRef()
