@@ -156,14 +156,14 @@ workflows:
     jobs:
       - test-and-build-frontend
       - test-and-build-backend
-      - scan-backend:
-          requires: [test-and-build-backend]
-      - scan-frontend:
-          requires: [test-and-build-frontend]
-      - dockerise-frontend:
-          requires: [test-and-build-frontend, scan-frontend]
-      - dockerise-backend:
-          requires: [test-and-build-backend, scan-backend]      
-      - deploy-frontend-and-backend:
-          requires: [test-and-build-frontend, scan-frontend, test-and-build-backend, scan-backend]
+      - scan-backend
+          # requires: [test-and-build-backend]
+      - scan-frontend
+          # requires: [test-and-build-frontend]
+      - dockerise-frontend
+          # requires: [test-and-build-frontend, scan-frontend]
+      - dockerise-backend
+      #     requires: [test-and-build-backend, scan-backend]      
+      - deploy-frontend-and-backend
+          #requires: [test-and-build-frontend, scan-frontend, test-and-build-backend, scan-backend]
       
