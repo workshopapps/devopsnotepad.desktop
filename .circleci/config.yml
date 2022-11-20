@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Scan frontend
           command: |
-            cd frontend
+            cd frontend_website
             npm install
             npm audit fix --audit-level=critical
 
