@@ -32,31 +32,6 @@
         "description": "",
         "tags": [],
         "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "ipAddress": {
-                    "type": "string"
-                  },
-                  "deviceId": {
-                    "type": "number"
-                  }
-                }
-              },
-              "example": {
-                "name": "example server",
-                "ipAddress": "google.com",
-                "deviceId": 80988579
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
@@ -68,106 +43,18 @@
                     "success": {
                       "type": "boolean"
                     },
-                    "message": {
-                      "type": "string"
-                    },
-                    "server": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "notification": {
-                          "type": "string"
-                        },
-                        "ipAddress": {
-                          "type": "string"
-                        },
-                        "deviceId": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "server created successfully",
-                  "server": {
-                    "id": "(UUID())",
-                    "name": "example server",
-                    "notification": "(UUID())",
-                    "ipAddress": "google.com",
-                    "deviceId": "80988579",
-                    "created_at": "2022-11-20T14:26:55.000Z",
-                    "updated_at": "2022-11-20T14:26:55.000Z"
-                  },
-                  "isOnline": true
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "description": "",
-        "tags": [],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "device",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "currentPage": {
-                      "type": "number"
-                    },
-                    "limit": {
-                      "type": "number"
-                    },
-                    "servers": {
+                    "notifications": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
-                          "id": {
+                          "notificationId": {
                             "type": "string"
                           },
-                          "name": {
+                          "serverId": {
                             "type": "string"
                           },
-                          "notification": {
-                            "type": "string"
-                          },
-                          "ipAddress": {
-                            "type": "string"
-                          },
-                          "deviceId": {
+                          "log": {
                             "type": "string"
                           },
                           "created_at": {
@@ -178,25 +65,45 @@
                           }
                         }
                       }
+                    },
+                    "page": {
+                      "type": "number"
                     }
                   }
                 },
                 "example": {
                   "success": true,
-                  "message": "1 servers found on this device",
-                  "currentPage": 1,
-                  "limit": 12,
-                  "servers": [
+                  "notifications": [
                     {
-                      "id": "(UUID())",
-                      "name": "example server",
-                      "notification": "(UUID())",
-                      "ipAddress": "google.com",
-                      "deviceId": "80988579",
-                      "created_at": "2022-11-20T14:26:55.000Z",
-                      "updated_at": "2022-11-20T14:26:55.000Z"
+                      "notificationId": "1",
+                      "serverId": "2",
+                      "log": "easfhgrehegj//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "7",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu842dnveihfiewfrqknvsV RWG3  T59UYPRS//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "4",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf ://lorem upsuarhgr//patch/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-13T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "6",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf fgwer329t/post/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-10-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
                     }
-                  ]
+                  ],
+                  "page": 1
                 }
               }
             }
@@ -210,27 +117,6 @@
         "description": "",
         "tags": [],
         "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                }
-              },
-              "example": {
-                "id": "(UUID())",
-                "name": "updated server name"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
@@ -245,116 +131,16 @@
                     "notifications": {
                       "type": "array",
                       "items": {}
+                    },
+                    "page": {
+                      "type": "number"
                     }
                   }
                 },
                 "example": {
                   "success": true,
-                  "notifications": []
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/server/(UUID())/notifications": {
-      "post": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "serverId": {
-                    "type": "string"
-                  },
-                  "log": {
-                    "type": "string"
-                  }
-                }
-              },
-              "example": {
-                "serverId": "(UUID())",
-                "log": "add data points"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "serverLog": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "successful",
-                  "serverLog": "add data points"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/server/100/subscribe": {
-      "post": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "registrationToken": {
-                    "type": "string"
-                  }
-                }
-              },
-              "example": {
-                "registrationToken": "670ca230-67e2-11ed-a65b2-1458d0028583"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "Subscription successful"
+                  "notifications": [],
+                  "page": 1
                 }
               }
             }
