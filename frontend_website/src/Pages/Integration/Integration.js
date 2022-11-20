@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import bannerImg from './assets/hero-section-image.png';
 import { getMore, list } from './data';
-import './Integration.css';
+import styles from './Integration.module.css';
 
 const Integration = () => {
   return (
@@ -41,22 +41,22 @@ const Integration = () => {
               <p>Opspad is the hub of your productivity - integrating the tools you rely on to get things done.</p>
             </div>
             <div className={styles.inGet_more_box}>
-            {getMore.map((item, i) => {
-              return(
-                <div className={`${item.getmore ? `${styles.box} ${styles.bgcolor}` : styles.box}`} key={i}>
-                <div>
-                  <div className={styles.boxImg}>
-                    <img src={item.img} alt="" />
+              {getMore.map((item, i) => {
+                return (
+                  <div className={`${item.getmore ? `${styles.box} ${styles.bgcolor}` : styles.box}`} key={i}>
+                    <div>
+                      <div className={styles.boxImg}>
+                        <img src={item.img} alt="" />
+                      </div>
+                      <h3>{item.heading}</h3>
+                      <p>
+                        {item.content}
+                      </p>
                     </div>
-                    <h3>{item.heading}</h3>
-                    <p>
-                      {item.content}
-                    </p>
-                </div>
-                  <Link className={styles.learnMore} to={item.slug}>{item.linkLabel}</Link>
-                </div>
-              )
-            })}
+                    <Link className={styles.learnMore} to={item.slug}>{item.linkLabel}</Link>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const Integration = () => {
         </div>
       </div>
     </section>
-    
+
   );
 };
 
