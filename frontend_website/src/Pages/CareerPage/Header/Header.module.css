@@ -1,0 +1,103 @@
+.leftAligned {
+  width: 100%;
+  padding: 4rem 8rem 10rem;
+  text-align: left;
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left {
+  flex-basis: 40%;
+}
+.h1 {
+  font-size: 5.6rem;
+  font-weight: 600;
+  color: #292929;
+}
+.span {
+  color: #225ad6;
+}
+
+.p {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  text-align: left;
+  color: #353535;
+  margin: 3rem 0 4rem;
+}
+
+.right {
+  flex-basis: 40%;
+}
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+.button {
+  width: 17.8rem;
+  height: 5.6rem;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63ed;
+}
+
+@media only screen and (max-width: 850px) {
+  .leftAligned {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 3rem;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    width: 95%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: 3rem;
+  }
+
+  .p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .leftAligned {
+    padding: 4rem 2rem;
+  }
+  .left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right {
+    margin-top: 2.5rem;
+  }
+
+  .h1 {
+    font-size: 2.5rem;
+  }
+
+  .p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+  }
+}

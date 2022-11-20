@@ -1,0 +1,42 @@
+.perks {
+  padding: 0 4rem;
+}
+
+.h1 {
+  font-family: 'Manrope';
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 3.8rem;
+  text-align: center;
+  margin: 3rem 0 5rem;
+  color: #353535;
+}
+
+.ul {
+  margin-top: 4rem;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.svg {
+  height: 3.5rem;
+  width: 3.5rem;
+  flex-basis: 20%;
+}
+
+@media only screen and (max-width: 850px) {
+  .perks {
+    padding: 0 4rem;
+  }
+  .ul {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .perks {
+    padding: 0 2rem;
+  }
+}

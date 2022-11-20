@@ -32,6 +32,31 @@
         "description": "",
         "tags": [],
         "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "deviceId": {
+                    "type": "number"
+                  }
+                }
+              },
+              "example": {
+                "name": "example server",
+                "ipAddress": "google.com",
+                "deviceId": 80988579
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -43,7 +68,89 @@
                     "success": {
                       "type": "boolean"
                     },
-                    "notifications": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "server": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "notification": {
+                          "type": "string"
+                        },
+                        "ipAddress": {
+                          "type": "string"
+                        },
+                        "deviceId": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "server created successfully",
+                  "server": {
+                    "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                    "name": "example server",
+                    "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
+                    "ipAddress": "google.com",
+                    "deviceId": "80988579",
+                    "created_at": "2022-11-20T12:40:44.000Z",
+                    "updated_at": "2022-11-20T12:40:44.000Z"
+                  },
+                  "isOnline": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "limit": {
+                      "type": "number"
+                    },
+                    "servers": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -51,13 +158,22 @@
                           "id": {
                             "type": "string"
                           },
-                          "notificationLog": {
+                          "name": {
                             "type": "string"
                           },
-                          "serverId": {
+                          "notification": {
                             "type": "string"
                           },
-                          "createdAt": {
+                          "ipAddress": {
+                            "type": "string"
+                          },
+                          "deviceId": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
                             "type": "string"
                           }
                         }
@@ -67,30 +183,18 @@
                 },
                 "example": {
                   "success": true,
-                  "notifications": [
+                  "message": "1 servers found on this device",
+                  "currentPage": 1,
+                  "limit": 12,
+                  "servers": [
                     {
-                      "id": "1",
-                      "notificationLog": "easfhgrehegj//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
-                      "serverId": "2",
-                      "createdAt": "2022-11-19T15:48:33.000Z"
-                    },
-                    {
-                      "id": "7",
-                      "notificationLog": "ekfsdfwoeu842dnveihfiewfrqknvsV RWG3  T59UYPRS//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
-                      "serverId": "2",
-                      "createdAt": "2022-11-19T15:48:33.000Z"
-                    },
-                    {
-                      "id": "4",
-                      "notificationLog": "ekfsdfwoeu8428sf ://lorem upsuarhgr//patch/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
-                      "serverId": "2",
-                      "createdAt": "2022-11-12T15:48:33.000Z"
-                    },
-                    {
-                      "id": "6",
-                      "notificationLog": "ekfsdfwoeu8428sf fgwer329t/post/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
-                      "serverId": "2",
-                      "createdAt": "2022-10-19T15:48:33.000Z"
+                      "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                      "name": "example server",
+                      "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
+                      "ipAddress": "google.com",
+                      "deviceId": "80988579",
+                      "created_at": "2022-11-20T12:40:44.000Z",
+                      "updated_at": "2022-11-20T12:40:44.000Z"
                     }
                   ]
                 }
@@ -106,6 +210,27 @@
         "description": "",
         "tags": [],
         "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                "name": "updated server name"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -126,6 +251,119 @@
                 "example": {
                   "success": true,
                   "notifications": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/8d006a2a-68d0-11ed-bd06-fc3fdbff49c4/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverId": {
+                    "type": "string"
+                  },
+                  "log": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "serverId": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                "log": "add data points"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "serverLog": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "successful",
+                  "serverLog": "add data points"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/delete": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
                 }
               }
             }

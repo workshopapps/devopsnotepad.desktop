@@ -1,6 +1,22 @@
+import create from "../services/notification/create.js";
 import get from "../services/notification/get.js";
 
 export default class NotificationController {
+    static create = async (req, res, next) => {
+        try {
+            const result = await create(req.body, req.params);
+            res.send({
+                success: true,
+                message: "successful",
+                ...result,
+            });
+
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    
     static get = async (req, res, next) => {
         const { serverId } = req.params;
 
@@ -24,4 +40,6 @@ export default class NotificationController {
             next(error);
         }
     };
-}
+};
+
+

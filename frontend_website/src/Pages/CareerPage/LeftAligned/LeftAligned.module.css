@@ -1,0 +1,104 @@
+.leftaligned {
+  padding: 0 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-style: normal;
+  list-style: none;
+  text-align: left;
+  color: #292929;
+  font-family: 'Manrope';
+}
+.left {
+  flex-basis: 40%;
+}
+.h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.2rem;
+  color: #225ad6;
+  margin: 4rem 0 8rem;
+}
+
+.h1::after {
+  display: block;
+  content: '';
+  background-color: #2929292c;
+  margin: 0.8rem auto 0;
+  height: 0.05rem;
+  width: 67.7rem;
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.p {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  margin: 2.5rem 0;
+}
+
+.right {
+  flex-basis: 40%;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .leftaligned {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 6rem;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .h1 {
+    margin: 3rem 1rem 1rem;
+    font-size: 3.2rem;
+  }
+
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+  .p {
+    font-size: 1.8rem;
+  }
+  .img {
+    height: 60%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .leftaligned {
+    padding: 4rem 2rem;
+  }
+  .left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+  .p {
+    font-size: 1.8rem;
+  }
+}
