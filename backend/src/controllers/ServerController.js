@@ -2,9 +2,6 @@ import create from "../services/server/create.js";
 import getAllServers from "../services/server/getAll.js";
 import update from "../services/server/update.js";
 import deleteSeversById from '../services/server/delete.js';
-import update from '../services/server/update.js';
-import getAllServers from '../services/server/getAll.js';
-import readOne from '../services/server/readOne.js';
 import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
 
 export default class ServerController {

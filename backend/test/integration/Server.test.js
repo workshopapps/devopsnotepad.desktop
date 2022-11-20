@@ -118,6 +118,7 @@ describe('Server', () => {
       name: 'test server',
       ipAddress: 'www.google.com.ng',
       deviceId: 80988579,
+      id: 100
     });
 
     serverId_Notification_test = newServerRes.body.server.id;
