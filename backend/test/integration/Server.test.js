@@ -51,6 +51,7 @@ describe('Server', () => {
         const res = await request.patch("/server").send({
             id: serverId,
             name: "updated server name",
+          });
     assert.equal(res.status, 200);
     assert.include(res.body.message, 'Server updated successfully');
     docmaker.addEndpoint(res);
@@ -67,9 +68,9 @@ describe('Server', () => {
 
     assert.equal(res.status, 200);
     docmaker.addEndpoint(res);
-});
+  });
 
-it("should throw error when creating a notification with an invalid server_id", async () => {
+  it("should throw error when creating a notification with an invalid server_id", async () => {
     const res = await request
         .post("/server/sdsdds/notifications")
         .send({
@@ -78,7 +79,7 @@ it("should throw error when creating a notification with an invalid server_id", 
 
     assert.equal(res.status, 400);
     assert.include(res.body.message, "An error occured while creating new logs, server do not exist");
-});
+  });
 
   it('should throw error if there is no server from the requesting device', async () => {
     const res = await request.get('/server?device=00102939');
