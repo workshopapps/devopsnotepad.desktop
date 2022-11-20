@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import classes from './Input.module.css';
 
 const Input = ({ type, placeholder, value, onChange, className }) => {
@@ -13,4 +15,14 @@ const Input = ({ type, placeholder, value, onChange, className }) => {
     />
   );
 };
+
+// Typechecking
+Input.propTypes = {
+  type: PropTypes?.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
 export default Input;

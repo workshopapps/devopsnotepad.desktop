@@ -1,6 +1,6 @@
 .leftAligned {
   width: 100%;
-  padding: 4rem 0;
+  padding: 8rem 8rem;
   text-align: left;
   font-family: 'Manrope';
   display: flex;
@@ -15,7 +15,7 @@
 .h1 {
   font-size: 5.6rem;
   font-weight: 600;
-  color: #292929;
+  color: #225ad6;
 }
 
 .p {
@@ -50,11 +50,23 @@
   object-fit: cover;
   border-radius: 0.8rem;
 }
+.button {
+  width: 17.8rem;
+  height: 5.6rem;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
 
+.button:hover {
+  background: #102a63ed;
+}
 @media only screen and (max-width: 850px) {
   .leftAligned {
     flex-direction: column;
     text-align: center;
+    padding: 4rem 2rem;
   }
 
   .right {
@@ -62,7 +74,7 @@
   }
 
   .left {
-    width: 65%;
+    width: 85%;
     margin-bottom: 2rem;
   }
 
