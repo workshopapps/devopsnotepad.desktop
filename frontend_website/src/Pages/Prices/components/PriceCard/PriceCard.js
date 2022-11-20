@@ -2,7 +2,7 @@ import React from 'react';
 import './PriceCard.css';
 import Checkbox from '../../checkmark.svg';
 
-const PriceCard = ({ card, id }) => {
+const PriceCard = ({ card, id, toggleMonthly }) => {
   return (
     <section
       key={id}

@@ -33,10 +33,22 @@ const Prices = () => {
       <div className="prices-sample-grid">
         {!toggleMonthly
           ? Data[0].items.map((item, index) => {
-              return <PriceCard card={item} id={index} />;
+              return (
+                <PriceCard
+                  toggleMonthly={toggleMonthly}
+                  card={item}
+                  id={index}
+                />
+              );
             })
           : Data[1].items.map((card, index) => {
-              return <PriceCard card={card} id={index} />;
+              return (
+                <PriceCard
+                  toggleMonthly={toggleMonthly}
+                  card={card}
+                  id={index}
+                />
+              );
             })}
       </div>
 
@@ -73,7 +85,7 @@ const Prices = () => {
             <img className="grid-item bad" src={bad} alt="" />
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
-            <h9 className="grid-header">Access to Opspad communinity</h9>
+            <h9 className="grid-header">Access to Opspad community</h9>
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
