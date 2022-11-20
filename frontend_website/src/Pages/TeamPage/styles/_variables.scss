@@ -1,0 +1,20 @@
+$primary: #102a63;
+$secondary: #2563eb;
+$dark: #202020;
+$tertiary: #f7f9ff;
+$gray: #acacac;
+// breakpoints
+$mobile: 430px;
+$tablet: 744px;
+$desktop: 1440px;
+// font sizes
+$main_header_sm: 24px;
+$main_header_lg: 56px;
+$para_sm: 14px;
+$para_lg: 20px;
+// icons
+$icon_lg: 40px;
+$icon_md: 32px;
+$icon_sm: 24px;
+
+@import '~bootstrap/scss/bootstrap.scss';
