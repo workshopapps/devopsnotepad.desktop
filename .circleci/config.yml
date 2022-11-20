@@ -1,0 +1,198 @@
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:14.17.6
+
+commands:
+  copy-environment-variables:
+    description: copy environment variables to the .env file
+    steps:
+      - run:
+          name: copy environment variables
+          command: |
+            cd backend
+            touch .env
+            echo ENVIRONMENt=$FRONTEND_IMAGE > ".env"
+            echo TYPEORM_CONNECTION=$AWS_REGION >> ".env"
+            echo TYPEORM_ENTITIES=$EC2_USERNAME >> ".env"
+            echo TYPEORM_MIGRATIONS=$EC2_Security_Group_ID >> ".env"
+            echo NODE_ENV=$EC2_PUBLIC_IP >> ".env"
+            echo TYPEORM_HOST=$EC2_PUBLIC_DNS >> ".env"
+            echo TYPEORM_PORT=$EC2_USERNAME >> ".env"
+            cd ..
+            
+    test-and-build-frontend:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Test and Build front-end
+          command: |
+            cd frontend_website
+            npm install
+            npm test
+            npm run build
+      - save_cache:
+          paths: [frontend_website/node_modules]
+          key: frontend-build
+          
+  scan-frontend:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          key: frontend-build
+      - run:
+        name: Scan frontend
+        command: |
+          cd frontend
+          npm install
+          npm audit fix --audit-level=critical
+
+  dockerise-frontend:
+    docker:
+      - image: cimg/go:1.17
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD  
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true    
+      - restore_cache:
+        keys:
+          - v1-{{ .Branch }}
+        paths:
+          - /caches/backend_image.tar
+      - run:
+          name: check for and load Docker image layer cache
+          command: |
+            set +o pipefail
+            docker load -i /caches/frontend_image.tar | true
+     # build the frontend image
+      - run: docker build --cache-from=app -t $FRONTEND_WEBSITE_IMAGE .
+     # deploy the image
+      - run: docker push $FRONTEND_WEBSITE_IMAGE
+      - run:
+        name: Save Docker image layer cache
+        command: |
+          mkdir -p /caches
+          docker save -o /caches/frontend_image.tar app
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/frontend_image.tar
+
+  test-and-build-backend:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Test and Build backend
+          command: |
+            cd backend
+            npm install
+            npm test
+            npm run build --if-present
+      - save_cache:
+          paths: [backend/node_modules]
+          key: backend-build
+
+  scan-backend:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          key: backend-build
+      - run:
+        name: Scan backend
+        command: |
+          cd backend
+          npm install
+          npm audit fix --audit-level=critical
+
+  dockerise-backend:
+    docker:
+      - image: cimg/go:1.17
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD 
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true    
+      - restore_cache:
+        keys:
+          - v1-{{ .Branch }}
+        paths:
+          - /caches/backend_image.tar
+      - run:
+          name: check for and load Docker image layer cache
+          command: |
+            set +o pipefail
+            docker load -i /caches/backend_image.tar | true
+     # build the frontend image
+      - run: docker build --cache-from=app -t $BACKEND_IMAGE .
+     # deploy the image
+      - run: docker push $BACKEND_IMAGE
+      - run:
+        name: Save Docker image layer cache
+        command: |
+          mkdir -p /caches
+          docker save -o /caches/backend_image.tar app
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/backend_image.tar
+
+  deploy-frontend-and-backend:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run:
+          name: Deploy
+          command: |
+            # Install AWS CLI
+            curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+            unzip awscli-bundle.zip
+            ./awscli-bundle/install -b ~/bin/aws
+
+            # Get the public IP of the current CircleCI runner
+            PUBLIC_IP=$(curl ipinfo.io/ip)
+            
+            # Add an ingress rule to the security group
+            ~/bin/aws ec2 authorize-security-group-ingress --region $AWS_REGION --group-id $EC2_SECURITY_GROUP_ID \
+              --protocol tcp --port 22 --cidr $EC2_PUBLIC_IP/24
+
+            # Wait for the ingress rule to propogate
+            sleep 5
+
+            # Login to the backend server and deploy app
+            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
+            cd opspad/ && sudo docker-compose up --remove-orphans 
+
+            # Remove the ingress rule
+            ~/bin/aws ec2 revoke-security-group-ingress --region $AWS_REGION --group-id $EC2_SECURITY_GROUP_IP \
+              --protocol tcp --port 22 --cidr $EC2_PUBLIC_IP/24
+
+workflows:
+  default:
+    jobs:
+      - test-and-build-frontend
+      - test-and-build-backend
+      - scan-backend:
+          requires: [test-and-build-backend]
+      - scan-frontend:
+          requires: [test-and-build-frontend]
+      - dockerise-frontend:
+          requires: [test-and-build-frontend, scan-frontend]
+      - dockerise-backend:
+          requires: [test-and-build-backend, scan-backend]      
+      - deploy-frontend-and-backend:
+          requires: [test-and-build-frontend, scan-frontend, test-and-build-backend, scan-backend]
+      
