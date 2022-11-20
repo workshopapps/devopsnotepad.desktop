@@ -5,26 +5,8 @@ executors:
     docker:
       - image: circleci/node:14.17.6
 
-commands:
-  copy-environment-variables:
-    description: copy environment variables to the .env file
-    steps:
-      - run:
-          name: copy environment variables
-          command: |
-            cd backend
-            touch .env
-            echo ENVIRONMENt=$DOCKERHUB_USER > ".env"
-            echo TYPEORM_CONNECTION=$AWS_REGION >> ".env"
-            echo TYPEORM_ENTITIES=$EC2_USERNAME >> ".env"
-            echo TYPEORM_MIGRATIONS=$EC2_Security_Group_ID >> ".env"
-            echo NODE_ENV=$EC2_PUBLIC_IP >> ".env"
-            echo TYPEORM_HOST=$EC2_PUBLIC_DNS >> ".env"
-            echo TYPEORM_PORT=$EC2_USERNAME >> ".env"
-            echo ENVIRONMENt=$DOCKERHUB_PASSWORD > ".env"
-            cd ..
-            
-    test-and-build-frontend:
+jobs:            
+  test-and-build-frontend:
     executor: node-executor
     steps:
       - checkout
@@ -158,17 +140,13 @@ commands:
       - run:
           name: Deploy
           command: |
-            # Install AWS CLI
+          # Install AWS CLI
             curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
             unzip awscli-bundle.zip
             ./awscli-bundle/install -b ~/bin/aws
 
             # Get the public IP of the current CircleCI runner
             PUBLIC_IP=$(curl ipinfo.io/ip)
-            
-            # Add an ingress rule to the security group
-            ~/bin/aws ec2 authorize-security-group-ingress --region $AWS_REGION --group-id $EC2_SECURITY_GROUP_ID \
-              --protocol tcp --port 22 --cidr $EC2_PUBLIC_IP/24
 
             # Wait for the ingress rule to propogate
             sleep 5
@@ -176,10 +154,6 @@ commands:
             # Login to the backend server and deploy app
             ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
             cd opspad/ && sudo docker-compose up --remove-orphans 
-
-            # Remove the ingress rule
-            ~/bin/aws ec2 revoke-security-group-ingress --region $AWS_REGION --group-id $EC2_SECURITY_GROUP_IP \
-              --protocol tcp --port 22 --cidr $EC2_PUBLIC_IP/24
 
 workflows:
   default:
