@@ -138,22 +138,22 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy
-          command: |
-          # Install AWS CLI
-            curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-            unzip awscli-bundle.zip
-            ./awscli-bundle/install -b ~/bin/aws
+        name: Deploy
+        command: |
+        # Install AWS CLI
+          curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+          unzip awscli-bundle.zip
+          ./awscli-bundle/install -b ~/bin/aws
 
-            # Get the public IP of the current CircleCI runner
-            PUBLIC_IP=$(curl ipinfo.io/ip)
+          # Get the public IP of the current CircleCI runner
+          PUBLIC_IP=$(curl ipinfo.io/ip)
 
-            # Wait for the ingress rule to propogate
-            sleep 5
+          # Wait for the ingress rule to propogate
+          sleep 5
 
-            # Login to the backend server and deploy app
-            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
-            cd opspad/ && sudo docker-compose up --remove-orphans 
+          # Login to the backend server and deploy app
+          ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
+          cd opspad/ && sudo docker-compose up --remove-orphans 
 
 workflows:
   default:
