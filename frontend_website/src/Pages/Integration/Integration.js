@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import bannerImg from './assets/hero-section-image.png';
 import { getMore, list } from './data';
-import './Integration.module.css';
+import styles from './Integration.module.css';
 
 const Integration = () => {
   return (

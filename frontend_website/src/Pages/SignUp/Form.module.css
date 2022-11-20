@@ -42,6 +42,7 @@
   margin-left: 1.5rem;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
+  color: #3d3d3d9b;
 }
 
 .checkbox__input:hover {
@@ -54,7 +55,7 @@
 }
 
 .button {
-  width: 105%;
+  width: 100%;
   font-size: 1.4rem;
   padding: 1.4rem;
   background: #102a63;
