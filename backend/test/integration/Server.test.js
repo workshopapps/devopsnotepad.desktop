@@ -26,6 +26,9 @@ describe('Server', () => {
     });
 
     serverId = res.body.server.id;
+    assert.equal(res.status, 200);
+    assert.include(res.body.message, 'server created successfully');
+    docmaker.addEndpoint(res);
   });
   it('should throw error when creating a server with an existing name', async () => {
     const res = await request.post('/server').send({
@@ -76,6 +79,7 @@ it("should throw error when creating a notification with an invalid server_id", 
   it('should get all servers added on a particular device', async () => {
     const res = await request.get('/server?device=80988579');
     assert.equal(res.status, 200);
+    docmaker.addEndpoint(res);
   });
 
   it('should throw error if there is no server from the requesting device', async () => {
@@ -85,8 +89,9 @@ it("should throw error when creating a notification with an invalid server_id", 
 
   //2 Tests for Get single server by serverId
   it('should get server with requested serverId param', async () => {
-    const res = await request.get('/server/8392029hbdvyw798-88ehe8-82992');
+    const res = await request.get('/server/' + serverId);
     assert.equal(res.status, 200);
+    docmaker.addEndpoint(res);
   });
 
   it('should throw error if there is no server with that id', async () => {
@@ -105,7 +110,7 @@ it("should throw error when creating a notification with an invalid server_id", 
   });
 
   it('Should delete a server from an array of existing servers', async () => {
-    const res = await request.delete('/server').send({
+    const res = await request.post('/server/delete').send({
       serverIds: [serverId],
     });
     expect(res.status).to.equal(200);
@@ -116,6 +121,7 @@ it("should throw error when creating a notification with an invalid server_id", 
   it('Should confirm if server was deleted successfully', async () => {
     const res = await request.get('/server/' + serverId).send();
     expect(res.status).to.equal(404);
+    console.log(res.body);
   });
 
   
