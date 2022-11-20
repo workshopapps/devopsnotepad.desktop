@@ -103,15 +103,15 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                    "id": "(UUID())",
                     "name": "example server",
-                    "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
+                    "notification": "(UUID())",
                     "ipAddress": "google.com",
                     "deviceId": "80988579",
-                    "created_at": "2022-11-20T12:40:44.000Z",
-                    "updated_at": "2022-11-20T12:40:44.000Z"
+                    "created_at": "2022-11-20T14:26:55.000Z",
+                    "updated_at": "2022-11-20T14:26:55.000Z"
                   },
-                  "isOnline": false
+                  "isOnline": true
                 }
               }
             }
@@ -188,13 +188,13 @@
                   "limit": 12,
                   "servers": [
                     {
-                      "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                      "id": "(UUID())",
                       "name": "example server",
-                      "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
+                      "notification": "(UUID())",
                       "ipAddress": "google.com",
                       "deviceId": "80988579",
-                      "created_at": "2022-11-20T12:40:44.000Z",
-                      "updated_at": "2022-11-20T12:40:44.000Z"
+                      "created_at": "2022-11-20T14:26:55.000Z",
+                      "updated_at": "2022-11-20T14:26:55.000Z"
                     }
                   ]
                 }
@@ -225,7 +225,7 @@
                 }
               },
               "example": {
-                "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                "id": "(UUID())",
                 "name": "updated server name"
               }
             }
@@ -258,7 +258,7 @@
         }
       }
     },
-    "/server/8d006a2a-68d0-11ed-bd06-fc3fdbff49c4/notifications": {
+    "/server/(UUID())/notifications": {
       "post": {
         "description": "",
         "tags": [],
@@ -278,7 +278,7 @@
                 }
               },
               "example": {
-                "serverId": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
+                "serverId": "(UUID())",
                 "log": "add data points"
               }
             }
@@ -314,7 +314,7 @@
         }
       }
     },
-    "/server/delete": {
+    "/server/100/subscribe": {
       "post": {
         "description": "",
         "tags": [],
@@ -325,18 +325,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "serverIds": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
+                  "registrationToken": {
+                    "type": "string"
                   }
                 }
               },
               "example": {
-                "serverIds": [
-                  "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4"
-                ]
+                "registrationToken": "670ca230-67e2-11ed-a65b2-1458d0028583"
               }
             }
           }
@@ -354,16 +349,12 @@
                     },
                     "message": {
                       "type": "string"
-                    },
-                    "result": {
-                      "type": "string"
                     }
                   }
                 },
                 "example": {
                   "success": true,
-                  "message": "servers deleted successfully",
-                  "result": "1 servers deleted!"
+                  "message": "Subscription successful"
                 }
               }
             }

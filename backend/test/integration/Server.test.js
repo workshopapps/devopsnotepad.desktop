@@ -9,6 +9,7 @@ export const request = supertest.agent(app);
 export const docmaker = Documentator.getInstance();
 
 let serverId;
+let serverId_Notification_test;
 
 //Deletes every record from servers table before any test is run to avoid collisions.
 before(async () => {
@@ -110,4 +111,43 @@ describe('Server', () => {
     expect(res.status).to.equal(404);
     console.log(res.body);
   });
+
+  it ("Should subscribe for push notification for a server", async () => {
+    
+    const newServerRes = await request.post('/server').send({
+      name: 'test server',
+      ipAddress: 'www.google.com.ng',
+      deviceId: 80988579,
+      id: 100
+    });
+
+    serverId_Notification_test = newServerRes.body.server.id;
+
+    const res = await request.post(`/server/${serverId_Notification_test}/subscribe`).send({
+        registrationToken: "670ca230-67e2-11ed-a65b2-1458d0028583"
+    });
+
+    assert.equal(res.status, 200);
+    assert.include(res.body.message, "Subscription successful")
+    docmaker.addEndpoint(res);
+
+  })
+
+  it ("Should fail to subscribe to push notification with no registration token", async () => {
+    const res = await request.post(`/server/${serverId_Notification_test}/subscribe`).send({
+        registrationToken: ''
+    });
+
+    assert.equal(res.status, 400);
+  })
+
+  it ("Should fail to subscribe for push notificaton for server with incorrect id", async () => {
+    let wrong_server_id = '670ca230-67e2-11ed-a65b2-1458d0028583';
+    const res = await request.post(`/server/${wrong_server_id}/subscribe`).send({
+        registrationToken:"670ca230-67e2-11ed-a65b2-1458d0028583"
+    });
+
+    assert.equal(res.status, 404);
+  })
+
 });
