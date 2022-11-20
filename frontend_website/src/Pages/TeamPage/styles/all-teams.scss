@@ -1,0 +1,42 @@
+.all__teams {
+  header {
+    button {
+      outline: none;
+      border: none;
+      background: none;
+    }
+
+    ul,
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    li {
+      button {
+        color: $gray;
+      }
+      &.active {
+        button {
+          color: #102a63;
+        }
+      }
+    }
+  }
+
+  main {
+    .member__wrapper {
+      border: 1px solid #dadada;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      height: 94px;
+      margin-top: 2rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
