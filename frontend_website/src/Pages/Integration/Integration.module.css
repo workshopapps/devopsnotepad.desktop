@@ -94,7 +94,7 @@
 }
 
 .get_more {
-    padding: 80px 32px 80px 32px;
+    padding: 0px 32px 80px 32px;
 }
 
 .get_more .inGet_more {
@@ -146,6 +146,14 @@
     background: rgba(232, 244, 236, 0.4);
     border: 1px solid #C7C7C7;
     border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.get_more .inGet_more .inGet_more_box .box.bgcolor {
+    background: rgba(233, 239, 253, 0.4);
 }
 
 .get_more .inGet_more .inGet_more_box .box .boxImg {
@@ -183,11 +191,6 @@
     color: #1A46A7;
 }
 
-.get_more .inGet_more .inGet_more_box .box a.learnMore.learnMoreGmail {
-    position: relative;
-    top: 55px;
-}
-
 .getMoret {
     padding: 76px 80px 76px 80px;
     background: rgba(233, 239, 253, 0.6);
@@ -222,9 +225,17 @@
 }
 
 .getMoret .inGetMoret .btn a {
+<<<<<<< HEAD
     padding: 20px 30px;
     gap: 10px;
     width: 176px;
+=======
+    padding: 20px 25px;
+    gap: 10px;
+    display: block;
+    width: 176px;
+    height: 56px;
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
     height: min-content;
     background: #102A63;
     border-radius: 6px;
@@ -377,6 +388,11 @@
     .integration .inBanner .subtitle h1 {
         font-size: 32px;
         line-height: 42px;
+    }
+
+    .get_more .inGet_more .inGet_more_box .box {
+        max-width: 382px;
+        min-height: 309px;
     }
 
     .get_more .inGet_more .inGet_more_box {
