@@ -10,7 +10,7 @@ export default class APIFeatures {
             this.query =  this.query.orderBy(fields[0], fields[1]);
             return this;
         } else {
-            this.query = this.query.orderBy("createdAt", "desc");
+            this.query = this.query.orderBy("created_at", "desc");
             return this;
         }
     }
