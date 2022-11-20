@@ -21,9 +21,13 @@
   }
   .landPage_btn a:nth-child(1) {
     padding: 15.277px 24px !important;
+    list-style-type: none;
+    text-decoration: none;
   }
   .landPage_btn a:nth-child(2) {
     padding: 24.277px 49px !important;
+    list-style-type: none;
+    text-decoration: none;
   }
 
   .landPage_imgFlex img:nth-child(1) {
@@ -174,6 +178,8 @@
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
+    list-style-type: none;
+    text-decoration: none;
   }
   .landPagebtn_mob a:nth-child(2) {
     padding: 16px 22px;
@@ -188,6 +194,8 @@
     font-weight: 600;
     background: #fff;
     color: #102a63;
+    list-style-type: none;
+    text-decoration: none;
   }
   .landPage_section2 {
     padding: 88px 0 0px !important;
@@ -396,6 +404,8 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
+  list-style-type: none;
+  text-decoration: none;
 }
 .landPage_btn a:nth-child(2) {
   padding: 24.2767px 70px !important;
@@ -409,6 +419,8 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .landPage_section2 {
@@ -773,6 +785,8 @@
   font-size: 20px;
   line-height: 19px;
   font-family: 'Inter';
+  list-style-type: none;
+  text-decoration: none;
 }
 .Carousel {
   display: none;
