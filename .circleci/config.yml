@@ -56,7 +56,7 @@ jobs:
             set +o pipefail
             docker load -i /caches/frontend_image.tar | true
      # build the frontend image
-      - run: docker build --cache-from=app -t $FRONTEND_WEBSITE_IMAGE .
+      - run: docker build --cache-from=app --file './frontend_website/Dockerfile' -t $FRONTEND_WEBSITE_IMAGE .
      # deploy the image
       - run: docker push $FRONTEND_WEBSITE_IMAGE
       - run:
@@ -119,7 +119,7 @@ jobs:
             set +o pipefail
             docker load -i /caches/backend_image.tar | true
      # build the frontend image
-      - run: docker build --cache-from=app -t $BACKEND_IMAGE .
+      - run: docker build --cache-from=app --file './backend/Dockerfile' -t $BACKEND_IMAGE .
      # deploy the image
       - run: docker push $BACKEND_IMAGE
       - run:
