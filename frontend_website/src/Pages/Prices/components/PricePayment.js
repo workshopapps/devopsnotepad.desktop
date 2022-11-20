@@ -24,7 +24,7 @@ const PricePayment = () => {
   }, []);
   return (
     <section className="price-payment-container">
-      <div className="card-container card-active-border">
+      <div className="debit-card-container card-active-border">
         <h2>Your Order</h2>
         <div className="card">
           <h4>Professional</h4>
