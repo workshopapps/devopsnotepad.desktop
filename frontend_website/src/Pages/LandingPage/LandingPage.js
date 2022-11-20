@@ -14,8 +14,8 @@ import {
   grouped,
   iphoneslopemob,
 } from './Images';
-import style from '../Landing page/landingpage.module.css';
-import Carousl from '../Landing page/carousel/carousel';
+import style from '../LandingPage/LandingPage.module.css';
+import Carousl from './carousel/carousel';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
