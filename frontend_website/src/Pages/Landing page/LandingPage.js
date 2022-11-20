@@ -16,6 +16,7 @@ import {
 } from './Images';
 import style from '../Landing page/landingpage.module.css';
 import Carousl from '../Landing page/carousel/carousel';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -31,8 +32,8 @@ const LandingPage = () => {
             go!
           </p>
           <div className={style.landPage_btn}>
-            <button>Get Started for Free</button>
-            <button>How it works</button>
+            <Link to=''>Get Started for Free</Link>
+            <Link to='/how-it-works'>How it works</Link>
           </div>
         </div>
         <div className={style.landPage_imgFlex}>
@@ -40,8 +41,8 @@ const LandingPage = () => {
           <img src={grouped} alt='' />
         </div>
         <div className={style.landPagebtn_mob}>
-          <button>Download App</button>
-          <button>How it works</button>
+          <Link to='/'>Download App</Link>
+          <Link to='/how-it-works'>How it works</Link>
         </div>
       </div>
       <div className={`${style.landPage_flex} ${style.landPage_section2}`}>
@@ -153,7 +154,7 @@ const LandingPage = () => {
             Monitor, document and modify aspects of servers you manage - on the
             go!
           </p>
-          <button>Get Started for Free</button>
+          <Link to='/'>Get Started for Free</Link>
         </div>
       </div>
     </div>

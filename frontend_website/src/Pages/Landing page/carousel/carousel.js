@@ -2,12 +2,13 @@ import { Carousel } from 'antd';
 import style from './carousel.module.css';
 import { frank, left, right } from '../Images';
 import { useRef } from 'react';
+import './carousel.css'
 
 const Carousl = () => {
   const ref = useRef()
   return (
-    <div className={{width: '300%', margin: '0' ,padding: '0'}}>
-      <Carousel autoplay pauseOnHover={true} draggable dot={true} ref={ref}>
+    <div className={{width: '300%', height: '', margin: '0' ,padding: '0'}}>
+      <Carousel className={{width: '650px', height: '5000%', margin: '0' ,padding: '0'}} autoplay pauseOnHover={true} draggable dot={true} ref={ref}>
         <div className={style.landPage_section5_div1}>
           <img src={frank} alt='' />
           <p>
