@@ -1,13 +1,13 @@
-import ServerRepo from "../../database/repositories/ServerRepo.js";
-import { NotFoundError } from "../../lib/errors/index.js";
+import ServerRepo from '../../database/repositories/ServerRepo.js';
+import { NotFoundError } from '../../lib/errors/index.js';
 
 export default async function getAllServers(query) {
     const { device, page, limit } = query;
     const currentPage = parseInt(page) || 1;
     const limits = parseInt(limit) || 12;
 
-    const servers = await ServerRepo.getServersByDevice(device);
-    if (!servers.length > 0) throw new NotFoundError("There are no servers added on this device");
+  const servers = await ServerRepo.getServersByDevice(device);
+  if (!servers.length > 0) throw new NotFoundError('There are no servers added on this device');
 
     const paginated = paginateResults(servers, currentPage, limits);
 

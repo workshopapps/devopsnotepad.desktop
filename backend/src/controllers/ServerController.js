@@ -1,12 +1,24 @@
-import create from "../services/server/create.js";
-import getAllServers from "../services/server/getAll.js";
-import update from "../services/server/update.js";
+import create from '../services/server/create.js';
+import getAllServers from '../services/server/getAll.js';
+import update from '../services/server/update.js';
 import deleteSeversById from '../services/server/delete.js';
+
+import { validatePayload } from '../utils/index.js';
 import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
 
 export default class ServerController {
   static create = async (req, res, next) => {
     try {
+      /**
+       * Validate Request
+       */
+      const errors = validatePayload(req);
+
+      // Update this latter
+      if (errors && Object.keys(errors).length > 0) throw errors;
+
+      console.log(req.body);
+
       const result = await create(req.body);
 
       res.send({
@@ -32,6 +44,14 @@ export default class ServerController {
 
   static update = async (req, res, next) => {
     try {
+      /**
+       * Validate Request
+       */
+      const errors = validatePayload(req);
+
+      // Update this latter
+      if (errors && Object.keys(errors).length > 0) throw errors;
+
       const result = await update(req.body);
       res.send({
         success: true,
@@ -56,18 +76,15 @@ export default class ServerController {
   };
 
   static subscribe = async (req, res, next) => {
-    try{
+    try {
+      await pushNotificationForServer(req);
 
-        await pushNotificationForServer(req);
-
-        res.send({
-            success: true,
-            message: "Subscription successful"
-        })
-
-    }catch(error){
-        next(error)
+      res.send({
+        success: true,
+        message: 'Subscription successful',
+      });
+    } catch (error) {
+      next(error);
     }
-}
-
+  };
 }
