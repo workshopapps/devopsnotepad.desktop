@@ -19,8 +19,7 @@
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11",
     "sass": "^1.56.1",
-    "swiper": "^8.4.4",
-    "web-vitals": "^2.1.4"
+    "swiper": "^8.4.4"
   },
   "scripts": {
     "start": "react-scripts start",

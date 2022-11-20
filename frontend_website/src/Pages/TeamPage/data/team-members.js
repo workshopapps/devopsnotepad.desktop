@@ -9,7 +9,6 @@ import productManagersSM5 from '../images/team/product-managers/phones/product-m
 import productManagersSM6 from '../images/team/product-managers/phones/product-managers-slide6.png';
 // marketers imgs
 import marketersLG1 from '../images/team/marketers/tablets-and-desktops/marketers-slide1.png';
-import marketersLG2 from '../images/team/marketers/tablets-and-desktops/marketers-slide2.png';
 import marketersSM1 from '../images/team/marketers/phones/marketers-slide1.png';
 import marketersSM2 from '../images/team/marketers/phones/marketers-slide2.png';
 import marketersSM3 from '../images/team/marketers/phones/marketers-slide3.png';
@@ -119,7 +118,7 @@ export const TeamData = [
         name: 'damilola',
       },
     ],
-    desktopSlides: [marketersLG1, marketersLG2],
+    desktopSlides: [marketersLG1],
     mobileSlides: [marketersSM1, marketersSM2, marketersSM3],
   },
   {

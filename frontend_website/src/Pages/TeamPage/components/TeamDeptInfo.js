@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { TeamData, TeamMembers } from '../data/team-members';
+import { TeamData } from '../data/team-members';
 
 const TeamDeptInfo = ({ position, isRowReverse, desc, ctaText }) => {
   return (
