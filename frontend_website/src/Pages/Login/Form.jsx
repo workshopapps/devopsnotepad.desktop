@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../CareerPage/Button/Button';
 import Input from './Input';
 
@@ -112,16 +113,19 @@ const Form = () => {
       )}
 
       <div className={classes.checkbox}>
-        <input
-          type='checkbox'
-          name='checkbox'
-          value='value'
-          id='checkbox'
-          className={classes.checkbox__input}
-        />
-        <label htmlFor='checkbox' className={classes.label}>
-          Remember me.
-        </label>
+        <div>
+          <input
+            type='checkbox'
+            name='checkbox'
+            value='value'
+            id='checkbox'
+            className={classes.checkbox__input}
+          />
+          <label htmlFor='checkbox' className={classes.label}>
+            Remember me.
+          </label>
+        </div>
+        <Link className={classes.password}>Forgot password</Link>
       </div>
       <div className={classes.btn__box}>
         <Button
