@@ -9,6 +9,7 @@ import Navigation from './Component/Navigation/Navigation';
 import Faq from './Pages/Faq/Faq';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
+import Partner from './Pages/Partner/Partner'
 
 import classes from './App.module.css'
 
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navigation />
+       <Navigation />
 
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
@@ -42,6 +43,7 @@ function App() {
           <Route path="/faq" exact element={<Faq />} />
           <Route path="/comingsoon" exact element={<ComingSoon />} />
           <Route path="/career" exact element={<CareerPage />} />
+          <Route path="partner" exact element={<Partner />}/>
         </Routes>
       </ErrorBoundary>
 
