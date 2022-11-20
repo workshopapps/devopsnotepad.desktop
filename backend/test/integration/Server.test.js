@@ -21,7 +21,7 @@ describe('Server', () => {
     const res = await request.post('/server').send({
       name: 'example server',
       ipAddress: 'google.com',
-      device_id: 80988579,
+      deviceId: 80988579,
       id: '8392029hbdvyw798-88ehe8-82992',
     });
 
@@ -47,6 +47,30 @@ describe('Server', () => {
     assert.include(res.body.message, 'Server updated successfully');
     docmaker.addEndpoint(res);
   });
+
+  //test for notifications
+  it("should create new notification for a server", async () => {
+    const res = await request
+        .post("/server/" + serverId + "/notifications")
+        .send({
+            serverId,
+            log: "add data points",
+        });
+
+    assert.equal(res.status, 200);
+    docmaker.addEndpoint(res);
+});
+
+it("should throw error when creating a notification with an invalid server_id", async () => {
+    const res = await request
+        .post("/server/sdsdds/notifications")
+        .send({
+            log: "add data points"
+        });
+
+    assert.equal(res.status, 400);
+    assert.include(res.body.message, "An error occured while creating new logs, server do not exist");
+});
 
   //2 Tests for Get All Servers by Device
   it('should get all servers added on a particular device', async () => {
@@ -93,4 +117,6 @@ describe('Server', () => {
     const res = await request.get('/server/' + serverId).send();
     expect(res.status).to.equal(404);
   });
+
+  
 });
