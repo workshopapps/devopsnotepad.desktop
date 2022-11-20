@@ -12,9 +12,10 @@ const SingleGridTable = () => {
   });
 
   return (
-    <div className="single-table-container">
+    <div className="single-table-container hide-single">
       <ul>
         <li
+          className={showBundle.starter && 'active'}
           onClick={() =>
             setShowBundle({
               starter: true,
@@ -26,6 +27,7 @@ const SingleGridTable = () => {
           Starter
         </li>
         <li
+          className={showBundle.professional && 'active'}
           onClick={() =>
             setShowBundle({
               starter: false,
@@ -37,6 +39,7 @@ const SingleGridTable = () => {
           Professional
         </li>
         <li
+          className={showBundle.organization && 'active'}
           onClick={() =>
             setShowBundle({
               starter: false,
