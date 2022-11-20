@@ -14,13 +14,14 @@ commands:
           command: |
             cd backend
             touch .env
-            echo ENVIRONMENt=$FRONTEND_IMAGE > ".env"
+            echo ENVIRONMENt=$DOCKERHUB_USER > ".env"
             echo TYPEORM_CONNECTION=$AWS_REGION >> ".env"
             echo TYPEORM_ENTITIES=$EC2_USERNAME >> ".env"
             echo TYPEORM_MIGRATIONS=$EC2_Security_Group_ID >> ".env"
             echo NODE_ENV=$EC2_PUBLIC_IP >> ".env"
             echo TYPEORM_HOST=$EC2_PUBLIC_DNS >> ".env"
             echo TYPEORM_PORT=$EC2_USERNAME >> ".env"
+            echo ENVIRONMENt=$DOCKERHUB_PASSWORD > ".env"
             cd ..
             
     test-and-build-frontend:
