@@ -44,7 +44,7 @@
                   "ipAddress": {
                     "type": "string"
                   },
-                  "device_id": {
+                  "deviceId": {
                     "type": "number"
                   }
                 }
@@ -52,7 +52,7 @@
               "example": {
                 "name": "example server",
                 "ipAddress": "google.com",
-                "device_id": 80988579
+                "deviceId": 80988579
               }
             }
           }
@@ -80,10 +80,13 @@
                         "name": {
                           "type": "string"
                         },
-                        "device_id": {
+                        "notification": {
                           "type": "string"
                         },
                         "ipAddress": {
+                          "type": "string"
+                        },
+                        "deviceId": {
                           "type": "string"
                         },
                         "created_at": {
@@ -103,14 +106,15 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
+                    "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
                     "name": "example server",
-                    "device_id": "80988579",
+                    "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
                     "ipAddress": "google.com",
-                    "created_at": "2022-11-19T15:44:38.000Z",
-                    "updated_at": "2022-11-19T15:44:38.000Z"
+                    "deviceId": "80988579",
+                    "created_at": "2022-11-20T12:40:44.000Z",
+                    "updated_at": "2022-11-20T12:40:44.000Z"
                   },
-                  "isOnline": true
+                  "isOnline": false
                 }
               }
             }
@@ -143,6 +147,12 @@
                     "message": {
                       "type": "string"
                     },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "limit": {
+                      "type": "number"
+                    },
                     "servers": {
                       "type": "array",
                       "items": {
@@ -154,10 +164,13 @@
                           "name": {
                             "type": "string"
                           },
-                          "device_id": {
+                          "notification": {
                             "type": "string"
                           },
                           "ipAddress": {
+                            "type": "string"
+                          },
+                          "deviceId": {
                             "type": "string"
                           },
                           "created_at": {
@@ -174,14 +187,17 @@
                 "example": {
                   "success": true,
                   "message": "1 servers found on this device",
+                  "currentPage": 1,
+                  "limit": 12,
                   "servers": [
                     {
-                      "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
+                      "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
                       "name": "example server",
-                      "device_id": "80988579",
+                      "notification": "8d006a45-68d0-11ed-bd06-fc3fdbff49c4",
                       "ipAddress": "google.com",
-                      "created_at": "2022-11-19T15:44:38.000Z",
-                      "updated_at": "2022-11-19T15:44:38.000Z"
+                      "deviceId": "80988579",
+                      "created_at": "2022-11-20T12:40:44.000Z",
+                      "updated_at": "2022-11-20T12:40:44.000Z"
                     }
                   ]
                 }
@@ -209,7 +225,7 @@
                 }
               },
               "example": {
-                "id": "134b8e8d-6821-11ed-bb99-c4651695acd9",
+                "id": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
                 "name": "updated server name"
               }
             }
@@ -239,197 +255,9 @@
             }
           }
         }
-      },
-      "get": {
-        "description": "",
-        "tags": [],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "device",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "servers": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "device_id": {
-                            "type": "string"
-                          },
-                          "ipAddress": {
-                            "type": "string"
-                          },
-                          "created_at": {
-                            "type": "string"
-                          },
-                          "updated_at": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "1 servers found on this device",
-                  "servers": [
-                    {
-                      "id": "8392029hbdvyw798-88ehe8-82992",
-                      "name": "updated server name",
-                      "device_id": "80988579",
-                      "ipAddress": "google.com",
-                      "created_at": "2022-11-19T18:23:02.000Z",
-                      "updated_at": "2022-11-19T18:23:02.000Z"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/server/8392029hbdvyw798-88ehe8-82992": {
-      "get": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "server": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "device_id": {
-                          "type": "string"
-                        },
-                        "ipAddress": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "server": {
-                    "id": "8392029hbdvyw798-88ehe8-82992",
-                    "name": "updated server name",
-                    "device_id": "80988579",
-                    "ipAddress": "google.com",
-                    "created_at": "2022-11-19T18:23:02.000Z",
-                    "updated_at": "2022-11-19T18:23:02.000Z"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/server/delete": {
-      "post": {
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "serverIds": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "example": {
-                "serverIds": [
-                  "8392029hbdvyw798-88ehe8-82992"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "result": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "message": "servers deleted successfully",
-                  "result": "1 servers deleted!"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/server/8392029hbdvyw798-88ehe8-82992/notifications": {
+    "/server/8d006a2a-68d0-11ed-bd06-fc3fdbff49c4/notifications": {
       "post": {
         "description": "",
         "tags": [],
@@ -449,7 +277,7 @@
                 }
               },
               "example": {
-                "serverId": "8392029hbdvyw798-88ehe8-82992",
+                "serverId": "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4",
                 "log": "add data points"
               }
             }
@@ -478,6 +306,63 @@
                   "success": true,
                   "message": "successful",
                   "serverLog": "add data points"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/delete": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  "8d006a2a-68d0-11ed-bd06-fc3fdbff49c4"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
                 }
               }
             }
