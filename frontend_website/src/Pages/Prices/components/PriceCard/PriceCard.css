@@ -22,7 +22,7 @@ overflow: hidden;
 
 .colored {
     border: 1px solid var(--darkblue-color);
-    background: #fff;
+    background: var(--darkblue-color);
 }
 
 .inner-card-container{
