@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPage from './Pages/Landing page/LandingPage';
+import LandingPage from './Pages/LandingPage/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
@@ -13,9 +13,8 @@ import OurTeam from './Pages/TeamPage/OurTeam';
 import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
+import classes from './App.module.css'
 import Features from './Pages/Features/Features';
-
-import classes from './App.module.css';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
@@ -40,7 +39,6 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navigation />
       <Navigation />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
@@ -73,7 +71,6 @@ function App() {
           <Route path='*' exact element={<ErrorPage />} />
         </Routes>
       </ErrorBoundary>
-      <Footer />
       <Footer />
     </React.Fragment>
   );
