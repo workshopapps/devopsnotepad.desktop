@@ -1,8 +1,5 @@
 import React from 'react';
-import './ToggleSwitch.css';
 import { styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -56,13 +53,33 @@ const ToggleSwitch = ({ toggleMonthly, handleToggle }) => {
       spacing={1}
       alignItems="center"
     >
-      <h4 className>Monthly</h4>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{
+          fontFamily: 'Manrope',
+          color: !toggleMonthly ? '#202020' : '#6F6F6F',
+          fontWeight: !toggleMonthly ? '700' : '500',
+        }}
+      >
+        Monthly
+      </Typography>
       <AntSwitch
         checked={toggleMonthly}
         onChange={handleToggle}
         inputProps={{ 'aria-label': 'ant design' }}
       />
-      <h4>Yearly</h4>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{
+          fontFamily: 'Manrope',
+          color: !toggleMonthly ? '#6F6F6F' : '#202020',
+          fontWeight: !toggleMonthly ? '500' : '700',
+        }}
+      >
+        Yearly
+      </Typography>
     </Stack>
   );
 };

@@ -11,9 +11,8 @@ function App() {
     <React.Fragment>
       <Navigation />
       <Routes>
-        {/* <Route path="/" exact element={<Integration />} /> */}
         <Route path="/faq" exact element={<Faq />} />
-        <Route path="/prices" element={<Prices />} />
+        <Route path="/prices" exact element={<Prices />} />
       </Routes>
       <Footer />
     </React.Fragment>

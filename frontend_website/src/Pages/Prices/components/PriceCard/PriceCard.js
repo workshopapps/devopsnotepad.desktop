@@ -1,6 +1,6 @@
 import React from 'react';
 import './PriceCard.css';
-import Checkbox from './checkmark.svg';
+import Checkbox from '../../checkmark.svg';
 
 const PriceCard = ({ card, id }) => {
   return (

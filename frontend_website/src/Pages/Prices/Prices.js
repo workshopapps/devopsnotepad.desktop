@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Prices.css';
-import ToggleSwitch from './ToggleSwitch/ToggleSwitch';
+import ToggleSwitch from './components/ToggleSwitch/ToggleSwitch';
 import Data from './Data';
-import PriceCard from './PriceCard';
+import PriceCard from './components/PriceCard/PriceCard';
 import bad from './x.svg';
 import good from './good.svg';
 
@@ -44,16 +44,15 @@ const Prices = () => {
           Compare <span className="prices-header-blue">Our Plans</span>
         </h1>
         <div className="table-container">
-          {/* <div className="flex-header"> */}
           <ul>
             <li>Starter</li>
             <li>Professional</li>
             <li>Organization</li>
           </ul>
-          {/* </div> */}
+
           <div className="grid-table">
             <h9 className="grid-header">Unlimited Number of servers</h9>
-            <img className="grid-item" src={bad} alt="" />
+            <img className="grid-item bad" src={bad} alt="" />
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
             <h9 className="grid-header">Notes</h9>
@@ -61,15 +60,15 @@ const Prices = () => {
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
             <h9 className="grid-header">Third party integration</h9>
-            <img className="grid-item" src={bad} alt="" />
+            <img className="grid-item bad" src={bad} alt="" />
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
             <h9 className="grid-header">Collaborators</h9>
-            <img className="grid-item" src={bad} alt="" />
-            <img className="grid-item" src={bad} alt="" />
+            <img className="grid-item bad" src={bad} alt="" />
+            <img className="grid-item bad" src={bad} alt="" />
             <img className="grid-item" src={good} alt="" />
             <h9 className="grid-header">Unlimited downloads</h9>
-            <img className="grid-item" src={bad} alt="" />
+            <img className="grid-item bad" src={bad} alt="" />
             <img className="grid-item" src={good} alt="" />
             <img className="grid-item" src={good} alt="" />
             <h9 className="grid-header">Access to Opspad communinity</h9>
