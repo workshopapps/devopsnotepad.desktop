@@ -1,4 +1,4 @@
-import connection from "../setup";
+import connection from "../setup.js";
 import APIFeatures from "../../utils/apiFeatures.js";
 
 export default class NotificationRepo {
