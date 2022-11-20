@@ -1,8 +1,9 @@
 import React from 'react';
 import style from './partner.module.css';
 import hands from './assets/hands.png';
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import service from '../Partner/assets/service.png';
 import  {PartnerData}  from './data/PartnerTechnologies'
 import {PartnerCardData} from './data/PartnerCardData';
 
@@ -39,18 +40,41 @@ const Partner = () => {
                   <p className={style.cardText}>{item.detail}</p>
                   </>
                 ))} 
+                <div className={style.buttonContainer}>
+                   <button className={style.partnerButton}>
+                      Become a partner
+                    </button>
+                </div>
+                 
             </div>
-            <button className={style.partnerButton}>
-               Become a partner
-            </button>
-
+          
+            <div className={style.partnersTechnologyCardDesktop}>
+                <div className={style.partnersTechnologyCardContainerDesktop}>
+                  <span className={style.cardHeaderContainer}>
+                    <h2 className={style.cardHeader}>Service Partners</h2>
+                    <h2 className={style.cardHeader}>Technology Partners</h2>
+                    <h2 className={style.cardHeader}>Channel Partners</h2>
+                  </span>
+                  <span className={style.technologyDetails}>
+                    <p className={style.cardText}>As our service partners, you would 
+                    be willing and able to provide services such as accounting, marketing,
+                    product development, maintenance or training that are essential to the 
+                    growth of our company. </p>
+                    <div className={style.serviceImageDesktop}> <img src={service} alt="service" /> </div>
+                  </span>
+                
+                    <button className={style.partnerButtonTechnology}>Become a partner</button>
+                </div>  
+            </div>
            
-           { <div className={style.partnerCard}>
+            <div className={style.partnerCard}>
                   <h3 className={style.partnerCardHeading}> What our partners say about us</h3>
                   <div className={style.partnerCardContainer}>
                     {PartnerCardData.map((item) => (
                       <div className={style.partnerCardContainerBody}>
-                        <img className={style.containerCardImage} src={item.img} alt="patners" />
+                        <span className={style.containerCardImage}>
+                            <img src={item.img} alt="patners" />
+                        </span>
                         <div className={style.containerCardContent}>
                             <p className={style.cardItem1}>{item.name}</p>
                             <p className={style.cardItem2}>{item.position}</p>
@@ -61,10 +85,7 @@ const Partner = () => {
                     
                     ))}
                   </div>
-             </div>
-}
-            
-          
+             </div>  
         </div>
     </>
   )
