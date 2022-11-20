@@ -64,8 +64,8 @@ jobs:
       - run:
           name: Save Docker image layer cache
           command: |
-            sudo mkdir -p /caches
-            sudo docker save -o /caches/frontend_image.tar app
+            mkdir -p /caches
+            docker save -o /caches/frontend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
