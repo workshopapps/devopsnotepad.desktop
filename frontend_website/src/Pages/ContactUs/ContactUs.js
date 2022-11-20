@@ -10,6 +10,7 @@ import { useFormik } from 'formik';
 import { contactUsSchema } from './Schema';
 // import { Link } from "react-router-dom";
 import { RiCloseCircleFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -65,7 +66,9 @@ const ContactUs = () => {
                 forums.
               </p>
 
-              <button className={styles.btns}>GET SUPPORT</button>
+              <button className={styles.btns}>
+                <Link to='/faq'>GET SUPPORT</Link>
+              </button>
             </div>
 
             <div className={styles.card}>
@@ -123,7 +126,9 @@ const ContactUs = () => {
                 Developer / API Support. <br />{' '}
               </p>
 
-              <button className={styles.btns}>INTEGRATIONS</button>
+              <button className={styles.btns}>
+                <Link to='/integrations'>INTEGRATIONS</Link>
+              </button>
             </div>
           </div>
         </section>
