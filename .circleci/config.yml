@@ -9,6 +9,9 @@ jobs:
   test-and-build-frontend:
     executor: node-executor
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - run:
           name: Test and Build front-end
@@ -24,6 +27,9 @@ jobs:
   scan-frontend:
     executor: node-executor
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - restore_cache:
           key: frontend-build
@@ -41,6 +47,9 @@ jobs:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PASSWORD  
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - setup_remote_docker:
           version: 20.10.14
@@ -74,6 +83,9 @@ jobs:
   test-and-build-backend:
     executor: node-executor
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - run:
           name: Test and Build backend
@@ -89,6 +101,9 @@ jobs:
   scan-backend:
     executor: node-executor
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - restore_cache:
           key: backend-build
@@ -106,6 +121,9 @@ jobs:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PASSWORD 
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - setup_remote_docker:
           version: 20.10.14
@@ -140,6 +158,9 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "$FINGERPRINT"
       - checkout
       - run:
           name: Deploy
