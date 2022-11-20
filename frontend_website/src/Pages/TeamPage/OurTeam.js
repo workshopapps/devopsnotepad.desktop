@@ -24,7 +24,7 @@ const OurTeam = () => {
 
   return (
     <main className='our__team'>
-      <section className='hero container'>
+      <section className='hero container mb-0'>
         <article className='hero__desc'>
           <h1>
             Meet The <span className='text-primary'>Team </span> Behind The
@@ -40,7 +40,7 @@ const OurTeam = () => {
         </article>
       </section>
 
-      <section className='team__counter-wrapper '>
+      <section className='team__counter-wrapper pt-4 pb-4'>
         <div className='team__counter-inner container'>
           <TeamMembersCounter
             icon={faceIcon}
@@ -66,8 +66,8 @@ const OurTeam = () => {
       </section>
 
       <section>
-        <div className='mt-5'>
-          <h4 className='section__title text-center'>
+        <div className='mt-5 team__section'>
+          <h4 className='section__title text-center fs-1'>
             Our <span className='text-primary'>Product Managers</span>
           </h4>
           <TeamDeptInfo
@@ -79,8 +79,8 @@ const OurTeam = () => {
           />
         </div>
 
-        <div className='mt-5'>
-          <h4 className='section__title text-center'>
+        <div className='mt-5 team__section'>
+          <h4 className='section__title text-center fs-1'>
             Our <span className='text-primary'>Marketers</span>
           </h4>
           <TeamDeptInfo
@@ -93,8 +93,8 @@ const OurTeam = () => {
           />
         </div>
 
-        <div className='mt-5'>
-          <h4 className='section__title text-center'>
+        <div className='mt-5 team__section'>
+          <h4 className='section__title text-center fs-1'>
             Our <span className='text-primary'>Designers</span>
           </h4>
           <TeamDeptInfo
@@ -106,8 +106,8 @@ const OurTeam = () => {
           />
         </div>
 
-        <div className='mt-5'>
-          <h4 className='section__title text-center'>
+        <div className='mt-5 team__section'>
+          <h4 className='section__title text-center fs-1'>
             Our <span className='text-primary'>Developers</span>
           </h4>
           <TeamDeptInfo
