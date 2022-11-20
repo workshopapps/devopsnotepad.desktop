@@ -10,6 +10,7 @@
   }
   .landPage_h1 {
     text-align: center;
+    font-size: 56px !important;
   }
   .landPage_p {
     text-align: center;
@@ -17,10 +18,10 @@
   .landPage_btn {
     place-content: center;
   }
-  .landPage_btn button:nth-child(1) {
+  .landPage_btn a:nth-child(1) {
     padding: 15.277px 24px !important;
   }
-  .landPage_btn button:nth-child(2) {
+  .landPage_btn a:nth-child(2) {
     padding: 24.277px 49px !important;
   }
 
@@ -127,7 +128,7 @@
     text-align: center !important;
     color: #000000 !important;
     padding-top: 56px !important;
-    margin: 0px !important;
+    margin: 0px 18px !important;
   }
   .landPage_col1 {
     width: 100% !important;
@@ -162,7 +163,7 @@
     place-content: center;
   }
 
-  .landPagebtn_mob button:nth-child(1) {
+  .landPagebtn_mob a:nth-child(1) {
     padding: 16px 18px;
     gap: 10px !important;
     background: #102a63;
@@ -173,10 +174,10 @@
     line-height: 16px;
     font-weight: 600;
   }
-  .landPagebtn_mob button:nth-child(2) {
+  .landPagebtn_mob a:nth-child(2) {
     padding: 16px 22px;
     gap: 10px !important;
-    border: 1px solid #202020 !important;
+    border: 1px solid #102A63 !important;
     border-radius: 6px;
     border-radius: 6px;
     color: #202020;
@@ -185,6 +186,7 @@
     line-height: 16px;
     font-weight: 600;
     background: #fff;
+    color: #102A63;
   }
   .landPage_section2 {
     padding: 88px 0 0px !important;
@@ -307,7 +309,7 @@
     line-height: 20px !important;
     text-align: center;
   }
-  .landPage_section6items button {
+  .landPage_section6items a {
     background: #102a63 !important;
     border-radius: 6px !important;
     font-size: 14px !important;
@@ -381,8 +383,8 @@
   padding-bottom: 129px;
 }
 
-.landPage_btn button:nth-child(1) {
-  padding: 24.2767px 40px;
+.landPage_btn a:nth-child(1) {
+  padding: 24.2767px 40px !important;
   background: #102a63;
   border-radius: 7.28302px;
   color: #fff;
@@ -394,15 +396,15 @@
   font-style: normal;
   font-weight: 600;
 }
-.landPage_btn button:nth-child(2) {
-  padding: 24.2767px 70px;
-  background: #fff;
+.landPage_btn a:nth-child(2) {
+  padding: 24.2767px 70px !important;
+  background: #fff !important;
   border-radius: 7.28302px;
-  color: #000;
+  color: #102A63;
   font-weight: 400;
   font-size: 20px;
   line-height: 19px;
-  border: 1.5px solid #202020;
+  border: 1.5px solid #102A63;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
@@ -504,9 +506,10 @@
 
 .landPage_section4img img {
   width: 292px;
-  top: 19px;
+  top: 20px;
   position: absolute;
   right: -455px;
+  transform: skew(-9deg, 0deg);
 }
 
 .landPage_section5 {
@@ -755,7 +758,7 @@
   color: #000000;
   padding: 32px 0 68px;
 }
-.landPage_section6items button {
+.landPage_section6items a {
   background: #102a63;
   border-radius: 7.28302px;
   color: #fff;
