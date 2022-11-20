@@ -28,6 +28,184 @@
   ],
   "paths": {
     "/server": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "deviceId": {
+                    "type": "number"
+                  }
+                }
+              },
+              "example": {
+                "name": "example server",
+                "ipAddress": "google.com",
+                "deviceId": 80988579
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "server": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "notification": {
+                          "type": "string"
+                        },
+                        "ipAddress": {
+                          "type": "string"
+                        },
+                        "deviceId": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "isOnline": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "server created successfully",
+                  "server": {
+                    "id": "(UUID())",
+                    "name": "example server",
+                    "notification": "(UUID())",
+                    "ipAddress": "google.com",
+                    "deviceId": "80988579",
+                    "created_at": "2022-11-20T14:26:55.000Z",
+                    "updated_at": "2022-11-20T14:26:55.000Z"
+                  },
+                  "isOnline": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "limit": {
+                      "type": "number"
+                    },
+                    "servers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "notification": {
+                            "type": "string"
+                          },
+                          "ipAddress": {
+                            "type": "string"
+                          },
+                          "deviceId": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "1 servers found on this device",
+                  "currentPage": 1,
+                  "limit": 12,
+                  "servers": [
+                    {
+                      "id": "(UUID())",
+                      "name": "example server",
+                      "notification": "(UUID())",
+                      "ipAddress": "google.com",
+                      "deviceId": "80988579",
+                      "created_at": "2022-11-20T14:26:55.000Z",
+                      "updated_at": "2022-11-20T14:26:55.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
       "patch": {
         "description": "",
         "tags": [],
@@ -47,7 +225,7 @@
                 }
               },
               "example": {
-                "id": "8392029hbdvyw798-88ehe8-82992",
+                "id": "(UUID())",
                 "name": "updated server name"
               }
             }
@@ -77,8 +255,10 @@
             }
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/server/(UUID())/notifications": {
+      "post": {
         "description": "",
         "tags": [],
         "parameters": [],
@@ -88,18 +268,17 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "serverIds": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
+                  "serverId": {
+                    "type": "string"
+                  },
+                  "log": {
+                    "type": "string"
                   }
                 }
               },
               "example": {
-                "serverIds": [
-                  "8392029hbdvyw798-88ehe8-82992"
-                ]
+                "serverId": "(UUID())",
+                "log": "add data points"
               }
             }
           }
@@ -118,15 +297,63 @@
                     "message": {
                       "type": "string"
                     },
-                    "result": {
+                    "serverLog": {
                       "type": "string"
                     }
                   }
                 },
                 "example": {
                   "success": true,
-                  "message": "servers deleted successfully",
-                  "result": "1 servers deleted!"
+                  "message": "successful",
+                  "serverLog": "add data points"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/100/subscribe": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "registrationToken": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "registrationToken": "670ca230-67e2-11ed-a65b2-1458d0028583"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Subscription successful"
                 }
               }
             }

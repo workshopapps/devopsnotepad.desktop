@@ -1,0 +1,68 @@
+.login__form {
+  width: 100%;
+  margin: 6rem auto 2rem;
+}
+
+.h1 {
+  font-size: 2.7rem;
+  letter-spacing: 0.2rem;
+}
+
+.p {
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  margin: 2rem 0;
+}
+
+.contact__form {
+  margin-top: 4rem;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+.div {
+  flex-basis: 45%;
+}
+
+.invalid__input {
+  margin-top: -1.6rem;
+  color: rgb(253, 46, 46);
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.label {
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: #3d3d3d9b;
+}
+
+.checkbox__input:hover {
+  -moz-outline-radius: 0.3rem;
+}
+
+.btn__box {
+  width: 100%;
+  margin: 6rem 0 2rem;
+}
+
+.button {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63ed;
+}

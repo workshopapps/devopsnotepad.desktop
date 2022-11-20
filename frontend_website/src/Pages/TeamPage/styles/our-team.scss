@@ -1,0 +1,167 @@
+@import './variables';
+@import './all-teams.scss';
+
+.our__team {
+  section {
+    margin-bottom: 5rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon {
+    width: $icon_sm;
+    @media screen and (min-width: $tablet) {
+      width: $icon_md;
+    }
+    @media screen and (min-width: $desktop) {
+      width: $icon_lg;
+    }
+  }
+
+  .hero {
+    min-height: 100vh;
+    text-align: center;
+
+    h1 {
+      font-size: $main_header_sm;
+      line-height: 140%;
+    }
+    p {
+      font-size: $para_sm;
+    }
+
+    @media screen and (min-width: $tablet) {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .herobg__wrapper {
+        width: 483px;
+      }
+      .hero__desc {
+        flex: 1;
+      }
+
+      h1 {
+        font-size: $main_header_lg;
+        line-height: 76px;
+        font-weight: 800;
+      }
+      p {
+        font-size: $para_lg;
+      }
+    }
+  }
+
+  .team__counter-wrapper {
+    background: $primary;
+    color: #fff;
+    .team__counter-inner {
+      padding-top: 1rem;
+
+      .team__counter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        @media screen and (max-width: $tablet) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        .current__count {
+          font-size: 24px;
+          font-weight: 700;
+        }
+        .position {
+          font-size: 16px;
+        }
+      }
+      @media screen and (max-width: $mobile) {
+        .current__count {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      @media screen and (min-width: $desktop) {
+        .icon {
+          width: $icon_lg;
+        }
+        .current__count {
+          font-weight: 700;
+          font-size: 36px;
+        }
+        .position {
+          font-weight: 600;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .team__section {
+    margin-top: 5rem;
+  }
+
+  .team__desc__and__images {
+    background: $tertiary;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .team__desc__and__images-inner {
+      article {
+        .team__desc__cta {
+          height: 48px;
+          background: $primary;
+          color: #fff;
+          border-radius: 6px;
+          outline: none;
+          border: none;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        @media screen and (min-width: $tablet) {
+          min-width: 421px;
+        }
+      }
+
+      .swiper__wrapper {
+        .swiper-slide {
+          margin-bottom: 3rem;
+        }
+        .swiper-pagination {
+          .swiper-pagination-bullet,
+          .swiper-pagination-bullet-active {
+            background: $dark;
+          }
+        }
+
+        @media screen and (min-width: $tablet) {
+          min-width: 670px;
+        }
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+      }
+      @media screen and (max-width: $mobile) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
