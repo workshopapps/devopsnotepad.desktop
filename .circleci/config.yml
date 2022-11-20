@@ -28,11 +28,11 @@ jobs:
       - restore_cache:
           key: frontend-build
       - run:
-        name: Scan frontend
-        command: |
-          cd frontend
-          npm install
-          npm audit fix --audit-level=critical
+          name: Scan frontend
+          command: |
+            cd frontend
+            npm install
+            npm audit fix --audit-level=critical
 
   dockerise-frontend:
     docker:
@@ -46,10 +46,10 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true    
       - restore_cache:
-        keys:
-          - v1-{{ .Branch }}
-        paths:
-          - /caches/backend_image.tar
+          keys:
+            - v1-{{ .Branch }}
+          paths:
+            - /caches/backend_image.tar
       - run:
           name: check for and load Docker image layer cache
           command: |
@@ -60,10 +60,10 @@ jobs:
      # deploy the image
       - run: docker push $FRONTEND_WEBSITE_IMAGE
       - run:
-        name: Save Docker image layer cache
-        command: |
-          mkdir -p /caches
-          docker save -o /caches/frontend_image.tar app
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/frontend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
@@ -91,11 +91,11 @@ jobs:
       - restore_cache:
           key: backend-build
       - run:
-        name: Scan backend
-        command: |
-          cd backend
-          npm install
-          npm audit fix --audit-level=critical
+          name: Scan backend
+          command: |
+            cd backend
+            npm install
+            npm audit fix --audit-level=critical
 
   dockerise-backend:
     docker:
@@ -109,10 +109,10 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true    
       - restore_cache:
-        keys:
-          - v1-{{ .Branch }}
-        paths:
-          - /caches/backend_image.tar
+          keys:
+            - v1-{{ .Branch }}
+          paths:
+            - /caches/backend_image.tar
       - run:
           name: check for and load Docker image layer cache
           command: |
@@ -123,10 +123,10 @@ jobs:
      # deploy the image
       - run: docker push $BACKEND_IMAGE
       - run:
-        name: Save Docker image layer cache
-        command: |
-          mkdir -p /caches
-          docker save -o /caches/backend_image.tar app
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/backend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
@@ -138,18 +138,18 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Deploy
-        command: |
-          curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-          unzip awscli-bundle.zip
-          ./awscli-bundle/install -b ~/bin/aws
+          name: Deploy
+          command: |
+            curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+            unzip awscli-bundle.zip
+            ./awscli-bundle/install -b ~/bin/aws
 
-          PUBLIC_IP=$(curl ipinfo.io/ip)
+            PUBLIC_IP=$(curl ipinfo.io/ip)
 
-          sleep 5
-          
-          ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
-          cd opspad/ && sudo docker-compose up --remove-orphans 
+            sleep 5
+
+            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS \
+            cd opspad/ && sudo docker-compose up --remove-orphans 
 
 workflows:
   default:
