@@ -69,7 +69,11 @@ const ContactUs = () => {
 
                             <p className={styles.assistance}>If you’re having trouble with OpsPad, check out the FAQs section or get assistance from other OpsPad users in our discussion forums.</p>
 
-                            <button className={styles.btns}>GET SUPPORT</button>
+                            <button className={styles.btns}>
+
+                                <Link to="/faq">GET SUPPORT</Link>
+
+                            </button>
 
                         </div>
 
@@ -110,7 +114,11 @@ const ContactUs = () => {
 
                             <p className={styles.assistance}>If you are interested in an integration, please refer to our Developer / API Support. <br />  </p>
 
-                            <button className={styles.btns}>INTEGRATIONS</button>
+                            <button className={styles.btns}>
+
+                                <Link to="/integrations">INTEGRATIONS</Link>
+
+                            </button>
 
                         </div>
 
