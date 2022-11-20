@@ -34,7 +34,7 @@ describe("Notification", () => {
         let notifications = res.body.notifications;
         assert.equal(res.status, 200);
         assert.equal(notifications.length, 4);
-        assert.equal(Object.keys(notifications[0]).length, 4);
+        assert.equal(Object.keys(notifications[0]).length, 5);
         assert.include(notifications[0].notificationId, 1);
         docmaker.addEndpoint(res);
     });

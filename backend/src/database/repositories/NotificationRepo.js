@@ -23,7 +23,7 @@ export default class NotificationRepo {
     static getWeeklyNotifications = async (id, query) => {
         const dbQuery = connection("notifications")
             .where("serverId", id)
-            .andWhere(connection.raw(`createdAt BETWEEN NOW() - INTERVAL 1 WEEK AND NOW()`));
+            .andWhere(connection.raw(`created_at BETWEEN NOW() - INTERVAL 1 WEEK AND NOW()`));
         return new APIFeatures(dbQuery, query)
             .paginate()
             .sort()
@@ -33,7 +33,7 @@ export default class NotificationRepo {
     static getMonthlyNotifications = async (id, query) => {
         const dbQuery = connection("notifications")
             .where("serverId", id)
-            .andWhere(connection.raw(`createdAt BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()`));
+            .andWhere(connection.raw(`created_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()`));
         return new APIFeatures(dbQuery, query)
             .paginate()
             .sort()
