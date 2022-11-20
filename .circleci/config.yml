@@ -64,8 +64,8 @@ jobs:
       - run:
           name: Save Docker image layer cache
           command: |
-            mkdir -p /caches
-            docker save -o /caches/frontend_image.tar app
+            sudo mkdir -p /caches
+            sudo docker save -o /caches/frontend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
@@ -129,8 +129,8 @@ jobs:
       - run:
           name: Save Docker image layer cache
           command: |
-            mkdir -p /caches
-            docker save -o /caches/backend_image.tar app
+            sudo mkdir -p /caches
+            sudo docker save -o /caches/backend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
@@ -160,14 +160,14 @@ workflows:
     jobs:
       - test-and-build-frontend
       - test-and-build-backend
-      - scan-backend
-          # requires: [test-and-build-backend]
-      - scan-frontend
-          # requires: [test-and-build-frontend]
-      - dockerise-frontend
-          # requires: [test-and-build-frontend, scan-frontend]
-      - dockerise-backend
-      #     requires: [test-and-build-backend, scan-backend]      
-      - deploy-frontend-and-backend
-          #requires: [test-and-build-frontend, scan-frontend, test-and-build-backend, scan-backend]
+      - scan-backend:
+          requires: [test-and-build-backend]
+      - scan-frontend:
+          requires: [test-and-build-frontend]
+      - dockerise-frontend:
+          requires: [test-and-build-frontend, scan-frontend]
+      - dockerise-backend:
+          requires: [test-and-build-backend, scan-backend]      
+      - deploy-frontend-and-backend:
+          requires: [test-and-build-frontend, scan-frontend, test-and-build-backend, scan-backend]
       
