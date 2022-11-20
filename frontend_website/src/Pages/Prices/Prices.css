@@ -163,6 +163,20 @@
     .table-container li{
         width: 145px;
     }
+
+    /* .table-container .grid-table{
+        grid-template-columns:45% 20% 20% 15% ;
+    } */
+}
+
+@media(max-width: 856px){
+    /* .table-container .grid-table {
+            display: grid;
+            padding: 20px;
+            place-items: center;
+            background: #F6F9FF;
+            grid-template-columns: 40% 20% 20% 20%;
+        } */
 }
 
 @media(max-width:835px){
