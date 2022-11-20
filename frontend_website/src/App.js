@@ -1,8 +1,8 @@
 import React from 'react';
-import LandingPage from './Pages/LandingPage/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
+import LandingPage from './Pages/Landing page/LandingPage';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
