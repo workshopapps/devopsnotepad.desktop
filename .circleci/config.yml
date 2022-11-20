@@ -55,6 +55,8 @@ jobs:
           command: |
             set +o pipefail
             docker load -i /caches/frontend_image.tar | true
+     # authenticate to dockerhub
+      - run: docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD" docker.io
      # build the frontend image
       - run: docker build --cache-from=app --file './frontend_website/Dockerfile' -t $FRONTEND_WEBSITE_IMAGE .
      # deploy the image
@@ -113,6 +115,8 @@ jobs:
             - v1-{{ .Branch }}
           paths:
             - /caches/backend_image.tar
+     # authenticate to dockerhub
+      - run: docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD" docker.io
       - run:
           name: check for and load Docker image layer cache
           command: |
