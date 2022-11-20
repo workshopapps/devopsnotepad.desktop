@@ -15,12 +15,12 @@ const Navigation = () => {
           <div className={styles.mainNavigation}>
             <div className={styles.left}>
               <div className={styles.logo}>
-                <Link to="/" onClick={() => {setOpen(false)}}>
+                <Link to="/" onClick={() => { setOpen(false) }}>
                   <img src={logo} alt="" />
                 </Link>
               </div>
             </div>
-            
+
             <Navbar isOpen={isOpen} setOpen={setOpen} />
 
             <div className={styles.right}>
@@ -36,7 +36,7 @@ const Navigation = () => {
         </div>
       </div>
     </section>
-    
+
   )
 }
 
