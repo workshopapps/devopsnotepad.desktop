@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Scan frontend
           command: |
-            cd frontend
+            cd frontend_website
             npm install
             npm audit fix --audit-level=critical
 
@@ -55,6 +55,8 @@ jobs:
           command: |
             set +o pipefail
             docker load -i /caches/frontend_image.tar | true
+     # authenticate to dockerhub
+      - run: docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD" docker.io
      # build the frontend image
       - run: docker build --cache-from=app --file './frontend_website/Dockerfile' -t $FRONTEND_WEBSITE_IMAGE .
      # deploy the image
@@ -62,8 +64,8 @@ jobs:
       - run:
           name: Save Docker image layer cache
           command: |
-            mkdir -p /caches
-            docker save -o /caches/frontend_image.tar app
+            sudo mkdir -p /caches
+            sudo docker save -o /caches/frontend_image.tar app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
@@ -113,6 +115,8 @@ jobs:
             - v1-{{ .Branch }}
           paths:
             - /caches/backend_image.tar
+     # authenticate to dockerhub
+      - run: docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD" docker.io
       - run:
           name: check for and load Docker image layer cache
           command: |

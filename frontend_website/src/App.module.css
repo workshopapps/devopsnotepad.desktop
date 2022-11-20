@@ -23,7 +23,13 @@
 }
 
 .button {
-  margin-top: 2rem;
-  font-size: 2rem;
-  padding: 1.8rem 2.5rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63ed;
 }
