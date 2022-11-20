@@ -1,6 +1,5 @@
 import {
-  iphone13,
-  iphone14,
+  iphone13_14,
   iphonegrouped,
   iphonep2,
   iphoneslope,
@@ -12,13 +11,17 @@ import {
   prosper,
   tim,
   chinonso,
+  grouped,
+  iphoneslopemob,
 } from './Images';
-import style from '../Landing page/landingpage.module.css';
+import style from '../LandingPage/LandingPage.module.css';
+import Carousl from './carousel/carousel';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
     <div>
-      <div className={style.landPage_flex}>
+      <div className={`${style.landPage_flex} ${style.landPage_section1}`}>
         <div className={style.landPage_col1}>
           <h1 className={style.landPage_h1}>
             The <span className={style.landPage_span}>Ultimate Notedpad </span>
@@ -29,17 +32,21 @@ const LandingPage = () => {
             go!
           </p>
           <div className={style.landPage_btn}>
-            <button>Get Started for Free</button>
-            <button>How it works</button>
+            <Link to=''>Get Started for Free</Link>
+            <Link to='/how-it-works'>How it works</Link>
           </div>
         </div>
         <div className={style.landPage_imgFlex}>
-          <img src={iphone13} alt="iPhone 13" />
-          <img src={iphone14} alt="" />
+          <img src={iphone13_14} alt='iPhone 13' />
+          <img src={grouped} alt='' />
+        </div>
+        <div className={style.landPagebtn_mob}>
+          <Link to='/'>Download App</Link>
+          <Link to='/how-it-works'>How it works</Link>
         </div>
       </div>
       <div className={`${style.landPage_flex} ${style.landPage_section2}`}>
-        <img src={iphonep2} alt="" />
+        <img src={iphonep2} alt='' />
         <div className={style.landPage_sectionItems}>
           <h2>Easily add servers and monitor them on and from your mobile</h2>
           <p>
@@ -51,27 +58,30 @@ const LandingPage = () => {
       </div>
       <div className={`${style.landPage_flex} ${style.landPage_section3}`}>
         <div className={style.landPage_sectionItems1}>
-          <h2>Notes. Passwords. Notifications.</h2>
+          <h2>
+            Notes. <br /> Passwords. <br /> Notifications.
+          </h2>
           <p>
-            It really is just that easy to use. Create notes for specific
-            servers. Format the text to suit you. Your passwords for the servers
-            go here quicker for different platform
+            Organize your notes, passwords, and servers in one location to help
+            you remember everything and tackle any job. Notifications, ofcourse,
+            so you miss nothing!
           </p>
         </div>
         <div className={style.landPage_groupedImg}>
-          <img src={iphonegrouped} alt="" />
+          <img src={iphonegrouped} alt='' />
         </div>
       </div>
       <div className={`${style.landPage_flex} ${style.landPage_section4}`}>
         <div className={style.landPage_section4col}>
           <h2>Simplify your workflow today!</h2>
           <div className={style.landPage_section4Items}>
-            <img src={google} alt="" />
-            <img src={appstore} alt="" />
+            <img src={google} alt='' />
+            <img src={appstore} alt='' />
           </div>
         </div>
         <div className={style.landPage_section4img}>
-          <img src={iphoneslope} alt="" />
+          <img src={iphoneslope} alt='' />
+          <img src={iphoneslopemob} alt='' />
           <span></span>
         </div>
       </div>
@@ -79,17 +89,21 @@ const LandingPage = () => {
         <div>
           <h2>We’re already getting lots of love!</h2>
         </div>
+        <div className={style.Carousel}>
+          <Carousl />
+        </div>
+
         <div className={style.landPage_section5grid}>
           <div className={style.landPage_section5_div1}>
-            <img src={sarah} alt="" />
+            <img src={sarah} alt='' />
             <p>
-              Using this app has been a life saver!<br/>
-              <span>-</span>
+              Using this app has been a life saver!
+              <br />-
             </p>
             <h4>Sarah Walter</h4>
           </div>
           <div className={style.landPage_section5_div2}>
-            <img src={frank} alt="" />
+            <img src={frank} alt='' />
             <p>
               I’ve been able to move around more, knowing I can track my servers
               on the go!
@@ -98,7 +112,7 @@ const LandingPage = () => {
             <h4>Frank Etim</h4>
           </div>
           <div className={style.landPage_section5_div3}>
-            <img src={titi} alt="" />
+            <img src={titi} alt='' />
             <p>
               I’ve been able to move around more, knowing I can track my servers
               on the go!
@@ -107,7 +121,7 @@ const LandingPage = () => {
             <h4>Titi Adebayo</h4>
           </div>
           <div className={style.landPage_section5_div4}>
-            <img src={prosper} alt="" />
+            <img src={prosper} alt='' />
             <p>
               I didn’t know how much I was overstressing until my OpsPad
               encounter!
@@ -116,7 +130,7 @@ const LandingPage = () => {
             <h4>Prosper Code</h4>
           </div>
           <div className={style.landPage_section5_div5}>
-            <img src={tim} alt="" />
+            <img src={tim} alt='' />
             <p>
               Love is what I found here!
               <br />-
@@ -124,13 +138,23 @@ const LandingPage = () => {
             <h4>Tim Delvin</h4>
           </div>
           <div className={style.landPage_section5_div6}>
-            <img src={chinonso} alt="" />
+            <img src={chinonso} alt='' />
             <p>
               Phenomenal is the word! Absolutely!
               <br />-
             </p>
             <h4>Chinonso Light</h4>
           </div>
+        </div>
+      </div>
+      <div className={style.landPage_section6}>
+        <div className={style.landPage_section6items}>
+          <h1>You are due to experience ease!</h1>
+          <p>
+            Monitor, document and modify aspects of servers you manage - on the
+            go!
+          </p>
+          <Link to='/'>Get Started for Free</Link>
         </div>
       </div>
     </div>
