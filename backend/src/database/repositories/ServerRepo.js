@@ -6,7 +6,7 @@ export default class ServerRepo {
     };
 
     static getServersByDevice = async (device_id) => {
-        return connection("servers").where("device_id", device_id);
+        return connection("servers").where("deviceId", device_id);
     };
 
     static getServerById = async (id) => {

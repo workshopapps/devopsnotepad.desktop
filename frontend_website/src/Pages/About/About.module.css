@@ -21,10 +21,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+<<<<<<< HEAD
     max-width: 1439px;
     flex-wrap: wrap;
     width: 100%;
     min-height: 796px;
+=======
+    align-items: center;
+    max-width: 1439px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 300px;
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
     height: fit-content;
     padding: 20px;
     background-color: #102a63;
@@ -127,6 +135,35 @@
     width: 100%;
     justify-content: space-between;
   }
+<<<<<<< HEAD
+=======
+  .colorbgsm {
+    max-width: 320px !important;
+    width: 100%;
+    display: block;
+    min-height: 350px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  .colorbglg {
+    max-width: 540px !important;
+    width: 100%;
+    display: none;
+    min-height: 680px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
 }
 @media only screen and (min-width: 769px) {
   .imgsize {
@@ -151,12 +188,22 @@
     max-width: 1439px;
     flex-wrap: wrap;
     width: 100%;
+<<<<<<< HEAD
     min-height: 796px;
     height: fit-content;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 90px;
     padding-right: 90px;
+=======
+    align-items: center;
+    min-height: 796px;
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-left: 90px;
+    padding-right: 0px;
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
     background-color: #102a63;
     row-gap: 20px;
   }
@@ -260,6 +307,33 @@
   .show {
     display: block;
   }
+<<<<<<< HEAD
+=======
+  .colorbgsm {
+    max-width: 320px !important;
+    width: 100%;
+    display: none;
+    min-height: 350px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+  .colorbglg {
+    max-width: 540px !important;
+    width: 100%;
+    display: block;
+    min-height: 680px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
 }
 
 .container {
@@ -303,6 +377,7 @@ li {
   align-items: center;
   color: #000000;
 }
+<<<<<<< HEAD
 .colorbg {
   max-width: 540px !important;
   width: 100%;
@@ -312,3 +387,5 @@ li {
   background-position: center right;
   background-size: contain;
 }
+=======
+>>>>>>> a5346e77173c3d8016ceaec5e79b6789c16a6caa
