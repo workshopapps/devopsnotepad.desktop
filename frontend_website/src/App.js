@@ -66,6 +66,8 @@ function App() {
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
           <Route path='/demo' exact element={<DemoPage />} />
+          <Route path='/our-team' exact element={<OurTeam />} />
+          <Route path='/our-team/all-teams' exact element={<AllTeam />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
