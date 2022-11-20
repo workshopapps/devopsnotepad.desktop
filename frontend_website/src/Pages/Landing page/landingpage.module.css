@@ -10,7 +10,8 @@
   }
   .landPage_h1 {
     text-align: center;
-    font-size: 56px !important;
+    font-size: 67px !important;
+    line-height: 80px !important;
   }
   .landPage_p {
     text-align: center;
@@ -339,8 +340,8 @@
 }
 
 .landPage_imgFlex img:nth-child(1) {
-  object-fit: none;
-  transform: translate(0%, 2%)
+  transform: translate(0%, -2%);
+  max-width: 80%;
 }
 .landPage_imgFlex img:nth-child(2) {
   display: none;
@@ -457,7 +458,7 @@
   font-weight: 600;
   font-size: 40px;
   line-height: 52px;
-  padding: 10px 0 30px;
+  padding: 0px 0 30px;
   margin: 0;
 }
 .landPage_sectionItems1 p {
