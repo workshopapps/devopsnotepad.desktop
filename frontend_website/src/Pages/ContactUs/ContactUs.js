@@ -1,14 +1,14 @@
 import React from "react";
 import styles from './ContactUs.module.css';
-import email from './images/email.png';
-import phone from './images/phone.png';
+// import email from './images/email.png';
+// import phone from './images/phone.png';
 import support from './images/support.png';
 import sales from './images/sales.png';
 import press from './images/press.png';
 import developer from './images/developer.png';
 import { useFormik } from "formik";
 import { contactUsSchema } from "./Schema";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { RiCloseCircleFill } from "react-icons/ri";
 
 
@@ -225,7 +225,7 @@ const ContactUs = () => {
                         <div>
 
                             <button className={styles.btn} disabled={isSubmitting}>
-                                    Send Message 
+                                Send Message
 
                             </button>
 
