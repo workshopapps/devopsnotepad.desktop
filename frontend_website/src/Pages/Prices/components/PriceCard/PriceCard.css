@@ -128,6 +128,12 @@ overflow: hidden;
     }
 }
 
+@media(max-width: 654px){
+    .inner-card-container{
+        padding: 30px 20px 30px 20px;
+    }
+}
+
 @media(max-width: 400px){
     .card-container {
         width: 100%;
