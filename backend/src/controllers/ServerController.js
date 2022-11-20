@@ -1,6 +1,6 @@
-import create from "../services/server/create.js";
-import getAllServers from "../services/server/getAll.js";
-import update from "../services/server/update.js";
+import create from '../services/server/create.js';
+import getAllServers from '../services/server/getAll.js';
+import update from '../services/server/update.js';
 import deleteSeversById from '../services/server/delete.js';
 
 import { validatePayload } from '../utils/index.js';
@@ -16,6 +16,8 @@ export default class ServerController {
 
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
+
+      console.log(req.body);
 
       const result = await create(req.body);
 
@@ -74,18 +76,15 @@ export default class ServerController {
   };
 
   static subscribe = async (req, res, next) => {
-    try{
+    try {
+      await pushNotificationForServer(req);
 
-        await pushNotificationForServer(req);
-
-        res.send({
-            success: true,
-            message: "Subscription successful"
-        })
-
-    }catch(error){
-        next(error)
+      res.send({
+        success: true,
+        message: 'Subscription successful',
+      });
+    } catch (error) {
+      next(error);
     }
-}
-
+  };
 }

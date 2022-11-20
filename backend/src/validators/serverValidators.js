@@ -1,24 +1,26 @@
 /* eslint-disable quotes */
-import { body, validationResult } from 'express-validator';
+import { body } from 'express-validator';
+
+import { nameValMsg, serverIdValMsg, deviceIdValMsg, ipAddressValMsg } from './validationMsg.js';
 
 export const createServerValidator = [
-  body('name')
+  body('name', nameValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 
-  body('deviceId')
+  body('deviceId', deviceIdValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 
-  body('ipAddress')
+  body('ipAddress', ipAddressValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 ];
 
 export const updateServerValidator = [
-  body('name')
+  body('name', nameValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 
-  body('id').notEmpty().isUUID(),
+  body('id', serverIdValMsg).notEmpty().isUUID(),
 ];
