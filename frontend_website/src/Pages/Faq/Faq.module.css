@@ -72,6 +72,7 @@
   font-size: 20px;
   line-height: 33px;
   color: #202020;
+  overflow-y: scroll;
 }
 
 .desktopView {
@@ -107,7 +108,7 @@
     padding: 0 0 5% 0;
   }
 
-  .btn {
+  .btn, .btnColored {
     min-width: 250px;
     height: 60px;
     font-size: 15px;

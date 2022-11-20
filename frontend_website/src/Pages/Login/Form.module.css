@@ -34,10 +34,19 @@
 
 .checkbox {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
 }
+.password:link,
+.password:visited {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #407bff;
+}
 
+.password:hover {
+  color: #407cffe5;
+}
 .label {
   margin-left: 1.5rem;
   font-size: 1.5rem;
