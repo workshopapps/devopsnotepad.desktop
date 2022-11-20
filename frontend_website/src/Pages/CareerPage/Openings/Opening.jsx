@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from './Opening.module.css';
 const Opening = (props) => {
   return (
-    <li className={classes.li} data-testid='opening__item'>
+    <div className={classes.li} data-testid='opening__item'>
       <h1 className={classes.h1}>{props.title}</h1>
       <div className={classes.detail}>
         <p className={classes.p}>
@@ -13,7 +13,7 @@ const Opening = (props) => {
           Department: <span className={classes.span}>{props.department}</span>
         </p>
       </div>
-    </li>
+    </div>
   );
 };
 
