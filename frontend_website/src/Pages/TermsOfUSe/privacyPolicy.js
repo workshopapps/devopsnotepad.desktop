@@ -1,10 +1,12 @@
 import React from 'react';
+import NavSection from './NavSection';
 
 const PrivacyPolicy = () => {
   return (
     <>
 
 <div className="box">
+  <NavSection/>
 <div className='content'>
           <h4 className="content--title">Opspad Privacy Policy</h4>
           <p className="child--title">v.1 - Updated November 17th 2022</p>
