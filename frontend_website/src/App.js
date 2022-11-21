@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import "./App.css";
+import React from "react";
+import Footer from "./Component/Footer/Footer";
+import Header from "./Component/Header/Header";
+=======
 import React from 'react';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -38,12 +44,18 @@ const ErrorFallback = (props) => {
     </div>
   );
 };
+>>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
 
 function App() {
   const navigate = useNavigate();
 
   return (
     <React.Fragment>
+<<<<<<< HEAD
+      <Header />
+      <Footer />
+      {/* <LandingPage /> */}
+=======
        <Navigation />
 
       <ErrorBoundary
@@ -78,6 +90,7 @@ function App() {
         </Routes>
       </ErrorBoundary>
       <Footer />
+>>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
     </React.Fragment>
   );
 }
