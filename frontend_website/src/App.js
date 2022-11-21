@@ -24,7 +24,6 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Csr from './Pages/Csr/Csr';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
