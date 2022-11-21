@@ -1,6 +1,6 @@
-import config from "./src/config/index.js";
-import path from "path";
-import { fileURLToPath } from "url";
+import config from './src/config/index.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -21,7 +21,7 @@ export const development = {
     seeds: {
         directory: path.resolve(__dirname, "src", "database/seeds"),
     }
-};
+
 // export const staging = {
 //   client: 'postgresql',
 //   connection: {
