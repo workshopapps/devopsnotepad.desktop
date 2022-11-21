@@ -1,0 +1,99 @@
+.rightaligned {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 6rem;
+  font-family: 'Manrope';
+  font-style: normal;
+  list-style: none;
+  text-align: left;
+  color: #292929;
+}
+
+.right {
+  flex-basis: 47%;
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.p {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  margin: 2rem 0;
+}
+
+.left {
+  flex-basis: 40%;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.button {
+  width: 16.1rem;
+  height: 4.8rem;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63e4;
+}
+
+@media only screen and (max-width: 850px) {
+  .rightaligned {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 4rem 6rem;
+  }
+
+  .right {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .h2 {
+    font-size: 3.5rem;
+  }
+
+  .p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+  .img {
+    height: 70%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .rightaligned {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+  .p {
+    font-size: 1.8rem;
+  }
+}

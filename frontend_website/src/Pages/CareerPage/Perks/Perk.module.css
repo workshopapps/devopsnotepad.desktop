@@ -1,0 +1,37 @@
+.li {
+  flex-basis: 33%;
+  margin-bottom: 8rem;
+  font-family: 'Manrope';
+
+  display: flex;
+  align-items: flex-start;
+}
+.detail {
+  flex-basis: 70%;
+  text-align: left;
+}
+.h1 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+}
+.p {
+  margin-top: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .li {
+    flex-basis: 45%;
+    min-width: 33rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .li {
+    width: 100%;
+    margin: 3rem auto;
+  }
+}

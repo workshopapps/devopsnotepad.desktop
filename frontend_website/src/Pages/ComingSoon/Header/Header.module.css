@@ -1,0 +1,96 @@
+.leftAligned {
+  width: 100%;
+  padding: 8rem 8rem;
+  text-align: left;
+  font-family: 'Manrope';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  flex-basis: 32%;
+}
+
+.h1 {
+  font-size: 5.6rem;
+  font-weight: 600;
+  color: #225ad6;
+}
+
+.p {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 2rem 0 2.5rem;
+  color: #292929;
+}
+
+.h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 1rem;
+}
+
+.input {
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  color: #3b3939;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.right {
+  flex-basis: 45%;
+}
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+.button {
+  width: 17.8rem;
+  height: 5.6rem;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63ed;
+}
+
+@media only screen and (max-width: 850px) {
+  .leftAligned {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    width: 85%;
+    margin-bottom: 2rem;
+  }
+
+  .h1 {
+    font-size: 2.5rem;
+  }
+
+  .p {
+    font-size: 1.5rem;
+  }
+  .h2 {
+    font-size: 1.7rem;
+  }
+
+  .input {
+    font-size: 1.1rem;
+  }
+}

@@ -1,14 +1,14 @@
 import env from 'dotenv';
 
-env.config({path: process.env.ENV_FILE_PATH})
+env.config({ path: process.env.ENV_FILE_PATH });
 
 export const AppEnvironment = {
-    TEST: 'test',
-    LOCAL: 'local',
-    DEVELOPMENT: 'development',
-    STAGING: 'staging',
-    PRODUCTION: 'production',
-  }
+  TEST: 'test',
+  LOCAL: 'local',
+  DEVELOPMENT: 'development',
+  STAGING: 'staging',
+  PRODUCTION: 'production',
+};
 
 const isTestEnvironment = process.env.APP_ENV === AppEnvironment.TEST;
 
@@ -29,7 +29,6 @@ const config = {
     password: isTestEnvironment ? process.env.TEST_DB_PASSWORD : process.env.DB_PASSWORD,
   },
 };
-
 export const validateConfig = () => {
   const missingKeys = [];
   Object.entries(config).forEach(([baseKey, baseValue]) => {

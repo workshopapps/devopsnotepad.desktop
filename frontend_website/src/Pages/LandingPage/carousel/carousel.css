@@ -1,0 +1,19 @@
+/* @media  screen and (max-width: 768px) {
+    .slick-list {
+        height: 398px !important;
+        width: 311px !important;
+      }
+}
+
+
+@media  screen and (max-width: 1024px) {
+    .slick-list {
+        width: 511px;
+        height: 330px;
+      }
+}
+
+.slick-slider.width.height.margin.padding.slick-initialized {
+    display: flex !important;
+    place-content: center !important;
+  } */
