@@ -1,4 +1,5 @@
 import React from 'react';
+import NavSection from './NavSection';
 import './Terms.css';
 
 const Terms = () => {
@@ -6,6 +7,7 @@ const Terms = () => {
     <>
   
           <div className="box">
+            <NavSection/>
             <div className='content'>
             <h4 className='content--title'>Opspad Terms of Use</h4>
             <p className='child--title'>v1- Update November 17th 2022</p>
