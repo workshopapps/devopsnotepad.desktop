@@ -1,0 +1,18 @@
+.input {
+  padding: 1.2rem 1rem;
+  border-radius: 0.6rem;
+  margin: 0.7rem 0 1.4rem 0;
+  font-size: 1.7rem;
+  font-weight: 300;
+  width: 100%;
+}
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #aaaaaa;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}

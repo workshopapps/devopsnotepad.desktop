@@ -1,0 +1,36 @@
+.words {
+  padding: 10rem 6rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Manrope';
+  color: #353535;
+}
+
+.h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 3.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ul {
+  margin-top: 4rem;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 850px) {
+  .words {
+    padding: 6rem 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .words {
+    padding: 4rem 2rem 0;
+  }
+}

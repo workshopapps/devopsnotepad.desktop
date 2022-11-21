@@ -1,0 +1,105 @@
+.openings {
+  padding: 3rem 6rem 5rem;
+  font-family: 'Manrope';
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 3rem;
+  color: #353535;
+}
+.div {
+  margin: 0 auto 6rem;
+}
+.h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+}
+.sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.p {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.svg {
+  height: 2rem;
+  width: 2rem;
+  fill: #0e6930;
+}
+
+.ul {
+  margin: 0 auto;
+  list-style: none;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4rem;
+  column-gap: 15rem;
+}
+
+.mobile {
+  display: none;
+}
+
+.btn_box {
+  margin: 3rem auto 0;
+  width: 70%;
+  text-align: right;
+}
+.button {
+  padding: 1.3rem 1.8rem;
+  background: #ffffff;
+  border: 0.2rem dashed #149443;
+  color: #149443;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #ffffffe1;
+}
+
+@media only screen and (max-width: 850px) {
+  .openings {
+    padding: 2rem 2rem 5rem;
+  }
+  .ul {
+    column-gap: 5rem;
+    padding: 3rem 2rem;
+  }
+
+  .ul {
+    row-gap: 5rem;
+  }
+  .div {
+    margin: 3rem auto 1.5rem;
+    width: fit-content;
+  }
+  .h1 {
+    font-size: 3rem;
+    line-height: 2.8rem;
+  }
+
+  .p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .ul {
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
+  }
+}

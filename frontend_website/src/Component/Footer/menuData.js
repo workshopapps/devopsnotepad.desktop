@@ -1,85 +1,85 @@
 export const Links = [
   {
-    title: "COMPANY",
+    title: 'COMPANY',
     list: [
       {
-        title: "About Us",
-        slug: "",
+        title: 'About Us',
+        slug: '/about-us',
       },
       {
-        title: "Privacy Policy",
-        slug: "",
+        title: 'Our Team',
+        slug: '/our-team',
       },
       {
-        title: "Careers",
-        slug: "",
+        title: 'Partners',
+        slug: '/partners',
       },
       {
-        title: "Terms of Service",
-        slug: "",
+        title: 'Contact Us',
+        slug: '/contact-us',
       },
       {
-        title: "FAQs",
-        slug: "",
+        title: 'Careers',
+        slug: '/careers',
       },
     ],
   },
   {
-    title: "RESOURCES",
+    title: 'RESOURCES',
     list: [
       {
-        title: "Coming Soon",
-        slug: "",
+        title: 'Coming Soon',
+        slug: '/coming-soon',
       },
       {
-        title: "FAQs",
-        slug: "",
+        title: 'FAQs',
+        slug: '/FAQs',
       },
       {
-        title: "Blog",
-        slug: "",
+        title: 'Blog',
+        slug: '/blog',
       },
       {
-        title: "Best Practices",
-        slug: "",
+        title: 'Best Practices',
+        slug: '/best-practices',
       },
     ],
   },
   {
-    title: "PRODUCT",
+    title: 'PRODUCT',
     list: [
       {
-        title: "Features",
-        slug: "",
+        title: 'Features',
+        slug: '/features',
       },
       {
-        title: "Integrations",
-        slug: "",
+        title: 'Integrations',
+        slug: '/integrations',
       },
       {
-        title: "Prices",
-        slug: "",
+        title: 'Prices',
+        slug: '/prices',
       },
       {
-        title: "Demo",
-        slug: "",
+        title: 'Demo',
+        slug: '/demo',
       },
     ],
   },
   {
-    title: "COMMUNITY",
+    title: 'COMMUNITY',
     list: [
       {
-        title: "DevOps Community",
-        slug: "",
+        title: 'DevOps Community',
+        slug: '/devops-community',
       },
       {
-        title: "News Room",
-        slug: "",
+        title: 'News Room',
+        slug: '/news-room',
       },
       {
-        title: "Podcasts",
-        slug: "",
+        title: 'Podcasts',
+        slug: '/podcasts',
       },
     ],
   },
