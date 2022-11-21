@@ -21,6 +21,7 @@ export const development = {
     seeds: {
         directory: path.resolve(__dirname, "src", "database/seeds"),
     }
+};
 
 // export const staging = {
 //   client: 'postgresql',
