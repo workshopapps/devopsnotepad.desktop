@@ -25,12 +25,20 @@ npm install
 * Run server using `npm run dev`.
 
 ## Contributing
-1. Ensure you are on the dev branch.
-2. Checkout to your branch with a descriptive name, example: working on an enpoint like add notification. Your branch name could be
-`endpoint/addNotification`
-3. Make a pull request from the remote dev
-4. Make your changes and commit to your branch
-5. Ensure your code passes the test by using: `npm run test`
-6. Make a pull request again to ensure you have updated changes from the dev branch
-7. Push your changes to your remote branch
-8. Create a pull request to the develop branch of the central repo.
+
+1. Clone the dev branch with `git clone repo-link-here`
+2. checkout from dev branch to your new branch named this way `git checkout -b feat/BE-15-process-script`. In this example, BE-15 is the ticket number, process script is what it does.
+3. Add your changes to the new branch `git add .`
+4. Commit changes `git commit -m "feat(BE-15): added endpoints to process login scripts"` . If it is a `bug` fix, replace feat with fix. If  it is some basic chore like removing redundant code, replace with `chore`
+5. Now push your branch `git push origin feat/BE-15-process-script`
+6. Go to github and make a PR to the dev branch. Add description stating what the PR achieves. Add your linear link to the PR description also.
+7. Request for review from your team leads or mentors in the PR.
+8. Now wait for it to be merged by the team leads or mentors
+
+Remember to always rebase the work from dev branch
+
+`git pull -r origin dev`
+
+If your work is merged and you are to handle another ticket, pull from dev again and checkout using the above steps
+
+# [SWAGGER DOCS](https://app.swaggerhub.com/apis-docs/Usenmfon/devosp-api/1.0.0-oas3#/)

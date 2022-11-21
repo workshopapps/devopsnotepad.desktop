@@ -1,0 +1,17 @@
+#nextArrow,
+#prevArrow {
+  font-size: 80px !important;
+  color: #323232;
+  top: 150px;
+  z-index: 99;
+}
+
+@media screen and (max-width: 767px) {
+  #nextArrow {
+    right: 5px;
+  }
+
+  #prevArrow {
+    left: 5px;
+  }
+}

@@ -8,8 +8,8 @@
     "rules": {
         // enable additional rules
         "indent": ["error", 4],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
+        "linebreak-style": ["error", "windows"],
+        "quotes": ["error", "double", { "allowTemplateLiterals": true }],
         "semi": ["error", "always"],
 
         // override configuration set by extending "eslint:recommended"
