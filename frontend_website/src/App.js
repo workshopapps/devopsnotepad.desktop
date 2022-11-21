@@ -13,12 +13,14 @@ import OurTeam from './Pages/TeamPage/OurTeam';
 import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
-import classes from './App.module.css';
+import Partner from './Pages/Partner/Partner'
+import classes from './App.module.css'
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
 import DemoPage from './Pages/DemoPage/DemoPage';
+import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
@@ -42,7 +44,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navigation />
+       <Navigation />
+
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -67,7 +70,8 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
-          <Route path='/csr' exact element={<Csr />} />
+          <Route path='/partner' exact element={<Partner/>} />
+          <Route path='/csr' exact element={<Csr/>} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
