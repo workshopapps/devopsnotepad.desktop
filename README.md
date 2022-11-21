@@ -40,3 +40,5 @@ Remember to always rebase the work from dev branch
 `git pull -r origin dev`
 
 If your work is merged and you are to handle another ticket, pull from dev again and checkout using the above steps
+
+
