@@ -14,12 +14,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
-<<<<<<< HEAD
     "react-multi-carousel": "^2.8.2",
-=======
     "react-helmet-async": "^1.3.0",
     "react-icons": "^4.6.0",
->>>>>>> f3a03a385970fc20360f030feee1756fc6b89d3f
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
     "sass": "^1.56.1",
@@ -53,10 +50,7 @@
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.10",
-<<<<<<< HEAD
-=======
     "husky": "^8.0.0",
->>>>>>> f3a03a385970fc20360f030feee1756fc6b89d3f
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
   },
