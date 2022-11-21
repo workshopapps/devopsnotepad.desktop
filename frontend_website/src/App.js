@@ -21,6 +21,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
 import DemoPage from './Pages/DemoPage/DemoPage';
+import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
@@ -70,6 +71,7 @@ function App() {
           <Route path='/our-team' exact element={<OurTeam />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner/>} />
+          <Route path='/csr' exact element={<Csr/>} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
