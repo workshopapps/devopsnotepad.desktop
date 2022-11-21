@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet-async';
+
 import Header from './Header/Header';
 import LeftAligned from './LeftAligned/LeftAligned';
 import RightAligned from './RightAligned/RightAligned';
@@ -11,16 +13,26 @@ import classes from './CareerPage.module.css';
 
 const CareerPage = () => {
   return (
-    <div className={classes.careerpage}>
-      <Header />
-      <LeftAligned />
-      <RightAligned />
-      <Values />
-      <Words />
-      <Perks />
-      <Openings />
-      <SignUp />
-    </div>
+    <>
+      {/* SEO optimazation */}
+      <Helmet>
+        <title>Careers</title>
+        <meta name='description' content='join our team' />
+        <link rel='canonical' href='/careers' />
+      </Helmet>
+
+      {/* Application */}
+      <div className={classes.careerpage} data-testid='career__page'>
+        <Header />
+        <LeftAligned />
+        <RightAligned />
+        <Values />
+        <Words />
+        <Perks />
+        <Openings />
+        <SignUp />
+      </div>
+    </>
   );
 };
 export default CareerPage;

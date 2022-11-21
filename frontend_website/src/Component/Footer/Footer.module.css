@@ -1,0 +1,138 @@
+.footer {
+  padding: 23.5px 80px 0px 80px;
+}
+
+.footer .mainFooter .logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 31.5px;
+}
+
+.footer .mainFooter {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.footer .mainFooter .dMFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .mainFooter .dMFooter h4 {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.04em;
+  color: #202020;
+  margin-bottom: 20px;
+}
+
+.footer .mainFooter .dMFooter .footerLink {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.footer .mainFooter .dMFooter .footerLink li a {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: #6F6F6F;
+
+}
+
+.footer .mainFooter .dMFooter .footerLink .miUM .fDownloadAppLink {
+  display: flex;
+  gap: 26.26px;
+}
+
+.footer .mainFooter .dMFooter .footerLink .miUM .right .fDownloadAppLink img {
+  max-width: 159px;
+  height: auto;
+}
+
+.footer .mainFooter .dMFooter .footerLink .miUM .right .fDownloadAppLink img:last-child {
+  max-width: 137.96px
+}
+
+.footer .bottomFooter {
+  border-top: 1px solid #E5E5E5;
+  padding: 23.5px 0px 23.5px 0px;
+}
+
+.footer .bottomFooter span.f_copyright {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #202020;
+}
+
+@media screen and (max-width: 1060px) {
+  .footer {
+    padding: 23.5px 50px 23.5px 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer .mainFooter .dMFooter .footerLink {
+    flex-wrap: wrap;
+  }
+
+  .footer .mainFooter .dMFooter {
+    flex-direction: column;
+  }
+
+  .footer .mainFooter .dMFooter .footerLink {
+    row-gap: 20px;
+  }
+
+  .footer .mainFooter .dMFooter .footerLink .miUM.right {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 23.5px 32px 23.5px 32px;
+  }
+
+  .footer .mainFooter .dMFooter .footerLink .miUM.right {
+    margin-left: 0px;
+  }
+
+  .footer .mainFooter .dMFooter .footerLink .miUM .fDownloadAppLink {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer .mainFooter .dMFooter .footerLink .miUM .fDownloadAppLink {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer .mainFooter .dMFooter .footerLink {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    padding: 23.5px 16px 0px 16px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footer .mainFooter .dMFooter .footerLink .miUM .fDownloadAppLink img {
+    max-width: 110px;
+  }
+}

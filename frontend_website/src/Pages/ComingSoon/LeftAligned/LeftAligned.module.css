@@ -1,5 +1,5 @@
 .leftaligned {
-  padding: 8rem 0;
+  padding: 10rem 8rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -8,6 +8,7 @@
   font-style: normal;
   text-align: left;
   color: #292929;
+  background-color: #f6f9ff;
 }
 
 .left {
@@ -15,6 +16,7 @@
 }
 
 .h2 {
+  color: #225ad6;
   font-weight: 600;
   font-size: 4.8rem;
   margin-bottom: 1.5rem;
@@ -41,7 +43,7 @@
   .leftaligned {
     flex-direction: column;
     text-align: center;
-    padding: 4rem 0;
+    padding: 6rem 3rem;
   }
 
   .right {
@@ -49,7 +51,7 @@
   }
 
   .left {
-    width: 80%;
+    width: 100%;
     margin-bottom: 1.5rem;
   }
   .h2 {
@@ -63,15 +65,11 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .left {
-    width: 100%;
+  .leftaligned {
+    padding: 6rem 2rem;
   }
 
   .h2 {
     font-size: 2.5rem;
-  }
-
-  .p {
-    font-size: 1.8rem;
   }
 }

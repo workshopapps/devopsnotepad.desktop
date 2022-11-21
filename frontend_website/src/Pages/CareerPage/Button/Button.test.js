@@ -1,5 +1,5 @@
 import React from "react";
-import { render, } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import Button from "./Button";
 
 it("renders correctly", () => {
@@ -8,16 +8,16 @@ it("renders correctly", () => {
     expect(queryByTestId("button")).toBeTruthy();
 })
 
-describe("Input value", () => {
-    it("updates on change", () => {
+describe(" Button onClick event", () => {
+    it("trigger onClick function on click", () => {
 
-        const onChange = jest.fn();
-        const { queryByTestId } = render(<Input />);
+        const onClick = jest.fn();
+        const { queryByTestId } = render(<Button onClick={onClick} />);
 
         const submitButton = queryByTestId("button");
 
-        fireEvent.change(submitButton);
+        fireEvent.click(submitButton);
 
-        expect(onChange).toBe("test");
+        expect(onClick).toHaveBeenCalled();
     })
 })
