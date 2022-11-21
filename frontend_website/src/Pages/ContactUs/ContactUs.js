@@ -8,9 +8,8 @@ import press from './images/press.png';
 import developer from './images/developer.png';
 import { useFormik } from 'formik';
 import { contactUsSchema } from './Schema';
-// import { Link } from "react-router-dom";
-import { RiCloseCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { RiCloseCircleFill } from 'react-icons/ri';
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));

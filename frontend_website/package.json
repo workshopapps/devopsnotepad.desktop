@@ -19,7 +19,9 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
     "sass": "^1.56.1",
+    "slick-carousel": "^1.8.1",
     "source-map-loader": "^4.0.1",
     "swiper": "^8.4.4",
     "web-vitals": "^2.1.4",
@@ -57,5 +59,10 @@
   "lint-staged": {
     "src/**/*.{js,jsx,html,css}": "prettier --write",
     "src/**/*.js": "eslint"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
