@@ -14,7 +14,6 @@ import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import Partner from './Pages/Partner/Partner'
-
 import classes from './App.module.css'
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
@@ -23,6 +22,9 @@ import NewsRoom from './Pages/NewsRoom/NewsRoom';
 import DemoPage from './Pages/DemoPage/DemoPage';
 import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
+import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
+import Blog from './Pages/Blog/Blog';
+import Csr from './Pages/Csr/Csr';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -53,11 +55,7 @@ function App() {
         <Routes>
           <Route path='/' exact element={<LandingPage />} />
           <Route path='/integrations' element={<Integration />} />
-          <Route path='/faq' exact element={<Faq />} />
-          <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/career' exact element={<CareerPage />} />
-          <Route path='/' exact element={<LandingPage />} />
-          <Route path='/integrations' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
           <Route path='/signup' exact element={<SignUp />} />
           <Route path='/login' exact element={<Login />} />
@@ -69,6 +67,8 @@ function App() {
           <Route path='/news-room' exact element={<NewsRoom />} />
           <Route path='/demo' exact element={<DemoPage />} />
           <Route path='/our-team' exact element={<OurTeam />} />
+          <Route path='/devops-community' exact element={<DevopsCommunity />} />
+          <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner/>} />
           <Route path='/csr' exact element={<Csr/>} />
