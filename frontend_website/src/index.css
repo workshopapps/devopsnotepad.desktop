@@ -17,6 +17,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -25,18 +26,5 @@ a {
 
 ul {
   margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
+  padding: 0
 }
