@@ -5,6 +5,7 @@ export async function up(knex) {
     table.uuid('notification').defaultTo(knex.raw('(UUID())'));
     table.string('ipAddress', 255).notNullable();
     table.string('deviceId', 255).notNullable();
+    table.string('fcmToken', 255);
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.dateTime('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
   });

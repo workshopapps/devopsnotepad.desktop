@@ -22,7 +22,7 @@ describe('Server', () => {
     const res = await request.post('/server').send({
       name: 'example server',
       ipAddress: 'google.com',
-      deviceId: 80988579,
+      deviceId: "80988579",
     });
 
     serverId = res.body.server.id;
@@ -34,6 +34,7 @@ describe('Server', () => {
     const res = await request.post('/server').send({
       name: 'example server',
       ipAddress: 'google.com',
+      deviceId: "7765776788"
     });
     
        assert.equal(res.status, 400);
@@ -117,7 +118,7 @@ describe('Server', () => {
     const newServerRes = await request.post('/server').send({
       name: 'test server',
       ipAddress: 'www.google.com.ng',
-      deviceId: 80988579,
+      deviceId: "80988579",
       id: 100
     });
 

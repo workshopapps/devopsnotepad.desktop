@@ -77,12 +77,14 @@ export default class ServerController {
 
   static subscribe = async (req, res, next) => {
     try {
+
       await pushNotificationForServer(req);
 
       res.send({
         success: true,
         message: 'Subscription successful',
       });
+      
     } catch (error) {
       next(error);
     }
