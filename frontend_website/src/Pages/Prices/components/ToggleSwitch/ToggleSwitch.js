@@ -48,14 +48,14 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 const ToggleSwitch = ({ toggleMonthly, handleToggle }) => {
   return (
     <Stack
-      direction="row"
-      justifyContent="center"
+      direction='row'
+      justifyContent='center'
       spacing={1}
-      alignItems="center"
+      alignItems='center'
     >
       <Typography
-        variant="h6"
-        component="div"
+        variant='h6'
+        component='div'
         sx={{
           fontFamily: 'Manrope',
           color: !toggleMonthly ? '#202020' : '#6F6F6F',
@@ -70,8 +70,8 @@ const ToggleSwitch = ({ toggleMonthly, handleToggle }) => {
         inputProps={{ 'aria-label': 'ant design' }}
       />
       <Typography
-        variant="h6"
-        component="div"
+        variant='h6'
+        component='div'
         sx={{
           fontFamily: 'Manrope',
           color: !toggleMonthly ? '#6F6F6F' : '#202020',

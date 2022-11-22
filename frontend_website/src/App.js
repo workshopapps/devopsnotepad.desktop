@@ -23,7 +23,9 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Prices from './Pages/Prices/Prices';
+import Podcast from './Pages/Podcast/Podcasts';
+
+// import Csr from './Pages/Csr/Csr';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -43,7 +45,7 @@ function App() {
 
   return (
     <React.Fragment>
-       <Navigation />
+      <Navigation />
 
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
@@ -69,9 +71,9 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
-          <Route path='/partner' exact element={<Partner/>} />
-          <Route path='/csr' exact element={<Csr/>} />
-          <Route path='/prices' exact element={<Prices/>}/>
+          <Route path='/partner' exact element={<Partner />} />
+          <Route path='/csr' exact element={<Csr />} />
+          <Route path='/podcast' exact element={<Podcast />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
