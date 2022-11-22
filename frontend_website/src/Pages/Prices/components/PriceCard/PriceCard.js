@@ -14,15 +14,15 @@ const PriceCard = ({ card, id, toggleMonthly }) => {
             : 'card-container colored'
         }
       >
-        <div className="inner-card-container">
-          <div className="inner-card-align">
+        <div className='inner-card-container'>
+          <div className='inner-card-align'>
             <h4>{card.title}</h4>
             <h2>{card.price}</h2>
             <ul>
               {card.list.map((item, index) => {
                 return (
                   <li>
-                    <img src={Checkbox} alt="" />
+                    <img src={Checkbox} alt='' />
                     <span>{item}</span>
                   </li>
                 );
