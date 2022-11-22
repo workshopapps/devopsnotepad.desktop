@@ -226,6 +226,17 @@
   .activity_box
   .article {
   display: flex;
+  width: 100%;
+}
+
+.community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent {
+  width: 100%;
 }
 
 .community_activity
@@ -251,9 +262,22 @@
   .activity_box
   .article
   .aContent
-  .msgBox {
-  display: flex;
-  justify-content: space-between;
+  .communityContent {
+    width: 100%;
+    display: flex;
+}
+
+  .community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent
+  .communityContent
+  .mBContent{
+ 
+  width: 100%;
 }
 
 .community_activity
@@ -263,8 +287,40 @@
   .activity_box
   .article
   .aContent
-  .msgBox
-  .mBLeft
+  .communityContent
+  .l_d_box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 30px;
+}
+
+.community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent
+  .communityContent
+  .l_d_box
+  span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #353535;
+  margin-left: 7px;
+}
+
+.community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent
+  .communityContent
+  .mBContent
   p {
   font-weight: 400;
   font-size: 16px;
@@ -273,6 +329,7 @@
   max-width: 431px;
 }
 
+
 .community_activity
   .inCommunity_activity
   .left
@@ -280,8 +337,22 @@
   .activity_box
   .article
   .aContent
-  .msgBox
-  .mBLeft
+  .communityContent
+  .mBContent
+  p:first-child {
+  position: relative;
+  top: 3px;
+}
+
+.community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent
+  .communityContent
+  .mBContent
   p:last-child {
   font-weight: 400;
   font-size: 14px;
@@ -296,9 +367,9 @@
   .activity_box
   .article
   .aContent
-  .msgBox
-  .mBLeft
-  .mBtBottom {
+  .communityContent
+  .mBContent
+  .mBCauthor {
   display: flex;
   align-items: center;
 }
@@ -310,13 +381,13 @@
   .activity_box
   .article
   .aContent
-  .msgBox
-  .mBLeft
-  .mBtBottom
+  .communityContent
+  .mBContent
+  .mBCauthor
   p:last-child {
   position: relative;
-  top: -2px;
-  left: 8px;
+  top: 2px;
+  left: 5px;
 }
 
 .community_activity
@@ -326,40 +397,31 @@
   .activity_box
   .article
   .aContent
-  .msgBox
-  .mBLeft
+  .communityContent
+  .mBContent
+  .mBCauthor
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #353535;
+    margin: 0;
+    padding: 0;
+}
+
+.community_activity
+  .inCommunity_activity
+  .left
+  .activity_content
+  .activity_box
+  .article
+  .aContent
+  .communityContent
+  .mBContent
+  .mBCauthor
   p
   span {
   color: #1a46a7;
-}
-
-.community_activity
-  .inCommunity_activity
-  .left
-  .activity_content
-  .activity_box
-  .article
-  .aContent
-  .msgBox
-  .l_d_box {
-  display: flex;
-  gap: 16px;
-  height: 30px;
-}
-
-.community_activity
-  .inCommunity_activity
-  .left
-  .activity_content
-  .activity_box
-  .article
-  .l_d_box
-  span {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #353535;
-  margin-left: 7px;
 }
 
 .community_activity .inCommunity_activity .leftC .pangination {
@@ -393,9 +455,14 @@
 }
 
 .community_activity .inCommunity_activity .right .rBox {
+  padding: 19px 30px 16px 30px;
   margin-bottom: 30px;
-  padding: 30px;
   border: 1px solid #e6e6e6;
+}
+
+
+.community_activity .inCommunity_activity .right .rBox:first-child {
+  height: 150px;
 }
 
 .community_activity .inCommunity_activity .right .rBox h5 {
@@ -450,7 +517,7 @@
     .activity_box
     .article
     .aContent
-    .msgBox {
+    .communityContent {
     flex-direction: column;
     gap: 5px;
   }
@@ -573,8 +640,8 @@
     .activity_box
     .article
     .aContent
-    .msgBox
-    .mBLeft
+    .communityContent
+    .mBContent
     p {
     font-size: 14px;
     line-height: 19px;
@@ -587,9 +654,9 @@
     .activity_box
     .article
     .aContent
-    .msgBox
-    .mBLeft
-    .mBtBottom {
+    .communityContent
+    .mBContent
+    .mBCauthor {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -602,12 +669,11 @@
     .activity_box
     .article
     .aContent
-    .msgBox
-    .mBLeft
-    .mBtBottom
+    .communityContent
+    .mBContent
+    .mBCauthor
     p:last-child {
     position: relative;
-    top: 0px;
     left: 0;
   }
 
@@ -618,11 +684,15 @@
     .activity_box
     .article
     .aContent
-    .msgBox
-    .mBLeft
+    .communityContent
+    .mBContent
     p:last-child {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  .community_activity .inCommunity_activity .right .rBox {
+    padding: 30px 24px 30px 24px;
   }
 }
 

@@ -370,7 +370,8 @@
 
 @media screen and (max-width: 600px) {
   .integration .inBanner {
-    max-width: 381.61px;
+    width: 100%;
+    padding: 0px 24px 0px 24px;
   }
 
   .integration .inBanner .subtitle {
