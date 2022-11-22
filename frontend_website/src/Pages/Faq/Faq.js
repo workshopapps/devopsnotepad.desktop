@@ -26,7 +26,9 @@ const Faq = () => {
           <div className={faq.grid2Header}>Ans.</div>
           <div className={faq.ansgrid}>
             <div>
-              <img src={cloud} alt='cloud' />
+              <img src={cloud} alt='cloud' style={{
+                height: '20px', width: '20px'
+              }} />
             </div>
             <div className={faq.ansScroll}>
               <Ans answer={answer} />

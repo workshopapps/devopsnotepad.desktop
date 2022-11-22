@@ -1,8 +1,8 @@
 import faq from './Faq.module.css';
 const Button = () => {
-    return (
-        <div>
-            {/* <div className={faq.buttonContainer}>
+  return (
+    <div>
+      {/* <div className={faq.buttonContainer}>
             <button
               className={faq.btn}
               style={{
@@ -23,8 +23,8 @@ const Button = () => {
             <button className={faq.btn}>What platforms support Opspad?</button>
           </div> */}
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Button;
