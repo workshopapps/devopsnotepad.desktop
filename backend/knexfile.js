@@ -7,18 +7,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const development = {
-  client: 'mysql2',
-  connection: {
-    host: config.db.host,
-    port: config.db.port,
-    user: config.db.user,
-    password: config.db.password,
-    database: config.db.database,
-  },
-  migrations: {
-    directory: path.resolve(__dirname, 'src', 'database/migrations'),
-  },
+    client: "mysql2",
+    connection: {
+        host: config.db.host,
+        port: config.db.port,
+        user: config.db.user,
+        password: config.db.password,
+        database: config.db.database,
+    },
+    migrations: {
+        directory: path.resolve(__dirname, "src", "database/migrations"),
+    },
+    seeds: {
+        directory: path.resolve(__dirname, "src", "database/seeds"),
+    }
 };
+
 // export const staging = {
 //   client: 'postgresql',
 //   connection: {
