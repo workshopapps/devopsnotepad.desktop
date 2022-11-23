@@ -1,0 +1,26 @@
+.price-payment-container {
+  width: 100%;
+}
+
+.price-payment-container .card-container {
+  width: 410px;
+  height: 412px;
+}
+
+.card-active-border {
+  border: 1px solid #ededed;
+}
+
+.debit-card-container {
+  padding: 27px 20px;
+}
+
+.debit-card-container h2 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card-active-border .card {
+  border: 1px solid #ededed;
+}

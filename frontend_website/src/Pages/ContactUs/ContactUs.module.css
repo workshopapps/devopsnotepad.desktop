@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 
 section.container {
@@ -16,8 +16,10 @@ section.contact {
 
     margin-top: 80px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
 }
 
 p {
@@ -26,31 +28,33 @@ p {
 
 section.contact .contactUs {
 
-    color: #2563EB;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 20px;
-    font-family: 'Inter', sans-serif;
+    color: #102A63 !important;
+    text-align: center;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    margin-bottom: 20px !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 section.contact .inTouch {
 
-    font-family: 'Manrope', sans-serif;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 20px;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 54px !important;
+    line-height: 40px !important;
+    margin-bottom: 20px !important;
+    color: #202020 !important;
 }
 
 section.contact .help {
 
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 32.4px;
-    color: #777777;
-    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    color: #777777 !important;
+    margin-bottom: 30px !important;
 }
 
 section.wrapper {
@@ -115,7 +119,7 @@ section.wrapper form .row {
         width: 100%;
     }
 
-    section.wrapper form .row .end {
+    section.wrapper form div.row div.col input.end {
 
         margin-right: 15px;
     }
@@ -127,8 +131,8 @@ section.wrapper form .row {
 
     section.contact .inTouch {
 
-        font-size: 48px;
-        line-height: 65.57px;
+        font-size: 48px !important;
+        line-height: 65.57px !important;
 
     }
 
@@ -155,11 +159,6 @@ section.wrapper form .row {
         width: 30%;
         display: flex;
         align-items: center;
-    }
-
-    section.wrapp .comp img {
-
-        padding-left: 10px;
     }
 
     section.wrapp .comp1 {
@@ -238,24 +237,26 @@ section.wrap {
     margin-top: 40px;
     text-align: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
 section.wrap .reachOut {
 
     font-family: 'Manrope', sans-serif;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 43.71px;
+    font-weight: 800 !important;
+    font-size: 32px !important;
+    line-height: 43.71px !important;
 
 }
 
 section.wrap .canHelp {
 
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
     color: #777777;
     margin: 15px 0;
 }
@@ -291,6 +292,13 @@ section.wrapp .comp p.opsPad {
         margin: 0 20px;
     }
 
+    section.contact .inTouch {
+
+        font-size: 32px !important;
+        line-height: 40px !important;
+
+    }
+
 
 }
 
@@ -316,14 +324,15 @@ p.errorMsg {
 
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 12px !important;
     line-height: 14.52px;
     color: red;
     white-space: nowrap;
 }
 
-section.support div.card {
+section.support div.col1 div.card {
 
+    font-family: 'Manrope', sans-serif !important;
     background-color: white;
     border: 1.5px solid #DFE1EB;
     border-radius: 5px;
@@ -361,24 +370,25 @@ section.support div.card {
     
 }
 
-section.support div.card p.supportP {
+section.support div.col1 div.card p.supportP {
 
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 27.32px;
-    margin: 15px;
-    text-align: center;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    line-height: 27.32px !important;
+    margin: 15px !important;
+    text-align: center !important;
+    color: #202020 !important;
 }
 
-section.support div.card p.assistance {
+section.support div.col1 div.card p.assistance {
 
     font-family: 'Manrope', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-    color: #444444;
-    text-align: center;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    color: #444444 !important;
+    text-align: center !important;
 }
 
 .btns {
@@ -428,5 +438,10 @@ section.support div.card p.assistance {
 
         padding: 0 250px;
     }
+}
+
+section.support div.col1 div.card img {
+
+    width: 70px;
 }
 

@@ -1,22 +1,22 @@
-FROM node:18-alpine
+FROM node:14
 
-# install latest upgrades
-RUN apk -U upgrade
 
 # set working directory
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+WORKDIR /usr/src/backend
 
 # Copy the dependencies file
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json .
 
 # Install dependencies
 RUN npm install
 
 # add app
 COPY . .
+
+# Build the application
+RUN cd src
+
 
 # wait for MySQL server
 ENV DOCKERIZE_VERSION v0.6.0
