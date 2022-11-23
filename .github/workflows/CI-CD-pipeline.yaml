@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -34,37 +33,12 @@ jobs:
         run: |
           npm run build --if-present
           npm test
-
-  dockerize_frontend:
-    runs-on: ubuntu-latest
-    needs: [build_and_test_frontend]
-    steps:
-      - name: Docker Login
-        uses: docker/login-action@v2.1.0
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Code Checkout
-        uses: actions/checkout@v2.5.0
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2.1.0
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v2.2.1
-      - name: Build and Push
-        uses: docker/build-push-action@v3.2.0
-        with:
-          context: "frontend_website/"
-          file: "frontend_website/Dockerfile"
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devopsnotepadpad-frontend-website:latest
           
   build_and_test_backend:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -87,33 +61,24 @@ jobs:
           npm run build --if-present
           #npm test
 
-  dockerize_backend:
-    runs-on: ubuntu-latest
-    needs: [build_and_test_backend]
+  dockerize_stack_and_test_dockerized_stack:
+    runs-on: ubuntu-latest    
+    needs: [build_and_test_frontend, build_and_test_backend]
     steps:
+      - uses: actions/checkout@v2
       - name: Docker Login
         uses: docker/login-action@v2.1.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Code Checkout
-        uses: actions/checkout@v2.5.0
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2.1.0
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v2.2.1
-      - name: Build and Push
-        uses: docker/build-push-action@v3.2.0
-        with:
-          context: "backend/"
-          file: "backend/Dockerfile"
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devopsnotepad-backend:latest
+      - name: Build the frontend and backend stack
+        run: docker-compose up --remove-orphans -d
+      - name: Test dockerized stack
+        run: docker run appropriate/curl -s --retry 10 --retry-connrefused http://localhost:3000/
           
   deploy_frontend_backend:
     runs-on: ubuntu-latest
-    needs: [dockerize_frontend, dockerize_backend]
+    needs: [dockerize_stack_and_test_dockerized_stack]
     steps:
       - uses: actions/checkout@v3
       - name: Push to server and deploy
