@@ -1,7 +1,7 @@
 export async function up(knex) {
     return knex.schema.createTable('notifications', table => {
-        table.uuid("notificationId").primary().defaultTo(knex.raw("(UUID())"));
-        table.uuid("serverId").defaultTo(knex.raw("(UUID())"));
+        table.uuid("notificationId").primary().defaultTo(knex.schema.raw("(UUID())"));
+        table.uuid("serverId").defaultTo(knex.schema.raw("(UUID())"));
         table.foreign("serverId");
         table.string('log', 900).notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now());
