@@ -4,7 +4,7 @@ import first from './images/image 19.png';
 import second from './images/image 24.png';
 import mark from './images/Ellipse 477.png';
 import face from './images/Ellipse 478.png';
-import Login from './Login';
+// import Login from './Login';
 
 const Podcast = () => {
   return (

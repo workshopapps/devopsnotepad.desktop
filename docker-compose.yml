@@ -14,8 +14,6 @@ services:
       - 3000:3000
     expose:
       - 3000
-    depends_on:
-      - backend
 
   backend:
     container_name: opspad-backend
@@ -24,11 +22,11 @@ services:
       dockerfile: Dockerfile
     image: godchosen/opspad-backend:latest
     environment:
-      - MYSQL_DATABASE='$MYSQL_DATABASE'
-      - MYSQL_ROOT_PASSWORD='$MYSQL_ROOT_PASSWORD'
-      - MYSQL_HOST='$MYSQL_HOST'
-      - MYSQL_USER=$MYSQL_USER
-      - MYSQL_PASSWORD='$MYSQL_PASSWORD'
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_HOST: $MYSQL_HOST
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
     volumes:
       - './backend:/app'
       - '/app/node_modules'
@@ -39,13 +37,13 @@ services:
 
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: db-mysql
     environment:
-      - MYSQL_DATABASE='$MYSQL_DATABASE'
-      - MYSQL_ROOT_PASSWORD='$MYSQL_ROOT_PASSWORD'
-      - MYSQL_USER=$MYSQL_USER
-      - MYSQL_PASSWORD='$MYSQL_PASSWORD'
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
     ports:
       - 3306:3306
     tty: true
