@@ -49,6 +49,8 @@ export const getMore = [
     gmail: true,
     slug: '/google-drive',
   },
+];
+export const getMoreT = [
   {
     heading: 'Gmail',
     content:
@@ -56,6 +58,7 @@ export const getMore = [
     img: gmail,
     linkLabel: 'Learn More',
     slug: '/gmail',
+    mcc: true
   },
   {
     heading: 'JIra',
@@ -66,6 +69,9 @@ export const getMore = [
     getmore: true,
     slug: '/jira',
   },
+];
+
+export const getMoreTh = [
   {
     heading: 'Trello',
     content:
@@ -74,6 +80,7 @@ export const getMore = [
     linkLabel: 'Learn More',
     getmore: true,
     slug: '/trello',
+    mcc: true
   },
   {
     heading: 'Google Meet',

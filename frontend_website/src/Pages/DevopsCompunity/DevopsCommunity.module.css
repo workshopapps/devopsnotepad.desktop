@@ -52,19 +52,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* padding-top: 5px; */
+}
+
+.devopsCommunity .banner .inBanner .article .right div p {
+  font-weight: 800;
+  margin: 0;
+  margin-top: 1px;
 }
 
 .devopsCommunity .banner .inBanner .article .right div span {
-  font-weight: 800;
-  margin: 0;
-}
-
-.devopsCommunity .banner .inBanner .article .right div span:last-child {
-  font-weight: 500;
-  margin: 0;
-}
-
-.devopsCommunity .banner .inBanner .article .right div span:last-child {
   font-weight: 500;
   margin: 0;
 }
@@ -675,6 +672,8 @@
     p:last-child {
     position: relative;
     left: 0;
+    margin-top: 5px;
+    margin-bottom: 2px;
   }
 
   .community_activity

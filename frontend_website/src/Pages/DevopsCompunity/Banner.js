@@ -26,7 +26,7 @@ const Banner = () => {
                   fill='#323232'
                 />
               </svg>
-              <span>1,305</span>
+              <p>1,305</p>
               <span>Online Now</span>
             </div>
             <div>
@@ -61,7 +61,7 @@ const Banner = () => {
                 />
               </svg>
 
-              <span>156k</span>
+              <p>156k</p>
               <span>Discussion</span>
             </div>
             <div>
@@ -78,7 +78,7 @@ const Banner = () => {
                 />
               </svg>
 
-              <span>48.5k</span>
+              <p>48.5k</p>
               <span>Solution</span>
             </div>
           </div>
