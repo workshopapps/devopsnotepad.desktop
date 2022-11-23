@@ -43,7 +43,7 @@ export const menuList = [
       },
       {
         title: 'Careers',
-        slug: '/career',
+        slug: '/careers',
       },
     ],
   },

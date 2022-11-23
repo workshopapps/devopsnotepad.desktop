@@ -33,7 +33,7 @@ export const Links = [
       },
       {
         title: 'FAQs',
-        slug: '/FAQs',
+        slug: '/faq',
       },
       {
         title: 'Blog',
