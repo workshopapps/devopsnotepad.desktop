@@ -9,8 +9,8 @@ const NewsRoom = () => {
   return (
     <section className="newsrooms">
       <div className="newsroom__container">
-        <h2>Stay up to date with our activities</h2>
-        <p>Stay up-to-date with latest company news,product updates, and industry-related events.</p>
+        <h1>Newsroom</h1>
+        <h2>Stay up-to-date with latest company news,product updates, and industry-related events.</h2>
           <div className="company__news">
             <div className="TS__CNV">
               <h4>Company News</h4>
@@ -20,7 +20,7 @@ const NewsRoom = () => {
             <div className="left__room">
               <div className="left__newsroom-lish">
                 <div className="left__img">
-                  <img src={LeftImg} alt='left she'/>
+                  <img src={LeftImg} alt='left she' className="img__newsrooms"/>
                 </div>
                 <div className="left__DT">
                 <small>November 5, 2022</small>
@@ -36,7 +36,7 @@ const NewsRoom = () => {
                     return(
                       <RoomCard key={id} className="newsroom__rights-right">
                         <div className={`news__right-img ${className}`}>
-                            <img src={image} alt="first img"/>
+                            <img src={image} alt="first img"  className="img__newsrooms"/>
                         </div>
                         <div className="newsroom__DT">
                         <small>{date}</small>
@@ -61,7 +61,7 @@ const NewsRoom = () => {
                     return(
                       <RoomCard key={id} className="newsroom__downs-down">
                         <div className="down_img">
-                            <img src={image} alt="down img"/>
+                            <img src={image} alt="down img"  className="img__newsrooms"/>
                         </div>
                         <div className="newsroom__DT-down">
                         <small>{date}</small>
