@@ -16,28 +16,31 @@
     margin-inline: auto;
   }
 
-  .newsroom__container h2, .newsroom__container > p{
+  .newsroom__container h1,
+  .newsroom__container p {
     text-align: center;
     color: var(--topic);
     font-size: 2.8rem;
+    font-weight: 700;
   }
-  .newsroom__container p{
+
+  .newsroom__container h1{
+    text-transform: uppercase;
+  }
+  .newsroom__container h2 {
     color: var(--text);
-    font-size: 0.99rem;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .img__newsrooms{
+display:block;
+width: 100%;
   }
 
-
-  img{
-    display: block;
-    width: 100%;
-  }
-  small{
-    color: var(--text);
-  }
-
-  h4{
-    color: var(--topic);
-  }
 
   .TS__CNV{
     display: flex;
@@ -53,30 +56,36 @@
   .TS__CNV h4{
     font-size: 1.6rem;
     font-weight: 900;
+      color: var(--topic);
   }
 
   .TS__CNV small{
     font-size: 0.9rem;
     font-weight: 900;
+    color: var(--topic);
+    cursor: pointer;
   }
 
-  .newsroom__RT{
+  .newsroom__RT {
     display: grid;
-    grid-template-columns: 48% 50%;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5%;
     border-bottom: 0.5px solid #E5E5E5;
     justify-items: center;
+}
+
+  .left__newsroom-lish small {
+    font-size: 0.99rem;
+    font-weight: 500;
   }
-
-    .left__newsroom-lish small{
-      font-size: 0.99rem;
-      font-weight: 500;
-    }
-
-    .left__newsroom-lish h4{
-      font-size: 3rem;
-      margin-top: 1rem;
-    }
+  
+  .left__newsroom-lish h4 {
+    font-size: 2.7rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--topic);
+    cursor: pointer;
+  }
 
   .newsroom__rights-right{
     display: flex;
@@ -102,6 +111,9 @@
   .newsroom__DT h4{
     font-size: 2.39rem;
     margin-top: 1rem;
+    font-weight: 700;
+    color: var(--topic);
+    cursor: pointer;
   }
  
   
@@ -116,7 +128,6 @@
     place-items: center;
     margin: auto;
     gap: 2rem;
-        height: 120rem;
   }
 
   .newsroom__DT-down small{
@@ -128,31 +139,98 @@
     margin-top: 1rem;
   }
 
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1024px) {
     .left__newsroom-lish h4 {
       font-size: 2rem;
+    }
+    .newsroom__DT h4 {
+      font-size: 1.5rem;
+    }
   }
-  .newsroom__DT h4 {
-    font-size: 1.5rem;
-}
-  }
-
-
-
-   @media screen and (max-width: 750px){
+  
+  @media screen and (max-width: 750px) {
     .newsroom__RT {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
       gap: 6.5%;
-   }
-
-   .v3_0 {
-    width: inherit;
-}
-
-.left__newsroom-lish {
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
+    }
+  
+    .v3_0 {
+      width: 25rem !important;
+    }
+  
+    .left__newsroom-lish {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    .industry__releases {
+      margin-top: 10rem;
+    }
+    .down__wrapper-room {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
+  @media screen and (max-width: 650px) {
+    .newsroom__rights-right {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .left__newsroom-lish {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .news__right-img {
+      width: 87vw !important;
+    }
+  
+    .newsroom__DT small {
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+  
+    .newsroom__DT h4 {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .industry__releases {
+      margin-top: 15rem;
+    }
+  
+    .down__wrapper-room {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .newsroom__DT-down h4 {
+      font-size: 1.4rem !important;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .down__wrapper-room {
+      grid-template-columns: 1fr;
+    }
+  
+    .down_img {
+      width: 87vw;
+    }
+  
+    .newsroom__DT-down {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }   

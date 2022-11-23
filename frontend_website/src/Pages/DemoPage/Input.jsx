@@ -12,7 +12,7 @@ const Input = () => {
       id: 'first__Name',
       name: 'firstName',
       required: true,
-      className: 'first__Name',
+      className: 'first__Name-demo demo__input',
       type: 'text',
       placeholder: 'What is your first name?',
       label: 'First Name',
@@ -22,7 +22,7 @@ const Input = () => {
       name: 'lastName',
       type: 'text',
       required: true,
-      className: 'last__Name',
+      className: 'last__Name-demo demo__input',
       placeholder: 'What is your Last Name?',
       label: 'Last Name',
     },
@@ -30,7 +30,7 @@ const Input = () => {
       id: 'email',
       name: 'email',
       required: true,
-      className: 'email__input',
+      className: 'email__input-demo demo__input',
       type: 'email',
       placeholder: 'What is your email?',
       label: 'Email',
@@ -39,7 +39,7 @@ const Input = () => {
       id: 'phone',
       name: 'phone',
       required: true,
-      className: 'phone__input',
+      className: 'phone__input-demo demo__input',
       type: 'text',
       placeholder: 'What is your Phone Number?',
       label: 'Phone Number',
@@ -65,8 +65,10 @@ const Input = () => {
             onChange={onChange}
           />
         ))}
-        <div className='btn__submit btn'>
-          <button className='btn__link submit'>Send message</button>
+        <div className='btn__submit-demo btn__demo'>
+          <button className='btn__link-demo submit__demo'>
+            Request a demo
+          </button>
         </div>
       </form>
     </div>
