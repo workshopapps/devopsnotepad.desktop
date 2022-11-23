@@ -27,6 +27,7 @@
     }
   ],
   "paths": {
+<<<<<<< HEAD
     "/server/4b826180-6b27-11ed-a88f-8cdcd4798fc6/notifications": {
       "post": {
         "description": "",
@@ -78,6 +79,9 @@
           }
         }
       },
+=======
+    "/server/2/notifications": {
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
       "get": {
         "description": "",
         "tags": [],
@@ -98,7 +102,11 @@
                       "items": {
                         "type": "object",
                         "properties": {
+<<<<<<< HEAD
                           "id": {
+=======
+                          "notificationId": {
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
                             "type": "string"
                           },
                           "serverId": {
@@ -125,11 +133,40 @@
                   "success": true,
                   "notifications": [
                     {
+<<<<<<< HEAD
                       "id": "4e1913f8-6b27-11ed-a88f-8cdcd4798fc6",
                       "serverId": "4b826180-6b27-11ed-a88f-8cdcd4798fc6",
                       "log": "add data points",
                       "created_at": "2022-11-23T12:06:47.000Z",
                       "updated_at": "2022-11-23T12:06:47.000Z"
+=======
+                      "notificationId": "1",
+                      "serverId": "2",
+                      "log": "easfhgrehegj//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "7",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu842dnveihfiewfrqknvsV RWG3  T59UYPRS//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "4",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf ://lorem upsuarhgr//patch/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-13T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "6",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf fgwer329t/post/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-10-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
                     }
                   ],
                   "page": 1
@@ -141,6 +178,7 @@
         "requestBody": {}
       }
     },
+<<<<<<< HEAD
     "/server": {
       "post": {
         "description": "",
@@ -243,6 +281,13 @@
             }
           }
         ],
+=======
+    "/server/3/notifications": {
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
         "responses": {
           "200": {
             "description": "",
@@ -254,6 +299,7 @@
                     "success": {
                       "type": "boolean"
                     },
+<<<<<<< HEAD
                     "message": {
                       "type": "string"
                     },
@@ -288,11 +334,20 @@
                           }
                         }
                       }
+=======
+                    "notifications": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "page": {
+                      "type": "number"
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
                     }
                   }
                 },
                 "example": {
                   "success": true,
+<<<<<<< HEAD
                   "message": "2 servers found on this device",
                   "currentPage": 1,
                   "limit": 12,
@@ -421,6 +476,10 @@
                   "success": true,
                   "message": "servers deleted successfully",
                   "result": "1 servers deleted!"
+=======
+                  "notifications": [],
+                  "page": 1
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
                 }
               }
             }
@@ -428,5 +487,10 @@
         }
       }
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  "paths": {}
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
 }

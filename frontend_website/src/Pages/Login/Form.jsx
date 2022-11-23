@@ -125,7 +125,9 @@ const Form = () => {
             Remember me.
           </label>
         </div>
-        <Link className={classes.password}>Forgot password</Link>
+        <Link to='/forgot-password' className={classes.password}>
+          Forgot password
+        </Link>
       </div>
       <div className={classes.btn__box}>
         <Button
@@ -134,7 +136,7 @@ const Form = () => {
           disabled={!form.formIsValid}
           className={classes.button}
         >
-          Sign up
+          Sign In
         </Button>
       </div>
     </form>
