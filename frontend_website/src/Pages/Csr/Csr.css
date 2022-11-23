@@ -2,12 +2,17 @@
   display: flex;
   align-items: center;
   padding: 13px 6%;
-  height: 65px;
+  height: 95px;
   left: 0px;
   position: relative;
   margin-top: -95px;
   background: #ffffff;
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.05);
+}
+.logoAndText-flex{
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 }
 .logoText {
   color: #202020;
@@ -27,16 +32,13 @@
   margin-right: auto;
 }
 .csrNavbar ul li {
-  width: 69px;
-  height: 24px;
   font-family: 'Manrope';
   font-style: normal;
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
-  text-align: center;
   color: #070a0d;
+  margin-right: 20px;
 }
 .csrBtn {
   background: #202020;
@@ -50,6 +52,7 @@
   border-radius: 4px;
   cursor: pointer;
   margin-right: -2%;
+  padding: 0 10px;
 }
 .csrMenuImg {
   display: none;
@@ -73,13 +76,13 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
-  font-size:48px;
+  font-size: 48px;
   line-height: 140%;
   text-align: center;
   color: #ededed;
   height: 144px;
   padding: 0 20%;
-  padding-top: 15%;
+  padding-top: 22%;
   top: 222px;
 }
 .csrMainSection2,
@@ -93,27 +96,24 @@
   flex-direction: row-reverse;
 }
 .csrMainSectionsTitles {
-  width: 484px;
+  width: 400px;
   height: 112px;
   left: 0px;
   top: 29px;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 140%;
   color: #202020;
 }
-.csrMainSectionsDetails {
-  width: 442px;
-  height: 66px;
-  left: 0px;
-  top: 155px;
+#csrMainSectionsTitle {
+  margin-bottom: -40px;
+}
+.csrMainSectionDetails {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
   color: #202020;
 }
 .sectionTwoImg,
@@ -135,6 +135,14 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 40px;
+  margin-top: 40px;
+}
+.rule {
+  width: 500px;
+  height: 0px;
+  top: 117px;
+  opacity: 0.5;
+  border: 1px solid #ffffff;
 }
 .csrMainSection5 p {
   width: 80%;
@@ -146,13 +154,7 @@
   text-align: center;
   color: #ffffff;
   opacity: 0.8;
-}
-.rule {
-  width: 500px;
-  height: 0px;
-  top: 117px;
-  opacity: 0.5;
-  border: 1px solid #ffffff;
+  margin-top: 50px;
 }
 .csrSectionBtn {
   width: 150px;
@@ -175,11 +177,10 @@
   .csrBtn {
     margin-right: -1%;
   }
-  .csrMainSection1{
+  .csrMainSection1 {
     background-size: 900px 500px;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
   }
-  
 }
 @media screen and (max-width: 940px) {
   .logoText {
@@ -187,6 +188,32 @@
   }
   .csrBtn {
     margin-right: 0%;
+  }
+  .csrMainSection1-text {
+    font-size: 40px;
+    padding-top: 20%;
+  }
+  .csrMainSection2,
+  .csrMainSection3,
+  .csrMainSection4 {
+    padding: 40px 30px;
+  }
+  .csrMainSectionsTitles {
+    width: 380px;
+    height: 100px;
+    font-size: 28px;
+    line-height: 150%;
+  }
+  .sectionTwoImg,
+  .sectionThreeImg,
+  .sectionFourImg {
+    width: 300px;
+    height: 250px;
+    margin-right: 20px;
+  }
+  #sectionThreeImg {
+    margin-left: 20px;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -201,60 +228,85 @@
   }
   .csrMenuImg {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 39px;
     top: 24px;
     background: #102a63;
     border-radius: 8px;
     margin: 0;
     padding: 10px;
+    cursor: pointer;
     margin-right: 7%;
   }
+  .navbar {
+    margin-left: -210px;
+    animation-name: navbar;
+    animation-duration: 0.5s;
+  }
+  .navbar li {
+    margin-top: 0;
+    margin-left: 20px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff;
+  }
+  @keyframes navbar {
+    0% {
+      margin-right: -210px;
+    }
+    100% {
+      margin-right: -150px;
+    }
+  }
+  .navbar li {
+    color: #ffffff;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
   .csrMainSection1 {
-    margin: 0 50px;
+    margin: 40px 50px;
     height: 294px;
   }
   .csrMainSection1-text {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: 28px;
     line-height: 140%;
     text-align: center;
+    font-size: 32px;
     color: #ededed;
     height: 88px;
   }
   .csrMainSectionsTitles {
-    width: 385px;
-    height: 90px;
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
+    width: 255px;
+    height: 120px;
+    text-align: center;
   }
-  .csrMainSectionsDetails {
-    width: 200px;
-    height: 66px;
-    left: 0px;
-    top: 155px;
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    color: #202020;
+  .csrMainSectionDetails {
+    text-align: center;
   }
   .sectionTwoImg,
   .sectionThreeImg,
   .sectionFourImg {
     width: 250px;
-    height: 330px;
+    height: 300px;
     margin-right: 30px;
-    margin-left: -50px;
   }
   #sectionThreeImg {
     margin-left: 30px;
-    margin-right: -50px;
+  }
+  .csrMainSections-divs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .rule {
     width: 350px;
@@ -264,10 +316,10 @@
   }
 }
 @media screen and (max-width: 575px) {
-  .csrMainSection1{
+  .csrMainSection1 {
     text-align: center;
-  background-size: 320px 320px;
-  background-repeat: no-repeat;
+    background-size: 320px 320px;
+    background-repeat: no-repeat;
   }
   .logoText {
     margin-left: 12%;
@@ -293,8 +345,10 @@
   }
   .csrMainSectionsTitles {
     width: 320px;
-    height: 100px;
-    font-size: 18px;
+    height: 120px;
+    font-size: 24px;
+    margin-bottom: -50px;
+    font-weight: 550;
   }
   .sectionTwoImg,
   .sectionThreeImg,
@@ -311,18 +365,41 @@
   }
   .rule {
     width: 350px;
+    margin-bottom: 40px;
   }
   .csrSectionBtn {
     margin-top: 100px;
   }
 }
 @media screen and (max-width: 400px) {
-    .csrMainSection1{
-        background-size: 320px 320px;
-        padding: 0;
-        margin: 0;
-     }   
-    .csrSectionBtn {
-        margin-top: 140px;
-      }
+  .csrMainSection1 {
+    background-size: 320px 320px;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+  }
+  .csrSectionBtn {
+    margin-top: 140px;
+  }
+  .rule {
+    width: 300px;
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .logoText {
+    margin-left: 2%;
+  }
+  .csrMenuImg {
+    margin-right: 2%;
+  }
+  .csrMainSectionsTitles {
+    width: 280px;
+  }
+  .csrMainSectionDetails {
+    width: 280px;
+    font-size: 17px;
+    padding: 0;
+    margin-left: 0;
+  }
 }
