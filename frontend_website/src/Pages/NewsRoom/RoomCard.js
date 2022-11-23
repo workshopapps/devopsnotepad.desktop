@@ -1,6 +1,6 @@
 const RoomCard = ({className, children}) => {
     return (
-      <article className={`card ${className}`}>
+      <article className={`${className}`}>
       {children}
     </article>
     )

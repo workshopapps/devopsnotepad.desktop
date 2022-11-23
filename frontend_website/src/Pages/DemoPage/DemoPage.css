@@ -11,6 +11,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   justify-items: center;
+  align-items: center;
 }
 
 .demo__header {
@@ -24,6 +25,7 @@
 
 .demo__header h2 {
   font-size: 4rem;
+    font-weight: 700;
 }
 
 .demo__wrapper {
@@ -36,14 +38,16 @@
 .demos__demo {
   padding: 0 10rem 0 6rem;
   margin-bottom: 3rem;
+  border: none;
 }
 
 .demos__demo p {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
+  line-height: 1.7;
 }
 
 .demos__demo h4 {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 .request__input {
@@ -60,40 +64,69 @@
   border: 1px solid #44444444;
   border-radius: 0.5rem;
   padding: 2rem 5rem;
-  width: 85%;
+  width: 80%;
   margin: auto;
 }
 
 .form__request p {
-  font-size: 1.3rem;
-  margin-right: 2rem;
-  font-weight: 700;
+  font-size: 1.3rem !important;
+  margin-right: 2rem !important;
+  margin-bottom: 2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.7rem !important;
 }
 
 .formInput {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 1rem !important;
 }
 
-label {
-  margin-bottom: 1rem;
+.label__demo {
+  margin-bottom: 1rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+
+.demo__input{
+  height: auto !important;
+  padding: 1.2rem 1.3rem !important;
+  border: 1px solid #44444444 !important;
+  border-radius: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo__input::placeholder {
+  font-size: 1.3rem !important;
+}
+
+.btn__link-demo {
+  background: var(--topic) !important;
+  color: #ffffff !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  outline: none !important;
+  border: none !important;
+  cursor: pointer !important;
   font-size: 1.2rem;
-  font-weight: 700;
+  margin: 0;
 }
 
-input {
-  padding: 1.2rem 1.3rem;
-  border: 1px solid #44444444;
-  border-radius: 0.5rem;
+@media screen and (max-width: 1024px) {
+  .demo__page-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-.btn__link {
-  background: var(--topic);
-  color: #ffffff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
+@media screen and (max-width: 500px) {
+  .demo__header h2 {
+    font-size: 2rem !important;
+  }
+  .demos__demo p {
+    font-size: 1.19rem !important;
+  }
+
+  .demo__input::placeholder {
+    font-size: 1.1rem !important;
+  }
 }
