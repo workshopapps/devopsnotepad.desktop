@@ -27,7 +27,7 @@ const LandingPage = () => {
             The <span className={style.landPage_span}>Ultimate Notedpad </span>
             for DevOps Engineers
           </h1>
-          <p className={style.landPage_p}>
+          <p className={`${style.landPage_p} ${style.tabp}`}>
             Monitor, document and modify aspects of servers you manage - on the
             go!
           </p>
