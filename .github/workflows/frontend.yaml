@@ -14,9 +14,9 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: ./frontend_website
       - name: Checkout Repo
         uses: actions/checkout@v3
+      - uses: ./frontend_website
       - name: setup node
         uses: actions/setup-node@v3
         with:
@@ -64,9 +64,9 @@ jobs:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
-      - uses: ./backend
       - name: Checkout Repo
         uses: actions/checkout@v3
+      - uses: ./backend
       - name: setup node
         uses: actions/setup-node@v3
         with:
