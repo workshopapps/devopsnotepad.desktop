@@ -265,6 +265,10 @@ button {
   align-items: center;
 }
 
+.Bell{
+  max-width: 60px !important;
+}
+
 .notificationsHeading {
   font-size: 20px;
   color: var(--bluePrimary);
@@ -658,7 +662,8 @@ button {
 
 @media (min-width: 530px) and (max-width: 800px) {
   .Bell {
-    width: 40px;
+    width: 40px !important;
+    /* max-width: 40px; */
   }
 
   .notifications {
