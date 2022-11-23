@@ -136,7 +136,7 @@ const Form = () => {
           disabled={!form.formIsValid}
           className={classes.button}
         >
-          Sign up
+          Sign In
         </Button>
       </div>
     </form>
