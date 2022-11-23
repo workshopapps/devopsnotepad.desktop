@@ -10,19 +10,17 @@ import Success from "./Success";
 
 
 const ForgetPassword = () => {
-    return ( 
+    return (
         <div className={forgetStyles.ForgetPassword}>
             <Routes>
-                <Route path="/" element={<Reset/>}/>
-                <Route path="/checkemail" element={<CheckEmail/>}/>
-                <Route path="/verfication" element={<Verification/>}/>
-                <Route path="/newpassword" element={<NewPassword/>}/>
-                <Route path="/success" element={<Success/>}/>
+                <Route path="/" element={<Reset />} />
+                <Route path="/checkemail" element={<CheckEmail />} />
+                <Route path="/verfication" element={<Verification />} />
+                <Route path="/newpassword" element={<NewPassword />} />
+                <Route path="/success" element={<Success />} />
             </Routes>
-
-
         </div>
-     );
+    );
 }
- 
+
 export default ForgetPassword;
