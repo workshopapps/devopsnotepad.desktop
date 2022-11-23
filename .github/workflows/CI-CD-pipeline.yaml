@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          uses: frontend_website/
           cache: "npm"
           cache-dependency-path: frontend_website/package-lock.json
       - name: install dependencies
@@ -37,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -45,7 +44,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          uses: backend/
           cache: "npm"
           cache-dependency-path: backend/package-lock.json
       - name: install dependencies
