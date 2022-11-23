@@ -46,6 +46,7 @@ function App() {
   return (
     <React.Fragment>
       <Navigation />
+
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {

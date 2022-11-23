@@ -46,7 +46,7 @@ const ContactUs = () => {
                     <p className={styles.inTouch}>Get in Touch Today!</p>
 
                     <p className={styles.help}>
-                        We want to hear from you. Let us know <br/> how we can help.
+                        We want to hear from you. Let us know <br /> how we can help.
                     </p>
                 </section>
 

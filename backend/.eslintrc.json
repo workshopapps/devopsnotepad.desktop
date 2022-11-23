@@ -9,7 +9,7 @@
         // enable additional rules
         "indent": ["error", 4],
         "linebreak-style": ["error", "windows"],
-        "quotes": ["error", "double"],
+        "quotes": ["error", "double", { "allowTemplateLiterals": true }],
         "semi": ["error", "always"],
 
         // override configuration set by extending "eslint:recommended"
