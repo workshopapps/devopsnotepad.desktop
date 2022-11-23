@@ -1,9 +1,10 @@
 name: Dev - Deploy
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
-    branches: ['dev', 'main']
+    branches: ['dev']
   
   workflow_run:
     workflows: [Frontend-CI, Backend-CI]
