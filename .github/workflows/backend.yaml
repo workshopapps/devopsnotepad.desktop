@@ -3,7 +3,7 @@ pname: Backend-CI
 on:
   workflow_dispatch:
   push:
-    branches: ["dev", "main"]
+    branches: ["dev"]
     paths:
       - backend/**
   pull_request:
