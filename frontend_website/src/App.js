@@ -24,9 +24,9 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
+import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 
 import classes from './App.module.css'
-
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -55,7 +55,6 @@ function App() {
         <Routes>
           <Route path='/' exact element={<LandingPage />} />
           <Route path='/integrations' element={<Integration />} />
-          <Route path='/career' exact element={<CareerPage />} />
           <Route path='/faq' exact element={<Faq />} />
           <Route path='/signup' exact element={<SignUp />} />
           <Route path='/login' exact element={<Login />} />
@@ -72,6 +71,7 @@ function App() {
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
+          <Route path='/forgot-password' exact element={<ForgetPassword />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
