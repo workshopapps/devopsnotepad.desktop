@@ -7,8 +7,8 @@ const Carousl = () => {
   const ref = useRef();
   return (
     <div>
-      <Carousel 
-      style={{  height: '300px', margin: '0 35px', padding: '0' }}
+      <Carousel
+        style={{ height: '300px', margin: '0 35px', padding: '0' }}
         autoplay
         pauseOnHover={true}
         draggable
