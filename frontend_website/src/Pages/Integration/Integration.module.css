@@ -338,7 +338,7 @@
   }
 
   .get_more .inGet_more .inGet_more_box .inGetMoreBox .box p {
-    font-size: 12px;
+    font-size: 12px !important;
     line-height: 20px;
     margin-bottom: 24px;
   }
@@ -441,6 +441,10 @@
 
   .integration .hM_content {
     background-image: none;
+  }
+
+  .get_more {
+    padding: 0px 24px 80px 24px;
   }
 
   .get_more .inGet_more .subtitle {
