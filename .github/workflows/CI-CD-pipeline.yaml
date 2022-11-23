@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
   pull_request:
-    branches: ["dev"]
+    branches: ["dev", "main"]
 
 jobs:
   build_and_test_frontend:
@@ -71,8 +71,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build the frontend and backend stack
         run: docker-compose up --remove-orphans -d
-      - name: Test dockerized stack
-        run: docker-compose run ${{ secrets.FRONTEND_WEBSITE_IMAGE }} -s --retry 10 --retry-connrefused http://localhost:3000/
       - name: Push stack images to DockerHub
         run: docker-compose push
           
