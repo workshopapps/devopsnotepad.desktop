@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout Repo
@@ -115,7 +115,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.DEV_HOST }}
-          USERNAME: ${{ secrets.DEV_USERNAME }}
-          PORT: ${{ secrets.ACCESS_PORT }}
-          KEY: ${{ secrets.DEV_SSHKEY }}
+          user: ${{ secrets.DEV_USERNAME }}
+          port: ${{ secrets.ACCESS_PORT }}
+          key: ${{ secrets.DEV_SSHKEY }}
           script: cd ${{ secrets.DEV_PATH }} && sudo docker-compose pull && sudo docker-compose up --remove-orphans
