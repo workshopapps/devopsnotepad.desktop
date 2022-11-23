@@ -1,4 +1,4 @@
-name: Backend-CI
+pname: Backend-CI
 
 on:
   workflow_dispatch:
@@ -62,4 +62,4 @@ jobs:
           context: "backend/"
           file: "backend/Dockerfile"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/opspad-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devopsnotepad-backend:latest
