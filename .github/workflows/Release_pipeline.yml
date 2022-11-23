@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Push to server and deploy
-        uses: godchosen/ssh-action@master
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.DEV_HOST }}
           USERNAME: ${{ secrets.DEV_USERNAME }}
-          PORT: ${{ secrets.PORT }}
+          PORT: ${{ secrets.ACCESS_PORT }}
           KEY: ${{ secrets.DEV_SSHKEY }}
-          script: cd ${{ secrets.DEV_PATH }} && sudo docker compose up --build -d
+          script: cd ${{ secrets.DEV_PATH }} && sudo docker-compose pull && sudo docker-compose up --remove-orphans
