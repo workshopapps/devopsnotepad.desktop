@@ -74,7 +74,7 @@ jobs:
       - name: Build the frontend and backend stack
         run: docker-compose up --remove-orphans -d
       - name: Test dockerized stack
-        run: docker run appropriate/curl -s --retry 10 --retry-connrefused http://localhost:3000/
+        run: docker run ${{ secrets.FRONTEND_WEBSITE_IMAGE }} -s --retry 10 --retry-connrefused http://localhost:3000/
       - name: Push stack images to DockerHub
         run: docker-compose push
           
