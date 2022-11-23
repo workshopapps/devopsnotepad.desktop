@@ -11,6 +11,6 @@ COPY package*.json ./
 
 # runs the production server
 RUN npm cache verify
-RUN npm i
+RUN npm install
 COPY . .
 CMD ["npm", "start"]
