@@ -66,9 +66,7 @@ const Input = () => {
           />
         ))}
         <div className='btn__submit-demo btn__demo'>
-          <button className='btn__link-demo submit__demo'>
-            Request a demo
-          </button>
+          <button className='btn__link-demo submit__demo'>Request a demo</button>
         </div>
       </form>
     </div>
