@@ -39,7 +39,7 @@ export const menuList = [
       },
       {
         title: 'Contact Us',
-        slug: '/contact',
+        slug: '/contact-us',
       },
       {
         title: 'Careers',
