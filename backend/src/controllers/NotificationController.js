@@ -23,24 +23,6 @@ export default class NotificationController {
         }
     };
 
-<<<<<<< HEAD
-=======
-
-    // static create = async (req, res, next) => {
-    //     try {
-    //         const result = await create(req.body, req.params);
-    //         res.send({
-    //             success: true,
-    //             message: "successful",
-    //             ...result,
-    //         });
-
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // };
-
->>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
     
     static get = async (req, res, next) => {
         const { serverId } = req.params;
