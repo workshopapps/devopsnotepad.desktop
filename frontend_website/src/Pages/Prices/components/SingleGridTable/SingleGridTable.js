@@ -19,7 +19,7 @@ const SingleGridTable = () => {
     <div className={`${style.singleTableContainer} ${style.hideSingle}`}>
       <ul className={style.list}>
         <li
-          className={`${style.list} ${showbundleStarter}`}
+          className={`${style.li} ${showbundleStarter}`}
           onClick={() =>
             setShowBundle({
               starter: true,
@@ -31,7 +31,7 @@ const SingleGridTable = () => {
           Starter
         </li>
         <li
-          className={`${style.list} ${showbundleProfessional}`}
+          className={`${style.li} ${showbundleProfessional}`}
           onClick={() =>
             setShowBundle({
               starter: false,
@@ -43,7 +43,7 @@ const SingleGridTable = () => {
           Professional
         </li>
         <li
-          className={`${style.list} ${showbundleOrganization}`}
+          className={`${style.li} ${showbundleOrganization}`}
           onClick={() =>
             setShowBundle({
               starter: false,

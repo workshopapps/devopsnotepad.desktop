@@ -7,6 +7,10 @@ export const Links = [
         slug: '/about-us',
       },
       {
+        title: 'Privacy Policy',
+        slug: '/privacy-policy',
+      },
+      {
         title: 'Our Team',
         slug: '/our-team',
       },
@@ -21,6 +25,10 @@ export const Links = [
       {
         title: 'Careers',
         slug: '/careers',
+      },
+      {
+        title: 'Terms of Service',
+        slug: '/terms-of-service',
       },
     ],
   },

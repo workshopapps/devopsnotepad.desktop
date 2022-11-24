@@ -12,14 +12,17 @@
   justify-content: space-around;
   align-items: center;
   font-size: 16px;
+  padding: 0 !important;
   height: 38px;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
 .li {
+  padding: 0 !important;
   padding-bottom: 5px;
   color: #202020;
+  line-height: 2.3 !important;
 }
 
 .active {
