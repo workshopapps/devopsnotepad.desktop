@@ -18,7 +18,7 @@
 	align-items: center;
 	padding: 0px;
 	gap: 16px;
-    margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 .userHead h3 {
 	font-family: 'Inter';
@@ -32,7 +32,6 @@
 }
 .border_top {
 	border-top: 1px solid #efeef0;
-    
 }
 .smallHead {
 	font-family: 'Inter';
@@ -47,7 +46,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-    padding-bottom: 25px;
+	padding-bottom: 25px;
+}
+.account a {
+	text-decoration: none !important;
 }
 .account svg {
 	color: #827d89;
@@ -67,19 +69,29 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 140%;
-    text-decoration: none;
+	text-decoration: none;
 }
 .appSettings_cont {
-    display: flex;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
-    padding: 17px 0;
+	padding: 17px 0;
+}
+.appSettings_cont a {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: right;
+
+	text-decoration: none;
 }
 .appSettings {
-    display: flex;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
-    gap: 20px;
+	gap: 20px;
 }
 .appSettings svg {
 	color: #827d89;
@@ -99,29 +111,33 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 140%;
-    text-decoration: none;
+	text-decoration: none !important;
 }
 
 .appSettings:nth-last-child() {
-    border-bottom: 1px solid #efeef0;
+	border-bottom: 1px solid #efeef0;
 }
 
 .border_bottom {
 	border-bottom: 1px solid #efeef0;
-    content: '';
-    width: 100%;
+	content: '';
+	width: 100%;
 }
 
 .support {
-    padding: 0 10px 0 !important;
-    list-style: none !important;
+	padding: 0 10px 0 !important;
+	list-style: none !important;
 }
 .support li {
-    padding: 17px 0;
-    display: flex;
-    justify-content: space-between;
-    
+	padding: 17px 0;
+	display: flex;
+	justify-content: space-between;
 }
 .support a {
-    text-decoration: none !important;
+	text-decoration: none !important;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
 }

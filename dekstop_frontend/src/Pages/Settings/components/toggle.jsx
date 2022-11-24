@@ -6,7 +6,7 @@ const ToggleContainer = styled.button`
   width: 5.5em;
   border: 0.125em solid ${({ theme: { text } }) => text};
   border-radius: 1.5em;
-  margin: 0 auto;
+  margin: 0;
   padding: 0.125em;
   overflow: hidden;
   background: ${({ theme: { body } }) => body};

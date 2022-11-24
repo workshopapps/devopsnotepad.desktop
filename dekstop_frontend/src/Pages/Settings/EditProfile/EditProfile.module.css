@@ -1,0 +1,44 @@
+.profileContainer {
+	margin: 80px 117px;
+}
+
+.profileHead {
+	display: flex;
+	flex-direction: row;
+	gap: 245px;
+	align-items: center;
+}
+.profileHead h1 {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #000000;
+	text-transform: uppercase;
+}
+.profileImage {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+}
+.profileImage img {
+	width: 120px;
+	padding-bottom: 18px;
+}
+.profileImage button {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 10px 14px;
+	gap: 10px;
+	height: 36px;
+	border: 1px solid #102a63;
+	border-radius: 6px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #102a63;
+}
