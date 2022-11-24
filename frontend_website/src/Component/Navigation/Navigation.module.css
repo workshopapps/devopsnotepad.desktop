@@ -95,6 +95,7 @@
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
     position: absolute;
+    z-index: 999;
     top: 30px;
     left: 0;
     padding-top: 10px;
@@ -329,7 +330,7 @@
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
         margin-top: 5px;
     }
 }
