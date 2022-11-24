@@ -1,0 +1,38 @@
+.notesWrapper {
+	
+}
+.notesSideBar {
+	position: absolute;
+	width: 228px;
+	height: 1034px;
+	left: 0px;
+	top: 0px;
+	background: rgba(237, 237, 237, 0.48);
+}
+.notesSideBarLink {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+.notesSideBarLogoText {
+	width: 115px;
+	height: 44px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #202020;
+}
+.notesStyle.notesSideBarServers{
+	display: flex;
+	align-items: center;
+}
+.notesSideBarServersList{
+padding: 8px;
+gap: 8px;
+width: 170px;
+height: 38px;
+list-style: none;
+}
