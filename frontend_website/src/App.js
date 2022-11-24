@@ -5,7 +5,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import ContactUs from './Pages/ContactUs/ContactUs';
-import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
@@ -14,7 +13,7 @@ import OurTeam from './Pages/TeamPage/OurTeam';
 import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
-import Partner from './Pages/Partner/Partner'
+import Partner from './Pages/Partner/Partner';
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
@@ -24,10 +23,13 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
+import Prices from './Pages/Prices/Prices';
+import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 import Podcast from './Pages/Podcast/Podcasts';
+import { About } from './Pages/About/About';
 
-import classes from './App.module.css'
+import classes from './App.module.css';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -71,6 +73,12 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
+          <Route path='/prices' exact element={<Prices />} />
+          <Route
+            path='/prices/payment/:state/:id'
+            exact
+            element={<PricePayment />}
+          />
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
@@ -85,4 +93,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
