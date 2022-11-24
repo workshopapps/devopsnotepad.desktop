@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 import { Account, Security, userTopbar, General, AppSettings, Support } from './data';
 import style from './MainSettings.module.css';
 
+
 function Settings() {
 	
 
 	return (
 		<div className={style.settingsContainer}>
 			<h1>Settings</h1>
-
+			
 			{userTopbar.map((userHead) => (
 				<div key={userHead.id} className={style.userHead}>
 					<img src={userHead.userImage} alt="" />
@@ -22,15 +23,17 @@ function Settings() {
 			{Account.map((accounts) => (
 				<div key={accounts.title} className={style.border_top}>
 					<small className={style.smallHead}>{accounts.title}</small>
+					<Link to={accounts.slug}>
 					<div className={style.account}>
 						<div className={style.accountProfile}>
 							<FaRegUser />
 							<Link to="/">{accounts.func}</Link>
 						</div>
-						<Link to="/">
+						<Link to={accounts.slug}>
 							<FaChevronRight />
 						</Link>
 					</div>
+					</Link>
 				</div>
 			))}
 
@@ -71,7 +74,7 @@ function Settings() {
 							{appsettings.icon}
 							<Link to={appsettings.slug}>{appsettings.func}</Link>
 						</div>
-						<Link to="/">{appsettings.iconright}</Link>
+						{appsettings.iconright}
 					</div>
 					<span className={style.border_bottom}> </span>
 				</div>
