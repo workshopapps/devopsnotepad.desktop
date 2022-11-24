@@ -1,11 +1,11 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import notesStyle from './Note.module.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import notesStyle from './Note.module.css';
 
 function NotesSideBar() {
-  return (
-    <div className={notesStyle.notesSideBarWrapper}>
-<div className={notesStyle.notesSideBar}>
+	return (
+		<div className={notesStyle.notesSideBarWrapper}>
+			<div className={notesStyle.notesSideBar}>
 				<div className={notesStyle.notesSideBarContents}>
 					<nav className={notesStyle.notesSideBarNavbar}>
 						<Link to="/" className={notesStyle.notesSideBarLink}>
@@ -19,20 +19,20 @@ function NotesSideBar() {
 							/>
 						</Link>
 						<div className={notesStyle.notesSideBarServers}>
-						<div className={notesStyle.notesSideBarServersFlex}>
-						<img
-								src="sports_volleyball.png"
-								alt="logo"
-								className={notesStyle.notesSideServersImg}
-							/>
-							<span className="{notesStyle.notesSideBarServersText}">
-								Servers List
-							</span>
-							<img
-								src="Vector.png"
-								alt="logo"
-								className={notesStyle.notesSideBarServersImg}
-							/>
+							<div className={notesStyle.notesSideBarServersFlex}>
+								<img
+									src="sports_volleyball.png"
+									alt="logo"
+									className={notesStyle.notesSideServersImg}
+								/>
+								<span className={notesStyle.notesSideBarServersText}>
+									Servers List
+								</span>
+								<img
+									src="Vector.png"
+									alt="logo"
+									className={notesStyle.notesSideBarServersImg}
+								/>
 							</div>
 							<ul className={notesStyle.notesSideBarServersLists}>
 								<li
@@ -49,7 +49,9 @@ function NotesSideBar() {
 								</li>
 							</ul>
 							<button type="button" className={notesStyle.notesServersBtn}>
-								<span className={notesStyle.notesServersBtnText}>Add Server</span>
+								<span className={notesStyle.notesServersBtnText}>
+									Add Server
+								</span>
 								<img
 									src="Vector2.png"
 									alt="img"
@@ -61,8 +63,8 @@ function NotesSideBar() {
 					</nav>
 				</div>
 			</div>
-    </div>
-  )
+		</div>
+	);
 }
 
-export default NotesSideBar
+export default NotesSideBar;

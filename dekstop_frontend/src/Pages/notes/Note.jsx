@@ -67,7 +67,8 @@ function Note() {
 							>
 								Notes
 							</button>
-							<button type="button" className={notesStyle.notesContentwoBtn}>
+							<button type="button" className={notesStyle.notesContentwoBtn}
+							>
 								Passwords
 							</button>
 							<button type="button" className={notesStyle.notesContentwoBtn}>
@@ -76,6 +77,13 @@ function Note() {
 						</div>
 						{formDisplay ? (
 							<div className={notesStyle.notesFormDiv}>
+								<div className={notesStyle.notesFormIcons}>
+									<img src="Vectorc.png" alt='img' className={notesStyle.notesFormIcon}/>
+									<img src="Vectorr.png" alt='img' className={notesStyle.notesFormIcon}/>
+									<img src="Vectoor.png" alt='img' className={notesStyle.notesFormIcon}/>
+									<img src="Vectorrr.png" alt='img' className={notesStyle.notesFormIcon}/>
+									<img src="Vecctor.png" alt='img' className={notesStyle.notesFormIcon}/>
+								</div>
 								<form className={notesStyle.notesForm}>
 									<input
 										type="text"
