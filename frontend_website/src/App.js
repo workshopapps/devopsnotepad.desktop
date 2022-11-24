@@ -5,7 +5,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import ContactUs from './Pages/ContactUs/ContactUs';
-import { About } from './Pages/About/About';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
 import Integration from './Pages/Integration/Integration';
@@ -26,6 +25,7 @@ import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 import Podcast from './Pages/Podcast/Podcasts';
+import { About } from './Pages/About/About';
 
 import classes from './App.module.css'
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
