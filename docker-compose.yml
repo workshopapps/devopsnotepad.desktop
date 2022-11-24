@@ -7,7 +7,7 @@ services:
     build:
       context: frontend_website/
       dockerfile: Dockerfile
-    image: godchosen/opspad-frontend:latest
+    image: godchosen/opspad-frontend:v3
     volumes:
       - './frontend_website:/app'
     ports:
@@ -20,7 +20,7 @@ services:
     build:
       context: backend/
       dockerfile: Dockerfile
-    image: godchosen/opspad-backend:latest
+    image: godchosen/devopsnotepadpad-backend:v3
     environment:
       MYSQL_DATABASE: $MYSQL_DATABASE
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
