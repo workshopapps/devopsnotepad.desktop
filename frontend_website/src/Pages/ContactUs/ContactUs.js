@@ -141,10 +141,10 @@ const ContactUs = () => {
                 <section className={styles.wrapper}>
                     <form action='#' autoComplete='off' onSubmit={handleSubmit}>
                         <div className={styles.row}>
+
                             <div className={styles.col}>
                                 <label for='firstName'>First Name</label>
                                 <input
-                                    type='text'
                                     id='firstName'
                                     placeholder='What’s your first name?'
                                     className={styles.end}
@@ -161,6 +161,7 @@ const ContactUs = () => {
                                     </p>
                                 )}
                             </div>
+
 
                             <div className={styles.col}>
                                 <label for='lastName'>Last Name</label>
