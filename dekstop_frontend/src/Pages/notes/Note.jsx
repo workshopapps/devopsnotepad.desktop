@@ -1,5 +1,5 @@
 import React from 'react';
-import NotesSideBar from './NotesSideBar';
+import Sidenav from '../../Component/SideNav/SideNav';
 import notesStyle from './Note.module.css';
 
 function Note() {
@@ -23,7 +23,7 @@ function Note() {
 	};
 	return (
 		<div className={notesStyle.notesWrapper}>
-			<NotesSideBar />
+			<Sidenav />
 			<div className={notesStyle.notes}>
 				<h1 className={notesStyle.notesTitle}>HNG SERVER</h1>
 				<div className={notesStyle.notesContent}>
