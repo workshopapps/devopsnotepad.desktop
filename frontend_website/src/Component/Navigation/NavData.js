@@ -60,6 +60,10 @@ export const menuList = [
         slug: '/faq',
       },
       {
+        title: 'CSR',
+        slug: '/csr',
+      },
+      {
         title: 'Blog',
         slug: '/blog',
       },

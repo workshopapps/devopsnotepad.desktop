@@ -16,9 +16,8 @@ import TeamDeptInfo from './components/TeamDeptInfo';
 
 const OurTeam = () => {
   const handleCounts = (position) => {
-    const res = TeamData.filter((team) => {
-      if (team.role === position) return team;
-    });
+    const res = TeamData.filter((team) => team.role === position);
+
     return res[0].members.length;
   };
 
