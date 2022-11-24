@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import Notes from './Pages/notes/Notes';
+import Note from './Pages/notes/Note';
 import Home from './Pages/home/Home';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 		  <Routes>
 			<Route  path="/" element={<Home />} />
-			<Route exact path="/notes" element={<Notes/>}/>
+			<Route exact path="/note" element={<Note/>}/>
 		  </Routes>
 		</div>
 	);

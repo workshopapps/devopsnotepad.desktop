@@ -1,0 +1,171 @@
+.notesWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.notesSideBar {
+	position: absolute;
+	width: 228px;
+	height: 1034px;
+	left: 0px;
+	top: 0px;
+	background: rgba(237, 237, 237, 0.48);
+}
+.notesSideBarLink {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+.notesSideBarLogoText {
+	width: 115px;
+	height: 44px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #202020;
+}
+.notesStyle.notesSideBarServers {
+	display: flex;
+	align-items: center;
+}
+.notesSideBarServersList {
+	padding: 8px;
+	gap: 8px;
+	width: 170px;
+	height: 38px;
+	list-style: none;
+}
+.notesSideBarServersFlex {
+	display: flex;
+	align-items: center;
+}
+.notesSideServersImg {
+	width: 20px;
+	height: 20px;
+}
+
+.notesServersBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 18px;
+	width: 170px;
+	height: 48px;
+	background: #102a63;
+	border-radius: 6px;
+	border: 0;
+}
+.notesServersBtnText {
+	width: 73px;
+	height: 16px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #ffffff;
+	margin-right: 8px;
+}
+.notes {
+	margin-left: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 60%;
+}
+.notesTitle {
+	text-align: center;
+	height: 44px;
+	top: 80px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #000000;
+}
+.notesContent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.notesContentOne {
+	width: 200%;
+	border: 1px solid #f2f2f2;
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-left: -60%;
+}
+.notesContentOneDetails {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.notesContentOneDetailsTitle {
+	height: 25px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #000000;
+}
+#notesContentOneDetailsBtn {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: right;
+	text-transform: capitalize;
+	color: #0e6930;
+	border: 0;
+	padding: 8px 20px;
+	width: 93px;
+	height: 32px;
+	background: #b6dec5;
+	border-radius: 4px;
+}
+.notesContentTwo {
+	margin-left: -60%;
+	margin-top: 15px;
+}
+
+.notesContentwoBtns {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.notesForm{
+	margin-top: 15px;
+}
+.notesFormInput {
+	border: 0;
+	width: 140px;
+height: 25px;
+left: 348px;
+top: 596px;
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 25px;
+color: #000000;
+outline: none;
+}
+.notesContentwoBtn {
+	margin-right: 10px;
+	border: 0;
+	background-color: #fff;
+	cursor: pointer;
+	left: 0%;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	color: #202020;
+}
