@@ -22,6 +22,7 @@ export const About = () => {
         <div className={classes.flexcol}>
           <p className={classes.storyhead}>OUR STORY</p>
           <p
+            className={classes.p_}
             style={{ maxWidth: '345px', fontWeight: '300', lineHeight: '40px' }}
           >
             We are building the DevOp notepad exclusively for the devops
@@ -29,55 +30,42 @@ export const About = () => {
           </p>
           <div
             className={classes.flexrow}
-            style={{ marginTop: '20px', paddingLeft: '0px' }}
+            style={{
+              marginTop: '20px',
+              paddingLeft: '0px',
+              flexWrap: 'nowrap',
+            }}
           >
-            <img src={circle} width='95px' height='80px' alt='img' />
-            <p
-              style={{
-                maxWidth: '441px',
-              }}
-            >
+            <img src={circle} className={classes.circle} alt='img' />
+            <p className={classes.tool}>
               A tool for managing and keeping track of servers, remembering
               passwords for various tools used to access these servers.
             </p>
           </div>
         </div>
-        <div className={classes.flexcol} style={{ maxWidth: '362px' }}>
-          <ol style={{ listStyleType: 'decimal-leading-zero' }}>
-            <li>
-              <ul>
-                <li>
-                  <b>4 months of intense research</b>{' '}
-                </li>
-                <li>
-                  A tool for managing and keeping track of servers, remembering
-                  pas
-                </li>
-              </ul>
+        <div className={classes.flexcol} style={{ maxWidth: '400px' }}>
+          <ol className={classes.list_style__}>
+            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+              <b style={{ fontSize: '20px', fontWeight: '800' }}>
+                4 months of intense research
+              </b>
+              <br />A tool for managing and keeping track of servers,
+              remembering pas
             </li>
-            <li>
-              <ul>
-                <li>
-                  <b> 4 months of intense research </b>{' '}
-                </li>
-                <li>
-                  {' '}
-                  A tool for managing and keeping track of servers, remembering
-                  pas
-                </li>
-              </ul>
+            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+              <b style={{ fontSize: '20px', fontWeight: '800' }}>
+                4 months of intense research{' '}
+              </b>
+              <br />A tool for managing and keeping track of servers,
+              remembering pas
             </li>
-            <li>
-              <ul>
-                <li>
-                  <b>4 months of intense research </b>{' '}
-                </li>
-                <li>
-                  {' '}
-                  A tool for managing and keeping track of servers, remembering
-                  pas
-                </li>
-              </ul>
+            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+              <b style={{ fontSize: '20px', fontWeight: '800' }}>
+                {' '}
+                4 months of intense research{' '}
+              </b>
+              <br />A tool for managing and keeping track of servers,
+              remembering pas
             </li>
           </ol>
         </div>
@@ -87,13 +75,8 @@ export const About = () => {
           <img src={man} className={classes.imgsize} alt='img' />
         </div>
         <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
-          <p
-            className={classes.storyhead}
-            style={{ fontSize: '30px', paddingBottom: '40px' }}
-          >
-            Our Mission
-          </p>
-          <p style={{ paddingBottom: '35px' }}>
+          <p className={classes.storyhead2}>Our Mission</p>
+          <p style={{ paddingBottom: '35px' }} className={classes.p_}>
             We are building the DevOp notepad exclusively for the devops
             engineers A tool for managing and keeping track of servers,
             remembering passwords for various tools used to access these
@@ -121,17 +104,12 @@ export const About = () => {
           <img src={womanwhite} className={classes.imgsize} alt='img' />
         </div>
         <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
-          <p
-            className={classes.storyhead}
-            style={{ fontSize: '25px', paddingBottom: '40px' }}
-          >
-            Our Vision
-          </p>
-          <p>
+          <p className={classes.storyhead2}>Our Vision</p>
+          <p className={classes.p_}>
             We believe that the developers world will look very different after
             the building of this tool.
           </p>
-          <p>
+          <p className={classes.p_}>
             We foresee a gingantic acceleration towards the essential
             requirements of developers satisfaction in a safe, secure, and
             effective way of proper management.
@@ -155,18 +133,7 @@ export const About = () => {
           >
             Have a question?
           </p>
-          <p
-            style={{
-              fontSize: '42px',
-              maxWidth: '415px',
-              fontWeight: '600',
-              lineHeight: '37px',
-              color: '#ffffff',
-              paddingBottom: '48px',
-            }}
-          >
-            Our team is happy to assist you
-          </p>
+          <p className={classes.assist}>Our team is happy to assist you</p>
           <p
             style={{
               fontSize: '20px',

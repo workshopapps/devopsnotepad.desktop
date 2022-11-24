@@ -14,7 +14,7 @@ const Navbar = ({ isOpen, setOpen }) => {
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
       <div className={styles.logo}>
         <div className={styles.inLogo}>
-          <Link to="/" onClick={() => {setOpen(false)}}>
+          <Link to="/" onClick={() => { setOpen(false) }}>
             <img src={logo} alt='' />
           </Link>
           <AiOutlineClose
@@ -31,14 +31,14 @@ const Navbar = ({ isOpen, setOpen }) => {
                 {menu.title} <i className='fa-solid fa-angle-down'></i>
               </button>
               {menu.subMenu && (
-                <div className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
+                <ul className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
                   {menu.subMenu.map((sMenu, i) => (
-                    <li><Link to={`${sMenu.slug}`} key={i} onClick={() => {
+                    <li ><Link to={`${sMenu.slug}`} key={i} onClick={() => {
                       handleMenuToggle(false)
                       setOpen(false)
                     }}>{sMenu.title}</Link></li>
                   ))}
-                </div>
+                </ul>
               )}
             </div>
           ))}
