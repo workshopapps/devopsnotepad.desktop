@@ -1,0 +1,148 @@
+.mastercard {
+  width: 39px;
+  height: 24px;
+}
+
+.visa {
+  width: 74px;
+  height: 24px;
+}
+
+.verve {
+  width: 70px;
+  height: 24px;
+}
+
+.formContainer {
+  width: 588px;
+  height: 565px;
+  border-radius: 8px;
+  border: 1px solid #ededed;
+  padding: 30px 0 30px 30px;
+}
+
+.payment {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202020;
+  margin-bottom: 24px;
+}
+
+.debitCard {
+  height: 101px;
+  width: 263px;
+  border: 1px solid #ededed;
+  border-radius: 8px;
+  padding: 16px 16px 25px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.debitCardHeader {
+  font-weight: 600;
+  font-size: 14px;
+  color: #202020;
+}
+
+.debitCardImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form {
+  width: 378px;
+}
+
+.label {
+  padding: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #202020;
+  margin-bottom: 0;
+}
+
+.input {
+  border-radius: 6px;
+  outline: none;
+  height: 48px;
+  width: 100%;
+  border: 1px solid #ededed !important;
+  font-size: 12px;
+  font-weight: 400;
+  color: #acacac;
+  padding: 12px;
+  margin-bottom: 0 !important;
+}
+
+.formControl {
+  display: flex;
+  flex-direction: column;
+}
+
+.lastInputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.miniContainer {
+  width: 181px;
+}
+
+.priceBtn {
+  margin-top: 32px;
+  margin-bottom: 0;
+  height: 56px;
+  width: 183px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #102a63;
+  align-items: center;
+  padding: 0;
+  border-radius: 6px;
+}
+
+@media (max-width: 1150px) {
+  .formContainer {
+    width: 484px;
+  }
+}
+
+@media (max-width: 700px) {
+  .form {
+    width: 330px;
+  }
+
+  .miniContainer {
+    width: 157px;
+  }
+}
+
+@media (max-width: 550px) {
+  .formContainer {
+    width: 382px;
+    height: 568px;
+    padding: 30px 16px 30px 16px;
+  }
+}
+
+@media(max-width: 375px){
+  .formContainer{
+    width: 95%;
+    padding: 20px 0 20px 0;
+  }
+
+  .form{
+    width: 95%;
+    margin: auto;
+  }
+
+  .miniContainer {
+    width: 130px;
+  }
+}
