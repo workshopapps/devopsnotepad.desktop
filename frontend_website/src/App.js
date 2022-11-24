@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import "./App.css";
-import React from "react";
-import Footer from "./Component/Footer/Footer";
-import Header from "./Component/Header/Header";
-=======
 import React from 'react';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -30,7 +24,8 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Csr from './Pages/Csr/Csr';
+import Prices from './Pages/Prices/Prices';
+import PricePayment from './Pages/PricePayment/PricePayment';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -44,18 +39,12 @@ const ErrorFallback = (props) => {
     </div>
   );
 };
->>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
 
 function App() {
   const navigate = useNavigate();
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <Header />
-      <Footer />
-      {/* <LandingPage /> */}
-=======
        <Navigation />
 
       <ErrorBoundary
@@ -84,13 +73,14 @@ function App() {
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner/>} />
           <Route path='/csr' exact element={<Csr/>} />
+          <Route path='/prices' exact element ={<Prices/>}/>
+          <Route path='/prices/payment/:state/:id' exact element ={<PricePayment/>}/>
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
->>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
     </React.Fragment>
   );
 }
