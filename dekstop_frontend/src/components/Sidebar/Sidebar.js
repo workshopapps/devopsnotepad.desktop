@@ -26,7 +26,7 @@ const Sidebar = () => {
                 <button className="add">Add Server</button>
                 <img src={plus} alt="" />
             </div>
-            <p>Setting</p>
+            <p>Settings</p>
         </div>
     </div>
   )
