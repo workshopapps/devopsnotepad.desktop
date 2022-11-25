@@ -31,6 +31,7 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}
+          working-directory: ${{ env.working-directory }}
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
