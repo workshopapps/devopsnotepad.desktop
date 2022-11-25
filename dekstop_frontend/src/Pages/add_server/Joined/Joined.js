@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Server from '../Server/Server'
-import Sidebar from '../../../components/Sidebar/Sidebar'
+import Sidebar from '../../../components/Sidebar/SideNar'
 import "./Joined.css"
 
 const Joined = () => {
