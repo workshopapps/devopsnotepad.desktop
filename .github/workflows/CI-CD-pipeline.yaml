@@ -60,9 +60,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          cache-dependency-path: backend/package-lock.json
+          node-version: 14
       - name: install dependencies
         working-directory: backend/
         run: |
