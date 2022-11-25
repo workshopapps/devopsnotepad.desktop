@@ -30,7 +30,7 @@ function Note() {
 					<div className={notesStyle.notesContentOne}>
 						<div className={notesStyle.notesContentOneDetails}>
 							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								End point
+								End point:
 							</h2>
 							<p className={notesStyle.notesContentOneDetailsText}>
 								server-devops/18.20.31.10
@@ -38,7 +38,7 @@ function Note() {
 						</div>
 						<div className={notesStyle.notesContentOneDetails}>
 							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								IP Address
+								IP Address:
 							</h2>
 							<p className={notesStyle.notesContentOneDetailsText}>
 								192.168.0.1
@@ -46,7 +46,7 @@ function Note() {
 						</div>
 						<div className={notesStyle.notesContentOneDetails}>
 							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								Server health
+								Server health:
 							</h2>
 							<button
 								className={notesStyle.notesContentOneDetailsText}
@@ -82,8 +82,9 @@ function Note() {
 									<img src="Vectorr.png" alt='img' className={notesStyle.notesFormIcon}/>
 									<img src="Vectoor.png" alt='img' className={notesStyle.notesFormIcon}/>
 									<img src="Vectorrr.png" alt='img' className={notesStyle.notesFormIcon}/>
-									<img src="Vecctor.png" alt='img' className={notesStyle.notesFormIcon}/>
+									<img src="Vecctor.png" alt='img' id={notesStyle.deleteIcon} className={notesStyle.notesFormIcon}/>
 								</div>
+								<p className={notesStyle.notesLastEdit}>Last edit</p>
 								<form className={notesStyle.notesForm}>
 									<input
 										type="text"
