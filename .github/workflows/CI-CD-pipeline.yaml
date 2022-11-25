@@ -25,7 +25,7 @@ jobs:
       - name: install dependencies
         working-directory: frontend_website/
         run: |
-          npm install
+          npm install --force
           npm ci
       - name: build and test
         working-directory: frontend_website/
