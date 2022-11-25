@@ -1,10 +1,23 @@
-import Joined from "./components/Joined/Joined";
-
+import React from 'react';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Note from './Pages/notes/Note';
+import Home from './Pages/home/Home';
+import Settings from './Pages/Settings/MainSettings';
+// import Sidenav from './Component/SideNav/SideNav';
+import EditProfile from './Pages/Settings/EditProfile/EditProfile';
+import Joined from './Pages/add_server/Joined/Joined'
 
 function App() {
 	return (
 		<div className="App">
-			<Joined/>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route exact path="/note" element={<Note />} />
+				<Route exact path="/settings" element={<Settings />} />
+				<Route exact path="/edit-profile" element={<EditProfile />} />
+				<Route exact path="/add-server" element={<Joined />} />
+			</Routes>
 		</div>
 	);
 }

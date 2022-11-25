@@ -1,11 +1,11 @@
-.card-container {
+.cardContainer {
   width: 100%;
   height: 500px;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.inner-card-container .btn-for-price {
+.btn {
   text-decoration: none;
   margin: 20px auto;
   display: flex;
@@ -25,12 +25,12 @@
   background: var(--darkblue-color);
 }
 
-.inner-card-container {
+.innerCardContainer {
   font-family: 'Manrope', sans-serif;
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  padding: 30px;
+  padding: 30px 25px;
   border-radius: 0 0 8px 8px;
   margin: auto;
   background-color: #fff;
@@ -40,18 +40,23 @@
   justify-content: space-between;
 }
 
-.inner-card-align {
+.list{
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.innerCardAlign {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.inner-card-container a {
-  text-decoration: none;
+.btn {
+  outline: none;
   width: 100%;
   height: 56px;
   border-radius: 6px;
-  padding: 20px;
   font-size: 16px;
   font-weight: 600;
   border: 1px solid var(--darkblue-color);
@@ -68,34 +73,35 @@
   color: #fff;
 }
 
-.inner-card-container li {
+.li {
   display: flex;
   list-style-type: none;
   color: var(--grey-color);
   margin-bottom: 16px;
+  font-size: 20px;
   align-items: center;
 }
 
-.inner-card-container span {
+.span {
   font-size: 20px;
   font-weight: 400;
   line-height: 27px;
 }
 
-.inner-card-container li img {
+.img {
   margin-right: 10px;
   width: 18px;
   height: 18px;
 }
 
-.inner-card-container h4 {
+.title {
   font-weight: 500;
   font-size: 20px;
   color: #202020;
   margin-bottom: 30px;
 }
 
-.inner-card-container h2 {
+.price {
   font-weight: 600;
   font-size: 24px;
   color: var(--darkblue-color);
@@ -103,57 +109,78 @@
 }
 
 @media (max-width: 1161px) {
-  .inner-card-container li {
+  .li {
     margin-bottom: 10px;
   }
 
-  .inner-card-container span {
+  .span {
     font-size: 18px;
     line-height: 25px;
   }
 
-  .inner-card-container h2 {
+  .price {
     font-size: 22px;
     margin-bottom: 30px;
   }
 
-  .inner-card-container h4 {
+  .title {
     font-size: 18px;
     margin-bottom: 25px;
   }
 
-  .card-container {
+  .cardContainer {
     width: 100%;
     height: 450px;
   }
 }
 
 @media (max-width: 654px) {
-  .inner-card-container {
+  .innerCardContainer {
     padding: 30px 20px 30px 20px;
+  }
+
+  .span{
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 500px){
+  .btn{
+    font-size: 14px;
+  }
+
+  .title{
+    font-size: 20px;
+  }
+
+  .price{
+    font-size: 24px;
   }
 }
 
 @media (max-width: 400px) {
-  .card-container {
+  .cardContainer {
     width: 100%;
   }
 
-  .inner-card-container h4 {
-    font-size: 18px;
+  .title {
     margin-bottom: 18px;
   }
 
-  .inner-card-container h2 {
-    font-size: 22px;
+  .price {
     margin-bottom: 25px;
   }
 
-  .inner-card-container a {
-    width: 95%;
+  .btn {
+    width: 100%;
     height: 56px;
     font-weight: 600;
     padding: 5px;
-    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px){
+  .span{
+    font-size: 15px;
   }
 }
