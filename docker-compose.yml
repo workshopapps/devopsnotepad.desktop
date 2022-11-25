@@ -34,7 +34,10 @@ services:
       - '8081:8081'
     depends_on:
       - db
+<<<<<<< HEAD
 
+=======
+>>>>>>> 730d1484aa0a8bada11e687aa468bcf0e34f3418
 
   db:
     image: mysql:5.7
