@@ -1,7 +1,7 @@
 import React from 'react';
 import './Server.css';
 
-function Server() {
+function Server({handleSubmit}) {
 	return (
 		<div className="add-server">
 			<div className="server-contain">
@@ -16,7 +16,7 @@ function Server() {
 							<label htmlFor="address">IP Address</label>
 							<input type="text" id="address" name="address" />
 						</div>
-						<div className="button">
+						<div className="button" onClick={handleSubmit} style={{cursor: "pointer"}}>
 							<div className="done">Done</div>
 						</div>
 					</form>
