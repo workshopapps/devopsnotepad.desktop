@@ -4,13 +4,11 @@ on:
   push:
     branches: ['dev', 'main']
 
-defaults:
-  run:
-    working-directory: desktop_frontend
-
 jobs:
   release:
     runs-on: ${{ matrix.os }}
+    env:
+      working-directory: ./dekstop_frontend
 
     strategy:
       matrix:
@@ -25,10 +23,15 @@ jobs:
         with:
           node-version: 10
 
+      - run: echo "$PATH"
+      - run: echo "./dekstop_frontend" >> $GITHUB_PATH
+      - run: echo "$PATH"
+
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}
+          package_root: ${{ env.working-directory }}
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
