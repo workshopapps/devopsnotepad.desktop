@@ -33,17 +33,17 @@ function Sidenav() {
 						{isOpen && (
 							<div>
 								<ul className={styles.dropDown}>
-									<Link to="/hngServer" style={{ textDecoration: 'none' }}>
+									<Link to="/note" style={{ textDecoration: 'none' }}>
 										{' '}
 										<li className={styles.listItem}>HNG Server</li>{' '}
 									</Link>
 
-									<Link to="/ayoServer" style={{ textDecoration: 'none' }}>
+									<Link to="/#" style={{ textDecoration: 'none' }}>
 										{' '}
 										<li className={styles.listItem}>AYO Server</li>{' '}
 									</Link>
 
-									<Link to="/omoServer" style={{ textDecoration: 'none' }}>
+									<Link to="/#" style={{ textDecoration: 'none' }}>
 										{' '}
 										<li className={styles.listItem}> OMO Server</li>{' '}
 									</Link>
