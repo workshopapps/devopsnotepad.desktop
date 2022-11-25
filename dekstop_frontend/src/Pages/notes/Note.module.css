@@ -1,0 +1,128 @@
+.notes {
+	margin-left: 28%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 60%;
+}
+.notesTitle {
+	text-align: center;
+	height: 44px;
+	top: 80px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #000000;
+}
+.notesContent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.notesContentOne {
+	width: 200%;
+	border: 1px solid rgb(183, 182, 182);
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-left: -60%;
+}
+.notesContentOneDetails {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.notesContentOneDetailsTitle {
+	height: 25px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #000000;
+}
+#notesContentOneDetailsBtn {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: right;
+	text-transform: capitalize;
+	color: #0e6930;
+	border: 0;
+	padding: 8px 20px;
+	width: 93px;
+	height: 32px;
+	background: #b6dec5;
+	border-radius: 4px;
+}
+.notesContentTwo {
+	margin-left: -60%;
+	margin-top: 15px;
+}
+
+.notesContentwoBtns {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.notesForm {
+	margin-top: 15px;
+}
+.notesFormInput {
+	border: 0;
+	width: 140px;
+	height: 25px;
+	left: 348px;
+	top: 596px;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #000000;
+	outline: none;
+}
+.notesContentwoBtn {
+	margin-right: 10px;
+	border: 0;
+	background-color: #fff;
+	cursor: pointer;
+	left: 0%;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	color: #202020;
+}
+.notesFormIcons {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+}
+.notesFormIcon {
+	width: 12px;
+	height: 12px;
+	background: #ededed;
+	border-radius: 2px;
+	border: 1px solid none;
+	padding: 5px;
+	cursor: pointer;
+	margin: 2px 10px;
+}
+#deleteIcon {
+}
+.notesLastEdit {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	color: #acacac;
+	width: 100px;
+	margin-left: 230%;
+	margin-top: -20px;
+
+}
