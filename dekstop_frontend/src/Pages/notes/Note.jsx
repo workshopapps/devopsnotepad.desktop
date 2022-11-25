@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidenav from '../../Component/SideNav/SideNav';
+import Sidenav from "../../components/Sidebar/Sidebar"
 import notesStyle from './Note.module.css';
 
 function Note() {
