@@ -4,13 +4,11 @@ on:
   push:
     branches: ['dev', 'main']
 
-defaults:
-  run:
-    working-directory: dekstop_frontend
-
 jobs:
   release:
     runs-on: ${{ matrix.os }}
+    env:
+      working-directory: ./dekstop_frontend
 
     strategy:
       matrix:
@@ -26,7 +24,6 @@ jobs:
           node-version: 10
 
       - name: Build/release Electron app
-        working-directory: dekstop_frontend/
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}

@@ -1,6 +1,6 @@
 {
 	"name": "electron_setup",
-	"version": "0.1.4",
+	"version": "0.1.8",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
