@@ -2,6 +2,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { Link } from 'react-router-dom';
+import notified from './assets/999.png';
+import Vecctor from './assets/Vecctor.png'
+import Vectoor from './assets/Vectoor.png'
+import Vectorc from './assets/Vectorc.png'
+import Vectorr from './assets/Vectorr.png'
+import Vectorrr from './assets/Vectorrr.png'
 import Sidenav from '../../Component/SideNav/SideNav';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
@@ -93,40 +100,43 @@ function Note() {
 							<button type="button" className={notesStyle.notesContentwoBtn}>
 								Passwords
 							</button>
-							<button type="button" className={notesStyle.notesContentwoBtn}>
-								Notifications
-							</button>
+							<Link to="/notification">
+								<button type="button" className={notesStyle.notesContentwoBtn}>
+									Notifications
+								</button>
+								<img src={notified} alt="" style={{ width: '20px' }} />{' '}
+							</Link>
 						</div>
 						{formDisplay ? (
 							<div className={notesStyle.notesFormDiv}>
 								<div className={notesStyle.notesFormIcons}>
 									<img
-										src="Vectorc.png"
+										src={Vectorc}
 										alt="img"
 										className={notesStyle.notesFormIcon}
 									/>
 									<img
-										src="Vectorr.png"
+										src={Vectorr}
 										alt="img"
 										className={notesStyle.notesFormIcon}
 									/>
 									<img
-										src="Vectoor.png"
+										src={Vectoor}
 										alt="img"
 										className={notesStyle.notesFormIcon}
 									/>
 									<img
-										src="Vectorrr.png"
+										src={Vectorrr}
 										alt="img"
 										className={notesStyle.notesFormIcon}
 									/>
 									<img
-										src="Vecctor.png"
 										alt="img"
 										id={notesStyle.deleteIcon}
 										className={notesStyle.notesFormIcon}
 										onMouseDownCapture={handleOpen}
 										onFocus={handleOpen}
+										src={Vecctor}
 									/>
 								</div>
 								<p className={notesStyle.notesLastEdit}>Last edit</p>
