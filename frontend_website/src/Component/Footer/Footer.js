@@ -23,7 +23,7 @@ const Footer = () => {
                   <div key={linkKey} className={styles.miUM}>
                     <h4>{link.title}</h4>
                     {link.list && (
-                      <ul style={{ "list-style": "none" }}>
+                      <ul style={{ 'list-style': 'none' }}>
                         {link.list.map((b, i) => (
                           <li key={i}>
                             <Link to={`${b.slug}`}>{b.title}</Link>

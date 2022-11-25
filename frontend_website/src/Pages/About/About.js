@@ -45,21 +45,21 @@ export const About = () => {
         </div>
         <div className={classes.flexcol} style={{ maxWidth: '400px' }}>
           <ol className={classes.list_style__}>
-            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
               <b style={{ fontSize: '20px', fontWeight: '800' }}>
                 4 months of intense research
               </b>
               <br />A tool for managing and keeping track of servers,
               remembering pas
             </li>
-            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
               <b style={{ fontSize: '20px', fontWeight: '800' }}>
                 4 months of intense research{' '}
               </b>
               <br />A tool for managing and keeping track of servers,
               remembering pas
             </li>
-            <li className={classes.list__} style={{ "padding-left": '25px' }}>
+            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
               <b style={{ fontSize: '20px', fontWeight: '800' }}>
                 {' '}
                 4 months of intense research{' '}
