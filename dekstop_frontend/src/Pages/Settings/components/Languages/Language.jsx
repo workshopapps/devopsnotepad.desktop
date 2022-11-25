@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import style from '../Languages/Language.module.css';
+import style from './Language.module.css';
 
 const Language = () => {
 	const [selected, setSelected] = useState('yes');
@@ -18,13 +18,13 @@ const Language = () => {
 
 	return (
 		<div className={style.languageContainer}>
-        <div className={style.languageHead}>
+			<div className={style.languageHead}>
 				<Link to="/settings">
 					<FiArrowLeft style={{ width: '20px', height: '20px' }} />
 				</Link>
 				<h1>Language</h1>
 			</div>
-            <small className={style.smallHead}>PREFERRED LANGUAGES</small>
+			<small className={style.smallHead}>PREFERRED LANGUAGES</small>
 			<div className={style.language_flexcol}>
 				<label htmlFor="English (UK)">
 					English (UK)
