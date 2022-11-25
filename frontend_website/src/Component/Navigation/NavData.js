@@ -39,11 +39,11 @@ export const menuList = [
       },
       {
         title: 'Contact Us',
-        slug: '/contact',
+        slug: '/contact-us',
       },
       {
         title: 'Careers',
-        slug: '/career',
+        slug: '/careers',
       },
     ],
   },
@@ -58,6 +58,10 @@ export const menuList = [
       {
         title: 'FAQs',
         slug: '/faq',
+      },
+      {
+        title: 'CSR',
+        slug: '/csr',
       },
       {
         title: 'Blog',

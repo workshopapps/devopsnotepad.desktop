@@ -26,5 +26,128 @@
       "bearerAuth": []
     }
   ],
+  "paths": {
+    "/server/2/notifications": {
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "notificationId": {
+                            "type": "string"
+                          },
+                          "serverId": {
+                            "type": "string"
+                          },
+                          "log": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "page": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "notifications": [
+                    {
+                      "notificationId": "1",
+                      "serverId": "2",
+                      "log": "easfhgrehegj//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "7",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu842dnveihfiewfrqknvsV RWG3  T59UYPRS//get/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "4",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf ://lorem upsuarhgr//patch/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-11-13T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    },
+                    {
+                      "notificationId": "6",
+                      "serverId": "2",
+                      "log": "ekfsdfwoeu8428sf fgwer329t/post/----ngkfgrfjvrwr/lrojegje/getnkidnfigwhuwe",
+                      "created_at": "2022-10-20T17:32:41.000Z",
+                      "updated_at": "2022-11-20T17:32:41.000Z"
+                    }
+                  ],
+                  "page": 1
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {}
+      }
+    },
+    "/server/3/notifications": {
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "page": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "notifications": [],
+                  "page": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "paths": {}
 }
