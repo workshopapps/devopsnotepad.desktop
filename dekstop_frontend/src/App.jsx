@@ -7,6 +7,7 @@ import Settings from './Pages/Settings/MainSettings';
 // import Sidenav from './Component/SideNav/SideNav';
 import EditProfile from './Pages/Settings/EditProfile/EditProfile';
 import Joined from './Pages/add_server/Joined/Joined'
+import Notification from './Pages/Notification/Notification'
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route exact path="/settings" element={<Settings />} />
 				<Route exact path="/edit-profile" element={<EditProfile />} />
 				<Route exact path="/add-server" element={<Joined />} />
+				<Route exact path="/notification" element={<Notification />}/>
 			</Routes>
 		</div>
 	);
