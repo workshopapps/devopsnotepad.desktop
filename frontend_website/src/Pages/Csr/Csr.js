@@ -1,71 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import s from './Csr.module.css';
 
 const Csr = () => {
-  const [isShown, setIsShown] = useState(false);
-
-  //Handle navbar
-  const handleNavbar = (e) => {
-    e.preventDefault();
-    setIsShown((prev) => !prev);
-  };
-  const style = {
-    display: 'flex',
-    alignItems: 'left',
-    flexDirection: 'column',
-    justifyContent: 'left',
-    backgroundColor: '#212000',
-    color: '#ffffff',
-    position: 'sticky',
-    marginRight: '-40px',
-    borderRadius: '10px',
-    fontSize: '12px',
-    marginTop: '310px',
-    padding: '5px 30px',
-    paddingRight: '150px',
-  };
   return (
     <div className={s.csrWrapper}>
-      <nav className={s.csrNavbar}>
-        <Link to='/' className={s.logoAndTextFlex}>
-          <h2 className={s.logoText}>
-            Ops<span id={s.logoText}>pad</span>
-          </h2>
-          <img src='servers (3) 4.png' alt='logo' className={s.logo} />
-        </Link>
-        <ul>
-          <Link to='/about-us'>
-            <li>About Us</li>
-          </Link>
-          <Link to='/blog'>
-            <li>Blog</li>
-          </Link>
-          <Link to='/contact-us'>
-            <li>Contact</li>
-          </Link>
-          <Link to='/faq'>
-            <li>FAQs</li>
-          </Link>
-        </ul>
-        <button className={s.csrBtn}>Download App</button>
-        <img
-          src='Vector (13).png'
-          alt='menu'
-          className={s.csrMenuImg}
-          onClick={handleNavbar}
-        />
-        <div
-          className={s.navbar}
-          style={isShown ? style : {}}
-          onMouseLeave={handleNavbar}
-        >
-          <li>ABout Us</li>
-          <li>Blog</li>
-          <li>Contact</li>
-          <li>FAQs</li>
-        </div>
-      </nav>
       <div className={s.csrMain}>
         <div className={s.csrMainSection1}>
           <p className={s.csrMainSection1Text}>
