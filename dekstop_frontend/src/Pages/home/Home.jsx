@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidenav from '../../Component/SideNav/SideNav';
+import Sidenav from '../../Components/SideNav/SideNav';
 import homeStyle from './Home.module.css';
 
 function Home() {

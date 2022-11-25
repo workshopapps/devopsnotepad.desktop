@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Sidenav from '../../Components/SideNav/SideNav';
 import notified from './assets/999.png';
-import Vecctor from './assets/Vecctor.png'
-import Vectoor from './assets/Vectoor.png'
-import Vectorc from './assets/Vectorc.png'
-import Vectorr from './assets/Vectorr.png'
-import Vectorrr from './assets/Vectorrr.png'
-import Sidenav from '../../Component/SideNav/SideNav';
+import Vecctor from './assets/Vecctor.png';
+import Vectoor from './assets/Vectoor.png';
+import Vectorc from './assets/Vectorc.png';
+import Vectorr from './assets/Vectorr.png';
+import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 
 function Note() {
