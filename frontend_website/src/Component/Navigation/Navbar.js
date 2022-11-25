@@ -8,13 +8,19 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ isOpen, setOpen }) => {
   const [menuOpen, setMenuOpen] = useState({});
 
-  const handleMenuToggle = (index) => setMenuOpen(state => ({ [index]: !state[index] }));
+  const handleMenuToggle = (index) =>
+    setMenuOpen((state) => ({ [index]: !state[index] }));
 
   return (
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
       <div className={styles.logo}>
         <div className={styles.inLogo}>
-          <Link to="/" onClick={() => { setOpen(false) }}>
+          <Link
+            to='/'
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
             <img src={logo} alt='' />
           </Link>
           <AiOutlineClose
@@ -27,16 +33,32 @@ const Navbar = ({ isOpen, setOpen }) => {
         <div className={styles.menuBox}>
           {menuList.map((menu, i) => (
             <div key={i} className={styles.sMki}>
-              <button className={styles.menu_title} onClick={() => handleMenuToggle(i)} type="button">
+              <button
+                className={styles.menu_title}
+                onClick={() => handleMenuToggle(i)}
+                type='button'
+              >
                 {menu.title} <i className='fa-solid fa-angle-down'></i>
               </button>
               {menu.subMenu && (
-                <ul className={`${styles.dropdown} ${menuOpen[i] ? styles.show : ''}`}>
+                <ul
+                  className={`${styles.dropdown} ${
+                    menuOpen[i] ? styles.show : ''
+                  }`}
+                >
                   {menu.subMenu.map((sMenu, i) => (
-                    <li ><Link to={`${sMenu.slug}`} key={i} onClick={() => {
-                      handleMenuToggle(false)
-                      setOpen(false)
-                    }}>{sMenu.title}</Link></li>
+                    <li>
+                      <Link
+                        to={`${sMenu.slug}`}
+                        key={i}
+                        onClick={() => {
+                          handleMenuToggle(false);
+                          setOpen(false);
+                        }}
+                      >
+                        {sMenu.title}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               )}
