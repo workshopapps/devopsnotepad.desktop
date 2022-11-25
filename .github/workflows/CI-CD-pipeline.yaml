@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
   pull_request:
-    branches: ["dev", "main"]
+    branches: ["staging", "main"]
     
 env:
   PORT: ${{ secrets.PORT }}
