@@ -70,7 +70,7 @@ jobs:
         working-directory: backend/
         run: |
           npm run build --if-present
-          npm test
+          # npm test
           
   dockerize_stack_and_test_dockerized_stack:
     runs-on: ubuntu-latest    
