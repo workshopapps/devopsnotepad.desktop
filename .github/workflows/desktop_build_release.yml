@@ -21,7 +21,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 14
 
       - run: echo "$PATH"
       - run: echo "./dekstop_frontend" >> $GITHUB_PATH
@@ -31,6 +31,7 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}
+          package_root: ${{ env.working-directory }}
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
