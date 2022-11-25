@@ -82,7 +82,7 @@ function Settings() {
 				</div>
 			))}
       {Support.map((support) => (
-        <div key={support.items} >
+        <div key={support.items} className={style.border_top}>
         <small className={style.smallHead}>{support.title}</small>
         <ul className={style.support}>
         {support.items.map((items) => (
