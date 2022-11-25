@@ -17,7 +17,7 @@ const Server = ({handleSubmit}) => {
                         <input type="text" id='address' name='address' />
                     </div>
                     <div className="button">                        
-                        <button className='done'onClick={handleSubmit} >Done</button>
+                        <div className='done'onClick={handleSubmit} >Done</div>
                     </div>
                 </form>
             </div>

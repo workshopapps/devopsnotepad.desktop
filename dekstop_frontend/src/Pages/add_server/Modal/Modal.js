@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Modal.css"
-import tick from "../../images/tick.png"
+import tick from "./tick.png"
 
 const Modal = ({modal, open, close}) => {
 
