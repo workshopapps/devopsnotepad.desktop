@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      - working-directory: frontend_website/
       - name: setup node
         uses: actions/setup-node@v3
         with:
