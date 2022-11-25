@@ -16,6 +16,7 @@ import CareerPage from './Pages/CareerPage/CareerPage';
 import Partner from './Pages/Partner/Partner';
 import classes from './App.module.css';
 import Features from './Pages/Features/Features';
+import BestPractices from './Pages/BestPractice/BestPractices';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
@@ -63,6 +64,7 @@ function App() {
           <Route path='/contact-us' exact element={<ContactUs />} />
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
+          <Route path='/best-practices' exact element={<BestPractices />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
           <Route path='/demo' exact element={<DemoPage />} />
           <Route path='/our-team' exact element={<OurTeam />} />
