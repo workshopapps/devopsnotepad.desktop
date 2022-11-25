@@ -34,9 +34,6 @@ services:
       - '8081:8081'
     depends_on:
       - db
-    network: 
-      - devopsnotepad
-
 
   db:
     image: mysql:8.0
