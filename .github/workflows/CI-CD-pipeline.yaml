@@ -5,6 +5,22 @@ on:
   push:
   pull_request:
     branches: ["dev", "main"]
+    
+env:
+  PORT: ${{ secrets.PORT }}
+  MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_USER: ${{ secrets.DB_USER }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_DATABASE: ${{ secrets.DB_DATABASE }}
+  TEST_DB_DATABASE: ${{ secrets.TEST_DB_DATABASE }}
+  TEST_DB_USER: ${{ secrets.TEST_DB_USER }}
+  TEST_DB_PASSWORD: ${{ secrets.TEST_DB_PASSWORD }}
+  MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+  MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+  MYSQL_USER: ${{ secrets.MYSQL_USER }}
+  MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+  CI: ${{ secrets.CI }}
 
 jobs:
 # Testing 
@@ -26,6 +42,8 @@ jobs:
           npm install --force
           npm ci
       - name: build and test
+        #env:
+         #CI: ""
         working-directory: frontend_website/
         run: |
           npm run build --if-present
@@ -42,9 +60,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          cache-dependency-path: backend/package-lock.json
+          node-version: 14
       - name: install dependencies
         working-directory: backend/
         run: |
