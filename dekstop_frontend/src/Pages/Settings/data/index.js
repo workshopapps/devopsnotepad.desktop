@@ -57,19 +57,17 @@ export const AppSettings = [
 	{
 		icon: <RiFontSize />,
 		func: 'Text Size',
-		slug: '/text-size',
 		iconright: 'Medium',
 	},
 	{
 		icon: <MdLanguage />,
 		func: 'Language',
-		slug: '/language',
 		iconright: <FaChevronRight />,
+		slug: '/languages',
 	},
 	{
 		icon: <IoNotificationsOutline />,
 		func: 'Notifications',
-		slug: '/notifications',
 		iconright: 'All active',
 	},
 ];

@@ -27,7 +27,7 @@ function Settings() {
 					<div className={style.account}>
 						<div className={style.accountProfile}>
 							<FaRegUser />
-							<Link to="/">{accounts.func}</Link>
+							<Link to={accounts.slug}>{accounts.func}</Link>
 						</div>
 						<Link to={accounts.slug}>
 							<FaChevronRight />
@@ -69,18 +69,20 @@ function Settings() {
 			{AppSettings.map((appsettings) => (
 				<div key={appsettings.title}>
 					<small className={style.smallHead}>{appsettings.title}</small>
+					<Link to={appsettings.slug}>
 					<div className={style.appSettings_cont}>
 						<div className={style.appSettings}>
 							{appsettings.icon}
-							<Link to={appsettings.slug}>{appsettings.func}</Link>
+							<h3>{appsettings.func}</h3>
 						</div>
 						{appsettings.iconright}
 					</div>
+					</Link>
 					<span className={style.border_bottom}> </span>
 				</div>
 			))}
       {Support.map((support) => (
-        <div key={support.items} >
+        <div key={support.items} className={style.border_top}>
         <small className={style.smallHead}>{support.title}</small>
         <ul className={style.support}>
         {support.items.map((items) => (
