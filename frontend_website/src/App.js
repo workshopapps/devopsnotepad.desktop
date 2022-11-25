@@ -23,14 +23,16 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Prices from './Pages/Prices/Prices';
+// import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 import Podcast from './Pages/Podcast/Podcasts';
 import { About } from './Pages/About/About';
-import Form from './Pages/Partner/Form';
+// import Form from './Pages/Partner/Form';
+import BestPractice from './Pages/BestPractice/BestPractices';
 
 import classes from './App.module.css';
+import Terms from './Pages/TermsOfUSe/Terms';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -74,7 +76,7 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
-          <Route path='/prices' exact element={<Prices />} />
+          {/* <Route path='/prices' exact element={<Prices />} /> */}
           <Route
             path='/prices/payment/:state/:id'
             exact
@@ -84,7 +86,9 @@ function App() {
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
           <Route path='/podcasts' exact element={<Podcast />} />
-          <Route path='/form' exact element={<Form />} />
+          {/* <Route path='/form' exact element={<Form />} /> */}
+          <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/terms-of-service' exact element={<Terms />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />

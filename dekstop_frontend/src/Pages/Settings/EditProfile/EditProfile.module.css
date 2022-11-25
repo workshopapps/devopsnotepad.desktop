@@ -1,7 +1,24 @@
-.profileContainer {
-	margin: 80px 117px;
+@media (max-width: 768px) {
+	.profileContainer {
+		padding: 89px 20px 0 !important;
+	}
+	.profileContainer h1 {
+		font-family: 'Inter' !important;
+		font-style: normal;
+		font-weight: 600 !important;
+		font-size: 16px !important;
+		line-height: 120% !important;
+		text-transform: capitalize !important;
+	}
+	.profileHead {
+		gap: 129px !important;
+		text-align: center !important;
+	}
 }
 
+.profileContainer {
+	padding: 80px 117px 80px 245px;
+}
 .profileHead {
 	display: flex;
 	flex-direction: row;
@@ -41,6 +58,6 @@
 	font-size: 14px;
 	line-height: 16px;
 	color: #102a63;
-    background-color: #fff;
-    cursor: pointer;
+	background-color: #fff;
+	cursor: pointer;
 }
