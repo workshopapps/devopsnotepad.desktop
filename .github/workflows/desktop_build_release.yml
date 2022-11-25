@@ -23,6 +23,10 @@ jobs:
         with:
           node-version: 10
 
+      - run: echo "$PATH"
+      - run: echo "./dekstop_frontend" >> $GITHUB_PATH
+      - run: echo "$PATH"
+
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
