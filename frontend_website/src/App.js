@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import "./App.css";
-import React from "react";
-import Footer from "./Component/Footer/Footer";
-import Header from "./Component/Header/Header";
-=======
 import React from 'react';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -30,7 +24,7 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Csr from './Pages/Csr/Csr';
+import TermsOfUse from './Pages/TermsOfUSe/Index';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -44,18 +38,12 @@ const ErrorFallback = (props) => {
     </div>
   );
 };
->>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
 
 function App() {
   const navigate = useNavigate();
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <Header />
-      <Footer />
-      {/* <LandingPage /> */}
-=======
        <Navigation />
 
       <ErrorBoundary
@@ -74,6 +62,7 @@ function App() {
           <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/careers' exact element={<CareerPage />} />
           <Route path='/contact-us' exact element={<ContactUs />} />
+          <Route path='/privacy-policy' exact element={<TermsOfUse />} />
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
@@ -90,7 +79,6 @@ function App() {
         </Routes>
       </ErrorBoundary>
       <Footer />
->>>>>>> 598017e8d7b926270ead112ef59ff3b6f1bae0e5
     </React.Fragment>
   );
 }
