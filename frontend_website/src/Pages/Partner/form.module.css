@@ -1,0 +1,158 @@
+.partnerFormContainer {
+  min-height: 100vh;
+}
+.partnerRegistrationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #102a63;
+  height: 31%;
+  min-height: 35vh;
+}
+
+.partnerRegistrationHeader {
+  position: relative;
+}
+
+.partnerRegistrationTitle {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5rem 9rem 11rem 2rem;
+}
+
+#blueOpspad {
+  color: #225ad6;
+}
+
+.partnerRegistrationDesignRight {
+  width: 13rem;
+  height: 30px;
+  background-color: #ededed;
+  position: absolute;
+  left: 82.5%;
+  top: 12%;
+  transform: rotate(90deg);
+}
+
+.partnerRegistrationDesignBottom {
+  width: 17rem;
+  height: 27px;
+  background-color: #ededed;
+  position: absolute;
+  margin-bottom: 5%;
+  margin-top: -2.7%;
+}
+
+.successMessage {
+  color: #0563b4;
+  font-size: 21px;
+}
+
+.partnerForm {
+  width: 70%;
+  padding: 30px 20px 20px 0px;
+  border-radius: 5px;
+  background: #fff;
+}
+.formBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  padding-top: 20px;
+}
+
+.formContainer {
+  padding: 5rem 3rem 5rem 3rem;
+}
+
+.formContainer > h2 {
+  font-size: 17px;
+}
+.inputField {
+  display: flex;
+  width: 160%;
+  padding-top: 20px;
+}
+
+.inputLabel {
+  font-size: 15px;
+}
+
+.inputLabel:after {
+  content: '*';
+  color: red;
+}
+
+.submitBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40% 0 0 50%;
+}
+
+.submitBtn {
+  background: #102a63;
+  color: #fff;
+  font-size: 17px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .partnerFormContainer {
+    display: inline-flex;
+    min-height: 160vh;
+  }
+
+  .partnerRegistrationContainer {
+    min-height: 170vh;
+  }
+
+  .formGroup {
+    padding-top: 20px;
+  }
+
+  .formContainer {
+    padding: 5rem 3rem 0rem 3rem;
+  }
+
+  .submitBtnContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 6% 0 0 0;
+  }
+
+  .submitBtn {
+    padding: 10px 15px;
+    width: 50%;
+  }
+
+  .partnerRegistrationDesignRight {
+    width: 25rem;
+    height: 30px;
+    left: 69%;
+    top: -123.5%;
+  }
+
+  .partnerRegistrationDesignBottom {
+    width: 27rem;
+    height: 27px;
+    bottom: -176%;
+    background-color: #dfdfdf;
+    position: absolute;
+    margin-bottom: 5%;
+  }
+
+  .partnerRegistrationTitle {
+    color: #fff;
+    font-size: 36px;
+  }
+}
