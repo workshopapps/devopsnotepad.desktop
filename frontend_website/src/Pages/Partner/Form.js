@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Input from '../Partner/Input';
 import style from '../../Pages/Partner/form.module.css';
 import 'react-intl-tel-input/dist/main.css';
@@ -9,7 +9,7 @@ const Form = () => {
   const initialValues = { username: '', email: '', password: '' };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  // const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +55,6 @@ const Form = () => {
         <div className={style.partnerRegistrationHeader}>
           <span>
             <h1 className={style.partnerRegistrationTitle}>
-              {' '}
               Welcome to <span id={style.blueOpspad}> Opspad </span> <br />
               partnerships{' '}
             </h1>
