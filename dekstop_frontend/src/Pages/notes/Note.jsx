@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
-import Sidenav from '../../components/SideNav/SideNav';
+import Sidenav from '../../Components/SideNav/SideNav';
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
 import Vectoor from './assets/Vectoor.png';
