@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Server from '../Server/Server'
-import Sidebar from '../../../components/Sidebar/SideNar'
 import "./Joined.css"
+import Sidenav from '../../../components/Sidebar/SideNav'
 
 const Joined = () => {
     const [modal, setModal] = useState(false)
@@ -22,7 +22,7 @@ const Joined = () => {
 
   return (
     <div className='join'>
-        <Sidebar/>
+        <Sidenav/>
         <Server handleSubmit={handleSubmit}/>
         <Modal modal={modal} open={open} close={close}/>
     </div>
