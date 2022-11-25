@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Note from './pages/notes/Note';
-import Home from './pages/home/Home';
-import Settings from './pages/Settings/MainSettings';
+import Note from './Pages/notes/Note';
+import Home from './Pages/home/Home';
+import Settings from './Pages/Settings/MainSettings';
 // import Sidenav from './Component/SideNav/SideNav';
-import EditProfile from './pages/Settings/EditProfile/EditProfile';
+import EditProfile from './Pages/Settings/EditProfile/EditProfile';
 
 function App() {
 	return (
