@@ -1,0 +1,143 @@
+.settingsContainer {
+	margin: 80px 117px;
+}
+.settingsContainer h1 {
+	padding-top: 30px;
+	text-align: center;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	color: #000000;
+	text-transform: uppercase;
+}
+.userHead {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+.userHead h3 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 140%;
+	display: flex;
+	align-items: center;
+	color: #180e25;
+}
+.border_top {
+	border-top: 1px solid #efeef0;
+}
+.smallHead {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 60px;
+	color: #827d89;
+	text-transform: capitalize !important;
+}
+.account {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 25px;
+}
+.account a {
+	text-decoration: none !important;
+}
+.account svg {
+	color: #827d89;
+	border-width: 1px;
+}
+.accountProfile {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+}
+.accountProfile a {
+	display: flex;
+	color: #180e25;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	text-decoration: none;
+}
+.appSettings_cont {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 17px 0;
+}
+.appSettings_cont a {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: right;
+
+	text-decoration: none;
+}
+.appSettings {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+.appSettings svg {
+	color: #827d89;
+	border-width: 1px;
+}
+.appSettings {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+}
+.appSettings a {
+	display: flex;
+	color: #180e25;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	text-decoration: none !important;
+}
+
+.appSettings:nth-last-child() {
+	border-bottom: 1px solid #efeef0;
+}
+
+.border_bottom {
+	border-bottom: 1px solid #efeef0;
+	content: '';
+	width: 100%;
+}
+
+.support {
+	padding: 0 10px 0 !important;
+	list-style: none !important;
+}
+.support li {
+	padding: 17px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.support a {
+	text-decoration: none !important;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+}

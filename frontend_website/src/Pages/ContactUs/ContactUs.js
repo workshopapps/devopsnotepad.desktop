@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './ContactUs.module.css';
-// import email from './images/email.png';
-// import phone from './images/phone.png';
 import support from './images/support.png';
 import sales from './images/sales.png';
 import press from './images/press.png';
@@ -66,7 +64,12 @@ const ContactUs = () => {
               </p>
 
               <button className={styles.btns}>
-                <Link to='/faq'>GET SUPPORT</Link>
+                <Link
+                  to='/faq'
+                  style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  GET SUPPORT
+                </Link>
               </button>
             </div>
 
@@ -126,7 +129,12 @@ const ContactUs = () => {
               </p>
 
               <button className={styles.btns}>
-                <Link to='/integrations'>INTEGRATIONS</Link>
+                <Link
+                  to='/integrations'
+                  style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  INTEGRATIONS
+                </Link>
               </button>
             </div>
           </div>
@@ -146,7 +154,6 @@ const ContactUs = () => {
               <div className={styles.col}>
                 <label for='firstName'>First Name</label>
                 <input
-                  type='text'
                   id='firstName'
                   placeholder='What’s your first name?'
                   className={styles.end}
