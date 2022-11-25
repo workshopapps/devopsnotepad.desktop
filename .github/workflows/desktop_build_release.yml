@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: desktop_frontend
+    working-directory: dekstop_frontend
 
 jobs:
   release:
