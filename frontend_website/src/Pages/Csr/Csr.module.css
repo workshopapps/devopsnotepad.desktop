@@ -17,7 +17,7 @@
     color: #ededed;
     height: 144px;
     padding: 0 20%;
-    padding-top: 22%;
+    padding-top: 16%;
     top: 222px;
   }
   .csrMainSection2,
@@ -227,6 +227,7 @@
     }
     .csrMainSectionDetails {
       text-align: center;
+      margin-top: 20px;
     }
     .sectionTwoImg,
     .sectionThreeImg,
