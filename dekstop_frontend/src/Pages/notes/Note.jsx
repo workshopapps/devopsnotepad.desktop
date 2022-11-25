@@ -1,4 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import notified from './assets/999.png';
+import Vecctor from './assets/Vecctor.png'
+import Vectoor from './assets/Vectoor.png'
+import Vectorc from './assets/Vectorc.png'
+import Vectorr from './assets/Vectorr.png'
+import Vectorrr from './assets/Vectorrr.png'
 import Sidenav from '../../Component/SideNav/SideNav';
 import notesStyle from './Note.module.css';
 
@@ -59,30 +66,56 @@ function Note() {
 					</div>
 					<div className={notesStyle.notesContentTwo}>
 						<div className={notesStyle.notesContentwoBtns}>
-							<button
-								onClick={handleFormShow}
-								type="button"
-								className={notesStyle.notesContentwoBtn}
-								style={formDisplay ? styles : { color: '#6F6F6F' }}
-							>
-								Notes
-							</button>
-							<button type="button" className={notesStyle.notesContentwoBtn}
-							>
+							<Link to="/note">
+								{' '}
+								<button
+									onClick={handleFormShow}
+									type="button"
+									className={notesStyle.notesContentwoBtn}
+									style={formDisplay ? styles : { color: '#6F6F6F' }}
+								>
+									Notes
+								</button>{' '}
+							</Link>
+							<button type="button" className={notesStyle.notesContentwoBtn}>
 								Passwords
 							</button>
-							<button type="button" className={notesStyle.notesContentwoBtn}>
-								Notifications
-							</button>
+							<Link to="/notification">
+								<button type="button" className={notesStyle.notesContentwoBtn}>
+									Notifications
+								</button>
+								<img src={notified} alt="" style={{ width: '20px' }} />{' '}
+							</Link>
 						</div>
 						{formDisplay ? (
 							<div className={notesStyle.notesFormDiv}>
 								<div className={notesStyle.notesFormIcons}>
-									<img src="Vectorc.png" alt='img' className={notesStyle.notesFormIcon}/>
-									<img src="Vectorr.png" alt='img' className={notesStyle.notesFormIcon}/>
-									<img src="Vectoor.png" alt='img' className={notesStyle.notesFormIcon}/>
-									<img src="Vectorrr.png" alt='img' className={notesStyle.notesFormIcon}/>
-									<img src="Vecctor.png" alt='img' id={notesStyle.deleteIcon} className={notesStyle.notesFormIcon}/>
+									<img
+										src={Vectorc}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vectorr}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vectoor}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vectorrr}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vecctor}
+										alt="img"
+										id={notesStyle.deleteIcon}
+										className={notesStyle.notesFormIcon}
+									/>
 								</div>
 								<p className={notesStyle.notesLastEdit}>Last edit</p>
 								<form className={notesStyle.notesForm}>
@@ -92,7 +125,6 @@ function Note() {
 										className={notesStyle.notesFormInput}
 									/>
 								</form>
-								
 							</div>
 						) : null}
 					</div>
