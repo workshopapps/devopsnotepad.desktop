@@ -19,6 +19,7 @@ function EditProfile() {
 				<img src={userImage} alt="" />
                 <button>Change Image</button>
 			</div>
+            
 		</div>
 	);
 }

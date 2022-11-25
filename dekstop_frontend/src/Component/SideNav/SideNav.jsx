@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import logo from './assets/logo.png';
-import Group from './assets/Group.png';
+// import logo from './assets/logo.png';
+// import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
 
 function Sidenav() {
@@ -14,11 +14,11 @@ function Sidenav() {
 		<div>
 			<section className={styles.main}>
 				<div className={styles.sidenav}>
-					<img src={logo} alt="" className={styles.logo} />
+					{/* <img src={logo} alt="" className={styles.logo} /> */}
 
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
 						<div className={styles.nav}>
-							<img src={Group} alt="" className={styles.navItem} />
+							{/* <img src={Group} alt="" className={styles.navItem} /> */}
 
 							<p className={styles.navItem}> Servers List</p>
 
