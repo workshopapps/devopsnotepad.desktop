@@ -69,12 +69,12 @@ button {
 }
 
 .minilandpagebtn {
-  padding: 20px 30px;
   background: none;
-  border-radius: 6px;
   border: 1px solid var(--bluePrimary);
-  font-weight: 600;
   color: var(--bluePrimary);
+  padding: 16px 18px;
+  border-radius: 6px;
+  font-size: 20px;
 }
 
 /* ===============================SERVER SECTION STYLING STARTS HERE ========================*/
@@ -458,6 +458,11 @@ button {
   .serverImg {
     border-radius: 8px;
   }
+
+  .minilandpagebtn {
+    padding: 11px 13px;
+    font-size: 10px;
+  }
 }
 
 /* =========================================== MEDIA QUERY FOR NOTES SECTION */
@@ -806,8 +811,8 @@ button {
   }
 
   .aboutOpspadContentButton {
-    padding: 16px 18px;
-    font-size: 20px;
+    padding: 11px 13px;
+    font-size: 10px;
   }
 
   .aboutOpspadImgWrapper {
