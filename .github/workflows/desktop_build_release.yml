@@ -24,8 +24,8 @@ jobs:
           node-version: 10
 
       - name: Build/release Electron app
-        working-directory: ${{ env.working-directory }}
         uses: samuelmeuli/action-electron-builder@v1.6.0
+        working-directory: ${{ env.working-directory }}
         with:
           github_token: ${{ secrets.github_token }}
 
