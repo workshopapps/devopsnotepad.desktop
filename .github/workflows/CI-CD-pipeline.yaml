@@ -30,7 +30,7 @@ jobs:
          CI: ""
         working-directory: frontend_website/
         run: |
-          npm run build:ci --if-present
+          npm run build --if-present
           npm test:ci
           
   build_and_test_backend:
