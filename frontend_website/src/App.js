@@ -28,6 +28,7 @@ import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 import Podcast from './Pages/Podcast/Podcasts';
 import { About } from './Pages/About/About';
+import Form from './Pages/Partner/Form';
 
 import classes from './App.module.css';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
@@ -83,6 +84,7 @@ function App() {
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
           <Route path='/podcasts' exact element={<Podcast />} />
+          <Route path='/form' exact element={<Form />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
