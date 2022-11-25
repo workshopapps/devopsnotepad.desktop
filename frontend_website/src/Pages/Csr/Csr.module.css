@@ -1,0 +1,406 @@
+.csrNavbar {
+    display: flex;
+    align-items: center;
+    padding: 13px 6%;
+    height: 95px;
+    left: 0px;
+    position: relative;
+    margin-top: -95px;
+    background: #ffffff;
+    box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.05);
+  }
+  .logoAndTextFlex{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  .logoText {
+    color: #202020;
+    margin-left: -2%;
+  }
+  #logoText {
+    color: #555353;
+  }
+  .logo {
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+  }
+  .csrNavbar ul {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  .csrNavbar ul li {
+    font-family: 'Manrope';
+    font-style: normal;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    color: #070a0d;
+    margin-right: 20px;
+  }
+  .csrBtn {
+    background: #202020;
+    height: 40px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: -2%;
+    padding: 0 10px;
+  }
+  .csrMenuImg {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar li {
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .csrMainSection1 {
+    background-image: url('/public/image 5 (1).png');
+    margin: 0 50px;
+    height: 585px;
+    background-position: center;
+    background-size: 1150px 500px;
+    background-repeat: no-repeat;
+  }
+  .csrMainSection1Text {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 140%;
+    text-align: center;
+    color: #ededed;
+    height: 144px;
+    padding: 0 20%;
+    padding-top: 22%;
+    top: 222px;
+  }
+  .csrMainSection2,
+  .csrMainSection3,
+  .csrMainSection4 {
+    display: flex;
+    align-items: center;
+    padding: 40px 100px;
+  }
+  #csrMainSection3 {
+    flex-direction: row-reverse;
+  }
+  .csrMainSectionsTitles {
+    width: 400px;
+    height: 112px;
+    left: 0px;
+    top: 29px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
+    color: #202020;
+  }
+  #csrMainSectionsTitle {
+    margin-bottom: -40px;
+  }
+  .csrMainSectionDetails {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    color: #202020;
+  }
+  .sectionTwoImg,
+  .sectionThreeImg,
+  .sectionFourImg {
+    width: 300px;
+    height: 250px;
+    margin-right: 102px;
+  }
+  #sectionThreeImg {
+    margin-left: 102px;
+    margin-right: 0;
+  }
+  .csrMainSection5 {
+    height: 476px;
+    background: #102a63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  .rule {
+    width: 500px;
+    height: 0px;
+    top: 117px;
+    opacity: 0.5;
+    border: 1px solid #ffffff;
+  }
+  .csrMainSection5 p {
+    width: 80%;
+    height: 70px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-top: 50px;
+  }
+  .csrSectionBtn {
+    width: 150px;
+    height: 50px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 16px;
+    background: #102a63;
+    color: #ffffff;
+    border: 0.5px solid#ffffff;
+    border-radius: 4px;
+  }
+  @media screen and (max-width: 1200px) {
+    .logoText {
+      margin-left: -1%;
+    }
+    .csrBtn {
+      margin-right: -1%;
+    }
+    .csrMainSection1 {
+      background-size: 900px 500px;
+      background-repeat: no-repeat;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    .logoText {
+      margin-left: 0%;
+    }
+    .csrBtn {
+      margin-right: 0%;
+    }
+    .csrMainSection1Text {
+      font-size: 40px;
+      padding-top: 20%;
+    }
+    .csrMainSection2,
+    .csrMainSection3,
+    .csrMainSection4 {
+      padding: 40px 30px;
+    }
+    .csrMainSectionsTitles {
+      width: 380px;
+      height: 100px;
+      font-size: 28px;
+      line-height: 150%;
+    }
+    .sectionTwoImg,
+    .sectionThreeImg,
+    .sectionFourImg {
+      width: 300px;
+      height: 250px;
+      margin-right: 20px;
+    }
+    #sectionThreeImg {
+      margin-left: 20px;
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .csrNavbar ul {
+      display: none;
+    }
+    .logoText {
+      margin-left: 7%;
+    }
+    .csrBtn {
+      display: none;
+    }
+    .csrMenuImg {
+      display: block;
+      width: 40px;
+      height: 39px;
+      top: 24px;
+      background: #102a63;
+      border-radius: 8px;
+      margin: 0;
+      padding: 10px;
+      cursor: pointer;
+      margin-right: 7%;
+    }
+    .navbar {
+      margin-left: -210px;
+      animation-name: navbar;
+      animation-duration: 0.5s;
+    }
+    .navbar li {
+      margin-top: 0;
+      margin-left: 20px;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+    @keyframes navbar {
+      0% {
+        margin-right: -210px;
+      }
+      100% {
+        margin-right: -150px;
+      }
+    }
+    .navbar li {
+      color: #ffffff;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .csrMainSection1 {
+      margin: 40px 50px;
+      height: 294px;
+    }
+    .csrMainSection1Text {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      text-align: center;
+      font-size: 32px;
+      color: #ededed;
+      height: 88px;
+    }
+    .csrMainSectionsTitles {
+      width: 255px;
+      height: 120px;
+      text-align: center;
+    }
+    .csrMainSectionDetails {
+      text-align: center;
+    }
+    .sectionTwoImg,
+    .sectionThreeImg,
+    .sectionFourImg {
+      width: 250px;
+      height: 300px;
+      margin-right: 30px;
+    }
+    #sectionThreeImg {
+      margin-left: 30px;
+    }
+    .csrMainSectionsDivs{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .rule {
+      width: 350px;
+    }
+    .csrSectionBtn {
+      margin-top: 70px;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    .csrMainSection1 {
+      text-align: center;
+      background-size: 320px 320px;
+      background-repeat: no-repeat;
+    }
+    .logoText {
+      margin-left: 12%;
+    }
+    .csrMenuImg {
+      margin-right: 12%;
+    }
+    .csrMainSection1Text {
+      font-size: 20px;
+    }
+    .csrMainSection2,
+    .csrMainSection3,
+    .csrMainSection4 {
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 100px;
+      text-align: center;
+    }
+    #csrMainSection3 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .csrMainSectionsTitles {
+      width: 320px;
+      height: 120px;
+      font-size: 24px;
+      margin-bottom: -50px;
+      font-weight: 550;
+    }
+    .sectionTwoImg,
+    .sectionThreeImg,
+    .sectionFourImg {
+      width: 320px;
+      height: 320px;
+      margin-bottom: 40px;
+      margin-right: 0;
+      margin-left: 0px;
+    }
+    #sectionThreeImg {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .rule {
+      width: 350px;
+      margin-bottom: 40px;
+    }
+    .csrSectionBtn {
+      margin-top: 100px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .csrMainSection1 {
+      background-size: 320px 320px;
+      padding: 0;
+      margin: 0;
+      margin-top: 40px;
+    }
+    .csrSectionBtn {
+      margin-top: 140px;
+    }
+    .rule {
+      width: 300px;
+      margin-bottom: 80px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .logoText {
+      margin-left: 2%;
+    }
+    .csrMenuImg {
+      margin-right: 2%;
+    }
+    .csrMainSectionsTitles {
+      width: 280px;
+    }
+    .csrMainSectionDetails {
+      width: 280px;
+      font-size: 17px;
+      padding: 0;
+      margin-left: 0;
+    }
+  }
+  
