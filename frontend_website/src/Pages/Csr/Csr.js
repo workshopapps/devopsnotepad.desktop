@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import s from './Csr.module.css';
 
 const Csr = () => {
@@ -60,7 +61,9 @@ const Csr = () => {
           operation to meet the expectation of our user in relation to the
           community and the society at large.
         </p>
-        <button className={s.csrSectionBtn}>SIGN UP</button>
+        <Link to='/signup'>
+          <button className={s.csrSectionBtn}>SIGN UP</button>
+        </Link>
       </div>
     </div>
   );
