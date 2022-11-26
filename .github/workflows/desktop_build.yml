@@ -22,6 +22,6 @@ jobs:
       with:
         node-version: 14
     - name: install dependencies
-      run: npm install
+      run: yarn install --force
     - name: build
-      run: npm run make
+      run: yarn run make
