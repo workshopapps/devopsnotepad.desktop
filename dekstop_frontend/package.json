@@ -20,6 +20,7 @@
 		"react-scripts": "5.0.1",
 		"styled-components": "^5.3.6",
 		"web-vitals": "^2.1.4",
+		"electron-forge": "5.2.4",
 		"@electron-forge/publisher-github": "6.0.3",
 		"electron-prebuilt-compile": "^1.7.9",
 		"yup": "^0.32.11"
