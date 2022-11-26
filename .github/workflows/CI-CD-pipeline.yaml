@@ -35,7 +35,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
       - name: install dependencies
         working-directory: frontend_website/
         run: |
@@ -60,7 +60,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
       - name: install dependencies
         working-directory: backend/
         run: |
