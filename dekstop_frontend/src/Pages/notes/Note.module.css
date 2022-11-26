@@ -69,7 +69,8 @@
 	justify-content: space-between;
 }
 .notesForm {
-	margin-top: 15px;
+	margin-top: -100px;
+	margin-left: -30%;
 }
 .notesFormInput {
 	border: 0;
