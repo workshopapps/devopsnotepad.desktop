@@ -1,6 +1,6 @@
 {
 	"name": "electron_setup",
-	"version": "0.1.8",
+	"version": "0.2.0",
 	"private": true,
 	"dependencies": {
 		"@emotion/react": "^11.10.5",
@@ -53,6 +53,7 @@
 		]
 	},
 	"devDependencies": {
+		"@electron-forge/publisher-github": "^6.0.3",
 		"concurrently": "^7.6.0",
 		"eslint": "^8.28.0",
 		"eslint-config-airbnb": "^19.0.4",
@@ -63,5 +64,21 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"prettier": "2.7.1",
 		"wait-on": "^6.0.1"
+	},
+	"config": {
+		"forge": {
+			"publishers": [
+				{
+					"name": "@electron-forge/publisher-github",
+					"config": {
+						"repository": {
+							"owner": "workshopapps",
+							"name": "devopsnotepad.desktop"
+						},
+						"draft": true
+					}
+				}
+			]
+		}
 	}
 }
