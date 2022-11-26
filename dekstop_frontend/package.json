@@ -21,7 +21,7 @@
 		"styled-components": "^5.3.6",
 		"web-vitals": "^2.1.4",
 		"electron-forge": "5.2.4",
-		"@electron-forge/publisher-github": "6.0.3",
+		"@electron-forge/publisher-github": "^6.0.3",
         "electron-prebuilt-compile": "^8.2.0",
 		"yup": "^0.32.11"
 	},
