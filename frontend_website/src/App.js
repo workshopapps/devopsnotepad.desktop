@@ -33,6 +33,7 @@ import BestPractice from './Pages/BestPractice/BestPractices';
 
 import classes from './App.module.css';
 import Terms from './Pages/TermsOfUSe/Terms';
+import TermsOfService from './Pages/TermsOfUSe/Index';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -68,6 +69,7 @@ function App() {
           <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/careers' exact element={<CareerPage />} />
           <Route path='/contact-us' exact element={<ContactUs />} />
+          <Route path='/terms-of-service' exact element={<TermsOfService />} />
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
