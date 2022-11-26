@@ -12,6 +12,7 @@ import Language from './Pages/Settings/components/Languages/Language';
 function App() {
 	return (
 		<div className="App">
+		
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route exact path="/note" element={<Note />} />
