@@ -23,7 +23,7 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-// import Prices from './Pages/Prices/Prices';
+import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
 import Podcast from './Pages/Podcast/Podcasts';
@@ -76,7 +76,7 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
-          {/* <Route path='/prices' exact element={<Prices />} /> */}
+          <Route path='/prices' exact element={<Prices />} />
           <Route
             path='/prices/payment/:state/:id'
             exact
