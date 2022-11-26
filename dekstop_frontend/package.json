@@ -21,7 +21,8 @@
 		"styled-components": "^5.3.6",
 		"web-vitals": "^2.1.4",
 		"@electron-forge/publisher-github": "6.0.3",
-		"yup": "^0.32.11"
+		"yup": "^0.32.11",
+		"electron-forge"
 	},
 	"main": "public/electron.js",
 	"homepage": "./",
