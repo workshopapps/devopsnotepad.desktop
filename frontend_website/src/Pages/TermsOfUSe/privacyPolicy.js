@@ -1,12 +1,15 @@
 import React from 'react';
+import NavSection from './NavSection';
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <div className='box'>
-        <div className='content'>
-          <h4 className='content--title'>Opspad Privacy Policy</h4>
-          <p className='child--title'>v.1 - Updated November 17th 2022</p>
+
+<div className="box">
+  <NavSection/>
+<div className='content'>
+          <h4 className="content--title">Opspad Privacy Policy</h4>
+          <p className="child--title">v.1 - Updated November 17th 2022</p>
           <p>
             This Opspad Privacy Policy is deemed to demonstrate that our
             visitors’, partners’ and customers’ (collectively “you” or “your”)
@@ -31,7 +34,7 @@ const PrivacyPolicy = () => {
             context.
           </p>
           <p>
-            Opspad has taken extensive safety and operational precautions,
+              Opspad has taken extensive safety and operational precautions,
             including administrative, physical and technical safeguards to
             protect personal information. Furthermore, Plesk deploys reasonable
             safeguards across the company databases to prevent unauthorized
@@ -114,48 +117,48 @@ const PrivacyPolicy = () => {
             created and maintained in accordance to Article 30 of the GDPR.
           </p>
           <>
-            <h4>Information Collected Automatically</h4>
-            <p>
-              Opspad may automatically collect and store information about how
-              users utilize the Opspad website(s) and applications. This may
-              include anonymized IP addresses of website visitors, browser type
-              and other information such as search terms, which helps us to
-              improve our services and our website to provide you with the best
-              possible services and user experience. Any so collected data which
-              may be considered as Personal Data is subject to immediate
-              anonymization upon its collection with the result that the
-              automatically-collected data will not allow Opspad or any other
-              party to identify you.
-            </p>
-            <h4>Data Protection for Minors</h4>
-            <p>
-              The Opspad website as well as its contents, services and offers
-              are not directed at children or minors. Accordingly, Opspad does
-              not want and does not assume that any information collected on the
-              Opspad website or any forum will be personal data pertaining to
-              children or minors. Any data which is identified as belonging to a
-              child or minor is subject to immediate deletion.
-            </p>
-            <h4>Is my data secure at Opspad ?</h4>
-            <p>
-              Opspad has implemented appropriate technical and organizational
-              measures related to the respective processing purpose in order to
-              protect the Personal Data provided by you against abuse and loss.
-              Personal Data and other information about you are stored in a
-              secure operating environment that is not accessible to the public.
-              Any data transmission performed by Opspad is encrypted during
-              transmission via SSL. In addition, each of Opspad’s employees is
-              contractually bound by comprehensive confidentiality and
-              non-disclosure terms and is further required to abide by the
-              Opspad data protection policy at all times.
-            </p>
+          <h4>Information Collected Automatically</h4>
+          <p>
+            Opspad may automatically collect and store information about how
+            users utilize the Opspad website(s) and applications. This may
+            include anonymized IP addresses of website visitors, browser type
+            and other information such as search terms, which helps us to
+            improve our services and our website to provide you with the best
+            possible services and user experience. Any so collected data which
+            may be considered as Personal Data is subject to immediate
+            anonymization upon its collection with the result that the
+            automatically-collected data will not allow Opspad or any other
+            party to identify you.
+          </p>
+          <h4>Data Protection for Minors</h4>
+          <p>
+            The Opspad website as well as its contents, services and offers are
+            not directed at children or minors. Accordingly, Opspad does not
+            want and does not assume that any information collected on the
+            Opspad website or any forum will be personal data pertaining to
+            children or minors. Any data which is identified as belonging to a
+            child or minor is subject to immediate deletion.
+          </p>
+          <h4>Is my data secure at Opspad ?</h4>
+          <p>
+            Opspad has implemented appropriate technical and organizational
+            measures related to the respective processing purpose in order to
+            protect the Personal Data provided by you against abuse and loss.
+            Personal Data and other information about you are stored in a secure
+            operating environment that is not accessible to the public. Any data
+            transmission performed by Opspad is encrypted during transmission
+            via SSL. In addition, each of Opspad’s employees is contractually
+            bound by comprehensive confidentiality and non-disclosure terms and
+            is further required to abide by the Opspad data protection policy at
+            all times.
+          </p>
           </>
           <h4>What are my rights?</h4>
           <p>
             You have the following rights in respect to the Personal Data you
             provide to Opspad:
           </p>
-          <ul className='list'>
+          <ul  className='list'>
             <li>
               You may at any time request Opspad to delete the data you provided
               or withdraw any data processing consent you provided to Opspad by
@@ -190,7 +193,7 @@ const PrivacyPolicy = () => {
             to be processed by trusted 3rdparties and reliable partners.{' '}
           </p>
           <p>These 3rd parties may</p>
-          <ul className='list'>
+          <ul  className='list'>
             <li>process payments</li>
             <li>fulfill orders</li>
             <li>send email</li>
@@ -213,7 +216,7 @@ const PrivacyPolicy = () => {
             Regarding Cookies and Other Technologies
             (https://www.opspad.com/legal/) contains information about third
             parties and their technologies, used e.g. on www.opspad.com.
-          </p>
+          </p> 
           <p>
             Opspad will only disclose your Personal Data abroad, if it is
             necessary for the intended purpose of processing. However, as a
@@ -225,7 +228,7 @@ const PrivacyPolicy = () => {
             subcontractors of Opspad which Opspad engages to act on its behalf
             in respect to the processing of your Personal Data may be domiciled
             in such areas.
-          </p>
+          </p> 
           <p>
             In order to secure such transfer and processing in accordance to
             chapter 5 of the GDPR, Opspad has implemented and requests the
@@ -276,9 +279,9 @@ const PrivacyPolicy = () => {
           <p>
             If you have questions about this Opspad Privacy Policy and the
             procedures in effect, please contact our Data Privacy Officer at{' '}
-            <b>privacy@opspad.com. </b>
+            <b>privacy@opspad.com. </b> 
           </p>
-          <div className='contact--us'>
+          <div className="contact--us">
             <span>Address:</span>
             <span>Ospad office, HNG Project plaza, Lagos, Nigeria.</span>
             <span>
@@ -288,7 +291,7 @@ const PrivacyPolicy = () => {
         </div>
       </div>
     </>
-  );
-};
+            )
+  };
 
 export default PrivacyPolicy;
