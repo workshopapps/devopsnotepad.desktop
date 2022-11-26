@@ -99,4 +99,4 @@ jobs:
           user: ${{ secrets.DEV_USERNAME }}
           port: ${{ secrets.ACCESS_PORT }}
           key: ${{ secrets.DEV_SSHKEY }}
-          command: cd ${{ secrets.DEV_PATH }} && sudo docker-compose pull && sudo docker-compose up --remove-orphans -d
+          command: cd ${{ secrets.DEV_PATH }} && sudo docker-compose pull && sudo docker-compose up -d
