@@ -162,7 +162,7 @@ function Note() {
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
 			>
-				<Box sx={style}>
+				<Box sx={style} className={notesStyle.notesBox}>
 					<Typography id="modal-modal-title" variant="h6" component="h2">
 						<div className={notesStyle.notesDeleteDiv}>
 							<img
