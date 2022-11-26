@@ -35,14 +35,15 @@ function Note() {
 	// State
 	const [formDisplay, setFormDisplay] = React.useState(false);
 	const [open, setOpen] = React.useState(false);
+	const [inputs, setInputs] = React.useState('');
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
+	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
 	const handleFormShow = () => {
 		setFormDisplay((prev) => !prev);
 	};
-
 	// styles
 	const styles = {
 		fontFamily: 'Manrope',
@@ -109,7 +110,7 @@ function Note() {
 								<button type="button" className={notesStyle.notesContentwoBtn}>
 									Notifications
 								</button>
-								<img src={notified} alt="" style={{ width: '20px' }} />{' '}
+								<img src={notified} alt="img" style={{ width: '20px' }} />{' '}
 							</Link>
 						</div>
 						{formDisplay ? (
@@ -143,12 +144,17 @@ function Note() {
 										onMouseDownCapture={handleOpen} onFocus={handleOpen}
 									/>
 								</div>
+								{
+									inputs.length > 0 ?
+								<p className={notesStyle.notesLastEdit} id={notesStyle.notesLastEdit}> 6:45pm, 15-11-22</p>:
 								<p className={notesStyle.notesLastEdit}>Last edit</p>
+								}
 								<form className={notesStyle.notesForm}>
 									<input
 										type="text"
 										placeholder="Start note here..."
 										className={notesStyle.notesFormInput}
+									onChange={handleChanges}
 									/>
 								</form>
 							</div>
