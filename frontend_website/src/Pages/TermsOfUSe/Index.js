@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Terms from './Terms';
-import PrivacyPolicy from './PrivacyPolicy';
+import PrivacyPolicy from './privacyPolicy';
 
 const Tab = styled.button`
   font-size: 20px;
@@ -11,6 +11,10 @@ const Tab = styled.button`
   background: white;
   border: 0;
   outline: 0;
+  @media (max-width: 600px) {
+      padding: 10px 10px;
+      font-size: 16px;
+  } 
   ${({ active }) =>
     active &&
     `

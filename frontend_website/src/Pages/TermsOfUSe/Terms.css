@@ -95,22 +95,25 @@ h4 {
 }
 /* extra small device */
 @media only screen and (max-width: 600px) {
-  .nav--section li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .box{
+    
+      margin: 0;
+      border-radius: 0px;
   }
+
+  .content--title {
+    margin-bottom: 30px;
+  }
+
+  .content {
+    margin: 2rem 2rem;
+  }
+
 }
 @media only screen and (min-width: 630px) {
-  .nav--section li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 40px;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .box{
+    
+      margin: 0 2rem;
+      border-radius: 10px;
   }
 }

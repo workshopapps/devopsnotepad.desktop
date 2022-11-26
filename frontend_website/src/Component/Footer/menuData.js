@@ -22,6 +22,10 @@ export const Links = [
         title: 'Careers',
         slug: '/careers',
       },
+      {
+        title: 'Privacy Policy',
+        slug: '/privacy-policy',
+      },
     ],
   },
   {
