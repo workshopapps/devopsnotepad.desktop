@@ -50,13 +50,13 @@ function EditProfile() {
 	function onSubmitForm(e) {
 		e.preventDefault();
 		setShowSuccess(true);
-		console.log(formData);
+		// console.log(formData);
 		// patch function here
 	}
 
 	function closeSuccess() {
 		setShowSuccess(false);
-		navigate('/settings');
+		// navigate('/settings');
 	}
 
 	return (
