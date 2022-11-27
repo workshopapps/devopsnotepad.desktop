@@ -13,7 +13,9 @@ import TextResizer from './Pages/Settings/components/TextResizer/TextResizer';
 function App() {
 	return (
 		<div className="App">
-		<div style={{display: 'none'}}><TextResizer/></div>
+			<div style={{ display: 'none' }}>
+				<TextResizer />
+			</div>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route exact path="/note" element={<Note />} />
@@ -23,7 +25,6 @@ function App() {
 				<Route exact path="/notification" element={<Notification />} />
 				<Route exact path="/languages" element={<Language />} />
 			</Routes>
-			
 		</div>
 	);
 }
