@@ -4,7 +4,7 @@ import Server from '../Server/Server'
 import style from "./Joined.module.css"
 import Sidenav from '../../../Components/SideNav/SideNav'
 
-export default function Joined() {
+function Joined(){
 	const [modal, setModal] = useState(false);
 
 	const open = () => {
@@ -27,3 +27,5 @@ export default function Joined() {
 		</div>
 	);
 };
+
+export default Joined

@@ -1,23 +1,26 @@
 import React from 'react'
 import "./Modal.css"
 import tick from "./tick.png"
+import style from "./Modal.module.css"
 
-export default function Modal(props){
+function Modal({modal, open, close}) {
 
-    if (props.modal === false){
+    if (modal === false){
         return null
     }
 
   return (
-    <div className='modal' onMouseDownCapture={close}>
-        <div className="modal-contain" onMouseDownCapture={(e) => {e.stopPropagation()}}>
-            <div className="modal-box">
-                <img src={tick} alt="" className='tick'/>
+    <div className={style.modal} onClick={close}>
+        <div className={style.modal_contain} onClick={(e) => {e.stopPropagation()}}>
+            <div className={style.modal_box}>
+                <img src={tick} alt="" className={style.tick}/>
                 <h4>Server Added Successfully </h4>
                 <p>You have successfully added a <br /> new server </p>
-                <button type='button' className='mod-btn'>Back To Dashboard</button>
+                <button className={style.mod_btn}>Back To Dashboard</button>
             </div>
         </div>
     </div>
   )
 }
+
+export default Modal

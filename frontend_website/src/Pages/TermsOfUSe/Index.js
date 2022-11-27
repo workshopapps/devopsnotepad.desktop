@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Terms from './Terms';
-import PrivacyPolicy from './PrivacyPolicy';
+import PrivacyPolicy from './privacyPolicy';
 
 const Tab = styled.button`
   font-size: 20px;
