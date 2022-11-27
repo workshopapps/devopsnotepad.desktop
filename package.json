@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "electron-prebuilt-compile": "^8.2.0"
+  }
+}
