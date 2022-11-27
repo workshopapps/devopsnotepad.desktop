@@ -1,6 +1,12 @@
-.profile {
+.container {
+	position: relative;
+	z-index: 10;
+}
+
+.profile_container {
+	position: relative;
 	max-width: 980px;
-	padding: 80px 117px 80px 245px;
+	padding: 1px 117px 80px 245px;
 	font-size: 14px;
 	font-family: 'Inter', sans-serif;
 }
@@ -180,27 +186,28 @@
 }
 
 @media (max-width: 768px) {
-	.profile {
+	.profile_container {
 		padding: 89px 20px 0;
 	}
-	.profile h1 {
+	.header h1 {
 		font-style: normal;
 		font-weight: 600;
 		font-size: 20px;
 		line-height: 120%;
 		text-transform: capitalize;
+		margin: auto;
 	}
 	.header {
 		gap: 0;
 		/* text-align: center !important; */
 	}
 
-	.header h1 {
-		margin: auto;
+	.form,
+	.profile_container {
+		max-width: 600px;
 	}
 
-	.form,
-	.profile {
-		max-width: 600px;
+	.btn {
+		width: 280px;
 	}
 }
