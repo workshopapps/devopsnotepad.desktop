@@ -37,8 +37,6 @@
 		"format": "prettier . --write",
 		"eject": "react-scripts eject",
 		"dev": "electron .",
-		"make": "electron-forge make",
-		"publish": "electron-forge publish",
 		"release": "electron-builder"
 	},
 	"eslintConfig": {
