@@ -45,10 +45,10 @@ jobs:
       with:
         node-version: 14
     - name: install dependencies
-      run: yarn install --force
+      run: npm install --force
     - name: build
-      run: yarn make
+      run: npm run make
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: yarn publish
+      run: npm run publish
