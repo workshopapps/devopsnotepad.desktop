@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Server from '../Server/Server'
 import style from "./Joined.module.css"
-import Sidenav from '../../../components/SideNav/SideNav'
+import Sidenav from '../../../Components/SideNav/SideNav'
 
 const Joined = () => {
 	const [modal, setModal] = useState(false);
