@@ -1,8 +1,9 @@
 {
 	"name": "electron_setup",
-	"version": "0.1.8",
+	"version": "0.3.0",
 	"private": true,
 	"dependencies": {
+		"@electron-forge/publisher-github": "^6.0.3",
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
 		"@mui/material": "^5.10.15",
@@ -10,7 +11,10 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
 		"electron": "^21.3.1",
+		"electron-builder": "^23.6.0",
+		"electron-forge": "5.2.4",
 		"electron-is-dev": "^2.0.0",
+		"electron-prebuilt-compile": "^8.2.0",
 		"formik": "^2.2.9",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
@@ -29,7 +33,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "eslint . --fix --max-warnings=0",
-		"format": "prettier . --write",
+		"format": "prettier . --write",	
 		"eject": "react-scripts eject",
 		"dev": "electron .",
 		"release": "electron-builder"
@@ -53,6 +57,7 @@
 		]
 	},
 	"devDependencies": {
+		"@electron-forge/publisher-github": "^6.0.3",
 		"concurrently": "^7.6.0",
 		"eslint": "^8.28.0",
 		"eslint-config-airbnb": "^19.0.4",
@@ -63,5 +68,21 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"prettier": "2.7.1",
 		"wait-on": "^6.0.1"
+	},
+	"config": {
+		"forge": {
+			"publishers": [
+				{
+					"name": "@electron-forge/publisher-github",
+					"config": {
+						"repository": {
+							"owner": "workshopapps",
+							"name": "devopsnotepad.desktop"
+						},
+						"draft": true
+					}
+				}
+			]
+		}
 	}
 }

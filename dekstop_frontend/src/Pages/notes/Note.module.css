@@ -69,7 +69,8 @@
 	justify-content: space-between;
 }
 .notesForm {
-	margin-top: 15px;
+	margin-top: -100px;
+	margin-left: -30%;
 }
 .notesFormInput {
 	border: 0;
@@ -119,8 +120,11 @@
 	font-size: 12px;
 	color: #acacac;
 	width: 100px;
-	margin-left: 284%;
+	margin-left: 260%;
 	margin-top: -20px;
+}
+#notesLastEdit {
+	margin-left: 248%;
 }
 .notesDeleteDiv {
 	display: flex;
@@ -186,6 +190,9 @@
 	.notesLastEdit {
 		margin-left: 195%;
 	}
+	#notesLastEdit {
+		margin-left: 168%;
+	}
 }
 @media screen and (max-width: 940px) {
 	.notesTitle {
@@ -201,11 +208,15 @@
 	.notesLastEdit {
 		margin-left: 152%;
 	}
+	#notesLastEdit {
+		margin-left: 128%;
+	}
 }
 @media screen and (max-width: 840px) {
 	.notesDeleteNotification {
 		width: 310px;
 }
+
 }
 @media screen and (max-width: 768px) {
 	.notesTitle {
@@ -220,6 +231,9 @@
 	}
 	.notesLastEdit {
 		margin-left: 161%;
+	}
+	#notesLastEdit {
+		margin-left: 136%;
 	}
 }
 @media screen and (max-width: 580px) {
@@ -236,6 +250,9 @@
 	.notesBox{
 		width: 70% !important;
 	}
+	#notesLastEdit {
+		margin-left: 85%;
+	}
 }
 @media screen and (max-width: 320px) {
 	.notesTitle{
@@ -250,5 +267,8 @@
 	}
 	.notesLastEdit {
 		margin-left: 89%;
+	}
+	#notesLastEdit {
+		margin-left: 85%;
 	}
 }
