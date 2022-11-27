@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import SideNav from '../../components/SideNav/SideNav';
 import passwordStyle from './Password.module.css';
 import PasswordCard from './PasswordCard';
@@ -8,6 +8,10 @@ import CreateForm from './components/createForm/CreateForm'
 
 function Password() {
 	const [showCreateform, setShowCreateform] = useState(null)
+	
+	const closeShowForm = useCallback(() => {
+		setShowCreateform(false)
+	}, [showCreateform]);
 
 	useEffect(()=>{
 		setShowCreateform(false)
@@ -21,14 +25,14 @@ function Password() {
 						<PasswordCard user={user} index={index} />
 					))}
 					<div className={passwordStyle.btnContainer}>
-					<button type="button" className={passwordStyle.btn}>
+					<button onClick={()=>{setShowCreateform(true)}} type="button" className={passwordStyle.btn}>
 						<span className={passwordStyle.btnText}>Add new password</span>
 						<img className={passwordStyle.btnIcon} src={Add} alt="" />
 					</button>
 					</div>
 				</div>
 			</div>
-			{showCreateform && <CreateForm/>}
+			{showCreateform && <CreateForm closeShowForm={closeShowForm}/>}
 		</div>
 	);
 }
