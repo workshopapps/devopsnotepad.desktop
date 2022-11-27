@@ -1,7 +1,6 @@
 /* eslint-disable no-lone-blocks */
-import { FaChevronRight } from 'react-icons/fa';
 
-import { BiLock } from 'react-icons/bi';
+
 import { Link } from 'react-router-dom';
 import { Security, AppSettings } from './data';
 import style from './MainSettings.module.css';
@@ -56,34 +55,33 @@ function Settings() {
 				{AppSettings.map((appsettings) => (
 					<div key={appsettings.title}>
 						<small className={style.smallHead}>{appsettings.title}</small>
-						<Link to={appsettings.slug}>
-							<div className={style.appSettings_cont}>
-								<div className={style.appSettings}>
-									{appsettings.icon}
-									<h3>{appsettings.func}</h3>
-								</div>
-								{appsettings.iconright}
+
+						<div className={style.appSettings_cont}>
+							<div className={style.appSettings}>
+								{appsettings.icon}
+								<h3>{appsettings.func}</h3>
 							</div>
-						</Link>
+							<Link to={appsettings.slug}>{appsettings.iconright}</Link>
+						</div>
+
 						<span className={style.border_bottom}> </span>
 					</div>
 				))}
-				
+
 				{Security.map((security) => (
 					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
 						<div className={style.account}>
 							<div className={style.accountProfile}>
-								<BiLock />
+								{security.icon}
 								<Link to={security.slug}>{security.func}</Link>
 							</div>
 							<Link to="/">
-								<FaChevronRight />
+								{security.iconright}
 							</Link>
 						</div>
 					</div>
 				))}
-				
 			</div>
 		</div>
 	);
@@ -91,8 +89,8 @@ function Settings() {
 
 export default Settings;
 
-
-{/* {Support.map((support) => (
+{
+	/* {Support.map((support) => (
 					<div key={support.items} className={style.border_top}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
@@ -106,4 +104,5 @@ export default Settings;
 							))}
 						</ul>
 					</div>
-				))} */}
+				))} */
+}

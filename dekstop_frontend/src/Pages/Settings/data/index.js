@@ -2,9 +2,11 @@
 /* eslint-disable import/prefer-default-export */
 
 import { FaRegUser, FaChevronRight } from 'react-icons/fa';
-import { MdBrightnessMedium, MdLanguage } from 'react-icons/md';
-import { IoNotificationsOutline } from 'react-icons/io5';
+import { MdBrightnessMedium, MdLanguage} from 'react-icons/md';
+import { IoNotificationsOutline, IoFingerPrintOutline } from 'react-icons/io5';
+import { BiLock } from 'react-icons/bi'
 import { RiFontSize } from 'react-icons/ri';
+import { BsToggleOn } from 'react-icons/bs';
 import ProfilePicture from '../assets';
 import ModalFont from '../components/TextResizer/FontModal';
 // eslint-disable-next-line import/no-unresolved
@@ -42,10 +44,16 @@ export const General = [
 export const Security = [
 	{
 		title: 'SECURITY',
-		icon: FaRegUser,
+		icon: <BiLock/>,
 		func: 'Change Password',
 		slug: '/password',
-		iconright: FaChevronRight,
+		iconright: <FaChevronRight/>,
+	},
+	{
+		icon: <IoFingerPrintOutline/>,
+		func: 'Biometrics',
+		slug: '/',
+		iconright: <BsToggleOn/>,
 	},
 ];
 export const AppSettings = [
@@ -69,7 +77,7 @@ export const AppSettings = [
 	{
 		icon: <IoNotificationsOutline />,
 		func: 'Notifications',
-		iconright: 'All active',
+		iconright: <p>All active</p>,
 	},
 ];
 
