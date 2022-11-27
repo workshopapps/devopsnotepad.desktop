@@ -3,12 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import Sidenav from '../../components/SideNav/SideNav';
-=======
-import Sidenav from '../../Components/SideNav/SideNav';
-// import Sidenav from '../../components/SideNav/SideNav';
->>>>>>> 4ff5c033e5507f914e24f8779341b5075d53d6ca
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
 import Vectoor from './assets/Vectoor.png';
