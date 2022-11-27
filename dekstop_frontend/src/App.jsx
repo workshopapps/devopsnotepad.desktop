@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Note from './Pages/notes/Note';
 import Home from './Pages/home/Home';
+import Onboarding from './Pages/onBoarding/Onboarding';
 import Settings from './Pages/Settings/MainSettings';
 import EditProfile from './Pages/Settings/EditProfile/EditProfile';
 import Joined from './Pages/add_server/Joined/Joined';
@@ -20,6 +21,7 @@ function App() {
 				<Route exact path="/add-server" element={<Joined />} />
 				<Route exact path="/notification" element={<Notification />} />
 				<Route exact path="/languages" element={<Language />} />
+				<Route exact path="/onboarding" element={<Onboarding/>} />
 			</Routes>
 		</div>
 	);
