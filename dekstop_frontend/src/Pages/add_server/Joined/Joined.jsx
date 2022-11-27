@@ -17,7 +17,6 @@ function Joined(){
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setModal((prev) => !prev);
-		console.log(modal);
 	};
 
 	return (
@@ -29,4 +28,4 @@ function Joined(){
 	);
 };
 
-export default Joined;
+export default Joined
