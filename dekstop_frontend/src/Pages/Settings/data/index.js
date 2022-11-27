@@ -6,6 +6,7 @@ import { MdBrightnessMedium, MdLanguage } from 'react-icons/md';
 import { IoNotificationsOutline } from 'react-icons/io5';
 import { RiFontSize } from 'react-icons/ri';
 import ProfilePicture from '../assets';
+import ModalFont from '../components/TextResizer/FontModal';
 // eslint-disable-next-line import/no-unresolved
 import Button from '../components/Button';
 
@@ -33,7 +34,7 @@ export const General = [
 		title: 'GENERAL',
 		icon: FaRegUser,
 		func: 'Apps & Integrations',
-		slug: 'https://www.hoobank.com/content/',
+		slug: '',
 		iconright: FaChevronRight,
 	},
 ];
@@ -43,7 +44,7 @@ export const Security = [
 		title: 'SECURITY',
 		icon: FaRegUser,
 		func: 'Change Password',
-		slug: '/edit-profile',
+		slug: '/password',
 		iconright: FaChevronRight,
 	},
 ];
@@ -57,7 +58,7 @@ export const AppSettings = [
 	{
 		icon: <RiFontSize />,
 		func: 'Text Size',
-		iconright: 'Medium',
+		iconright: <ModalFont/>,
 	},
 	{
 		icon: <MdLanguage />,

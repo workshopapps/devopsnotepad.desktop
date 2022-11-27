@@ -13,7 +13,7 @@
 }
 
 .settingsContainer {
-	padding: 1px 117px 80px 245px;
+	padding: 1px 117px 80px 345px;
 }
 .settingsContainer h1 {
 	padding-top: 30px;
@@ -89,7 +89,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 17px 0;
 }
 /* .appSettings_cont a {
 	font-family: 'Inter';
@@ -116,6 +115,9 @@
 	font-size: 16px;
 	line-height: 140%;
 	text-decoration: none;
+	margin: 0 !important;
+	height: 56px;
+	align-items: center;
 }
 .appSettings svg {
 	color: #827d89;
