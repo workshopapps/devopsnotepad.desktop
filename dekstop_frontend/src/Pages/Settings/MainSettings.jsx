@@ -4,7 +4,7 @@ import { BiLock } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { Account, Security, userTopbar, General, AppSettings, Support } from './data';
 import style from './MainSettings.module.css';
-import Sidenav from '../../Components/SideNav/SideNav';
+import Sidenav from '../../components/SideNav/SideNav';
 
 
 function Settings() {
