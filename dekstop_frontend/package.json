@@ -33,7 +33,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "eslint . --fix --max-warnings=0",
-		"format": "prettier . --write",
+		"format": "prettier . --write",	
 		"eject": "react-scripts eject",
 		"dev": "electron .",
 		"make": "electron-forge make",
