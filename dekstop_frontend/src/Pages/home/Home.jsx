@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React from 'react';
 import Sidenav from '../../components/SideNav/SideNav';
+=======
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable react/react-in-jsx-scope */
+import Sidenav from '../../Components/SideNav/SideNav';
+// import Sidenav from '../../components/SideNav/SideNav';
+>>>>>>> 4ff5c033e5507f914e24f8779341b5075d53d6ca
 import homeStyle from './Home.module.css';
 
 function Home() {

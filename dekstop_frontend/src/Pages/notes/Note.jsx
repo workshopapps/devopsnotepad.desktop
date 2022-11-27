@@ -3,7 +3,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import Sidenav from '../../components/SideNav/SideNav';
+=======
+import Sidenav from '../../Components/SideNav/SideNav';
+// import Sidenav from '../../components/SideNav/SideNav';
+>>>>>>> 4ff5c033e5507f914e24f8779341b5075d53d6ca
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
 import Vectoor from './assets/Vectoor.png';
@@ -35,14 +40,15 @@ function Note() {
 	// State
 	const [formDisplay, setFormDisplay] = React.useState(false);
 	const [open, setOpen] = React.useState(false);
+	const [inputs, setInputs] = React.useState('');
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
+	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
 	const handleFormShow = () => {
 		setFormDisplay((prev) => !prev);
 	};
-
 	// styles
 	const styles = {
 		fontFamily: 'Manrope',
@@ -109,7 +115,7 @@ function Note() {
 								<button type="button" className={notesStyle.notesContentwoBtn}>
 									Notifications
 								</button>
-								<img src={notified} alt="" style={{ width: '20px' }} />{' '}
+								<img src={notified} alt="img" style={{ width: '20px' }} />{' '}
 							</Link>
 						</div>
 						{formDisplay ? (
@@ -143,12 +149,17 @@ function Note() {
 										onMouseDownCapture={handleOpen} onFocus={handleOpen}
 									/>
 								</div>
+								{
+									inputs.length > 0 ?
+								<p className={notesStyle.notesLastEdit} id={notesStyle.notesLastEdit}> 6:45pm, 15-11-22</p>:
 								<p className={notesStyle.notesLastEdit}>Last edit</p>
+								}
 								<form className={notesStyle.notesForm}>
 									<input
 										type="text"
 										placeholder="Start note here..."
 										className={notesStyle.notesFormInput}
+									onChange={handleChanges}
 									/>
 								</form>
 							</div>

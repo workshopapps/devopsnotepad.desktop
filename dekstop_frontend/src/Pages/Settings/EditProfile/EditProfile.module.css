@@ -11,13 +11,13 @@
 		text-transform: capitalize !important;
 	}
 	.profileHead {
-		gap: 129px !important;
+		gap: 97px !important;
 		text-align: center !important;
 	}
 }
 
 .profileContainer {
-	padding: 80px 117px 80px 245px;
+	padding: 30px 117px 80px 245px;
 }
 .profileHead {
 	display: flex;
