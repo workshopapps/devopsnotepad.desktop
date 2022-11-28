@@ -53,7 +53,13 @@ p {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* background-color: none; */
 }
+
+#mark {
+  background-color: transparent;
+}
+
 .mark-det p {
   margin-bottom: 0px !important;
 }
@@ -256,6 +262,10 @@ p {
 
   .podcast-middle-left {
     max-width: 100%;
+  }
+
+  .det p {
+    font-size: 16px !important;
   }
 }
 
