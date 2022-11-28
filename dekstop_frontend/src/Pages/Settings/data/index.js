@@ -6,11 +6,13 @@ import { MdBrightnessMedium, MdLanguage} from 'react-icons/md';
 import { IoNotificationsOutline, IoFingerPrintOutline } from 'react-icons/io5';
 import { BiLock } from 'react-icons/bi'
 import { RiFontSize } from 'react-icons/ri';
-import { BsToggleOn } from 'react-icons/bs';
-import ProfilePicture from '../assets';
+// import { BsToggleOn } from 'react-icons/bs';
+import { ProfilePicture } from '../assets';
 import ModalFont from '../components/TextResizer/FontModal';
 // eslint-disable-next-line import/no-unresolved
 import Button from '../components/Button';
+import Biometrics from '../components/Biometrics';
+import  PushNotifications from '../components/PushNotifications/PushNotifications';
 
 export const userTopbar = [
 	{
@@ -24,10 +26,10 @@ export const userTopbar = [
 export const Account = [
 	{
 		title: 'ACCOUNT',
-		icon: FaRegUser,
+		icon: <FaRegUser/>,
 		func: 'Edit Profile',
-		slug: '/edit-profile',
-		iconright: FaChevronRight,
+		slug: 'settings/edit-profile',
+		iconright: <FaChevronRight/>,
 	},
 ];
 
@@ -53,7 +55,7 @@ export const Security = [
 		icon: <IoFingerPrintOutline/>,
 		func: 'Biometrics',
 		slug: '/',
-		iconright: <BsToggleOn/>,
+		iconright: <Biometrics/>,
 	},
 ];
 export const AppSettings = [
@@ -77,7 +79,7 @@ export const AppSettings = [
 	{
 		icon: <IoNotificationsOutline />,
 		func: 'Notifications',
-		iconright: <p>All active</p>,
+		iconright: <PushNotifications/>,
 	},
 ];
 
