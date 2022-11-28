@@ -5,7 +5,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import Modal from 'react-modal';
-import close24 from '../../assets'
+import close24 from '../../assets/index'
 import TextResizer from './TextResizer';
 import styles from './Modal.module.css'
 

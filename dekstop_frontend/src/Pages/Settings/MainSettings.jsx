@@ -1,8 +1,7 @@
 /* eslint-disable no-lone-blocks */
 
-
 import { Link } from 'react-router-dom';
-import { Security, AppSettings } from './data';
+import { Security, AppSettings, userTopbar, Account } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
 
@@ -13,29 +12,28 @@ function Settings() {
 			<div className={style.settingsContainer}>
 				<h1>Settings</h1>
 
-				{/* {userTopbar.map((userHead) => (
-				<div key={userHead.id} className={style.userHead}>
-					<img src={userHead.userImage} alt="" />
-					<h3>{userHead.userName}</h3>
-				</div>
-			))} */}
+				{userTopbar.map((userHead) => (
+					<div key={userHead.id} className={style.userHead}>
+						<img src={userHead.userImage} alt="" />
+						<h3>{userHead.userName}</h3>
+					</div>
+				))}
 
-				{/* {Account.map((accounts) => (
+				{Account.map((accounts) => (
 				<div key={accounts.title} className={style.border_top}>
 					<small className={style.smallHead}>{accounts.title}</small>
-					<Link to={accounts.slug}>
+					
 					<div className={style.account}>
 						<div className={style.accountProfile}>
-							<FaRegUser />
-							<Link to={accounts.slug}>{accounts.func}</Link>
+							{accounts.icon}
+							<Link to='/settings/edit-profile'>{accounts.func}</Link>
 						</div>
-						<Link to={accounts.slug}>
-							<FaChevronRight />
-						</Link>
+						
+							{accounts.iconright}
 					</div>
-					</Link>
+				
 				</div>
-			))} */}
+			))}
 
 				{/* {General.map((general) => (
 				<div key={general.title} className={style.border_top}>
@@ -76,9 +74,7 @@ function Settings() {
 								{security.icon}
 								<Link to={security.slug}>{security.func}</Link>
 							</div>
-							<Link to="/">
-								{security.iconright}
-							</Link>
+							{security.iconright}
 						</div>
 					</div>
 				))}

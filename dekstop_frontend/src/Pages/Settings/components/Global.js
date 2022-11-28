@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     padding: 0;
     margin: 0;
+    border-color: ${({ theme }) => theme.border};
     
   }
   footer {
