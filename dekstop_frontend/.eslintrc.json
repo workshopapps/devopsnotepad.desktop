@@ -37,7 +37,20 @@
 						"id"
 					]
 				}
-			}
+			},
+			2,
+  {
+    "labelComponents": [
+      "FormLabel"
+    ],
+    "labelAttributes": [
+      "label"
+    ],
+    "controlComponents": [
+      "input"
+    ],
+    "depth": 1
+  }
 		],
 		"react/react-in-jsx-scope": "off"
 	}

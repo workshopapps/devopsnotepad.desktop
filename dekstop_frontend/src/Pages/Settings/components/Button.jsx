@@ -9,6 +9,7 @@ import { useDarkMode } from "./useDarkmode";
 function Button() {
     const [theme, toggleTheme] = useDarkMode("light");
 
+
     return (
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
