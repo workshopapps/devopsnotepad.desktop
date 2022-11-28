@@ -62,7 +62,7 @@ const Podcast = () => {
             <p>
               We appreciate your decision to jon the Devops Lifestyle Podcast{' '}
             </p>
-            <div className='mark'>
+            <div className='mark' id='mark'>
               <img src={mark} alt='' className='face' />
               <div className='mark-det'>
                 <p className='name'>Mark</p>
