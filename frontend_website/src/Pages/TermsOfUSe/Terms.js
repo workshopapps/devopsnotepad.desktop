@@ -1,98 +1,98 @@
 import React from 'react';
-import NavSection from './NavSection';
 import './Terms.css';
 
 const Terms = () => {
-  return (    
+  return (
     <>
-  
-          <div className="box">
-            <NavSection/>
-            <div className='content'>
-            <h4 className='content--title'>Opspad Terms of Use</h4>
-            <p className='child--title'>v1- Update November 17th 2022</p>
-            <p>
-              Thank you for choosing OpsPad. Please read these terms carefully.
-              By using OpsPad, you agree to these terms and conditions,
-              resulting in a legal agreement between you and Team Sandpaper
-              (“Agreement”). We’d start with the basics, including a few
-              definitions that help you understandthese terms.  OpsPad (
-              “OpsPad,” “we,” “us) is a note-taking note-taking note note and
-              documentation application that allows management and server
-              tracking features. These Terms of Use constitute a legally binding
-              agreement made between you, whether personally or on behalf of an
-              entity (“you”) and [Team Sandpaper] (“we”), concerning your access
-              to and use of the OpsPad website.</p>
-            <p>You agree that by accessing the Site, you have read, understood, and agree to be bound by allof
-              these Terms of Use. If you do not agree with all of these Terms of
-              Use, you are prohibited from using the Site and must discontinue
-              use immediately. </p>
-              <p>Supplemental Terms of Use or documents that may
-              be posted on the Site from time to time are, as a result of this,
-              expressly incorporated herein by reference. We reserve the right,
-              in our sole discretion, to make changes or modifications to these
-              Terms of Use at any time and for any reason. We will alert you
-              about any changes by updating the “Last updated” date of these
-              Terms of Use, and you waive any right to receive specific notice
-              of each such change. </p>
-              <p>It is your responsibility to periodically
-              review these Terms of Use to stay informed of updates. You will be
-              subject to, and will be deemed to have been made aware of and to
-              have accepted, the changes in any revised Terms of Use by your
-              continued use of the Site after the date such revised Terms of Use
-              are posted.</p>
-            
-            <h4>INTELLECTUAL PROPERTY RIGHT.</h4>
-            <p>
-              Unless otherwise indicated, the Site is our proprietary property.
-              All source code, databases, functionality, software, website
-              designs, video, text, photographs, and graphics on the Site,
-              trademarks, service marks, and logos contained therein are owned
-              or controlled by us or licensed by us.They are protected by
-              copyright and trademak laws and various other intellectual
-              property rights. Except as expressly provided in these Terms of
-              Use, no part of the Site and Content or Marks may be copied,
-              reproduced, aggregated, republished, uploaded, posted, publicly
-              displayed, encoded, translated, transmitted distrubuted, sold,
-              licensed, or otherwise exploited for any commercial purpose
-              whatsover, without our express prior written persmission.
-            </p>
-            <h4>RIGHT TO MODIFY THE OpsPad SERVICE</h4>
-            <p>
-              In our sole discretion, we retain the right to implement new
-              elements as part of and ancillary to the OpsPad Service, including
-              changes that may affect the previous mode of operation of the
-              OpsPad Service or OpsPad  Software. We expect that any such
-              modifications will enhance the overall OpsPad Service, but you may
-              disagree with us.
-            </p>
-            <h4>USER REPRESENTATIONS</h4>
-            <p>
-              By using the Site, you represent and warrant that:  All
-              registration information you submit will be true, accurate,
-              current, and complete; you will maintain the accuracy of such
-              information and promptly update such registration information as
-              necessary.  You have the legal capacity and agree to comply with
-              these Terms of Use;  You will not access the Site through
-              automated or non-human means, whether through a bot, script, or
-              otherwise.  You will not use the Site for any illegal or
-              unauthorized purpose.  Your use of the Site will not violate any
-              applicable law or regulation. Suppose you provide any information
-              that is untrue, inaccurate, not current, or incomplete. In that
-              case, we have the right to suspend or terminate your account and
-              refuse all current or future use of the Site (or any portion
-              thereof).
-            </p>
-            <h4>
-              Are There Any Limitations On The Number Of Notes I Can Create,
-              Access, or Edit With OpsPad?
-            </h4>
-            <p>
-              There are no specific restrictions on the number of notes you can
-              create, access or edit. However, you may be limited by the
-              hardware restrictions of your device.
-            </p>
-          
+      <div className='box'>
+        <div className='content'>
+          <h4 className='content--title'>Opspad Terms of Use</h4>
+          <p className='child--title'>v1- Update November 17th 2022</p>
+          <p>
+            Thank you for choosing OpsPad. Please read these terms carefully. By
+            using OpsPad, you agree to these terms and conditions, resulting in
+            a legal agreement between you and Team Sandpaper (“Agreement”). We’d
+            start with the basics, including a few definitions that help you
+            understandthese terms.  OpsPad ( “OpsPad,” “we,” “us) is a
+            note-taking note-taking note note and documentation application that
+            allows management and server tracking features. These Terms of Use
+            constitute a legally binding agreement made between you, whether
+            personally or on behalf of an entity (“you”) and [Team Sandpaper]
+            (“we”), concerning your access to and use of the OpsPad website.
+          </p>
+          <p>
+            You agree that by accessing the Site, you have read, understood, and
+            agree to be bound by allof these Terms of Use. If you do not agree
+            with all of these Terms of Use, you are prohibited from using the
+            Site and must discontinue use immediately.{' '}
+          </p>
+          <p>
+            Supplemental Terms of Use or documents that may be posted on the
+            Site from time to time are, as a result of this, expressly
+            incorporated herein by reference. We reserve the right, in our sole
+            discretion, to make changes or modifications to these Terms of Use
+            at any time and for any reason. We will alert you about any changes
+            by updating the “Last updated” date of these Terms of Use, and you
+            waive any right to receive specific notice of each such change. 
+          </p>
+          <p>
+            It is your responsibility to periodically review these Terms of Use
+            to stay informed of updates. You will be subject to, and will be
+            deemed to have been made aware of and to have accepted, the changes
+            in any revised Terms of Use by your continued use of the Site after
+            the date such revised Terms of Use are posted.
+          </p>
+
+          <h4>INTELLECTUAL PROPERTY RIGHT.</h4>
+          <p>
+            Unless otherwise indicated, the Site is our proprietary property.
+            All source code, databases, functionality, software, website
+            designs, video, text, photographs, and graphics on the Site,
+            trademarks, service marks, and logos contained therein are owned or
+            controlled by us or licensed by us.They are protected by copyright
+            and trademak laws and various other intellectual property rights.
+            Except as expressly provided in these Terms of Use, no part of the
+            Site and Content or Marks may be copied, reproduced, aggregated,
+            republished, uploaded, posted, publicly displayed, encoded,
+            translated, transmitted distrubuted, sold, licensed, or otherwise
+            exploited for any commercial purpose whatsover, without our express
+            prior written persmission.
+          </p>
+          <h4>RIGHT TO MODIFY THE OpsPad SERVICE</h4>
+          <p>
+            In our sole discretion, we retain the right to implement new
+            elements as part of and ancillary to the OpsPad Service, including
+            changes that may affect the previous mode of operation of the OpsPad
+            Service or OpsPad  Software. We expect that any such modifications
+            will enhance the overall OpsPad Service, but you may disagree with
+            us.
+          </p>
+          <h4>USER REPRESENTATIONS</h4>
+          <p>
+            By using the Site, you represent and warrant that:  All registration
+            information you submit will be true, accurate, current, and
+            complete; you will maintain the accuracy of such information and
+            promptly update such registration information as necessary.  You
+            have the legal capacity and agree to comply with these Terms of
+            Use;  You will not access the Site through automated or non-human
+            means, whether through a bot, script, or otherwise.  You will not
+            use the Site for any illegal or unauthorized purpose.  Your use of
+            the Site will not violate any applicable law or regulation. Suppose
+            you provide any information that is untrue, inaccurate, not current,
+            or incomplete. In that case, we have the right to suspend or
+            terminate your account and refuse all current or future use of the
+            Site (or any portion thereof).
+          </p>
+          <h4>
+            Are There Any Limitations On The Number Of Notes I Can Create,
+            Access, or Edit With OpsPad?
+          </h4>
+          <p>
+            There are no specific restrictions on the number of notes you can
+            create, access or edit. However, you may be limited by the hardware
+            restrictions of your device.
+          </p>
+
           <h4>Can I Share My Account With Someone Else?</h4>
           <p>
             OpsPad Service accounts should not be shared. If you share your
@@ -247,19 +247,21 @@ const Terms = () => {
           </p>
           <h4>CONTACT US</h4>
           <div className='contact--us'>
-          <p>To resolve a complaint regarding the Site or to receive further
-            information regarding the use of the Site, please contact us at </p>
-            
+            <p>
+              To resolve a complaint regarding the Site or to receive further
+              information regarding the use of the Site, please contact us at 
+            </p>
+
             <span>Address: </span>
-              <span>Ospad office, HNG Project plaza, Lagos, Nigeria. </span>
-              <span> Or email us at <b>Teamsandpaper@gmail.com</b></span>
-              </div>
-        
+            <span>Ospad office, HNG Project plaza, Lagos, Nigeria. </span>
+            <span>
+              {' '}
+              Or email us at <b>Teamsandpaper@gmail.com</b>
+            </span>
           </div>
-          </div>
-      
-          </>
-      
+        </div>
+      </div>
+    </>
   );
 };
 

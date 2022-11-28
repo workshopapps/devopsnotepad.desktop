@@ -6,19 +6,22 @@ import Home from './Pages/home/Home';
 import Onboarding from './Pages/onBoarding/Onboarding';
 import Settings from './Pages/Settings/MainSettings';
 import EditProfile from './Pages/Settings/EditProfile/EditProfile';
-import Joined from './Pages/add_server/Joined/Joined';
+// import Joined from './Pages/add_server/Joined/Joined';
 import Notification from './Pages/Notification/Notification';
 import Language from './Pages/Settings/components/Languages/Language';
+import Password from './Pages/Password/Password'
 
 function App() {
 	return (
 		<div className="App">
+		
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route exact path="/note" element={<Note />} />
 				<Route exact path="/settings" element={<Settings />} />
 				<Route exact path="/edit-profile" element={<EditProfile />} />
-				<Route exact path="/add-server" element={<Joined />} />
+				<Route exact path="/server/password" element={<Password />}/> 
+				{/* <Route exact path="/add-server" element={<Joined />} /> */}
 				<Route exact path="/notification" element={<Notification />} />
 				<Route exact path="/languages" element={<Language />} />
 				<Route exact path="/onboarding" element={<Onboarding/>} />

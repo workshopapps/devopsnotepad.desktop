@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-expressions */
 import { useEffect, useState } from "react";
-
 
 // eslint-disable-next-line import/prefer-default-export
 export const useDarkMode = () => {
@@ -16,7 +14,8 @@ export const useDarkMode = () => {
   };
 
   useEffect(() => {
-    const localTheme = null;  window.localStorage.getItem("theme");
+    const localTheme = null; // window.localStorage.getItem("theme");
+    // eslint-disable-next-line no-unused-expressions
     localTheme && setTheme(localTheme);
   }, []);
 
