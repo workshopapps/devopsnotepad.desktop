@@ -1,5 +1,6 @@
-/* eslint-disable import/prefer-default-export */
-import ProfilePicture from "./ProfilePicture.png";
+import ProfilePicture from './ProfilePicture.png'
+import  close24  from './close-24.svg';
 
 
-export default ProfilePicture;
+export { close24, ProfilePicture };
+export default close24;
