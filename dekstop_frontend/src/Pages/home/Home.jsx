@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidenav from '../../Components/SideNav/SideNav';
 import homeStyle from './Home.module.css';
+import Onboarding from '../../Components/Onboarding/Onboarding';
 
 function Home() {
+	const [newUser, setNewUser] = useState(null);
+	useEffect(() => {
+		const isNewUser = localStorage.getItem('isNewUser');
+		console.log(isNewUser);
+		if (!isNewUser) {
+			setNewUser(true);
+			localStorage.setItem('isNewUser', false);
+		}
+	});
 	return (
 		<div className={homeStyle.HomeWrapper}>
 			<Sidenav />
+
+			{newUser && (
+				<Onboarding
+					closeOnboarding={() => {
+						setNewUser(false);
+					}}
+				/>
+			)}
 
 			<div className={homeStyle.dashboardContainer}>
 				<div className={homeStyle.dashboardContent}>
