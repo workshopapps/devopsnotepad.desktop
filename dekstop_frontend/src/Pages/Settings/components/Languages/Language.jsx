@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import style from './Language.module.css';
+import Sidenav from '../../../../components/SideNav/SideNav';
 
 const Language = () => {
 	const [selected, setSelected] = useState('yes');
@@ -17,6 +18,9 @@ const Language = () => {
 	};
 
 	return (
+        <div>
+            <Sidenav/>
+      
 		<div className={style.languageContainer}>
 			<div className={style.languageHead}>
 				<Link to="/settings">
@@ -75,6 +79,7 @@ const Language = () => {
 				</label>
 			</div>
 		</div>
+        </div>
 	);
 };
 

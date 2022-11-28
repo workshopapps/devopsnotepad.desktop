@@ -7,10 +7,6 @@ export const Links = [
         slug: '/about-us',
       },
       {
-        title: 'Privacy Policy',
-        slug: '/privacy-policy',
-      },
-      {
         title: 'Our Team',
         slug: '/our-team',
       },
