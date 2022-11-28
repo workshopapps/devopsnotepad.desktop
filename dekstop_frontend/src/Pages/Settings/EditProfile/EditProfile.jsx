@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import style from './EditProfile.module.css';
 import CountryCodeComponent from './Components/CountryCode/CountryCodeComponent';
-// import Sidenav from '../../Components/SideNav/SideNav';
-import Sidenav from '../../../components/SideNav/SideNav';
+import Sidenav from '../../../Components/SideNav/SideNav';
 import Success from './Components/Success/Success';
 import phoneCountryCode from './CountryCodeData';
 import profilePicture from '../assets/ProfilePicture.png';
