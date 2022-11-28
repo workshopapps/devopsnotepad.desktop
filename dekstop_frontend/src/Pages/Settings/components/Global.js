@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     padding: 0;
     margin: 0;
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    border-color: ${({ theme }) => theme.border};
     
   }
   footer {

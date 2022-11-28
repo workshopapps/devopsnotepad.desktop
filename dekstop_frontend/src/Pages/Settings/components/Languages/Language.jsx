@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import style from './Language.module.css';
-import Sidenav from '../../../../components/SideNav/SideNav';
+import Sidenav from '../../../../Components/SideNav/SideNav';
 
 const Language = () => {
 	const [selected, setSelected] = useState('yes');
