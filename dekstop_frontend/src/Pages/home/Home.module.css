@@ -1,89 +1,45 @@
-.dashboardContainer {
-	margin-left: 28%;
+.container {
+	margin-left: 228px;
+	padding: 50px 97px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	flex-wrap: wrap;
-	width: 60%;
+	gap: 32px;
 }
 
-.dashBTitle {
-	text-align: left;
-	height: 44px;
-	top: 80px;
+.no_server {
+	margin-left: 228px;
+	display: grid;
+	gap: 66.75px;
+	place-items: center;
 	font-family: 'Manrope';
-	font-style: normal;
+}
+
+.no_server > figure {
+	width: 300px;
+	height: fit-content;
+	overflow: hidden;
+}
+
+.no_server > figure > img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.no_server_content {
+	width: 300px;
+}
+
+.no_server_content > h2 {
 	font-weight: 600;
-	font-size: 2rem;
-	line-height: 44px;
-	color: #121e77;
-    text-transform: uppercase;
+	font-size: 24px;
+	color: #202020;
+	margin-bottom: 16px;
 }
 
-.dashboardContent {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.dashboardContentOne {
-	width: 200%;
-	/* border: 1px solid rgb(183, 182, 182); */
-	padding: 10px 20px;
-	/* border-radius: 10px; */
-	margin-left: -60%;
-}
-.dashboardBorder {
-	border: 1px solid rgb(183, 182, 182);
-	border-radius: 10px;
-    padding: 10px 20px;
-}
-
-.dashboardContentOneDetails {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.dashboardContentOneDetailsTitle {
-	height: 25px;
-	font-family: 'Manrope';
+.no_server_content > p {
 	font-style: normal;
 	font-weight: 400;
-	font-size: 1rem;
-	line-height: 25px;
-	color: #000000;
-}
-
-#dashboardContentOneDetailsBtn {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 12px;
-	line-height: 16px;
-	text-align: right;
-	text-transform: capitalize;
-	color: #0f8f3e;
-	border: 0;
-	padding: 8px 20px;
-	width: 93px;
-	height: 32px;
-	background: #d0f5de;
-	border-radius: 4px;
-}
-#dashboardContentOneDetailsBtnTwo {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 12px;
-	line-height: 16px;
-	text-align: center;
-	text-transform: capitalize;
-	color: #ec0a0a;
-	border: 0;
-	padding: 8px 20px;
-	width: 93px;
-	height: 32px;
-	background: #fff3f3;
-	border-radius: 4px;
+	font-size: 18px;
+	color: #4b4b4b;
 }
