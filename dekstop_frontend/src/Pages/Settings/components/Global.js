@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import '../MainSettings.module.css'
 
 // eslint-disable-next-line import/prefer-default-export
 export const GlobalStyles = createGlobalStyle`
@@ -20,8 +21,10 @@ export const GlobalStyles = createGlobalStyle`
   small {
     display: block;
   }
-  button {
+  button a {
     display: block;
+    color: ${({ theme }) => theme.button} !important;
+    ${'' /* background: ${({ theme }) => theme.button_bg} !important; */}
   }
   a {
     color: ${({ theme }) => theme.text} !important;
@@ -33,11 +36,25 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.small} !important;
 
   }
+
+
+
+  p {
+    color: ${({ theme }) => theme.text} !important;
+  }
   h1 {
+    color: ${({ theme }) => theme.text} !important;
+  }
+  h2 {
     color: ${({ theme }) => theme.text} !important;
   }
   h3 {
     color: ${({ theme }) => theme.text} !important;
+  }
+
+  .border_top {
+    display: ${'none'} !important;
+    border-top: 1px solid #efeef0;
   }
 
 `;
