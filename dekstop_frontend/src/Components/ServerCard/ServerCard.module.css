@@ -19,13 +19,16 @@
 	padding: 16px 24px;
 	border: 1px solid #c7c7c7;
 	border-radius: 10px;
+}
+
+.table > tbody {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	gap: 44px;
 }
 
-.table > tr {
+.table tr {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

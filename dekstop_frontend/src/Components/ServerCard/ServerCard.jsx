@@ -7,26 +7,28 @@ function ServerCard({ name, endpoint, ipAddress, serverHealth }) {
 		<div className={style.container}>
 			<h2>{name}</h2>
 			<table className={style.table}>
-				<tr>
-					<th>Endpoint:</th>
-					<td className={style.data}>{endpoint}</td>
-				</tr>
-				<tr>
-					<th>IP Address:</th>
-					<td className={style.data}>{ipAddress}</td>
-				</tr>
-				<tr>
-					<th>Server Health:</th>
-					<td
-						className={`${style.server_health} ${
-							serverHealth.toLowerCase() === 'excellent'
-								? style.server_health_excellent
-								: style.server_health_critical
-						}`}
-					>
-						{serverHealth}
-					</td>
-				</tr>
+				<tbody>
+					<tr>
+						<th>Endpoint:</th>
+						<td className={style.data}>{endpoint}</td>
+					</tr>
+					<tr>
+						<th>IP Address:</th>
+						<td className={style.data}>{ipAddress}</td>
+					</tr>
+					<tr>
+						<th>Server Health:</th>
+						<td
+							className={`${style.server_health} ${
+								serverHealth.toLowerCase() === 'excellent'
+									? style.server_health_excellent
+									: style.server_health_critical
+							}`}
+						>
+							{serverHealth}
+						</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	);
