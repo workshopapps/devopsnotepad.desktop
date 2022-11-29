@@ -20,20 +20,19 @@ function Settings() {
 				))}
 
 				{Account.map((accounts) => (
-				<div key={accounts.title} className={style.border_top}>
-					<small className={style.smallHead}>{accounts.title}</small>
-					
-					<div className={style.account}>
-						<div className={style.accountProfile}>
-							{accounts.icon}
-							<Link to='/settings/edit-profile'>{accounts.func}</Link>
-						</div>
-						
+					<div key={accounts.title} className={style.border_top}>
+						<small className={style.smallHead}>{accounts.title}</small>
+
+						<div className={style.account}>
+							<div className={style.accountProfile}>
+								{accounts.icon}
+								<Link to="/settings/edit-profile">{accounts.func}</Link>
+							</div>
+
 							{accounts.iconright}
+						</div>
 					</div>
-				
-				</div>
-			))}
+				))}
 
 				{/* {General.map((general) => (
 				<div key={general.title} className={style.border_top}>
