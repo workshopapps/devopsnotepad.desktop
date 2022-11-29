@@ -5,3 +5,41 @@
 	flex-direction: column;
 	gap: 32px;
 }
+
+.no_server {
+	margin-left: 228px;
+	display: grid;
+	gap: 66.75px;
+	place-items: center;
+	font-family: 'Manrope';
+}
+
+.no_server > figure {
+	width: 300px;
+	height: fit-content;
+	overflow: hidden;
+}
+
+.no_server > figure > img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.no_server_content {
+	width: 300px;
+}
+
+.no_server_content > h2 {
+	font-weight: 600;
+	font-size: 24px;
+	color: #202020;
+	margin-bottom: 16px;
+}
+
+.no_server_content > p {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	color: #4b4b4b;
+}
