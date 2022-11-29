@@ -89,6 +89,18 @@ section.main div.sidenav button.btn {
 	margin-left: 20px;
 }
 
+.btn a {
+	color: #fff !important;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+}
+.btn svg {
+	color: #fff !important;
+}
+
 section.main div.sidenav p.settings {
 	font-size: 16px;
 	color: rgba(32, 32, 32, 0.64);
