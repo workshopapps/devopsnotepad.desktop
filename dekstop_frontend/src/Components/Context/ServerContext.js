@@ -1,33 +1,36 @@
-import { createContext, useState } from 'react';
+/* eslint-disable react/prop-types */
+import { createContext, useMemo, useState, useEffect } from 'react';
 
 const ServerContext = createContext();
 
-export const ServerProvider = ({ children }) => {
-	// const [isLoading, setIsLoading] = useState(false);
-	const [deviceId, setDeviceId] = useState('');
-	const BASE_URL = 'https://devsapp.onrender.com';
+export function ServerProvider({ children }) {
+	// const [isLoading, setIsLoading] = useState(true);
+	const [servers, setServers] = useState([]);
+	const BASE_URL = 'https://devsapp.onrender.com/Server';
+	// deviceId needs to be dynamic
+	const deviceId = '80988579';
 
-	// const addUrl = async (newUrl) => {
-	// 	setIsLoading(true);
-	// 	const response = await fetch(`${BASE_URL}url`, {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify({ new_url: newUrl }),
-	// 	});
+	async function getServer() {
+		const response = await fetch(`${BASE_URL}?device=${deviceId}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
 
-	// 	const data = await response.json();
-	// 	setUrl(data.url);
-	// 	console.log(data.url);
-	// 	setIsLoading(false);
-	// };
+		const data = await response.json();
+		setServers(data.servers);
+	}
+
+	useEffect(() => {
+		getServer();
+	}, []);
+
+	const requests = useMemo(() => ({ servers }), [servers]);
 
 	return (
-		<ServerContext.Provider value={{ isLoading, url, addUrl }}>
-			{children}
-		</ServerContext.Provider>
+		<ServerContext.Provider value={requests}>{children}</ServerContext.Provider>
 	);
-};
+}
 
 export default ServerContext;

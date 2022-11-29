@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
+import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
 import style from './Home.module.css';
 import Onboarding from '../../Components/Onboarding/Onboarding';
@@ -7,9 +8,8 @@ import ServerCard from '../../Components/ServerCard/ServerCard';
 import addBg from './Assets/add.svg';
 
 function Home() {
+	const { servers } = useContext(ServerContext);
 	const [newUser, setNewUser] = useState(null);
-	const Servers = [];
-
 	// Initiate Onboarding
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
 	useEffect(() => {
@@ -27,14 +27,14 @@ function Home() {
 	}, [newUser]);
 
 	// Query api for user data
+
 	return (
 		<div className={style.HomeWrapper}>
 			<Sidenav />
 			{newUser && <Onboarding closeOnboarding={getStarted} />}
-
 			{!newUser && (
 				<div className={style.container}>
-					{Servers.map((server) => (
+					{servers.map((server) => (
 						<ServerCard
 							key={server.id}
 							name={server.name}
@@ -44,14 +44,14 @@ function Home() {
 					))}
 				</div>
 			)}
-			{Servers.length === 0 && (
+			{servers.length === 0 && (
 				<div className={style.no_server}>
 					<figure>
 						<img src={addBg} alt="" aria-hidden />
 					</figure>
 					<div className={style.no_server_content}>
 						<h2>Empty Server List</h2>
-						<p>You do not have any servers yet.</p>
+						<p>You do not have any Servers yet.</p>
 					</div>
 				</div>
 			)}
