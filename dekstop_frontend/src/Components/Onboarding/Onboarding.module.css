@@ -6,7 +6,7 @@
 	right: 0; */
 	inset: 0;
 	background: #ffffff;
-	padding-top: 36px;
+	padding-top: 30px;
 	padding-bottom: 36px;
 	overflow: hidden;
 }
@@ -14,7 +14,7 @@
 .onboarding {
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 30px;
 	align-items: center;
 }
 
