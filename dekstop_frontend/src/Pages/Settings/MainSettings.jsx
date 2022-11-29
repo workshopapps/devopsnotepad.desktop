@@ -30,6 +30,7 @@ function Settings() {
 						</div>
 						
 							{accounts.iconright}
+						</div>
 					</div>
 				
 				</div>

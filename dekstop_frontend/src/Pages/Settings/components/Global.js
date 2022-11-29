@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import '../MainSettings.module.css'
+import '../MainSettings.module.css';
 
 // eslint-disable-next-line import/prefer-default-export
 export const GlobalStyles = createGlobalStyle`
@@ -35,6 +35,16 @@ export const GlobalStyles = createGlobalStyle`
   small {
     color: ${({ theme }) => theme.small} !important;
 
+  }
+
+  tr {
+  color: ${({ theme }) => theme.text} !important;
+  }
+  th {
+  color: ${({ theme }) => theme.text} !important;
+  }
+  td {
+  color: ${({ theme }) => theme.text} !important;
   }
 
 
