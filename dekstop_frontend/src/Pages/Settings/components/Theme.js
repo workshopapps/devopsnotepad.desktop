@@ -6,7 +6,9 @@ export const lightTheme = {
     toggle: '#B0BEC5',
     toggle1: '#fff',
     toggle2: '#fff',
-    border: '#efeef0'
+    border: '#efeef0',
+    button: '#000',
+    button_bg: '000'
   };
   
   export const darkTheme = {
@@ -17,6 +19,8 @@ export const lightTheme = {
     toggle: '#fff',
     toggle1: '#ffffff',
     toggle2: '#B0BEC5',
-    border: '#686868'
+    border: '#686868',
+    button: '#fff',
+    button_bg: 'inherit'
   };
   

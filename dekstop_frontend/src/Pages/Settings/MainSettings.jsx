@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 
 import { Link } from 'react-router-dom';
-import { Security, AppSettings, userTopbar, Account } from './data';
+import { Security, AppSettings, Support } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
 
@@ -12,14 +12,14 @@ function Settings() {
 			<div className={style.settingsContainer}>
 				<h1>Settings</h1>
 
-				{userTopbar.map((userHead) => (
+				{/* {userTopbar.map((userHead) => (
 					<div key={userHead.id} className={style.userHead}>
 						<img src={userHead.userImage} alt="" />
 						<h3>{userHead.userName}</h3>
 					</div>
-				))}
+				))} */}
 
-				{Account.map((accounts) => (
+				{/* {Account.map((accounts) => (
 				<div key={accounts.title} className={style.border_top}>
 					<small className={style.smallHead}>{accounts.title}</small>
 					
@@ -33,7 +33,7 @@ function Settings() {
 					</div>
 				
 				</div>
-			))}
+			))} */}
 
 				{/* {General.map((general) => (
 				<div key={general.title} className={style.border_top}>
@@ -67,7 +67,7 @@ function Settings() {
 				))}
 
 				{Security.map((security) => (
-					<div key={security.title}>
+					<div key={security.title} className={style.border_top}>
 						<small className={style.smallHead}>{security.title}</small>
 						<div className={style.account}>
 							<div className={style.accountProfile}>
@@ -78,16 +78,9 @@ function Settings() {
 						</div>
 					</div>
 				))}
-			</div>
-		</div>
-	);
-}
 
-export default Settings;
-
-{
-	/* {Support.map((support) => (
-					<div key={support.items} className={style.border_top}>
+				{Support.map((support) => (
+					<div key={support.items}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
@@ -100,5 +93,14 @@ export default Settings;
 							))}
 						</ul>
 					</div>
-				))} */
+				))}
+			</div>
+		</div>
+	);
 }
+
+export default Settings;
+
+
+	
+

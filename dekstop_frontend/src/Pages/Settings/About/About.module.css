@@ -1,0 +1,439 @@
+@media only screen and (max-width: 768px) {
+  .imgsize {
+    max-width: 300px !important;
+    min-height: 300px !important;
+  }
+  .circle {
+    width: 55px;
+    height: 40px;
+    margin-top: 15px;
+  }
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    row-gap: 15px;
+  }
+  .hide {
+    display: block !important;
+  }
+  .show {
+    display: none !important;
+  }
+  .bluerow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1439px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 300px;
+    height: fit-content;
+    padding: 20px;
+    background-color: #102a63;
+    row-gap: 15px;
+  }
+  .banner {
+    max-width: 1276px;
+    width: 100%;
+    min-height: 600px;
+    height: fit-content;
+    left: 82px;
+    top: 121px;
+    background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: none;
+    background: #ffffff;
+    opacity: 0.8;
+    border: 0.5px solid #c7c7c7;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tool {
+    font-size: 16px;
+    max-width: 321px;
+  }
+  .banner > h1 {
+    max-width: 400px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #202020;
+  }
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 10px;
+    gap: 10px;
+    width: 150px;
+    height: 48px;
+    border: 1px solid #102a63;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #292929;
+  }
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 10px;
+    gap: 10px;
+    width: 150px;
+    height: 48px;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #292929;
+  }
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 16px 18px;
+    gap: 10px;
+    width: 177px;
+    height: 56px;
+    background-color: #f6f9ff;
+    border-radius: 6px;
+    margin-top: 46px;
+    margin-bottom: 36px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #444444;
+  }
+  .btnbox {
+    display: flex;
+    flex-direction: row;
+    max-width: 350px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .colorbgsm {
+    max-width: 320px !important;
+    width: 100%;
+    display: block;
+    min-height: 350px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  .colorbglg {
+    max-width: 540px !important;
+    width: 100%;
+    display: none;
+    min-height: 680px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+  .storyhead {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #202020;
+    padding-bottom: 10px;
+  }
+  .storyhead2 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #202020;
+    padding-bottom: 10px;
+  }
+  .assist {
+    font-size: 32px;
+    max-width: 415px;
+    font-weight: 600;
+    line-height: 37px;
+    color: #ffffff;
+    padding-bottom: 48px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .imgsize {
+    max-width: 433px !important;
+    min-height: 403px !important;
+  }
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
+    row-gap: 20px;
+  }
+  .tool {
+    font-size: 20px;
+    max-width: 441px;
+  }
+  .bluerow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1439px;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    min-height: 796px;
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-left: 90px;
+    padding-right: 0px;
+    background-color: #102a63;
+    row-gap: 20px;
+  }
+  .circle {
+    width: 95px;
+    height: 80px;
+    margin-top: 15px;
+  }
+  .banner {
+    max-width: 1276px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 916px;
+    height: fit-content;
+    background-image: url('./images/banner.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    border: 0.5px solid #c7c7c7;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .banner > h1 {
+    max-width: 698px;
+    height: 152px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 76px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #202020;
+  }
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 18px;
+    gap: 10px;
+    width: 185px;
+    height: 48px;
+    border: 1px solid #102a63;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #292929;
+    background-color: #ffffff;
+  }
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 18px;
+    gap: 10px;
+    width: 185px;
+    height: 48px;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #292929;
+  }
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 18px;
+    gap: 10px;
+    width: 177px;
+    height: 56px;
+    background-color: #f6f9ff;
+    border-radius: 6px;
+    margin-top: 96px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #444444;
+  }
+  .btnbox {
+    display: flex;
+    flex-direction: row;
+    max-width: 392px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .colorbgsm {
+    max-width: 320px !important;
+    width: 100%;
+    display: none;
+    min-height: 350px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+  .colorbglg {
+    max-width: 540px !important;
+    width: 100%;
+    display: block;
+    min-height: 680px !important;
+    height: fit-content;
+    background-image: url('./images/colorbg.png');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: end;
+  }
+  .storyhead {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #202020;
+    padding-bottom: 10px;
+  }
+  .storyhead2 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #202020;
+    padding-bottom: 10px;
+  }
+  .assist {
+    font-size: 42px;
+    max-width: 415px;
+    font-weight: 600;
+    line-height: 37px;
+    color: #ffffff;
+    padding-bottom: 48px;
+  }
+}
+​ .container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+​ .flexcol {
+  display: flex;
+  flex-direction: column;
+}
+​ .p_ {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.section.main div.sidenav div.nav {
+  visibility: none !important;
+}
+
+​ .list_style__ {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 40px;
+  align-items: center;
+  color: #000000;
+  padding-right: 4rem;
+  list-style: decimal-leading-zero;
+}
+​ .list__ {
+  padding-left: 25px !important;
+}
+​ .list__::marker {
+  font-size: 20px !important;
+  color: grey !important;
+}

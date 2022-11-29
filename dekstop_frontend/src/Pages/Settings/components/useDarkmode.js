@@ -1,24 +1,33 @@
 import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
 export const useDarkMode = () => {
-	const [theme, setTheme] = useState('light');
-	const toggleTheme = () => {
-		if (theme === 'light') {
-			window.localStorage.setItem('theme', 'dark');
-			setTheme('dark');
-		} else {
-			window.localStorage.setItem('theme', 'light');
-			setTheme('light');
-		}
-	};
+  const [theme, setTheme] = useState('light');
+  const [componentMounted, setComponentMounted] = useState(false);
 
-	useEffect(() => {
-		const localTheme = null;
-		window.localStorage.getItem('theme');
-		// eslint-disable-next-line no-unused-expressions
-		localTheme && setTheme(localTheme);
-	}, []);
+  const setMode = mode => {
+    window.localStorage.setItem('theme', mode)
+    setTheme(mode)
+  };
 
-	return [theme, toggleTheme];
-}
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setMode('dark')
+    } else {
+      setMode('light')
+    }
+  };
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem('theme');
+
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localTheme ?
+      setMode('dark') :
+      localTheme ?
+        setTheme(localTheme) :
+        setMode('light');
+
+    setComponentMounted(true);
+  }, []);
+
+  return [theme, toggleTheme, componentMounted]
+};

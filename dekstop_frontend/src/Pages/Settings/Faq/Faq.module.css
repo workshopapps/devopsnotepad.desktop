@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+.faqContainer {
+  width: 80%;
+  padding: 4% 0;
+  margin: 0 auto;
+  font-family: 'Manrope';
+}
+
+.faqHeader {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 87px;
+  color: #353535;
+}
+
+.gridContainer {
+  width: 100;
+  margin: 5% 0 0 0;
+  border: 2px solid lightgrey;
+  padding: 2% 3% 3% 3%;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.grid1Header {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 75px;
+  color: #202020;
+  display: block;
+}
+
+.btn, .btnColored {
+  font-family: 'Manrope';
+  height: 65px;
+  width: 100%;
+  border-radius: 8px;
+  margin: 3% 0 0 0;
+  background-color: white;
+  text-align: left;
+  padding: 0 0 0 3%;
+  border: 1px solid #cdd8f3;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 33px;
+  color: #143681;
+  cursor: pointer;
+}
+
+.btnColored{
+  background-color: #143681;
+  color: white;
+}
+
+.grid2Header {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 75px;
+  color: #202020;
+}
+
+.ansgrid {
+  margin: 3% 0 0 0;
+  background-color: #e9effd;
+  border-radius: 8px;
+  padding: 3%;
+  height: 450px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 33px;
+  color: #202020;
+  overflow-y: scroll;
+}
+
+.desktopView {
+  display: block;
+}
+
+.mobileview {
+  display: none;
+}
+
+@media only screen and (max-width: 950px) {
+  .desktopView {
+    display: none;
+  }
+
+  .mobileview {
+    display: block;
+  }
+
+  .gridContainer {
+    display: block;
+  }
+
+  .grid1Header {
+    display: none;
+  }
+
+  .buttonContainer {
+    /* width: 600px; */
+    overflow-x: auto;
+    display: flex;
+    /* flex-direction: row; */
+    padding: 0 0 5% 0;
+  }
+
+  .btn, .btnColored {
+    min-width: 250px;
+    height: 60px;
+    font-size: 15px;
+    margin: 5% 2% 0 0;
+  }
+
+  @media only screen and (max-width: 610px) {
+    .faqContainer {
+      width: 95%;
+      padding: 2% 0;
+      margin: 0 auto;
+      font-family: 'Manrope';
+    }
+
+    .faqHeader {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 50px;
+      color: #353535;
+    }
+  }
+}
