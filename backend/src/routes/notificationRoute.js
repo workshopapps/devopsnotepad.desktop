@@ -6,6 +6,5 @@ const router = express.Router();
 
 router.post("/:serverId/notifications", createNotificationValidator, NotificationController.create);
 router.get("/:serverId/notifications", NotificationController.get);
-router.get("/notifications", NotificationController.deleteWeekly);
 
 export default router;
