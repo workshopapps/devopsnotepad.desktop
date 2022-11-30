@@ -56,7 +56,7 @@ function Sidenav() {
 						{' '}
 						<Link
 							to="/add-Server"
-							style={{ color: 'white', textDecoration: 'none' }}
+							style={{ color: '#fff !important', textDecoration: 'none' }}
 						>
 							Add Server
 						</Link>

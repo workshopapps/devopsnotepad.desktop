@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
-
 @media (max-width: 767px) {
 	.sidenav {
 		display: none !important;
@@ -88,6 +87,18 @@ section.main div.sidenav button.btn {
 	font-size: 14px;
 	line-height: 16px;
 	margin-left: 20px;
+}
+
+.btn a {
+	color: #fff !important;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+}
+.btn svg {
+	color: #fff !important;
 }
 
 section.main div.sidenav p.settings {

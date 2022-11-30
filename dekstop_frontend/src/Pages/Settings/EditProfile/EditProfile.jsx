@@ -139,7 +139,7 @@ function EditProfile() {
 										<CountryCodeComponent
 											key={country.code}
 											code={country.dial_code}
-											country={country.name}
+											// country={country.name}
 											value={country.dial_code}
 										/>
 									))}
