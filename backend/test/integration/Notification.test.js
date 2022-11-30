@@ -15,10 +15,10 @@ const getNotificationByLog = async (log) => {
 
 let notificationId;
 export let serverId = '';
-const params = {
+export const params = {
     name: 'example server',
     ipAddress: 'google.com',
-    deviceId: 80988579,
+    deviceId: '80988579',
 }
 
 before(async () => {
