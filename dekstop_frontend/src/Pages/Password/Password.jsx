@@ -1,38 +1,80 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import SideNav from '../../Components/SideNav/SideNav';
 import passwordStyle from './Password.module.css';
 import PasswordCard from './PasswordCard';
-import Data from './Data';
 import Add from './images/add.svg';
-import CreateForm from './components/createForm/CreateForm'
+import CreateForm from './components/createForm/CreateForm';
+import Data from './Data';
+
+// Database
+const allPasswords = Data.passwords;
 
 function Password() {
-	const [showCreateform, setShowCreateform] = useState(null)
-	
+	const [passwords, setPasswords] = useState(() => {
+		const localData = localStorage.getItem('passwords');
+		return localData ? JSON.parse(localData) : allPasswords;
+	});
+
+	const [showCreateform, setShowCreateform] = useState(null);
+
+	// methods and functions
+	const addPassword = (password) => {
+		const newPassword = password;
+		setPasswords([...passwords, newPassword]);
+	};
+
+	const removePassword = (id) => {
+		const newPassword = passwords.filter((password) => password.id !== id);
+		setPasswords(newPassword);
+	};
+
+	const editPassword = (editedPassword) => {
+		const updatedPasswords = passwords.map((c) =>
+			c.id === editedPassword.id ? editedPassword : c
+		);
+		setPasswords(updatedPasswords);
+	};
+
 	const closeShowForm = useCallback(() => {
-		setShowCreateform(false)
+		setShowCreateform(false);
+		document.body.style.overflow = "unset";
 	}, [showCreateform]);
 
-	useEffect(()=>{
-		setShowCreateform(false)
-	},[])
+	const openShowForm = ()=>{
+		setShowCreateform(true)
+		document.body.style.overflow = "hidden";
+	}
+
+	useEffect(() => {
+		localStorage.setItem('passwords', JSON.stringify(passwords));
+	}, [passwords]);
+
+	useEffect(() => {
+		setShowCreateform(false);
+	}, []);
 	return (
 		<div className={passwordStyle.passwordCon}>
 			<SideNav />
 			<div className={passwordStyle.password}>
 				<div className={passwordStyle.passCon}>
-					{Data.map((user, index) => (
-						<PasswordCard user={user} index={index} />
+					{passwords.map((user) => (
+						<PasswordCard editPassword={editPassword} user={user} removePassword={removePassword} />
 					))}
 					<div className={passwordStyle.btnContainer}>
-					<button onClick={()=>{setShowCreateform(true)}} type="button" className={passwordStyle.btn}>
-						<span className={passwordStyle.btnText}>Add new password</span>
-						<img className={passwordStyle.btnIcon} src={Add} alt="" />
-					</button>
+						<button
+							onClick={openShowForm}
+							type="button"
+							className={passwordStyle.btn}
+						>
+							<span className={passwordStyle.btnText}>Add new password</span>
+							<img className={passwordStyle.btnIcon} src={Add} alt="" />
+						</button>
 					</div>
 				</div>
 			</div>
-			{showCreateform && <CreateForm closeShowForm={closeShowForm}/>}
+			{showCreateform && (
+				<CreateForm addPassword={addPassword} closeShowForm={closeShowForm} />
+			)}
 		</div>
 	);
 }

@@ -25,14 +25,14 @@
 				"required": {
 					"some": ["nesting", "id"]
 				}
-			},
-
-			{
-				"labelComponents": ["FormLabel"],
-				"labelAttributes": ["label"],
-				"controlComponents": ["input"],
-				"depth": 1
 			}
+
+			// {
+			// 	"labelComponents": ["FormLabel"],
+			// 	"labelAttributes": ["label"],
+			// 	"controlComponents": ["input"],
+			// 	"depth": 1
+			// }
 		],
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
