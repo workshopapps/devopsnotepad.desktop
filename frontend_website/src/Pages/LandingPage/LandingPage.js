@@ -109,7 +109,7 @@ const LandingPage = () => {
               on the go!
               <br />-
             </p>
-            <h4>Frank Etim</h4>
+            <h4>Frank George</h4>
           </div>
           <div className={style.landPage_section5_div3}>
             <img src={titi} alt='' />
@@ -118,7 +118,7 @@ const LandingPage = () => {
               on the go!
               <br />-
             </p>
-            <h4>Titi Adebayo</h4>
+            <h4> Christabel Tuner</h4>
           </div>
           <div className={style.landPage_section5_div4}>
             <img src={prosper} alt='' />
@@ -143,7 +143,7 @@ const LandingPage = () => {
               Phenomenal is the word! Absolutely!
               <br />-
             </p>
-            <h4>Chinonso Light</h4>
+            <h4>Chloe Light</h4>
           </div>
         </div>
       </div>

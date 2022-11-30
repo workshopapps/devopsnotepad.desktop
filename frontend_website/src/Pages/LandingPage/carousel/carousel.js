@@ -1,6 +1,12 @@
 import { Carousel } from 'antd';
 import style from './carousel.module.css';
-import { frank, left, right } from '../Images';
+import {
+  frank,
+  sarah,
+  titi,
+  left,
+  right
+} from '../Images';
 import { useRef } from 'react';
 
 const Carousl = () => {
@@ -28,27 +34,27 @@ const Carousl = () => {
             <br />
             <span>-</span>
           </p>
-          <h4>Frank Etim</h4>
+          <h4>Tim Delvin</h4>
         </div>
         <div className={style.landPage_section5_div1}>
-          <img src={frank} alt='' />
+          <img src={sarah} alt='' />
           <p>
             I’ve been able to move around more, knowing I can track my servers
             on the go!
             <br />
             <span>-</span>
           </p>
-          <h4>Frank Etim</h4>
+          <h4>Sarah Walter</h4>
         </div>
         <div className={style.landPage_section5_div1}>
-          <img src={frank} alt='' />
+          <img src={titi} alt='' />
           <p>
             I’ve been able to move around more, knowing I can track my servers
             on the go!
             <br />
             <span>-</span>
           </p>
-          <h4>Frank Etim</h4>
+          <h4> Christabel Tuner</h4>
         </div>
       </Carousel>
       <div className={style.Carousel_btn}>
