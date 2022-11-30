@@ -23,6 +23,8 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
+<<<<<<< HEAD
+=======
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
@@ -30,6 +32,7 @@ import Podcast from './Pages/Podcast/Podcasts';
 import { About } from './Pages/About/About';
 // import Form from './Pages/Partner/Form';
 import BestPractice from './Pages/BestPractice/BestPractices';
+>>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 
 import classes from './App.module.css';
 import Terms from './Pages/TermsOfUSe/Terms';
@@ -78,6 +81,10 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
+<<<<<<< HEAD
+          <Route path='/partner' exact element={<Partner />} />
+          <Route path='/csr' exact element={<Csr />} />
+=======
           <Route path='/prices' exact element={<Prices />} />
           <Route
             path='/prices/payment/:state/:id'
@@ -91,6 +98,7 @@ function App() {
           {/* <Route path='/form' exact element={<Form />} /> */}
           <Route path='/best-practices' exact element={<BestPractice />} />
           <Route path='/terms-of-service' exact element={<Terms />} />
+>>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
