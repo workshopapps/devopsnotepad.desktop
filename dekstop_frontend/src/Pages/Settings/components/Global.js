@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import '../MainSettings.module.css';
 
 // eslint-disable-next-line import/prefer-default-export
 export const GlobalStyles = createGlobalStyle`
@@ -8,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     padding: 0;
     margin: 0;
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    border-color: ${({ theme }) => theme.border};
     
   }
   footer {
@@ -20,8 +21,10 @@ export const GlobalStyles = createGlobalStyle`
   small {
     display: block;
   }
-  button {
+  button a {
     display: block;
+    color: ${({ theme }) => theme.button} !important;
+    ${'' /* background: ${({ theme }) => theme.button_bg} !important; */}
   }
   a {
     color: ${({ theme }) => theme.text} !important;
@@ -33,11 +36,35 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.small} !important;
 
   }
+
+  tr {
+  color: ${({ theme }) => theme.text} !important;
+  }
+  th {
+  color: ${({ theme }) => theme.text} !important;
+  }
+  td {
+  color: ${({ theme }) => theme.text} !important;
+  }
+
+
+
+  p {
+    color: ${({ theme }) => theme.text} !important;
+  }
   h1 {
+    color: ${({ theme }) => theme.text} !important;
+  }
+  h2 {
     color: ${({ theme }) => theme.text} !important;
   }
   h3 {
     color: ${({ theme }) => theme.text} !important;
+  }
+
+  .border_top {
+    display: ${'none'} !important;
+    border-top: 1px solid #efeef0;
   }
 
 `;
