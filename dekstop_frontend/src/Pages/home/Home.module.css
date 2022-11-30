@@ -10,11 +10,15 @@
 	margin-left: 228px;
 	display: grid;
 	place-content: center;
+	padding: 50px 97px;
 }
 
 .no_server {
+	height: 100vh;
 	margin-left: 228px;
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	gap: 66.75px;
 	place-items: center;
 	font-family: 'Manrope';
@@ -34,6 +38,7 @@
 
 .no_server_content {
 	width: 300px;
+	padding-left: 30px;
 }
 
 .no_server_content > h2 {

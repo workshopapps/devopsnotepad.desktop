@@ -1,12 +1,19 @@
 /* eslint-disable react/require-default-props */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import style from './Onboarding.module.css';
 import screen1 from './Assets/screen1.svg';
 import screen2 from './Assets/screen2.svg';
 
-function Onboarding({ closeOnboarding }) {
+function Onboarding() {
 	const [getStarted, setGetStarted] = useState(1);
+	const navigate = useNavigate();
+	// Disable onboarding for subsequent run
+	// On click get started in onboarding, close onboarding and set isNewUser to false in local storage so that next time the user opens the app it skips the onboarding process
+	function onClick() {
+		localStorage.setItem('isNewUser', false);
+		navigate('/');
+	}
 
 	return (
 		<div id="onboarding" className={style.container}>
@@ -59,11 +66,7 @@ function Onboarding({ closeOnboarding }) {
 							<div className={`${style.ellipse} ${style.ellipse_current}`} />
 						</div>
 
-						<button
-							onClick={closeOnboarding}
-							type="button"
-							className={style.btn}
-						>
+						<button onClick={onClick} type="button" className={style.btn}>
 							Get Started
 						</button>
 					</div>
@@ -73,7 +76,4 @@ function Onboarding({ closeOnboarding }) {
 	);
 }
 
-Onboarding.propTypes = {
-	closeOnboarding: PropTypes.func,
-};
 export default Onboarding;
