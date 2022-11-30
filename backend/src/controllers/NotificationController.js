@@ -50,13 +50,8 @@ export default class NotificationController {
     };
 
     static deleteWeekly = async(req, res, next) => {
-
         try{
-            const result =  await deleteWeekly();
-            res.send({
-                success: true,
-                ...result
-            });
+           await deleteWeekly();
         } catch (error) {
             next(error);
         }

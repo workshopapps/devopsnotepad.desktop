@@ -1,5 +1,5 @@
 import NotificationRepo from "../../database/repositories/NotificationRepo.js";
-import { NotFoundError } from "../../lib/errors/index.js";
+import { ServiceError } from "../../lib/errors/index.js";
 import cron from "node-cron";
 
 export default async function deleteWeekly() {
@@ -7,7 +7,7 @@ export default async function deleteWeekly() {
     
     notifications = await NotificationRepo.deleteWeeklyNotifications();
    
-    if (!notifications) throw new NotFoundError("An error occured while fetching notifications");
+    if (!notifications) throw new ServiceError("An error occured while fetching notifications");
     return {
         notifications,
     };
