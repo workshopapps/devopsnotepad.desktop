@@ -101,7 +101,11 @@ const Podcast = () => {
           <button className='btn'>Register Now</button>
         </div>
       </div>
+<<<<<<< HEAD
+      {/* <Login/> */}
+=======
       <Login />
+>>>>>>> 0840880f6416fea392b33501883bb1def77c9b78
     </div>
   );
 };
