@@ -17,7 +17,7 @@ export default class ServerController {
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
 
-      console.log(req.body);
+      // console.log(req.body);
 
       const result = await create(req.body);
 
