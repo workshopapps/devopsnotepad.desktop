@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import SideNav from '../../components/SideNav/SideNav';
+import SideNav from '../../Components/SideNav/SideNav';
 import passwordStyle from './Password.module.css';
 import PasswordCard from './PasswordCard';
 import Add from './images/add.svg';
