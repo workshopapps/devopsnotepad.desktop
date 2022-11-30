@@ -6,6 +6,12 @@
 	gap: 32px;
 }
 
+.loading {
+	margin-left: 228px;
+	display: grid;
+	place-content: center;
+}
+
 .no_server {
 	margin-left: 228px;
 	display: grid;

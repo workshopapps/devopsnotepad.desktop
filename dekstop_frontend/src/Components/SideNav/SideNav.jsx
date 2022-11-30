@@ -55,7 +55,7 @@ function Sidenav() {
 					<button className={styles.btn}>
 						{' '}
 						<Link
-							to="/add-Server"
+							to="/add-server"
 							style={{ color: 'white', textDecoration: 'none' }}
 						>
 							Add Server

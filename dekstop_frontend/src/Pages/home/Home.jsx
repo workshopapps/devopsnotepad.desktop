@@ -8,7 +8,7 @@ import ServerCard from '../../Components/ServerCard/ServerCard';
 import addBg from './Assets/add.svg';
 
 function Home() {
-	const { servers } = useContext(ServerContext);
+	const { servers, isLoading } = useContext(ServerContext);
 	const [newUser, setNewUser] = useState(null);
 	// Initiate Onboarding
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
@@ -44,7 +44,8 @@ function Home() {
 					))}
 				</div>
 			)}
-			{servers.length === 0 && (
+			{isLoading && <div className={style.loading}>Loading Servers...</div>}
+			{!isLoading && servers.length === 0 && (
 				<div className={style.no_server}>
 					<figure>
 						<img src={addBg} alt="" aria-hidden />
