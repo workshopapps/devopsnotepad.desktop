@@ -1,8 +1,13 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './Server.css';
-import style from "./Server.module.css"
+import style from './Server.module.css';
 
-function Server({handleSubmit}) {
+function Server({ handleSubmit }) {
 	return (
 		<div className={style.add_server}>
 			<div className={style.server_contain}>
@@ -17,7 +22,11 @@ function Server({handleSubmit}) {
 							<label htmlFor="address">IP Address</label>
 							<input type="text" id="address" name="address" />
 						</div>
-						<div className={style.button} onClick={handleSubmit} style={{cursor: "pointer"}}>
+						<div
+							className={style.button}
+							onClick={handleSubmit}
+							style={{ cursor: 'pointer' }}
+						>
 							<div className={style.done}>Done</div>
 						</div>
 					</form>

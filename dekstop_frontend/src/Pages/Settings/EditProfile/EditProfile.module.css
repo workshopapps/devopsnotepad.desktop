@@ -86,8 +86,21 @@
 .form_control label {
 	font-weight: 300;
 	margin-bottom: 8px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 120%;
+	color: #4b4b4b;
 }
-
+.form_control placeholder {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 120%;
+	color: #4b4b4b;
+}
 .form_control > input {
 	width: 100%;
 	font-weight: 400;
@@ -107,12 +120,12 @@
 	border-radius: 8px;
 	height: 52px;
 	display: flex;
-	padding: 12px 16px;
+	padding: 0px 16px;
 }
 
 .phone > input {
 	width: 100%;
-	padding-left: 15.75px;
+	/* padding-left: 15.75px; */
 	border: none;
 }
 
@@ -121,18 +134,24 @@
 	height: 100%;
 	display: flex;
 	align-items: center;
-	border-right: 1px solid #9eafb7;
-	padding-right: 15.75px;
+
+	/* padding-right: 15.75px; */
 }
 
 .country_code select {
-	width: 100%;
+	width: 70%;
 	color: #9eafb7;
 	outline: none;
+	background: 0;
 	border: none;
+	font-size: 14px;
+	border-right: 1px solid #9eafb7 !important;
+	padding-right: 70px;
+	height: 60%;
 }
 .country_code select:focus {
 	outline: none;
+	border-right: 1px solid #9eafb7 !important;
 }
 
 .country_code select:focus,
