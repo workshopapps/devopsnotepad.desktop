@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@media (max-width: 767px) {
+	.sidenav {
+		display: none !important;
+	}
+}
+
+body,
+html {
+	font-family: 'Manrope';
+	margin: 0;
+	padding: 0;
+}
+
+div.main {
+	display: flex;
+	height: 100vh;
+}
+
+section.main div.sidenav {
+	height: 1034px;
+	width: 228px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: rgba(237, 237, 237, 0.48);
+	border-radius: 5px;
+	padding-top: 50px;
+	position: fixed;
+}
+
+section.main div.sidenav img.logo {
+	margin-left: 30px;
+	width: 150px;
+}
+
+section.main div.sidenav div.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+
+section.main div.sidenav div.nav .navItem {
+	padding-right: 20px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 21.86px;
+	color: #202020;
+}
+
+section.main div.sidenav div.nav img {
+	margin-left: 30px;
+}
+
+.listItem {
+	padding: 10px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21.86px;
+	color: rgba(32, 32, 32, 0.64);
+}
+
+.listItem:hover {
+	background-color: #ededed;
+	color: #102a63;
+}
+
+.dropDown {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+section.main div.sidenav button.btn {
+	background-color: #102a63;
+	color: white;
+	border-radius: 5px;
+	border: 2px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 10px 35px;
+	/* margin-top: 20px; */
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	margin-left: 20px;
+}
+
+.btn a {
+	color: #fff !important;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+}
+.btn svg {
+	color: #fff !important;
+}
+
+section.main div.sidenav p.settings {
+	font-size: 16px;
+	color: rgba(32, 32, 32, 0.64);
+	font-weight: 500;
+	line-height: 21.86px;
+	margin-left: 25px;
+}
+
+.listItem {
+	list-style: none;
+}

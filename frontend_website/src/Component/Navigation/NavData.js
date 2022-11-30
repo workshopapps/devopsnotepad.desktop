@@ -1,7 +1,7 @@
 export const menuList = [
   {
-    title: "Product",
-    type: "button",
+    title: 'Product',
+    type: 'button',
     subMenu: [
       {
         title: 'Features',
@@ -22,8 +22,8 @@ export const menuList = [
     ],
   },
   {
-    title: "Company",
-    type: "button",
+    title: 'Company',
+    type: 'button',
     subMenu: [
       {
         title: 'About Us',
@@ -39,17 +39,17 @@ export const menuList = [
       },
       {
         title: 'Contact Us',
-        slug: '/contact',
+        slug: '/contact-us',
       },
       {
         title: 'Careers',
-        slug: '/career',
+        slug: '/careers',
       },
     ],
   },
   {
-    title: "Resources",
-    type: "button",
+    title: 'Resources',
+    type: 'button',
     subMenu: [
       {
         title: 'Coming Soon',
@@ -58,6 +58,10 @@ export const menuList = [
       {
         title: 'FAQs',
         slug: '/faq',
+      },
+      {
+        title: 'CSR',
+        slug: '/csr',
       },
       {
         title: 'Blog',
@@ -70,8 +74,8 @@ export const menuList = [
     ],
   },
   {
-    title: "Community",
-    type: "button",
+    title: 'Community',
+    type: 'button',
     subMenu: [
       {
         title: 'DevOps Community',

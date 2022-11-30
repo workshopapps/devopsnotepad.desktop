@@ -8,9 +8,6 @@ import blogImg2 from '../Blog/images/blogimg2.jpg';
 import blogImg3 from '../Blog/images/blogimg3.jpg';
 import newsLetterImg from '../Blog/images/newsletter-img.png';
 
-// const cardHeader = "Get In Touch Today!"
-// const cardCaption = "We want to hear from you. Let us know how we can help.We want to hear from you. Let us know how we can help.We want to hear from you. Let us know how we can help."
-
 const Blog = () => {
   return (
     <div className={blogStyle.Blog}>

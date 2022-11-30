@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+body,
+html {
+	font-family: 'Manrope';
+}
+
+section.main {
+	margin-left: 300px;
+	margin-right: 100px;
+}
+
+section.main div.container {
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section.main div.container p.today {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	color: #202020;
+}
+
+section.main div.container div.wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #6f6f6f;
+}
+
+section.main div.container div.wrap p.sortBy {
+	padding-right: 15px;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+section.main div.container div.wrap ul.dropDown {
+	position: absolute;
+	margin-top: 280px;
+	border: 1px solid #c7c7c7;
+	background-color: white;
+	border-radius: 5px;
+	padding-right: 50px;
+	right: 90px;
+}
+
+section.main div.container div.wrap ul.dropDown li {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+section.main div.row {
+	display: flex;
+	align-items: center;
+	border: 1.5px solid #c7c7c7;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin-bottom: 30px;
+}
+
+section.main div.row p.hour {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #4b4b4b;
+}
+
+section.main div.row p.green {
+	margin-left: 230px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #6f6f6f;
+}
+
+section.main div.row p.red {
+	margin-left: 280px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #6f6f6f;
+}
+
+section.main div.row p.yellow {
+	margin-left: 440px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #6f6f6f;
+}
+
+section.main p.yesterday {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	color: #202020;
+	margin-top: 10px;
+}
+
+section.main div.row1 {
+	display: flex;
+	align-items: center;
+	border: 1.5px solid #c7c7c7;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin-bottom: 30px;
+}
+
+section.main div.row1 p.hour1 {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #4b4b4b;
+}
+
+section.main div.row1 p.red1 {
+	margin-left: 280px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #6f6f6f;
+}
+
+section.main div.row1 p.yellow1 {
+	margin-left: 440px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #6f6f6f;
+}
