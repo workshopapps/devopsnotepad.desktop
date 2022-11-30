@@ -1,0 +1,186 @@
+.cardContainer {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn {
+  text-decoration: none;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.transparent {
+  border: 1px solid #e7e6e6;
+  background: #f6f9ff;
+}
+
+.colored {
+  border: 1px solid var(--darkblue-color);
+  background: var(--darkblue-color);
+}
+
+.innerCardContainer {
+  font-family: 'Manrope', sans-serif;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 30px 25px;
+  border-radius: 0 0 8px 8px;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list{
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.innerCardAlign {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.btn {
+  outline: none;
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--darkblue-color);
+  text-align: center;
+}
+
+.white {
+  background: transparent;
+  color: var(--darkblue-color);
+}
+
+.blue {
+  background: var(--darkblue-color);
+  color: #fff;
+}
+
+.li {
+  display: flex;
+  list-style-type: none;
+  color: var(--grey-color);
+  margin-bottom: 16px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.img {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #202020;
+  margin-bottom: 30px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--darkblue-color);
+  margin-bottom: 35px;
+}
+
+@media (max-width: 1161px) {
+  .li {
+    margin-bottom: 10px;
+  }
+
+  .span {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .price {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+@media (max-width: 654px) {
+  .innerCardContainer {
+    padding: 30px 20px 30px 20px;
+  }
+
+  .span{
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 500px){
+  .btn{
+    font-size: 14px;
+  }
+
+  .title{
+    font-size: 20px;
+  }
+
+  .price{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardContainer {
+    width: 100%;
+  }
+
+  .title {
+    margin-bottom: 18px;
+  }
+
+  .price {
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    width: 100%;
+    height: 56px;
+    font-weight: 600;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 350px){
+  .span{
+    font-size: 15px;
+  }
+}
