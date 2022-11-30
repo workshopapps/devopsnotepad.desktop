@@ -32,12 +32,6 @@
   margin-bottom: 1.4rem;
 }
 
-.checkbox {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
 .label {
   margin-left: 1.5rem;
   font-size: 1.5rem;

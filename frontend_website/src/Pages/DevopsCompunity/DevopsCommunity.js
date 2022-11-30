@@ -87,10 +87,10 @@ const DevopsCommunity = () => {
                         <div className={styles.title}>
                           <h5>{a.title}</h5>
                         </div>
-                        <div className={styles.msgBox}>
-                          <div className={styles.mBLeft}>
+                        <div className={styles.communityContent}>
+                          <div className={styles.mBContent}>
                             <p>{a.message}</p>
-                            <div className={styles.mBtBottom}>
+                            <div className={styles.mBCauthor}>
                               <p>
                                 By &nbsp;<span>{a.name}</span>&nbsp; New Member
                                 in &nbsp;<span>{a.category}</span>&nbsp;
@@ -134,7 +134,7 @@ const DevopsCommunity = () => {
           <div className={styles.right}>
             <div className={styles.rBox}>
               <h5>Get Started</h5>
-              <h3>Welcome Community Guidelines Feedback</h3>
+              <h3>Welcome <br />Community Guidelines Feedback</h3>
             </div>
             <div className={styles.rBox}>
               <h5>Get update on the Opspad Community!</h5>
