@@ -38,7 +38,6 @@ export const getMore = [
     img: slack,
     linkLabel: 'Learn More',
     slug: '/slack',
-    getmore: true,
   },
   {
     heading: 'Google Drive',
@@ -46,9 +45,10 @@ export const getMore = [
       'Automatically import or save your Opspad server notes to your drive.',
     img: googleDrive,
     linkLabel: 'Learn More',
-    gmail: true,
     slug: '/google-drive',
   },
+];
+export const getMoreT = [
   {
     heading: 'Gmail',
     content:
@@ -63,16 +63,17 @@ export const getMore = [
       'Jira helps teams plan, assign, track, report, and manage work. The integration with Jira imakes it easy to create and assign issues from triggered alerts in OPspad.',
     img: jira,
     linkLabel: 'Learn More',
-    getmore: true,
     slug: '/jira',
   },
+];
+
+export const getMoreTh = [
   {
     heading: 'Trello',
     content:
       'Trello is a tool to help you manage your projects and organize everything. Opspad provides convenient integration with Trello, which lets you visually organize incidents discovered directly into your Trello boards.',
     img: trello,
     linkLabel: 'Learn More',
-    getmore: true,
     slug: '/trello',
   },
   {

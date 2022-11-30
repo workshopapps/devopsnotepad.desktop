@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { Link } from 'react-router-dom';
 import bannerImg from './assets/hero-section-image.png';
-import { getMore, list } from './data';
+import { getMore, getMoreT, getMoreTh, list } from './data';
 import styles from './Integration.module.css';
 
 const Integration = () => {
@@ -58,29 +58,60 @@ const Integration = () => {
               </p>
             </div>
             <div className={styles.inGet_more_box}>
-              {getMore.map((item, i) => {
-                return (
-                  <div
-                    className={`${
-                      item.getmore
-                        ? `${styles.box} ${styles.bgcolor}`
-                        : styles.box
-                    }`}
-                    key={i}
-                  >
-                    <div>
-                      <div className={styles.boxImg}>
-                        <img src={item.img} alt='' />
+              <div className={`${styles.inGetMoreBox} ${styles.inGetMoreBoxM1}`}>
+                {getMore.map((item, i) => {
+                  return (
+                    <div className={styles.box} key={i}>
+                      <div>
+                        <div className={styles.boxImg}>
+                          <img src={item.img} alt='' />
+                        </div>
+                        <h3>{item.heading}</h3>
+                        <p>{item.content}</p>
                       </div>
-                      <h3>{item.heading}</h3>
-                      <p>{item.content}</p>
+                      <Link className={styles.learnMore} to={item.slug}>
+                        {item.linkLabel}
+                      </Link>
                     </div>
-                    <Link className={styles.learnMore} to={item.slug}>
-                      {item.linkLabel}
-                    </Link>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+              <div className={`${styles.inGetMoreBox} ${styles.inGetMoreBoxM2}`}>
+                {getMoreT.map((item, i) => {
+                  return (
+                    <div className={styles.box} key={i}>
+                      <div>
+                        <div className={styles.boxImg}>
+                          <img src={item.img} alt='' />
+                        </div>
+                        <h3>{item.heading}</h3>
+                        <p>{item.content}</p>
+                      </div>
+                      <Link className={styles.learnMore} to={item.slug}>
+                        {item.linkLabel}
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={`${styles.inGetMoreBox} ${styles.inGetMoreBoxM3}`}>
+                {getMoreTh.map((item, i) => {
+                  return (
+                    <div className={styles.box} key={i}>
+                      <div>
+                        <div className={styles.boxImg}>
+                          <img src={item.img} alt='' />
+                        </div>
+                        <h3>{item.heading}</h3>
+                        <p>{item.content}</p>
+                      </div>
+                      <Link className={styles.learnMore} to={item.slug}>
+                        {item.linkLabel}
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

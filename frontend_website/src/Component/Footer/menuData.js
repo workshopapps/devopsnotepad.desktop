@@ -22,6 +22,10 @@ export const Links = [
         title: 'Careers',
         slug: '/careers',
       },
+      {
+        title: 'Terms of Service',
+        slug: '/terms-of-service',
+      },
     ],
   },
   {
@@ -33,7 +37,7 @@ export const Links = [
       },
       {
         title: 'FAQs',
-        slug: '/faq',
+        slug: '/FAQs',
       },
       {
         title: 'Blog',

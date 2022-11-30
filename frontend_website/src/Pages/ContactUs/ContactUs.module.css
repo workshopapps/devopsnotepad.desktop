@@ -119,7 +119,7 @@ section.wrapper form .row {
         width: 100%;
     }
 
-    section.wrapper form .row .end {
+    section.wrapper form div.row div.col input.end {
 
         margin-right: 15px;
     }
@@ -332,6 +332,7 @@ p.errorMsg {
 
 section.support div.col1 div.card {
 
+    font-family: 'Manrope', sans-serif !important;
     background-color: white;
     border: 1.5px solid #DFE1EB;
     border-radius: 5px;
