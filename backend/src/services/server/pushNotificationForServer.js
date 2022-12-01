@@ -1,6 +1,6 @@
 import ServerRepo from "../../database/repositories/ServerRepo.js";
 import ping from "ping";
-import admin from "firebase-admin"
+import admin from "firebase-admin";
 import fcm from "fcm-notification";
 import cron from "node-cron";
 import { NotFoundError, ServiceError } from "../../lib/errors/index.js";
@@ -8,28 +8,22 @@ import firebaseConfig from "../../utils/firebaseConfig.js";
 
 const FCM = new fcm(admin.credential.cert(firebaseConfig));
 
-
-export default async function pushNotificationForServer(request){
-
-    const server = await ServerRepo.getServerById(request.params.server_id);
+export default async function pushNotificationForServer(request) {
+    const server = await ServerRepo.getServerById(request.params.serverId);
 
     if (!server) throw new NotFoundError("server not found");
 
-    if(request.body.registrationToken == "") throw new ServiceError("no registration token present");
+    if (request.body.registrationToken == "") throw new ServiceError("no registration token present");
 
-    cron.schedule("*/5 * * * *", async () =>{
-
+    cron.schedule("*/5 * * * *", async () => {
         let ipstatus = await ping.promise.probe(server.ipAddress);
 
-        if (!ipstatus.alive) sendNotification({ipstatus, request})
-    })
-
+        if (!ipstatus.alive) sendNotification({ ipstatus, request });
+    });
 }
 
-function sendNotification(payload){
-
-    try{
-
+function sendNotification(payload) {
+    try {
         let message = {
             android: {
                 notification: {
@@ -37,15 +31,13 @@ function sendNotification(payload){
                     body: `Server - ${payload.ipstatus.host} is still down`,
                 },
             },
-            token: payload.request.body.registrationToken
+            token: payload.request.body.registrationToken,
         };
-    
-        FCM.send(message, (err, response) => {
-            if(err)
-                throw new ServiceError(err);
-        });
 
-    }catch(err){
-        throw new ServiceError("Error sending notification")
+        FCM.send(message, (err) => {
+            if (err) throw new ServiceError(err);
+        });
+    } catch (err) {
+        throw new ServiceError("Error sending notification");
     }
 }
