@@ -8,19 +8,18 @@ import ServerCard from '../../Components/ServerCard/ServerCard';
 import addBg from './Assets/add.svg';
 
 function Home() {
-	const { servers, loading, getServer } = useContext(ServerContext);
+	const { servers, loading, getServers } = useContext(ServerContext);
 	const navigate = useNavigate();
+
 	// Initiate Onboarding
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
 	useEffect(() => {
-		getServer();
+		getServers();
 		const isNewUser = localStorage.getItem('isNewUser');
 		if (!isNewUser) {
 			navigate('/onboarding');
 		}
 	});
-
-	// Query api for user data
 
 	return (
 		<div className={style.HomeWrapper}>

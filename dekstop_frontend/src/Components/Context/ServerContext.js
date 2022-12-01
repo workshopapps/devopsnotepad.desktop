@@ -7,6 +7,7 @@ const ServerContext = createContext();
 export function ServerProvider({ children }) {
 	const [loading, setLoading] = useState(true);
 	const [servers, setServers] = useState([]);
+	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState('');
 	const BASE_URL = 'https://devsapp.onrender.com/server';
 	// deviceId needs to be dynamic
@@ -21,7 +22,7 @@ export function ServerProvider({ children }) {
 		return deviceId;
 	}
 
-	async function getServer() {
+	async function getServers() {
 		// setLoading(true);
 		setError(null);
 		const deviceId = getDeviceID();
@@ -49,25 +50,48 @@ export function ServerProvider({ children }) {
 		// eslint-disable-next-line no-param-reassign
 		server.deviceId = id;
 		// setIsLoading(true);
-		const response = await fetch(`${BASE_URL}`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(server),
-		});
+		try {
+			const response = await fetch(`${BASE_URL}`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(server),
+			});
 
-		const data = await response.json();
-		setServers([data.server, ...servers]);
+			const data = await response.json();
+			// const serverData = {
+			// 	success: data.success,
+			// 	name:data.server.name,
+			// 	ipAddress:data.server.ipAddress,
+			// 	notification:data.server.notification,
+			// }
+			setServers([data.server, ...servers]);
+			if (data.success === true) {
+				setSuccess(true);
+			} else {
+				setSuccess(false);
+			}
+		} catch (err) {
+			setError(err.message);
+		}
 	}
 
 	useEffect(() => {
-		getServer();
+		getServers();
 	}, []);
 
 	const requests = useMemo(
-		() => ({ servers, error, loading, addServer, getServer }),
-		[loading]
+		() => ({
+			servers,
+			error,
+			loading,
+			success,
+			addServer,
+			getServers,
+			setSuccess,
+		}),
+		[loading, success]
 	);
 
 	return (
