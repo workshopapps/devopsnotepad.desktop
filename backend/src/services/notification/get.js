@@ -1,4 +1,4 @@
-import NotificationRepo from "../../database/repositories/notificationRepo.js";
+import NotificationRepo from "../../database/repositories/NotificationRepo.js";
 import { NotFoundError } from "../../lib/errors/index.js";
 
 export default async function get(params, query) {
