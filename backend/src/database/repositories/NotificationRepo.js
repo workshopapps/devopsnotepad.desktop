@@ -24,5 +24,13 @@ export default class NotificationRepo {
             .andWhere(connection.raw(`created_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()`));
         return new APIFeatures(dbQuery, query).paginate().sort().query;
     };
+
+    static deleteWeeklyNotifications = async () => {
+        const dbQuery = connection("notifications")
+            .where(connection.raw(`DATEDIFF(CURDATE(), DATE(created_at)) > 7`))
+            .del();
+
+        return dbQuery;
+    }
 }
  
