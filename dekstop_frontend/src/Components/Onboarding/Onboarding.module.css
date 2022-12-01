@@ -17,6 +17,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	gap: 15px;
 }
 
 .container * {
@@ -64,28 +65,8 @@
 	color: #4b4b4b;
 }
 
-/* Old Design */
-/* .ellipse_container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 16px;
-}
-
-.ellipse_container > .ellipse {
-	height: 8px;
-	width: 8px;
-	border-radius: 50%;
-	background: #c7c7c7;
-}
-
-.ellipse_container > .ellipse_current {
-	background: #6f6f6f;
-}
-
 .btn {
-	width: 118px;
+	width: 382px;
 	height: 56px;
 	padding: 20px;
 	background: #102a63;
@@ -106,4 +87,4 @@
 }
 .btn:active {
 	transform: scale(0.95);
-} */
+}
