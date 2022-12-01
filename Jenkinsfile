@@ -16,7 +16,7 @@ pipeline {
 
 			steps {
 
-                dir (devopsnotepad.desktop/frontend_website) {
+                dir ('devopsnotepad.desktop/frontend_website') {
                     sh "npm i -f"
                     sh "npm run build"
                 }
