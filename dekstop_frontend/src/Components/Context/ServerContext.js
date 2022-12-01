@@ -22,6 +22,7 @@ export function ServerProvider({ children }) {
 		return deviceId;
 	}
 
+	// Get all servers
 	async function getServers() {
 		// setLoading(true);
 		setError(null);
@@ -45,6 +46,7 @@ export function ServerProvider({ children }) {
 		setLoading(false);
 	}
 
+	// Create new server
 	async function addServer(server) {
 		const id = await getDeviceID();
 		// eslint-disable-next-line no-param-reassign
