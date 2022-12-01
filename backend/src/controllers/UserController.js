@@ -4,6 +4,17 @@ import bcrypt from "bcrypt";
 import signJWT from "../utils/jwthelper.js";
 
 export default class UserController {
+
+    static getloginpage = async (req, res, next) => {
+        res.render("login")
+    }
+
+    static getsignuppage = async (req, res, next) => {
+        res.render("signup")
+    }
+    static homepage = async (req, res, next) => {
+        res.send("welcome to homepage")
+    }
     static signup = async (req, res, next) => {
         try {
             await create(req.body);
@@ -38,20 +49,18 @@ export default class UserController {
             }
     
             delete user.password;
-    
+            
+            req.session.user = user;
+            req.session.authorized = true;
+
             const token = await signJWT(user); 
     
-            return res
-                .cookie("access_token", token, {
-                    httpOnly: true,
-                    // secure: process.env.NODE_ENV === "production",
-                    // expires: new Date(Date.now + 1 * 60 * 60 * 1000)
-                }).send({ 
-                    message: "Logged in Successfully",
-                    user: user,
-                    token: token
+            return res.send({ 
+                message: "Logged in Successfully",
+                user: user,
+                token: token
     
-                });                     
+            });                     
         } catch (error) {
             next(error);
         }
@@ -59,7 +68,7 @@ export default class UserController {
 
     static logout = async (req, res, next) => {
         try {
-            res.clearCookie("access_token");
+            res.clearCookie('connect.sid')
             res.status(200).send("logout successful");
         } catch (error) {
             next(error);
