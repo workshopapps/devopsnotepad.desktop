@@ -10,7 +10,7 @@ const PricePayment = () => {
         <h2 className={style.order}>Your Order</h2>
         <div className={style.card}>
           <h4 className={style.title}>Professional</h4>
-          <h2 className={style.price}>#5,000 / month</h2>
+          <h2 className={style.price}>200usd</h2>
           <ul className={style.list}>
             <li className={style.li}>
               <img className={style.img} src={Checkbox} alt='' />
@@ -29,6 +29,7 @@ const PricePayment = () => {
               <span className={style.span}>Third party integration</span>
             </li>
           </ul>
+          <button className={style.btn}>Choose Professional</button>
         </div>
       </div>
       <PaymentForm />
