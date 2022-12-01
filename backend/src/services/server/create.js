@@ -1,6 +1,7 @@
 import ServerRepo from '../../database/repositories/ServerRepo.js';
 import { ServiceError } from '../../lib/errors/index.js';
 import { check_ip_status } from '../../utils/index.js';
+import PushNotification from './pushNotificationForServer.js';
 
 export default async function create(params) {
   const { name, ipAddress, deviceId } = params;
@@ -14,8 +15,9 @@ export default async function create(params) {
 
   const isOnline = await check_ip_status(ipAddress);
 
-  return {
-    server,
-    isOnline,
-  };
+  const data = { server, isOnline };
+
+  await PushNotification.saveServerToFirebase(data);
+
+  return data;
 }
