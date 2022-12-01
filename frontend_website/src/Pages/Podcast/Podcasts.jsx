@@ -1,3 +1,4 @@
+import Details from './Details/Details';
 import Header from './Header/Header';
 import LeftAligned from './LeftAligned/LeftAligned';
 import RightAligned from './RightAligned/RightAligned';
@@ -10,6 +11,7 @@ const PodCast = () => {
       <SubHeader />
       <RightAligned />
       <LeftAligned />
+      <Details />
     </section>
   );
 };
