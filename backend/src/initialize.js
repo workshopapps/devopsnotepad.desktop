@@ -6,6 +6,8 @@ import notFoundHandler from './middleware/application/notFoundHandler.js';
 import errorHandler from './middleware/application/errorHandler.js';
 import config from './config/index.js';
 import routes from './routes/index.js';
+import cookieParser from 'cookie-parser';
+
 
 const app = express();
 
@@ -17,5 +19,6 @@ app.use(morgan(config.env.isProduction ? 'common' : 'dev'));
 app.use(routes);
 app.use(notFoundHandler);
 app.use(errorHandler);
+app.use(cookieParser());
 
 export default app;
