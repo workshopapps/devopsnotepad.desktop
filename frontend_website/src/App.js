@@ -27,6 +27,10 @@ import PodCast from './Pages/Podcast/Podcasts.jsx';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
+import CheckEmail from './Pages/ForgetPassword/CheckEmail';
+import Verification from './Pages/ForgetPassword/Verification';
+import Success from './Pages/ForgetPassword/Success';
+import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
@@ -87,14 +91,18 @@ function App() {
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
+          <Route path="/checkemail" element={<CheckEmail />} />
+          <Route path="/verfication" element={<Verification />} />
+          <Route path="/newpassword" element={<NewPassword />} />
+          <Route path="/success" element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
-        </Routes>
-      </ErrorBoundary>
+        </Routes >
+      </ErrorBoundary >
       <Footer />
-    </React.Fragment>
+    </React.Fragment >
   );
 }
 

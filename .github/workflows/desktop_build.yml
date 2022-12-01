@@ -1,27 +1,27 @@
-name: Desktop App Build
+# name: Desktop App Build
 
-on: 
-  push:
-    branches: ['dev', 'main']
+# on: 
+#   push:
+#     branches: ['dev', 'main']
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ${{ matrix.os }}
+#     runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-    defaults:
-      run:
-        working-directory: dekstop_frontend
+#     strategy:
+#       matrix:
+#         os: [macos-latest, ubuntu-latest, windows-latest]
+#     defaults:
+#       run:
+#         working-directory: dekstop_frontend
 
-    steps:
-    - uses: actions/checkout@v2       
-    - uses: actions/setup-node@master
-      with:
-        node-version: 14
-    - name: install dependencies
-      run: yarn install --force
-    - name: build
-      run: yarn run make
+#     steps:
+#     - uses: actions/checkout@v2       
+#     - uses: actions/setup-node@master
+#       with:
+#         node-version: 14
+#     - name: install dependencies
+#       run: yarn install --force
+#     - name: build
+#       run: yarn run make

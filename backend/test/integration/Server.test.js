@@ -8,8 +8,6 @@ export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
-
-
 describe('Server', () => {
   //2 Tests for Create server endpoint
   it('should create new server', async () => {
@@ -36,17 +34,17 @@ describe('Server', () => {
   });
 
   //   //2 Tests for Get All Servers by Device
-  it("should get all servers added on a particular device", async () => {
-    const res = await request.get("/server?device=80988579");
+  it('should get all servers added on a particular device', async () => {
+    const res = await request.get('/server?device=80988579');
     assert.equal(res.status, 200);
     docmaker.addEndpoint(res);
   });
 
   //   //2 Tests for Update Server Endpoints
-  it("should update server", async () => {
-    const res = await request.patch("/server").send({
+  it('should update server', async () => {
+    const res = await request.patch('/server').send({
       id: serverId,
-      name: "updated server name",
+      name: 'updated server name',
     });
 
     assert.equal(res.status, 200);
@@ -116,5 +114,4 @@ describe('Server', () => {
 
   //   assert.equal(res.status, 404);
   // })
-
 });
