@@ -21,7 +21,7 @@
   }
 
   .hero {
-    min-height: 100vh;
+    // min-height: 100vh;
     text-align: center;
 
     h1 {
@@ -114,6 +114,10 @@
 
   .team__section {
     margin-top: 5rem;
+
+    h4 {
+      font-weight: 700;
+    }
   }
 
   .team__desc__and__images {
@@ -131,6 +135,14 @@
           border: none;
           padding-left: 1rem;
           padding-right: 1rem;
+
+          &:hover {
+            opacity: 0.86;
+          }
+        }
+
+        @media screen and (max-width: $mobile) {
+          margin-bottom: 70px;
         }
 
         @media screen and (min-width: $tablet) {
