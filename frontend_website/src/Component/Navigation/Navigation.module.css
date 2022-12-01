@@ -46,7 +46,6 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList li a {
-<<<<<<< HEAD
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
@@ -55,16 +54,6 @@
     line-height: 18px;
     color: #202020;
     padding: 10px;
-=======
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  display: block;
-  font-size: 14px;
-  line-height: 18px;
-  color: #202020;
-  padding: 10px;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
@@ -79,7 +68,6 @@
 
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
-<<<<<<< HEAD
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
@@ -90,18 +78,6 @@
     outline: none;
     cursor: pointer;
     background-color: transparent;
-=======
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #202020;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
@@ -200,7 +176,6 @@
 }
 
 .login_link {
-<<<<<<< HEAD
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
@@ -227,30 +202,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-=======
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #1b1830;
-}
-
-.download_link {
-  width: 132px;
-  height: 44px;
-  background: #102a63;
-  border-radius: 4px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 24px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 }
 
 .download_link:hover {
