@@ -100,3 +100,8 @@
 	opacity: 0.3;
 	cursor: not-allowed;
 }
+
+.loading {
+	text-align: center;
+	margin-top: 10px;
+}

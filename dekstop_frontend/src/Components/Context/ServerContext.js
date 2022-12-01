@@ -48,6 +48,7 @@ export function ServerProvider({ children }) {
 
 	// Create new server
 	async function addServer(server) {
+		setLoading(true);
 		const id = await getDeviceID();
 		// eslint-disable-next-line no-param-reassign
 		server.deviceId = id;
@@ -69,6 +70,7 @@ export function ServerProvider({ children }) {
 			// 	notification:data.server.notification,
 			// }
 			setServers([data.server, ...servers]);
+			setLoading(false);
 			if (data.success === true) {
 				setSuccess(true);
 			} else {
@@ -77,6 +79,7 @@ export function ServerProvider({ children }) {
 		} catch (err) {
 			setError(err.message);
 		}
+		setLoading(false);
 	}
 
 	useEffect(() => {
