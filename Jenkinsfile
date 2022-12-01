@@ -17,6 +17,7 @@ pipeline {
 			steps {
 
                 dir ('devopsnotepad.desktop/frontend_website') {
+                    sh "pwd"
                     sh "npm i -f"
                     sh "npm run build"
                 }
@@ -29,7 +30,7 @@ pipeline {
 			steps {
 
                 dir ('devopsnotepad.desktop/backend') {
-                    sh "npm i -f"
+                    sh "npm i"
                 }
 
 			}
