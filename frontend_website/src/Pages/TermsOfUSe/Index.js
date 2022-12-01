@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Terms from './Terms';
 import PrivacyPolicy from './privacyPolicy';
+import classes from './Terms.module.css';
 
 const Tab = styled.button`
   font-size: 20px;
@@ -9,6 +10,7 @@ const Tab = styled.button`
   cursor: pointer;
   opacity: 0.6;
   background: white;
+  font-family: 'Manrope';
   border: 0;
   outline: 0;
   @media (max-width: 600px) {
@@ -20,9 +22,11 @@ const Tab = styled.button`
     `
     background: #EDEDED;
     border-bottom: 1px solid #ededed;
-    color: #102A63;
+    color: #225ad6;
     font-weight: 600;
     font-size: 20px;
+    font-family: 'Manrope';
+
 };
     border-radius: 10px 10px 0px 0px;
   `}
@@ -36,8 +40,8 @@ const types = ['Terms Of Use', 'Privacy Policy'];
 const Index = () => {
   const [active, setActive] = useState(types[0]);
   return (
-    <>
-      <div className='tp-header'>Legal</div>
+    <section className={classes.section}>
+      <div className={classes.tp_header}>Legal</div>
       <ButtonGroup>
         {types.map((type) => (
           <Tab
@@ -51,7 +55,7 @@ const Index = () => {
       </ButtonGroup>
 
       <p> {active === types[0] ? <Terms /> : <PrivacyPolicy />} </p>
-    </>
+    </section>
   );
 };
 // Usage

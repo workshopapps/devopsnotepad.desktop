@@ -67,6 +67,7 @@ export const menuList = [
         title: 'Blog',
         slug: '/blog',
       },
+
       {
         title: 'Best Practices',
         slug: '/best-practices',
@@ -88,6 +89,10 @@ export const menuList = [
       {
         title: 'Podcasts',
         slug: '/podcasts',
+      },
+      {
+        title: 'Term Of Service',
+        slug: '/terms-of-service',
       },
     ],
   },

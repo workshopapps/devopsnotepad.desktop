@@ -68,6 +68,10 @@ export const Links = [
         title: 'Demo',
         slug: '/demo',
       },
+      {
+        title: 'CSR',
+        slug: '/csr',
+      },
     ],
   },
   {
