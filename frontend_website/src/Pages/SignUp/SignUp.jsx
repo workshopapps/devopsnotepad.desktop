@@ -1,14 +1,13 @@
-import { BsFacebook } from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import google from '../../assets/login_page-assets/google.png';
 
 import Form from './Form';
 import classes from './SignUp.module.css';
 
 const SignUp = () => {
-  const navigate = useNavigate();
-  const navigateHandler = () => {
-    navigate('/facebook');
-  };
+  // const navigate = useNavigate();
+
   return (
     <div className={classes.login} data-testid='signup__page'>
       <h1 className={classes.h1}>Hello!</h1>
@@ -19,7 +18,16 @@ const SignUp = () => {
         <div className={classes.div}></div>
       </div>
       <div className={classes.svg__box}>
-        <BsFacebook className={classes.svg} onClick={navigateHandler} />
+        <img src={google} alt='Google' className={classes.svg} />
+        {/* <GoogleLogin
+          clientId={clientId}
+          buttonText=''
+          className={`${classes.button}`}
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
+        /> */}
       </div>
       <h4 className={classes.h4}>
         Already have an acount?{' '}

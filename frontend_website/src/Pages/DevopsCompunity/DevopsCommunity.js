@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './DevopsCommunity.module.css';
 import Banner from './Banner';
-import {
-  IoIosArrowForward,
-  IoIosArrowBack,
-  IoIosArrowDown,
-} from 'react-icons/io';
+import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 import { BiLike } from 'react-icons/bi';
 import { BsEmojiSmile } from 'react-icons/bs';
 import Slider from 'react-slick';
@@ -14,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { activity, slideData } from './data';
 import { NextArrow, PrevArrow } from './SliderArrow';
+import Pagination from './Pagination/Pagination';
 
 const settings = {
   dots: false,
@@ -92,19 +89,20 @@ const DevopsCommunity = () => {
                             <p>{a.message}</p>
                             <div className={styles.mBCauthor}>
                               <p>
-                                By &nbsp;<span>{a.name}</span>&nbsp; New Member
-                                in &nbsp;<span>{a.category}</span>&nbsp;
+                                From &nbsp;<span>{a.name}</span>&nbsp;
                               </p>
                               <p>{a.time}</p>
                             </div>
                           </div>
                           <div className={styles.l_d_box}>
-                            <p>
-                              <BiLike />
+                            <p className={styles.svg_box}>
+                              <BiLike style={{ fill: 'rgb(45, 45, 45)' }} />
                               <span>0</span>
                             </p>
-                            <p>
-                              <BsEmojiSmile />
+                            <p className={styles.svg_box}>
+                              <BsEmojiSmile
+                                style={{ fill: 'rgb(45, 45, 45)' }}
+                              />
                               <span>1</span>
                             </p>
                           </div>
@@ -115,26 +113,15 @@ const DevopsCommunity = () => {
                 ))}
               </div>
             </div>
-            <div className={styles.pagination}>
-              <div className={styles.inPagination}>
-                <button>
-                  <IoIosArrowBack /> Prev
-                </button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>...</button>
-                <button>1245</button>
-                <button>
-                  Next <IoIosArrowForward />
-                </button>
-              </div>
-            </div>
+            <Pagination />
           </div>
           <div className={styles.right}>
             <div className={styles.rBox}>
-              <h5>Get Started</h5>
-              <h3>Welcome <br />Community Guidelines Feedback</h3>
+              <h5 className={styles.h5}>Get Started</h5>
+              <h3 style={{ 'margin-bottom': '-2.5rem' }}>
+                Welcome <br />
+                Community Guidelines Feedback
+              </h3>
             </div>
             <div className={styles.rBox}>
               <h5>Get update on the Opspad Community!</h5>

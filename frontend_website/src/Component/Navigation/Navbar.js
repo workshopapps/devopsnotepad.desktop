@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ isOpen, setOpen }) => {
   const [menuOpen, setMenuOpen] = useState({});
-
   const handleMenuToggle = (index) =>
     setMenuOpen((state) => ({ [index]: !state[index] }));
 
