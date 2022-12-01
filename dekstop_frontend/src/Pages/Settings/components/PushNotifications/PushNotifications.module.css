@@ -38,7 +38,7 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 140%;
-	color: #180e25;
+	color: #180e25 !important;
 }
 .pushFlex button {
 	height: 7% !important;
