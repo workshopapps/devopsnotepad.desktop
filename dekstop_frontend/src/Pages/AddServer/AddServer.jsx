@@ -6,7 +6,7 @@ import Sidenav from '../../Components/SideNav/SideNav';
 import style from './AddServer.module.css';
 
 function AddServer() {
-	const { addServer, success, setSuccess } = useContext(ServerContext);
+	const { addServer, success, setSuccess, loading } = useContext(ServerContext);
 
 	const [formData, setFormData] = useState({
 		name: '',
@@ -86,6 +86,10 @@ function AddServer() {
 						Done
 					</button>
 				</form>
+
+				{loading && (
+					<p className={style.loading}> Adding Server, Please wait...</p>
+				)}
 			</div>
 		</div>
 	);
