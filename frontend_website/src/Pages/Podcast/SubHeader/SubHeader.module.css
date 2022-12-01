@@ -1,0 +1,46 @@
+.div {
+  padding: 4rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h2 {
+  flex-basis: 30%;
+  color: #225ad6;
+  font-weight: 600;
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.p {
+  flex-basis: 55%;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .div {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 3rem;
+  }
+
+  .h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .p {
+    flex-basis: 100%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .div {
+    padding: 4rem 2rem;
+  }
+}
