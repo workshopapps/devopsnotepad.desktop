@@ -1,0 +1,92 @@
+.pagination {
+  &__card {
+    width: fit-content;
+    margin: 4rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icons--prev,
+  &__icons--next {
+    border-radius: 0.5rem;
+    border: 0.1rem solid #5c5a5a69;
+    padding: 0 0.7rem;
+    height: 3.5rem;
+    width: 6rem;
+    fill: #8b8888;
+    cursor: pointer;
+
+    &:hover {
+      fill: #494747;
+    }
+  }
+
+  &__icons--end,
+  &__icons--start {
+    border-radius: 0.5rem;
+    border: 0.1rem solid #5c5a5a69;
+    padding: 0 0.7rem;
+    margin: 0 0.3rem;
+    height: 3.5rem;
+    width: 6rem;
+    fill: #8b8888;
+    cursor: pointer;
+
+    &:hover {
+      fill: #494747;
+    }
+  }
+
+  &__buttons {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    & button {
+      text-align: center;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #ffffff;
+      color: #706c6c;
+      border-radius: 0.5rem;
+      border: 0.15rem solid #5c5a5a69;
+      cursor: pointer;
+
+      &:hover {
+        border: 0.15rem solid #111fff;
+      }
+      &:focus {
+        border: 0.15rem solid #111fff;
+      }
+    }
+    & .btn__active {
+      border: 0.15rem solid #111fff !important;
+    }
+  }
+}
+
+.not__allowed {
+  cursor: not-allowed !important;
+  fill: #5c5a5a68 !important;
+}
+
+@media only screen and (max-width: 850px) {
+  .pagination {
+    &__card {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .pagination {
+    &__card {
+      width: 100%;
+    }
+  }
+}

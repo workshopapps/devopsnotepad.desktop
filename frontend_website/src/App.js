@@ -14,7 +14,6 @@ import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import Partner from './Pages/Partner/Partner';
-import classes from './App.module.css';
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
@@ -24,21 +23,15 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
-import Podcast from './Pages/Podcast/Podcasts';
-
-// import Csr from './Pages/Csr/Csr';
-import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
+import PodCast from './Pages/Podcast/Podcasts.jsx';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
-import Podcast from './Pages/Podcast/Podcasts';
 import { About } from './Pages/About/About';
-// import Form from './Pages/Partner/Form';
 import BestPractice from './Pages/BestPractice/BestPractices';
+import TermsOfService from './Pages/TermsOfUSe/Index';
 
 import classes from './App.module.css';
-import Terms from './Pages/TermsOfUSe/Terms';
-import TermsOfService from './Pages/TermsOfUSe/Index';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -57,12 +50,7 @@ function App() {
 
   return (
     <React.Fragment>
-
-      <Header />
-      <Footer />
-      {/* <LandingPage /> */}
-       <Navigation />
-
+      <Navigation />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -89,7 +77,7 @@ function App() {
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
-          <Route path='/podcast' exact element={<Podcast />} />
+          <Route path='/podcasts' exact element={<PodCast />} />
           <Route path='/prices' exact element={<Prices />} />
           <Route
             path='/prices/payment/:state/:id'
@@ -99,10 +87,8 @@ function App() {
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
-          <Route path='/podcasts' exact element={<Podcast />} />
-          {/* <Route path='/form' exact element={<Form />} /> */}
           <Route path='/best-practices' exact element={<BestPractice />} />
-          <Route path='/terms-of-service' exact element={<Terms />} />
+
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
         </Routes>
