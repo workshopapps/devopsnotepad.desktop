@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 10rem 6rem;
+  padding: 10rem 8rem;
   display: flex;
   background-color: #fcf7ed;
   font-family: 'Manrope';
@@ -44,7 +44,7 @@
 }
 
 .right {
-  flex-basis: 25%;
+  flex-basis: 27.5%;
   height: 50vh;
   position: relative;
 }
