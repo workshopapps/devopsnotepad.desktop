@@ -4,17 +4,6 @@ import bcrypt from "bcrypt";
 import signJWT from "../utils/jwthelper.js";
 
 export default class UserController {
-
-    static getloginpage = async (req, res, next) => {
-        res.render("login")
-    }
-
-    static getsignuppage = async (req, res, next) => {
-        res.render("signup")
-    }
-    static homepage = async (req, res, next) => {
-        res.send("welcome to homepage")
-    }
     static signup = async (req, res, next) => {
         try {
             await create(req.body);
@@ -68,7 +57,7 @@ export default class UserController {
 
     static logout = async (req, res, next) => {
         try {
-            res.clearCookie('connect.sid')
+            res.clearCookie("connect.sid");
             res.status(200).send("logout successful");
         } catch (error) {
             next(error);
