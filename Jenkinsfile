@@ -28,7 +28,7 @@ pipeline {
 
 			steps {
 
-                dir (devopsnotepad.desktop/backend) {
+                dir ('devopsnotepad.desktop/backend') {
                     sh "npm i -f"
                 }
 
