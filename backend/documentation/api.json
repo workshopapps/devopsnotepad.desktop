@@ -27,7 +27,7 @@
     }
   ],
   "paths": {
-    "/server/b2ce23f3-710b-11ed-907a-101f74cdb425/notifications": {
+    "/server/487cee0f-713f-11ed-9691-101f74cdb425/notifications": {
       "post": {
         "description": "",
         "tags": [],
@@ -117,7 +117,7 @@
                       }
                     },
                     "page": {
-                      "type": "string"
+                      "type": "number"
                     }
                   }
                 },
@@ -125,65 +125,13 @@
                   "success": true,
                   "notifications": [
                     {
-                      "id": "b339e334-710b-11ed-907a-101f74cdb425",
-                      "serverId": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                      "id": "488e869c-713f-11ed-9691-101f74cdb425",
+                      "serverId": "487cee0f-713f-11ed-9691-101f74cdb425",
                       "log": "add data points",
-                      "created_at": "2022-12-01T00:04:18.000Z",
-                      "updated_at": "2022-12-01T00:04:18.000Z"
+                      "created_at": "2022-12-01T06:13:33.000Z",
+                      "updated_at": "2022-12-01T06:13:33.000Z"
                     }
                   ],
-                  "page": "1"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {}
-      }
-    },
-    "/server/b3171291-710b-11ed-907a-101f74cdb425/notifications": {
-      "get": {
-        "description": "",
-        "tags": [],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "range",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "notifications": {
-                      "type": "array",
-                      "items": {}
-                    },
-                    "page": {
-                      "type": "number"
-                    }
-                  }
-                },
-                "example": {
-                  "success": true,
-                  "notifications": [],
                   "page": 1
                 }
               }
@@ -269,12 +217,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "b361621c-710b-11ed-907a-101f74cdb425",
+                    "id": "48b5bd9e-713f-11ed-9691-101f74cdb425",
                     "name": "example server 2",
                     "ipAddress": "google.com",
                     "deviceId": "80988579",
-                    "created_at": "2022-12-01T00:04:18.000Z",
-                    "updated_at": "2022-12-01T00:04:18.000Z"
+                    "created_at": "2022-12-01T06:13:33.000Z",
+                    "updated_at": "2022-12-01T06:13:33.000Z"
                   },
                   "isOnline": true
                 }
@@ -345,33 +293,25 @@
                 },
                 "example": {
                   "success": true,
-                  "message": "3 servers found on this device",
+                  "message": "2 servers found on this device",
                   "currentPage": 1,
                   "limit": 12,
                   "servers": [
                     {
-                      "id": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                      "id": "487cee0f-713f-11ed-9691-101f74cdb425",
                       "name": "example server",
                       "ipAddress": "google.com",
                       "deviceId": "80988579",
-                      "created_at": "2022-12-01T00:04:17.000Z",
-                      "updated_at": "2022-12-01T00:04:17.000Z"
+                      "created_at": "2022-12-01T06:13:33.000Z",
+                      "updated_at": "2022-12-01T06:13:33.000Z"
                     },
                     {
-                      "id": "b3171291-710b-11ed-907a-101f74cdb425",
-                      "name": "Nginx server",
-                      "ipAddress": "google.com",
-                      "deviceId": "80988579",
-                      "created_at": "2022-12-01T00:04:18.000Z",
-                      "updated_at": "2022-12-01T00:04:18.000Z"
-                    },
-                    {
-                      "id": "b361621c-710b-11ed-907a-101f74cdb425",
+                      "id": "48b5bd9e-713f-11ed-9691-101f74cdb425",
                       "name": "example server 2",
                       "ipAddress": "google.com",
                       "deviceId": "80988579",
-                      "created_at": "2022-12-01T00:04:18.000Z",
-                      "updated_at": "2022-12-01T00:04:18.000Z"
+                      "created_at": "2022-12-01T06:13:33.000Z",
+                      "updated_at": "2022-12-01T06:13:33.000Z"
                     }
                   ]
                 }
@@ -399,7 +339,7 @@
                 }
               },
               "example": {
-                "id": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                "id": "487cee0f-713f-11ed-9691-101f74cdb425",
                 "name": "updated server name"
               }
             }
@@ -452,7 +392,7 @@
               },
               "example": {
                 "serverIds": [
-                  "b2ce23f3-710b-11ed-907a-101f74cdb425"
+                  "487cee0f-713f-11ed-9691-101f74cdb425"
                 ]
               }
             }
