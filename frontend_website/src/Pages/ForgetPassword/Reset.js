@@ -1,10 +1,16 @@
 import React from "react";
 import forgetStyles from "../ForgetPassword/ForgetPassword.module.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../ForgetPassword/Images/logo.png"
 
 
 const Reset = () => {
+    const navigate = useNavigate()
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        navigate('/checkemail')
+    }
     return (
         <div className={forgetStyles.Reset}>
             <div className={forgetStyles.logoImg}>
@@ -17,7 +23,7 @@ const Reset = () => {
 
             <div className={forgetStyles.inputEmail}>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label for="email">Email/Username</label>
                     <input type="text" id="Email" name="email" />
                     <Link to='/checkemail' ><input type="submit" value="Submit" /></Link>
