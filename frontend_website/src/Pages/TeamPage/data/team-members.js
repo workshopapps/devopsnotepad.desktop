@@ -53,31 +53,31 @@ export const TeamData = [
         name: 'stanlee',
       },
       {
-        name: 'adzuayi',
+        name: 'Adzuayi K.',
       },
       {
-        name: 'amuda',
+        name: 'Amuda A.',
       },
       {
-        name: 'chimdi',
+        name: 'Chimdi E.',
       },
       {
-        name: 'hannah',
+        name: 'Hannah A.',
       },
       {
-        name: 'dalium',
+        name: 'Tosin C.',
       },
       {
-        name: 'felicity',
+        name: 'Ahunam F.',
       },
       {
-        name: 'otieno',
+        name: 'Otieno O.',
       },
       {
-        name: 'victoria',
+        name: 'Victoria W.',
       },
       {
-        name: 'abigael',
+        name: 'Abigael A.',
       },
     ],
     desktopSlides: [productManagersLG1, productManagersLG2],
@@ -94,28 +94,28 @@ export const TeamData = [
     role: 'marketer',
     members: [
       {
-        name: 'damilola',
+        name: 'Damilola O.',
       },
       {
-        name: 'shakes',
+        name: 'Otulana S.',
       },
       {
-        name: 'nora',
+        name: 'Nora S.',
       },
       {
-        name: 'oreolu',
+        name: 'Oreolu B.',
       },
       {
-        name: 'amazing',
+        name: 'Amazing O.',
       },
       {
-        name: 'jennifer',
+        name: 'Jennifer A.',
       },
       {
-        name: 'chrisbella',
+        name: 'Ijeoma A.',
       },
       {
-        name: 'damilola',
+        name: 'Damilola O.',
       },
     ],
     desktopSlides: [marketersLG1],
@@ -125,82 +125,82 @@ export const TeamData = [
     role: 'designer',
     members: [
       {
-        name: 'osasumwen',
+        name: 'Osasumwen I.',
       },
       {
-        name: 'yemi',
+        name: 'Yemi N.',
       },
       {
-        name: 'alatishe',
+        name: 'Alatishe O.',
       },
       {
-        name: 'richard',
+        name: 'Richard K.',
       },
       {
-        name: 'tony',
+        name: 'Tony A.',
       },
       {
-        name: 'agbi',
+        name: 'Agbi A.',
       },
       {
-        name: 'victor',
+        name: 'Victor E.',
       },
       {
-        name: 'deerah',
+        name: 'Nwogwu C.',
       },
       {
-        name: 'mofe',
+        name: 'Mofe D.',
       },
       {
-        name: 'taiwo',
+        name: 'Taiwo O.',
       },
       {
-        name: 'wande',
+        name: 'Yewande P.',
       },
       {
-        name: 'anita',
+        name: 'Anita H.',
       },
       {
-        name: 'kola',
+        name: 'Kola O.',
       },
       {
-        name: 'adevikthur',
+        name: 'Adeala V.',
       },
       {
-        name: 'caroline',
+        name: 'Caroline',
       },
       {
-        name: 'oyelade',
+        name: 'Oyelade S.',
       },
       {
-        name: 'fadekemi',
+        name: 'Fadekemi D.',
       },
       {
-        name: 'ayo',
+        name: 'Ayo G.',
       },
       {
-        name: 'ijay',
+        name: 'I Jay',
       },
       {
-        name: 'hawa',
+        name: 'Hawa A.',
       },
       {
-        name: 'amaka',
+        name: 'Amaka F.',
       },
       {
-        name: 'bruno',
+        name: 'Bruno C.',
       },
       {
-        name: 'nikshire',
+        name: 'Nikshire O.',
       },
       {
-        name: 'stephanie',
+        name: 'Stephanie T.',
       },
       {
-        name: 'adesola',
+        name: 'Adesola Z.',
       },
       {
-        name: 'ochuko',
+        name: 'Ochuko P.',
       },
     ],
     desktopSlides: [
@@ -230,82 +230,82 @@ export const TeamData = [
     role: 'developer',
     members: [
       {
-        name: 'osazee',
+        name: 'Osazee O.',
       },
       {
-        name: 'francis',
+        name: 'Francis U.',
       },
       {
-        name: 'austin',
+        name: 'Austin H.',
       },
       {
-        name: 'mofentan',
+        name: 'Mofentan',
       },
       {
-        name: 'usenmfon',
+        name: 'Usenmfon U.',
       },
       {
-        name: "mas'ud",
+        name: "Mas'ud N.",
       },
       {
-        name: 'ronin',
+        name: 'Ronin C.',
       },
       {
-        name: 'chima',
+        name: 'Chima B.',
       },
       {
-        name: 'oluseyi',
+        name: 'Oluseyi F.',
       },
       {
-        name: 'chiaka',
+        name: 'Chiaka V.',
       },
       {
-        name: 'kevin',
+        name: 'Kevin D.',
       },
       {
-        name: 'joel',
+        name: 'Joel O.',
       },
       {
-        name: 'aliu',
+        name: 'Aliu',
       },
       {
-        name: 'peter',
+        name: 'Peter K.',
       },
       {
-        name: 'jama',
+        name: 'Jama R',
       },
       {
-        name: 'godwin',
+        name: 'Godwin',
       },
       {
-        name: 'ikem',
+        name: 'Ikem S.',
       },
       {
-        name: 'chineme',
+        name: 'Chineme A.',
       },
       {
-        name: 'queen',
+        name: 'Queen U.',
       },
       {
-        name: 'shadia',
+        name: 'Shadia',
       },
       {
-        name: 'joel',
+        name: 'Joel',
       },
       {
-        name: 'blessing',
+        name: 'Blessing J.',
       },
       {
-        name: 'ezekiel',
+        name: 'Ezekiel M.',
       },
       {
-        name: 'stephanie',
+        name: 'Stephanie U.',
       },
       {
-        name: 'adesola',
+        name: 'Adesola A.',
       },
       {
-        name: 'ochuko',
+        name: 'Ochuko J.',
       },
     ],
     desktopSlides: [

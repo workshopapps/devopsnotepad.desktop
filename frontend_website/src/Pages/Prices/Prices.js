@@ -30,10 +30,10 @@ const Prices = () => {
           />
         </div>
       </div>
-
-      <div className={style.pricesSampleGrid}>
-        {!toggleMonthly
-          ? Data[0].items.map((item, index) => {
+      <div className={style.bgPriceGrid}>
+        <div className={style.pricesSampleGrid}>
+          {!toggleMonthly
+            ? Data[0].items.map((item, index) => {
               return (
                 <PriceCard
                   toggleMonthly={toggleMonthly}
@@ -42,7 +42,7 @@ const Prices = () => {
                 />
               );
             })
-          : Data[1].items.map((card, index) => {
+            : Data[1].items.map((card, index) => {
               return (
                 <PriceCard
                   toggleMonthly={toggleMonthly}
@@ -51,11 +51,11 @@ const Prices = () => {
                 />
               );
             })}
+        </div>
       </div>
-
       <div className={style.comparePrice}>
         <h1 className={style.comparePriceHeader}>
-          Compare <span className={style.pricesHeaderBlue}>Our Plans</span>
+          Compare Our Plans
         </h1>
         <div className={`${style.tableContainer} ${style.hidden}`}>
           <ul className={style.ul}>
