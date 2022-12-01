@@ -1,77 +1,23 @@
 /* eslint-disable react/require-default-props */
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import style from './Onboarding.module.css';
-import screen1 from './Assets/screen1.svg';
 import screen2 from './Assets/screen2.svg';
 
 function Onboarding() {
-	const [getStarted, setGetStarted] = useState(1);
-	const navigate = useNavigate();
-	// Disable onboarding for subsequent run
-	// On click get started in onboarding, close onboarding and set isNewUser to false in local storage so that next time the user opens the app it skips the onboarding process
-	function onClick() {
-		localStorage.setItem('isNewUser', false);
-		navigate('/');
-	}
-
 	return (
 		<div id="onboarding" className={style.container}>
-			{getStarted === 1 ? (
-				<div className={style.onboarding}>
-					<figure>
-						<img src={screen1} aria-hidden alt="" />
-					</figure>
+			<div className={style.onboarding}>
+				<figure>
+					<img src={screen2} aria-hidden alt="" />
+				</figure>
 
-					<div className={style.content}>
-						<h1>Take Notes, Stay Updated</h1>
-						<p>
-							Enjoy a great note taking experience while ensuring that servers
-							monitored are up to date.
-						</p>
-					</div>
-
-					<div className={style.action}>
-						<div className={style.ellipse_container}>
-							<div className={`${style.ellipse} ${style.ellipse_current}`} />
-							<div className={style.ellipse} />
-						</div>
-
-						<button
-							onClick={() => setGetStarted(2)}
-							type="button"
-							className={style.btn}
-						>
-							Next
-						</button>
-					</div>
+				<div className={style.content}>
+					<h1>Welcome to Opspad</h1>
+					<p>
+						Join millions of Devops to enjoy a great note taking experience.
+					</p>
 				</div>
-			) : (
-				<div className={style.onboarding}>
-					<figure>
-						<img src={screen2} aria-hidden alt="" />
-					</figure>
-
-					<div className={style.content}>
-						<h1>Convenient Server Monitoring</h1>
-						<p>
-							With Opspad, monitoring of servers is now easier. You are one
-							click away from enjoying this and many more services.
-						</p>
-					</div>
-
-					<div className={style.action}>
-						<div className={style.ellipse_container}>
-							<div className={style.ellipse} />
-							<div className={`${style.ellipse} ${style.ellipse_current}`} />
-						</div>
-
-						<button onClick={onClick} type="button" className={style.btn}>
-							Get Started
-						</button>
-					</div>
-				</div>
-			)}
+			</div>
 		</div>
 	);
 }
