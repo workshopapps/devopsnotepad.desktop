@@ -14,6 +14,7 @@ import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
 import Partner from './Pages/Partner/Partner';
+import classes from './App.module.css';
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
@@ -23,6 +24,7 @@ import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
 import Blog from './Pages/Blog/Blog';
+import Podcast from './Pages/Podcast/Podcasts';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
 import ForgetPassword from './Pages/ForgetPassword/ForgotPassword';
@@ -50,6 +52,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <Header />
+      <Footer />
+      {/* <LandingPage /> */}
       <Navigation />
 
       <ErrorBoundary
@@ -76,6 +81,9 @@ function App() {
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
+          <Route path='/partner' exact element={<Partner />} />
+          <Route path='/csr' exact element={<Csr />} />
+          <Route path='/podcast' exact element={<Podcast />} />
           <Route path='/prices' exact element={<Prices />} />
           <Route
             path='/prices/payment/:state/:id'
