@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/success', AuthController.loginStatus);
 router.get('/failed', AuthController.loginFailed);
+router.get('/logout', AuthController.logout);
 router.get('/google', passport.authenticate('google'));
 router.get(
   '/google/callback',
@@ -13,5 +14,4 @@ router.get(
     failureRedirect: '/auth/failed',
   })
 );
-router.get('/logout', AuthController.logout);
 export default router;
