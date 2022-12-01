@@ -1,0 +1,492 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "devops-notepad-api",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000"
+    },
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/server/b2ce23f3-710b-11ed-907a-101f74cdb425/notifications": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "log": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "log": "add data points"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "serverLog": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "successful",
+                  "serverLog": "add data points"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "serverId": {
+                            "type": "string"
+                          },
+                          "log": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "page": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "notifications": [
+                    {
+                      "id": "b339e334-710b-11ed-907a-101f74cdb425",
+                      "serverId": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                      "log": "add data points",
+                      "created_at": "2022-12-01T00:04:18.000Z",
+                      "updated_at": "2022-12-01T00:04:18.000Z"
+                    }
+                  ],
+                  "page": "1"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {}
+      }
+    },
+    "/server/b3171291-710b-11ed-907a-101f74cdb425/notifications": {
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "range",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "page": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "notifications": [],
+                  "page": 1
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {}
+      }
+    },
+    "/server": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "deviceId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "example server 2",
+                "ipAddress": "google.com",
+                "deviceId": "80988579"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "server": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "ipAddress": {
+                          "type": "string"
+                        },
+                        "deviceId": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "isOnline": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "server created successfully",
+                  "server": {
+                    "id": "b361621c-710b-11ed-907a-101f74cdb425",
+                    "name": "example server 2",
+                    "ipAddress": "google.com",
+                    "deviceId": "80988579",
+                    "created_at": "2022-12-01T00:04:18.000Z",
+                    "updated_at": "2022-12-01T00:04:18.000Z"
+                  },
+                  "isOnline": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "currentPage": {
+                      "type": "number"
+                    },
+                    "limit": {
+                      "type": "number"
+                    },
+                    "servers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "ipAddress": {
+                            "type": "string"
+                          },
+                          "deviceId": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "3 servers found on this device",
+                  "currentPage": 1,
+                  "limit": 12,
+                  "servers": [
+                    {
+                      "id": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                      "name": "example server",
+                      "ipAddress": "google.com",
+                      "deviceId": "80988579",
+                      "created_at": "2022-12-01T00:04:17.000Z",
+                      "updated_at": "2022-12-01T00:04:17.000Z"
+                    },
+                    {
+                      "id": "b3171291-710b-11ed-907a-101f74cdb425",
+                      "name": "Nginx server",
+                      "ipAddress": "google.com",
+                      "deviceId": "80988579",
+                      "created_at": "2022-12-01T00:04:18.000Z",
+                      "updated_at": "2022-12-01T00:04:18.000Z"
+                    },
+                    {
+                      "id": "b361621c-710b-11ed-907a-101f74cdb425",
+                      "name": "example server 2",
+                      "ipAddress": "google.com",
+                      "deviceId": "80988579",
+                      "created_at": "2022-12-01T00:04:18.000Z",
+                      "updated_at": "2022-12-01T00:04:18.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "b2ce23f3-710b-11ed-907a-101f74cdb425",
+                "name": "updated server name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "Server updated successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/server/delete": {
+      "post": {
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serverIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "serverIds": [
+                  "b2ce23f3-710b-11ed-907a-101f74cdb425"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "message": "servers deleted successfully",
+                  "result": "1 servers deleted!"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
