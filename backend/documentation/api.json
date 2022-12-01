@@ -27,7 +27,7 @@
     }
   ],
   "paths": {
-    "/server/487cee0f-713f-11ed-9691-101f74cdb425/notifications": {
+    "/server/541807a5-716e-11ed-9691-101f74cdb425/notifications": {
       "post": {
         "description": "",
         "tags": [],
@@ -125,11 +125,11 @@
                   "success": true,
                   "notifications": [
                     {
-                      "id": "488e869c-713f-11ed-9691-101f74cdb425",
-                      "serverId": "487cee0f-713f-11ed-9691-101f74cdb425",
+                      "id": "545e560d-716e-11ed-9691-101f74cdb425",
+                      "serverId": "541807a5-716e-11ed-9691-101f74cdb425",
                       "log": "add data points",
-                      "created_at": "2022-12-01T06:13:33.000Z",
-                      "updated_at": "2022-12-01T06:13:33.000Z"
+                      "created_at": "2022-12-01T11:50:19.000Z",
+                      "updated_at": "2022-12-01T11:50:19.000Z"
                     }
                   ],
                   "page": 1
@@ -217,12 +217,12 @@
                   "success": true,
                   "message": "server created successfully",
                   "server": {
-                    "id": "48b5bd9e-713f-11ed-9691-101f74cdb425",
+                    "id": "548b68c7-716e-11ed-9691-101f74cdb425",
                     "name": "example server 2",
                     "ipAddress": "google.com",
                     "deviceId": "80988579",
-                    "created_at": "2022-12-01T06:13:33.000Z",
-                    "updated_at": "2022-12-01T06:13:33.000Z"
+                    "created_at": "2022-12-01T11:50:19.000Z",
+                    "updated_at": "2022-12-01T11:50:19.000Z"
                   },
                   "isOnline": true
                 }
@@ -298,20 +298,20 @@
                   "limit": 12,
                   "servers": [
                     {
-                      "id": "487cee0f-713f-11ed-9691-101f74cdb425",
+                      "id": "541807a5-716e-11ed-9691-101f74cdb425",
                       "name": "example server",
                       "ipAddress": "google.com",
                       "deviceId": "80988579",
-                      "created_at": "2022-12-01T06:13:33.000Z",
-                      "updated_at": "2022-12-01T06:13:33.000Z"
+                      "created_at": "2022-12-01T11:50:18.000Z",
+                      "updated_at": "2022-12-01T11:50:18.000Z"
                     },
                     {
-                      "id": "48b5bd9e-713f-11ed-9691-101f74cdb425",
+                      "id": "548b68c7-716e-11ed-9691-101f74cdb425",
                       "name": "example server 2",
                       "ipAddress": "google.com",
                       "deviceId": "80988579",
-                      "created_at": "2022-12-01T06:13:33.000Z",
-                      "updated_at": "2022-12-01T06:13:33.000Z"
+                      "created_at": "2022-12-01T11:50:19.000Z",
+                      "updated_at": "2022-12-01T11:50:19.000Z"
                     }
                   ]
                 }
@@ -339,7 +339,7 @@
                 }
               },
               "example": {
-                "id": "487cee0f-713f-11ed-9691-101f74cdb425",
+                "id": "541807a5-716e-11ed-9691-101f74cdb425",
                 "name": "updated server name"
               }
             }
@@ -392,7 +392,7 @@
               },
               "example": {
                 "serverIds": [
-                  "487cee0f-713f-11ed-9691-101f74cdb425"
+                  "541807a5-716e-11ed-9691-101f74cdb425"
                 ]
               }
             }
