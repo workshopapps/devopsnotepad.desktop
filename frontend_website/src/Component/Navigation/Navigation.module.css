@@ -188,6 +188,9 @@
   line-height: 18px;
   color: #1b1830;
 }
+.login_link {
+  color: #1f184d;
+}
 
 .download_link {
   width: 132px;
@@ -203,6 +206,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all.3s;
+}
+.download_link:hover {
+  background: #ffffff;
+  color: #102a63;
+  border: 0.1rem solid #102a63;
 }
 
 @media screen and (max-width: 1060px) {
