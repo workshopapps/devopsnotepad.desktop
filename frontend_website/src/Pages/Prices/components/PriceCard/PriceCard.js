@@ -12,7 +12,8 @@ const PriceCard = ({ card, id, toggleMonthly }) => {
       <div className={style.innerCardContainer}>
         <div className={style.innerCardAlign}>
           <h4 className={style.title}>{card.title}</h4>
-          <h2 className={style.price}>{card.price}</h2>
+          <h2 className={style.price}>
+            {card.price}{card.price !== 'Free' ? (<span style={{ fontSize: '14px' }}>USD</span>) : null}</h2>
           <ul className={style.list}>
             {card.list.map((item, index) => {
               return (

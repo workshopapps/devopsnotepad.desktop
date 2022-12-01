@@ -37,7 +37,7 @@ export const getMore = [
       'With our slack integration, you’ll be able to update slack channels with the server’s notes and details of a specific event on each server. With this, your team is always aware of potential or happening risks.',
     img: slack,
     linkLabel: 'Learn More',
-    slug: '/slack',
+    slug: 'https://slack.com/',
   },
   {
     heading: 'Google Drive',
@@ -45,7 +45,7 @@ export const getMore = [
       'Automatically import or save your Opspad server notes to your drive.',
     img: googleDrive,
     linkLabel: 'Learn More',
-    slug: '/google-drive',
+    slug: 'https://accounts.google.com/AccountChooser?service=writely',
   },
 ];
 export const getMoreT = [
@@ -55,7 +55,7 @@ export const getMoreT = [
       'With the Gmail integration, teams get notifications in real-time and respond directly from their PCs or phones while  on the go.',
     img: gmail,
     linkLabel: 'Learn More',
-    slug: '/gmail',
+    slug: 'https://mail.google.com/',
   },
   {
     heading: 'JIra',
@@ -63,7 +63,7 @@ export const getMoreT = [
       'Jira helps teams plan, assign, track, report, and manage work. The integration with Jira imakes it easy to create and assign issues from triggered alerts in OPspad.',
     img: jira,
     linkLabel: 'Learn More',
-    slug: '/jira',
+    slug: 'https://www.atlassian.com/software/jira',
   },
 ];
 
@@ -74,7 +74,7 @@ export const getMoreTh = [
       'Trello is a tool to help you manage your projects and organize everything. Opspad provides convenient integration with Trello, which lets you visually organize incidents discovered directly into your Trello boards.',
     img: trello,
     linkLabel: 'Learn More',
-    slug: '/trello',
+    slug: 'https://trello.com/?',
   },
   {
     heading: 'Google Meet',
@@ -82,6 +82,6 @@ export const getMoreTh = [
       'Our OPspad + Google meet solution uses automation and guaranteed notification for DevOps engineers to assemble response teams faster and more efficiently when dealing with critical incidents.',
     img: googleMeet,
     linkLabel: 'Learn More',
-    slug: '/google-meet',
+    slug: 'https://meet.google.com/',
   },
 ];

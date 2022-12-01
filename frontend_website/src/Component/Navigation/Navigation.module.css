@@ -119,27 +119,13 @@
   width: 100%;
 }
 
-.navigation
-  .mainNavigation
-  .inMenuBar
-  .menuUlList
-  .menuBox
-  .dropdown
-  li
-  .link_line {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
   border: 0.5px solid #e5e5e5;
   margin: 0;
   padding: 0;
 }
 
-.navigation
-  .mainNavigation
-  .inMenuBar
-  .menuUlList
-  .menuBox
-  .dropdown
-  li
-  .link_line:last-child {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line:last-child {
   border: none;
 }
 
@@ -203,6 +189,7 @@
   justify-content: center;
   transition: all.3s;
 }
+
 .download_link:hover {
   background: #ffffff;
   color: #102a63;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { TeamData } from './data/team-members';
+import Linkedin from './images/icons/linkedIn-icon.png';
 
 const AllTeam = () => {
   const [activeTab, setActiveTab] = useState('product-managers');
@@ -66,9 +67,12 @@ const ProductManagers = () => {
         <div className='member__wrapper' key={i}>
           <div>
             <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-            <p className='p-0 m-0'>Product Manager</p>
+            <p className='p-0 m-0 role'>Product Manager</p>
           </div>
-          <p>LinkedIn</p>
+          <div className='linked-in'>
+            <img src={Linkedin} alt='linkedin' />
+            <p>LinkedIn : <a href='linkedin.com'> name:/linkedIn.com</a></p>
+          </div>
         </div>
       ))}
     </div>
@@ -83,9 +87,12 @@ const Marketers = () => {
           <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className='p-0 m-0'>Marketer</p>
+              <p className='p-0 m-0 role'>Marketer</p>
             </div>
-            <p>LinkedIn</p>
+            <div className='linked-in'>
+              <img src={Linkedin} alt='linkedin' />
+              <p>LinkedIn : <a href='linkedin.com'> name:/linkedIn.com</a></p>
+            </div>
           </div>
         ),
       )}
@@ -101,9 +108,12 @@ const Designers = () => {
           <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className='p-0 m-0'>Designer</p>
+              <p className='p-0 m-0 role'>Designer</p>
             </div>
-            <p>LinkedIn</p>
+            <div className='linked-in'>
+              <img src={Linkedin} alt='linkedin' />
+              <p>LinkedIn : <a href='linkedin.com'> name:/linkedIn.com</a></p>
+            </div>
           </div>
         ),
       )}
@@ -119,9 +129,12 @@ const Developers = () => {
           <div className='member__wrapper' key={i}>
             <div>
               <h4>{member.name[0].toUpperCase() + member.name.slice(1)}</h4>
-              <p className='p-0 m-0'>Developer</p>
+              <p className='p-0 m-0 role'>Developer</p>
             </div>
-            <p>LinkedIn</p>
+            <div className='linked-in'>
+              <img src={Linkedin} alt='linkedin' />
+              <p>LinkedIn : <a href='linkedin.com'> name:/linkedIn.com</a></p>
+            </div>
           </div>
         ),
       )}
