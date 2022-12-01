@@ -20,6 +20,11 @@ export default class AuthController {
     });
   };
   static logout = async (req, res) => {
-    req.logout();
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      return res.status(200).json({ success: true, message: 'Logout Successful' });
+    });
   };
 }
