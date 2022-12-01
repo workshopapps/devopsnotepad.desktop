@@ -41,8 +41,9 @@ function App() {
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
 							<Route exact path="/server/password" element={<Password />} />
-							{/* <Route exact path="/add-server" element={<Joined />} /> */}
+							<Route exact path="/add-server" element={<AddServer />} />
 							<Route exact path="/notification" element={<Notification />} />
+							<Route exact path="/onboarding" element={<Onboarding />} />
 							<Route exact path="/about" element={<About />} />
 							<Route exact path="/faq" element={<Faq />} />
 						</Routes>
