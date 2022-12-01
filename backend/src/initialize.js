@@ -9,7 +9,6 @@ import routes from './routes/index.js';
 import cookieParser from 'cookie-parser';
 import session from "express-session";
 
-
 const app = express();
 
 app.use(session({
@@ -27,8 +26,5 @@ app.use(morgan(config.env.isProduction ? 'common' : 'dev'));
 app.use(routes);
 app.use(notFoundHandler);
 app.use(errorHandler);
-
-app.set('views', 'src/views');
-app.set('view engine', 'ejs');
 
 export default app;
