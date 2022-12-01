@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useMemo, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import serverData from './serverdata';
 
 const ServerContext = createContext();
 
@@ -26,19 +27,20 @@ export function ServerProvider({ children }) {
 	async function getServers() {
 		// setLoading(true);
 		setError(null);
-		const deviceId = getDeviceID();
+		// const deviceId = getDeviceID();
 
 		try {
-			const response = await fetch(`${BASE_URL}?device=${deviceId}`, {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
+			// const response = await fetch(`${BASE_URL}?device=${deviceId}`, {
+			// 	method: 'GET',
+			// 	headers: {
+			// 		'Content-Type': 'application/json',
+			// 	},
+			// });
 
-			const data = await response.json();
+			// const data = await response.json();
 			setLoading(false);
-			setServers(data.servers);
+			// setServers(data.servers);
+			setServers(serverData);
 		} catch (err) {
 			setError(err.message);
 			setLoading(false);
