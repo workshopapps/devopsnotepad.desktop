@@ -1,14 +1,21 @@
-.integration .banner {
+.integration {
   width: 100%;
-  padding-top: 110px;
-  padding-bottom: 90px;
-  background-color: #f6f9ff;
+  padding: 8rem;
+  font-family: 'Manrope';
+  background-image: url('./assets/spira1.svg'), url('./assets/spira2.svg');
+
+  background-position: left 370px, right 780px;
+  background-repeat: no-repeat;
+  background-size: 70px, 60px;
+}
+
+.banner {
+  width: 100%;
 }
 
 .integration .inBanner {
-  max-width: 1156px;
+  width: 1005;
   margin: auto;
-  padding: 0px 80px 0px 80px;
 }
 
 .integration .inBanner .subtitle {
@@ -20,7 +27,7 @@
 .integration .inBanner .subtitle h1 {
   font-style: normal;
   font-weight: 700;
-  font-size: 56px;
+  font-size: 48px;
   line-height: 72px;
   color: #292929;
 }
@@ -39,18 +46,12 @@
 }
 
 .integration .hM_content {
-  background-image: url('./assets/spira1.svg'), url('./assets/spira2.svg');
+  width: 100%;
 
-  background-position: left 370px, right 780px;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 70px, 60px;
-  padding: 0px 40px 0px 40px;
-  padding-top: 79.5px;
+  padding-top: 14rem;
 }
 
 .integration .hM_content .inHM_box {
-  max-width: 1104.93px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,14 +71,14 @@
   font-weight: 600;
   font-size: 36px;
   line-height: 50px;
-  color: #060a12;
+  color: #292929;
 }
 
 .integration .hM_content .inHM_box .inHmL p {
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
-  color: #272531;
+  color: #292929;
 }
 
 .integration .hM_content .inHM_box .inHmR {
@@ -111,7 +112,8 @@
   font-size: 42px;
   line-height: 58px;
   text-align: center;
-  color: #202020;
+  color: #292929;
+
   margin: 0;
   margin-bottom: 12px;
   padding: 0;
@@ -126,7 +128,7 @@
   font-size: 24px;
   line-height: 36px;
   text-align: center;
-  color: #292929;
+  color: #3f3f3f;
   margin: 0;
   padding: 0;
 }
@@ -152,35 +154,59 @@
   justify-content: space-between;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM1 .box:first-child {
-  background: #F6F9FF;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM1
+  .box:first-child {
+  background: #f6f9ff;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM1 .box:last-child {
-  background: #F6FBF7;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM1
+  .box:last-child {
+  background: #f6fbf7;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM2 .box:first-child {
-  background: #F6FBF7;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM2
+  .box:first-child {
+  background: #f6fbf7;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM2 .box:last-child {
-  background: #F6F9FF;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM2
+  .box:last-child {
+  background: #f6f9ff;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM3 .box:first-child {
-  background: #F6F9FF;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM3
+  .box:first-child {
+  background: #f6f9ff;
 }
 
-.get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM3 .box:last-child {
-  background: #F6FBF7;
+.get_more
+  .inGet_more
+  .inGet_more_box
+  .inGetMoreBox.inGetMoreBoxM3
+  .box:last-child {
+  background: #f6fbf7;
 }
 
 .get_more .inGet_more .inGet_more_box .inGetMoreBox .box h3 {
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
-  color: #202020;
+  color: #292929;
   margin-top: 30px;
   margin-bottom: 18px;
 }
@@ -234,7 +260,7 @@
   font-weight: 600;
   font-size: 36px;
   line-height: 50px;
-  color: #202020;
+  color: #292929;
 }
 
 .getMoret .inGetMoret .btn {
@@ -404,7 +430,6 @@
   .getMoret .inGetMoret h4 {
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 375px) {
@@ -419,7 +444,6 @@
 }
 
 @media screen and (max-width: 500px) {
-
   .integration .hM_content .inHM_box,
   .integration .hM_content .inHM_box.flexDirection {
     flex-direction: column;

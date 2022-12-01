@@ -46,14 +46,14 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList li a {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    display: block;
-    font-size: 14px;
-    line-height: 18px;
-    color: #202020;
-    padding: 10px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  padding: 10px;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
@@ -66,18 +66,17 @@
   position: relative;
 }
 
-
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #202020;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
@@ -85,7 +84,7 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
-    color: #102A63;
+  color: #102a63;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
@@ -120,27 +119,13 @@
   width: 100%;
 }
 
-.navigation
-  .mainNavigation
-  .inMenuBar
-  .menuUlList
-  .menuBox
-  .dropdown
-  li
-  .link_line {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
   border: 0.5px solid #e5e5e5;
   margin: 0;
   padding: 0;
 }
 
-.navigation
-  .mainNavigation
-  .inMenuBar
-  .menuUlList
-  .menuBox
-  .dropdown
-  li
-  .link_line:last-child {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line:last-child {
   border: none;
 }
 
@@ -176,37 +161,39 @@
 }
 
 .login_link {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #102A63;
+  font-size: 18px;
+  color: #1f184d;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 .login_link:hover {
-    text-decoration: underline;
+  color: #302677;
 }
 
 .download_link {
-    width: 132px;
-    height: 44px;
-    background: #102A63;
-    border-radius: 4px;
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 24px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 132px;
+  height: 44px;
+  background: #102a63;
+  border-radius: 4px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all.3s;
 }
 
 .download_link:hover {
-    color: #fff;
-    opacity: .86;
+  background: #ffffff;
+  color: #102a63;
+  border: 0.1rem solid #102a63;
 }
 
 @media screen and (max-width: 1060px) {

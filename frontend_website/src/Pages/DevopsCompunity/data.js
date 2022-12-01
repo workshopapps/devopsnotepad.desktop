@@ -4,9 +4,9 @@ import avatar3 from './assets/Ellipse3.png';
 import avatar4 from './assets/Ellipse4.png';
 import avatar5 from './assets/Ellipse5.png';
 
-import askSearch from './assets/ask-search.svg';
-import joinNow from './assets/join-now.svg';
-import shareIdea from './assets/share-idea.svg';
+import askSearch from './assets/bigChat.svg';
+import joinNow from './assets/network.svg';
+import shareIdea from './assets/idea.svg';
 
 export const activity = [
   {
@@ -16,7 +16,7 @@ export const activity = [
     message:
       "Hi, I have an xml response in the below format. I'm trying to read the Business Id value of this. Since there are mult...",
     category: 'Opspad community',
-    time: '2hours ago',
+    time: '2 hrs ago',
   },
   {
     avatar: avatar2,
@@ -25,7 +25,7 @@ export const activity = [
     message:
       "Hi, I have an xml response in the below format. I'm trying to read the Business Id value of this. Since there are mult...",
     category: 'Opspad community',
-    time: '2hours ago',
+    time: '2 hrs ago',
   },
   {
     avatar: avatar3,
@@ -34,7 +34,7 @@ export const activity = [
     message:
       "Hi, I have an xml response in the below format. I'm trying to read the Business Id value of this. Since there are mult...",
     category: 'Opspad community',
-    time: '2hours ago',
+    time: '2 hrs ago',
   },
   {
     avatar: avatar4,
@@ -43,7 +43,7 @@ export const activity = [
     message:
       "Hi, I have an xml response in the below format. I'm trying to read the Business Id value of this. Since there are mult...",
     category: 'Opspad community',
-    time: '2hours ago',
+    time: '2 hrs ago',
   },
   {
     avatar: avatar5,
@@ -52,7 +52,7 @@ export const activity = [
     message:
       "Hi, I have an xml response in the below format. I'm trying to read the Business Id value of this. Since there are mult...",
     category: 'Opspad community',
-    time: '2hours ago',
+    time: '2 hrs ago',
   },
 ];
 
