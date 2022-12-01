@@ -46,17 +46,7 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList li a {
-<<<<<<< HEAD
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    display: block;
-    font-size: 14px;
-    line-height: 18px;
-    color: #202020;
-    padding: 10px;
-=======
-  font-family: 'Inter';
+  font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
   display: block;
@@ -64,7 +54,6 @@
   line-height: 18px;
   color: #202020;
   padding: 10px;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
@@ -77,21 +66,8 @@
   position: relative;
 }
 
-
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
-<<<<<<< HEAD
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #202020;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
-=======
-  font-family: 'Inter';
+  font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -101,7 +77,6 @@
   outline: none;
   cursor: pointer;
   background-color: transparent;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
@@ -109,7 +84,7 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
-    color: #102A63;
+  color: #102a63;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
@@ -200,40 +175,16 @@
 }
 
 .login_link {
-<<<<<<< HEAD
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #102A63;
+  font-size: 18px;
+  color: #1f184d;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 .login_link:hover {
-    text-decoration: underline;
-}
-
-.download_link {
-    width: 132px;
-    height: 44px;
-    background: #102A63;
-    border-radius: 4px;
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 24px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-=======
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #1b1830;
+  color: #302677;
 }
 
 .download_link {
@@ -250,12 +201,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
->>>>>>> bdbb304bc47c36c3460e376da255ece8a11e4c7a
+  transition: all.3s;
 }
-
 .download_link:hover {
-    color: #fff;
-    opacity: .86;
+  background: #ffffff;
+  color: #102a63;
+  border: 0.1rem solid #102a63;
 }
 
 @media screen and (max-width: 1060px) {
