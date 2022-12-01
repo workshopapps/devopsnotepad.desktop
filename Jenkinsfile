@@ -10,7 +10,6 @@ pipeline {
 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
 				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/devopsnotepad.desktop"
 			}
-
 		}
 		
 		stage("start frontend") {
