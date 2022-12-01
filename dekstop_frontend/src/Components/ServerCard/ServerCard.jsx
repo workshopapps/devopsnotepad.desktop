@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
+import arrow from './Assets/arrow.svg';
 
 function ServerCard({ name, ipAddress, serverHealth }) {
 	return (
@@ -17,13 +18,22 @@ function ServerCard({ name, ipAddress, serverHealth }) {
 						<tr>
 							<th>Server Health:</th>
 							<td
-								className={`${style.server_health} ${
-									serverHealth.toLowerCase() === 'excellent'
-										? style.server_health_excellent
-										: style.server_health_critical
+								className={`${style.server_health_container} ${
+									serverHealth.toLowerCase() === 'critical'
+										? style.server_health_critical
+										: ''
 								}`}
 							>
-								{serverHealth}
+								<div className={style.server_health}>
+									<span>Up</span>{' '}
+									<img
+										className={
+											serverHealth.toLowerCase() === 'critical' && style.rotate
+										}
+										src={arrow}
+										alt=""
+									/>
+								</div>
 							</td>
 						</tr>
 					</tbody>
@@ -42,7 +52,7 @@ ServerCard.propTypes = {
 ServerCard.defaultProps = {
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
-	serverHealth: 'Excellent',
+	serverHealth: 'excellent',
 };
 
 export default ServerCard;
