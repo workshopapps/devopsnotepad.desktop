@@ -82,6 +82,8 @@
 
 .link {
 	width: 100%;
+	display: grid;
+	place-items: center;
 }
 
 @media (max-width: 500px) {
