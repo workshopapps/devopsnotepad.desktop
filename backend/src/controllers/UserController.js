@@ -56,4 +56,13 @@ export default class UserController {
             next(error);
         }
     };
+
+    static logout = async (req, res, next) => {
+        try {
+            res.clearCookie("access_token");
+            res.status(200).send("logout successful");
+        } catch (error) {
+            next(error);
+        }
+    };
 }
