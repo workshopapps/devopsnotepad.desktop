@@ -11,7 +11,6 @@ pipeline {
 				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/devopsnotepad.desktop"
 			}
 
-		
 		}
 		
 		stage("start frontend") {
