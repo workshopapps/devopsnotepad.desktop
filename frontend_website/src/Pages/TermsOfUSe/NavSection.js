@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Terms.css';
+import classes from './Terms.module.css';
+
 export default function NavSection() {
-  const {isActive, setIsActive}=useState(false);
-  const handleClick=(e)=>{
+  const { isActive, setIsActive } = useState(false);
+  const handleClick = (e) => {
     e.preventDefault();
-    setIsActive(current=>!current)
-  }
+    setIsActive((current) => !current);
+  };
   return (
     <div>
-      <div className="container--head">Legal</div>
-      <ul className="nav--section">
+      <div className={classes.container__head}>Legal</div>
+      <ul className={classes.nav__section}>
                       
-        <li onClick={handleClick} style={{backgroundColor:isActive? "#EDEDED":""}}>
-                          <Link to="/terms">Terms of Use</Link>
+        <li
+          onClick={handleClick}
+          style={{ backgroundColor: isActive ? '#EDEDED' : '' }}
+        >
+                          <Link to='/terms'>Terms of Use</Link>
                         
         </li>
                       
         <li>
-                          <Link to="/privacy">Privacy Policy</Link>
+                          <Link to='/privacy'>Privacy Policy</Link>
                         
         </li>
                     
