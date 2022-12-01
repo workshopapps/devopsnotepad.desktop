@@ -9,17 +9,12 @@ export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
-export let serverId, serverId1;
-// Deletes every record from servers table before any test is run to avoid collisions.
-before(async () => {
-  await connection.raw('delete from notifications');
-});
-
 const getNotificationByLog = async (log) => {
   return connection('notifications').where('log', log).first();
 };
 
 let notificationId;
+export let serverId = '';
 export const params = {
   name: 'example server',
   ipAddress: 'google.com',
@@ -30,23 +25,10 @@ before(async () => {
   // Deletes every records table before any test is run to avoid collisions.
   await connection.raw('delete from notifications');
   await connection.raw('delete from servers');
-});
 
-describe('Notification', () => {
-  it('create server', async () => {
-    const res = await request.post('/server').send({
-      name: 'example server',
-      ipAddress: 'google.com',
-      deviceId: '80988579',
-    });
-    serverId = res.body.server.id;
-    const res1 = await request.post('/server').send({
-      name: 'Nginx server',
-      ipAddress: 'google.com',
-      deviceId: '80988579',
-    });
-    serverId1 = res1.body.server.id;
-  });
+  await ServerRepo.create(params);
+  const server = await ServerRepo.getServerByName(params.name, params.deviceId);
+  serverId = server.id;
 });
 
 describe('Notification', () => {
@@ -76,9 +58,12 @@ describe('Notification', () => {
   });
 
   it('should get new notifications and check default ordering', async () => {
-    const res = await request.get('/server/' + serverId + '/notifications');
+    const res = await request.get(`/server/${serverId}/notifications`);
+
+    let notifications = res.body.notifications;
     assert.equal(res.status, 200);
-    assert.equal(res.body.success, true);
+    assert.equal(notifications.length, 1);
+    assert.equal(Object.keys(notifications[0]).length, 5);
     docmaker.addEndpoint(res);
   });
 
@@ -92,26 +77,29 @@ describe('Notification', () => {
   });
 
   it('should return notifications for the last 1 week and check ordering in asc order', async () => {
-    const res = await request.get('/server/' + serverId1 + '/notifications?range=weekly&orderBy=created_at+asc');
+    const res = await request.get(`/server/${serverId}/notifications?range=weekly&orderBy=created_at+asc`);
 
+    let notifications = res.body.notifications;
     assert.equal(res.status, 200);
+    assert.equal(notifications.length, 1);
     docmaker.addEndpoint(res);
   });
 
   it('should return notifications for the last 1 month', async () => {
-    const res = await request.get('/server/' + serverId1 + '/notifications?range=monthly');
+    const res = await request.get(`/server/${serverId}/notifications?range=monthly`);
 
+    let notifications = res.body.notifications;
     assert.equal(res.status, 200);
+    assert.equal(notifications.length, 1);
     docmaker.addEndpoint(res);
   });
 
-  //
   it('should return default notifications if query parameter is invalid', async () => {
-    const res = await request.get('/server/' + serverId1 + '/notifications?pg=2&ordevfye=5');
-    assert.equal(notifications.length, 1);
+    const res = await request.get(`/server/${serverId}/notifications?pg=2&ordevfye=5`);
 
+    let notifications = res.body.notifications;
     assert.equal(res.status, 200);
-
+    assert.equal(notifications.length, 1);
     docmaker.addEndpoint(res);
   });
 });
