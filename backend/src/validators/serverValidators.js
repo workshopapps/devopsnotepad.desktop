@@ -19,8 +19,10 @@ export const createServerValidator = [
 
 export const updateServerValidator = [
   body('name', nameValMsg)
-    .notEmpty()
-    .custom((value) => value.length > 1),
+  .optional()
+  .custom((value) => value.length > 1),
 
-  body('id', serverIdValMsg).notEmpty().isUUID(),
+  body('ipAddress', nameValMsg)
+  .optional()
+  .custom((value) => value.length > 1),
 ];

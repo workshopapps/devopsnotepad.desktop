@@ -13,7 +13,6 @@
 
 .cardContainer {
   width: 474px;
-  height: 519px;
   border-radius: 8px;
   border: 1px solid #ededed;
   padding: 32px;
@@ -28,17 +27,19 @@
 
 .card {
   width: 410px;
-  height: 412px;
+  height: 505px;
   border: 1px solid #ededed;
   border-radius: 8px;
   padding: 27px 27px;
+  background: url('./images/bg-tp.png') no-repeat top;
 }
 
 .title {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
   padding: 6px;
   margin-bottom: 14px;
+  text-align: center;
 }
 
 .price {
@@ -47,6 +48,7 @@
   font-weight: 600;
   margin-bottom: 32px;
   color: #102a63;
+  text-align: center;
 }
 
 .list {
@@ -58,12 +60,24 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 18px;
 }
 
 .span {
   font-size: 20px;
   font-weight: 400;
   color: #6f6f6f;
+}
+
+.btn{
+  background: #102A63;
+  border-radius:6px;
+  color: #fff;
+  height: 56px;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 90px;
+  border: 1px solid #102A63;
 }
 
 @media (max-width: 1060px) {
@@ -75,6 +89,10 @@
   .cardContainer {
     margin-bottom: 40px;
   }
+
+  .btn {
+    margin-top: 80px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -82,25 +100,25 @@
     padding-top: 30px;
   }
 
-  .cardContainer {
-    width: 484px;
-    height: 473px;
-  }
 
   .card {
-    width: 350px;
-    height: 344px;
+    width: 100%;
+    height: auto;
   }
 
   .span {
     font-size: 16px;
+  }
+
+  .btn {
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 550px) {
   .cardContainer {
     width: 382px;
-    height: 471px;
+    height: auto;
     padding: 30px 16px 30px 16px;
   }
 

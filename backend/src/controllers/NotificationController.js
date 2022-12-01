@@ -1,5 +1,6 @@
 import create from "../services/notification/create.js";
 import get from "../services/notification/get.js";
+import deleteWeekly from "../services/notification/deleteWeekly.js"
 import { validatePayload } from "../utils/index.js";
 export default class NotificationController {
     static create = async (req, res, next) => {
@@ -47,6 +48,15 @@ export default class NotificationController {
             next(error);
         }
     };
+
+    static deleteWeekly = async(req, res, next) => {
+        try{
+           await deleteWeekly();
+        } catch (error) {
+            next(error);
+        }
+
+    }
 }
 
 

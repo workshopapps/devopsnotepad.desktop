@@ -1,8 +1,8 @@
-import NotificationRepo from "../../database/repositories/notificationRepo.js";
+import NotificationRepo from "../../database/repositories/NotificationRepo.js";
 import { NotFoundError } from "../../lib/errors/index.js";
 
 export default async function get(params, query) {
-    let notifications = [];
+    let notifications;
     switch (query.range) {
     case "weekly":
         notifications = await NotificationRepo.getWeeklyNotifications(params, query);
