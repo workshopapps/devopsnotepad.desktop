@@ -1,5 +1,11 @@
 .all__teams {
+  
+  @media screen and (max-width: $mobile) {
+    padding: 24px;
+  }
   header {
+    padding: 0;
+
     button {
       outline: none;
       border: none;
@@ -10,13 +16,29 @@
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 4rem;
+      list-style: none;
+
+      @media screen and (max-width : $mobile) {
+        flex-direction: column;
+      }
     }
 
     li {
       button {
         color: $gray;
+        font-weight: 700;
+        font-size: 16px;
+        @media screen and (min-width: $tablet) {
+            font-size: 14px;
+          }
+          @media screen and (max-width: $mobile) {
+            font-size: 12px;
+          }
+
+          &:hover {
+            color: $secondary;
+          }
       }
       &.active {
         button {
@@ -27,16 +49,67 @@
   }
 
   main {
+
+    .container {
+      padding: 0;
+    }
+
     .member__wrapper {
       border: 1px solid #dadada;
       border-radius: 6px;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 2rem;
       height: 94px;
       margin-top: 2rem;
+      @media screen and (max-width: $mobile){
+          padding: 0.5rem 1rem;
+      }
+      @media screen and (min-width: $tablet){
+          padding: 0.5rem 4rem;
+      }
+
+      @media screen and (max-width: $mobile){
+          font-size: 16px;
+        }
+
 
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 16px;
+        @media screen and (max-width: $mobile){
+          font-size: 16px;
+        }
+      }
+      .role {
+        font-size: 14px;
+        
+          @media screen and (max-width: $mobile) {
+            font-size: 12px !important;
+          }
+      }
+
+      .linked-in {
+        display: flex;
+        gap: 13px; 
+        align-items: center;
+
+        p {
+          margin-bottom: 0;
+          color: #2563eb;
+          
+          a {
+            color: #2563eb;
+          }
+          
+          @media screen and (max-width: $mobile) {
+              font-size: 12px !important;
+          }
+        }
+      }
     }
   }
 }
