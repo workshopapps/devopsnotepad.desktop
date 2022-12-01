@@ -16,7 +16,6 @@ router.get(
 router.get("/logout", AuthController.logout);
 
 router.post("/reset-password", AuthController.getResetLink);
-//router.get("/updatePassword?validToken", AuthController.displayUpdateForm);
-//router.post("/updatePassword", AuthController.updateUserPassword);
+router.post("/update-password", AuthController.updateUserPassword);
 
 export default router;
