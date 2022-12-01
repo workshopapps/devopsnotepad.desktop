@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect, useContext } from 'react';
+import AddServerSuccess from '../../Components/AddServerSuccess/AddServerSuccess';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
 import style from './AddServer.module.css';
 
 function AddServer() {
-	const { addServer } = useContext(ServerContext);
+	const { addServer, success, setSuccess } = useContext(ServerContext);
 
 	const [formData, setFormData] = useState({
 		name: '',
@@ -19,7 +21,6 @@ function AddServer() {
 			...prev,
 			[e.target.id]: e.target.value,
 		}));
-		console.log(formData);
 	}
 
 	useEffect(() => {
@@ -34,8 +35,18 @@ function AddServer() {
 		e.preventDefault();
 		addServer(formData);
 	}
+
+	// Close successfully added server modal
+	function closeSuccess() {
+		setSuccess(false);
+		setFormData({ name: '', ipAddress: '' });
+	}
+
+	// Close success modal and route to dashboard
+
 	return (
 		<div className={style.AddServer}>
+			{success && <AddServerSuccess closeSuccess={closeSuccess} />}
 			<Sidenav />
 			<div className={style.container}>
 				<h1>Add Server</h1>
