@@ -14,7 +14,7 @@ function Sidenav() {
 		<div>
 			<section className={styles.main}>
 				<div className={styles.sidenav}>
-					<img src={logo} alt="" className={styles.logo} />
+					<Link to='/'><img src={logo} alt="" className={styles.logo} /></Link>
 
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
 						<div className={styles.nav}>
