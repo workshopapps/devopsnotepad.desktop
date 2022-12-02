@@ -1,7 +1,6 @@
 import express from 'express';
 import passport from 'passport';
 import AuthController from '../controllers/AuthController.js';
-import authenticate from '../middleware/application/authenticate.js';
 
 const router = express.Router();
 
@@ -19,10 +18,11 @@ router.get(
         failureRedirect: "/auth/failed",
     })
 );
-
 router.get("/logout", AuthController.logout);
 
 router.post("/reset-password", AuthController.getResetLink);
 router.post("/update-password", AuthController.updateUserPassword);
+
+router.get("/verify-mail", AuthController.verifyEmail);
 
 export default router;

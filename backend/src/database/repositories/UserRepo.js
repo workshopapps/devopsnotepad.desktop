@@ -13,8 +13,6 @@ export default class UserRepo {
         return await connection("users").where("id", id).update(data);
     };
 
-    static createVlidationToken
-
     static updatePasswordById = async (id, password) => {
         return await connection("users").where("id", id).update("password", password);
     };
