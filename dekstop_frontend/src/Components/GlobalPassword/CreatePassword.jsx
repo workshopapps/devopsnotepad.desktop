@@ -15,6 +15,8 @@ function CreatePassword() {
 	const navigate = useNavigate();
 
 	function registeruser(event) {
+    localStorage.setItem('isNewUser', false);
+		navigate('/');
 		event.preventDefault();
 
 		const ServerUsers = JSON.parse(localStorage.getItem('users') || '[]');
@@ -44,6 +46,7 @@ function CreatePassword() {
 					name=""
 					id=""
 					value={password}
+          required
 					onChange={(e) => {
 						setpassword(e.target.value);
 					}}
