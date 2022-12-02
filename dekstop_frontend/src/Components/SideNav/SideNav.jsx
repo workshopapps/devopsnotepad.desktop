@@ -14,7 +14,9 @@ function Sidenav() {
 		<div>
 			<section className={styles.main}>
 				<div className={styles.sidenav}>
-					<Link to='/'><img src={logo} alt="" className={styles.logo} /></Link>
+					<Link to="/">
+						<img src={logo} alt="" className={styles.logo} />
+					</Link>
 
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
 						<div className={styles.nav}>
@@ -55,8 +57,8 @@ function Sidenav() {
 					<button className={styles.btn}>
 						{' '}
 						<Link
-							to="/add-Server"
-							style={{ color: '#fff !important', textDecoration: 'none' }}
+							to="/add-server"
+							style={{ color: 'white', textDecoration: 'none' }}
 						>
 							Add Server
 						</Link>
