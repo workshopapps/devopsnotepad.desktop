@@ -1,27 +1,48 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/jsx-no-bind */
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
 import arrow from './Assets/arrow.svg';
 import menu from './Assets/menu.svg';
 import ServerMenu from '../ServerMenu/ServerMenu';
+import EditServer from '../EditServer/EditServer';
+import DeleteServer from '../DeleteSever/DeleteServer';
 
 function ServerCard({ name, ipAddress, serverHealth, id }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isEditOpen, setIsEditOpen] = useState(false);
+	const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
-	useEffect(() => {
-		if (isMenuOpen) {
-			document.getElementById('home').addEventListener('click', () => {
-				setIsMenuOpen(false);
-			});
-		}
-	});
+	function closeDelete() {
+		setIsMenuOpen(false);
+		setIsDeleteOpen(!isDeleteOpen);
+	}
+	function closeEdit() {
+		setIsMenuOpen(false);
+		setIsEditOpen(!isEditOpen);
+	}
 
 	return (
 		<div id="ServerCard" className={style.container} aria-hidden>
+			{isEditOpen && (
+				<EditServer
+					closeEditServer={closeEdit}
+					name={name}
+					ipAddress={ipAddress}
+				/>
+			)}
+			{isDeleteOpen && <DeleteServer closeDelete={closeDelete} />}
 			<h2>{name}</h2>
 			<div className={style.table_container}>
-				{isMenuOpen && <ServerMenu />}
+				{isMenuOpen && (
+					<ServerMenu
+						toggleEdit={() => setIsEditOpen(!isEditOpen)}
+						toggleDelete={() => {
+							setIsDeleteOpen(!isDeleteOpen);
+						}}
+					/>
+				)}
 				<div className={style.button_container}>
 					<button
 						type="button"
@@ -84,3 +105,12 @@ ServerCard.defaultProps = {
 };
 
 export default ServerCard;
+// useEffect(() => {
+// 	if (isMenuOpen) {
+// 		document.getElementById('home').addEventListener('click', (e) => {
+// 			if (e.target.id !== 'ServerMenu') {
+// 				setIsMenuOpen(false);
+// 			}
+// 		});
+// 	}
+// });

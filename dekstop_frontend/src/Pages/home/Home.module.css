@@ -18,7 +18,6 @@
 }
 
 .no_server {
-	height: 100vh;
 	margin-left: 228px;
 	display: flex;
 	flex-direction: column;
