@@ -93,7 +93,7 @@
 	line-height: 120%;
 	color: #4b4b4b;
 }
-.form_control placeholder {
+.form_control input::placeholder {
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
