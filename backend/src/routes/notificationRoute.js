@@ -5,6 +5,6 @@ import { createNotificationValidator } from '../validators/notificationValidator
 const router = express.Router();
 
 router.post("/:serverId/notifications", createNotificationValidator, NotificationController.create);
-router.get("/:serverId/notifications", NotificationController.get);
+router.get("/:serverId/notifications", isAuthenticated(), NotificationController.get);
 
 export default router;
