@@ -1,11 +1,13 @@
 import create from "../services/user/create.js";
-// import UserRepo from "../database/repositories/UserRepo.js";
+import UserRepo from "../database/repositories/UserRepo.js";
 import login from "../services/user/login.js";
-// import { sendEmailVerificationLink } from "../services/user/emailVerification.js";
+import { sendEmailVerificationLink } from "../services/user/emailVerification.js";
 export default class AuthController {
     static signup = async (req, res, next) => {
         try {
             await create(req.body);
+
+            sendEmailVerificationLink(email, name, id);
 
             res.status(201).json({
                 success: true,
@@ -76,4 +78,23 @@ export default class AuthController {
     });
   };
 
+  static verifyEmail = async (req, res) => {
+    const {email} = req.body;
+
+    try {
+        const registeredUser = await UserRepo.getUserByEmail(email);
+
+        // if (!registeredUser) throw new NotFoundError("Please input a valid registered email.");
+
+        const {name, id} = registeredUser;
+
+        sendEmailVerificationLink(email, name, id);
+
+        res.status(200).redirect("/server");
+        return ({message: "An email verification link has been sent to your email address"});
+
+    } catch (error) {
+        console.error(error);
+    }
+};
 }
