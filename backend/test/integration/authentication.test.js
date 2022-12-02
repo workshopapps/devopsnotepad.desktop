@@ -3,13 +3,14 @@ import supertest from "supertest";
 import app from "../../src/initialize.js";
 import Documentator from "../../src/utils/documentator/index.js";
 import connection from "../../src/database/setup.js";
+import UserRepo from "../../src/database/repositories/UserRepo.js";
 
 export const request = supertest.agent(app);
 
 export const docmaker = Documentator.getInstance();
 
 
-before(async () => {
+beforeEach(async () => {
     // Deletes every records table before any test is run to avoid collisions.
     await connection.raw("delete from users");
 });
@@ -33,15 +34,18 @@ describe("user authentication", () => {
 
     it("should login a user", async () => {
         await request.post("/auth/signup").set("Content-Type", "application/json").send({
+            id: 5,
             name: "Oluseyi Adeegbe",
             email: "examplemail@gmail.com",
             password: "@password1",
         });
+        const id = 5;
+        await UserRepo.updateById(id, { email_verified: "true" });
 
         const res2 = await request.post("/auth/login").set("Content-Type", "application/json").send({
             email: "ExaMpleMail@gmail.com",
             password: "@password1",
-        });
+        }); 
      
         assert.equal(res2.status, 200);
         assert.exists(res2.body.token);
