@@ -119,13 +119,27 @@
   width: 100%;
 }
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line {
+.navigation
+  .mainNavigation
+  .inMenuBar
+  .menuUlList
+  .menuBox
+  .dropdown
+  li
+  .link_line {
   border: 0.5px solid #e5e5e5;
   margin: 0;
   padding: 0;
 }
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li .link_line:last-child {
+.navigation
+  .mainNavigation
+  .inMenuBar
+  .menuUlList
+  .menuBox
+  .dropdown
+  li
+  .link_line:last-child {
   border: none;
 }
 
@@ -360,4 +374,10 @@
   .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
     padding-left: 40px;
   }
+}
+.sticky {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 100;
 }
