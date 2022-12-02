@@ -1,159 +1,77 @@
 import React from 'react';
-import circle from './images/circle.png';
-import man from './images/man.png';
-import { BsArrowRightShort } from 'react-icons/bs';
-import womanwhite from './images/womanwhite.png';
-import womanblack from './images/womanblack.png';
+import mission from './images/mission.png';
+import vision from './images/vision.png';
+import assist from './images/assist.png';
 import classes from './About.module.css';
 export const About = () => {
   return (
-    <div className={classes.container}>
+    <div className={classes.aboutContainer}>
       <div className={classes.banner}>
         <h1>We’re changing the whole DevOps system.</h1>
-        <div className={classes.btnbox}>
-          <button className={classes.btn1}>Get started</button>{' '}
-          <button className={classes.btn2}>
-            View-blog
-            <BsArrowRightShort />
-          </button>
-        </div>
+
+        <p>
+          We are a team of techies passionate about refining excellence in the
+          Tech ecosystem. This passion ispired us to create OpsPad-an elegant,
+          all-in-one tool that fosters boundless creativity for DevOps engineers
+          by helping them stay organized.
+        </p>
       </div>
+
       <div className={classes.flexrow}>
         <div className={classes.flexcol}>
-          <p className={classes.storyhead}>OUR STORY</p>
-          <p
-            className={classes.p_}
-            style={{ maxWidth: '345px', fontWeight: '300', lineHeight: '40px' }}
-          >
-            We are building the DevOp notepad exclusively for the devops
-            engineers. Tool for every engineer,
+
+          <p className={classes.storyhead1}>Our Mission</p>
+
+          <p className={classes.p_}>
+            To ensure a smooth workflow for our users. Easier log analysis and
+            infrastural performance. Instead of thinking, counting and
+            remembering all you are doing, OpsPad helps you become more
+            productive by seeing all your activities in one place. We’ve adopted
+            a minimalist design aesthetic and userfriendly software that offers
+            a wonderful experience for DevOps engineers.
           </p>
-          <div
-            className={classes.flexrow}
-            style={{
-              marginTop: '20px',
-              paddingLeft: '0px',
-              flexWrap: 'nowrap',
-            }}
-          >
-            <img src={circle} className={classes.circle} alt='img' />
-            <p className={classes.tool}>
-              A tool for managing and keeping track of servers, remembering
-              passwords for various tools used to access these servers.
-            </p>
-          </div>
+
         </div>
-        <div className={classes.flexcol} style={{ maxWidth: '400px' }}>
-          <ol className={classes.list_style__}>
-            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
-              <b style={{ fontSize: '20px', fontWeight: '800' }}>
-                4 months of intense research
-              </b>
-              <br />A tool for managing and keeping track of servers,
-              remembering pas
-            </li>
-            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
-              <b style={{ fontSize: '20px', fontWeight: '800' }}>
-                4 months of intense research{' '}
-              </b>
-              <br />A tool for managing and keeping track of servers,
-              remembering pas
-            </li>
-            <li className={classes.list__} style={{ 'padding-left': '25px' }}>
-              <b style={{ fontSize: '20px', fontWeight: '800' }}>
-                {' '}
-                4 months of intense research{' '}
-              </b>
-              <br />A tool for managing and keeping track of servers,
-              remembering pas
-            </li>
-          </ol>
+
+        <div className={classes.imgbox}>
+          <img src={mission} className={classes.imgsize} alt='img' />
         </div>
+         
       </div>
-      <div className={classes.flexrow}>
-        <div className={classes.hide}>
-          <img src={man} className={classes.imgsize} alt='img' />
-        </div>
-        <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
-          <p className={classes.storyhead2}>Our Mission</p>
-          <p style={{ paddingBottom: '35px' }} className={classes.p_}>
-            We are building the DevOp notepad exclusively for the devops
-            engineers A tool for managing and keeping track of servers,
-            remembering passwords for various tools used to access these
-            servers.share information, and work together.
-          </p>
-          <div
-            className={classes.flexrow}
-            style={{
-              maxWidth: '400px',
-              paddingLeft: '0px',
-              justifyContent: 'space-between',
-            }}
-          >
-            <p style={{ fontSize: '30px', fontWeght: '700' }}>76%</p>
-            <p style={{ fontSize: '30px', fontWeght: '700' }}>50M+</p>
-            <p style={{ fontSize: '30px', fontWeght: '700' }}>5K+</p>{' '}
-          </div>
-        </div>
-        <div className={classes.show}>
-          <img src={man} className={classes.imgsize} alt='img' />
-        </div>
-      </div>
-      <div className={classes.flexrow}>
-        <div>
-          <img src={womanwhite} className={classes.imgsize} alt='img' />
-        </div>
-        <div className={classes.flexcol} style={{ maxWidth: '540px' }}>
+
+      <div className={classes.flexrow2}>
+        <div className={classes.flexcol}>
           <p className={classes.storyhead2}>Our Vision</p>
           <p className={classes.p_}>
-            We believe that the developers world will look very different after
-            the building of this tool.
+            Our goal is to continue to create innovations that help techies
+            manage and accomplish their goals in real time by developing
+            gaol-setting software, apps, and tools to help them achieve this.
           </p>
-          <p className={classes.p_}>
-            We foresee a gingantic acceleration towards the essential
-            requirements of developers satisfaction in a safe, secure, and
-            effective way of proper management.
-          </p>
+
+        </div>
+
+        <div className={classes.imgbox}>
+          <img src={vision} className={classes.imgsize} alt='img' />
         </div>
       </div>
+
       <div className={classes.bluerow}>
-        <div className={classes.colorbgsm}>
-          <img src={womanblack} className={classes.imgsize} alt='img' />
-        </div>
         <div className={classes.flexcol}>
-          <p
-            style={{
-              fontSize: '24px',
-              maxWidth: '253px',
-              fontWeight: '600',
-              lineHeight: '16px',
-              color: '#f6e6c7',
-              paddingBottom: '25px',
-            }}
-          >
-            Have a question?
+          <p className={classes.assist}>
+            Have a question?Our team is happy to assist you
           </p>
-          <p className={classes.assist}>Our team is happy to assist you</p>
-          <p
-            style={{
-              fontSize: '20px',
-              maxWidth: '491px',
-              fontWeight: '400',
-              lineHeight: '33px',
-              color: '#ffffff',
-              paddingBottom: '68px',
-            }}
-          >
+          <p className={classes.p_}>
             Ask about DevOps Notepad, blogs, or anything else. Our highly
             trained developers are standing by, ready to help.{' '}
           </p>
-          <hr style={{ color: '#fcf7ed', maxWidth: '540px' }} />
-          <button className={classes.btn3}>Contact us</button>
+          <button className={classes.btn}>Contact us</button>
         </div>
         <div className={classes.colorbglg}>
-          <img src={womanblack} className={classes.imgsize} alt='img' />
+          <img src={assist} className={classes.imgsize} alt='img' />
         </div>
+
       </div>
+
     </div>
   );
 };
