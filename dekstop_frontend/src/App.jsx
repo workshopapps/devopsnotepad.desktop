@@ -27,10 +27,11 @@ function App() {
 
 							<Route path="/server/:id" element={<ServerDashBoard />}>
 								<Route index element={<Note />} />
-								<Route path="tnote" element={<Note />} />
+								<Route path="note" element={<Note />} />
 								<Route path="password" element={<Password />} />
 								<Route path="notification" element={<Notification />} />
 							</Route>
+
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
 							
