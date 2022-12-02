@@ -1,12 +1,14 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/require-default-props */
 import React, { useState } from 'react';
 import style from './Onboarding.module.css';
 import screen1 from './Assets/screen1.svg';
 import CreatePassword from '../GlobalPassword/CreatePassword';
+// import screen2 from './Assets/screen2.svg';
 
 function Onboarding() {
 	const [getStarted, setGetStarted] = useState(1);
-	
+
 	// Disable onboarding for subsequent run
 	// On click get started in onboarding, close onboarding and set isNewUser to false in local storage so that next time the user opens the app it skips the onboarding process
 
@@ -42,7 +44,7 @@ function Onboarding() {
 					</div>
 				</div>
 			) : (
-				<div className={style.onboarding_form}>
+				<div className={style}>
 					<CreatePassword/>
 				</div>
 			)}
