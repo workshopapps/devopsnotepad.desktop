@@ -3,16 +3,17 @@ import edit from './Assets/edit.svg';
 import del from './Assets/delete.svg';
 import style from './ServerMenu.module.css';
 
-function ServerMenu() {
+// eslint-disable-next-line react/prop-types
+function ServerMenu({ toggleEdit, toggleDelete }) {
 	return (
-		<div className={style.container}>
-			<button className={style.button} type="button">
+		<div id="ServerMenu" className={style.container}>
+			<button onClick={toggleEdit} className={style.button} type="button">
 				<figure>
 					<img src={edit} alt="Edit Server" />
 				</figure>
 				<span>Edit Server</span>
 			</button>
-			<button className={style.button} type="button">
+			<button onClick={toggleDelete} className={style.button} type="button">
 				<figure>
 					<img src={del} alt="Delete Server" />
 				</figure>
