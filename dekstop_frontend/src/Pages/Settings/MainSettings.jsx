@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 
 import { Link } from 'react-router-dom';
-import { Security, AppSettings, Support } from './data';
+import { Security, Support } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
 
@@ -51,7 +51,7 @@ function Settings() {
 				</div>
 			))} */}
 
-				{AppSettings.map((appsettings) => (
+				{/* {AppSettings.map((appsettings) => (
 					<div key={appsettings.title}>
 						<small className={style.smallHead}>{appsettings.title}</small>
 
@@ -65,10 +65,10 @@ function Settings() {
 
 						<span className={style.border_bottom}> </span>
 					</div>
-				))}
+				))} */}
 
 				{Security.map((security) => (
-					<div key={security.title} className={style.border_top}>
+					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
 						<div className={style.account}>
 							<div className={style.accountProfile}>
