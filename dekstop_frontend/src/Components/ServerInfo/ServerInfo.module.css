@@ -12,9 +12,8 @@
 	margin-left: 24px;
 	color: #202020 !important;
 	margin-bottom: 11px;
-    margin-top: 0;
-    padding-top: 20px;
-
+	margin-top: 0;
+	padding-top: 20px;
 }
 
 .table {
@@ -47,8 +46,8 @@
 
 .server_health {
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	place-content: center;
 	/* padding: 8px 20px; */
 	width: 93px;
@@ -71,26 +70,7 @@
 	color: #e91111 !important;
 }
 
-div.container div.wrapper {
-
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
-    font-size: 14px;
-    font-weight: 700;
-    color: #6F6F6F;
-    border-bottom: 1.3px solid #6F6F6F;
-}
-
-div.container div.wrapper p.note {
-
-    color: #6F6F6F !important;
-	margin-bottom: 4px;
-
-}
-
 .arrow {
-
 	color: #0e6930 !important;
 	margin-left: 10px;
 	width: 20px;
