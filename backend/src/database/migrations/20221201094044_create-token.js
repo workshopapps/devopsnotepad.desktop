@@ -4,7 +4,6 @@ export async function up(knex) {
         table.string("userId", 255).notNullable();
         table.string("token", 255).notNullable();
         table.timestamp("created_at").defaultTo(knex.fn.now());
-        table.timestamp("expires_at").defaultTo(knex.raw("SELECT date_add(?, INTERVAL ? hour)", [knex.fn.now(), 1]));
     });
 }
   
