@@ -18,7 +18,7 @@ function ServerDashBoard() {
 					.map((server) => (
 						<div>
 							<ServerInfo
-								key={server.serverId}
+								key={server.id}
 								ipAddress={server.ipAddress}
 								name={server.name}
 							/>

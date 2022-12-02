@@ -33,7 +33,7 @@ function Home() {
 	const filteredServers = getFilteredServers(query, servers);
 
 	return (
-		<div className={style.HomeWrapper}>
+		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
 			{loading && <div className={style.loading}>Loading Servers...</div>}
 			{servers && (
