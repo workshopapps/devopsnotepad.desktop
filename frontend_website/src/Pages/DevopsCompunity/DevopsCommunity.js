@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './DevopsCommunity.module.css';
 import Banner from './Banner';
-import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
 import { BiLike } from 'react-icons/bi';
 import { BsEmojiSmile } from 'react-icons/bs';
 import Slider from 'react-slick';
@@ -118,7 +118,7 @@ const DevopsCommunity = () => {
           <div className={styles.right}>
             <div className={styles.rBox}>
               <h5 className={styles.h5}>Get Started</h5>
-              <h3 style={{ 'margin-bottom': '-2.5rem' }}>
+              <h3 style={{ marginBottom: '-2.5rem' }}>
                 Welcome <br />
                 Community Guidelines Feedback
               </h3>
@@ -142,11 +142,6 @@ const DevopsCommunity = () => {
                 Team Sandpaper on the complexities of sorting servers and
                 designing specialized UIs for OpsPad…
               </p>
-              <div className={styles.rLink}>
-                <Link to='/blog'>
-                  Read our Community Blog <IoIosArrowForward />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
