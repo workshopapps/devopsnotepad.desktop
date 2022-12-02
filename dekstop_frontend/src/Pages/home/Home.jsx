@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
@@ -6,9 +6,11 @@ import style from './Home.module.css';
 import ServerCard from '../../Components/ServerCard/ServerCard';
 // import Servers from './ServerData';
 import addBg from './Assets/add.svg';
+import search from './Assets/search.svg';
 
 function Home() {
 	const { servers, loading, getServers } = useContext(ServerContext);
+	const [query, setQuery] = useState('');
 	const navigate = useNavigate();
 
 	// Initiate Onboarding
@@ -21,15 +23,33 @@ function Home() {
 		}
 	});
 
+	// Filter servers displayed by user query
+	function getFilteredServers(queryValue, items) {
+		if (!queryValue) {
+			return items;
+		}
+		return items.filter((item) => item.name.includes(queryValue));
+	}
+	const filteredServers = getFilteredServers(query, servers);
+
 	return (
 		<div className={style.HomeWrapper}>
 			<Sidenav />
 			{loading && <div className={style.loading}>Loading Servers...</div>}
 			{servers && (
 				<div className={style.container}>
-					{servers.map((server) => (
+					<div className={style.search}>
+						<img src={search} alt="filter servers" />
+						<input
+							value={query}
+							type="search"
+							onChange={(e) => setQuery(e.target.value)}
+						/>
+					</div>
+					{filteredServers.map((server) => (
 						<ServerCard
 							key={server.id}
+							id={server.id}
 							name={server.name}
 							ipAddress={server.ipAddress}
 							serverHealth={server.serverHealth}
