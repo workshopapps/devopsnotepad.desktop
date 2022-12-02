@@ -31,7 +31,8 @@ export default class ServerController {
     };
     static getAllServers = async (req, res, next) => {
         try {
-            const result = await getAllServers(req.query);
+            const {id} = req.session.user;
+            const result = await getAllServers(req.query, id);
             res.send({
                 success: true,
                 ...result,

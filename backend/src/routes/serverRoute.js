@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.post('/', createServerValidator, isAuthenticated() , ServerController.create);
 router.patch('/', updateServerValidator, ServerController.update);
-router.get('/', ServerController.getAllServers);
-router.post('/delete', ServerController.deleteServersById);
+router.get('/', isAuthenticated(), ServerController.getAllServers);
+router.post('/delete', isAuthenticated(), ServerController.deleteServersById);
 router.post('/:server_id/subscribe', ServerController.subscribe);
 
 export default router;
