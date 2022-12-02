@@ -165,20 +165,24 @@
 	margin-top: 30px;
 }
 .notesDeleteBtn {
-	width: 70px;
+	width: 100px;
 	height: 40px;
 	font-family: 'Manrope';
 	font-style: normal;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 16px;
-	color: #102a63;
 	border: 0;
 	margin: 0 40px;
 	cursor: pointer;
+	border-radius: 4px;
+}
+#notesCancelBtn {
+	background: #102a63;
+	color: #fff;
 }
 #notesDeleteBtn {
-	background-color: #fff;
+	color: #102a63;
 }
 @media screen and (max-width: 1200px) {
 	.notesTitle {

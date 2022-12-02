@@ -221,6 +221,7 @@ function Note() {
 								<button
 									type="button"
 									className={notesStyle.notesDeleteBtn}
+									id={notesStyle.notesCancelBtn}
 									onMouseDownCapture={handleCancel}
 									onFocus={handleCancel}
 								>
