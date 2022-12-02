@@ -42,7 +42,7 @@ function Home() {
 						<img src={search} alt="filter servers" />
 						<input
 							value={query}
-							type="text"
+							type="search"
 							onChange={(e) => setQuery(e.target.value)}
 						/>
 					</div>
