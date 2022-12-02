@@ -10,7 +10,6 @@ import Notification from './Pages/Notification/Notification';
 import Password from './Pages/Password/Password';
 import AddServer from './Pages/AddServer/AddServer';
 import TextResizer from './Pages/Settings/components/TextResizer/TextResizer';
-
 import Onboarding from './Components/Onboarding/Onboarding';
 import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 
@@ -28,7 +27,6 @@ function App() {
 
 							<Route path="/server/:id" element={<ServerDashBoard />}>
 								<Route index element={<Note />} />
-
 								<Route path="note" element={<Note />} />
 								<Route path="password" element={<Password />} />
 								<Route path="notification" element={<Notification />} />
@@ -36,15 +34,10 @@ function App() {
 
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
-							<Route exact path="/server/password" element={<Password />} />
+							
 							<Route exact path="/add-server" element={<AddServer />} />
 							<Route exact path="/notification" element={<Notification />} />
 							<Route exact path="/onboarding" element={<Onboarding />} />
-							<Route
-								exact
-								path="/serverDashBoard"
-								element={<ServerDashBoard />}
-							/>
 						</Routes>
 					</div>
 				</ServerProvider>
