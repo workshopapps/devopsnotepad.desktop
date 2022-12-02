@@ -1,30 +1,51 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import google from '../../assets/login_page-assets/google.png';
-
-import Form from './Form';
-import { useContext } from 'react';
-import classes from './Login.module.css';
+import useFetch from '../../hooks/useFetch';
 import { UserContext } from '../../store/UserContext';
 
-const Login = () => {
-  const { addUserHandler } = useContext(UserContext);
-  // const navigate = useNavigate();
+import Form from './Form';
+import classes from './Login.module.css';
 
-  const googleSignInHandler = async () => {
-    const response = await window.open(
-      'http://opspad.onrender.com/auth/google',
-      _self,
+const Login = () => {
+  const navigate = useNavigate();
+
+  const { addUserHandler } = useContext(UserContext);
+
+  // Using a custom hook
+  const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
+
+  // Sigin up with google
+  const googleSignInHandler = () => {
+    window.open('https://opspad.onrender.com/auth/google', '_self');
+  };
+
+  // A function that will get response from the request made
+  const getResponseData = (responseObj) => {
+    addUserHandler(responseObj);
+    console.log(responseObj);
+    navigate('/');
+  };
+
+  const signInHandler = async (formData) => {
+    LoginRequest(
+      {
+        url: 'https://opspad.onrender.com/auth/login',
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+      getResponseData,
     );
-    console.log(response);
-    const responseBody = await response.json();
-    console.log(responseBody);
   };
 
   return (
     <div className={classes.login} data-testid='login__page'>
       <h1 className={classes.h1}>Welcome back!</h1>
-      <Form />
+      <Form onSubmit={signInHandler} isLoading={isLoading} error={error} />
       <div className={classes.p__box}>
         <div className={classes.div}></div>
         <p className={classes.p}>or sign in with</p>
