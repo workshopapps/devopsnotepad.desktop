@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 export default async function authenticate(req, res, next) {
     try{
-        if (req.cookies["connect.sid"]) {
+        if (req.cookies["connect.sid"] && req.session.authorized) {
             return next();
         }
         let token;
