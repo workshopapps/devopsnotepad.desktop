@@ -4,7 +4,7 @@
  *     post:
  *         summary: Registers a single user
  *         tags:
- *             - Register
+ *             - Auth
  *         requestBody:
  *             description: a json with all fields
  *             required: true
@@ -26,9 +26,6 @@
  *                              password:
  *                                  type: string
  *                                  description: The password of the user
- *                              created_at:
- *                                  type: string
- *                                  description: The time the user was created
  * 
  *         responses:
  *             '200':
@@ -67,7 +64,7 @@
  *     post:
  *         summary: Logs in a single user with correct login credentials
  *         tags:
- *             - Login
+ *             - Auth
  *         requestBody:
  *             description: a json with all fields
  *             required: true
@@ -85,9 +82,6 @@
  *                              password:
  *                                  type: string
  *                                  description: The password of the user
- *                              created_at:
- *                                  type: string
- *                                  description: The time the user was created
  * 
  *         responses:
  *             '200':
@@ -122,6 +116,29 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
+ * /auth/logout:
+ *     post:
+ *         summary: Logs out a single user
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: false
+ *             content:
+ * 
+ *         responses:
+ *             '200':
+ *                description: success
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
  * /server:
  *     patch:
  *         summary: Updates server information for a single user
@@ -137,6 +154,7 @@
  *                          required:
  *                              - name
  *                              - ipAddress
+ *                              - id
  *                          properties:
  *                              name:
  *                                  type: string
@@ -144,9 +162,9 @@
  *                              ipAddress:
  *                                  type: string
  *                                  description: The ipAddress of the server
- *                              created_at:
+ *                              id:
  *                                  type: string
- *                                  description: The time the user was created
+ *                                  description: The id of the server
  * 
  *         responses:
  *             '200':
@@ -193,9 +211,6 @@
  *                              ipAddress:
  *                                  type: string
  *                                  description: The ipAddress of the server
- *                              created_at:
- *                                  type: string
- *                                  description: The time the user was created
  * 
  *         responses:
  *             '200':
@@ -252,9 +267,11 @@
  *                                     description: success message.
  *                                data:
  *                                     type: object
- * /server?page={page}&limit={limit}:
+ * /server/all:
  *      get:
  *         summary: Fetches all servers for a user
+ *         security:
+ *             - bearerAuth: []
  *         tags:
  *             - Server
  *         parameters:
@@ -262,12 +279,12 @@
  *               name: page
  *               schema:
  *                    type: number
- *                    required: true
+ *                    required: false
  *             - in: path
  *               name: page
  *               schema:
  *                    type: number
- *                    required: true
+ *                    required: false
  *         responses:
  *             '200':
  *                description: Success

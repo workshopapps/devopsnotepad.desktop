@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', createServerValidator, isAuthenticated() , ServerController.create);
 router.patch('/', updateServerValidator, isAuthenticated(), ServerController.update);
-router.get('/', isAuthenticated(), ServerController.getAllServers);
+router.get('/all', isAuthenticated(), ServerController.getAllServers);
 router.post('/delete', isAuthenticated(), ServerController.deleteServersById);
 router.post('/:server_id/subscribe', ServerController.subscribe);
 
