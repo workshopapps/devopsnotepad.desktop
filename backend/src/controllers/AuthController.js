@@ -1,18 +1,16 @@
 import create from "../services/user/create.js";
 import UserRepo from "../database/repositories/UserRepo.js";
 import login from "../services/user/login.js";
-import { sendEmailVerificationLink } from "../services/user/emailVerification.js";
 import ResetTokenRepo from "../database/repositories/ResetTokenRepo.js";
 import {NotFoundError} from "../lib/errors/index.js";
 import { sendResetLink } from "../services/user/password_reset.js";
+import EmailVerificationTokenRepo from "../database/repositories/emailVerificationRepo.js";
 import bcrypt from "bcrypt";
 
 export default class AuthController {
     static signup = async (req, res, next) => {
         try {
             await create(req.body);
-
-            sendEmailVerificationLink(email, name, id);
 
             res.status(201).json({
                 success: true,
@@ -133,23 +131,26 @@ export default class AuthController {
         });
     };
 
-  static verifyEmail = async (req, res) => {
-    const {email} = req.body;
+    static verifyEmail = async (req, res) => {
+        const { token, id } = req.query;
 
-    try {
-        const registeredUser = await UserRepo.getUserByEmail(email);
+        await EmailVerificationTokenRepo.deleteExpiredTokens();
 
-        // if (!registeredUser) throw new NotFoundError("Please input a valid registered email.");
+        const storedToken = await EmailVerificationTokenRepo.getToken(id);
 
-        const {name, id} = registeredUser;
+        if (!storedToken) {
+            throw new Error("Invalid or expired email verification token");
+        }
+    
+        const isValid = await bcrypt.compare(token, storedToken.token);
+    
+        if (!isValid) {
+            throw new Error("Invalid or expired email verification token");
+        }
 
-        sendEmailVerificationLink(email, name, id);
+        await UserRepo.updateById(id, {email_verified: "true"});
 
-        res.status(200).redirect("/server");
-        return ({message: "An email verification link has been sent to your email address"});
-
-    } catch (error) {
-        console.error(error);
-    }
-};
+        return ({message: "email verified successfully"});
+    };
+  
 }
