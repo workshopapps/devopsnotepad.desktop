@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
 import arrow from './Assets/arrow.svg';
 
-function ServerCard({ name, ipAddress, serverHealth }) {
+function ServerCard({ name, ipAddress, serverHealth, id }) {
 	return (
 		<div className={style.container}>
 			<h2>{name}</h2>
-			<Link to={`/server/${name}`}>
+			<Link to={`/server/${id}`}>
 				<table className={style.table}>
 					<tbody>
 						<tr>
@@ -47,12 +47,14 @@ ServerCard.propTypes = {
 	name: PropTypes.string,
 	ipAddress: PropTypes.string,
 	serverHealth: PropTypes.string,
+	id: PropTypes.string,
 };
 
 ServerCard.defaultProps = {
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
 	serverHealth: 'excellent',
+	id: '34380302dom',
 };
 
 export default ServerCard;
