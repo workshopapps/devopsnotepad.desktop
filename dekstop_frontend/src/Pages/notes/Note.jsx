@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Link, useOutletContext } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sidenav from '../../Components/SideNav/SideNav';
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
@@ -30,12 +30,12 @@ const style = {
 };
 
 function Note() {
-	const [currentServer] = useOutletContext();
-	console.log(currentServer);
 	// State
-	const [formDisplay, setFormDisplay] = React.useState(false);
-	const [open, setOpen] = React.useState(false);
-	const [inputs, setInputs] = React.useState('');
+	const [formDisplay, setFormDisplay] = useState(false);
+	const [open, setOpen] = useState(false);
+	const [note, setNote] = useState(localStorage.getItem('note'));
+	const [inputs, setInputs] = useState(note);
+	const [bold, setBold] = useState(false);
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -44,6 +44,21 @@ function Note() {
 	const handleFormShow = () => {
 		setFormDisplay((prev) => !prev);
 	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		localStorage.setItem('note', inputs);
+		setNote(localStorage.getItem('note'));
+	};
+	const handleBold = () => setBold((prev) => !prev);
+	const deleteNote = () => {
+		localStorage.removeItem('note');
+		setNote('');
+		setOpen(false);
+	};
+	const handleCancel = () => {
+		setOpen(false);
+	};
+
 	// styles
 	const styles = {
 		fontFamily: 'Manrope',
@@ -54,6 +69,15 @@ function Note() {
 		color: '#202020',
 		borderBottom: '2px solid #111111',
 	};
+
+	// Date
+	const date = new Date().getDate();
+	const hour = new Date().getHours();
+	const min = new Date().getMinutes();
+	const month = new Date().getMonth();
+
+	const startHere = 'Start note here...';
+	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<Sidenav />
@@ -120,6 +144,8 @@ function Note() {
 										src={Vectorc}
 										alt="img"
 										className={notesStyle.notesFormIcon}
+										onMouseDownCapture={handleBold}
+										onFocus={handleBold}
 									/>
 									<img
 										src={Vectorr}
@@ -145,21 +171,25 @@ function Note() {
 										onFocus={handleOpen}
 									/>
 								</div>
-								{inputs.length > 0 ? (
+								{inputs?.length > 0 ? (
 									<p
 										className={notesStyle.notesLastEdit}
 										id={notesStyle.notesLastEdit}
 									>
-										{' '}
-										6:45pm, 15-11-22
+										{hour}:{min}pm, {date}-{month}-22
 									</p>
 								) : (
 									<p className={notesStyle.notesLastEdit}>Last edit</p>
 								)}
-								<form className={notesStyle.notesForm}>
+								<p
+									className={notesStyle.noteText}
+									style={bold ? boldStyle : {}}
+								>
+									{note}
+								</p>
+								<p>{startHere}</p>
+								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
 									<input
-										type="text"
-										placeholder="Start note here..."
 										className={notesStyle.notesFormInput}
 										onChange={handleChanges}
 									/>
@@ -188,13 +218,20 @@ function Note() {
 								retrieved
 							</p>
 							<div className={notesStyle.notesDeleteBtnDiv}>
-								<button type="button" className={notesStyle.notesDeleteBtn}>
+								<button
+									type="button"
+									className={notesStyle.notesDeleteBtn}
+									onMouseDownCapture={handleCancel}
+									onFocus={handleCancel}
+								>
 									Cancel
 								</button>
 								<button
 									type="button"
 									id={notesStyle.notesDeleteBtn}
 									className={notesStyle.notesDeleteBtn}
+									onMouseDownCapture={deleteNote}
+									onFocus={deleteNote}
 								>
 									Delete
 								</button>
