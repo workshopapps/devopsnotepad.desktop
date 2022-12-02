@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // flex-wrap: wrap;
   }
 
   &__icons--prev,
@@ -42,7 +43,6 @@
     flex-basis: 80%;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
 
     & button {
       text-align: center;
@@ -87,6 +87,30 @@
   .pagination {
     &__card {
       width: 100%;
+    }
+    &__icons--prev,
+    &__icons--next {
+      padding: 0 0.5rem;
+      height: 2.5rem;
+      width: 4rem;
+    }
+
+    &__icons--end,
+    &__icons--start {
+      padding: 0 0.5rem;
+      height: 2.5rem;
+      width: 4rem;
+    }
+
+    &__buttons {
+      flex-basis: 100%;
+
+      & button {
+        text-align: center;
+        padding: 0.2rem 0.5rem;
+        margin: 0.3rem;
+        font-size: 1.2rem;
+      }
     }
   }
 }
