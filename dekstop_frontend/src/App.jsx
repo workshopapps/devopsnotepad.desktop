@@ -16,7 +16,6 @@ import Faq from './Pages/Settings/Faq/Faq';
 import { useDarkMode } from './Pages/Settings/components/useDarkmode';
 import { lightTheme, darkTheme } from './Pages/Settings/components/Theme';
 import { GlobalStyles } from './Pages/Settings/components/Global';
-
 import Onboarding from './Components/Onboarding/Onboarding';
 import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 
@@ -40,7 +39,12 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Home />} />
 
-							{/* <Route path="/server/:name" element={<ServerDashboard />} /> */}
+							<Route path="/server/:id" element={<ServerDashBoard />}>
+								<Route index element={<Note />} />
+								<Route path="note" element={<Note />} />
+								<Route path="password" element={<Password />} />
+								<Route path="notification" element={<Notification />} />
+							</Route>
 
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
@@ -50,9 +54,6 @@ function App() {
 							<Route exact path="/onboarding" element={<Onboarding />} />
 							<Route exact path="/about" element={<About />} />
 							<Route exact path="/faq" element={<Faq />} />
-							<Route exact path="/serverDashBoard/:name" element={<ServerDashBoard />}>
-							<Route exact path="password" element={<Password />} />
-							</Route>
 						</Routes>
 					</div>
 				</ServerProvider>

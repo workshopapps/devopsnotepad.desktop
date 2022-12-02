@@ -1,29 +1,33 @@
 import React, { useState, useEffect, useCallback } from 'react';
+// import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import passwordStyle from './Password.module.css';
 import PasswordCard from './PasswordCard';
 import Add from './images/add.svg';
 import CreateForm from './components/createForm/CreateForm';
-import Data from './Data';
+// import Data from './Data';
 
 // Database
-const allPasswords = Data.passwords;
+// const allPasswords = Data.passwords;
 
 function Password() {
+	const {id} = useParams();
 	const [passwords, setPasswords] = useState(() => {
-		const localData = localStorage.getItem('passwords');
-		return localData ? JSON.parse(localData) : allPasswords;
+		const localData = localStorage.getItem(`${id}passwords`);
+		return localData ? JSON.parse(localData) : [];
 	});
+	
 
 	const [showCreateform, setShowCreateform] = useState(null);
-
+	
 	// methods and functions
 	const addPassword = (password) => {
 		const newPassword = password;
 		setPasswords([...passwords, newPassword]);
 	};
 
-	const removePassword = (id) => {
-		const newPassword = passwords.filter((password) => password.id !== id);
+	const removePassword = (value) => {
+		const newPassword = passwords.filter((password) => password.id !== value);
 		setPasswords(newPassword);
 	};
 
@@ -45,7 +49,7 @@ function Password() {
 	}
 
 	useEffect(() => {
-		localStorage.setItem('passwords', JSON.stringify(passwords));
+		localStorage.setItem(`${id}passwords`, JSON.stringify(passwords));
 	}, [passwords]);
 
 	useEffect(() => {
