@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RiArrowUpLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
 import style from './ServerInfo.module.css';
 
 function ServerInfo({ name, ipAddress, serverHealth }) {
-
 	return (
 		<div className={style.container}>
 			<h2>{name}</h2>
@@ -16,7 +14,7 @@ function ServerInfo({ name, ipAddress, serverHealth }) {
 						<td className={style.data}>{ipAddress}</td>
 					</tr>
 					<tr>
-						<th>Server Satus:</th>
+						<th>Server Status:</th>
 						<td
 							className={`${style.server_health} ${
 								serverHealth.toLowerCase() === 'up'
@@ -24,19 +22,11 @@ function ServerInfo({ name, ipAddress, serverHealth }) {
 									: style.server_health_critical
 							}`}
 						>
-							{serverHealth} <RiArrowUpLine className={style.arrow}
-
-						/>
+							{serverHealth} <RiArrowUpLine className={style.arrow} />
 						</td>
 					</tr>
 				</tbody>
 			</table>
-
-			<div className={style.wrapper}> 
-				<Link to="/note"> <p className={style.note}>Notes</p> </Link>
-				<Link to="/server/password"> <p className={style.note}>Password</p> </Link>
-				<Link to="/notification"> <p className={style.note}>Notifications</p> </Link>
-			</div>
 		</div>
 	);
 }
@@ -49,7 +39,6 @@ ServerInfo.propTypes = {
 
 ServerInfo.defaultProps = {
 	name: 'HNG SERVER',
-
 	ipAddress: '192.168.0.1',
 	serverHealth: 'UP',
 };

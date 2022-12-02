@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Sidenav from '../../Components/SideNav/SideNav';
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
@@ -12,7 +12,6 @@ import Vectorr from './assets/Vectorr.png';
 import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
-
 
 // Modal css
 const style = {
@@ -31,7 +30,8 @@ const style = {
 };
 
 function Note() {
-
+	const [currentServer] = useOutletContext();
+	console.log(currentServer);
 	// State
 	const [formDisplay, setFormDisplay] = React.useState(false);
 	const [open, setOpen] = React.useState(false);
@@ -141,20 +141,27 @@ function Note() {
 										alt="img"
 										id={notesStyle.deleteIcon}
 										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleOpen} onFocus={handleOpen}
+										onMouseDownCapture={handleOpen}
+										onFocus={handleOpen}
 									/>
 								</div>
-								{
-									inputs.length > 0 ?
-								<p className={notesStyle.notesLastEdit} id={notesStyle.notesLastEdit}> 6:45pm, 15-11-22</p>:
-								<p className={notesStyle.notesLastEdit}>Last edit</p>
-								}
+								{inputs.length > 0 ? (
+									<p
+										className={notesStyle.notesLastEdit}
+										id={notesStyle.notesLastEdit}
+									>
+										{' '}
+										6:45pm, 15-11-22
+									</p>
+								) : (
+									<p className={notesStyle.notesLastEdit}>Last edit</p>
+								)}
 								<form className={notesStyle.notesForm}>
 									<input
 										type="text"
 										placeholder="Start note here..."
 										className={notesStyle.notesFormInput}
-									onChange={handleChanges}
+										onChange={handleChanges}
 									/>
 								</form>
 							</div>
@@ -177,18 +184,18 @@ function Note() {
 								className={notesStyle.notesDeleteImg}
 							/>
 							<p className={notesStyle.notesDeleteNotification}>
-								Are you sure you want too delete notes? Notes deleted cannot be retrieved
+								Are you sure you want too delete notes? Notes deleted cannot be
+								retrieved
 							</p>
 							<div className={notesStyle.notesDeleteBtnDiv}>
-								<button
-									type="button"
-									className={notesStyle.notesDeleteBtn}
-								>
+								<button type="button" className={notesStyle.notesDeleteBtn}>
 									Cancel
 								</button>
-								<button type="button" 
+								<button
+									type="button"
 									id={notesStyle.notesDeleteBtn}
-									className={notesStyle.notesDeleteBtn}>
+									className={notesStyle.notesDeleteBtn}
+								>
 									Delete
 								</button>
 							</div>
