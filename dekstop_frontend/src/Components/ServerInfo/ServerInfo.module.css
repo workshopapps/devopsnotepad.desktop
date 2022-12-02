@@ -1,0 +1,78 @@
+.container {
+	width: 100%;
+	font-family: 'Inter';
+}
+
+.container > h2 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: start;
+	text-transform: uppercase;
+	margin-left: 24px;
+	color: #202020 !important;
+	margin-bottom: 11px;
+	margin-top: 0;
+	padding-top: 20px;
+}
+
+.table {
+	width: 100%;
+	padding: 16px 24px;
+	border: 1px solid #c7c7c7;
+	border-radius: 10px;
+}
+
+.table > tbody {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 44px;
+}
+
+.table tr {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.table th,
+.data {
+	color: #000000;
+	font-family: 'Manrope';
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.server_health {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	place-content: center;
+	/* padding: 8px 20px; */
+	width: 93px;
+	height: 32px;
+	border-radius: 4px;
+	font-family: 'Manrope';
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: right;
+	text-transform: capitalize;
+}
+
+.server_health_excellent {
+	background: #b6dec5;
+	color: #0e6930 !important;
+}
+.server_health_critical {
+	background: rgba(233, 17, 17, 0.08);
+	color: #e91111 !important;
+}
+
+.arrow {
+	color: #0e6930 !important;
+	margin-left: 10px;
+	width: 20px;
+	height: 20px;
+}
