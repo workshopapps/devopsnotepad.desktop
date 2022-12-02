@@ -2,7 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Link, useOutletContext } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { Link, useOutletContext } from 'react-router-dom';
 import Sidenav from '../../Components/SideNav/SideNav';
 import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
@@ -30,8 +31,7 @@ const style = {
 };
 
 function Note() {
-	const [currentServer] = useOutletContext();
-	console.log(currentServer);
+	// const [currentServer] = useOutletContext();
 	// State
 	const [formDisplay, setFormDisplay] = React.useState(false);
 	const [open, setOpen] = React.useState(false);
