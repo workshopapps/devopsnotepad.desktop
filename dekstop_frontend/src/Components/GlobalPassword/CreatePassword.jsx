@@ -15,6 +15,8 @@ function CreatePassword() {
 	const navigate = useNavigate();
 
 	function registeruser(event) {
+    localStorage.setItem('isNewUser', false);
+		navigate('/');
 		event.preventDefault();
 
 		const ServerUsers = JSON.parse(localStorage.getItem('users') || '[]');
