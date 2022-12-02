@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
@@ -13,6 +13,14 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isEditOpen, setIsEditOpen] = useState(false);
 	const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+
+	useEffect(() => {
+		if (isEditOpen || isDeleteOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	});
 
 	function closeDelete() {
 		setIsMenuOpen(false);
