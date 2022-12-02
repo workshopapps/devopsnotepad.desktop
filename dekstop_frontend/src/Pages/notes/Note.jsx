@@ -37,7 +37,7 @@ function Note() {
 	const handleOpen = () => setOpen(true);
 	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
-	
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem('note', inputs);
@@ -53,8 +53,6 @@ function Note() {
 		setOpen(false);
 	};
 
-	
-
 	// Date
 	const date = new Date().getDate();
 	const hour = new Date().getHours();
@@ -68,63 +66,60 @@ function Note() {
 			<div className={notesStyle.notes}>
 				<div className={notesStyle.notesContent}>
 					<div className={notesStyle.notesContentTwo}>
-							<div className={notesStyle.notesFormDiv}>
-								<div className={notesStyle.notesFormIcons}>
-									<img
-										src={Vectorc}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleBold}
-										onFocus={handleBold}
-									/>
-									<img
-										src={Vectorr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectoor}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectorrr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vecctor}
-										alt="img"
-										id={notesStyle.deleteIcon}
-										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleOpen}
-										onFocus={handleOpen}
-									/>
-								</div>
-								{inputs?.length > 0 ? (
-									<p
-										className={notesStyle.notesLastEdit}
-										id={notesStyle.notesLastEdit}
-									>
-										{hour}:{min}pm, {date}-{month}-22
-									</p>
-								) : (
-									<p className={notesStyle.notesLastEdit}>Last edit</p>
-								)}
-								<p
-									className={notesStyle.noteText}
-									style={bold ? boldStyle : {}}
-								>
-									{note}
-								</p>
-								<p>{startHere}</p>
-								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
-									<input
-										className={notesStyle.notesFormInput}
-										onChange={handleChanges}
-									/>
-								</form>
+						<div className={notesStyle.notesFormDiv}>
+							<div className={notesStyle.notesFormIcons}>
+								<img
+									src={Vectorc}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleBold}
+									onFocus={handleBold}
+								/>
+								<img
+									src={Vectorr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectoor}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectorrr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vecctor}
+									alt="img"
+									id={notesStyle.deleteIcon}
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleOpen}
+									onFocus={handleOpen}
+								/>
 							</div>
+							{inputs?.length > 0 ? (
+								<p
+									className={notesStyle.notesLastEdit}
+									id={notesStyle.notesLastEdit}
+								>
+									{hour}:{min}pm, {date}-{month}-22
+								</p>
+							) : (
+								<p className={notesStyle.notesLastEdit}>Last edit</p>
+							)}
+							<p className={notesStyle.noteText} style={bold ? boldStyle : {}}>
+								{note}
+							</p>
+							<p>{startHere}</p>
+							<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
+								<input
+									className={notesStyle.notesFormInput}
+									onChange={handleChanges}
+								/>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
