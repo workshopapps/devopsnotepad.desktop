@@ -16,6 +16,7 @@ import Faq from './Pages/Settings/Faq/Faq';
 import { useDarkMode } from './Pages/Settings/components/useDarkmode';
 import { lightTheme, darkTheme } from './Pages/Settings/components/Theme';
 import { GlobalStyles } from './Pages/Settings/components/Global';
+import ServerDashBoard from './Pages/ServerDashBoard/ServerDashBoard';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 							<Route exact path="/notification" element={<Notification />} />
 							<Route exact path="/about" element={<About />} />
 							<Route exact path="/faq" element={<Faq />} />
+							<Route exact path="/serverDashBoard" element={<ServerDashBoard />} />
 						</Routes>
 					</div>
 				</ServerProvider>
