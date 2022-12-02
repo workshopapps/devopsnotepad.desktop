@@ -10,7 +10,30 @@ pipeline {
 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
 				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/devopsnotepad.desktop"
 			}
+		}
 
+		stage("Build frontend"){
+
+			steps {
+
+                dir ('devopsnotepad.desktop/frontend_website') {
+                    sh "pwd"
+                    sh "npm i -f"
+                    sh "npm run build"
+                }
+
+			}
+		}
+
+		stage("Install dependencies for backend"){
+
+			steps {
+
+                dir ('devopsnotepad.desktop/backend') {
+                    sh "npm i"
+                }
+
+			}
 		}
 		
 		stage("start frontend") {
