@@ -55,6 +55,10 @@ export default class AuthController {
 
     static updateUserPassword = async (req, res) => {
         const {token, id, password} = req.body;
+        
+        const currentTime = new Date().toISOString();
+        
+        await ResetTokenRepo.deleteExpiredTokens(currentTime);
 
         const storedToken = await ResetTokenRepo.getToken(token, id);
 
