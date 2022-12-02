@@ -1,13 +1,12 @@
 import express from 'express';
-import UserController from '../controllers/UserController.js';
 import passport from 'passport';
 import AuthController from '../controllers/AuthController.js';
 
 const router = express.Router();
 
-router.post('/signup', UserController.signup);
-router.post('/login', UserController.login);
-router.get('/logout', UserController.logout);
+router.post('/signup', AuthController.signup);
+router.post('/login', AuthController.login);
+router.get('/logout', AuthController.logoutUser);
 router.get('/success', AuthController.loginStatus);
 router.get('/failed', AuthController.loginFailed);
 router.get('/logout', AuthController.logout);
