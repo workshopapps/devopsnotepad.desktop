@@ -46,6 +46,7 @@ function CreatePassword() {
 					name=""
 					id=""
 					value={password}
+          required
 					onChange={(e) => {
 						setpassword(e.target.value);
 					}}
