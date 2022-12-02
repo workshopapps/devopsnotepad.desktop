@@ -29,7 +29,7 @@ const Verification = () => {
                  
                 </div>
 
-                <Link to='/newpassword'><input type="submit" value="Continue"/></Link>
+                <Link to='/newpassword'><input type="submit" value="Continue >"/></Link>
         </div>
      );
 }
