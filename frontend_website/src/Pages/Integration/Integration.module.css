@@ -14,7 +14,7 @@
 }
 
 .integration .inBanner {
-  width: 1005;
+  width: 100%;
   margin: auto;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .integration .hM_content .inHM_box .inHmL {
-  width: 458px;
+  flex-basis: 55%;
 }
 
 .integration .hM_content .inHM_box .inHmL h3 {
@@ -495,5 +495,23 @@
 
   .get_more .inGet_more .inGet_more_box .inGetMoreBox.inGetMoreBoxM2 {
     flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .integration {
+    padding: 4rem 3rem;
+    text-align: center;
+    width: 100%;
+  }
+  .banner {
+    margin-bottom: -4rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .integration {
+    padding: 4rem 2rem;
   }
 }

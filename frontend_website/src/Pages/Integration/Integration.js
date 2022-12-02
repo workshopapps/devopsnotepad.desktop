@@ -86,9 +86,9 @@ const Integration = () => {
                       <h3>{item.heading}</h3>
                       <p>{item.content}</p>
                     </div>
-                    <Link className={styles.learnMore} to={item.slug}>
+                    <a className={styles.learnMore} href={item.slug}>
                       {item.linkLabel}
-                    </Link>
+                    </a>
                   </div>
                 );
               })}
@@ -104,9 +104,9 @@ const Integration = () => {
                       <h3>{item.heading}</h3>
                       <p>{item.content}</p>
                     </div>
-                    <Link className={styles.learnMore} to={item.slug}>
+                    <a className={styles.learnMore} href={item.slug}>
                       {item.linkLabel}
-                    </Link>
+                    </a>
                   </div>
                 );
               })}
