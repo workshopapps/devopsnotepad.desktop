@@ -1,4 +1,4 @@
-import img2 from '../../../assets/coming_soon-assets/Images/img2.png';
+import img2 from '../../../assets/coming_soon-assets/Images/iPhone2.png';
 
 import classes from './LeftAligned.module.css';
 
