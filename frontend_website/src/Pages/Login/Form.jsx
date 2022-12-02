@@ -4,8 +4,10 @@ import Button from '../CareerPage/Button/Button';
 import Input from './Input';
 
 import classes from './Form.module.css';
+import { ValidateEmail, ValidatePassword } from '../SignUp/lib';
+import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
 
-const Form = () => {
+const Form = (props) => {
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -13,15 +15,28 @@ const Form = () => {
     passwordIsValid: false,
     emailIsFocus: false,
     passwordIsFocus: false,
-    formIsValid: false,
   });
 
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
       return { ...prev, email: e.target.value };
     });
+  };
 
-    if (form.email.includes('@')) {
+  const passwordOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, password: e.target.value };
+    });
+  };
+
+  // Allowing the user to unfocus the input field before checking if the input field is correct.
+  const emailOnBlurHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, emailIsFocus: true };
+    });
+
+    const isValid = ValidateEmail(form.email);
+    if (isValid) {
       setForm((prev) => {
         return { ...prev, emailIsValid: true };
       });
@@ -32,12 +47,13 @@ const Form = () => {
     }
   };
 
-  const passwordOnChangeHandler = (e) => {
+  const passwordOnBlurHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, password: e.target.value };
+      return { ...prev, passwordIsFocus: true };
     });
 
-    if (form.password.length > 6) {
+    const isValid = ValidatePassword(form.password);
+    if (isValid) {
       setForm((prev) => {
         return { ...prev, passwordIsValid: true };
       });
@@ -46,37 +62,16 @@ const Form = () => {
         return { ...prev, passwordIsValid: false };
       });
     }
-
-    const { emailIsValid, passwordIsValid } = form;
-
-    if (emailIsValid && passwordIsValid) {
-      setForm((prev) => {
-        return { ...prev, formIsValid: true };
-      });
-    } else {
-      setForm((prev) => {
-        return { ...prev, formIsValid: false };
-      });
-    }
-  };
-
-  // Allowing the user to unfocus the input field before checking if the input field is correct
-  const emailOnBlurHandler = (e) => {
-    setForm((prev) => {
-      return { ...prev, emailIsFocus: true };
-    });
-  };
-
-  const passwordOnBlurHandler = (e) => {
-    setForm((prev) => {
-      return { ...prev, passwordIsFocus: true };
-    });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     // Send form details to backend
+    props.onSubmit({
+      email: form.email,
+      password: form.password,
+    });
   };
 
   return (
@@ -87,14 +82,12 @@ const Form = () => {
         type='email'
         invalid={!form.emailIsValid && form.emailIsFocus ? 'invalid' : ''}
         placeholder='example@email.com'
-        value={form.name}
+        value={form.email}
         onChange={emailOnChangeHandler}
         onBlur={emailOnBlurHandler}
       />
       {form.emailIsFocus && !form.emailIsValid && (
-        <pre className={classes.invalid__input}>
-          Enter a email with the @ symbol
-        </pre>
+        <pre className={classes.invalid__input}>Enter a valid email</pre>
       )}
       <Input
         id='password'
@@ -102,13 +95,13 @@ const Form = () => {
         type='text'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
         placeholder='Must be 7 characters'
-        value={form.email}
+        value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
-          Enter a password of length 7 and above
+          MinLength(8), a uppercase, a lowercase, and a number.
         </pre>
       )}
 
@@ -129,13 +122,16 @@ const Form = () => {
           Forgot password
         </Link>
       </div>
+
+      <div style={{ margin: '3rem 0 0' }}>
+        {props.isLoading && <LoadingSpinner />}
+        {!props.isLoading && props.error.hasError && (
+          <p style={{ textAlign: 'center' }}>Signing in failed!. Try again</p>
+        )}
+      </div>
+
       <div className={classes.btn__box}>
-        <Button
-          id='btn__submit'
-          type='submit'
-          disabled={!form.formIsValid}
-          className={classes.button}
-        >
+        <Button id='btn__submit' type='submit' className={classes.button}>
           Sign In
         </Button>
       </div>
