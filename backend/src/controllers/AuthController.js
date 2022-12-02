@@ -1,7 +1,7 @@
 import create from "../services/user/create.js";
+// import UserRepo from "../database/repositories/UserRepo.js";
 import login from "../services/user/login.js";
-import bcrypt from "bcrypt";
-import signJWT from "../utils/jwthelper.js";
+// import { sendEmailVerificationLink } from "../services/user/emailVerification.js";
 export default class AuthController {
     static signup = async (req, res, next) => {
         try {
@@ -17,38 +17,22 @@ export default class AuthController {
         }
     };
 
-    static login = async (req, res, next) => {
+    static loginUser = async (req, res, next) => {
         const body = req.body;
         try {
-            const user = await login(body); 
-
-            if (!user) {
-                return res.send({
-                    message: "User not found" 
-                });
-            }
+            const loggedInUser = await login(body, req, res);
+   
+            //set request cookie
+            if (loggedInUser.user && loggedInUser.token){
+                req.session.user = loggedInUser.user;
+                req.session.authorized = true;
   
-            const comparePassword = await bcrypt.compare(body.password, user.password);
-  
-            if (!comparePassword) {
                 return res.send({ 
-                    message: "Wrong Password" 
-                });
-            }
-
-            delete user.password;
-        
-            req.session.user = user;
-            req.session.authorized = true;
-
-            const token = await signJWT(user); 
-
-            return res.send({ 
-                message: "Logged in Successfully",
-                user: user,
-                token: token
-
-            });                     
+                    message: "Logged in Successfully",
+                    user: loggedInUser.user,
+                    token: loggedInUser.token,
+                });  
+            }                   
         } catch (error) {
             next(error);
         }
@@ -91,4 +75,5 @@ export default class AuthController {
       return res.status(200).json({ success: true, message: 'Logout Successful' });
     });
   };
+
 }
