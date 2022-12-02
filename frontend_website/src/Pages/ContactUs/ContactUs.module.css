@@ -81,7 +81,6 @@ section.wrapper form input {
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  margin-bottom: 25px;
   padding: 9px;
   border: 1.5px solid #dfe1eb;
   border-radius: 5px;
@@ -91,6 +90,11 @@ section.wrapper form input {
 section.wrapper form .row {
   display: flex;
   flex-direction: column;
+}
+
+section.wrapper form .row .col {
+  width: 100%;
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -153,10 +157,9 @@ section.wrapper form .row {
     margin-right: 25px;
   }
 
-  /* section.wrapper form .row .start {
-
-        margin-left: 10px;
-    } */
+  section.wrapper form .row .start {
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 1300px) {
@@ -174,7 +177,6 @@ section.wrapper form .col {
 section.wrapper form .col textarea.message {
   border: 1.5px solid #dfe1eb;
   border-radius: 5px;
-  margin-bottom: 25px;
   outline: none;
   padding: 6px;
   font-family: 'Inter', sans-serif;
@@ -195,6 +197,7 @@ section.wrapper form .btn {
   border: 1.5px solid #dfe1eb;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 section.wrap {
@@ -222,7 +225,7 @@ section.wrap .canHelp {
   line-height: 24px !important;
   color: #777777;
   margin: 0 0 12px;
-  max-width: 342px
+  max-width: 342px;
 }
 
 section.wrapp .comp p.opspad {
@@ -288,6 +291,7 @@ p.errorMsg {
   line-height: 14.52px;
   color: red;
   white-space: nowrap;
+  margin: 4px 0 12px;
 }
 
 section.support div.col1 div.card {
