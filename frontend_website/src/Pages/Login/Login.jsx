@@ -36,6 +36,13 @@ const Login = () => {
     gapi.load('client:auth2', initClient);
   });
 
+  // const googleSignInHandler = async () => {
+  //   const response = await window.open(
+  //     'http://localhost:3000/login/auth/google',
+  //   );
+  //   console.log(response);
+  // };
+
   return (
     <div className={classes.login} data-testid='login__page'>
       <h1 className={classes.h1}>Welcome back!</h1>

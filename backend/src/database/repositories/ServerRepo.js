@@ -14,7 +14,7 @@ export default class ServerRepo {
     };
 
     static getServerByName = async (name, id) => {
-        return connection("servers").where("name", name).andWhere("deviceId", id).first();
+        return connection("servers").where("name", name).andWhere("userId", id).first();
     };
 
     static create = async (data) => {
