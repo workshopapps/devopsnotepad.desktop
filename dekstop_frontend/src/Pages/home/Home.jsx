@@ -33,19 +33,22 @@ function Home() {
 	const filteredServers = getFilteredServers(query, servers);
 
 	return (
-		<div className={style.HomeWrapper}>
+		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
+
 			{loading && <div className={style.loading}>Loading Servers...</div>}
 			{servers && (
 				<div className={style.container}>
-					<div className={style.search}>
-						<img src={search} alt="filter servers" />
-						<input
-							value={query}
-							type="search"
-							onChange={(e) => setQuery(e.target.value)}
-						/>
-					</div>
+					{servers.length > 0 && (
+						<div className={style.search}>
+							<img src={search} alt="filter servers" />
+							<input
+								value={query}
+								type="search"
+								onChange={(e) => setQuery(e.target.value)}
+							/>
+						</div>
+					)}
 					{filteredServers.map((server) => (
 						<ServerCard
 							key={server.id}
@@ -58,20 +61,21 @@ function Home() {
 				</div>
 			)}
 
-			{!servers && (
-				<div className={style.no_server}>
-					<Link to="/add-server">
-						<figure>
-							<img src={addBg} alt="" aria-hidden />
-						</figure>
-					</Link>
+			{!servers ||
+				(servers.length === 0 && (
+					<div className={style.no_server}>
+						<Link to="/add-server">
+							<figure>
+								<img src={addBg} alt="" aria-hidden />
+							</figure>
+						</Link>
 
-					<div className={style.no_server_content}>
-						<h2>Empty Server List</h2>
-						<p>You do not have any Servers yet.</p>
+						<div className={style.no_server_content}>
+							<h2>Empty Server List</h2>
+							<p>You do not have any Servers yet.</p>
+						</div>
 					</div>
-				</div>
-			)}
+				))}
 		</div>
 	);
 }
