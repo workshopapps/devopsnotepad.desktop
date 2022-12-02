@@ -69,9 +69,9 @@ export default class PushNotification {
 
       const servers = data.val();
 
-      const serverIds = Object.keys(servers);
+      const serverIds = servers ? Object.keys(servers) : [];
 
-      if (serverIds.length !== 0) {
+      if (serverIds.length > 0) {
         serverIds.forEach((key) => {
           result.push(servers[key]);
         });
@@ -86,7 +86,8 @@ export default class PushNotification {
   static async intializeCronJob() {
     const ref = db.ref('opspad');
 
-    const cronDuration = 2;
+    // Cron job duration pegged at 1 mins for development
+    const cronDuration = 1;
 
     const updateDataPromise = (notificationRef, data) => {
       console.log(`update server (${data.serverId}) notification at ${new Date().toISOString()}`);
@@ -118,28 +119,31 @@ export default class PushNotification {
 
         const servers = await PushNotification.getServersFromFirebase();
 
-        await Promise.all(
-          servers.map(async (server) => {
-            try {
-              const status = await check_ip_status(server.ipAddress);
+        if (Object.keys(servers).length > 0) {
+          await Promise.all(
+            servers.map(async (server) => {
+              try {
+                const status = await check_ip_status(server.ipAddress);
 
-              if (!status) {
-                const notificationRef = ref.child(`notifications/${server.id}`);
+                if (!status) {
+                  const notificationRef = ref.child(`notifications/${server.id}`);
 
-                //   Update the server error status
-                return await updateDataPromise(notificationRef, {
-                  status,
-                  serverId: server.id,
-                  msg: 'server inactive',
-                });
+                  //   Update the server error status
+                  return await updateDataPromise(notificationRef, {
+                    status,
+                    serverId: server.id,
+                    msg: 'server inactive',
+                  });
+                }
+                //   Update again to overwrite any previous error state which has been updated by the devops engineer
+                return await updateDataPromise(notificationRef, { status, serverId: server.id, msg: 'server active' });
+              } catch (error) {
+                console.error(error);
               }
-              //   Update again to overwrite any previous error state which has been updated by the devops engineer
-              return await updateDataPromise(notificationRef, { status, serverId: server.id, msg: 'server active' });
-            } catch (error) {
-              console.error(error);
-            }
-          })
-        );
+            })
+          );
+        }
+        console.log(`CronJob ended execution due to unavailability of realtime data`);
       },
       {
         scheduled: false,
