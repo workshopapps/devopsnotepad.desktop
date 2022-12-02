@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RiArrowUpLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import style from './ServerInfo.module.css';
 
 function ServerInfo({ name, ipAddress, serverHealth }) {
@@ -34,8 +34,12 @@ function ServerInfo({ name, ipAddress, serverHealth }) {
 
 			<div className={style.wrapper}> 
 				<Link to="/note"> <p className={style.note}>Notes</p> </Link>
-				<Link to="/server/password"> <p className={style.note}>Password</p> </Link>
+				<Link to="password"> <p className={style.note}>Password</p> </Link>
 				<Link to="/notification"> <p className={style.note}>Notifications</p> </Link>
+			</div>
+
+			<div className={style.routeContainer}>
+				<Outlet/>
 			</div>
 		</div>
 	);

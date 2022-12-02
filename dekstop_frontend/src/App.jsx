@@ -18,7 +18,7 @@ import { lightTheme, darkTheme } from './Pages/Settings/components/Theme';
 import { GlobalStyles } from './Pages/Settings/components/Global';
 
 import Onboarding from './Components/Onboarding/Onboarding';
-import ServerDashBoard from './Pages/ServerDashBoard/ServerDashboard';
+import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 
 function App() {
 	const [theme, componentMounted] = useDarkMode();
@@ -44,13 +44,15 @@ function App() {
 
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
-							<Route exact path="/server/password" element={<Password />} />
+							
 							<Route exact path="/add-server" element={<AddServer />} />
 							<Route exact path="/notification" element={<Notification />} />
 							<Route exact path="/onboarding" element={<Onboarding />} />
 							<Route exact path="/about" element={<About />} />
 							<Route exact path="/faq" element={<Faq />} />
-							<Route exact path="/serverDashBoard" element={<ServerDashBoard />} />
+							<Route exact path="/serverDashBoard/:name" element={<ServerDashBoard />}>
+							<Route exact path="password" element={<Password />} />
+							</Route>
 						</Routes>
 					</div>
 				</ServerProvider>
