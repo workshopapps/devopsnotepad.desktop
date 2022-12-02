@@ -7,7 +7,7 @@ function ServerCard({ name, ipAddress, serverHealth }) {
 	return (
 		<div className={style.container}>
 			<h2>{name}</h2>
-			<Link to={`/server/${name}`}>
+			<Link to={`/serverDashBoard/${name}`}>
 				<table className={style.table}>
 					<tbody>
 						<tr>
