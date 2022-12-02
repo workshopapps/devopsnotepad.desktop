@@ -26,7 +26,7 @@ function CreatePassword() {
 		localStorage.setItem('ServerUsers', JSON.stringify(ServerUsers));
 		navigate('/');
 
-		alert('Registration is  Successful');
+		 alert('Password created successfully');
 	}
 
 	return (
