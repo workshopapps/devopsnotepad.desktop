@@ -11,7 +11,10 @@ import Password from './Pages/Password/Password';
 import AddServer from './Pages/AddServer/AddServer';
 import TextResizer from './Pages/Settings/components/TextResizer/TextResizer';
 import Onboarding from './Components/Onboarding/Onboarding';
-import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
+// import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
+import ServerDashBoard from './Pages/ServerDashBoard/ServerDashboard';
+import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification';
+import AvailabilityNotification from './Pages/Notification/AvailabilityNotification/AvailabilityNotification'
 
 function App() {
 	
@@ -36,8 +39,11 @@ function App() {
 							<Route exact path="/settings" element={<Settings />} />
 							
 							<Route exact path="/add-server" element={<AddServer />} />
-							<Route exact path="/notification" element={<Notification />} />
+							{/* <Route exact path="/notification" element={<Notification />} /> */}
 							<Route exact path="/onboarding" element={<Onboarding />} />
+							<Route exact path="/serverDashBoard" element={<ServerDashBoard />} />
+							<Route exact path="/simpleNotification" element={<SimpleNotification />} />
+							<Route exact path="/availabilityNotification" element={<AvailabilityNotification />} />
 						</Routes>
 					</div>
 				</ServerProvider>
