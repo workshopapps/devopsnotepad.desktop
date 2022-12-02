@@ -1,3 +1,4 @@
+import config from "../config/index.js";
 import { generateJWTToken } from "../utils/index.js";
 
 export default class AuthController {
@@ -23,10 +24,11 @@ export default class AuthController {
     });
   };
   static logout = async (req, res) => {
-    req.logout();
-    res.status(200).json({
-      success: true,
-      message: 'Logout successful',
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      return res.status(200).json({ success: true, message: 'Logout Successful' });
     });
   };
 }

@@ -7,9 +7,9 @@ import { ServerProvider } from './Components/Context/ServerContext';
 import Note from './Pages/notes/Note';
 import Home from './Pages/home/Home';
 import Settings from './Pages/Settings/MainSettings';
-// import Joined from './Pages/add_server/Joined/Joined';
 import Notification from './Pages/Notification/Notification';
 import Password from './Pages/Password/Password';
+import AddServer from './Pages/AddServer/AddServer';
 import TextResizer from './Pages/Settings/components/TextResizer/TextResizer';
 import { About } from './Pages/Settings/About/About';
 import Faq from './Pages/Settings/Faq/Faq';
@@ -17,6 +17,8 @@ import { useDarkMode } from './Pages/Settings/components/useDarkmode';
 import { lightTheme, darkTheme } from './Pages/Settings/components/Theme';
 import { GlobalStyles } from './Pages/Settings/components/Global';
 
+import Onboarding from './Components/Onboarding/Onboarding';
+import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 
 function App() {
 	const [theme, componentMounted] = useDarkMode();
@@ -37,13 +39,28 @@ function App() {
 						</div>
 						<Routes>
 							<Route path="/" element={<Home />} />
+
+							<Route path="/server/:id" element={<ServerDashBoard />}>
+								<Route index element={<Note />} />
+
+								<Route path="note" element={<Note />} />
+								<Route path="password" element={<Password />} />
+								<Route path="notification" element={<Notification />} />
+							</Route>
+
 							<Route exact path="/note" element={<Note />} />
 							<Route exact path="/settings" element={<Settings />} />
 							<Route exact path="/server/password" element={<Password />} />
-							{/* <Route exact path="/add-server" element={<Joined />} /> */}
+							<Route exact path="/add-server" element={<AddServer />} />
 							<Route exact path="/notification" element={<Notification />} />
+							<Route exact path="/onboarding" element={<Onboarding />} />
 							<Route exact path="/about" element={<About />} />
 							<Route exact path="/faq" element={<Faq />} />
+							<Route
+								exact
+								path="/serverDashBoard"
+								element={<ServerDashBoard />}
+							/>
 						</Routes>
 					</div>
 				</ServerProvider>

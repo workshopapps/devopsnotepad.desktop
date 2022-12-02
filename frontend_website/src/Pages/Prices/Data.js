@@ -10,7 +10,7 @@ const Data = [
       },
       {
         title: 'Professional',
-        price: '#5,000 / month',
+        price: '20',
         list: [
           'Unlimited servers',
           'Unlimited notes',
@@ -22,7 +22,7 @@ const Data = [
       },
       {
         title: 'Organization',
-        price: '#10,000 / month',
+        price: '100',
         list: [
           'Unlimited servers',
           'Unlimited notes',
@@ -47,7 +47,7 @@ const Data = [
       },
       {
         title: 'Professional',
-        price: '#55,000 / year',
+        price: '200',
         list: [
           'Unlimited servers',
           'Unlimited notes',
@@ -59,7 +59,7 @@ const Data = [
       },
       {
         title: 'Organization',
-        price: '#110,000 / year',
+        price: '1000',
         list: [
           'Unlimited servers',
           'Unlimited notes',

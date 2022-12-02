@@ -23,6 +23,20 @@ const options = {
       version: '1.0.0',
       description: 'An api for opspad',
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT"
+        }
+      }
+    },
+    security: [
+      {
+        bearerAuth: []
+      }
+    ],
     servers: [
       {
         //update to production url
@@ -37,9 +51,9 @@ const specs = swaggerJsDoc(options);
 //setting up swagger doc
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
-app.get('/', (req, res) => {
-  res.send("<button><a href='/auth/google'>Login With Google</a></button>")
-});
+// app.get('/', (req, res) => {
+//   res.send("<button><a href='/auth/google'>Login With Google</a></button>")
+// });
 
 passportSetup();
 
