@@ -1,8 +1,8 @@
-name: Desktop App Release
+# name: Desktop App Release
 
-on:
-  push:
-    branches: ['dev']
+# on:
+#   push:
+#     branches: ['dev']
 
 # jobs:
 #   release:
@@ -33,22 +33,22 @@ on:
 #           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
 
-jobs:
-  release:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-    steps:
-    - uses: actions/checkout@v2       
-    - uses: actions/setup-node@master
-      with:
-        node-version: 14
-    - name: install dependencies
-      run: npm install --force
-    - name: build
-      run: npm run make
-    - name: publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run publish
+# jobs:
+#   release:
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       matrix:
+#         os: [macos-latest, ubuntu-latest, windows-latest]
+#     steps:
+#     - uses: actions/checkout@v2       
+#     - uses: actions/setup-node@master
+#       with:
+#         node-version: 14
+#     - name: install dependencies
+#       run: npm install --force
+#     - name: build
+#       run: npm run make
+#     - name: publish
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       run: npm run publish
