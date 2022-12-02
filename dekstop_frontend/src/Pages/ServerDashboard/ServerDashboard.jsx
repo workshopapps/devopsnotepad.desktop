@@ -1,5 +1,5 @@
 import React from "react";
-import ServerInfo from "../../Components/ServerInfo/ServerInfo";
+import ServerInfo from "../../Components/ServerInfo/ServerInfo"
 import Sidenav from "../../Components/SideNav/SideNav";
 import styles from "./ServerDashBoard.module.css"
 
