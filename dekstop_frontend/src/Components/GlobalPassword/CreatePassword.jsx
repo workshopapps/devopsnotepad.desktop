@@ -1,97 +1,67 @@
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-alert */
 /* eslint-disable no-return-assign */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
 /* eslint-disable object-shorthand */
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Modal from "react-modal";
+import {AiFillInfoCircle} from 'react-icons/ai'
+import styles from '../GlobalPassword/CreatePassword.module.css';
+import Sidenav from './../SideNav/SideNav';
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+function CreatePassword() {
+	const [password, setpassword] = useState('');
+	const navigate = useNavigate();
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement("#root");
+	function registeruser(event) {
+		event.preventDefault();
 
-function GlobalPassword() {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+		const ServerUsers = JSON.parse(localStorage.getItem('users') || '[]');
+		const newuser = {
+			password: password,
+		};
 
-  function openModal() {
-    setIsOpen(true);
-  }
+		ServerUsers.push(newuser);
+		localStorage.setItem('ServerUsers', JSON.stringify(ServerUsers));
+		navigate('/');
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
+		 alert('Password created successfully');
+	}
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const [password, setpassword] = useState("");
-  const navigate = useNavigate();
-
-  function registeruser(event) {
-    event.preventDefault();
-
-    const ServerUsers = JSON.parse(localStorage.getItem("users") || "[]");
-    const newuser = {
-      password: password,
-    };
-
-    ServerUsers.push(newuser);
-    localStorage.setItem("ServerUsers", JSON.stringify(ServerUsers));
-    navigate('/Ff');
-    
-    alert("Registration is  Successful");
-  }
-
-  return (
-    <div>
-      <button onClick={openModal}>Get Started</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input
-            type="password"
-            className="fullwd"
-            placeholder="Password"
-            name=""
-            id=""
-            value={password}
-            onChange={(e) => {
-              setpassword(e.target.value);
-            }}
-          />
-          <input
-            type="submit"
-            onClick={registeruser}
-            className="btn btn-primary"
-            value="Sign Up"
-          />
-        </form>
-      </Modal>
-    </div>
-  );
+	return (
+    <main>
+    <Sidenav/>
+		<div className={styles.crea8_container}>
+			<div>
+				<h1>Create Password</h1>
+			</div>
+			<form className={styles.crea8_form}>
+      
+      <label htmlFor="password">Create Password</label><br/>
+				<input
+					type="password"
+					name=""
+					id=""
+					value={password}
+					onChange={(e) => {
+						setpassword(e.target.value);
+					}}
+				/><br/>
+        <div className={styles.crea8_p}>
+          <AiFillInfoCircle/>
+          <p>Password created would be used to access saved servers in the Application.</p>
+        </div>
+				<input
+					type="submit"
+					onClick={registeruser}
+					className="btn btn-primary"
+					value="Done"
+				/>
+			</form>
+		</div>
+    </main>
+	);
 }
 
-
-export default GlobalPassword;
+export default CreatePassword;
