@@ -10,5 +10,5 @@ export default async function create(body) {
     const hash =  await bcrypt.hash(body.password, Number(process.env.BCRYPT_SALT));
     body.password = hash;
 
-    await UserRepo.createUser(body);
+    await UserRepo.create(body);
 }

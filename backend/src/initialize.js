@@ -24,13 +24,13 @@ app.use(helmet());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(
-  session({
-    secret: process.env.JWT_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+// app.use(
+//     session({
+//         secret: process.env.JWT_SECRET,
+//         resave: false,
+//         saveUninitialized: false,
+//     })
+// );
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan(config.env.isProduction ? 'common' : 'dev'));
