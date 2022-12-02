@@ -30,6 +30,7 @@ function Home() {
 					{servers.map((server) => (
 						<ServerCard
 							key={server.id}
+							id={server.id}
 							name={server.name}
 							ipAddress={server.ipAddress}
 							serverHealth={server.serverHealth}
