@@ -1,30 +1,22 @@
-/* eslint-disable camelcase */
-import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import ServerContext from '../../Components/Context/ServerContext';
+import React from "react";
+import ServerInfo from "../../Components/ServerInfo/ServerInfo"
+import Sidenav from "../../Components/SideNav/SideNav";
+import styles from "./ServerDashBoard.module.css"
 
-function ServerDashboard() {
-	const { servers } = useContext(ServerContext);
-	const params = useParams();
+function ServerDashBoard() {
+    return (
+        <div>
 
-	const currentServer = servers.filter((server) => server.name === params.name);
-	console.log(currentServer);
-	const { deviceId, id, ipAddress, name, notification, updated_at } =
-		currentServer[0];
+            <Sidenav />
+            <section className={styles.main}>
+				<ServerInfo /> </section>
 
-	return (
-		<div>
-			<div>
-				<div>{name}</div>
-				<div>{id}</div>
-				<div>{ipAddress}</div>
-				<div>{deviceId}</div>
-				<div>{notification}</div>
-				<div>{updated_at}</div>
-			</div>
-			{/* routes */}
-		</div>
-	);
+
+
+        </div>
+
+    )
+
 }
 
-export default ServerDashboard;
+export default ServerDashBoard;
