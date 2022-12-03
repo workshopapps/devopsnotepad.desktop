@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import mission from './images/mission.png';
 import vision from './images/vision.png';
 import assist from './images/assist.png';
@@ -64,7 +65,7 @@ export const About = () => {
             Ask about DevOps Notepad, blogs, or anything else. Our highly
             trained developers are standing by, ready to help.{' '}
           </p>
-          <button className={classes.btn}>Contact us</button>
+          <Link className={classes.btn} to='/contact-us'>Contact us</Link>
         </div>
         <div className={classes.colorbglg}>
           <img src={assist} className={classes.imgsize} alt='img' />

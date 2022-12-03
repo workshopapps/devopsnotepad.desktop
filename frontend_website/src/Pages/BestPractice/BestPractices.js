@@ -15,10 +15,6 @@ import { Link } from 'react-router-dom';
 import BestPracticeCSS from './BestPractices.module.css';
 
 const firstSectionWrapper = BestPracticeCSS.firstSectionWrapper;
-// const subLinksWrapper = BestPracticeCSS.subLinksWrapper
-// const subLinks = BestPracticeCSS.subLinks
-// const desSubLinks = BestPracticeCSS.desSubLinks
-// const openSublinkBtn = BestPracticeCSS.openSublinkBtn
 const bestPracticediv = BestPracticeCSS.bestPracticediv;
 
 // NEW UPDATE SECTION CLASSES STARTS HERE
@@ -54,7 +50,6 @@ const devopsEngineer = BestPracticeCSS.devopsEngineer;
 const btn = BestPracticeCSS.btn;
 
 const BestPractice = () => {
-  // const [openSublinks, setOpenSubinks] = useState(false)
 
   return (
     <div>
