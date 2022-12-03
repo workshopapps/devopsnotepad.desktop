@@ -6,7 +6,7 @@ import './Pagination.scss';
 
 const Pagination = (props) => {
   const commentsPerPage = 5;
-  const totalComments = 20;
+  const totalComments = 30;
 
   // Calculating the no of pages
   const total_pages = Math.ceil(totalComments / commentsPerPage);

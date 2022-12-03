@@ -5,8 +5,8 @@ export default class ServerRepo {
         return connection.select().table("servers");
     };
 
-    static getServersByDevice = async (device_id) => {
-        return connection("servers").where("deviceId", device_id);
+    static getServersByUserId = async (id) => {
+        return connection("servers").where("userId", id);
     };
 
     static getServerById = async (id) => {
@@ -14,7 +14,7 @@ export default class ServerRepo {
     };
 
     static getServerByName = async (name, id) => {
-        return connection("servers").where("name", name).andWhere("deviceId", id).first();
+        return connection("servers").where("name", name).andWhere("userId", id).first();
     };
 
     static create = async (data) => {

@@ -1,693 +1,629 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
 }
 
-:root{
-    --blue: #E3EBFC;
-    --darkBlue: #102A63;
-    --gray: #4B4B4B; 
-    --backgroundL: #E5ECFB;
+:root {
+  --blue: #e3ebfc;
+  --darkBlue: #102a63;
+  --gray: #4b4b4b;
+  --backgroundL: #e5ecfb;
 }
 
-.firstSectionWrapper{
-    width: 100%;
-    min-height: 100vh;
-    /* background-color: var(--blue); */
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 60px;
-    padding: 0 80px;
-}
-
-.subLinksWrapper{
-    width: min(1071px, 100%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.desSubLinks{
-    width: 86%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-}
-
-.desSubLinks p{
-    font-size: 14px !important;
-    font-weight: 400;
-    color: var(--gray);
-}
-
-.subLinks{
-     display: none;
-}
-
-.subLinks h4{
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--gray);
-    text-transform: uppercase;
-}
-
-.openSublinkBtn{
-    display: none;
-}
-
-.subLinks p{
-    font-size: 14px !important;
-    font-weight: 400;
-    color: var(--gray);
+.firstSectionWrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 60px;
 }
 
 /* ============================================ BEST PRACTICE SECTION STYLING STARTS HERE ========================================= */
-.bestPracticediv{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 64px;
-    align-items: flex-end;
+.bestPracticediv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+  padding: 0 80px;
+  align-items: flex-end;
 }
 
-.bestPracticediv h1{
-    width: min(511px);
-    font-size: 56px;
-    line-height: 75.5px;
-    color: var(--gray);
+.bestPracticediv h1 {
+  max-width: 511px;
+  font-weight: 700;
+  font-size: 52px;
+  color: #202020;
+  margin: 0;
 }
 
-.bestPracticediv p{
-    margin-bottom: 15px;
-    width: 730px;
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 43.71px;
-    color: var(--gray);
+.bestPracticediv p {
+    max-width: 50%;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+  color: #6f6f6f;
+  margin: 0;
 }
-
 
 /* ============================================ NEW UPDATE SECTION STYLING STARTS HERE ========================================= */
-.newUpdatesSction{
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-height: 502px;
-    margin-top: 129px;
+.newUpdatesSction {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: max(40px);
+  max-height: 502px;
+  margin-top: 80px;
+  padding: 0 80px;
 }
 
-.updateImg{
-    width: 734px;
+.updateImg {
+  min-width: 60%;
 }
 
-.newUpdatesSctionContents{
-    width: min(483px);
+.newUpdatesSctionContents {
+  width: min(483px);
 }
 
-.timeLineWrapper{
-    display: flex;
-    align-items: center;
-    padding: 0;
+.timeLineWrapper {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: fit-content;
 }
 
-.timeLine{
-    font-size: 12px;
-    letter-spacing: 0.72px;
-    color: var(--darkBlue);
-    text-transform: uppercase;
-    font-weight: 400;
+.timeLine {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+  color: #102a63;
+  margin: 0;
 }
 
-.timeLinedot{
-    font-size: 20px;
-    margin-top: -15px;
+.newUpdatesSctionContents .timeLinedot {
+  font-size: 20px;
+  margin-top: -15px;
 }
 
-.newUpdatesSctionContents h1{
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 49.18px;
-    color: var(--gray);
-    margin-top: -15px;
+.newUpdatesSctionContents h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50px;
+  color: var(--gray);
+  margin: 0;
 }
 
-.newUpdateParagraph{
-    font-size: 20px;
-    line-height: 27px;
-    color: var(--gray);
-    margin-top: 16px;
+.newUpdateParagraph {
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--gray);
+  margin: 16px 0;
 }
 
-.newUpdatesSctionContents h5{
-    margin-top: 32px;
-    font-size: 12px;
+.newUpdatesSctionContents h5 {
+  margin-top: 32px;
+  font-size: 12px;
 }
 
-.newUpdatesSctionContents h5 span{
-    font-weight: 700;
-    color: var(--darkBlue);
+.newUpdatesSctionContents h5 span {
+  font-weight: 700;
+  color: var(--darkBlue);
 }
 
+/* ============================================ MANAGING AND MONITORING SECTION STYLING STARTS HERE ========================================= */
 
+.managingWrapper {
+  width: 100%;
+  min-height: 414px;
+  background-color: var(--backgroundL);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0;
+  padding: 20px;
+}
+
+.managing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.managing h2 {
+  max-width: 800px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #202020;
+}
+
+.managing p {
+  max-width: 800px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #4b4b4b;
+}
+
+.managing .btn, .managing .btn a {
+  padding: 16px 18px;
+  background-color: var(--darkBlue);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+}
 
 /* ============================================ PORPULAR POST SECTION STYLING STARTS HERE ========================================= */
 
-.porpularPostSection{
+.porpularPostSection {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 80px;
+  align-items: center;
+}
+
+.porpularNav {
     width: 100%;
-    margin-top: 100px;
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.porpularNavPostText {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.porpularNavseeall {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.posts {
+  display: grid;
+  margin-top: 34px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-content: center;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post img {
+  width: min(411px, 100%);
+}
+
+.postTimeLine {
+  display: flex;
+}
+
+.postTimeLine p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--darkBlue);
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.post .postTimeLine .postOnedot {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.post h1 {
+  font-size: 24px;
+  line-height: 32.78px;
+  font-weight: 600;
+  color: var(--gray);
+  margin-top: -10px;
+  margin-bottom: 16px;
+  width: min(411px, 100%);
+}
+
+.post h4 {
+  font-size: 16px;
+  line-height: 21.8px;
+  color: var(--gray);
+  width: min(411px, 100%);
+}
+
+/* ============================================ RECENT POST SECTION STYLING STARTS HERE ========================================= */
+
+.recentPost {
+  margin-top: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.recentPostGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 32px;
+  gap: 24px;
+  row-gap: 80px;
+}
+
+.loadMoreBtn {
+  background-color: #fff;
+  border: 1px solid #2563eb;
+  padding: 9px 18px;
+  border-radius: 6px;
+  margin-top: 80px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #2563eb;
+}
+
+/* ============================================ DEVOPS ENGINEER SECTION STYLING STARTS HERE ========================================= */
+.devopsEngineer {
+  width: 100%;
+  min-height: 415px;
+  background-color: var(--backgroundL);
+  margin-top: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.devopsEngineer h1 {
+  max-width: 750px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #202020;
+}
+
+.devopsEngineer p {
+  max-width: 750px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #4b4b4b;
+  margin: 20px 0 48px;
+}
+
+.devopsEngineer .btn, .devopsEngineer .btn a {
+  padding: 16px 18px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--darkBlue);
+  border: none;
+  border-radius: 6px;
+}
+
+/* ============================================ MEDIA QUERY FOR BEST PRACTICE  SECTION STARTS HERE */
+
+@media (max-width: 1300px) {
+  .bestPracticediv {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .bestPracticediv h1 {
+    width: 100%;
+    font-size: 46px;
+    line-height: 50.5px;
+  }
+
+  .bestPracticediv p {
+    width: 100%;
+    line-height: 40px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bestPracticediv {
     flex-direction: column;
-    align-items: center;
-}
+    align-items: flex-start;
+    gap: 40px;
+  }
 
-.porpularNav{
-    display: flex;
-    justify-content: space-between;
-    width: inherit;
-    align-items: center;
-}
-
-.porpularNavPostText{
-    font-size: 24px;
-    font-weight: 600;
+  .bestPracticediv h1 {
+    width: 100%;
+    font-size: 50px;
+    line-height: 75.5px;
     color: var(--gray);
-}
+  }
 
-.porpularNavseeall{
-    color: var(--gray);
+  .bestPracticediv p {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 30px;
     font-weight: 500;
-    font-size: 16px;
-    text-transform: uppercase;
+    line-height: 43.71px;
+    color: var(--gray);
+  }
 }
 
-.posts{
-    display: grid;
-    margin-top: 34px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    justify-content: space-between;
-}
-
-.post{
-    display: flex;
-    flex-direction: column;
+@media (max-width: 500px) {
+  .bestPracticediv {
     width: 100%;
-    justify-content: space-between;
+    gap: 10px;
+    padding: 0 32px;
+    margin: 0;
+  }
+
+  .bestPracticediv h1 {
+    width: 100%;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  .bestPracticediv p {
+    margin-bottom: 15px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
-.post img{
-    width: min(411px, 100%);
+/* ============================================ MEDIA QUERY FOR NEW UPDATE SECTION STARTS HERE */
+
+@media (max-width: 1300px) {
+  .newUpdatesSction {
+    gap: 30px;
+    margin-top: 70px;
+  }
+
+  .updateImg {
+    width: 50%;
+  }
+  .firstSectionWrapper {
+    padding: 0;
+  }
+  .bestPracticediv {
+    padding: 0 30px;
+  }
+  .subLinksWrapper {
+    padding: 0 30px;
+  }
+  .newUpdatesSction {
+    padding: 0 30px;
+  }
+  .porpularPostSection {
+    padding: 0 30px;
+  }
+  .recentPost {
+    padding: 0 30px;
+  }
 }
 
-.postTimeLine{
-    display: flex;
-}
+@media (max-width: 1100px) {
+  .newUpdatesSctionContents h2 {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--gray);
+    margin-top: -15px;
+  }
 
-.postTimeLine p{
+  .newUpdateParagraph {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--gray);
+  }
+
+  .newUpdatesSctionContents h5 {
+    margin-top: 32px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .newUpdatesSction {
+    gap: 24px;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-height: 602px;
+  }
+
+  .updateImg {
+    width: 100%;
+  }
+
+  .timeLineWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: fit-content;
+    margin-bottom: 16px;
+  }
+
+  .timeLine {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .timeLinedot {
+    font-size: 16px;
+    margin-top: -8px;
+  }
+
+  .newUpdatesSctionContents h2 {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .newUpdateParagraph {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+  .newUpdatesSctionContents h5 {
+    margin-top: 32px;
+    font-size: 12px;
+  }
+
+  .newUpdatesSctionContents {
+    width: 90%;
+  }
+}
+
+/* ============================================ MEDIA QUERY FOR PORPULAR POST SECTION STARTS HERE */
+
+@media (max-width: 500px) {
+  .postTimeLine p {
+    font-size: 10px !important;
     font-weight: 500;
     color: var(--darkBlue);
-    letter-spacing: 0.72px;
+    letter-spacing: 0.24px;
     text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+  }
 
-.postOnedot{
-    font-size: 20px;
-    margin-top: 2px;
-}
-
-.post h1{
-    font-size: 24px;
-    line-height: 32.78px;
+  .post h1 {
+    font-size: 19px;
+    line-height: 25.78px;
     font-weight: 600;
     color: var(--gray);
     margin-top: -10px;
     margin-bottom: 16px;
     width: min(411px, 100%);
-}
+  }
 
-.post h4{
-    font-size: 16px;
-    line-height: 21.8px;
+  .post h4 {
+    font-size: 12px;
+    line-height: 17.8px;
     color: var(--gray);
     width: min(411px, 100%);
-}
-
-
-/* ============================================ MANAGING AND MONITORING SECTION STYLING STARTS HERE ========================================= */
-
-.managingWrapper{
-    width: 100%;
-    min-height: 414px;
-    background-color: var(--backgroundL);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 125px;
-    padding: 20px;
-}
-
-.managing{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    flex-direction: column;
-}
-
-.managing h2{
-    font-size: 32px;
-    line-height: 43px;
-    color: var(--gray);
-    text-align: center;
-}
-
-.managing p{
-    text-align: center;
-    color: var(--gray);
-    font-size: 24px;
-    line-height: 32.78px;
-}
-
-.managing button{
-    padding: 16px 18px;
-    background-color: var(--darkBlue);
-    border: none;
-    color: white;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-
-/* ============================================ RECENT POST SECTION STYLING STARTS HERE ========================================= */
-
-.recentPost{
-    margin-top: 64px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.recentPostGrid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 32px;
-    gap: 24px;
-    row-gap: 124px;
-}
-
-.loadMoreBtn{
-    color: white;
-    background-color: var(--darkBlue);
-    border: none;
-    padding: 9px 18px;
-    font-size: 20px;
-    border-radius: 6px;
-    margin-top: 124px;
-}
-
-
-/* ============================================ DEVOPS ENGINEER SECTION STYLING STARTS HERE ========================================= */
-.devopsEngineer{
-    width: 100%;
-    min-height: 415px;
-    background-color: var(--backgroundL);
-    margin-top: 77px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 24px;
-    padding: 20px;
-}
-
-.devopsEngineer h1{
-    font-size: 32px;
-    line-height: 44px;
-    text-align: center;
-    color: var(--gray);
-}
-
-.devopsEngineer p{
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    font-weight: 500;
-    color: var(--gray);
-}
-
-.devopsEngineer button{
-    padding: 16px 18px;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: var(--darkBlue);
-    border: none;
-    border-radius: 6px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* ================================================ MEDIA QUERY AND RESPONSIVENESS STARTS HERE =================================================================================================== */
-
-@media (max-width: 1000px) {
-    .subLinksWrapper{
-        position: relative;
-    }
-
-    .desSubLinks{
-         display: none;
-    }
-
-    .subLinks{
-       position: absolute;
-       width: min(300px,100%);
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: space-between;
-       background-color: white;
-       box-shadow: 0 0 9px 2px #E3EBFC;
-       top: 30px;
-       right: 0px;
-       align-items: flex-start;
-       padding: 20px;
-       z-index: 1px;
-    }
-    .openSublinkBtn{
-        display: block;
-        border: none;
-        background: none;
-        font-size: 20px;
-    }
-}
-/* ============================================ MEDIA QUERY FOR BEST PRACTICE  SECTION STARTS HERE */
-
-@media (max-width: 1300px) {
-    .bestPracticediv{
-        align-items: flex-start;
-        gap: 20px;
-     }
-
-    .bestPracticediv h1{
-        width: 100%;
-        font-size: 46px;
-        line-height: 50.5px;
-        color: var(--gray);
-    }
-
-    .bestPracticediv p{
-        margin-bottom: 15px;
-        width: 100%;
-        line-height: 40px;
-        font-size: 26px;
-    }
-}
-
-@media (max-width: 900px) {
-    .bestPracticediv{
-       flex-direction: column;
-       align-items: flex-start;
-       gap: 40px;
-    }
-
-    .bestPracticediv h1{
-        width: 100%;
-        font-size: 50px;
-        line-height: 75.5px;
-        color: var(--gray);
-    }
-
-    .bestPracticediv p{
-        margin-bottom: 15px;
-        width: 100%;
-        font-size: 30px;
-        font-weight: 500;
-        line-height: 43.71px;
-        color: var(--gray);
-    }
-    
-}
-
-
-@media (max-width: 500px) {
-    .bestPracticediv{
-        gap: 30px;
-     }
-
-    .bestPracticediv h1{
-        width: 100%;
-        font-size: 40px;
-        line-height: 50.5px;
-        color: var(--gray);
-    }
-
-    .bestPracticediv p{
-        margin-bottom: 15px;
-        width: 100%;
-        line-height: 30px;
-        font-size: 19px !important;
-    }
-}
-
-
-/* ============================================ MEDIA QUERY FOR NEW UPDATE SECTION STARTS HERE */
-
-@media  (max-width: 1300px) {
-    .updateImg{
-        width: 50%;
-    }
-    .newUpdatesSction{
-        gap: 30px;
-        margin-top: 70px;
-    }
-    .firstSectionWrapper{
-        padding: 0;
-    }
-    .bestPracticediv{
-      padding: 0 30px;
-    }
-    .subLinksWrapper{
-        padding: 0 30px;
-    }
-    .newUpdatesSction{
-        padding: 0 30px;
-    }
-    .porpularPostSection{
-        padding: 0 30px;
-    }
-    .recentPost{
-        padding: 0 30px;
-    }
-}
-
-@media (max-width: 1100px) {
-    .newUpdatesSctionContents h1{
-        font-size: 23px;
-        font-weight: 700;
-        line-height: 30px;
-        color: var(--gray);
-        margin-top: -15px;
-    }
-    
-    .newUpdateParagraph{
-        font-size: 16px;
-        line-height: 20px;
-        color: var(--gray);
-    }
-    
-    .newUpdatesSctionContents h5{
-        margin-top: 32px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 850px) {
-    .newUpdatesSction{
-        gap: 30px;
-        margin-top: 70px;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 32px;
-        width: 100%;
-        min-height: 602px;
-    }
-
-    .updateImg{
-        width: 100%;
-    }
-
-    .newUpdatesSctionContents h1{
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 49.18px;
-        color: var(--gray);
-        margin-top: -15px;
-    }
-    
-    .newUpdateParagraph{
-        font-size: 20px;
-        line-height: 27px;
-        color: var(--gray);
-        margin-top: 16px;
-    }
-    
-    .newUpdatesSctionContents h5{
-        margin-top: 32px;
-        font-size: 12px;
-    }
-
-    .newUpdatesSctionContents{
-        width: 90%;
-    }
-}
-
-
-/* ============================================ MEDIA QUERY FOR PORPULAR POST SECTION STARTS HERE */
-
-@media (max-width: 500px) {
-    .postTimeLine p{
-        font-size: 10px !important;
-        font-weight: 500;
-        color: var(--darkBlue);
-        letter-spacing: 0.24px;
-        text-transform: uppercase;
-    }
-    
-    .post h1{
-        font-size: 19px;
-        line-height: 25.78px;
-        font-weight: 600;
-        color: var(--gray);
-        margin-top: -10px;
-        margin-bottom: 16px;
-        width: min(411px, 100%);
-    }
-    
-    .post h4{
-        font-size: 12px;
-        line-height: 17.8px;
-        color: var(--gray);
-        width: min(411px, 100%);
-    }
+  }
 }
 
 @media (max-width: 800px) {
-    .posts{
-        display: grid;
-        margin-top: 34px;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 54px;
-        justify-content: space-between;
-        width: 100%;
-    }
-    .post img{
-        width: 100%;
-    }
+  .posts {
+    display: grid;
+    margin-top: 34px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .post img {
+    width: 100%;
+  }
 
-    .post h1{
-        width: 100%;
-    }
-    
-    .post h4{
-        width: 100%;
-    }
+  .post h1 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .post h4 {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 800px) and (max-width: 1200px) {
-    .postTimeLine p{
-        font-size: 10px;
-        font-weight: 500;
-        color: var(--darkBlue);
-        letter-spacing: 0.24px;
-        text-transform: uppercase;
-    }
-    
-    .post h1{
-        font-size: 19px;
-        line-height: 25.78px;
-        font-weight: 600;
-        color: var(--gray);
-        margin-top: -10px;
-        margin-bottom: 16px;
-        width: min(411px, 100%);
-    }
-    
-    .post h4{
-        font-size: 12px;
-        line-height: 17.8px;
-        color: var(--gray);
-        width: min(411px, 100%);
-    }
-}
+  .postTimeLine p {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--darkBlue);
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+  }
 
+  .post h1 {
+    font-size: 19px;
+    line-height: 25.78px;
+    font-weight: 600;
+    color: var(--gray);
+    margin-top: -10px;
+    margin-bottom: 16px;
+    width: min(411px, 100%);
+  }
+
+  .post h4 {
+    font-size: 12px;
+    line-height: 17.8px;
+    color: var(--gray);
+    width: min(411px, 100%);
+  }
+}
 
 /* ============================================ MEDIA QUERY FOR MANAGING AND MONITORING SECTION STARTS HERE */
 
 @media (max-width: 500px) {
-    .managing h2{
-        font-size: 25px;
-        line-height: 43px;
-        color: var(--gray);
-        text-align: center;
-    }
-    
-    .managing p{
-        text-align: center;
-        color: var(--gray);
-        font-size: 18px !important;
-        line-height: 32.78px;
-    }
-}
+  .managing h2 {
+    font-size: 24px;
+    line-height: 33px;
+  }
 
+  .managing p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+  }
+}
 
 /* ============================================ MEDIA QUERY FOR RECENT POST SECTION STARTS HERE */
 
-
 @media (max-width: 800px) {
-    .recentPostGrid{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 54px;
-        justify-content: space-between;
-        width: 100%;
-    }
+  .recentPostGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 54px;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 /* ============================================ MEDIA QUERY FOR DEVOPS ENGINEER SECTION STARTS HERE */
 
 @media (max-width: 500px) {
-    .devopsEngineer h1{
-        font-size: 25px;
-        line-height: 43px;
-        color: var(--gray);
-        text-align: center;
-    }
-    
-    .devopsEngineer p{
-        text-align: center;
-        color: var(--gray);
-        font-size: 18px !important;
-        line-height: 32.78px;
-    }
+  .devopsEngineer h1 {
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+  }
+
+  .devopsEngineer p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+  }
 }

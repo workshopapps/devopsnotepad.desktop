@@ -3,6 +3,10 @@
 	font-family: 'Inter';
 }
 
+.container * {
+	box-sizing: border-box;
+}
+
 .container > h2 {
 	font-weight: 500;
 	font-size: 16px;
@@ -14,14 +18,41 @@
 	margin-bottom: 11px;
 }
 
-.table {
+.table_container {
 	width: 100%;
-	padding: 16px 24px;
+	padding: 48px 24px 16px;
 	border: 1px solid #c7c7c7;
 	border-radius: 10px;
+	position: relative;
+}
+
+.button_container {
+	position: absolute;
+	top: 16px;
+	right: 24px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	z-index: 10;
+}
+
+.button_container button {
+	border: none;
+	background: inherit;
+	cursor: pointer;
+}
+
+.button_container button:focus {
+	border: none;
+	outline: none;
+}
+
+.table {
+	width: 100%;
 }
 
 .table > tbody {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
