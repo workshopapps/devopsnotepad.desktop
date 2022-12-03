@@ -58,9 +58,9 @@ const specs = swaggerJsDoc(options);
 //setting up swagger doc
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
-// app.get('/', (req, res) => {
-//   res.send("<button><a href='/auth/google'>Login With Google</a></button>")
-// });
+app.get('/', (req, res) => {
+  res.send("<button><a href='/auth/google'>Login With Google</a></button>")
+});
 
 passportSetup();
 app.use(session({
