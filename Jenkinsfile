@@ -24,6 +24,18 @@ pipeline {
 
 			}
 		}
+		stage("Build desktop-frontend"){
+
+			steps {
+
+                dir ('devopsnotepad.desktop/dekstop_frontend') {
+                    sh "pwd"
+                    sh "npm i -f"
+                    sh "npm run build"
+                }
+
+			}
+		}
 
 		stage("Install dependencies for backend"){
 
@@ -48,6 +60,14 @@ pipeline {
 			steps {
 				sh "sudo systemctl stop opspad-frontend.service"
 				sh "sudo systemctl restart opspad-frontend.service"
+			}
+		}
+
+		stage("start desktop") {
+		
+			steps {
+				sh "sudo systemctl stop opspad-desktop.service"
+				sh "sudo systemctl restart opspad-desktop.service"
 			}
 		}
 		
