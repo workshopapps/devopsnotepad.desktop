@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './AddServerSuccess.module.css';
 
-function AddServerSuccess({ closeSuccess }) {
+function AddServerSuccess({ closeSuccess, message }) {
 	return (
 		<div className={style.container}>
 			<div
@@ -28,9 +28,9 @@ function AddServerSuccess({ closeSuccess }) {
 					</svg>
 				</figure>
 
-				<h2>Server Added Successfully </h2>
+				<h2>Server {message} Successfully </h2>
 
-				<p>You have successfully added a new server </p>
+				<p>You have successfully {message} a new server </p>
 				<Link className={style.link} to="/">
 					<button onClick={closeSuccess} type="button">
 						Back to Dashboard
@@ -42,6 +42,7 @@ function AddServerSuccess({ closeSuccess }) {
 }
 
 AddServerSuccess.propTypes = {
+	message: PropTypes.string,
 	closeSuccess: PropTypes.func,
 };
 

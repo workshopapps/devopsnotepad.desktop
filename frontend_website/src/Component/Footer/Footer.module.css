@@ -33,7 +33,7 @@
   justify-content: space-between;
   width: 100%;
   gap: 10px;
-  padding: 0
+  padding: 0;
 }
 
 .footer .mainFooter .dMFooter .footerLink li a {
@@ -42,8 +42,11 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  color: #6F6F6F;
+  color: #8f8a8a;
+}
 
+.footer .mainFooter .dMFooter .footerLink li a:hover {
+  color: #102a63 !important;
 }
 
 .footer .mainFooter .dMFooter .footerLink .miUM .fDownloadAppLink {
@@ -56,12 +59,19 @@
   height: auto;
 }
 
-.footer .mainFooter .dMFooter .footerLink .miUM .right .fDownloadAppLink img:last-child {
-  max-width: 137.96px
+.footer
+  .mainFooter
+  .dMFooter
+  .footerLink
+  .miUM
+  .right
+  .fDownloadAppLink
+  img:last-child {
+  max-width: 137.96px;
 }
 
 .footer .bottomFooter {
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #e5e5e5;
   padding: 23.5px 0px 23.5px 0px;
 }
 
@@ -71,7 +81,11 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  color: #202020;
+  color: #565454;
+}
+
+.footer_list {
+  color: #4974eb91 !important;
 }
 
 @media screen and (max-width: 1060px) {
@@ -123,7 +137,6 @@
   .footer .mainFooter .dMFooter .footerLink {
     flex-direction: column;
   }
-
 }
 
 @media screen and (max-width: 400px) {
