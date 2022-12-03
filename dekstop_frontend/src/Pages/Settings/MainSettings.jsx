@@ -75,7 +75,7 @@ function Settings() {
 								{security.icon}
 								<Link to={security.slug}>{security.func}</Link>
 							</div>
-							{security.iconright}
+							<Link to={security.modal}>{security.iconright}</Link>
 						</div>
 					</div>
 				))}
@@ -88,7 +88,7 @@ function Settings() {
 								<Link to={items.slug}>
 									<li key={items.list}>
 										<Link to={items.slug}>{items.list}</Link>
-										<Link to={items.slug}>{items.iconright}</Link>
+										<a href={items.slug}>{items.iconright}</a>
 									</li>
 								</Link>
 							))}
