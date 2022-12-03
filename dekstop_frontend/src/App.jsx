@@ -11,7 +11,7 @@ import Password from './Pages/Password/Password';
 import AddServer from './Pages/AddServer/AddServer';
 import TextResizer from './Pages/Settings/components/TextResizer/TextResizer';
 import Onboarding from './Components/Onboarding/Onboarding';
-import ServerDashBoard from './Pages/ServerDashBoard/ServerDashboard'
+import ServerDashBoard from './Pages/ServerDashBoard/ServerDashboard';
 import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification';
 import AvailabilityNotification from './Pages/Notification/AvailabilityNotification/AvailabilityNotification';
 
