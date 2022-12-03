@@ -22,7 +22,6 @@ import DemoPage from './Pages/DemoPage/DemoPage';
 import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
-import Blog from './Pages/Blog/Blog';
 import PodCast from './Pages/Podcast/Podcasts.jsx';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
@@ -77,7 +76,6 @@ function App() {
           <Route path='/demo' exact element={<DemoPage />} />
           <Route path='/our-team' exact element={<OurTeam />} />
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
-          <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
