@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
-import arrow from './Assets/arrow.svg';
+import arrowUp from './Assets/arrow_up.svg';
+import arrowDown from './Assets/arrow_down.svg';
 import menu from './Assets/menu.svg';
 import ServerMenu from '../ServerMenu/ServerMenu';
 import EditServer from '../EditServer/EditServer';
 import DeleteServer from '../DeleteSever/DeleteServer';
 
-function ServerCard({ name, ipAddress, serverHealth, id }) {
+function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isEditOpen, setIsEditOpen] = useState(false);
 	const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -36,11 +37,13 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 			{isEditOpen && (
 				<EditServer
 					closeEditServer={closeEdit}
+					serverId={serverId}
+					id={id}
 					name={name}
 					ipAddress={ipAddress}
 				/>
 			)}
-			{isDeleteOpen && <DeleteServer closeDelete={closeDelete} />}
+			{isDeleteOpen && <DeleteServer id={id} closeDelete={closeDelete} />}
 			<h2>{name}</h2>
 			<div className={style.table_container}>
 				{isMenuOpen && (
@@ -71,24 +74,24 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 							</tr>
 							<tr>
 								<th>Server Health:</th>
-								<td
-									className={`${style.server_health_container} ${
-										serverHealth.toLowerCase() === 'critical' &&
-										style.server_health_critical
-									}`}
-								>
-									<div className={style.server_health}>
-										<span>Up</span>{' '}
-										<img
-											className={
-												serverHealth.toLowerCase() === 'critical' &&
-												style.rotate
-											}
-											src={arrow}
-											alt=""
-										/>
-									</div>
-								</td>
+								{serverHealth ? (
+									<td
+										className={`${style.server_health_container} ${style.server_health_excellent}`}
+									>
+										<div className={style.server_health}>
+											<span>Up</span> <img src={arrowUp} alt="" />
+										</div>
+									</td>
+								) : (
+									<td
+										className={`${style.server_health_container} ${style.server_health_critical} ${style.server_health_critical_container}`}
+									>
+										<div className={style.server_health}>
+											<span>Down</span>{' '}
+											<img className={style.rotate} src={arrowDown} alt="" />
+										</div>
+									</td>
+								)}
 							</tr>
 						</tbody>
 					</table>
@@ -99,6 +102,7 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 }
 
 ServerCard.propTypes = {
+	serverId: PropTypes.string,
 	name: PropTypes.string,
 	ipAddress: PropTypes.string,
 	serverHealth: PropTypes.string,
@@ -106,6 +110,7 @@ ServerCard.propTypes = {
 };
 
 ServerCard.defaultProps = {
+	serverId: '4439593jf3-0f3-2k200004rf',
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
 	serverHealth: 'excellent',
