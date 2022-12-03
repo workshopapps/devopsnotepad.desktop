@@ -1,293 +1,309 @@
-.mainContainer {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{
+  --pblaxk:#202020;
+  --Dblck: #292929;
+  --Lblue: #F6F9FF;
+  --pblue: #102A63;
+}
+
+p{
+  margin-bottom: 0 !important;
+}
+
+.partnerPageContainer {
   width: 100%;
-  overflow-x: hidden;
-}
-
-.introContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1.5rem 1.5rem 1rem 1.5rem;
-  background-color: #fff;
+  align-items: center;
+  gap: 80px;
 }
 
-.firstHeadingStyling {
-  font-weight: 400;
-  font-size: 2rem;
-  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.firstHeadingBlue {
-  color: #225ad6;
-}
-
-.firstParagraph {
-  padding: 1rem 0.5rem 2rem 0.5rem;
-  font-size: 20px;
-}
-
-.holdingHands img {
+.PartnerMinilanding{
   width: 100%;
-  height: 100%;
-}
-
-.partnerButton {
+  height: 60vh;
+  gap: 32px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0.875rem;
-  width: 50%;
-  border-radius: 10px;
-  background-color: #102a63;
-  color: #fff;
-  font-size: 15px;
-  margin: 2rem 1rem 2rem 1rem;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.partnersTechnology {
-  background-color: #f6f9ff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: max-content;
-  margin-bottom: 21px;
-}
-
-.partnersTechnologyCard {
-  width: fit-content;
-  padding: 1rem;
-  cursor: pointer;
-  margin: 1rem;
-  margin-bottom: 1rem;
-}
-
-.partnersTechnologyCardDesktop {
-  display: none;
-}
-.cardDetails {
   flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  justify-content: flex-end;
 }
 
-.cardImage {
-  align-self: center;
-  border-radius: 40%;
-  box-shadow: 0 0 0 10px #fff;
-  padding: 2rem;
-  background-color: #fff;
-  width: auto;
+.PartnerMinilanding h1{
+  color: var(--pblaxk);
+  font-size: 56px;
+  font-weight: 800;
+  text-align: center;
 }
 
-.cardHeader {
-  font-weight: 600;
-  font-size: 18px;
-  color: #292929;
-  margin: 1rem auto 1rem auto;
-}
-
-.cardText {
-  font-weight: 400;
+.PartnerMinilanding p{
+  width: min(649.51px, 90%);
+  color: var(--pblaxk);
   font-size: 16px;
+  line-height: 22px;
+  text-align: center;
 }
 
-.partnerCard {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 4rem 0 2rem 0;
-}
-
-.partnerCardHeading {
-  font-weight: 600;
-  font-size: 20px;
-  color: #292929;
-}
-
-.partnerCardContainer {
-  gap: 10px;
-  justify-content: center;
-}
-
-.containerCardImage {
-  display: flex;
-  justify-content: center;
-  width: 55%;
-}
-
-.partnerCardContainerBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  background: #ffffff;
-  box-shadow: 0px 8px 16px rgba(205, 218, 240, 0.79);
-  border-radius: 11px;
-  margin: 1rem 1rem 1rem 1rem;
-}
-
-.containerCardContent {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding: 1rem;
-  margin: 2rem 0 0 2rem;
-}
-.cardItem1 {
-  font-size: 24px;
-
-  padding: 16px;
-}
-.cardItem2,
-.cardItem4 {
+.PartnerMinilanding button{
+  border: none;
+  background-color: var(--pblue);
+  color: white;
+  border-radius: 7px;
+  padding: 19px 20px;
+  margin-top: 30px;
   font-size: 15px;
-  padding: 5px;
-  letter-spacing: 0.05em;
-}
-.cardItemThird {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 11px;
 }
 
-@media only screen and (min-width: 768px) {
-  .introContainer {
-    padding: 2.5rem 2rem 5rem 1rem;
-    margin-bottom: 8rem;
-    flex-direction: row;
-  }
 
-  .holdingHands {
-    position: relative;
-    left: 53%;
-  }
+/* =============================================== SERVICE PARTNER SECTION STLYING STARTS HERE ======================================================== */
 
-  .partnerButton {
-    padding: 1rem;
-  }
+.servicePartner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: 90%;
+}
 
-  .introGroup {
-    display: flex;
-    position: relative;
-    right: 42%;
-    display: flex;
-    width: 38%;
-    flex-direction: column;
-  }
+.servicePartnerContent{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(556px, 90%);
+  align-items: flex-start;
+}
 
-  .partnerCard {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-  .partnersTechnologyCard {
-    display: none;
-  }
-
-  .partnersTechnologyCardDesktop {
-    display: block;
-    width: fit-content;
-    padding: 2rem 6rem 2rem 4rem;
-    cursor: pointer;
-    margin: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .partnersTechnologyCardContainerDesktop {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cardHeaderContainer {
-    display: flex;
-    background-color: #fff;
-    margin-top: -35px;
-    margin-bottom: 61px;
-    box-shadow: 4px 4px 29px 16px rgba(50, 50, 50, 0.03);
-    border-radius: 6px;
-  }
-
-  .technologyDetails {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cardText {
-    width: 51%;
-  }
-
-  .partnerButton {
-    width: 31%;
-    padding: 1.21rem;
-  }
-
-  .partnerButtonTechnology {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.21rem;
-    border-radius: 10px;
-    background-color: #102a63;
-    color: #fff;
-    margin: 2rem 0rem 2rem 1rem;
-    width: 13%;
-    margin-left: 0px;
-    font-size: 15px;
-  }
-
-  .partnerCardHeading {
+.servicePartnerContent h3{
+  color: var(--pblaxk);
     font-size: 32px;
+    font-weight: 700;
+}
+
+.servicePartnerContent p{
+  color: #6F6F6F;
+  font-size: 16px;
+  width: 100%;
+  line-height: 24px;
+}
+
+.servicePartnerContent h5{
+  color: #6F6F6F;
+  font-size: 24px;
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.servicePartnerContent button{
+  background-color: var(--pblue);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.handImageWrapper{
+  width: min(650px);
+}
+
+.handImage{
+  width: 100%;
+  display: block;
+}
+
+
+
+/* ====================================================================== PARTENER SECTION STYLING STARTS HERE =============================================================== */
+
+.partners{
+  width: 100%;  
+  min-height: 110vh;
+  background-color: var(--Lblue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 20px 0;
+}
+
+.partnersHeading{
+  text-align: center;
+  color: var(--pblaxk);
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.partnersCarousel{
+  display: grid;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.carouselContents{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  max-height: 500px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 11px;
+  box-shadow: 0px 8px 16px rgba(205, 218, 240, 0.79);
+}
+
+
+.carouselContents img{
+  max-width: 150px;
+}
+
+.carouselContents h3{
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.0005em;
+  color: var(--Dblck);
+  text-align: center;
+  margin-top: 27px;
+}
+
+.carouselContents h6{
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.0005em;
+  color: var(--Dblck);
+  text-align: center;
+  margin-top: 7px;
+}
+
+.carouselContents h4{
+  margin-top: 17px !important;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.0005em;
+  color: var(--pblaxk);
+  text-align: center;
+}
+
+.carouselContents p{
+  margin-top: 27px;
+  font-size: 14px;
+  letter-spacing: 0.0005em;
+  line-height: 30px;
+  color: var(--Dblck);
+  text-align: center;
+  width: min(292px, 90%);
+}
+
+.arrows{
+  display: none;
+  gap: 50px;
+
+}
+
+
+
+
+
+
+
+/* =====================================================================================  MEDIA QUERY AND RESPONSIVENESS STARTS HERE ===================================== */
+
+@media (max-width: 1280px) {
+  .servicePartnerContent h5{
+    margin-top: 5px;
+  }
+  
+  .servicePartnerContent button{
+    margin-top: 0;
+  }
+  
+}
+
+@media (min-width: 730px) and (max-width: 1000px) {
+  .servicePartnerContent p{
+    color: #6F6F6F;
+    font-size: 12px;
+    width: 100%;
+  }
+  .servicePartnerContent h3{
+      font-size: 25px;
   }
 
-  .partnerCardContainer {
-    display: flex;
-    flex-direction: row;
+  .servicePartnerContent{
+    gap: 10px;
+  }
+
+  .servicePartnerContent h5{
+    font-size: 20px;
+    margin-top: 5px;
+  }
+}
+
+
+@media (max-width: 730px) {
+  .servicePartner{
+    flex-direction: column-reverse;
+   }
+
+   .servicePartnerContent{
+    width: 80%;
     gap: 20px;
-    padding: 3rem;
-    justify-content: center;
+    align-items: center;
+  }
+
+  .handImageWrapper{
     width: 100%;
   }
 
-  .partnerCardContainerBody {
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  .servicePartnerContent p{
+    text-align: center;
+  }
+
+  .servicePartnerContent h5{
+    margin-top: 20px;
+  }
+  
+  .servicePartnerContent button{
+    margin-top: 20px;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .partnersCarousel{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
+}
 
-  .containerCardImage {
-    display: flex;
-    justify-content: center;
+@media (max-width: 600px) {
+  .partnersCarousel{
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     align-items: center;
   }
-
-  .containerCardImage img {
+  .arrows{
     display: flex;
-    justify-content: center;
+    gap: 50px;
   }
 
-  .serviceImageDesktop {
-    width: 8%;
-    border-radius: 40%;
-    box-shadow: 0 0 0 10px #fff;
-    padding: 2rem;
-    margin-right: 20rem;
-    background-color: #fff;
+  .carouselContents2{
+    display: none;
   }
-    
+
+  .carouselContents3{
+    display: none;
+  }
+  .partners{
+    padding: 20px 20px;
+  }
 }

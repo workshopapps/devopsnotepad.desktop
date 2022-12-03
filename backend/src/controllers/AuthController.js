@@ -26,26 +26,32 @@ export default class AuthController {
     }
   };
 
-  static loginUser = async (req, res, next) => {
-    const body = req.body;
-    try {
-      const loggedInUser = await login(body, req, res);
+    static loginUser = async (req, res, next) => {
+        const body = req.body;
+        try {
+            const loggedInUser = await login(body, req, res);
+   
+            //set request cookie
+            if (loggedInUser.user && loggedInUser.token){
+                req.session.user = loggedInUser.user;
+                req.session.authorized = true;
 
-      //set request cookie
-      if (loggedInUser.user && loggedInUser.token) {
-        req.session.user = loggedInUser.user;
-        req.session.authorized = true;
-
-        return res.send({
-          message: 'Logged in Successfully',
-          user: loggedInUser.user,
-          token: loggedInUser.token,
-        });
-      }
-    } catch (error) {
-      next(error);
-    }
-  };
+                if (body.rememberMe) {
+                    req.session.user.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
+                } else {
+                    req.session.user.expires = false; // Cookie expires at end of session
+                }
+  
+                return res.send({ 
+                    message: "Logged in Successfully",
+                    user: loggedInUser.user,
+                    token: loggedInUser.token,
+                });  
+            }                   
+        } catch (error) {
+            next(error);
+        }
+    };
 
   static logoutUser = async (req, res, next) => {
     try {

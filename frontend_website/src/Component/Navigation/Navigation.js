@@ -20,7 +20,6 @@ const Navigation = () => {
 
     const stickyNav = function (entries) {
       const [entry] = entries;
-      // console.log(entry);
 
       if (!entry.isIntersecting) nav.classList.add(`${styles.sticky}`);
       else nav.classList.remove(`${styles.sticky}`);
@@ -56,7 +55,7 @@ const Navigation = () => {
 
             <div className={styles.right}>
               <div className={styles.navAuthBtn}>
-                {user !== null ? (
+                {user.message === 'Logged in Successfully' ? (
                   <Link
                     className={styles.login_link}
                     to='/login'

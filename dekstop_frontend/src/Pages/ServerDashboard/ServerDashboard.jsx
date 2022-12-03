@@ -16,12 +16,8 @@ function ServerDashBoard() {
 				{servers
 					.filter((server) => server.id === params.id)
 					.map((server) => (
-						<div>
-							<ServerInfo
-								key={server.id}
-								ipAddress={server.ipAddress}
-								name={server.name}
-							/>
+						<div key={server.id}>
+							<ServerInfo ipAddress={server.ipAddress} name={server.name} />
 							<div className={styles.wrapper}>
 								<Link to={`/server/${server.id}/note`}>
 									{' '}
