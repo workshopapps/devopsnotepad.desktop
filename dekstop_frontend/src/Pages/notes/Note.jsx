@@ -66,60 +66,67 @@ function Note() {
 			<div className={notesStyle.notes}>
 				<div className={notesStyle.notesContent}>
 					<div className={notesStyle.notesContentTwo}>
-						<div className={notesStyle.notesFormDiv}>
-							<div className={notesStyle.notesFormIcons}>
-								<img
-									src={Vectorc}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleBold}
-									onFocus={handleBold}
-								/>
-								<img
-									src={Vectorr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectoor}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectorrr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vecctor}
-									alt="img"
-									id={notesStyle.deleteIcon}
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleOpen}
-									onFocus={handleOpen}
-								/>
-							</div>
-							{inputs?.length > 0 ? (
+							<div className={notesStyle.notesFormDiv}>
+								<div className={notesStyle.notesFormIcons}>
+									<img
+										src={Vectorc}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+										onMouseDownCapture={handleBold}
+										onFocus={handleBold}
+									/>
+									<img
+										src={Vectorr}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vectoor}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vectorrr}
+										alt="img"
+										className={notesStyle.notesFormIcon}
+									/>
+									<img
+										src={Vecctor}
+										alt="img"
+										id={notesStyle.deleteIcon}
+										className={notesStyle.notesFormIcon}
+										onMouseDownCapture={handleOpen}
+										onFocus={handleOpen}
+									/>
+								</div>
+								{inputs?.length > 0 ? (
+									<p
+										className={notesStyle.notesLastEdit}
+										id={notesStyle.notesLastEdit}
+									>
+										{hour}:{min}pm, {date}-{month}-22
+									</p>
+								) : (
+									<p className={notesStyle.notesLastEdit}>Last edit</p>
+								)}
+								<div className={notesStyle.noteTextDiv}>
 								<p
-									className={notesStyle.notesLastEdit}
-									id={notesStyle.notesLastEdit}
+									className={notesStyle.noteText}
+									style={bold ? boldStyle : {}}
 								>
-									{hour}:{min}pm, {date}-{month}-22
+									{note}
 								</p>
-							) : (
-								<p className={notesStyle.notesLastEdit}>Last edit</p>
-							)}
-							<p className={notesStyle.noteText} style={bold ? boldStyle : {}}>
-								{note}
-							</p>
-							<p>{startHere}</p>
-							<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
-								<input
-									className={notesStyle.notesFormInput}
-									onChange={handleChanges}
-								/>
-							</form>
-						</div>
+								</div>
+								
+								<p>{startHere}</p>
+								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
+									<textarea
+										className={notesStyle.notesFormInput}
+										onChange={handleChanges}
+									/>
+									<button type='submit' className={notesStyle.notesSaveBtn}>Save Note</button>
+								</form>
+							</div>
 					</div>
 				</div>
 			</div>

@@ -23,9 +23,12 @@ const Login = () => {
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    addUserHandler(responseObj);
-    console.log(responseObj);
-    navigate('/');
+    if (responseObj.message === 'Logged in Successfully') {
+      addUserHandler(responseObj.user);
+      navigate('/');
+    } else {
+      console.log(responseObj, 'error');
+    }
   };
 
   const signInHandler = async (formData) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
@@ -7,10 +7,12 @@ import ServerCard from '../../Components/ServerCard/ServerCard';
 // import Servers from './ServerData';
 import addBg from './Assets/add.svg';
 import search from './Assets/search.svg';
+import Auth from '../../Components/GlobalPassword/Auth';
 
 function Home() {
 	const { servers, loading, getServers } = useContext(ServerContext);
 	const [query, setQuery] = useState('');
+	const [auth, setAuth] = useState(true);
 	const navigate = useNavigate();
 
 	// Initiate Onboarding
@@ -21,6 +23,11 @@ function Home() {
 		if (!isNewUser) {
 			navigate('/onboarding');
 		}
+	});
+
+	// function to close authentication process
+	const closeAuth = useCallback(() => {
+		setAuth(false);
 	});
 
 	// Filter servers displayed by user query
@@ -36,8 +43,10 @@ function Home() {
 		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
 
-			{loading && <div className={style.loading}>Loading Servers...</div>}
-			{servers && (
+			{!auth && loading && (
+				<div className={style.loading}>Loading Servers...</div>
+			)}
+			{!auth && servers && (
 				<div className={style.container}>
 					{servers.length > 0 && (
 						<div className={style.search}>
@@ -53,6 +62,7 @@ function Home() {
 						<ServerCard
 							key={server.id}
 							id={server.id}
+							serverId={server.serverId}
 							name={server.name}
 							ipAddress={server.ipAddress}
 							serverHealth={server.serverHealth}
@@ -61,7 +71,7 @@ function Home() {
 				</div>
 			)}
 
-			{!servers ||
+			{(!auth && !servers) ||
 				(servers.length === 0 && (
 					<div className={style.no_server}>
 						<Link to="/add-server">
@@ -76,6 +86,8 @@ function Home() {
 						</div>
 					</div>
 				))}
+
+			{auth && <Auth closeAuth={closeAuth} />}
 		</div>
 	);
 }
