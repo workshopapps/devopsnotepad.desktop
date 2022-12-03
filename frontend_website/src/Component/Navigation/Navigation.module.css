@@ -380,4 +380,5 @@
   position: fixed;
   background-color: rgb(255, 255, 255);
   z-index: 100;
+  top: 0;
 }
