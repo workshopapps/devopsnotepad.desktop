@@ -24,6 +24,9 @@ router.get(
 router.post("/reset-password", AuthController.getResetLink);
 router.post("/update-password", AuthController.updateUserPassword);
 
+router.post('/update-user-password', AuthController.updateUserPasswordFromMobile);
+
+
 router.get("/verify-mail", AuthController.verifyEmail);
 
 export default router;
