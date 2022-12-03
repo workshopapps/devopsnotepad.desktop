@@ -1,5 +1,9 @@
 pipeline {
 
+	environment {
+        CI = 'false'
+    }
+
 	agent any
 	stages {
 
@@ -30,7 +34,6 @@ pipeline {
 
                 dir ('devopsnotepad.desktop/dekstop_frontend') {
                     sh "pwd"
-					sh "export CI=false"
                     sh "npm i -f"
                     sh "npm run build"
                 }
