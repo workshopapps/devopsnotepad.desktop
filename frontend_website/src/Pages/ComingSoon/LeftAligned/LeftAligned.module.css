@@ -1,4 +1,5 @@
 .leftaligned {
+  margin-top: 50px;
   padding: 10rem 10rem;
   width: 100%;
   display: flex;
@@ -9,6 +10,7 @@
   text-align: left;
   color: #292929;
   background-color: #f6f9ff;
+  height: 441px;
 }
 
 .left {
@@ -16,44 +18,59 @@
 }
 
 .h2 {
-  color: #225ad6;
-  font-weight: 600;
-  font-size: 4.8rem;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #202020;
   margin-bottom: 1.5rem;
 }
 
 .p {
-  font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 4rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #292929;
 }
 
 .right {
-  flex-basis: 45%;
+  flex-basis: 35%;
 }
 
 .img {
   height: 100%;
-  width: 100%;
+  width: 342px;
   object-fit: cover;
   border-radius: 0.8rem;
+  margin-top: -10px;
 }
 
 @media only screen and (max-width: 850px) {
   .leftaligned {
     flex-direction: column;
     text-align: center;
-    padding: 5rem 3rem;
+    padding: 5rem 3rem 0;
+    height: 100%;
   }
 
   .right {
     width: 100%;
+    margin: 0;
   }
 
   .left {
     width: 100%;
     margin-bottom: 1.5rem;
   }
+
+  .img {
+    height: 100%;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    margin: 0;
+    /* margin-top: -10px; */
+  }
+
   .h2 {
     font-size: 3.5rem;
     margin-bottom: 0.8rem;
@@ -67,7 +84,7 @@
 
 @media only screen and (max-width: 450px) {
   .leftaligned {
-    padding: 6rem 2rem;
+    padding: 6rem 2rem 0;
   }
 
   .h2 {

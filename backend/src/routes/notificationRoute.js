@@ -1,6 +1,7 @@
 import express from 'express';
 import NotificationController from '../controllers/NotificationController.js';
 import { createNotificationValidator } from '../validators/notificationValidator.js';
+import isAuthenticated from '../middleware/authentication/isAuthenticated.js'
 
 const router = express.Router();
 

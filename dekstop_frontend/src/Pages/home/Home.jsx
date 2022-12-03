@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
@@ -6,9 +6,13 @@ import style from './Home.module.css';
 import ServerCard from '../../Components/ServerCard/ServerCard';
 // import Servers from './ServerData';
 import addBg from './Assets/add.svg';
+import search from './Assets/search.svg';
+import Auth from '../../Components/GlobalPassword/Auth';
 
 function Home() {
 	const { servers, loading, getServers } = useContext(ServerContext);
+	const [query, setQuery] = useState('');
+	const [auth, setAuth] = useState(true);
 	const navigate = useNavigate();
 
 	// Initiate Onboarding
@@ -21,13 +25,40 @@ function Home() {
 		}
 	});
 
+	// function to close authentication process
+	const closeAuth = useCallback(()=>{
+		setAuth(false)
+	})
+
+	// Filter servers displayed by user query
+	function getFilteredServers(queryValue, items) {
+		if (!queryValue) {
+			return items;
+		}
+		return items.filter((item) => item.name.includes(queryValue));
+	}
+	const filteredServers = getFilteredServers(query, servers);
+
 	return (
-		<div className={style.HomeWrapper}>
+		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
-			{loading && <div className={style.loading}>Loading Servers...</div>}
-			{servers && (
+
+			{!auth && loading && (
+				<div className={style.loading}>Loading Servers...</div>
+			)}
+			{!auth && servers && (
 				<div className={style.container}>
-					{servers.map((server) => (
+					{servers.length > 0 && (
+						<div className={style.search}>
+							<img src={search} alt="filter servers" />
+							<input
+								value={query}
+								type="search"
+								onChange={(e) => setQuery(e.target.value)}
+							/>
+						</div>
+					)}
+					{filteredServers.map((server) => (
 						<ServerCard
 							key={server.id}
 							id={server.id}
@@ -39,20 +70,23 @@ function Home() {
 				</div>
 			)}
 
-			{!servers && (
-				<div className={style.no_server}>
-					<Link to="/add-server">
-						<figure>
-							<img src={addBg} alt="" aria-hidden />
-						</figure>
-					</Link>
+			{(!auth && !servers) ||
+				(servers.length === 0 && (
+					<div className={style.no_server}>
+						<Link to="/add-server">
+							<figure>
+								<img src={addBg} alt="" aria-hidden />
+							</figure>
+						</Link>
 
-					<div className={style.no_server_content}>
-						<h2>Empty Server List</h2>
-						<p>You do not have any Servers yet.</p>
+						<div className={style.no_server_content}>
+							<h2>Empty Server List</h2>
+							<p>You do not have any Servers yet.</p>
+						</div>
 					</div>
-				</div>
-			)}
+			))}
+
+			{auth && <Auth closeAuth={closeAuth}/>}
 		</div>
 	);
 }

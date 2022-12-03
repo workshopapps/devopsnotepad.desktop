@@ -1,12 +1,15 @@
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
+import ServerContext from '../Context/ServerContext';
+/* eslint-disable camelcase */
 
 function Sidenav() {
+	const { servers } = useContext(ServerContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const toggling = () => setIsOpen(!isOpen);
 
@@ -35,20 +38,14 @@ function Sidenav() {
 						{isOpen && (
 							<div>
 								<ul className={styles.dropDown}>
-									<Link to="/note" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}>HNG Server</li>{' '}
-									</Link>
-
-									<Link to="/#" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}>AYO Server</li>{' '}
-									</Link>
-
-									<Link to="/#" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}> OMO Server</li>{' '}
-									</Link>
+									{servers.map((server) => (
+										<Link
+											to={`/server/${server.id}`}
+											style={{ textDecoration: 'none' }}
+										>
+											<li className={styles.listItem}>{server.name}</li>
+										</Link>
+									))}
 								</ul>
 							</div>
 						)}
