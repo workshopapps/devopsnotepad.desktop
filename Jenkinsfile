@@ -6,13 +6,12 @@ pipeline {
 		stage("Get repo"){
 
 			steps {
+				sh "pwd"
 				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
-				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/"
 			}
 		}
-        
-
+    
 		stage("Build frontend"){
 
 			steps {
@@ -37,19 +36,26 @@ pipeline {
 			}
 		}
 		
+		stage("move repo") {
+		
+			steps {
+				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/"
+			}
+		}
+
 		stage("start frontend") {
 		
 			steps {
-				sh "sudo systemctl stop zuvatar-frontend.service"
-				sh "sudo systemctl restart zuvatar-frontend.service"
+				sh "sudo systemctl stop opspad-frontend.service"
+				sh "sudo systemctl restart opspad-frontend.service"
 			}
 		}
 		
 		stage("start backend") {
 		
 			steps {
-				sh "sudo systemctl stop zuvatar-backend.service"
-				sh "sudo systemctl restart zuvatar-backend.service"
+				sh "sudo systemctl stop opspad-backend.service"
+				sh "sudo systemctl restart opspad-backend.service"
 			}
 		}
 

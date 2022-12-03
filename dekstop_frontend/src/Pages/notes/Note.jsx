@@ -37,7 +37,7 @@ function Note() {
 	const handleOpen = () => setOpen(true);
 	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
-	
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem('note', inputs);
@@ -52,8 +52,6 @@ function Note() {
 	const handleCancel = () => {
 		setOpen(false);
 	};
-
-	
 
 	// Date
 	const date = new Date().getDate();
