@@ -48,7 +48,9 @@ function AddServer() {
 
 	return (
 		<div className={style.AddServer}>
-			{success && <AddServerSuccess closeSuccess={closeSuccess} />}
+			{success && (
+				<AddServerSuccess message="added" closeSuccess={closeSuccess} />
+			)}
 			<Sidenav />
 			<div className={style.container}>
 				<h1>Add Server</h1>
@@ -80,7 +82,6 @@ function AddServer() {
 						<div className={style.form_control}>
 							<label htmlFor="ipAddress">IP Address &#40;Optional&#41; </label>
 							<input
-								required
 								onChange={onMutate}
 								type="text"
 								id="ipAddress"
