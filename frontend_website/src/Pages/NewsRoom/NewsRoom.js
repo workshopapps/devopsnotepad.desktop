@@ -1,72 +1,67 @@
 import React from 'react'
-import "./NewsRoom.css"
-import LeftImg from "./Images/Rectangle 153.png"
-import { rightRoom } from "./RoomData"
 import { industryNews } from "./RoomData"
 import RoomCard from "./RoomCard"
+import arrow from './Images/arrow.png'
+import img1 from './Images/img1.png'
+import img2 from './Images/img2.png'
+import img3 from './Images/img3.png'
+
+// IMPORT CSS
+import style from './NewsRoom.module.css'
 
 const NewsRoom = () => {
   return (
-    <section className="newsrooms">
-      <div className="newsroom__container">
-        <h1>Newsroom</h1>
-        <h2>Stay up-to-date with latest company news,product updates, and industry-related events.</h2>
-          <div className="company__news">
-            <div className="TS__CNV">
-              <h4>Company News</h4>
-              <small>View All</small>
-            </div>
-              <div className="newsroom__RT">
-            <div className="left__room">
-              <div className="left__newsroom-lish">
-                <div className="left__img">
-                  <img src={LeftImg} alt='left she' className="img__newsrooms"/>
-                </div>
-                <div className="left__DT">
-                <small>November 5, 2022</small>
-                <h4>OpsPad v1.0: <br/>
-                  The DevOps engineer pocket assistant</h4>
-                  </div>
-              </div>
-            
-            </div>
-            <div className="right__room">
-              <div className="right__wrapper-room">
-                  {rightRoom.map(({id, image, date, topic, className}) =>{
-                    return(
-                      <RoomCard key={id} className="newsroom__rights-right">
-                        <div className={`news__right-img ${className}`}>
-                            <img src={image} alt="first img"  className="img__newsrooms"/>
-                        </div>
-                        <div className="newsroom__DT">
-                        <small>{date}</small>
-                        <h4>{topic}</h4>
-                        </div>
-                      </RoomCard>
-                    )
-                  })}
-              </div>
-            </div>
-            </div>
+      <div className={style.newsroom__container}>
+        <div className={style.Newsroomminilandingpage}>
+          <h1>Stay<span> up to date</span> with our activities</h1>
+          <p>Stay up-to-date with latest company news,product updates, and industry-related events.</p>
+        </div>
+
+        <div className={style.companyNews}>
+          <div className={style.companyNewsHeader}>
+            <p>Company News</p>
+           <a href="/news-room/view-all">
+           <button>
+              View All 
+              <img src={arrow} alt="" />
+            </button>
+           </a>
           </div>
-          <div className="industry__releases">
-          <div className="TS__CNV">
-          <h4>Industry Releases</h4>
-              <small>View All</small>
+          <div className={style.companyNewsContents}>
+            <div className={style.companyNewsPost}>
+                  <img src={img1} alt="" />
+                  <h1>OpsPad v1.0: The DevOps engineer pocket assistant.</h1>
+                  <p>November 5, 2022</p>
+              </div>
+              <div className={style.companyNewsPost+ ' ' + style.companyNewsPost2}>
+                  <img src={img2} alt="" />
+                  <h1>Opspad v1.0 launch: What to expect.</h1>
+                  <p>November 15, 2022</p>
+              </div>
+              <div className={style.companyNewsPost+ ' ' + style.companyNewsPost3}>
+                  <img src={img3} alt="" />
+                  <h1>OpsPad v2.0: A new way to take your notes!</h1>
+                  <p>November 15, 2022</p>
+              </div>
+            </div>
+        </div>
+
+
+          <div className={style.industryRelease}>
+            <div className={style.industryReleaseHeading}>
+                <h1>Industry New Releases</h1>
             </div>
 
-            <div className="down__room">
-              <div className="down__wrapper-room">
+            <div>
+              <div className={style.industryReleaseContents}>
                   {industryNews.map(({id, image, date, topic}) =>{
                     return(
-                      <RoomCard key={id} className="newsroom__downs-down">
-                        <div className="down_img">
-                            <img src={image} alt="down img"  className="img__newsrooms"/>
+                      <RoomCard key={id} className={style.post}>
+                        <div className={style.postimgwrapper}>
+                            <img src={image} alt="down img"  className={style.postimg}/>
                         </div>
-                        <div className="newsroom__DT-down">
-                        <small>{date}</small>
                         <h4>{topic}</h4>
-                        </div>
+                        <small>{date}</small>
                       </RoomCard>
                     )
                   })}
@@ -74,7 +69,6 @@ const NewsRoom = () => {
             </div>
           </div>
       </div>
-    </section>
   )
 }
 
