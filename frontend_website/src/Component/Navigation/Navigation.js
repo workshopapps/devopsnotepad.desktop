@@ -55,7 +55,7 @@ const Navigation = () => {
 
             <div className={styles.right}>
               <div className={styles.navAuthBtn}>
-                {user !== null ? (
+                {user.message === 'Logged in Successfully' ? (
                   <Link
                     className={styles.login_link}
                     to='/login'
