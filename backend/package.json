@@ -56,7 +56,9 @@
     "ping": "^0.4.2",
     "prettier": "^2.7.1",
     "stoppable": "^1.1.0",
-    "supertest": "^6.3.1"
+    "supertest": "^6.3.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0"
   },
   "lint-staged": {
     "*.{js,md}": [
