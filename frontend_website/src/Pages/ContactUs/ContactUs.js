@@ -144,7 +144,7 @@ const ContactUs = () => {
           <p className={styles.reachOut}> Need More Help?</p>
 
           <p className={styles.canHelp}>
-            We want to hear from you. Let us know how <br /> we can help.
+            We want to hear from you. Let us know how we can help.
           </p>
         </section>
 

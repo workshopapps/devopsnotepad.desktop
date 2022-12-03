@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { menuList } from './NavData';
 import styles from './Navigation.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../store/UserContext';
 
 const Navbar = ({ isOpen, setOpen }) => {
@@ -32,16 +32,19 @@ const Navbar = ({ isOpen, setOpen }) => {
                 >
                   {menu.subMenu.map((sMenu, i) => (
                     <li>
-                      <Link
+                      <NavLink
                         to={`${sMenu.slug}`}
                         key={i}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
                         }}
+                        className={({ isActive }) =>
+                          isActive ? styles.footer_list : ''
+                        }
                       >
                         {sMenu.title}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

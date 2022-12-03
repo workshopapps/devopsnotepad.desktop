@@ -1,3 +1,6 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable import/prefer-default-export */
 import { useEffect, useState } from 'react';
 
 export const useDarkMode = () => {

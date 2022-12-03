@@ -64,11 +64,6 @@ export const menuList = [
         slug: '/csr',
       },
       {
-        title: 'Blog',
-        slug: '/blog',
-      },
-
-      {
         title: 'Best Practices',
         slug: '/best-practices',
       },
