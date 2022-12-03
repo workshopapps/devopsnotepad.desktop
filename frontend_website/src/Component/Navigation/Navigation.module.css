@@ -70,9 +70,9 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
-  color: #202020;
+  color: #454141;
   border: none;
   outline: none;
   cursor: pointer;
@@ -84,7 +84,7 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
-  color: #102a63;
+  color: #0f2a63;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
@@ -92,15 +92,14 @@
   z-index: 999;
   top: 30px;
   left: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 200px;
-  background: rgba(255, 255, 255, 0.97);
-  border: 0.5px solid #e5e5e5;
-  border-radius: 4px;
+  padding: 0.1rem 0;
+  width: 180px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   display: none;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
   list-style: none;
 }
 
@@ -108,14 +107,16 @@
   display: block;
 }
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li {
-  padding-left: 15px;
-  padding-right: 15px;
+.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li:hover {
+  background-color: #e1dbdbbe;
+  color: #1e4cae;
+  font-weight: bold;
+  width: 100%;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
-  border-bottom: 0.5px solid #e5e5e5;
   text-align: center;
+  color: #3b3a3a;
   width: 100%;
 }
 
@@ -205,9 +206,8 @@
 }
 
 .download_link:hover {
-  background: #ffffff;
-  color: #102a63;
-  border: 0.1rem solid #102a63;
+  opacity: 0.86;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 1060px) {
@@ -378,6 +378,6 @@
 .sticky {
   width: 100%;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgb(255, 255, 255);
   z-index: 100;
 }

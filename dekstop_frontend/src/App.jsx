@@ -10,10 +10,10 @@ import Notification from './Pages/Notification/Notification';
 import Password from './Pages/Password/Password';
 import AddServer from './Pages/AddServer/AddServer';
 import Onboarding from './Components/Onboarding/Onboarding';
-import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard'
+import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification';
 import AvailabilityNotification from './Pages/Notification/AvailabilityNotification/AvailabilityNotification';
-import About from './Pages/Settings/About/About'
+import About from './Pages/Settings/About/About';
 import Terms from './Pages/Settings/TermsOfUSe/Terms';
 import PrivacyPolicy from './Pages/Settings/TermsOfUSe/privacyPolicy';
 import Faq from './Pages/Settings/Faq/Faq';

@@ -62,7 +62,7 @@ const Csr = () => {
           community and the society at large.
         </p>
         <Link to='/signup'>
-          <button className={s.csrSectionBtn}>SIGN UP</button>
+          <button className={s.csrSectionBtn}>Sign Up</button>
         </Link>
       </div>
     </div>
