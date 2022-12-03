@@ -31,6 +31,12 @@ export default class AuthController {
             if (loggedInUser.user && loggedInUser.token){
                 req.session.user = loggedInUser.user;
                 req.session.authorized = true;
+
+                if (body.rememberMe) {
+                    req.session.user.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
+                } else {
+                    req.session.user.expires = false; // Cookie expires at end of session
+                }
   
                 return res.send({ 
                     message: "Logged in Successfully",

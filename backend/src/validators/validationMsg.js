@@ -4,4 +4,4 @@ export const deviceIdValMsg =
 export const ipAddressValMsg =
   'ipAddress field cannot be empty, and must be a string and has length not less than 2 characters';
 export const serverIdValMsg = 'id field cannot be empty and must be a valid UUID string';
-export const logValMsg = ' log field cannot be empty and must be a string, and has length not less than 2 characters';
+export const logValMsg = ' logs field cannot be empty and must be a string, and has length not less than 2 characters';
