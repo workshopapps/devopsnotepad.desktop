@@ -117,7 +117,7 @@
  *                                     type: string
  *                                     description: fail message.
  * /auth/logout:
- *     post:
+ *     get:
  *         summary: Logs out a single user
  *         tags:
  *             - Auth
