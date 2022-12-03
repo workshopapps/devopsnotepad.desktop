@@ -40,7 +40,7 @@ function Sidenav() {
 								<ul className={styles.dropDown}>
 									{servers.map((server) => (
 										<Link
-											to={`/server/${server.name}`}
+											to={`/server/${server.id}`}
 											style={{ textDecoration: 'none' }}
 										>
 											<li className={styles.listItem}>{server.name}</li>
