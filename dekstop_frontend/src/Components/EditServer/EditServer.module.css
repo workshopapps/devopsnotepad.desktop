@@ -1,0 +1,117 @@
+.container * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.container {
+	display: grid;
+	place-content: center;
+	font-family: 'Manrope';
+	position: fixed;
+	inset: 0;
+	height: 100vh;
+	font-family: 'Manrope';
+	z-index: 20;
+}
+
+.dark_overlay {
+	position: absolute;
+	inset: 0;
+	background: #180e25;
+	opacity: 0.4;
+	z-index: 17;
+}
+
+.form h1 {
+	font-weight: 800;
+	font-size: 24px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #202020;
+}
+
+.form {
+	width: 450px;
+	height: 500px;
+	padding: 54px 80px;
+	background: #ffffff;
+	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 54px;
+	z-index: 20;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+
+.form_control {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.form_control label {
+	font-weight: 600;
+	font-size: 16px;
+	color: #6f6f6f;
+}
+
+.form_control > input {
+	width: 100%;
+	height: 48px;
+	padding: 0 4px;
+	border: 1px solid #ededed;
+	border-radius: 4px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+/* .form_control  input::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4b4b4b;
+} */
+
+.btn {
+	width: 100%;
+	height: 48px;
+	padding: 16px 18px;
+	color: #ffffff;
+	background: #102a63;
+	border-radius: 6px;
+	display: grid;
+	place-content: center;
+	border: none;
+}
+
+.form .btnEnabled:hover {
+	opacity: 0.7;
+}
+.form .btnEnabled:active {
+	transform: scale(0.9);
+}
+
+.btnDisabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.loading {
+	text-align: center;
+	color: #ffffff;
+	margin-top: 10px;
+}

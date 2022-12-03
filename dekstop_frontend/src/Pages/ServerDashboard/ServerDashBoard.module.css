@@ -1,0 +1,19 @@
+section.main {
+	margin-left: 300px;
+	margin-right: 100px;
+}
+
+div.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+	font-size: 14px;
+	font-weight: 700;
+	color: #6f6f6f;
+	border-bottom: 1.3px solid #6f6f6f;
+}
+
+div.wrapper p.note {
+	color: #6f6f6f !important;
+	margin-bottom: 4px;
+}

@@ -1,0 +1,79 @@
+.container * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.container {
+	height: 100vh;
+	display: grid;
+	place-content: center;
+	font-family: 'Manrope';
+	position: fixed;
+	inset: 0;
+	font-family: 'Manrope';
+	z-index: 20;
+}
+
+.dark_overlay {
+	position: absolute;
+	inset: 0;
+	background: #180e25;
+	opacity: 0.4;
+	z-index: 17;
+}
+
+.delete {
+	width: 450px;
+	height: 450px;
+	background: #ffffff;
+	z-index: 20;
+	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
+	border-radius: 8px;
+	display: grid;
+	place-items: center;
+	padding: 144px 43px;
+	gap: 16px;
+}
+
+.delete figure {
+	width: 56px;
+	height: 56px;
+	background: #f8e6e6;
+	border-radius: 8px;
+	display: grid;
+	place-content: center;
+}
+
+.delete p {
+	font-weight: 500;
+	font-size: 14px;
+	text-align: center;
+	color: #262626;
+	padding-bottom: 16px;
+}
+
+.action {
+	display: flex;
+	gap: 16px;
+}
+
+.btn {
+	display: grid;
+	place-content: center;
+	padding: 16px 18px;
+	gap: 10px;
+	width: 120px;
+	height: 48px;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+
+.btn:nth-child(1) {
+	background: #102a63;
+	color: #ededed;
+}
+.btn:nth-child(2) {
+	background: #ededed;
+	color: #102a63;
+}
