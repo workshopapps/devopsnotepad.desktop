@@ -1,13 +1,13 @@
 import ServerRepo from '../../database/repositories/ServerRepo.js';
 import { NotFoundError } from '../../lib/errors/index.js';
 
-export default async function getAllServers(query) {
-    const { device, page, limit } = query;
+export default async function getAllServers(query, id) {
+    const { page, limit } = query;
     const currentPage = parseInt(page) || 1;
     const limits = parseInt(limit) || 12;
 
-  const servers = await ServerRepo.getServersByDevice(device);
-  if (!servers.length > 0) throw new NotFoundError('There are no servers added on this device');
+  const servers = await ServerRepo.getServersByUserId(id);
+  if (!servers.length > 0) throw new NotFoundError(" Server list is empty");
 
     const paginated = paginateResults(servers, currentPage, limits);
 
@@ -33,7 +33,7 @@ export default async function getAllServers(query) {
         }
 
     return {
-        message: `${servers.length} servers found on this device`,
+        message: `${servers.length} servers founde`,
         currentPage: currentPage,
         limit: limits,
         servers: paginated.results,

@@ -1,7 +1,7 @@
-import create from '../services/notification/create.js';
+import create from "../services/notification/create.js";
 import get from "../services/notification/get.js";
 import deleteWeekly from "../services/notification/deleteWeekly.js"
-import { validatePayload } from '../utils/index.js';
+import { validatePayload } from "../utils/index.js";
 export default class NotificationController {
     static create = async (req, res, next) => {
         try {
@@ -16,7 +16,7 @@ export default class NotificationController {
 
             res.send({
                 success: true,
-                message: 'successful',
+                message: "successful",
                 ...result,
             });
         } catch (error) {
