@@ -12,7 +12,7 @@ section.container {
 }
 
 section.contact {
-  margin-top: 80px;
+  padding-top: 80px;
   text-align: center;
   display: flex !important;
   justify-content: center;
