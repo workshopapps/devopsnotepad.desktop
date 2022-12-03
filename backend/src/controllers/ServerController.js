@@ -17,8 +17,9 @@ export default class ServerController {
             // Update this latter
             if (errors && Object.keys(errors).length > 0) throw errors;
 
-            const result = await create(req.body);
+            const {id} = req.session.user;
 
+            const result = await create(req.body, id);
             res.send({
                 success: true,
                 message: "server created successfully",
@@ -30,7 +31,8 @@ export default class ServerController {
     };
     static getAllServers = async (req, res, next) => {
         try {
-            const result = await getAllServers(req.query);
+            const {id} = req.session.user;
+            const result = await getAllServers(req.query, id);
             res.send({
                 success: true,
                 ...result,
