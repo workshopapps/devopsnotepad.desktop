@@ -9,11 +9,9 @@ pipeline {
 				sh "pwd"
 				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
-				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/"
 			}
 		}
-        
-
+    
 		stage("Build frontend"){
 
 			steps {
@@ -38,6 +36,13 @@ pipeline {
 			}
 		}
 		
+		stage("move repo") {
+		
+			steps {
+				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/"
+			}
+		}
+
 		stage("start frontend") {
 		
 			steps {
