@@ -9,23 +9,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import styles from '../GlobalPassword/ChangePassword.module.css';
+// import Success from '../GlobalPassword/Success'
 
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
 function ChangePassword({ changed }) {
-	let subtitle;
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 
 	function openModal() {
 		setIsOpen(true);
 	}
 
-	function afterOpenModal() {
-		// references are now sync'd and can be accessed.
-		subtitle.style.color = '#f00';
-	}
+	// function afterOpenModal() {
+	// 	// references are now sync'd and can be accessed.
+	// 	subtitle.style.color = '#f00';
+	// }
 
 	function closeModal() {
 		setIsOpen(false);
@@ -55,7 +55,7 @@ function ChangePassword({ changed }) {
             navigate('/');
 		}
 		if (editpassword !== globalPassword) {
-            navigate('/');
+            alert('Password changed is  Successful');
 		}
 		setEditPassword('');
 	}
@@ -65,7 +65,7 @@ function ChangePassword({ changed }) {
 			<Link className={styles.anchor} onClick={openModal}><h2>Change Password</h2></Link>
 			<Modal
 				isOpen={modalIsOpen}
-				onAfterOpen={afterOpenModal}
+				// onAfterOpen={afterOpenModal}
 				onRequestClose={closeModal}
 				className={styles.Change_pass}
 				contentLabel="Example Modal"
