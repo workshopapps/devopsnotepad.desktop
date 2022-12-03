@@ -18,6 +18,7 @@ import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
+import NewsRoomViewMore from './Pages/NewsRoom/NewsRoomViewMore';
 import DemoPage from './Pages/DemoPage/DemoPage';
 import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
@@ -73,6 +74,7 @@ function App() {
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
+          <Route path='/news-room/view-all' exact element={<NewsRoomViewMore />} />
           <Route path='/demo' exact element={<DemoPage />} />
           <Route path='/our-team' exact element={<OurTeam />} />
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
