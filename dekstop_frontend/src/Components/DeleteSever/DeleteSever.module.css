@@ -8,9 +8,10 @@
 	display: grid;
 	place-content: center;
 	font-family: 'Manrope';
-	position: absolute;
+	position: fixed;
 	inset: 0;
 	font-family: 'Manrope';
+	z-index: 20;
 }
 
 .dark_overlay {
