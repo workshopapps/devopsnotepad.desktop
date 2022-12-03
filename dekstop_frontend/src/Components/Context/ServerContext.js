@@ -10,10 +10,6 @@ export function ServerProvider({ children }) {
 	const [servers, setServers] = useState([]);
 	const [success, setSuccess] = useState(false);
 	// const [error, setError] = useState('');
-	// deviceId needs to be dynamic
-	// const deviceId = '80988579';
-	// deviceId = uuidv4();
-	// let deviceId = localStorage.getItem('deviceId');
 
 	// Get all servers
 	async function getServers() {
@@ -54,7 +50,7 @@ export function ServerProvider({ children }) {
 		currentServer.updated_at = new Date();
 		currentServers.push(currentServer);
 		// currentServers.updatedDate =
-		console.log(currentServers);
+		// console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
 		setServers(currentServers);
 		setLoading(false);
@@ -67,7 +63,7 @@ export function ServerProvider({ children }) {
 		const currentServers = servers.filter(
 			(i) => i.serverId !== currentServerId
 		);
-		console.log(currentServers, currentServerId);
+		// console.log(currentServers, currentServerId);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
 		setServers(currentServers);
 		setLoading(false);

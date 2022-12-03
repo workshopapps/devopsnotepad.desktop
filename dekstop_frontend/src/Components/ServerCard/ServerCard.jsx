@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './ServerCard.module.css';
-import arrow from './Assets/arrow.svg';
+import arrowUp from './Assets/arrow_up.svg';
+import arrowDown from './Assets/arrow_down.svg';
 import menu from './Assets/menu.svg';
 import ServerMenu from '../ServerMenu/ServerMenu';
 import EditServer from '../EditServer/EditServer';
@@ -74,24 +75,24 @@ function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 							</tr>
 							<tr>
 								<th>Server Health:</th>
-								<td
-									className={`${style.server_health_container} ${
-										serverHealth.toLowerCase() === 'critical' &&
-										style.server_health_critical
-									}`}
-								>
-									<div className={style.server_health}>
-										<span>Up</span>{' '}
-										<img
-											className={
-												serverHealth.toLowerCase() === 'critical' &&
-												style.rotate
-											}
-											src={arrow}
-											alt=""
-										/>
-									</div>
-								</td>
+								{serverHealth ? (
+									<td
+										className={`${style.server_health_container} ${style.server_health_excellent}`}
+									>
+										<div className={style.server_health}>
+											<span>Up</span> <img src={arrowUp} alt="" />
+										</div>
+									</td>
+								) : (
+									<td
+										className={`${style.server_health_container} ${style.server_health_critical} ${style.server_health_critical_container}`}
+									>
+										<div className={style.server_health}>
+											<span>Down</span>{' '}
+											<img className={style.rotate} src={arrowDown} alt="" />
+										</div>
+									</td>
+								)}
 							</tr>
 						</tbody>
 					</table>
