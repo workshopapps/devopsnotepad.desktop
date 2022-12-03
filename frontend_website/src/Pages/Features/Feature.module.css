@@ -381,6 +381,9 @@ button {
   font-size: 20px;
   font-weight: 600;
 }
+.aboutOpspadContentButton:hover {
+  opacity: .86;
+}
 
 .aboutOpspadImgWrapper {
   width: min(352px, 40%);

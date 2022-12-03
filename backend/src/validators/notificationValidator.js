@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 import { logValMsg, serverIdValMsg } from './validationMsg.js';
 
 export const createNotificationValidator = [
-  check('log', logValMsg)
+  check('logs', logValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 

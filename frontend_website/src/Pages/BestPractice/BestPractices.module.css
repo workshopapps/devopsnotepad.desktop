@@ -168,6 +168,10 @@
   font-size: 16px;
 }
 
+.managing .btn:hover, .managing .btn a:hover {
+  opacity: .86;
+}
+
 /* ============================================ PORPULAR POST SECTION STYLING STARTS HERE ========================================= */
 
 .porpularPostSection {
@@ -328,6 +332,12 @@
   border: none;
   border-radius: 6px;
 }
+
+.devopsEngineer .btn:hover, .devopsEngineer .btn a:hover {
+  opacity: .86;
+}
+
+
 
 /* ============================================ MEDIA QUERY FOR BEST PRACTICE  SECTION STARTS HERE */
 
