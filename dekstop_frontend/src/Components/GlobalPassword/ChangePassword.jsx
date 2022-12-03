@@ -1,74 +1,118 @@
-import React from 'react';
-import 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/button-has-type */
+/* eslint-disable import/no-useless-path-segments */
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Modal from 'react-modal';
+import styles from '../GlobalPassword/ChangePassword.module.css';
 
-function ChangePassword() {
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement('#root');
+
+function ChangePassword({ changed }) {
+	let subtitle;
+	const [modalIsOpen, setIsOpen] = React.useState(false);
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+	function afterOpenModal() {
+		// references are now sync'd and can be accessed.
+		subtitle.style.color = '#f00';
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
+	const [editpassword, setEditPassword] = useState('');
+    const navigate = useNavigate();
+
+	// Proptype declaration
+	ChangePassword.propTypes = {
+		changed: PropTypes.node.isRequired,
+	};
+
+	function changePassword(e) {
+		e.preventDefault();
+
+		const globalPassword = localStorage.setItem('userPassword', editpassword);
+		const newuser = {
+			password: editpassword,
+		};
+		console.log(globalPassword);
+
+		if (editpassword === globalPassword) {
+			changed.push(newuser);
+			localStorage.setItem('userPassword');
+			alert('Password changed is  Successful');
+            navigate('/');
+		}
+		if (editpassword !== globalPassword) {
+            navigate('/');
+		}
+		setEditPassword('');
+	}
+
 	return (
-		<div className={create.formContainer}>
-			<form className={create.form} onSubmit={handleSubmit}>
-				<div className={create.headerContainer}>
-					<button
-						type="button"
-						onClick={closeEditForm}
-						className={create.cancel}
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							className={create.svg}
-						>
-							<path
-								fillRule="evenodd"
-								d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-								clipRule="evenodd"
-							/>
-						</svg>
-					</button>
-
-					<h1 className={create.formHeader}>Edit Password</h1>
-				</div>
-				<div className={create.alignElements}>
-					<div className={create.control}>
-						<label className={create.label} htmlFor="name">
-							Tool Name
-						</label>
+		<div>
+			<Link className={styles.anchor} onClick={openModal}><h2>Change Password</h2></Link>
+			<Modal
+				isOpen={modalIsOpen}
+				onAfterOpen={afterOpenModal}
+				onRequestClose={closeModal}
+				className={styles.Change_pass}
+				contentLabel="Example Modal"
+			>
+				<div className={styles.change_cont}>
+					<h2>Edit Password</h2>
+					<form onSubmit={changePassword} className={styles.change_form}>
+						<label htmlFor="current">Current Password</label>
+						<br />
 						<input
-							className={create.input}
-							type="text"
-							name="name"
-							value={formerUser.name}
-							onChange={handleExisting}
-						/>
-					</div>
-					<div className={create.control}>
-						<label className={create.label} htmlFor="CurrentPassword">
-							Current Password
-						</label>
-						<input
-							className={create.input}
 							type="password"
-							name="CurrentPassword"
-							value={input.CurrentPassword}
-							onChange={handleChange}
+							name="oldpass"
+							className={styles.change_input}
+							value={editpassword.oldpass}
+							onChange={(e) => {
+								setEditPassword(e.target.value);
+							}}
 						/>
-					</div>
-					<div className={create.control}>
-						<label className={create.label} htmlFor="NewPassword">
-							New Password
-						</label>
+						<br />
+						<label htmlFor="current">Current Password</label>
+						<br />
 						<input
-							className={create.input}
 							type="password"
-							name="NewPassword"
-							value={input.NewPassword}
-							onChange={handleChange}
+							name="oldpass"
+							className={styles.change_input}
+							value={editpassword.oldpass}
+							onChange={(e) => {
+								setEditPassword(e.target.value);
+							}}
 						/>
-					</div>
-					<button className={create.btn} type="submit">
-						Save
-					</button>
+						<br />
+						<label htmlFor="current">New Password</label>
+						<br />
+						<input
+							type="currentpassword"
+							name="newpass"
+							className={styles.change_input}
+							value={editpassword.newpass}
+							onChange={(e) => {
+								setEditPassword(e.target.value);
+							}}
+						/>
+						<br />
+						<button onClick={changePassword}>Save</button>
+					</form>
 				</div>
-			</form>
+			</Modal>
 		</div>
 	);
 }
