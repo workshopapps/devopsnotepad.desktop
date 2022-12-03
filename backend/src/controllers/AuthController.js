@@ -46,7 +46,9 @@ export default class AuthController {
     static logoutUser = async (req, res, next) => {
         try {
             res.clearCookie("connect.sid");
-            res.status(200).send("logout successful");
+            return res.send({
+                message: "logout successful"
+            });
         } catch (error) {
             next(error);
         }

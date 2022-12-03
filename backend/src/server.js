@@ -1,6 +1,6 @@
 import http from 'http';
 import stoppable from 'stoppable';
-import config, { validateConfig } from './config/index.js';
+import config from './config/index.js';
 import { migrate } from './database/setup.js';
 
 const startServer = async () => {
@@ -31,7 +31,6 @@ const startServer = async () => {
 
 const start = async () => {
   try {
-    validateConfig();
     await migrate();
     await startServer();
   } catch (e) {
