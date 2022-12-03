@@ -83,6 +83,9 @@
 }
 
 .bluerow .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 177px;
   height: 56px;
   background: #f6f9ff;

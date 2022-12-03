@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
 .faqContainer {
+  position: relative;
   width: 100%;
-  padding: 0;
+  padding: 100px 0 0;
   margin: 0 auto;
   font-family: 'Manrope';
 }
 
-.faqHeader {
+.faqContainer .faqHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 80vh;
-  margin: 100px 0;
+  margin-bottom: 100px;
   background: #102a63;
   background-image: url(./assets/faqHeader.png);
   background-position: center;
@@ -29,7 +30,7 @@
   text-align: center;
 }
 
-.gridContainer {
+.gridContainer {  
   width: 100%;
   margin-bottom: 250px;
   padding: 0 12%;
