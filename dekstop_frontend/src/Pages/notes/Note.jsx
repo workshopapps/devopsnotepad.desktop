@@ -111,18 +111,22 @@ function Note() {
 								) : (
 									<p className={notesStyle.notesLastEdit}>Last edit</p>
 								)}
+								<div className={notesStyle.noteTextDiv}>
 								<p
 									className={notesStyle.noteText}
 									style={bold ? boldStyle : {}}
 								>
 									{note}
 								</p>
+								</div>
+								
 								<p>{startHere}</p>
 								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
-									<input
+									<textarea
 										className={notesStyle.notesFormInput}
 										onChange={handleChanges}
 									/>
+									<button type='submit' className={notesStyle.notesSaveBtn}>Save Note</button>
 								</form>
 							</div>
 					</div>

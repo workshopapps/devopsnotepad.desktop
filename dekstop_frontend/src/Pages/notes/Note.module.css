@@ -60,7 +60,7 @@
 	border-radius: 4px;
 }
 .notesContentTwo {
-	margin-left: -114%;
+	margin-left: -80%;
 	margin-top: 15px;
 }
 .notesContentwoBtns {
@@ -73,9 +73,9 @@
 }
 .notesFormInput {
 	scroll-behavior: smooth;
-	border: 0;
-	width: 150%;
-	height: 50px;
+	width: 300%;
+	resize: none;
+	height: 200px;
 	font-family: 'Manrope';
 	font-style: normal;
 	font-weight: 400;
@@ -85,6 +85,14 @@
 	outline: none;
 	border: 1px solid #f2f2f2;
     overflow-x: auto;
+}
+.notesSaveBtn{
+	background: #102a63;
+	color: #fff;
+	border: 0;
+	width: 100px;
+	height: 40px;
+	border-radius: 4px;
 }
 .notesContentwoBtn {
 	margin-right: 10px;
@@ -102,6 +110,7 @@
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
+	margin-left: -3%;
 }
 .notesFormIcon {
 	width: 20px;
@@ -127,7 +136,16 @@
 #notesLastEdit {
 	margin-left: 348%;
 }
+.noteTextDiv{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	width: 300px;
+	height: fit-content;
+}
 .noteText{
+	width: 300%;
 	font-size: 16px;
 }
 .notesDeleteDiv {
