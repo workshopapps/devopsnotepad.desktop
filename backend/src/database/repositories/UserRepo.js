@@ -18,6 +18,6 @@ export default class UserRepo {
     };
 
     static updatePasswordById = async (id, password) => {
-        return await connection("users").where("id", id).update("password", password);
+        return await connection("users").where("id", id).update("password", password);    
     };
 }
