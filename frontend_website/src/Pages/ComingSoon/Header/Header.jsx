@@ -12,11 +12,13 @@ const Header = () => {
   return (
     <div className={classes.leftAligned} data-testid='coming__header'>
       <div className={classes.left}>
-        <h1 className={classes.h1}>Stay on top of updates</h1>
+        <h1 className={classes.h1}>Stay on top of <span> updates</span></h1>
         <p className={classes.p}>
           Awesome Features and easy Accessiility for end-users
         </p>
         <h2 className={classes.h2}>Be the first to know</h2>
+        <label className={classes.label}>
+          Email
         <Input
           className={classes.input}
           type='email'
@@ -24,6 +26,7 @@ const Header = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        </label>
         <Button className={classes.button}>Notify me</Button>
       </div>
       <figure className={classes.right}>
