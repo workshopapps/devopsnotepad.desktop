@@ -9,12 +9,13 @@ function AddServer() {
 	const { addServer, success, setSuccess, loading } = useContext(ServerContext);
 
 	const [formData, setFormData] = useState({
+		serverId: '',
 		name: '',
 		ipAddress: '',
 	});
 	const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
-	const { name, ipAddress } = formData;
+	const { serverId, name, ipAddress } = formData;
 
 	function onMutate(e) {
 		setFormData((prev) => ({
@@ -24,12 +25,13 @@ function AddServer() {
 	}
 
 	useEffect(() => {
-		if (name !== '' && ipAddress !== '' && ipAddress.length > 1) {
+		console.log(formData);
+		if (name !== '' && serverId !== '') {
 			setIsBtnDisabled(false);
 		} else {
 			setIsBtnDisabled(true);
 		}
-	}, [name, ipAddress]);
+	}, [serverId, name]);
 
 	function onSubmit(e) {
 		e.preventDefault();
@@ -39,7 +41,7 @@ function AddServer() {
 	// Close successfully added server modal
 	function closeSuccess() {
 		setSuccess(false);
-		setFormData({ name: '', ipAddress: '' });
+		setFormData({ name: '', serverId: '', ipAddress: '' });
 	}
 
 	// Close success modal and route to dashboard
@@ -54,6 +56,17 @@ function AddServer() {
 				<form onSubmit={onSubmit} className={style.form}>
 					<div className={style.inputs}>
 						<div className={style.form_control}>
+							<label htmlFor="serverId">Server ID</label>
+							<input
+								required
+								onChange={onMutate}
+								type="text"
+								id="serverId"
+								value={serverId}
+								min="2"
+							/>
+						</div>
+						<div className={style.form_control}>
 							<label htmlFor="name">Server Name</label>
 							<input
 								required
@@ -63,8 +76,9 @@ function AddServer() {
 								value={name}
 							/>
 						</div>
+
 						<div className={style.form_control}>
-							<label htmlFor="ipAddress">IP Address</label>
+							<label htmlFor="ipAddress">IP Address &#40;Optional&#41; </label>
 							<input
 								required
 								onChange={onMutate}
