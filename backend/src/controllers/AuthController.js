@@ -6,6 +6,10 @@ import { NotFoundError } from "../lib/errors/index.js";
 import { sendResetLink } from "../services/user/password_reset.js";
 import EmailVerificationTokenRepo from "../database/repositories/emailVerificationRepo.js";
 import bcrypt from "bcrypt";
+import Joi from 'joi'
+import PasswordComplexity from "joi-password-complexity"
+
+
 
 export default class AuthController {
   static signup = async (req, res, next) => {
@@ -135,6 +139,27 @@ export default class AuthController {
   static updateUserPasswordFromMobile = async (req, res) => {
 
     try {
+      // Validate with Joi
+      const updateUserPassword = Joi.object({
+        id:Joi.string().required(),
+        oldPassword: Joi.string().required(),
+        newPassword:new PasswordComplexity({
+          min: 8,
+          max: 25,
+          lowerCase: 1,
+          upperCase: 1,
+          numeric: 1,
+          symbol: 1,
+          requirementCount: 4
+        })
+      }).strict();
+
+      if (updateUserPassword.validate(req.body).error) {
+        return res
+          .status(400)
+          .json(updateUserPassword.validate(req.body).error.details);
+      }
+
       // destruct request body
       const { id, oldPassword, newPassword } = req.body;
 
