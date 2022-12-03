@@ -25,7 +25,7 @@ function AddServer() {
 	}
 
 	useEffect(() => {
-		console.log(formData);
+		// console.log(formData);
 		if (name !== '' && serverId !== '') {
 			setIsBtnDisabled(false);
 		} else {
