@@ -200,6 +200,10 @@ section.wrapper form .btn {
   margin-top: 30px;
 }
 
+section.wrapper form .btn:hover {
+  opacity: .86;
+}
+
 section.wrap {
   margin-top: 40px;
   text-align: center;
@@ -359,6 +363,10 @@ section.support div.col1 div.card p.assistance {
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+}
+
+.btns:hover {
+  opacity: .86;
 }
 
 @media screen and (min-width: 768px) {
