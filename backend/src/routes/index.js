@@ -1,7 +1,8 @@
-import express from "express";
-import serverRoute from "./serverRoute.js";
-import notificationRoute from "./notificationRoute.js";
-import userRoute from "./userRoute.js";
+import express from 'express';
+import serverRoute from './serverRoute.js';
+import notificationRoute from './notificationRoute.js';
+import userRoute from './userRoute.js';
+
 
 const router = express.Router();
 

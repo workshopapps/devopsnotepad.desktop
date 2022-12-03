@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-associated-control */

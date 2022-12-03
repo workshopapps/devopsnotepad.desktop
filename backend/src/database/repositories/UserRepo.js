@@ -9,7 +9,15 @@ export default class UserRepo {
         return connection("users").where("email", email).first();
     };
 
+    static getUserById = async (id) => {
+        return connection("users").where("id", id).first();
+    }
+
     static updateById = async (id, data) => {
         return await connection("users").where("id", id).update(data);
+    };
+
+    static updatePasswordById = async (id, password) => {
+        return await connection("users").where("id", id).update("password", password);
     };
 }
