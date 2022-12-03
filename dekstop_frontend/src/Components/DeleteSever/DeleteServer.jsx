@@ -3,7 +3,7 @@ import React from 'react';
 import style from './DeleteSever.module.css';
 import deleteIcon from './Assets/deleteIcon.svg';
 
-function DeleteServer({ closeDelete }) {
+function DeleteServer({ closeDelete, deleteServer }) {
 	return (
 		<div className={style.container}>
 			<input
@@ -23,7 +23,7 @@ function DeleteServer({ closeDelete }) {
 					<button onClick={closeDelete} type="button" className={style.btn}>
 						Cancel
 					</button>
-					<button type="button" className={style.btn}>
+					<button onClick={deleteServer} type="button" className={style.btn}>
 						Delete
 					</button>
 				</div>

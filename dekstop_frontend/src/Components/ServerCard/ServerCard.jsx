@@ -9,7 +9,7 @@ import ServerMenu from '../ServerMenu/ServerMenu';
 import EditServer from '../EditServer/EditServer';
 import DeleteServer from '../DeleteSever/DeleteServer';
 
-function ServerCard({ name, ipAddress, serverHealth, id }) {
+function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isEditOpen, setIsEditOpen] = useState(false);
 	const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -36,11 +36,14 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 			{isEditOpen && (
 				<EditServer
 					closeEditServer={closeEdit}
+					serverId={serverId}
 					name={name}
 					ipAddress={ipAddress}
 				/>
 			)}
-			{isDeleteOpen && <DeleteServer closeDelete={closeDelete} />}
+			{isDeleteOpen && (
+				<DeleteServer serverId={serverId} closeDelete={closeDelete} />
+			)}
 			<h2>{name}</h2>
 			<div className={style.table_container}>
 				{isMenuOpen && (
@@ -99,6 +102,7 @@ function ServerCard({ name, ipAddress, serverHealth, id }) {
 }
 
 ServerCard.propTypes = {
+	serverId: PropTypes.string,
 	name: PropTypes.string,
 	ipAddress: PropTypes.string,
 	serverHealth: PropTypes.string,
@@ -106,6 +110,7 @@ ServerCard.propTypes = {
 };
 
 ServerCard.defaultProps = {
+	serverId: '4439593jf3-0f3-2k200004rf',
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
 	serverHealth: 'excellent',
