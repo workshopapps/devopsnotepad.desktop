@@ -30,6 +30,8 @@ export function ServerProvider({ children }) {
 			? JSON.parse(localStorage.getItem('servers'))
 			: [];
 		data.push(server);
+		data.sort((a, b) => b.created_at - a.created_at);
+
 		localStorage.setItem('servers', JSON.stringify(data));
 		setServers(data);
 		setSuccess(true);
@@ -40,15 +42,14 @@ export function ServerProvider({ children }) {
 	// Edit Server
 	async function editServer(server) {
 		setLoading(true);
-		const currentServers = servers.filter(
-			(i) => i.serverId !== server.serverId
-		);
-		const currentServer = servers.find((i) => i.serverId === server.serverId);
+		const currentServers = servers.filter((i) => i.id !== server.id);
+		const currentServer = servers.find((i) => i.id === server.id);
 		currentServer.name = server.name;
 		currentServer.serverId = server.serverId;
 		currentServer.ipAddress = server.ipAddress;
 		currentServer.updated_at = new Date();
 		currentServers.push(currentServer);
+		currentServers.sort((a, b) => b.created_at - a.created_at);
 		// currentServers.updatedDate =
 		// console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
@@ -58,11 +59,9 @@ export function ServerProvider({ children }) {
 	}
 
 	// Delete Server
-	async function deleteServer(currentServerId) {
+	async function deleteServer(currentId) {
 		setLoading(true);
-		const currentServers = servers.filter(
-			(i) => i.serverId !== currentServerId
-		);
+		const currentServers = servers.filter((i) => i.id !== currentId);
 		// console.log(currentServers, currentServerId);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
 		setServers(currentServers);

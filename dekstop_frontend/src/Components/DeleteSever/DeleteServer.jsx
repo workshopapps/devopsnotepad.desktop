@@ -4,11 +4,11 @@ import ServerContext from '../Context/ServerContext';
 import style from './DeleteSever.module.css';
 import deleteIcon from './Assets/deleteIcon.svg';
 
-function DeleteServer({ closeDelete, serverId }) {
+function DeleteServer({ closeDelete, id }) {
 	const { deleteServer } = useContext(ServerContext);
 
 	function handleDeleteServer() {
-		deleteServer(serverId);
+		deleteServer(id);
 		closeDelete();
 	}
 	return (

@@ -5,13 +5,14 @@ import ServerContext from '../Context/ServerContext';
 import AddServerSuccess from '../AddServerSuccess/AddServerSuccess';
 import style from './EditServer.module.css';
 
-function EditServer({ closeEditServer, name, ipAddress, serverId }) {
+function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 	const { editServer, success, setSuccess, loading } =
 		useContext(ServerContext);
 	const [formData, setFormData] = useState({
 		name,
 		ipAddress,
 		serverId,
+		id,
 	});
 	const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
@@ -20,6 +21,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId }) {
 			...prev,
 			[e.target.id]: e.target.value,
 		}));
+		console.log(e.target.value);
 	}
 
 	useEffect(() => {
@@ -28,10 +30,11 @@ function EditServer({ closeEditServer, name, ipAddress, serverId }) {
 		} else {
 			setIsBtnDisabled(true);
 		}
-	}, [name, ipAddress, serverId]);
+	}, [name, serverId]);
 
 	function onSubmit(e) {
 		e.preventDefault();
+		console.log(formData);
 		editServer(formData);
 	}
 
@@ -105,6 +108,7 @@ EditServer.propTypes = {
 	name: PropTypes.string,
 	ipAddress: PropTypes.string,
 	serverId: PropTypes.string,
+	id: PropTypes.string,
 	// eslint-disable-next-line react/require-default-props
 	closeEditServer: PropTypes.func,
 };
@@ -113,6 +117,7 @@ EditServer.defaultProps = {
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
 	serverId: '4439593jf3-0f3-2k200004rf',
+	id: '67744393jf3-0f3-',
 };
 
 export default EditServer;
