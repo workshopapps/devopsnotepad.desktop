@@ -9,7 +9,7 @@ export async function up(knex) {
     table.dateTime('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
   });
 }
-
+  
 export async function down(knex) {
-  return knex.schema.dropTable('users');
+    return knex.schema.dropTable("users");
 }

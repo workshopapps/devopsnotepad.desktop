@@ -9,8 +9,9 @@ import config from './config/index.js';
 import routes from './routes/index.js';
 import swaggerUI from 'swagger-ui-express'
 import swaggerJsDoc from 'swagger-jsdoc'
+import cookieParser from 'cookie-parser';
+import session from "express-session";
 import passportSetup from './config/passport.js';
-import session from 'express-session';
 
 const app = express();
 
@@ -40,7 +41,7 @@ const options = {
     servers: [
       {
         //update to production url
-        url: 'http://localhost:5000',
+        url: config.app.url,
       },
     ],
   },
@@ -56,19 +57,19 @@ app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 // });
 
 passportSetup();
-
+app.use(session({
+    secret: config.session.secret,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge:  60 * 60 * 1000 } // 1 hour
+}));
+app.use(cookieParser());
 app.use(helmet());
 app.set('trust proxy', true);
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(
-  session({
-    secret: config.session.secret,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan(config.env.isProduction ? 'common' : 'dev'));
