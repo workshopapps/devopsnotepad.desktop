@@ -1,14 +1,10 @@
 /* eslint-disable quotes */
 import { body } from 'express-validator';
 
-import { nameValMsg, serverIdValMsg, deviceIdValMsg, ipAddressValMsg } from './validationMsg.js';
+import { nameValMsg, ipAddressValMsg } from './validationMsg.js';
 
 export const createServerValidator = [
   body('name', nameValMsg)
-    .notEmpty()
-    .custom((value) => value.length > 1),
-
-  body('deviceId', deviceIdValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 

@@ -20,6 +20,8 @@ const config = {
     },
     app: {
         port: +process.env.PORT,
+        url: process.env.BASE_URL,
+        secret: process.env.APP_SECRET
     },
     db: {
         host: process.env.DB_HOST || "localhost",
@@ -28,6 +30,13 @@ const config = {
         user: isTestEnvironment ? process.env.TEST_DB_USER : process.env.DB_USER,
         password: isTestEnvironment ? process.env.TEST_DB_PASSWORD : process.env.DB_PASSWORD,
     },
+    google: {
+        CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    },
+    session: {
+        secret: process.env.EXPRESS_SESSION_SECRET
+    }
 };
 export const validateConfig = () => {
     const missingKeys = [];
@@ -44,11 +53,6 @@ export const validateConfig = () => {
     }
 };
 
-// validateConfig();
-
-export const google = {
-    CLIENT_ID: process.env.CLIENT_ID,
-    CLIENT_SECRET: process.env.CLIENT_SECRET,
-};
+validateConfig();
 
 export default config;
