@@ -40,16 +40,16 @@ pipeline {
 		stage("start frontend") {
 		
 			steps {
-				sh "sudo systemctl stop zuvatar-frontend.service"
-				sh "sudo systemctl restart zuvatar-frontend.service"
+				sh "sudo systemctl stop opspad-frontend.service"
+				sh "sudo systemctl restart opspad-frontend.service"
 			}
 		}
 		
 		stage("start backend") {
 		
 			steps {
-				sh "sudo systemctl stop zuvatar-backend.service"
-				sh "sudo systemctl restart zuvatar-backend.service"
+				sh "sudo systemctl stop opspad-backend.service"
+				sh "sudo systemctl restart opspad-backend.service"
 			}
 		}
 
