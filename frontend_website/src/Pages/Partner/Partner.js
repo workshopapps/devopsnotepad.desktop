@@ -5,101 +5,77 @@ import hands from './assets/hands.png';
 import service from '../Partner/assets/service.png';
 import { PartnerData } from './data/PartnerTechnologies';
 import { PartnerCardData } from './data/PartnerCardData';
+import jane from './assets/jane.png'
+import micheal from './assets/micheal.png'
+import zoey from './assets/zoey.png'
+import leftArrow from './assets/leftArrow.png'
+import rightArrow from './assets/rightArrow.png'
+
 
 const Partner = () => {
   return (
-    <>
-      <div className={style.introContainer}>
-        <div className={style.holdingHands}>
-          <img src={hands} alt='holding hands' />
+    <div className={style.partnerPageContainer}>
+      <div className={style.PartnerMinilanding}>
+        <h1>Partner With Opspad</h1>
+        <p>
+          We are interested in working with   companies that 
+          share our vision and are ready to offer their 
+          expertise to the mutual growth of our communities. 
+        </p>
+        <button>Become a Partner</button>
+      </div>
+
+      <div className={style.servicePartner}>
+        <div className={style.servicePartnerContent}>
+            <h3>Services Partner</h3>
+            <p>
+              As our service partners, you would be willing 
+              and able to provide services such as accounting, 
+              marketing, product development, maintenance or 
+              training that are essential to the growth of our company.
+            </p>
+            <h5>Technology Partner</h5>
+            <h5>Channel Partner</h5>
+            <button>Become a partner</button>
         </div>
-        <div className={style.introGroup}>
-          <h1 className={style.firstHeadingStyling}>
-            Partner with{' '}
-            <span className={style.firstHeadingBlue}> Opspad </span>
-          </h1>
-          <p className={style.firstParagraph}>
-            Offer your expertise to opspad users all over the world and help us
-            deliver the best product tailored to meet the needs of our users.
-          </p>
-          <Link to='/form'>
-            <button className={style.partnerButton}>Become a partner</button>
-          </Link>
+        <div className={style.handImageWrapper}>
+          <img src={hands} className={style.handImage} alt="Imageof hands" />
         </div>
       </div>
-      <div className={style.partnersTechnology}>
-        <div className={style.partnersTechnologyCard}>
-          {PartnerData.map((item) => (
-            <>
-              <span className={style.cardDetails}>
-                <img
-                  src={item.img}
-                  alt='technology'
-                  className={style.cardImage}
-                />
-                <h2 className={style.cardHeader}>{item.name}</h2>
-              </span>
-              <p className={style.cardText}>{item.detail}</p>
-            </>
-          ))}
-          <div className={style.buttonContainer}>
-            <Link to='/form'>
-              <button className={style.partnerButton}>Become a partner</button>
-            </Link>
-          </div>
-        </div>
 
-        <div className={style.partnersTechnologyCardDesktop}>
-          <div className={style.partnersTechnologyCardContainerDesktop}>
-            <span className={style.cardHeaderContainer}>
-              <h2 className={style.cardHeader}>Service Partners</h2>
-              <h2 className={style.cardHeader}>Technology Partners</h2>
-              <h2 className={style.cardHeader}>Channel Partners</h2>
-            </span>
-            <span className={style.technologyDetails}>
-              <p className={style.cardText}>
-                As our service partners, you would be willing and able to
-                provide services such as accounting, marketing, product
-                development, maintenance or training that are essential to the
-                growth of our company.{' '}
-              </p>
-              <div className={style.serviceImageDesktop}>
-                {' '}
-                <img src={service} alt='service' />{' '}
-              </div>
-            </span>
-            <Link to='/form'>
-              <button className={style.partnerButtonTechnology}>
-                Become a partner
-              </button>
-            </Link>
-          </div>
+      <div className={style.partners}>
+        <h1 className={style.partnersHeading}>What our partners say about us</h1>
+        <div className={style.partnersCarousel}>
+            <div className={style.carouselContents}>
+              <img src={jane} alt="First carouselImage" />
+              <h3>Jane Doe</h3>
+              <h6>Lead developer, Zuri inc.</h6>
+              <h4>They make working fun</h4>
+              <p>I have had the opportunity of working with several companies before now, but Opspad works differently.</p>
+            </div>
+            <div className={style.carouselContents+ ' ' + style.carouselContents2}>
+              <img src={micheal} alt="First carouselImage" />
+              <h3>Matthew Lane</h3>
+              <h6>Personnel manager, Datapoint</h6>
+              <h4>Great Teamwork</h4>
+              <p>Working inteams is not always easy to cope with, but the Opspad team is one i am willing to owork with over and over again.</p>
+            </div>
+            <div className={style.carouselContents+ ' ' + style.carouselContents2}>
+              <img src={zoey} alt="First carouselImage" />
+              <h3>Zoey Cruz</h3>
+              <h6>Marketing lead, Soreline ltd.</h6>
+              <h4>Great product, I love it.</h4>
+              <p>One of the rules of excellent marketing is that to sell a product, you have to love it enough to want to use it. I can’t say enough how amazing this app is.</p>
+            </div>
         </div>
-
-        <div className={style.partnerCard}>
-          <h3 className={style.partnerCardHeading}>
-            {' '}
-            What our partners say about us
-          </h3>
-          <div className={style.partnerCardContainer}>
-            {PartnerCardData.map((item) => (
-              <div className={style.partnerCardContainerBody}>
-                <span className={style.containerCardImage}>
-                  <img src={item.img} alt='patners' />
-                </span>
-                <div className={style.containerCardContent}>
-                  <p className={style.cardItem1}>{item.name}</p>
-                  <p className={style.cardItem2}>{item.position}</p>
-                  <p className={style.cardItemThird}>{item.characteristics}</p>
-                  <p className={style.cardItem4}>{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className={style.arrows}>
+          <img src={leftArrow} alt="" />
+          <img src={rightArrow} alt="" />
         </div>
       </div>
-    </>
+
+    </div>
   );
 };
 
-export default Partner;
+export default Partner; 
