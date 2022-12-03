@@ -21,7 +21,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 			...prev,
 			[e.target.id]: e.target.value,
 		}));
-		console.log(e.target.value);
+		// console.log(e.target.value);
 	}
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 
 	function onSubmit(e) {
 		e.preventDefault();
-		console.log(formData);
+		// console.log(formData);
 		editServer(formData);
 	}
 
