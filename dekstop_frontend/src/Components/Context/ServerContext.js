@@ -41,6 +41,7 @@ export function ServerProvider({ children }) {
 		setLoading(false);
 	}
 
+	// Edit Server
 	async function editServer(server) {
 		setLoading(true);
 		const currentServers = servers.filter(
@@ -56,7 +57,20 @@ export function ServerProvider({ children }) {
 		console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
 		setServers(currentServers);
+		setLoading(false);
+		setSuccess(true);
+	}
 
+	// Delete Server
+	async function deleteServer(currentServerId) {
+		setLoading(true);
+		const currentServers = servers.filter(
+			(i) => i.serverId !== currentServerId
+		);
+		console.log(currentServers, currentServerId);
+		localStorage.setItem('servers', JSON.stringify(currentServers));
+		setServers(currentServers);
+		setLoading(false);
 		setSuccess(true);
 	}
 
@@ -72,6 +86,7 @@ export function ServerProvider({ children }) {
 			success,
 			addServer,
 			editServer,
+			deleteServer,
 			getServers,
 			setSuccess,
 		}),

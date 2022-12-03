@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
+import ServerContext from '../Context/ServerContext';
 import style from './DeleteSever.module.css';
 import deleteIcon from './Assets/deleteIcon.svg';
 
-function DeleteServer({ closeDelete, deleteServer }) {
+function DeleteServer({ closeDelete, serverId }) {
+	const { deleteServer } = useContext(ServerContext);
+
+	function handleDeleteServer() {
+		deleteServer(serverId);
+		closeDelete();
+	}
 	return (
 		<div className={style.container}>
 			<input
@@ -23,7 +30,11 @@ function DeleteServer({ closeDelete, deleteServer }) {
 					<button onClick={closeDelete} type="button" className={style.btn}>
 						Cancel
 					</button>
-					<button onClick={deleteServer} type="button" className={style.btn}>
+					<button
+						onClick={handleDeleteServer}
+						type="button"
+						className={style.btn}
+					>
 						Delete
 					</button>
 				</div>
