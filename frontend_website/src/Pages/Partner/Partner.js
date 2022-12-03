@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import style from './partner.module.css';
 import hands from './assets/hands.png';
-import service from '../Partner/assets/service.png';
-import { PartnerData } from './data/PartnerTechnologies';
-import { PartnerCardData } from './data/PartnerCardData';
 import jane from './assets/jane.png'
 import micheal from './assets/micheal.png'
 import zoey from './assets/zoey.png'
