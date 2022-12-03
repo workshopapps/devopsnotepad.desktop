@@ -1,12 +1,16 @@
 import { useState } from 'react';
+
+import { ValidateEmail, ValidatePassword } from './lib';
+
 import Button from '../CareerPage/Button/Button';
 import Input from '../Login/Input';
+import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
 
 import classes from './Form.module.css';
 
-const Form = () => {
+const Form = (props) => {
   const [form, setForm] = useState({
-    name: '',
+    fullName: '',
     email: '',
     password: '',
     nameIsValid: false,
@@ -20,10 +24,29 @@ const Form = () => {
 
   const nameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, name: e.target.value };
+      return { ...prev, fullName: e.target.value };
+    });
+  };
+
+  const emailOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, email: e.target.value };
+    });
+  };
+
+  const passwordOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, password: e.target.value };
+    });
+  };
+
+  // Allowing the user to unfocus the input field before checking if the input field is correct.
+  const nameOnBlurHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, nameIsFocus: true };
     });
 
-    if (form.name.length >= 3) {
+    if (form.fullName.length >= 3) {
       setForm((prev) => {
         return { ...prev, nameIsValid: true };
       });
@@ -34,12 +57,13 @@ const Form = () => {
     }
   };
 
-  const emailOnChangeHandler = (e) => {
+  const emailOnBlurHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, email: e.target.value };
+      return { ...prev, emailIsFocus: true };
     });
 
-    if (form.email.includes('@')) {
+    const isValid = ValidateEmail(form.email);
+    if (isValid) {
       setForm((prev) => {
         return { ...prev, emailIsValid: true };
       });
@@ -50,12 +74,13 @@ const Form = () => {
     }
   };
 
-  const passwordOnChangeHandler = (e) => {
+  const passwordOnBlurHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, password: e.target.value };
+      return { ...prev, passwordIsFocus: true };
     });
 
-    if (form.password.length > 6) {
+    const isValid = ValidatePassword(form.password);
+    if (isValid) {
       setForm((prev) => {
         return { ...prev, passwordIsValid: true };
       });
@@ -78,29 +103,15 @@ const Form = () => {
     }
   };
 
-  // Allowing the user to unfocus the input field before checking if the input field is correct.
-  const nameOnBlurHandler = (e) => {
-    setForm((prev) => {
-      return { ...prev, nameIsFocus: true };
-    });
-  };
-
-  const emailOnBlurHandler = (e) => {
-    setForm((prev) => {
-      return { ...prev, emailIsFocus: true };
-    });
-  };
-
-  const passwordOnBlurHandler = (e) => {
-    setForm((prev) => {
-      return { ...prev, passwordIsFocus: true };
-    });
-  };
-
   const submitHandler = (event) => {
     event.preventDefault();
 
     // Send form details to backend
+    props.onSubmit({
+      name: form.fullName,
+      email: form.email,
+      password: form.password,
+    });
   };
 
   return (
@@ -115,7 +126,7 @@ const Form = () => {
         type='text'
         invalid={!form.nameIsValid && form.nameIsFocus ? 'invalid' : ''}
         placeholder='Enter your last name'
-        value={form.lastName}
+        value={form.fullName}
         onChange={nameOnChangeHandler}
         onBlur={nameOnBlurHandler}
       />
@@ -130,14 +141,12 @@ const Form = () => {
         type='email'
         invalid={!form.emailIsValid && form.emailIsFocus ? 'invalid' : ''}
         placeholder='example@email.com'
-        value={form.name}
+        value={form.email}
         onChange={emailOnChangeHandler}
         onBlur={emailOnBlurHandler}
       />
       {form.emailIsFocus && !form.emailIsValid && (
-        <pre className={classes.invalid__input}>
-          Enter a email with the @ symbol
-        </pre>
+        <pre className={classes.invalid__input}>Enter a valid email.</pre>
       )}
       <Input
         id='password'
@@ -145,28 +154,22 @@ const Form = () => {
         type='text'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
         placeholder='Must be 7 characters'
-        value={form.email}
+        value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
-          Enter a password of length 7 and above
+          MinLength(8), a uppercase, a lowercase, and a number.
         </pre>
       )}
-
-      <div className={classes.checkbox}>
-        <input
-          type='checkbox'
-          name='checkbox'
-          value='value'
-          id='checkbox'
-          className={classes.checkbox__input}
-        />
-        <label htmlFor='checkbox' className={classes.label}>
-          Remember me.
-        </label>
+      <div>
+        {props.isLoading && <LoadingSpinner />}
+        {!props.isLoading && props.error.hasError && (
+          <p style={{ textAlign: 'center' }}>Signing up failed!. Try again</p>
+        )}
       </div>
+
       <div className={classes.btn__box}>
         <Button
           id='btn__submit'

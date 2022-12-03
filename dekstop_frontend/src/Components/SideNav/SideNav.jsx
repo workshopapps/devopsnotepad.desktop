@@ -1,12 +1,15 @@
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
+import ServerContext from '../Context/ServerContext';
+/* eslint-disable camelcase */
 
 function Sidenav() {
+	const { servers } = useContext(ServerContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const toggling = () => setIsOpen(!isOpen);
 
@@ -14,7 +17,9 @@ function Sidenav() {
 		<div>
 			<section className={styles.main}>
 				<div className={styles.sidenav}>
-					<img src={logo} alt="" className={styles.logo} />
+					<Link to="/">
+						<img src={logo} alt="" className={styles.logo} />
+					</Link>
 
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
 						<div className={styles.nav}>
@@ -33,20 +38,15 @@ function Sidenav() {
 						{isOpen && (
 							<div>
 								<ul className={styles.dropDown}>
-									<Link to="/note" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}>HNG Server</li>{' '}
-									</Link>
-
-									<Link to="/#" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}>AYO Server</li>{' '}
-									</Link>
-
-									<Link to="/#" style={{ textDecoration: 'none' }}>
-										{' '}
-										<li className={styles.listItem}> OMO Server</li>{' '}
-									</Link>
+									{servers.map((server) => (
+										<Link
+											key={server.id}
+											to={`/server/${server.id}`}
+											style={{ textDecoration: 'none' }}
+										>
+											<li className={styles.listItem}>{server.name}</li>
+										</Link>
+									))}
 								</ul>
 							</div>
 						)}
@@ -55,8 +55,8 @@ function Sidenav() {
 					<button className={styles.btn}>
 						{' '}
 						<Link
-							to="/add-Server"
-							style={{ color: '#fff !important', textDecoration: 'none' }}
+							to="/add-server"
+							style={{ color: 'white', textDecoration: 'none' }}
 						>
 							Add Server
 						</Link>

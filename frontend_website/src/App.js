@@ -18,11 +18,11 @@ import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NewsRoom from './Pages/NewsRoom/NewsRoom';
+import NewsRoomViewMore from './Pages/NewsRoom/NewsRoomViewMore';
 import DemoPage from './Pages/DemoPage/DemoPage';
 import Csr from './Pages/Csr/Csr';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import DevopsCommunity from './Pages/DevopsCompunity/DevopsCommunity';
-import Blog from './Pages/Blog/Blog';
 import PodCast from './Pages/Podcast/Podcasts.jsx';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
@@ -74,10 +74,10 @@ function App() {
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
+          <Route path='/news-room/view-all' exact element={<NewsRoomViewMore />} />
           <Route path='/demo' exact element={<DemoPage />} />
           <Route path='/our-team' exact element={<OurTeam />} />
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
-          <Route path='/blog' exact element={<Blog />} />
           <Route path='/our-team/all-teams' exact element={<AllTeam />} />
           <Route path='/partner' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
@@ -91,18 +91,18 @@ function App() {
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
-          <Route path="/checkemail" element={<CheckEmail />} />
-          <Route path="/verfication" element={<Verification />} />
-          <Route path="/newpassword" element={<NewPassword />} />
-          <Route path="/success" element={<Success />} />
+          <Route path='/checkemail' element={<CheckEmail />} />
+          <Route path='/verfication' element={<Verification />} />
+          <Route path='/newpassword' element={<NewPassword />} />
+          <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
-        </Routes >
-      </ErrorBoundary >
+        </Routes>
+      </ErrorBoundary>
       <Footer />
-    </React.Fragment >
+    </React.Fragment>
   );
 }
 

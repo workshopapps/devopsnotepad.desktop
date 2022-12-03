@@ -1,33 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { menuList } from './NavData';
-import { AiOutlineClose } from 'react-icons/ai';
-import logo from './assets/logo.svg';
 import styles from './Navigation.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { UserContext } from '../../store/UserContext';
 
 const Navbar = ({ isOpen, setOpen }) => {
+  const { user, addUserHandler } = useContext(UserContext);
+
   const [menuOpen, setMenuOpen] = useState({});
   const handleMenuToggle = (index) =>
     setMenuOpen((state) => ({ [index]: !state[index] }));
 
   return (
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
-      <div className={styles.logo}>
-        <div className={styles.inLogo}>
-          <Link
-            to='/'
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <img src={logo} alt='' />
-          </Link>
-          <AiOutlineClose
-            className={styles.closeIcon}
-            onClick={() => setOpen(false)}
-          />
-        </div>
-      </div>
       <ul className={styles.menuUlList}>
         <div className={styles.menuBox}>
           {menuList.map((menu, i) => (
@@ -47,16 +32,19 @@ const Navbar = ({ isOpen, setOpen }) => {
                 >
                   {menu.subMenu.map((sMenu, i) => (
                     <li>
-                      <Link
+                      <NavLink
                         to={`${sMenu.slug}`}
                         key={i}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
                         }}
+                        className={({ isActive }) =>
+                          isActive ? styles.footer_list : ''
+                        }
                       >
                         {sMenu.title}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -66,9 +54,19 @@ const Navbar = ({ isOpen, setOpen }) => {
         </div>
 
         <div className={styles.navAuthBtn}>
-          <Link className={styles.login_link} to='/login'>
-            Login
-          </Link>
+          {user !== null ? (
+            <Link
+              className={styles.login_link}
+              to='/login'
+              onClick={() => addUserHandler(null)}
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link className={styles.login_link} to='/login'>
+              Login
+            </Link>
+          )}
           <Link className={styles.download_link} to='/signup'>
             Download App
           </Link>

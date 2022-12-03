@@ -1,0 +1,44 @@
+.container * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 235px;
+	height: 149px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px 32px;
+	gap: 16px;
+	box-shadow: 0px 4px 29px rgba(50, 50, 50, 0.05);
+	border-radius: 6px;
+	background-color: #ffffff;
+	position: absolute;
+	top: 32px;
+	right: 36px;
+	z-index: 15;
+}
+
+.button {
+	background: inherit;
+	border: none;
+	display: flex;
+	gap: 16px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.button span {
+	font-family: 'Manrope';
+	font-weight: 500;
+	font-size: 16px;
+	color: #444444;
+	z-index: 15;
+}
+
+.button figure {
+	width: 19px;
+}
