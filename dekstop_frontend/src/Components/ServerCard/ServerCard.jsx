@@ -38,13 +38,12 @@ function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 				<EditServer
 					closeEditServer={closeEdit}
 					serverId={serverId}
+					id={id}
 					name={name}
 					ipAddress={ipAddress}
 				/>
 			)}
-			{isDeleteOpen && (
-				<DeleteServer serverId={serverId} closeDelete={closeDelete} />
-			)}
+			{isDeleteOpen && <DeleteServer id={id} closeDelete={closeDelete} />}
 			<h2>{name}</h2>
 			<div className={style.table_container}>
 				{isMenuOpen && (
