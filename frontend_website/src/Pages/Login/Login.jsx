@@ -23,8 +23,8 @@ const Login = () => {
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    if (responseObj.message === 'Logged in Successfully') {
-      addUserHandler(responseObj.user);
+    if (responseObj?.message === 'Logged in Successfully') {
+      addUserHandler(responseObj?.user);
       navigate('/');
     } else {
       console.log(responseObj, 'error');
