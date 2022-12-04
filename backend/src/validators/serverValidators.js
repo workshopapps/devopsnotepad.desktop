@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 import { body } from 'express-validator';
 
-import { nameValMsg, ipAddressValMsg } from './validationMsg.js';
+import { nameValMsg, ipAddressValMsg, emailValMsg} from './validationMsg.js';
 
 export const createServerValidator = [
   body('name', nameValMsg)
@@ -9,6 +9,10 @@ export const createServerValidator = [
     .custom((value) => value.length > 1),
 
   body('ipAddress', ipAddressValMsg)
+    .notEmpty()
+    .custom((value) => value.length > 1),
+  
+  body('email', emailValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
 ];
