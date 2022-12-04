@@ -70,25 +70,27 @@ function Settings() {
 				{Security.map((security) => (
 					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
-						<div className={style.account}>
-							<div className={style.accountProfile}>
-								{security.icon}
-								<Link to={security.slug}>{security.func}</Link>
+						<Link to={security.modal}>
+							<div className={style.account}>
+								<div className={style.accountProfile}>
+									{security.icon}
+									{security.func}
+								</div>
+								{security.iconright}
 							</div>
-							{security.iconright}
-						</div>
+						</Link>
 					</div>
 				))}
 
 				{Support.map((support) => (
-					<div key={support.items}>
+					<div key={support.title}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
 								<Link to={items.slug}>
 									<li key={items.list}>
-										<Link to={items.slug}>{items.list}</Link>
-										<Link to={items.slug}>{items.iconright}</Link>
+										{items.list}
+										<a href={items.slug}>{items.iconright}</a>
 									</li>
 								</Link>
 							))}
@@ -101,7 +103,3 @@ function Settings() {
 }
 
 export default Settings;
-
-
-	
-

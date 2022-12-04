@@ -6,6 +6,8 @@ import { NotFoundError } from '../lib/errors/index.js';
 import { sendResetLink } from '../services/user/password_reset.js';
 import EmailVerificationTokenRepo from '../database/repositories/emailVerificationRepo.js';
 import bcrypt from 'bcrypt';
+import Joi from 'joi';
+import PasswordComplexity from 'joi-password-complexity';
 
 import { validatePayload } from '../utils/index.js';
 
@@ -48,6 +50,12 @@ export default class AuthController {
       if (loggedInUser.user && loggedInUser.token) {
         req.session.user = loggedInUser.user;
         req.session.authorized = true;
+
+        if (body.rememberMe) {
+          req.session.user.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
+        } else {
+          req.session.user.expires = false; // Cookie expires at end of session
+        }
 
         return res.send({
           message: 'Logged in Successfully',
@@ -197,6 +205,52 @@ export default class AuthController {
       return { message: 'email verified successfully' };
     } catch (error) {
       next(error);
+    }
+  };
+
+  static updateUserPasswordFromMobile = async (req, res) => {
+    try {
+      // Validate with Joi
+      const updateUserPassword = Joi.object({
+        id: Joi.string().required(),
+        oldPassword: Joi.string().required(),
+        newPassword: new PasswordComplexity({
+          min: 8,
+          max: 25,
+          lowerCase: 1,
+          upperCase: 1,
+          numeric: 1,
+          symbol: 1,
+          requirementCount: 4,
+        }),
+      }).strict();
+
+      if (updateUserPassword.validate(req.body).error) {
+        return res.status(400).json(updateUserPassword.validate(req.body).error.details);
+      }
+
+      // destruct request body
+      const { id, oldPassword, newPassword } = req.body;
+
+      // Get user from database
+      const user = await UserRepo.getUserById(id);
+
+      // Throw error if user not found
+      if (!user) {
+        return res.status(400).send('User Not Found');
+      }
+
+      // Compare Old Password with new Password
+      if (oldPassword !== user.password) {
+        return res.status(400).send('User Passwords do not match');
+      }
+
+      // Save new password
+      await UserRepo.updatePasswordById(id, newPassword);
+      // Success
+      return res.status(201).send('Password Successfully Updated');
+    } catch (error) {
+      return res.status(500).send(`An error occurred whiles updating user password ${error}`);
     }
   };
 }
