@@ -19,10 +19,12 @@ function SimpleNotification() {
 		getServers();
 	}, [servers]);
 
-	const currentServer = servers.filter((server) => server.id === params.id);
+	const currentServer = servers.filter(
+		(server) => server.serverId === params.serverId
+	);
 	// const { deviceId, id, ipAddress, name, notification, updated_at } =
 	// 	currentServer[0];
-	const { id, ipAddress, name } = currentServer;
+	const { id, ipAddress, name } = currentServer[0];
 	return (
 		<div>
 			<Sidenav />
