@@ -41,7 +41,8 @@ function Note() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem('note', inputs);
-		setNote(localStorage.getItem('note'));
+			setNote(localStorage.getItem('note'));
+			setInputs('');
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
@@ -109,16 +110,18 @@ function Note() {
 								) : (
 									<p className={notesStyle.notesLastEdit}>Last edit</p>
 								)}
-								<div className={notesStyle.noteTextDiv}>
+								{
+									note ? 
+									<div className={notesStyle.noteTextDiv}>
 								<p
 									className={notesStyle.noteText}
 									style={bold ? boldStyle : {}}
 								>
 									{note}
 								</p>
-								</div>
-								
-								<p>{startHere}</p>
+								</div> :
+								<div>
+<p>{startHere}</p>
 								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
 									<textarea
 										className={notesStyle.notesFormInput}
@@ -126,6 +129,8 @@ function Note() {
 									/>
 									<button type='submit' className={notesStyle.notesSaveBtn}>Save Note</button>
 								</form>
+								</div>
+								}
 							</div>
 					</div>
 				</div>
