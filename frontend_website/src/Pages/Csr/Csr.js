@@ -7,9 +7,11 @@ const Csr = () => {
     <div className={s.csrWrapper}>
       <div className={s.csrMain}>
         <div className={s.csrMainSection1}>
-          <p className={s.csrMainSection1Text}>
-            OUR CORPORATE SOCIAL RESPONSIBILITY{' '}
-          </p>
+          <div className={s.csrOverlay}>
+            <p className={s.csrMainSection1Text}>
+              OUR CORPORATE SOCIAL RESPONSIBILITY{' '}
+            </p>
+          </div>
         </div>
       </div>
       <div className={s.csrMainSection2}>
@@ -55,12 +57,12 @@ const Csr = () => {
         </div>
       </div>
       <div className={s.csrMainSection5}>
-        <div className={s.rule}></div>
         <p>
           As a team, we recognize that we must integrate our business values and
           operation to meet the expectation of our user in relation to the
           community and the society at large.
         </p>
+        <div className={s.rule}></div>
         <Link to='/signup'>
           <button className={s.csrSectionBtn}>Sign Up</button>
         </Link>
