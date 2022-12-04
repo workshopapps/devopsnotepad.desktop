@@ -93,6 +93,8 @@
 	width: 100px;
 	height: 40px;
 	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 5px;
 }
 .notesContentwoBtn {
 	margin-right: 10px;

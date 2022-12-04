@@ -22,8 +22,8 @@ const SignUp = () => {
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    addUserHandler(responseObj.user);
-    if (responseObj.success) {
+    addUserHandler(responseObj?.user);
+    if (responseObj?.success) {
       setMessage('Success!!!');
     }
   };
