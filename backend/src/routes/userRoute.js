@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 import config from '../config/index.js';
 import AuthController from '../controllers/AuthController.js';
+import isAuthenticated from '../middleware/authentication/isAuthenticated.js'
 import {
   registerUserValidator,
   loginUserValidator,
