@@ -288,6 +288,10 @@
   color: #ffffff;
 }
 
+.getMoret .inGetMoret .btn a:hover {
+  opacity: .86;
+}
+
 @media screen and (max-width: 1050px) {
   .integration .hM_content {
     background-size: 50px, 50px;

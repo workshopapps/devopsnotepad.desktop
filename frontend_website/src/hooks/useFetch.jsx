@@ -41,11 +41,14 @@ const useFetch = () => {
 
         // If the response is not ok, throw an error
         if (!response.ok) {
-          throw new Error(`${requestConfig.errorMessage}`);
+          throw new Error(`${response.status} ${response.statusText}`);
         }
 
         // If the response is ok, get the data
         const responseBody = await response.json();
+        if (!responseBody.user) {
+          throw new Error(`${responseBody.message}`);
+        }
 
         // Send the data to the function that will use it
         getRequestData(responseBody);

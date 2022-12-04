@@ -10,13 +10,19 @@
 }
 
 :root {
-  --colorB: #292929;
-  --colorL: #202020;
-  --bluePrimary: #102a63;
-  --backgroundL: #f6f9ff;
+  --colorL: #6F6F6F;
+  --blue: #102A63;
+  --backgroundLight: #F6F9FF;
   --white: #ffffff;
-  --gray: #6f6f6f;
   --light: #ededed;
+  --black: #202020;
+}
+
+h4 {
+  color: none !important;
+  font-weight: none !important;
+  font-size: none !important;
+  margin: 0 !important;
 }
 
 button {
@@ -33,7 +39,8 @@ button {
 }
 
 .feature {
-  width: min(1300px, 90%);
+  /* width: min(1300px, 90%); */
+  width: 100%;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -52,7 +59,7 @@ button {
 }
 
 .minilandpageheading {
-  color: var(--bluePrimary);
+  color: var(--black);
   font-weight: 700;
   font-size: 56px;
   font-weight: 76.5px;
@@ -65,16 +72,17 @@ button {
 .minilandpageparagraph {
   color: var(--colorL);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .minilandpagebtn {
   background: none;
-  border: 1px solid var(--bluePrimary);
-  color: var(--bluePrimary);
-  padding: 16px 18px;
+  border: 1px solid #102A63;
+  color: #102A63;
+  padding: 17px 30px;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 /* ===============================SERVER SECTION STYLING STARTS HERE ========================*/
@@ -82,13 +90,13 @@ button {
   width: 100%;
   min-height: 277px;
   display: flex;
-  align-items: flex-start;
-  gap: 82px;
+  align-items: center;
+  /* gap: 82px; */
   /* background-color: pink; */
 }
 
 .serverImgWrapper {
-  width: min(782px, 70%);
+  width: min(782px, 60%);
 }
 
 .serverImg {
@@ -97,14 +105,14 @@ button {
 }
 
 .serversText {
-  width: 330px;
+  width: 600px;
   height: 100%;
-  margin-top: 30px;
-  /* background-color: red; */
+  margin-top: -30px;
+  text-align: center;
 }
 
 .serversTextHeading {
-  color: var(--bluePrimary);
+  color: var(--black);
   font-size: 40px;
   margin-bottom: 12px;
   font-weight: 700;
@@ -112,9 +120,9 @@ button {
 
 .serversTextParagraph {
   font-size: 20px;
-  line-height: 30px;
+  line-height: 32px;
   font-weight: 400;
-  color: var(--colorB);
+  color: var(--colorL);
 }
 
 /* =======================================NOTE SECTION STYLING STARTS HERE ===============================*/
@@ -123,12 +131,12 @@ button {
   align-items: flex-end;
   justify-content: space-evenly;
   width: 100%;
-  background-color: var(--backgroundL);
+  background-color: var(--backgroundLight);
   padding-top: 40px;
 }
 
 .noteImgWrapper {
-  width: min(700px, 50%);
+  width: min(623px, 60%);
 }
 
 .noteImg {
@@ -137,12 +145,14 @@ button {
 }
 
 .notesText {
-  width: min(350px);
-  align-self: center;
+  width: min(600px);
+  align-self: flex-start;
+  text-align: center;
+  margin-top: 80px;
 }
 
 .notesTextHeading {
-  color: var(--bluePrimary);
+  color: var(--black);
   font-weight: 700;
   font-size: 40px;
 }
@@ -151,7 +161,7 @@ button {
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
-  color: var(--colorB);
+  color: var(--colorL);
   margin-top: 12px;
 }
 
@@ -159,12 +169,19 @@ button {
 .password {
   width: 90%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-.passwordImgWrapper {
-  width: min(550px, 80%);
+/* .passwordImgWrapper {
+  width: 70%;
+} */
+
+.passwordimg2{
+  display: block;
+}
+
+.passwordimg2{
+  display: none;
 }
 
 .passwordImg {
@@ -173,13 +190,14 @@ button {
 }
 
 .passwordText {
-  width: 350px;
+  width: min(600px);
+  text-align: center;
+  margin-top: 80px;
 }
 
 .passwordTextHeading {
-  color: var(--bluePrimary);
+  color: var(--black);
   font-size: 40px;
-  line-height: 55px;
   margin-bottom: 12px;
   font-weight: 700;
 }
@@ -188,7 +206,7 @@ button {
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  color: var(--colorB);
+  color: var(--colorL);
 }
 
 /* ======================================= AUTHENTICATION SECTIN STYLING STARTS HERE */
@@ -196,13 +214,14 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--backgroundL);
+  justify-content: flex-end;
+  background-color: var(--backgroundLight);
+  gap: 40px;
   padding-left: 100px;
 }
 
 .authenImgWrapper {
-  width: min(737px, 47%);
+  width: min(900px, 60%);
 }
 
 .authenImg {
@@ -213,27 +232,25 @@ button {
 .authenImgMobile {
   width: 100%;
   display: none;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 .autenticationText {
-  width: 360px;
+  width: 600px;
+  text-align: center;
 }
 
 .autenticationTextHeading {
-  color: var(--bluePrimary);
+  color: var(--black);
   font-size: 40px;
   margin-bottom: 12px;
   font-weight: 700;
 }
 
 .autenticationTextParagraoh {
-  width: 360px;
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  color: var(--colorB);
+  color: var(--colorL);
 }
 
 .authenImg {
@@ -271,7 +288,7 @@ button {
 
 .notificationsHeading {
   font-size: 20px;
-  color: var(--bluePrimary);
+  color: var(--black);
   text-align: center;
 }
 
@@ -279,7 +296,7 @@ button {
   text-align: center;
   font-size: 16px;
   line-height: 21px;
-  color: var(--colorB);
+  color: var(--colorL);
 }
 
 .profile {
@@ -296,7 +313,7 @@ button {
 
 .profileHeading {
   font-size: 20px;
-  color: var(--bluePrimary);
+  color: var(--black);
   text-align: center;
 }
 
@@ -304,12 +321,12 @@ button {
   text-align: center;
   font-size: 16px;
   line-height: 21px;
-  color: var(--colorB);
+  color: var(--colorL);
 }
 
 .notificationProfileText {
   font-size: 36px;
-  color: var(--gray);
+  color: var(--colorL);
   margin-top: 46px;
   font-weight: 300;
   text-align: center;
@@ -318,7 +335,7 @@ button {
 /* ============================================ ABOUT OPSPAD SECTION STYLING STARTS HERE */
 .aboutOpspad {
   width: 100%;
-  background-color: var(--bluePrimary);
+  background-color: #102A63;
   margin-top: 88px;
   display: flex;
   justify-content: space-evenly;
@@ -352,15 +369,20 @@ button {
   font-weight: 500;
   line-height: 32px;
   opacity: 0.8;
+
 }
 
 .aboutOpspadContentButton {
   background: none;
   border: 1px solid var(--white);
   color: var(--white);
-  padding: 16px 18px;
+  padding: 18px 22px;
   border-radius: 6px;
   font-size: 20px;
+  font-weight: 600;
+}
+.aboutOpspadContentButton:hover {
+  opacity: .86;
 }
 
 .aboutOpspadImgWrapper {
@@ -392,24 +414,26 @@ button {
   .minilandpageparagraph {
     text-align: center;
     font-size: 12px;
+    margin-bottom: 0 !important;
   }
 
   .minilandpagebtn {
-    padding: 9px 10px;
+    padding: 10px 10px;
     font-size: 10px;
+    border-radius: 3px;
   }
 }
 
 /*======================================================== MEDIA QUERY FOR SERVER SECTION */
-@media (max-width: 1250px) {
-  .servers {
-    gap: 22px;
+@media (max-width: 1290px) {
+  .serversText {
+    margin-right: 30px;
   }
 }
 
 /* ============== TABLET AND IPADS SCREENS */
 
-@media (min-width: 530px) and (max-width: 800px) {
+@media (min-width: 530px) and (max-width: 850px) {
   .serversTextHeading {
     font-size: 24px;
     margin-bottom: 6px;
@@ -420,8 +444,8 @@ button {
     line-height: 19px;
   }
 
-  .serverImgWrapper {
-    width: min(782px, 90%);
+  .serversText {
+    width: 360px;
   }
 }
 
@@ -429,8 +453,10 @@ button {
 
 @media (max-width: 530px) {
   .serversText {
-    width: min(330px, 95%);
-    align-self: flex-end;
+    margin-right: 0;
+    width: min(220px, 95%);
+    align-self: center;
+    margin-top: 20px;
   }
 
   .servers {
@@ -439,6 +465,7 @@ button {
     justify-content: center;
     gap: 22px;
     border-radius: 10px;
+    padding: 0 24px;
   }
 
   .serversTextHeading {
@@ -448,11 +475,10 @@ button {
   .serversTextParagraph {
     font-size: 14px;
     line-height: 19px;
-    width: min(195px, 95%);
   }
 
   .serverImgWrapper {
-    width: 90%;
+    width: 75%;
   }
 
   .serverImg {
@@ -463,28 +489,21 @@ button {
     padding: 11px 13px;
     font-size: 10px;
   }
+
 }
 
 /* =========================================== MEDIA QUERY FOR NOTES SECTION */
-
-@media (max-width: 1295px) {
-  /* .notesText{
-        width: min(202px);
-        align-self: center;
-        margin-left: 60px;
-    } */
+@media (max-width: 1290px) {
+  .notesText {
+    margin-left: 30px;
+  }
 }
-
 /* ============== TABLET AND IPADS SCREENS */
 
-@media (min-width: 530px) and (max-width: 800px) {
-  .noteImgWrapper {
-    width: min(700px, 50%);
-  }
+@media (min-width: 530px) and (max-width: 850px) {
 
   .notesText {
-    width: min(202px);
-    align-self: center;
+    width: 360px;
   }
 
   .notesTextHeading {
@@ -499,23 +518,33 @@ button {
 
 /*=======================  MOBILE SCREENS  */
 
+
+@media (max-width: 1000px) {
+  .notesText {
+   margin-top: 5px;
+  }
+}
+
 @media (max-width: 530px) {
   .notesSection {
     margin-top: 33px;
     flex-direction: column;
     border-radius: 8px;
-    padding: 15px;
+    padding: 0 15px;
     padding-bottom: 0;
+    width: 85%;
   }
+
 
   .noteImgWrapper {
     width: min(700px, 90%);
   }
 
   .notesText {
-    width: min(240px, 90%);
-    align-self: flex-start;
-    padding: 18px;
+    width: min(240px, 80%);
+    align-self: center;
+    margin-left: 0;
+    margin-top: 23px;
   }
 
   .notesTextHeading {
@@ -524,15 +553,27 @@ button {
 
   .notesTextparagraph {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 19px;
   }
 }
 
+
 /* ================================================= MEDIA QUERY FOR PASSWORD SECTION  */
+@media (max-width: 1000px) {
+  .passwordText {
+   margin-top: 30px;
+  }
+}
+
+@media (max-width: 1290px) {
+  .passwordText {
+    margin-right: 30px;
+  }
+}
 
 /* ============== TABLET AND IPADS SCREENS */
 
-@media (min-width: 530px) and (max-width: 800px) {
+@media (min-width: 530px) and (max-width: 850px) {
   .password {
     width: 100%;
     display: flex;
@@ -542,7 +583,7 @@ button {
   }
 
   .passwordText {
-    width: 230px;
+    width: 350px;
   }
 
   .passwordImgWrapper {
@@ -565,7 +606,8 @@ button {
 @media (max-width: 530px) {
   .password {
     flex-direction: column-reverse;
-    padding-top: 54px;
+    align-items: center;
+    margin-top: 33px;
   }
 
   .passwordImgWrapper {
@@ -580,12 +622,26 @@ button {
   .passwordText {
     width: min(240px, 95%);
     padding-bottom: 18px;
+    margin-right: 0;
+    margin-top: 0;
   }
 
   .passwordTextParagraph {
     font-size: 14px;
     width: min(240px, 95%);
     line-height: 19px;
+  }
+  .passwordimg2{
+    display: block;
+    width: 100%;
+  }
+  
+  .passwordImg {
+    width: 100%;
+    display: none;
+  }
+  .passwordImgWrapper {
+    width: 70%;
   }
 }
 
@@ -599,13 +655,13 @@ button {
 
 /* ============== TABLET AND IPADS SCREENS */
 
-@media (min-width: 530px) and (max-width: 800px) {
+@media (min-width: 530px) and (max-width: 850px) {
   .autenticationText {
-    width: 230px;
+    width: 360px;
   }
 
   .authenImgWrapper {
-    width: min(737px, 50%);
+    width: min(737px, 45%);
   }
 
   .autenticationTextHeading {
@@ -616,19 +672,8 @@ button {
   .autenticationTextParagraoh {
     font-size: 12px;
     line-height: 18px;
-    width: 230px;
   }
-}
-
-/*=======================  MOBILE SCREENS  */
-
-@media (max-width: 530px) {
-  .autentication {
-    flex-direction: column;
-    padding-left: 20px;
-    gap: 30px;
-  }
-
+  
   .authenImg {
     width: 100%;
     display: none;
@@ -638,11 +683,24 @@ button {
     width: 100%;
     display: block;
   }
+}
 
+/*=======================  MOBILE SCREENS  */
+
+@media (max-width: 530px) {
+  .autentication {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 30px;
+    width: 85%;
+    align-items: center;
+    margin-top: 33px;
+  }
   .autenticationText {
     width: min(310px, 95%);
     align-self: flex-start;
     margin-top: 20px;
+    padding: 10px;
   }
 
   .autenticationTextHeading {
@@ -657,8 +715,13 @@ button {
   }
 
   .authenImgWrapper {
-    width: min(737px, 60%);
-    align-self: flex-end;
+    width: 100%;
+    align-self: center;
+  }
+
+  .authenImg {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 }
 
@@ -750,7 +813,7 @@ button {
   }
 
   .notificationProfileText {
-    margin-top: 90px;
+    margin-top: 50px;
     font-size: 24px;
   }
 }
@@ -781,7 +844,7 @@ button {
   }
 
   .aboutOpspadContentButton {
-    padding: 9px 10px;
+    padding: 10px 12px;
     font-size: 11px;
   }
 }
@@ -811,8 +874,8 @@ button {
   }
 
   .aboutOpspadContentButton {
-    padding: 11px 13px;
-    font-size: 10px;
+    padding: 18px 22px;
+    font-size: 20px;
   }
 
   .aboutOpspadImgWrapper {
@@ -822,7 +885,7 @@ button {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .aboutOpspadContent {
     align-items: center;
     gap: 15px;

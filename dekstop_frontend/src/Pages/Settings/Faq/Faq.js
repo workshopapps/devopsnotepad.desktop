@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import faq from './Faq.module.css';
 import cloud from './assets/cloud.png';
