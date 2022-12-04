@@ -26,9 +26,9 @@ function Home() {
 	});
 
 	// function to close authentication process
-	const closeAuth = useCallback(()=>{
-		setAuth(false)
-	})
+	const closeAuth = useCallback(() => {
+		setAuth(false);
+	});
 
 	// Filter servers displayed by user query
 	function getFilteredServers(queryValue, items) {
@@ -62,6 +62,7 @@ function Home() {
 						<ServerCard
 							key={server.id}
 							id={server.id}
+							serverId={server.serverId}
 							name={server.name}
 							ipAddress={server.ipAddress}
 							serverHealth={server.serverHealth}
@@ -84,9 +85,9 @@ function Home() {
 							<p>You do not have any Servers yet.</p>
 						</div>
 					</div>
-			))}
+				))}
 
-			{auth && <Auth closeAuth={closeAuth}/>}
+			{auth && <Auth closeAuth={closeAuth} />}
 		</div>
 	);
 }
