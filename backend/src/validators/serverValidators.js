@@ -11,10 +11,7 @@ export const createServerValidator = [
   body('ipAddress', ipAddressValMsg)
     .notEmpty()
     .custom((value) => value.length > 1),
-  
-  body('email', emailValMsg)
-    .notEmpty()
-    .custom((value) => value.length > 1),
+
 ];
 
 export const updateServerValidator = [
