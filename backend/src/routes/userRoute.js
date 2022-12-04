@@ -23,9 +23,11 @@ router.get('/google', passport.authenticate('google'));
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    successRedirect: config.app.url,
     failureRedirect: '/auth/failed',
-  })
+  }), (req,res) => {
+    const url = process.env.FRONTEND_URL || 'https://opspad.hng.tech';
+    res.redirect(url)
+  }
 );
 // router.get("/logout", AuthController.logout);
 
