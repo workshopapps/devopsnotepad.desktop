@@ -32,7 +32,7 @@ const LandingPage = () => {
             go!
           </p>
           <div className={style.landPage_btn}>
-            <Link to=''>Get Started for Free</Link>
+            <Link to='/signup'>Get Started for Free</Link>
             <Link to='/how-it-works'>How it works</Link>
           </div>
         </div>
@@ -41,7 +41,7 @@ const LandingPage = () => {
           <img src={grouped} alt='' />
         </div>
         <div className={style.landPagebtn_mob}>
-          <Link to='/'>Get Started for Free</Link>
+          <Link to='/signup'>Get Started for Free</Link>
           <Link to='/how-it-works'>How it works</Link>
         </div>
       </div>
@@ -154,7 +154,7 @@ const LandingPage = () => {
             Monitor, document and modify aspects of servers you manage - on the
             go!
           </p>
-          <Link to='/'>Get Started for Free</Link>
+          <Link to='/signup'>Get Started for Free</Link>
         </div>
       </div>
     </div>
