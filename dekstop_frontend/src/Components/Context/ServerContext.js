@@ -35,7 +35,6 @@ export function ServerProvider({ children }) {
 		localStorage.setItem('servers', JSON.stringify(data));
 		setServers(data);
 		setSuccess(true);
-
 		setLoading(false);
 	}
 
@@ -53,20 +52,22 @@ export function ServerProvider({ children }) {
 		// currentServers.updatedDate =
 		// console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
-		setServers(currentServers);
 		setLoading(false);
 		setSuccess(true);
+		useEffect(() => {
+			setServers(currentServers);
+		});
 	}
 
 	// Delete Server
 	async function deleteServer(currentId) {
 		setLoading(true);
 		const currentServers = servers.filter((i) => i.id !== currentId);
-		// console.log(currentServers, currentServerId);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
-		setServers(currentServers);
+		useEffect(() => {
+			setServers(currentServers);
+		}, [servers]);
 		setLoading(false);
-		setSuccess(true);
 	}
 
 	useEffect(() => {
