@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 import config from '../config/index.js';
 import AuthController from '../controllers/AuthController.js';
+import isAuthenticated from '../middleware/authentication/isAuthenticated.js'
 
 const router = express.Router();
 
@@ -24,7 +25,7 @@ router.get(
 router.post("/reset-password", AuthController.getResetLink);
 router.post("/update-password", AuthController.updateUserPassword);
 
-router.post('/update-user-password', AuthController.updateUserPasswordFromMobile);
+router.post('/update-user-password', isAuthenticated(), AuthController.updateUserPasswordFromMobile);
 
 
 router.get("/verify-mail", AuthController.verifyEmail);

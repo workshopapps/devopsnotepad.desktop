@@ -6,7 +6,7 @@ import { check_ip_status } from '../../utils/index.js';
 
 import cron from 'node-cron';
 
-import firebaseConfigJson from '../../utils/firebaseConfig.json' assert { type: 'json' };
+import firebaseConfigJson from '../../utils/firebaseConfig.json' assert { type: "json" };
 
 const firebaseConfig = JSON.parse(JSON.stringify(firebaseConfigJson));
 
