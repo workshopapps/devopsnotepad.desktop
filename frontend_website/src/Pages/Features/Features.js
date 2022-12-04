@@ -93,7 +93,9 @@ const Feature = () => {
             {' '}
             We are changing the whole DevOps system
           </p>
-          <button className={minilandpagebtn}>Sign up for free</button>
+          <a href='/signup'>
+             <button className={minilandpagebtn}>Sign up for free</button>
+          </a>
         </div>
 
         {/* =================SERVERS SECTION ================*/}
@@ -194,7 +196,9 @@ const Feature = () => {
             remembering passwords for various tools used to access these
             servers.share information, and work together.
           </p>
-          <button className={aboutOpspadContentButton}>Sign up for free</button>
+          <a href='/signup'>
+            <button className={aboutOpspadContentButton}>Sign up for free</button>
+          </a>
         </div>
         <div className={aboutOpspadImgWrapper}>
           <img src={abOpspadimg} className={abOpsImg} alt='' />
