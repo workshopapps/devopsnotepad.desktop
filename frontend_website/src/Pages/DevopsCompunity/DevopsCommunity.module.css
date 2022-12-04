@@ -16,14 +16,18 @@
   justify-content: space-between;
 }
 .left {
-  flex-basis: 60%;
+  flex-basis: 50%;
 }
 .devopsCommunity .banner .inBanner .article .left h1 {
   font-weight: 800;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 56px;
+  line-height: 76px;
   color: #292929;
   margin-bottom: 20px;
+}
+
+.devopsCommunity .banner .inBanner .article .left h1 span {
+  color: #225ad6;
 }
 
 .devopsCommunity .banner .inBanner .article .left p {
@@ -37,6 +41,12 @@
   display: flex;
   justify-content: space-between;
   margin-top: 7rem;
+}
+
+.devopsCommunity .slide .slideBoxX img {
+  max-width: 65px;
+  margin: auto;
+  height: 65px;
 }
 
 @media only screen and (max-width: 850px) {
@@ -116,14 +126,18 @@
   color: #353535;
 }
 
-.devopsCommunity .slide .slideBoxX .slideBtn {
+.devopsCommunity .slide .slideBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 8px;
 }
 
-.devopsCommunity .slide .slideBoxX .slideBtn a {
+.devopsCommunity .slide .slideBtn:hover {
+  opacity: 0.86;
+}
+
+.devopsCommunity .slide .slideBtn a {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -137,6 +151,10 @@
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
+}
+
+.devopsCommunity .slide .slideBtn a:hover {
+  opacity: 0.86;
 }
 
 .community_activity {
@@ -730,5 +748,13 @@
 
   .community_activity {
     padding: 20px 16px 20px 16px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .devopsCommunity .slide .slideBoxX img {
+    max-width: 65px;
+    margin: 0 auto 20px;
+    height: 65px;
   }
 }

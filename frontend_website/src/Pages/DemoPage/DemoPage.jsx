@@ -19,7 +19,7 @@ const DemoPage = () => {
         </div>
 
         <div className={styles.videoCtn}>
-          <ReactPlayer className={styles.video} url="https://www.youtube.com/"></ReactPlayer>
+          <ReactPlayer className={styles.video} url="https://youtu.be/4xtEp55MKRE"></ReactPlayer>
 
           <p>Watch Demo video</p>
         </div>
