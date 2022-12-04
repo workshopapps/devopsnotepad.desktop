@@ -18,12 +18,12 @@ export default class ServerController {
             // Update this latter
             if (errors && Object.keys(errors).length > 0) throw errors;
 
-            const {id} = req.session.user;
+            const {id,email} = req.session.user;
 
             const result = await create(req.body, id);
 
             // Send Email
-            sendEmail(email, "Server Created Successfully", { email: req.body.email, ipAddress: req.body.ipAddress, uuid: result.server.id }, "./template/createServer.handlebars");
+            sendEmail(email, "Server Created Successfully", { email: email, ipAddress: req.body.ipAddress, uuid: result.server.id }, "./template/createServer.handlebars");
             res.send({
                 success: true,
                 message: "server created successfully",
