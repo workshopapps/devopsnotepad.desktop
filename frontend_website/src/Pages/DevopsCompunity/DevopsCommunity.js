@@ -53,13 +53,19 @@ const DevopsCommunity = () => {
                   <img src={slideList.icon} alt='' />
                   <p>{slideList.content}</p>
                 </div>
-                <div className={styles.slideBtn}>
-                  <Link to={slideList.slug}>{slideList.linkLabel}</Link>
-                </div>
               </div>
             </div>
           ))}
         </Slider>
+        {slideData.map((slideList, i) => (
+          <div className={styles.slideBtn}>
+            {slideList.linkLabel !== '' ? (
+              <Link to={slideList.slug}>{slideList.linkLabel}</Link>
+            ) : (
+              ''
+            )}
+          </div>
+        ))}
       </div>
       <div className={styles.community_activity}>
         <div className={styles.inCommunity_activity}>

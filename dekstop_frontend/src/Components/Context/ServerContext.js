@@ -1,7 +1,7 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/prop-types */
 import { createContext, useMemo, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import serverData from './serverdata';
 
 const ServerContext = createContext();
 
@@ -9,79 +9,64 @@ export function ServerProvider({ children }) {
 	const [loading, setLoading] = useState(true);
 	const [servers, setServers] = useState([]);
 	const [success, setSuccess] = useState(false);
-	const [error, setError] = useState('');
-	const BASE_URL = 'https://devsapp.onrender.com/server';
-	// deviceId needs to be dynamic
-	// const deviceId = '80988579';
-
-	function getDeviceID() {
-		let deviceId = localStorage.getItem('deviceId');
-		if (deviceId) return deviceId;
-
-		deviceId = uuidv4();
-		localStorage.setItem('deviceId', deviceId);
-		return deviceId;
-	}
+	// const [error, setError] = useState('');
 
 	// Get all servers
 	async function getServers() {
-		// setLoading(true);
-		setError(null);
-		// const deviceId = getDeviceID();
-
-		try {
-			// const response = await fetch(`${BASE_URL}?device=${deviceId}`, {
-			// 	method: 'GET',
-			// 	headers: {
-			// 		'Content-Type': 'application/json',
-			// 	},
-			// });
-
-			// const data = await response.json();
-			setLoading(false);
-			// setServers(data.servers);
-			setServers(serverData);
-		} catch (err) {
-			setError(err.message);
-			setLoading(false);
-		}
+		const data = (await JSON.parse(localStorage.getItem('servers')))
+			? JSON.parse(localStorage.getItem('servers'))
+			: [];
+		setServers(data);
 		setLoading(false);
 	}
 
 	// Create new server
 	async function addServer(server) {
 		setLoading(true);
-		const id = await getDeviceID();
-		// eslint-disable-next-line no-param-reassign
-		server.deviceId = id;
-		// setIsLoading(true);
-		try {
-			const response = await fetch(`${BASE_URL}`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(server),
-			});
+		const id = await uuidv4();
+		server.id = id;
+		server.created_at = new Date();
+		const data = (await JSON.parse(localStorage.getItem('servers')))
+			? JSON.parse(localStorage.getItem('servers'))
+			: [];
+		data.push(server);
+		data.sort((a, b) => b.created_at - a.created_at);
 
-			const data = await response.json();
-			// const serverData = {
-			// 	success: data.success,
-			// 	name:data.server.name,
-			// 	ipAddress:data.server.ipAddress,
-			// 	notification:data.server.notification,
-			// }
-			setServers([data.server, ...servers]);
-			setLoading(false);
-			if (data.success === true) {
-				setSuccess(true);
-			} else {
-				setSuccess(false);
-			}
-		} catch (err) {
-			setError(err.message);
-		}
+		localStorage.setItem('servers', JSON.stringify(data));
+		setServers(data);
+		setSuccess(true);
+
 		setLoading(false);
+	}
+
+	// Edit Server
+	async function editServer(server) {
+		setLoading(true);
+		const currentServers = servers.filter((i) => i.id !== server.id);
+		const currentServer = servers.find((i) => i.id === server.id);
+		currentServer.name = server.name;
+		currentServer.serverId = server.serverId;
+		currentServer.ipAddress = server.ipAddress;
+		currentServer.updated_at = new Date();
+		currentServers.push(currentServer);
+		currentServers.sort((a, b) => b.created_at - a.created_at);
+		// currentServers.updatedDate =
+		// console.log(currentServers);
+		localStorage.setItem('servers', JSON.stringify(currentServers));
+		setServers(currentServers);
+		setLoading(false);
+		setSuccess(true);
+	}
+
+	// Delete Server
+	async function deleteServer(currentId) {
+		setLoading(true);
+		const currentServers = servers.filter((i) => i.id !== currentId);
+		// console.log(currentServers, currentServerId);
+		localStorage.setItem('servers', JSON.stringify(currentServers));
+		setServers(currentServers);
+		setLoading(false);
+		setSuccess(true);
 	}
 
 	useEffect(() => {
@@ -91,10 +76,12 @@ export function ServerProvider({ children }) {
 	const requests = useMemo(
 		() => ({
 			servers,
-			error,
+			// error,
 			loading,
 			success,
 			addServer,
+			editServer,
+			deleteServer,
 			getServers,
 			setSuccess,
 		}),

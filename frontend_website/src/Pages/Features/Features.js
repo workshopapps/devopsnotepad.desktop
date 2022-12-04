@@ -5,6 +5,7 @@ import FeatureCSS from './Feature.module.css';
 import noteimg from './Images/noteimage.png';
 import serversImg from './Images/serverImg.png';
 import passwordimg from './Images/passwordImg.png';
+import passwordimg2 from './Images/passwordImg2.png';
 import authenimg from './Images/authenticationImg.png';
 import authenimgMobile from './Images/authenticationImgMobile.png';
 import bell from './Images/bell.png';
@@ -41,6 +42,7 @@ const notesTextParagraph = FeatureCSS.notesTextparagraph;
 const password = FeatureCSS.password;
 const passwordImgWrapper = FeatureCSS.passwordImgWrapper;
 const passwordImg = FeatureCSS.passwordImg;
+const passwordimgtwo = FeatureCSS.passwordimg2;
 const passwordText = FeatureCSS.passwordText;
 const passwordTextHeading = FeatureCSS.passwordTextHeading;
 const passwordTextParagraph = FeatureCSS.passwordTextParagraph;
@@ -128,6 +130,7 @@ const Feature = () => {
         <div className={password}>
           <div className={passwordImgWrapper}>
             <img src={passwordimg} className={passwordImg} alt='' />
+            <img src={passwordimg2} className={passwordimgtwo} alt='' />
           </div>
           <div className={passwordText}>
             <h2 className={passwordTextHeading}>Passwords</h2>
