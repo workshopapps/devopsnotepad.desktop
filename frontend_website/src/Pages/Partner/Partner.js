@@ -6,9 +6,15 @@ import micheal from './assets/micheal.png'
 import zoey from './assets/zoey.png'
 import leftArrow from './assets/leftArrow.png'
 import rightArrow from './assets/rightArrow.png'
+import { useState } from 'react';
 
 
 const Partner = () => {
+
+  const [openText, setOpenText] = useState(true)
+  const [openTechnologyText, setOpenTechnologyText] = useState(false)
+  const [openChannelText, setOpenChannelText] = useState(false)
+
   return (
     <div className={style.partnerPageContainer}>
       <div className={style.PartnerMinilanding}>
@@ -18,21 +24,71 @@ const Partner = () => {
           share our vision and are ready to offer their 
           expertise to the mutual growth of our communities. 
         </p>
-        <button>Become a Partner</button>
+        <a href="/contact-us">
+          <button>Become a Partner</button>
+        </a>
       </div>
 
       <div className={style.servicePartner}>
         <div className={style.servicePartnerContent}>
-            <h3>Services Partner</h3>
-            <p>
-              As our service partners, you would be willing 
-              and able to provide services such as accounting, 
-              marketing, product development, maintenance or 
-              training that are essential to the growth of our company.
+            <h3
+              onClick={
+                function(){
+                  setOpenText(true)
+                  setOpenTechnologyText(false)
+                  setOpenChannelText(false)
+                }
+              }
+            >Services Partner</h3>
+            {
+              openText &&
+               <p>
+               As our service partners, you would be willing 
+               and able to provide services such as accounting, 
+               marketing, product development, maintenance or 
+               training that are essential to the growth of our company.
+             </p>
+            }
+            <h5
+              onClick={
+                function(){
+                  setOpenText(false)
+                  setOpenTechnologyText(true)
+                  setOpenChannelText(false)
+                }
+              }
+            >Technology Partner</h5>
+            {
+              openTechnologyText && 
+              <p>
+              As  our technology partner, you would be able 
+              to integrate your products in ours and ours in 
+              yours. This partnership involves exchnaging of 
+              valuable data between both parties to offer 
+              more value to our users.
             </p>
-            <h5>Technology Partner</h5>
-            <h5>Channel Partner</h5>
-            <button>Become a partner</button>
+            }
+            <h5
+              onClick={
+                  function(){
+                    setOpenText(false)
+                    setOpenTechnologyText(false)
+                    setOpenChannelText(true)
+                  }
+              }
+            >Channel Partner</h5>
+            {
+               openChannelText &&
+               <p>
+                As our channel partner, your duty is to distribute
+                our products either by employing full marketing 
+                techniques or by means of referrals. Are you interested 
+                in supporting team sandpaper through cause-related marketing?
+             </p>
+            }
+             <a href="/contact-us">
+              <button>Become a Partner</button>
+            </a>
         </div>
         <div className={style.handImageWrapper}>
           <img src={hands} className={style.handImage} alt="Imageof hands" />
