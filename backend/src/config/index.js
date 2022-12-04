@@ -32,10 +32,10 @@ const config = {
     },
     google: {
         CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-        CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+        CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ,
     },
     session: {
-        secret: process.env.EXPRESS_SESSION_SECRET
+        secret: process.env.EXPRESS_SESSION_SECRET 
     }
 };
 export const validateConfig = () => {

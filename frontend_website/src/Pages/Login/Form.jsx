@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../CareerPage/Button/Button';
 import Input from './Input';
@@ -16,6 +16,7 @@ const Form = (props) => {
     emailIsFocus: false,
     passwordIsFocus: false,
   });
+  const remeberRef = useRef();
 
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
@@ -66,11 +67,13 @@ const Form = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const ticked = remeberRef.current.checked;
 
     // Send form details to backend
     props.onSubmit({
       email: form.email,
       password: form.password,
+      ticked: ticked,
     });
   };
 
@@ -113,6 +116,7 @@ const Form = (props) => {
             value='value'
             id='checkbox'
             className={classes.checkbox__input}
+            ref={remeberRef}
           />
           <label htmlFor='checkbox' className={classes.label}>
             Remember me.
@@ -126,7 +130,19 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0 0' }}>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p style={{ textAlign: 'center' }}>Signing in failed!. Try again</p>
+          <p
+            style={{
+              textAlign: 'center',
+              border: '.1rem solid red',
+              fontSize: '1.6rem',
+              backgroundColor: 'red',
+              color: 'white',
+              padding: '.5rem 0',
+              borderRadius: '10rem',
+            }}
+          >
+            {`Sign in failed! - ${props.error.message}`}
+          </p>
         )}
       </div>
 
