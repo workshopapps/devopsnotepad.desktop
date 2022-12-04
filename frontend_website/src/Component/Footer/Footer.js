@@ -3,7 +3,7 @@ import googlePlay from './assets/googleplay.svg';
 import appStore from './assets/appstore.svg';
 import { Links } from './menuData';
 import styles from './Footer.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import './Footer.css';
 
 const Footer = () => {
@@ -25,8 +25,15 @@ const Footer = () => {
                     {link.list && (
                       <ul style={{ listStyle: 'none' }}>
                         {link.list.map((b, i) => (
-                          <li key={i}>
-                            <Link to={`${b.slug}`}>{b.title}</Link>
+                          <li key={i} className={styles.footer_lists}>
+                            <NavLink
+                              to={`${b.slug}`}
+                              className={({ isActive }) =>
+                                isActive ? styles.footer_list : ''
+                              }
+                            >
+                              {b.title}
+                            </NavLink>
                           </li>
                         ))}
                       </ul>
