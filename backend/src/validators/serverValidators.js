@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 import { body } from 'express-validator';
 
-import { nameValMsg, ipAddressValMsg, emailValMsg} from './validationMsg.js';
+import { nameValMsg, ipAddressValMsg} from './validationMsg.js';
 
 export const createServerValidator = [
   body('name', nameValMsg)
