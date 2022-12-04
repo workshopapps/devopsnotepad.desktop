@@ -5,7 +5,7 @@
 	"description": "<your project description>",
 	"author": "<Team Sandpaper>",
 	"build": {
-		"appId": "<com.devops>"
+		"appId": "<com.devops_notepad>"
 	},
 	"dependencies": {
 		"@electron-forge/publisher-github": "^6.0.3",

@@ -23,6 +23,7 @@
 	top: 40%;
 	left: 50%;
 	transform: translate(-32%,-35%);
+	
 	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
 	border-radius: 8px;
 	z-index: 30;
