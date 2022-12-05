@@ -6,71 +6,69 @@ import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
 import ServerContext from '../Context/ServerContext';
+// import { ClassNames } from '@emotion/react';
 /* eslint-disable camelcase */
 
-function Sidenav() {
-	const { servers } = useContext(ServerContext) || {};
-	const [isOpen, setIsOpen] = useState(false);
-	const toggling = () => setIsOpen(!isOpen);
+function SideNav() {
+  const { servers } = useContext(ServerContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggling = () => setIsOpen(!isOpen);
 
-	return (
-		<div>
-			<section className={styles.main}>
-				<div className={styles.sidenav}>
-					<Link to="/">
-						<img src={logo} alt="" className={styles.logo} />
-					</Link>
+  return (
+    <div>
+      <section className={styles.main}>
+        <div className={styles.sidenav}>
+          <Link to='/'>
+            <img src={logo} alt='' className={styles.logo} />
+          </Link>
 
-					<div style={{ display: 'flex', flexDirection: 'column' }}>
-						<div className={styles.nav}>
-							<img src={Group} alt="" className={styles.navItem} />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className={styles.nav}>
+              <img src={Group} alt='' className={styles.navItem} />
 
-							<p className={styles.navItem}> Servers List</p>
+              <p className={styles.navItem}> Servers List</p>
 
-							<div>
-								<RiArrowDownSLine
-									style={{ cursor: 'pointer' }}
-									onClick={toggling}
-								/>
-							</div>
-						</div>
+              <div>
+                <RiArrowDownSLine
+                  className={styles.icon_tog}
+                  onClick={toggling}
+                />
+              </div>
+            </div>
 
-						{isOpen && (
-							<div>
-								<ul className={styles.dropDown}>
-									{servers.map((server) => (
-										<Link
-											key={server.id}
-											to={`/server/${server.id}`}
-											style={{ textDecoration: 'none' }}
-										>
-											<li className={styles.listItem}>{server.name}</li>
-										</Link>
-									))}
-								</ul>
-							</div>
-						)}
-					</div>
+            {isOpen && (
+              <ul className={styles.dropDown}>
+                {servers.map((server) => (
+                  <Link
+                    key={server.id}
+                    to={`/server/${server.id}/notification`}
+                    className={styles.aa}
+                  >
+                    <li className={styles.listItem}>{server.name}</li>
+                  </Link>
+                ))}
+              </ul>
+            )}
+          </div>
 
-					<button className={styles.btn}>
-						{' '}
-						<Link
-							to="/add-server"
-							style={{ color: 'white', textDecoration: 'none' }}
-						>
-							Create Server
-						</Link>
-						<RiAddCircleLine style={{ marginLeft: '20px' }} />
-					</button>
+          <Link
+            to='/add-server'
+            style={{ color: 'white', textDecoration: 'none' }}
+          >
+            <button className={styles.btn}>
+              Create Server
+              <RiAddCircleLine style={{ marginLeft: '20px' }} />
+            </button>
+          </Link>
 
-					<Link to="/settings" style={{ textDecoration: 'none' }}>
-						{' '}
-						<p className={styles.settings}>Settings</p>{' '}
-					</Link>
-				</div>
-			</section>
-		</div>
-	);
+          <Link to='/settings' style={{ textDecoration: 'none' }}>
+            {' '}
+            <p className={styles.settings}>Settings</p>{' '}
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
 
-export default Sidenav;
+export default SideNav;

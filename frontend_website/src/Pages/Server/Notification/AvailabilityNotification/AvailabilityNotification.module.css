@@ -1,0 +1,166 @@
+section.main {
+	margin-left: 300px;
+	margin-right: 100px;
+	display: flex;
+
+	justify-content: space-between;
+}
+
+section.main div.container {
+	border-right: 1.5px solid #acacac;
+	padding-right: 50px;
+}
+
+div.wrapper {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 700;
+	color: #6f6f6f;
+	border-bottom: 1.3px solid #6f6f6f;
+}
+
+div.wrapper p.note {
+	color: #6f6f6f !important;
+	margin-bottom: 4px;
+}
+
+section.main div.contain {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 85%;
+	margin-top: 20px;
+	border: 2px solid #f6f9ff;
+	background-color: #f6f9ff;
+	border-radius: 10px;
+	padding: 10px 30px;
+}
+
+section.main div.contain div.wrapp {
+	display: flex;
+	align-items: center;
+}
+
+section.main div.contain div.wrapp p.endpoint {
+	color: #102a63 !important;
+	font-size: 16px;
+	line-height: 4px;
+	font-weight: 600;
+}
+
+section.main div.contain div.wrapp p.point {
+	color: #102a63 !important;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+section.main div.wrappe {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+section.main div.wrappe div.card2 {
+	border: 1.5px solid #9bb7f6;
+	background-color: #e0eaff;
+	border-radius: 10px;
+	padding: 20px;
+	padding-bottom: 50px;
+	margin-bottom: 30px;
+}
+
+section.main div.wrappe div.card1 {
+	border: 1.5px solid #9bb7f6;
+	background-color: #f6f9ff;
+	border-radius: 10px;
+	padding: 20px;
+	padding-bottom: 50px;
+	margin-bottom: 30px;
+}
+
+section.main div.wrappe div.card1 div.bell {
+	position: absolute;
+	border: 1px solid #c83333;
+	background-color: #c83333;
+	color: white;
+	border-radius: 10px;
+	padding: 0 10px;
+	font-size: 10px;
+	left: 332px;
+}
+
+section.main div.wrappe div.card2 div.belly {
+	position: absolute;
+	border: 1px solid #c83333;
+	background-color: #c83333;
+	color: white;
+	border-radius: 10px;
+	padding: 0 10px;
+	font-size: 10px;
+	left: 332px;
+}
+
+section.main div.wrappe div.card1 p.noti {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+section.main div.wrappe div.card1 p.par {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
+}
+
+section.main div.wrappe div.card2 p.noti {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+section.main div.wrappe div.card2 p.par {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
+}
+
+section.main div.state {
+	padding-left: 50px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+section.main div.refill {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 150px;
+	margin-left: 100px;
+}
+
+section.main div.refill p.para {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+section.main div.row {
+	display: flex;
+	align-items: center;
+	border: 1.5px solid #c7c7c7;
+	border-radius: 5px;
+	padding: 10px 20px;
+	width: 100%;
+}

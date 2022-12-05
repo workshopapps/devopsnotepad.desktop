@@ -1,115 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @media (max-width: 767px) {
-	.sidenav {
-		display: none !important;
-	}
-}
-
-body,
-html {
-	font-family: 'Manrope';
-	margin: 0;
-	padding: 0;
+  .sidenav {
+    display: none !important;
+  }
 }
 
 div.main {
-	display: flex;
-	height: 100vh;
+  display: flex;
 }
 
 section.main div.sidenav {
-	height: 1034px;
-	width: 228px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	background-color: rgba(237, 237, 237, 0.48);
-	border-radius: 5px;
-	padding-top: 50px;
-	position: fixed;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(237, 237, 237);
+  padding: 3.5rem 0.7rem 1rem;
+  position: fixed;
 }
 
 section.main div.sidenav img.logo {
-	margin-left: 30px;
-	width: 150px;
+  margin: 0 0 10px 30px;
+  width: 150px;
 }
 
 section.main div.sidenav div.nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
 }
 
 section.main div.sidenav div.nav .navItem {
-	padding-right: 20px;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 21.86px;
-	color: #202020;
+  padding-right: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21.86px;
+  color: #202020;
 }
 
 section.main div.sidenav div.nav img {
-	margin-left: 30px;
+  margin-left: 30px;
 }
 
 .listItem {
-	padding: 10px;
-	cursor: pointer;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 21.86px;
-	color: rgba(32, 32, 32, 0.64);
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.86px;
+  color: rgba(32, 32, 32, 0.64);
 }
 
 .listItem:hover {
-	background-color: #ededed;
-	color: #102a63;
+  background-color: #ededed;
+  color: #102a63;
 }
 
 .dropDown {
-	margin-top: 0;
-	padding-top: 0;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 section.main div.sidenav button.btn {
-	background-color: #102a63;
-	color: white;
-	border-radius: 5px;
-	border: 2px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	padding: 10px 35px;
-	/* margin-top: 20px; */
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 16px;
-	margin: 20px 0;
-	margin-left: 20px;
+  background-color: #102a63;
+  color: white;
+  border-radius: 5px;
+  border: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  margin: 10px 0 0 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 20px;
+}
+.icon_tog {
+  cursor: pointer;
+  height: 2rem;
+  width: 3rem;
+}
+.icon_tog:hover {
+  fill: #102a63;
 }
 
 .btn a {
-	color: #fff !important;
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 16px;
+  color: #fff !important;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
 }
 .btn svg {
-	color: #fff !important;
+  color: #fff !important;
 }
-
+.btn a:hover {
+  background: #102a63cb;
+}
 section.main div.sidenav p.settings {
-	font-size: 16px;
-	color: rgba(32, 32, 32, 0.64);
-	font-weight: 500;
-	line-height: 21.86px;
-	margin-left: 25px;
+  font-size: 16px;
+  color: rgba(32, 32, 32, 0.64);
+  font-weight: 500;
+  line-height: 21.86px;
+  margin-left: 25px;
+}
+.aa:link {
+  text-decoration: none;
+  width: 100%;
 }
 
 .listItem {
-	list-style: none;
+  list-style: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.settings {
+  margin-top: 1rem;
 }
