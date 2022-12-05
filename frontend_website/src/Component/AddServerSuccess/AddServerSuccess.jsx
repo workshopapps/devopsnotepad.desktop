@@ -1,11 +1,10 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './AddServerSuccess.module.css';
 
 function AddServerSuccess({ closeSuccess, message }) {
-  const navigate = useNavigate();
   return (
     <div className={style.container}>
       <div
