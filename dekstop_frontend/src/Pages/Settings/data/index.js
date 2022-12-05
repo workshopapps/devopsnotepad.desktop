@@ -86,7 +86,7 @@ export const AppSettings = [
 
 export const Support = [
 	{
-		title: 'SUPPORT',
+		title2: 'SUPPORT',
 		items: [
 			{
 			list: 'About',
