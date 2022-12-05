@@ -8,15 +8,18 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import { FaChevronRight } from 'react-icons/fa';
+import Success from '../GlobalPassword/Success'
 import styles from '../GlobalPassword/ChangePassword.module.css';
 // import Success from '../GlobalPassword/Success'
-
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
 function ChangePassword({ changed }) {
 	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [showSuccess, setShowSuccess] = useState(false);
+	const navigate = useNavigate();
 
 	function openModal() {
 		setIsOpen(true);
@@ -29,10 +32,11 @@ function ChangePassword({ changed }) {
 
 	function closeModal() {
 		setIsOpen(false);
+		navigate('/settings');
 	}
 
 	const [editpassword, setEditPassword] = useState('');
-    const navigate = useNavigate();
+	
 
 	// Proptype declaration
 	ChangePassword.propTypes = {
@@ -41,6 +45,9 @@ function ChangePassword({ changed }) {
 
 	function changePassword(e) {
 		e.preventDefault();
+		setShowSuccess(true);
+		navigate('/settings');
+
 
 		const globalPassword = localStorage.setItem('userPassword', editpassword);
 		const newuser = {
@@ -51,18 +58,37 @@ function ChangePassword({ changed }) {
 		if (editpassword === globalPassword) {
 			changed.push(newuser);
 			localStorage.setItem('userPassword');
-			alert('Password changed is  Successful');
-            navigate('/');
+			navigate('/');
 		}
 		if (editpassword !== globalPassword) {
-            alert('Password changed is  Successful');
+			// alert('Password changed is  Successful');
+			
 		}
 		setEditPassword('');
 	}
 
+	function closeSuccess () {
+		setShowSuccess(false);
+		window.location.reload();
+	}
+
 	return (
 		<div>
-			<Link className={styles.anchor} onClick={openModal}><h2>Change Password</h2></Link>
+		{showSuccess && (
+				<Success
+					// eslint-disable-next-line react/jsx-no-bind
+					onSuccessClick={closeSuccess}
+					closeModal={() => {
+						setShowSuccess(false);
+					}}
+				/>
+			)}
+			<div className={styles.anchor}>
+				<Link className={styles.anchor} onClick={openModal}>
+					<h2>Change Password</h2>
+					<FaChevronRight/>
+				</Link>
+			</div>
 			<Modal
 				isOpen={modalIsOpen}
 				// onAfterOpen={afterOpenModal}
