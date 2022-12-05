@@ -5,7 +5,7 @@ import { createServerValidator, updateServerValidator } from '../validators/serv
 
 const router = express.Router();
 
-router.post('/', createServerValidator, isAuthenticated() , ServerController.create);
+router.post('/', createServerValidator, isAuthenticated(), ServerController.create);
 router.patch('/', updateServerValidator, isAuthenticated(), ServerController.update);
 router.get('/all', isAuthenticated(), ServerController.getAllServers);
 router.post('/delete', isAuthenticated(), ServerController.deleteServersById);
