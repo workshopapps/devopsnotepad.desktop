@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -26,9 +27,12 @@ const style = {
 	p: 4,
 };
 function Note() {
+
+	const {id} = useParams()
+
 	// State
 	const [open, setOpen] = useState(false);
-	const [note, setNote] = useState(localStorage.getItem('note'));
+	const [note, setNote] = useState(localStorage.getItem(`${id}`));
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
 
@@ -38,13 +42,13 @@ function Note() {
 	const handleClose = () => setOpen(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		localStorage.setItem('note', inputs);
+		localStorage.setItem(`${id}`, inputs);
 		setNote(localStorage.getItem('note'));
 		setInputs('');
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
-		localStorage.removeItem('note');
+		localStorage.removeItem(`${id}`);
 		setNote('');
 		setOpen(false);
 	};
