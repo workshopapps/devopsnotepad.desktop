@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /auth/register:
+ * /auth/signup:
  *     post:
  *         summary: Registers a single user
  *         tags:
@@ -98,6 +98,198 @@
  *                                     type: object
  *             '404':
  *                 description: Email already exists
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ *             '400':
+ *                 description: Please provide all details
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /auth/reset-password:
+ *     post:
+ *         summary: Initiates a reset password operation for a user
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: The email of the user
+ * 
+ *         responses:
+ *             '200':
+ *                description: A password reset link has been sent to your email address
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '404':
+ *                 description: Please input a valid registered email.
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ *             '400':
+ *                 description: Please provide all details
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /auth/update-password:
+ *     post:
+ *         summary: Allows a user recover account when password is forgotten
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: The email of the user
+ * 
+ *         responses:
+ *             '200':
+ *                description: Password has been updated successfully
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '500':
+ *                 description: Invalid or expired password reset token.
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ *             '400':
+ *                 description: Please provide all details
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /auth/verify-mail:
+ *     post:
+ *         summary: Initiates the email verification operation
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: false
+ * 
+ *         responses:
+ *             '200':
+ *                description: email verified successfully
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '500':
+ *                 description: Invalid or expired email verification token
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /auth/update-user-password:
+ *     post:
+ *         summary: changes password for a user
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - oldPassword
+ *                              - newPassword
+ *                          properties:
+ *                              oldPassword:
+ *                                  type: string
+ *                                  description: The current password of the user
+ *                              newPassword:
+ *                                  type: string
+ *                                  description: The new passwowrd a user wants to set
+ * 
+ *         responses:
+ *             '200':
+ *                description: Password has been updated successfully
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '500':
+ *                 description: Invalid or expired password reset token.
  *                 content:
  *                     application/json:
  *                        schema:
@@ -382,4 +574,5 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
+
  */

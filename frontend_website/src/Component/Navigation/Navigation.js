@@ -7,11 +7,12 @@ import menuIcon from './assets/menu-icon.svg';
 import styles from './Navigation.module.css';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const { user, addUserHandler } = useContext(UserContext);
+  const { isLoggedIn, addUserHandler } = useContext(UserContext);
 
   useEffect(() => {
     // Sticky navigation
@@ -32,6 +33,14 @@ const Navigation = () => {
 
     headerObserver.observe(header);
   });
+
+  const { fetchRequest: logOut } = useFetch();
+  const logouthandler = () => {
+    logOut({
+      url: 'https://opspad.onrender.com/auth/logout',
+      method: 'GET',
+    });
+  };
 
   return (
     <section className='navigation__container'>
@@ -55,11 +64,14 @@ const Navigation = () => {
 
             <div className={styles.right}>
               <div className={styles.navAuthBtn}>
-                {user !== null ? (
+                {isLoggedIn ? (
                   <Link
                     className={styles.login_link}
                     to='/login'
-                    onClick={() => addUserHandler(null)}
+                    onClick={() => {
+                      addUserHandler(null);
+                      logouthandler();
+                    }}
                   >
                     Logout
                   </Link>
