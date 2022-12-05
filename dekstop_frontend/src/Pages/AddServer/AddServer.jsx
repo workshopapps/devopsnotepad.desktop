@@ -53,9 +53,9 @@ function AddServer() {
 			)}
 			<Sidenav />
 			<div className={style.container}>
-				<h1>Add Server</h1>
-
 				<form onSubmit={onSubmit} className={style.form}>
+					<h1>Add Server</h1>
+
 					<div className={style.inputs}>
 						<div className={style.form_control}>
 							<label htmlFor="serverId">Server ID</label>
