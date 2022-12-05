@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import UserContextProvider from './store/UserContext';
+import { ServerProvider } from './Component/Context/ServerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <HelmetProvider>
       <Router>
         <UserContextProvider>
-          <App />
+          <ServerProvider>
+            <App />
+          </ServerProvider>
         </UserContextProvider>
       </Router>
     </HelmetProvider>
