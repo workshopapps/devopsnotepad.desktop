@@ -1,3 +1,5 @@
+import Footer from '../../Component/Footer/Footer';
+import Navigation from '../../Component/Navigation/Navigation';
 import Details from './Details/Details';
 import Header from './Header/Header';
 import LeftAligned from './LeftAligned/LeftAligned';
@@ -6,13 +8,17 @@ import SubHeader from './SubHeader/SubHeader';
 
 const PodCast = () => {
   return (
-    <section>
-      <Header />
-      <SubHeader />
-      <RightAligned />
-      <LeftAligned />
-      <Details />
-    </section>
+    <>
+      <Navigation />
+      <section>
+        <Header />
+        <SubHeader />
+        <RightAligned />
+        <LeftAligned />
+        <Details />
+      </section>
+      <Footer />
+    </>
   );
 };
 
