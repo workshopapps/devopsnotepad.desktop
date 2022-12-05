@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
 
-function Auth({ closeAuth }) {
+function Auth ({ closeAuth }) {
 	const [input, setInput] = useState('');
 
 	// Proptype declaration
@@ -37,7 +37,7 @@ function Auth({ closeAuth }) {
 					</label>
 					<input
 						className={styleA.input}
-						type="text"
+						type="password"
 						name="password"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
