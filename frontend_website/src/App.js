@@ -34,6 +34,7 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Settings from './Pages/Settings/MainSettings';
 
 import classes from './App.module.css';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
@@ -96,6 +97,7 @@ function App() {
           <Route path='/newpassword' element={<NewPassword />} />
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/settings' exact element={<Settings />} />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
