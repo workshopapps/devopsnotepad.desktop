@@ -33,14 +33,14 @@
 	"main": "public/electron.js",
 	"homepage": "./",
 	"scripts": {
-		"react-start": "react-scripts start",
-		"react-build": "react-scripts build",
-		"react-test": "react-scripts test --env=jsdom",
-		"react-eject": "react-scripts eject",
-		"electron-build": "electron-builder",
-		"release": "yarn react-build && electron-builder --publish=always",
-		"build": "yarn react-build && yarn electron-build",
-		"start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"lint": "eslint . --fix --max-warnings=0",
+		"format": "prettier . --write",
+		"eject": "react-scripts eject",
+		"dev": "electron .",
+		"release": "electron-builder"
 	},
 	"eslintConfig": {
 		"extends": [
