@@ -64,6 +64,7 @@ export default class AuthController {
         });
       }
     } catch (error) {
+      console.log(error)
       next(error);
     }
   };
@@ -240,13 +241,18 @@ export default class AuthController {
         return res.status(400).send('User Not Found');
       }
 
+      const comparePassword =  await bcrypt.compare(oldPassword, user.password);
+
       // Compare Old Password with new Password
-      if (oldPassword !== user.password) {
+      if (!comparePassword) {
         return res.status(400).send('User Passwords do not match');
       }
 
+      //hash new password
+       const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
+
       // Save new password
-      await UserRepo.updatePasswordById(id, newPassword);
+      await UserRepo.updatePasswordById(id, hashedPassword);
       // Success
       return res.status(201).send('Password Successfully Updated');
     } catch (error) {
