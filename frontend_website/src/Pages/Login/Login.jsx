@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import google from '../../assets/login_page-assets/google.png';
+import Footer from '../../Component/Footer/Footer';
+import Navigation from '../../Component/Navigation/Navigation';
 import useFetch from '../../hooks/useFetch';
 import { UserContext } from '../../store/UserContext';
 
@@ -25,7 +27,9 @@ const Login = () => {
   const getResponseData = (responseObj) => {
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
-      navigate('/');
+      const userObj = JSON.stringify(responseObj);
+      localStorage.setItem('loggedInUser', userObj);
+      navigate('/server');
     } else {
       console.log(responseObj, 'error');
     }
@@ -46,29 +50,33 @@ const Login = () => {
   };
 
   return (
-    <div className={classes.login} data-testid='login__page'>
-      <h1 className={classes.h1}>Welcome back!</h1>
-      <Form onSubmit={signInHandler} isLoading={isLoading} error={error} />
-      <div className={classes.p__box}>
-        <div className={classes.div}></div>
-        <p className={classes.p}>or sign in with</p>
-        <div className={classes.div}></div>
+    <>
+      <Navigation />
+      <div className={classes.login} data-testid='login__page'>
+        <h1 className={classes.h1}>Welcome back!</h1>
+        <Form onSubmit={signInHandler} isLoading={isLoading} error={error} />
+        <div className={classes.p__box}>
+          <div className={classes.div}></div>
+          <p className={classes.p}>or sign in with</p>
+          <div className={classes.div}></div>
+        </div>
+        <div className={classes.svg__box}>
+          <img
+            src={google}
+            alt='Google'
+            className={classes.svg}
+            onClick={googleSignInHandler}
+          />
+        </div>
+        <h4 className={classes.h4}>
+          Don’t have an account yet?{'  '}
+          <Link to='/signup' className={classes.a}>
+            Sign Up
+          </Link>
+        </h4>
       </div>
-      <div className={classes.svg__box}>
-        <img
-          src={google}
-          alt='Google'
-          className={classes.svg}
-          onClick={googleSignInHandler}
-        />
-      </div>
-      <h4 className={classes.h4}>
-        Don’t have an account yet?{'  '}
-        <Link to='/signup' className={classes.a}>
-          Sign Up
-        </Link>
-      </h4>
-    </div>
+      <Footer />
+    </>
   );
 };
 

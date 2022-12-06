@@ -32,7 +32,7 @@ function SimpleNotification() {
 		getServer(id);
 		setSimpleNotification(serverNotifications);
 	}, []);
-	
+
 	return (
 		<div>
 			<Sidenav />
@@ -116,7 +116,9 @@ function SimpleNotification() {
 							{/* <h1 style={{ textAlign: 'start' }}>Today</h1> */}
 
 							<div className={styles.row}>
-								<img src={green} alt="" />
+								
+									<img src={green} alt="" style={{alignSelf: 'center'}} />
+								
 								<p className={styles.pnote}>
 									{notification.logs.substring(0, 151)}
 								</p>

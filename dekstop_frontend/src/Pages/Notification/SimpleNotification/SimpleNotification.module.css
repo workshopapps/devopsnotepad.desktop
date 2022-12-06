@@ -159,7 +159,7 @@ section.main div.refill p.para {
 
 section.main div.row {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	border: 1.5px solid #c7c7c7;
 	border-radius: 5px;
@@ -171,4 +171,12 @@ section.main div.row {
 .pnote{
 	width: 83%;
 	margin-left: 15px;
+}
+
+.fleximage{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
