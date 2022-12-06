@@ -15,10 +15,15 @@ div.wrapper {
   font-size: 14px;
   font-weight: 700;
   color: #6f6f6f;
-  border-bottom: 1.3px solid #6f6f6f;
 }
 
 div.wrapper p.note {
-  color: #6f6f6f !important;
+  color: #8a8787 !important;
   margin-bottom: 4px;
+}
+
+.footer_list {
+  border: 0.1rem solid #101e4391 !important;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.7rem;
 }

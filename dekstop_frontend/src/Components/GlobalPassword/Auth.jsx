@@ -9,7 +9,7 @@ function Auth ({ closeAuth }) {
 
 	// Proptype declaration
 	Auth.propTypes = {
-		closeAuth: PropTypes.node.isRequired,
+		closeAuth: PropTypes.func.isRequired,
 	};
 
 	function handleSubmit(e) {
