@@ -5,6 +5,8 @@ import LeftAligned from './LeftAligned/LeftAligned';
 import RightAligned from './RightAligned/RightAligned';
 
 import classes from './ComingSoon.module.css';
+import Navigation from '../../Component/Navigation/Navigation';
+import Footer from '../../Component/Footer/Footer';
 
 const ComingSoon = () => {
   return (
@@ -15,13 +17,14 @@ const ComingSoon = () => {
         <meta name='description' content='Our future release' />
         <link rel='canonical' href='/coming-soon' />
       </Helmet>
-
+      <Navigation />
       {/* Application */}
       <section className={classes.comingsoon} data-testid='coming__soon'>
         <Header />
         <LeftAligned />
         <RightAligned />
       </section>
+      <Footer />
     </>
   );
 };
