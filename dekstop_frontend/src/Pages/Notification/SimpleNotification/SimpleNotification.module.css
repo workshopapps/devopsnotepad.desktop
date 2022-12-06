@@ -172,11 +172,3 @@ section.main div.row {
 	width: 83%;
 	margin-left: 15px;
 }
-
-.fleximage{
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
