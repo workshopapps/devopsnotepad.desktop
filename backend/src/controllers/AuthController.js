@@ -159,9 +159,10 @@ export default class AuthController {
           .status(400)
           .json(updateUserPassword.validate(req.body).error.details);
       }
+      const { id } = req.session.user;
 
       // destruct request body
-      const { id, oldPassword, newPassword } = req.body;
+      const {oldPassword, newPassword } = req.body;
 
       // Get user from database
       const user = await UserRepo.getUserById(id);
