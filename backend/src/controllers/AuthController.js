@@ -212,7 +212,6 @@ export default class AuthController {
     try {
       // Validate with Joi
       const updateUserPassword = Joi.object({
-        id: Joi.string().required(),
         oldPassword: Joi.string().required(),
         newPassword: new PasswordComplexity({
           min: 8,
@@ -228,9 +227,10 @@ export default class AuthController {
       if (updateUserPassword.validate(req.body).error) {
         return res.status(400).json(updateUserPassword.validate(req.body).error.details);
       }
+      const { id } = req.session.user;
 
       // destruct request body
-      const { id, oldPassword, newPassword } = req.body;
+      const {oldPassword, newPassword } = req.body;
 
       // Get user from database
       const user = await UserRepo.getUserById(id);

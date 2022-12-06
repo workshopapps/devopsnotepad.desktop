@@ -35,6 +35,6 @@ router.post('/reset-password', resetUserLinkValidator, AuthController.getResetLi
 router.post('/update-password', updateUserPasswordValidator, AuthController.updateUserPassword);
 
 router.get('/verify-mail', verifyUserPasswordValidator, AuthController.verifyEmail);
-router.post('/update-user-password', AuthController.updateUserPasswordFromMobile);
+router.post('/update-user-password',isAuthenticated(), AuthController.updateUserPasswordFromMobile);
 
 export default router;
