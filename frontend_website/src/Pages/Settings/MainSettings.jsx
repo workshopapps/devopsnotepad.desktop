@@ -27,8 +27,8 @@ function Settings() {
 		return user;
 	}
 
-	// const API_URL = "https://opspad.hng.tech/auth/update-password";
-	const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
+	const API_URL = "https://opspad.hng.tech/auth/update-password";
+	// const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
 	
 
 	const user = isAuthenticated();
