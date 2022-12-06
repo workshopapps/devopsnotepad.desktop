@@ -11,7 +11,7 @@ export default async function login(body, req, res) {
     if (!user) {
         return res.status(404).send({message: "user not found"});
     }
-  
+    
     const comparePassword = await bcrypt.compare(body.password, user.password);
   
     if (!comparePassword) {
