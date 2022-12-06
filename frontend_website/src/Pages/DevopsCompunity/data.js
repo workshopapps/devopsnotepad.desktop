@@ -61,7 +61,7 @@ export const slideData = [
     icon: askSearch,
     content:
       'When you have questions, find answers from our passionate members and experts in the OPspad community.',
-    linkLabel: ' Ask & Search',
+    linkLabel: '',
     slug: '',
   },
   {
@@ -75,7 +75,7 @@ export const slideData = [
     icon: shareIdea,
     content:
       'Have suggestions for improving the OPspad experience? Share and vote for your favorite ideas here.',
-    linkLabel: ' Share Idea',
+    linkLabel: '',
     slug: '',
   },
 ];

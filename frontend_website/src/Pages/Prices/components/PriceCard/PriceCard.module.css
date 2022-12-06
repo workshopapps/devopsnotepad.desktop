@@ -73,6 +73,10 @@
   color: #fff;
 }
 
+.blue:hover {
+  opacity: .86;
+}
+
 .li {
   display: flex;
   list-style-type: none;

@@ -5,10 +5,13 @@ import { ValidateEmail, ValidatePassword } from './lib';
 import Button from '../CareerPage/Button/Button';
 import Input from '../Login/Input';
 import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Form.module.css';
 
 const Form = (props) => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -32,12 +35,37 @@ const Form = (props) => {
     setForm((prev) => {
       return { ...prev, email: e.target.value };
     });
+    const { passwordIsValid } = form;
+    const isValid = ValidateEmail(e.target.value);
+
+    if (passwordIsValid && isValid) {
+      setForm((prev) => {
+        return { ...prev, formIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, formIsValid: false };
+      });
+    }
   };
 
   const passwordOnChangeHandler = (e) => {
     setForm((prev) => {
       return { ...prev, password: e.target.value };
     });
+
+    const { emailIsValid } = form;
+    const isValid = ValidatePassword(e.target.value);
+
+    if (emailIsValid && isValid) {
+      setForm((prev) => {
+        return { ...prev, formIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, formIsValid: false };
+      });
+    }
   };
 
   // Allowing the user to unfocus the input field before checking if the input field is correct.
@@ -89,18 +117,6 @@ const Form = (props) => {
         return { ...prev, passwordIsValid: false };
       });
     }
-
-    const { emailIsValid, passwordIsValid } = form;
-
-    if (emailIsValid && passwordIsValid) {
-      setForm((prev) => {
-        return { ...prev, formIsValid: true };
-      });
-    } else {
-      setForm((prev) => {
-        return { ...prev, formIsValid: false };
-      });
-    }
   };
 
   const submitHandler = (event) => {
@@ -111,6 +127,19 @@ const Form = (props) => {
       name: form.fullName,
       email: form.email,
       password: form.password,
+    });
+
+    setForm({
+      fullName: '',
+      email: '',
+      password: '',
+      nameIsValid: false,
+      emailIsValid: false,
+      passwordIsValid: false,
+      nameIsFocus: false,
+      emailIsFocus: false,
+      passwordIsFocus: false,
+      formIsValid: false,
     });
   };
 
@@ -153,7 +182,7 @@ const Form = (props) => {
         label='Password'
         type='text'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='Must be 7 characters'
+        placeholder='MinLength(8), a uppercase, a lowercase, and a number.'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
@@ -166,7 +195,22 @@ const Form = (props) => {
       <div>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p style={{ textAlign: 'center' }}>Signing up failed!. Try again</p>
+          <p
+            style={{ textAlign: 'center' }}
+          >{`Sign up failed! - ${props.error.message}`}</p>
+        )}
+        {props.message && (
+          <p className={classes.span__box}>
+            {props.message}{' '}
+            <span>
+              <Button
+                className={classes.success_button}
+                onClick={() => navigate('/login')}
+              >
+                Kindly log in to continue
+              </Button>
+            </span>
+          </p>
         )}
       </div>
 

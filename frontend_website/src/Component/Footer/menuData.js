@@ -37,11 +37,7 @@ export const Links = [
       },
       {
         title: 'FAQs',
-        slug: '/FAQs',
-      },
-      {
-        title: 'Blog',
-        slug: '/blog',
+        slug: '/faq',
       },
       {
         title: 'Best Practices',

@@ -1,0 +1,258 @@
+:root{
+  --topic: #225AD6;
+  --text: #444444;
+  --Nblack: #202020;
+  --Ngray: #4B4B4B;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.newsrooms {
+      display: flex;
+      background-color: red;
+      margin-top: 3rem;
+}
+.newsroom__container {
+    width: 90%;
+    max-width: 1920px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: pink; */
+}
+
+  .Newsroomminilandingpage {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 35vh;
+    margin-bottom: 30px;
+}
+
+  .Newsroomminilandingpage h1{
+    color: var(--Nblack);
+    font-size: 56px;
+    font-weight: 800;
+    text-align: center;
+}
+  
+  .Newsroomminilandingpage h1 span{
+    color: var(--topic);
+}
+  
+  .Newsroomminilandingpage p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Ngray);
+    margin-top: 10px;
+}
+
+
+
+  .companyNews{
+    width: 100%;
+}
+
+  .companyNewsHeader{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(186, 186, 186);
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.companyNewsHeader p{
+  font-size: 32px;
+  color: var(--Nblack);
+  font-weight: 400;
+}
+
+.companyNewsHeader button{
+  border: none;
+  background: none;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 16px;
+}
+
+.companyNewsContents{
+  width: min(150%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+  overflow-x: hidden;
+}
+
+.companyNewsPost{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.companyNewsPost img{
+  width: 100%;
+  min-width: 400px;
+}
+
+.companyNewsPost h1{
+  color: var(--Nblack);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.companyNewsPost p{
+  font-size: 24px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+
+
+
+
+.industryRelease{
+  margin-top: 88px;
+  width: 100%;
+  margin-bottom: 147px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.industryReleaseHeading{
+  width: 100%;
+  border-bottom: 1px solid rgb(186, 186, 186);
+}
+
+.industryReleaseContents{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 32px;
+  column-gap: 24px;
+  row-gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px ;
+}
+
+.postimgwrapper{
+  width: min(302px, 100%);
+}
+
+.postimg{
+  width: 100%;
+}
+
+.post h4{
+  color: var(--Nblack);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  width: 85%;
+}
+
+.post small{
+  color: var(--text);
+  font-size: 16px;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+  .companyNewsContents{
+    width: min(200%);
+  }
+}
+
+@media (max-width: 1220px) {
+  .companyNewsPost h1{
+    color: var(--Nblack);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .industryReleaseContents{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .industryReleaseContents{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Newsroomminilandingpage h1{
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .Newsroomminilandingpage p{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .industryReleaseContents{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .postimgwrapper{
+    width: 100%;
+  }
+
+  .post h4{
+    width: 90%;
+  }
+
+  .companyNewsPost2{
+    display: none;
+  }
+
+  .companyNewsPost3{
+    display: none;
+  }
+
+  .companyNewsContents{
+    width: 100%;
+    overflow-y: hidden;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .companyNewsPost img{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .companyNewsHeader p{
+    font-size: 20px;
+  }
+
+}
+
