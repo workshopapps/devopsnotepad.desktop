@@ -12,6 +12,7 @@ import { ProfilePicture } from '../assets';
 import Button from '../components/Button';
 // import Biometrics from '../components/Biometrics';
 import  PushNotifications from '../components/PushNotifications/PushNotifications';
+import ChangePassword from '../../../Components/GlobalPassword/ChangePassword';
 
 export const userTopbar = [
 	{
@@ -46,9 +47,10 @@ export const Security = [
 	{
 		title: 'SECURITY',
 		icon: <BiLock/>,
-		func: 'Change Password',
-		slug: '/password',
+		func: <ChangePassword/>,
+		slug: <ChangePassword/>,
 		iconright: <FaChevronRight/>,
+		modal: <ChangePassword/>
 	},
 	// {
 	// 	icon: <IoFingerPrintOutline/>,
@@ -84,7 +86,7 @@ export const AppSettings = [
 
 export const Support = [
 	{
-		title: 'SUPPORT',
+		title2: 'SUPPORT',
 		items: [
 			{
 			list: 'About',
@@ -98,7 +100,7 @@ export const Support = [
 			},
 			{
 			list: 'Terms & Condition',
-			slug: '/terms-and-condition',
+			slug: '/terms-of-use',
 			iconright: <FaChevronRight />,
 			},
 			{

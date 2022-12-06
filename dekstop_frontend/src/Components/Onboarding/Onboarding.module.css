@@ -6,8 +6,8 @@
 	left: 0;
 	right: 0; */
 	background: #ffffff;
-	/* padding-top: 30px;
-	padding-bottom: 36px; */
+	padding-top: 30px;
+	padding-bottom: 36px;
 	overflow: hidden;
 	height: 100vh;
 }
@@ -87,8 +87,4 @@
 }
 .btn:active {
 	transform: scale(0.95);
-}
-
-.onboarding_form {
-	padding: 0 !important;
 }

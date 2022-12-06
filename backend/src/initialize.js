@@ -12,6 +12,12 @@ import swaggerJsDoc from 'swagger-jsdoc'
 import cookieParser from 'cookie-parser';
 import session from "express-session";
 import passportSetup from './config/passport.js';
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -45,16 +51,16 @@ const options = {
       },
     ],
   },
-  apis: ['src/routes/swaggerDocs.js'],
+  apis: [`${__dirname}/routes/swaggerDocs.js`],
 };
 
 const specs = swaggerJsDoc(options);
 //setting up swagger doc
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
-// app.get('/', (req, res) => {
-//   res.send("<button><a href='/auth/google'>Login With Google</a></button>")
-// });
+app.get('/', (req, res) => {
+  res.send("<button><a href='/auth/google'>Login With Google</a></button>")
+});
 
 passportSetup();
 app.use(session({

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from 'react';
+import { Link, useParams} from 'react-router-dom';
 import ServerContext from '../../../Components/Context/ServerContext';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 // import { RiArrowUpLine } from 'react-icons/ri';
@@ -12,26 +12,35 @@ import red from '../assets/red.png';
 import bell from '../assets/bell.png';
 
 function AvailabilityNotification() {
-	const { getServers, servers } = useContext(ServerContext);
-	const params = useParams();
+	// const { getServers, servers } = useContext(ServerContext);
+	const { serverNotifications } = useContext(ServerContext);
+	const [exactServer, setExactServer] = useState({});
+	const [simpleNotification, setSimpleNotification] = useState([]);
+	const [availabilityNotification, setAvailabilityNotification] = useState([])
+	// const [readMore, setReadMore] = useState(false)
+	const { id } = useParams();
+
+	const getServer = (code) => {
+		const localData = localStorage.getItem('servers');
+		const data = localData ? JSON.parse(localData) : [];
+		const theServer = data.find((server) => server.id === code);
+		setExactServer(theServer);
+	};
 
 	useEffect(() => {
-		getServers();
-	}, [servers]);
-
-	const currentServer = servers.filter(
-		(server) => server.serverId === params.serverId
-	);
+		getServer(id);
+		setSimpleNotification(serverNotifications);
+		setAvailabilityNotification([])
+	}, []);
 	// const { deviceId, id, ipAddress, name, notification, updated_at } =
 	// 	currentServer[0];
-	const { id, ipAddress, name } = currentServer[0];
 	return (
 		<div>
 			<Sidenav />
 
 			<section className={styles.main}>
 				<div className={styles.container}>
-					<ServerInfo key={id} ipAddress={ipAddress} name={name} />
+					<ServerInfo key={exactServer.id} ipAddress={exactServer.ipAddress} name={exactServer.name} />
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
 							{' '}
@@ -49,7 +58,7 @@ function AvailabilityNotification() {
 
 					<div className={styles.contain}>
 						<div className={styles.wrapp}>
-							<p className={styles.endpoint}>Endpoint:</p>
+							<p className={styles.endpoint}>Address:</p>
 							<p className={styles.point}>my-apache-server/12.13.12.14</p>
 						</div>
 
@@ -57,11 +66,11 @@ function AvailabilityNotification() {
 					</div>
 
 					<div className={styles.wrappe}>
-						<Link to="/simpleNotification">
+						<Link to={`/server/${id}/notification/simpleNotification`}>
 							{' '}
 							<div className={styles.card1}>
 								<div>
-									<div className={styles.bell}>8</div>
+									<div className={styles.bell}>{simpleNotification.length}</div>
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Simple Notifications</p>
@@ -73,7 +82,7 @@ function AvailabilityNotification() {
 
 						<div className={styles.card2}>
 							<div>
-								<div className={styles.belly}>0</div>
+								<div className={styles.belly}>{availabilityNotification.length}</div>
 								<img src={bell} alt="" />
 							</div>
 							<p className={styles.noti}>Availability notifications</p>
@@ -110,7 +119,6 @@ function AvailabilityNotification() {
 						</div>
 					</div>
 				</div>
-				<Outlet context={[currentServer[0]]} />
 			</section>
 		</div>
 	);
