@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 
 // Creating an app wide state store using the context API
 export const UserContext = React.createContext({
+  isLoggedIn: false,
   user: {},
   addUserHandler: () => {},
 });
@@ -11,15 +12,22 @@ export const UserContext = React.createContext({
 const UserContextProvider = (props) => {
   // Managing states
   const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Functions to updates states. useCallback ensures that the functions are memoized
   const addUserHandler = useCallback((data) => {
     setUser(data);
+    if (data.message === 'Logged in Successfully') {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }, []);
 
   // Data that is available in app wide state
   const data = {
     user,
+    isLoggedIn,
     addUserHandler,
   };
 

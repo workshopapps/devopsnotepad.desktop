@@ -12,7 +12,7 @@ import useFetch from '../../hooks/useFetch';
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const { user, addUserHandler } = useContext(UserContext);
+  const { isLoggedIn, addUserHandler } = useContext(UserContext);
 
   useEffect(() => {
     // Sticky navigation
@@ -64,7 +64,7 @@ const Navigation = () => {
 
             <div className={styles.right}>
               <div className={styles.navAuthBtn}>
-                {user?.message === 'Logged in Successfully' ? (
+                {isLoggedIn ? (
                   <Link
                     className={styles.login_link}
                     to='/login'
