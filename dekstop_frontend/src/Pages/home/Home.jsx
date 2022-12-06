@@ -43,10 +43,10 @@ function Home() {
 		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
 
-			{!auth && loading && (
+			{loading && (
 				<div className={style.loading}>Loading Servers...</div>
 			)}
-			{!auth && servers && (
+			{servers && (
 				<div className={style.container}>
 					{servers.length > 0 && (
 						<div className={style.search}>
@@ -71,8 +71,8 @@ function Home() {
 				</div>
 			)}
 
-			{(!auth && !servers) ||
-				(servers.length === 0 && (
+			{!servers ||
+				servers.length === 0 && (
 					<div className={style.no_server}>
 						<Link to="/add-server">
 							<figure>
@@ -85,7 +85,7 @@ function Home() {
 							<p>You do not have any Servers yet.</p>
 						</div>
 					</div>
-				))}
+				)}
 
 			{auth && <Auth closeAuth={closeAuth} />}
 		</div>
