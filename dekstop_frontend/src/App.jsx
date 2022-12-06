@@ -45,12 +45,12 @@ function App() {
 					<Route exact path="/serverDashBoard" element={<ServerDashBoard />} />
 					<Route
 						exact
-						path="/simpleNotification"
+						path="/server/:id/notification/simpleNotification"
 						element={<SimpleNotification />}
 					/>
 					<Route
 						exact
-						path="/availabilityNotification"
+						path="/server/:id/notification/availabilityNotification"
 						element={<AvailabilityNotification />}
 					/>
 				</Routes>
