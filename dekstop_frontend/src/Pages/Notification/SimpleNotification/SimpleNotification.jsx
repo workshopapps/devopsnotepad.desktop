@@ -1,5 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+// import * as dayjs from 'dayjs'
+// import relativeTime from 'dayjs/plugin/relativeTime.js';
 // import { RiArrowUpLine } from 'react-icons/ri';
 import ServerContext from '../../../Components/Context/ServerContext';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
@@ -12,26 +14,36 @@ import green from '../assets/green.png';
 import bell from '../assets/bell.png';
 
 function SimpleNotification() {
-	const { getServers, servers } = useContext(ServerContext);
-	const params = useParams();
+	// const { getServers, servers } = useContext(ServerContext);
+	const { serverNotifications } = useContext(ServerContext);
+	const [exactServer, setExactServer] = useState({});
+	const [simpleNotification, setSimpleNotification] = useState([]);
+	// const [readMore, setReadMore] = useState(false)
+	const { id } = useParams();
+
+	const getServer = (code) => {
+		const localData = localStorage.getItem('servers');
+		const data = localData ? JSON.parse(localData) : [];
+		const theServer = data.find((server) => server.id === code);
+		setExactServer(theServer);
+	};
 
 	useEffect(() => {
-		getServers();
-	}, [servers]);
+		getServer(id);
+		setSimpleNotification(serverNotifications);
+	}, []);
 
-	const currentServer = servers.filter(
-		(server) => server.serverId === params.serverId
-	);
-	// const { deviceId, id, ipAddress, name, notification, updated_at } =
-	// 	currentServer[0];
-	const { id, ipAddress, name } = currentServer[0];
 	return (
 		<div>
 			<Sidenav />
 
 			<section className={styles.main}>
 				<div className={styles.container}>
-					<ServerInfo key={id} ipAddress={ipAddress} name={name} />
+					<ServerInfo
+						key={exactServer.id}
+						ipAddress={exactServer.ipAddress}
+						name={exactServer.name}
+					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
 							{' '}
@@ -49,7 +61,7 @@ function SimpleNotification() {
 
 					<div className={styles.contain}>
 						<div className={styles.wrapp}>
-							<p className={styles.endpoint}>Endpoint:</p>
+							<p className={styles.endpoint}>Address:</p>
 							<p className={styles.point}>my-apache-server/12.13.12.14</p>
 						</div>
 
@@ -59,7 +71,7 @@ function SimpleNotification() {
 					<div className={styles.wrappe}>
 						<div className={styles.card1}>
 							<div>
-								<div className={styles.bell}>8</div>
+								<div className={styles.bell}>{simpleNotification.length}</div>
 								<img src={bell} alt="" />
 							</div>
 							<p className={styles.noti}>Simple Notifications</p>
@@ -68,7 +80,7 @@ function SimpleNotification() {
 							</p>
 						</div>
 
-						<Link to="/availabilityNotification">
+						<Link to={`/server/${id}/notification/availabilityNotification`}>
 							{' '}
 							<div className={styles.card2}>
 								<div>
@@ -89,28 +101,32 @@ function SimpleNotification() {
 						<img src={Button} alt="" style={{ cursor: 'pointer' }} />{' '}
 					</Link>
 
-					<div className={styles.refill}>
-						<img src={Refill} alt="" />
-						<p className={styles.para}>
-							You have no notifications yet. Activity <br /> from your server
-							wil be displayed here.
-						</p>
-					</div>
-
-					<div style={{ display: 'none' }}>
-						<h1 style={{ textAlign: 'start' }}>Today</h1>
-
-						<div className={styles.row}>
-							<img src={green} alt="" />
-							<p style={{ paddingLeft: '10px' }}>
-								The software installation on HNG server was successful
+					{simpleNotification.length === 0 && (
+						<div className={styles.refill}>
+							<img src={Refill} alt="" />
+							<p className={styles.para}>
+								You have no notifications yet. Activity <br /> from your server
+								wil be displayed here.
 							</p>
-
-							<p>5mins ago</p>
 						</div>
-					</div>
+					)}
+
+					{simpleNotification.map((notification) => (
+						<div key={notification.id} style={{ display: 'unset' }}>
+							{/* <h1 style={{ textAlign: 'start' }}>Today</h1> */}
+
+							<div className={styles.row}>
+								
+									<img src={green} alt="" style={{alignSelf: 'center'}} />
+								
+								<p className={styles.pnote}>
+									{notification.logs.substring(0, 151)}
+								</p>
+								<p>{notification.created_at}</p>
+							</div>
+						</div>
+					))}
 				</div>
-				<Outlet context={[currentServer[0]]} />
 			</section>
 		</div>
 	);
