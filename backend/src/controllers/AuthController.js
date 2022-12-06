@@ -141,7 +141,6 @@ export default class AuthController {
     try {
       // Validate with Joi
       const updateUserPassword = Joi.object({
-        id:Joi.string().required(),
         oldPassword: Joi.string().required(),
         newPassword:new PasswordComplexity({
           min: 8,
