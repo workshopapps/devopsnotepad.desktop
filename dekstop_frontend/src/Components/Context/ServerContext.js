@@ -9,6 +9,7 @@ export function ServerProvider({ children }) {
 	const [loading, setLoading] = useState(true);
 	const [servers, setServers] = useState([]);
 	const [success, setSuccess] = useState(false);
+	const [serverNotifications, setServerNotifications] = useState({});
 	// const [error, setError] = useState('');
 
 	// Get all servers
@@ -18,6 +19,12 @@ export function ServerProvider({ children }) {
 			: [];
 		setServers(data);
 		setLoading(false);
+	}
+
+	// change the state of serverNotifications
+
+	const handleServerNotifications =(value)=>{
+		setServerNotifications(value)
 	}
 
 	// Create new server
@@ -35,7 +42,6 @@ export function ServerProvider({ children }) {
 		localStorage.setItem('servers', JSON.stringify(data));
 		setServers(data);
 		setSuccess(true);
-
 		setLoading(false);
 	}
 
@@ -53,20 +59,22 @@ export function ServerProvider({ children }) {
 		// currentServers.updatedDate =
 		// console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
-		setServers(currentServers);
 		setLoading(false);
 		setSuccess(true);
+		useEffect(() => {
+			setServers(currentServers);
+		});
 	}
 
 	// Delete Server
 	async function deleteServer(currentId) {
 		setLoading(true);
 		const currentServers = servers.filter((i) => i.id !== currentId);
-		// console.log(currentServers, currentServerId);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
-		setServers(currentServers);
+		useEffect(() => {
+			setServers(currentServers);
+		}, [servers]);
 		setLoading(false);
-		setSuccess(true);
 	}
 
 	useEffect(() => {
@@ -79,13 +87,15 @@ export function ServerProvider({ children }) {
 			// error,
 			loading,
 			success,
+			serverNotifications,
 			addServer,
 			editServer,
 			deleteServer,
 			getServers,
 			setSuccess,
+			handleServerNotifications,
 		}),
-		[loading, success]
+		[loading, success, serverNotifications]
 	);
 
 	return (
