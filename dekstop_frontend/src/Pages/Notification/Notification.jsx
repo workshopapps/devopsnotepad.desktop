@@ -51,7 +51,6 @@ function Notification() {
 			}
 		} catch (error) {
 			// eslint-disable-next-line
-			console.log(error)
 			alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
 		}
 		setLoading(false);
