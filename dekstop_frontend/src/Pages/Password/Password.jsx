@@ -12,7 +12,6 @@ function Password() {
 		return localData ? JSON.parse(localData) : [];
 	});
 	
-
 	const [showCreateform, setShowCreateform] = useState(null);
 	
 	// methods and functions

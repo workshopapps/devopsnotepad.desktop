@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
 
-function Auth ({ closeAuth }) {
+function Auth({ closeAuth }) {
 	const [input, setInput] = useState('');
 
 	// Proptype declaration
@@ -17,6 +17,7 @@ function Auth ({ closeAuth }) {
 		const globalPassword = localStorage.getItem('userPassword');
 		console.log(globalPassword);
 		if (input === globalPassword) {
+			sessionStorage.setItem('isAuthenticated', true);
 			closeAuth();
 		}
 		if (input !== globalPassword) {
