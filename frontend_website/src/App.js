@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react";
 import React, { useContext } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
@@ -39,8 +40,10 @@ import classes from './App.module.css';
 import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
 import ServerDashBoard from './Pages/Server/ServerDashboard/ServerDashboard';
 import AddServer from './Pages/Server/AddServer/AddServer';
-import Notification from './Pages/Server/Notification/Notification';
+// import Notification from './Pages/Server/Notification/Notification';
 import { UserContext } from './store/UserContext';
+import Server from './Pages/Server/Server';
+import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -144,21 +147,17 @@ function App() {
             exact
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <ServerDashBoard />
+                <Server />
               </ProtectedRoute>
             }
           />
           <Route exact path='/add-server' element={<AddServer />} />
 
-          <Route path='/server/:id' element={<ServerDashBoard />}>
-            <Route path='notification' element={<Notification />}>
-              <Route
-                exact
-                path='simpleNotifications'
-                element={<div>Simple Notifications</div>}
-              />
-            </Route>
-          </Route>
+          <Route path='/server/:id' element={<ServerDashBoard />} />
+          <Route
+            path='/server/:id/simple_notifications'
+            element={<SimpleNotifications />}
+          />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
@@ -168,4 +167,4 @@ function App() {
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);

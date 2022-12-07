@@ -9,6 +9,7 @@ export function ServerProvider({ children }) {
 	const [loading, setLoading] = useState(true);
 	const [servers, setServers] = useState([]);
 	const [success, setSuccess] = useState(false);
+	const [serverNotifications, setServerNotifications] = useState({});
 	// const [error, setError] = useState('');
 
 	// Get all servers
@@ -19,6 +20,12 @@ export function ServerProvider({ children }) {
 		setServers(data);
 		setLoading(false);
 	}
+
+	// change the state of serverNotifications
+
+	const handleServerNotifications = (value) => {
+		setServerNotifications(value);
+	};
 
 	// Create new server
 	async function addServer(server) {
@@ -80,13 +87,15 @@ export function ServerProvider({ children }) {
 			// error,
 			loading,
 			success,
+			serverNotifications,
 			addServer,
 			editServer,
 			deleteServer,
 			getServers,
 			setSuccess,
+			handleServerNotifications,
 		}),
-		[loading, success]
+		[loading, success, serverNotifications]
 	);
 
 	return (
