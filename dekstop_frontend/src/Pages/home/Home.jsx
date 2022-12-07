@@ -12,17 +12,19 @@ import Auth from '../../Components/GlobalPassword/Auth';
 function Home() {
 	const { servers, loading, getServers } = useContext(ServerContext);
 	const [query, setQuery] = useState('');
-	const [auth, setAuth] = useState(true);
+	const [auth, setAuth] = useState(false);
 	const navigate = useNavigate();
 
 	// Initiate Onboarding
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
 	useEffect(() => {
 		getServers();
-		const isNewUser = localStorage.getItem('isNewUser');
+		const isNewUser = localStorage.getItem('isNewUser') || false;
 		if (!isNewUser) {
 			navigate('/onboarding');
 		}
+		const isAuthenticated = sessionStorage.getItem('isAuthenticated') || false;
+		if (!isAuthenticated) setAuth(true);
 	});
 
 	// function to close authentication process
@@ -43,10 +45,8 @@ function Home() {
 		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
 
-			{!auth && loading && (
-				<div className={style.loading}>Loading Servers...</div>
-			)}
-			{!auth && servers && (
+			{loading && <div className={style.loading}>Loading Servers...</div>}
+			{servers && (
 				<div className={style.container}>
 					{servers.length > 0 && (
 						<div className={style.search}>
@@ -71,7 +71,7 @@ function Home() {
 				</div>
 			)}
 
-			{(!auth && !servers) ||
+			{!servers ||
 				(servers.length === 0 && (
 					<div className={style.no_server}>
 						<Link to="/add-server">

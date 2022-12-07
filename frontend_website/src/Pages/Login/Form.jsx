@@ -95,7 +95,8 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='text'
+        type='password'
+        autoComplete='current-password'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
         placeholder='MinLength(8), a uppercase, a lowercase, and a number.'
         value={form.password}
