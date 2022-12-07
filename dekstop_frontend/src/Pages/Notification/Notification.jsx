@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import dayjs from 'dayjs'
-import relativeTime from "dayjs/plugin/relativeTime";
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import styles from './Notification.module.css';
 import ServerContext from '../../Components/Context/ServerContext';
 import copy from './assets/copy.png';
@@ -22,7 +22,6 @@ function Notification() {
 	dayjs.extend(relativeTime);
 
 	// fetch Request
-
 	const fetchServerNotifications = async (list, Id) => {
 		setLoading(true);
 		try {
@@ -35,25 +34,27 @@ function Notification() {
 			if (res.ok) {
 				const data = await res.json();
 				const { notifications } = data;
-				// console.log(notifications);
-				const newNotification =
-					notifications.map((c) => ({
-						id: c.id,
-						serverId: c.serverId,
-						logs: c.logs,
-						created_at: dayjs(c.created_at).fromNow(),
-						updated_at: c.updated_at,
-					}))
-				;
-				// console.log(newNotification)
-				handleServerNotifications(newNotification)
-				// handleServerNotifications(notifications);
+
+				const newNotification = notifications.map((c) => ({
+					id: c.id,
+					serverId: c.serverId,
+					logs: c.logs,
+					created_at: dayjs(c.created_at).fromNow(),
+					updated_at: c.updated_at,
+				}));
+
+				localStorage.setItem(`${id}notif`, JSON.stringify(newNotification));
+				handleServerNotifications(() => {
+					const localData = localStorage.getItem(`${id}notif`);
+					return localData ? JSON.parse(localData) : [];
+				});
 			}
 		} catch (error) {
-			// console.log(error);
+			// eslint-disable-next-line
+			console.log(error)
+			alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
 		}
 		setLoading(false);
-		// console.log(serverNotifications)
 	};
 
 	useEffect(() => {
@@ -66,11 +67,9 @@ function Notification() {
 
 			{!loading && (
 				<section className={styles.main}>
-					{/* <ServerInfo /> */}
-
 					<div className={styles.contain}>
 						<div className={styles.wrapp}>
-							<p className={styles.endpoint}>Endpoint:</p>
+							<p className={styles.endpoint}>Address:</p>
 							<p className={styles.point}>my-apache-server/12.13.12.14</p>
 						</div>
 
