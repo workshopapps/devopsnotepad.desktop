@@ -130,7 +130,7 @@ const Form = () => {
         type='email'
         invalid={!form.emailIsValid && form.emailIsFocus ? 'invalid' : ''}
         placeholder='example@email.com'
-        value={form.name}
+        value={form.email}
         onChange={emailOnChangeHandler}
         onBlur={emailOnBlurHandler}
       />
@@ -142,10 +142,10 @@ const Form = () => {
       <Input
         id='password'
         label='Password'
-        type='text'
+        type='password'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
         placeholder='Must be 7 characters'
-        value={form.email}
+        value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
       />
