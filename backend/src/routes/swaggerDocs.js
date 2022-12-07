@@ -539,6 +539,41 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
+ * /api/server/{serverId}/availability:
+ *     post:
+ *         summary: Creates a single availability notification for an endpoint
+ *         tags:
+ *             - Availablity Notification
+ *         parameters:
+ *             - in: path
+ *               name: serverId
+ *               schema:
+ *                    type: string
+ *                    required: true
+ * 
+ *         responses:
+ *             '200':
+ *                description: success
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '404':
+ *                 description: An error occured while creating new logs, server do not exist
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
  * /api/server/{serverId}/notifications/:
  *     get:
  *         summary: Fetches all notifications for a single server

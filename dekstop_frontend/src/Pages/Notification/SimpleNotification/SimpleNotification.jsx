@@ -1,9 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-// import * as dayjs from 'dayjs'
-// import relativeTime from 'dayjs/plugin/relativeTime.js';
-// import { RiArrowUpLine } from 'react-icons/ri';
-import ServerContext from '../../../Components/Context/ServerContext';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
 import styles from './SimpleNotification.module.css';
@@ -12,13 +8,11 @@ import Button from '../assets/Button.png';
 import Refill from '../assets/Refill.png';
 import green from '../assets/green.png';
 import bell from '../assets/bell.png';
+import Content from './SimpleContent';
 
 function SimpleNotification() {
-	// const { getServers, servers } = useContext(ServerContext);
-	const { serverNotifications } = useContext(ServerContext);
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
-	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
 
 	const getServer = (code) => {
@@ -30,7 +24,10 @@ function SimpleNotification() {
 
 	useEffect(() => {
 		getServer(id);
-		setSimpleNotification(serverNotifications);
+		setSimpleNotification(() => {
+			const localData = localStorage.getItem(`${id}notif`);
+			return localData ? JSON.parse(localData) : [];
+		});
 	}, []);
 
 	return (
@@ -113,16 +110,12 @@ function SimpleNotification() {
 
 					{simpleNotification.map((notification) => (
 						<div key={notification.id} style={{ display: 'unset' }}>
-							{/* <h1 style={{ textAlign: 'start' }}>Today</h1> */}
-
 							<div className={styles.row}>
-								
-									<img src={green} alt="" style={{alignSelf: 'center'}} />
-								
-								<p className={styles.pnote}>
-									{notification.logs.substring(0, 151)}
-								</p>
-								<p>{notification.created_at}</p>
+								<img src={green} alt="" style={{ alignSelf: 'center' }} />
+
+								<Content notes={notification.logs}/>
+
+								<p style={{fontSize: '14px'}}>{notification.created_at}</p>
 							</div>
 						</div>
 					))}
