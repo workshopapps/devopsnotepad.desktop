@@ -6,7 +6,7 @@ export default class ResetTokenRepo {
     };
 
     static getToken = async (token, userId) => {
-        return connection("tokens").where("userId", userId).first();
+        return connection("tokens").where("userId", userId).andWhere("token", token).first();
     };
 
     static deleteExpiredTokens = async () => {

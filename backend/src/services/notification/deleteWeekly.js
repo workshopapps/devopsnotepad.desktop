@@ -8,11 +8,10 @@ export default async function deleteWeekly() {
     notifications = await NotificationRepo.deleteWeeklyNotifications();
    
     if (!notifications) throw new ServiceError("An error occured while fetching notifications");
-    // console.log(notifications)
     return {
         notifications,
     };
 }
 
 
-cron.schedule('*/1 * * * * *', deleteWeekly);
+cron.schedule('0 0 * * *', deleteWeekly);

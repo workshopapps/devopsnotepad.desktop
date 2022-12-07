@@ -118,7 +118,7 @@ export default class PushNotification {
     try {
       const notifications = await readDataPromise();
 
-      console.log(notifications);
+      // console.log(notifications);
 
       return notifications;
     } catch (error) {
