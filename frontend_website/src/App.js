@@ -34,6 +34,9 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Notification from './Pages/Notification/Notification';
+import AvailabilityNotification from './Pages/Notification/AvailabilityNotification/AvailabilityNotification'
+import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification'
 
 import classes from './App.module.css';
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
@@ -83,6 +86,9 @@ function App() {
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/podcasts' exact element={<PodCast />} />
           <Route path='/prices' exact element={<Prices />} />
+          <Route path='/notification' exact element={<Notification />} />
+          <Route path='/notification/availabilityNotification' exact element={<AvailabilityNotification />} />
+          <Route path='simpleNotification' exact element={<SimpleNotification />} />
           <Route
             path='/prices/payment/:state/:id'
             exact
