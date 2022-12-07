@@ -227,6 +227,8 @@ export default class AuthController {
       if (updateUserPassword.validate(req.body).error) {
         return res.status(400).json(updateUserPassword.validate(req.body).error.details);
       }
+
+      if (!req.body.newPassword) return res.status(400).send(" New Password is required..");
       const { id } = req.session.user;
 
       // destruct request body
