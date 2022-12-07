@@ -7,7 +7,7 @@ const GoogleStrategy = Passport.Strategy;
 
 
 export default () => {
-    console.log(config)
+    // console.log(config)
   passport.serializeUser((user, done) => {
     done(null, user);
   });
