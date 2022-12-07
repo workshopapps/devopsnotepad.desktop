@@ -5217,6 +5217,11 @@
   dependencies:
     "mimic-fn" "^4.0.0"
 
+"openapi-types@>=7":
+  "integrity" "sha512-GuTo7FyZjOIWVhIhQSWJVaws6A82sWIGyQogxxYBYKZ0NBdyP2CYSIgOwFfSB+UVoPExk/YzFpyYitHS8KVZtA=="
+  "resolved" "https://registry.npmjs.org/openapi-types/-/openapi-types-12.0.2.tgz"
+  "version" "12.0.2"
+
 "optionator@^0.8.1":
   "integrity" "sha512-+IW9pACdk3XWmmTXG8m3upGUJst5XRGzxMRjXzAuJ1XnIFNvfhjjIuYkDvysnPQ7qzqVzLt78BCruntqRhWQbA=="
   "resolved" "https://registry.npmjs.org/optionator/-/optionator-0.8.3.tgz"
