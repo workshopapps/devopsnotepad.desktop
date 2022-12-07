@@ -23,9 +23,9 @@ export function ServerProvider({ children }) {
 
 	// change the state of serverNotifications
 
-	const handleServerNotifications =(value)=>{
-		setServerNotifications(value)
-	}
+	const handleServerNotifications = (value) => {
+		setServerNotifications(value);
+	};
 
 	// Create new server
 	async function addServer(server) {
