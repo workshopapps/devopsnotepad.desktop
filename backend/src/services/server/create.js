@@ -5,26 +5,28 @@ import PushNotification from './pushNotificationForServer.js';
 import config from '../../config/index.js';
 
 export default async function create(params, userId) {
-  const { name, ipAddress} = params;
-  
+  const { name, ipAddress } = params;
+
   const existingServer = await ServerRepo.getServerByName(name, userId);
   if (existingServer) throw new ServiceError('Server already exists');
 
-  await ServerRepo.create({...params, userId});
+  await ServerRepo.create({ ...params, userId });
 
   const server = await ServerRepo.getServerByName(name, userId);
 
   const isOnline = await check_ip_status(ipAddress);
 
+  const data = { server, isOnline };
+
   await PushNotification.saveServerToFirebase(data);
 
-  const notificationEndpoint = `${config.app.url}/${server.id}/notifications`;
-  const availabilityEndpoint = `${config.app.url}/${server.id}/availability`;
+  const notificationEndpoint = `${config.app.url}/api/server/${server.id}/notifications`;
+  const availabilityEndpoint = `${config.app.url}/api/server/${server.id}/availability`;
 
   return {
     server,
     isOnline,
     notificationEndpoint,
-    availabilityEndpoint
+    availabilityEndpoint,
   };
 }
