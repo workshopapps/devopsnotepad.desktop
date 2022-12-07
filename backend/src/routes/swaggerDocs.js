@@ -515,6 +515,19 @@
  *               schema:
  *                    type: string
  *                    required: true
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The notification logs for server
  * 
  *         responses:
  *             '200':
@@ -550,6 +563,20 @@
  *               schema:
  *                    type: string
  *                    required: true
+ * 
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The availability logs for endpoints
  * 
  *         responses:
  *             '200':
