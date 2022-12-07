@@ -22,9 +22,18 @@ function CreateForm({ closeShowForm, addPassword }) {
 			alert('Password does not match');
 		}
 
+		if (input.NewPassword.length === 0){
+			alert('Password cannot be blank')
+		}
+
+		if(input.ToolName.length === 0){
+			alert('Tool Name cannot be blank')
+		}
+
 		if (
 			input.ToolName.length > 0 &&
-			input.NewPassword === input.ConfirmPassword
+			input.NewPassword === input.ConfirmPassword &&
+			input.NewPassword.length > 0
 		) {
 			addPassword({
 				name: input.ToolName,
