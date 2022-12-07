@@ -1,14 +1,19 @@
-import React, { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 import ServerContext from '../../../Component/Context/ServerContext';
 
 function Notification() {
+  const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
   const params = useParams();
   const serverId = servers.find((server) => server.id === params.id);
+
+  const copyToClipboard = (e) => {
+    navigator.clipboard.writeText(serverId.textToCopy());
+  };
 
   return (
     <div>
@@ -16,14 +21,24 @@ function Notification() {
         <div className={styles.contain}>
           <div className={styles.wrapp}>
             <p className={styles.endpoint}>UUID:</p>
-            <p className={styles.point}>{serverId.id}</p>
+            <p
+              className={styles.point}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              {isOpen ? `${serverId.id}` : '******-******-******'}
+            </p>
           </div>
 
-          <img src={copy} alt='' style={{ cursor: 'pointer' }} />
+          <img
+            src={copy}
+            alt=''
+            className={styles.copy}
+            onClick={copyToClipboard}
+          />
         </div>
 
         <div className={styles.wrappe}>
-          <Link to='/simpleNotifications'>
+          <Link to='simpleNotifications'>
             <div className={styles.card}>
               <div>
                 <div className={styles.bell}>8</div>
@@ -51,6 +66,7 @@ function Notification() {
           </Link>
         </div>
       </section>
+      <Outlet />
     </div>
   );
 }

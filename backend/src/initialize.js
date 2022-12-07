@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import * as Sentry from "@sentry/node";
+import * as Tracing from "@sentry/tracing";
 import helmet from "helmet";
 import morgan from "morgan";
 import passport from "passport";
@@ -15,11 +17,36 @@ import passportSetup from "./config/passport.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
+
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+Sentry.init({
+    dsn: "https://2e6682078ed644e291c89ead3ac7a40c@o4504281385861120.ingest.sentry.io/4504282688520193",
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+});
+
+const transaction = Sentry.startTransaction({
+    op: "test",
+    name: "My First Test Transaction",
+});
+
+setTimeout(() => {
+    try {
+        foo();
+    } catch (e) {
+        Sentry.captureException(e);
+    } finally {
+        transaction.finish();
+    }
+}, 99);
 
 //options object for swaggerjs
 const options = {
