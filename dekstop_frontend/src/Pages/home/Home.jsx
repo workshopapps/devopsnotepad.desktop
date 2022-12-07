@@ -12,7 +12,7 @@ import Auth from '../../Components/GlobalPassword/Auth';
 function Home() {
 	const { servers, loading, getServers } = useContext(ServerContext);
 	const [query, setQuery] = useState('');
-	const [auth, setAuth] = useState(true);
+	const [auth, setAuth] = useState(false);
 	const navigate = useNavigate();
 
 	// Initiate Onboarding
@@ -23,6 +23,8 @@ function Home() {
 		if (!isNewUser) {
 			navigate('/onboarding');
 		}
+		const isAuthenticated = sessionStorage.getItem('isAuthenticated');
+		if (!isAuthenticated) setAuth(true);
 	});
 
 	// function to close authentication process
@@ -43,9 +45,7 @@ function Home() {
 		<div id="home" className={style.HomeWrapper}>
 			<Sidenav />
 
-			{loading && (
-				<div className={style.loading}>Loading Servers...</div>
-			)}
+			{loading && <div className={style.loading}>Loading Servers...</div>}
 			{servers && (
 				<div className={style.container}>
 					{servers.length > 0 && (
@@ -72,7 +72,7 @@ function Home() {
 			)}
 
 			{!servers ||
-				servers.length === 0 && (
+				(servers.length === 0 && (
 					<div className={style.no_server}>
 						<Link to="/add-server">
 							<figure>
@@ -85,7 +85,7 @@ function Home() {
 							<p>You do not have any Servers yet.</p>
 						</div>
 					</div>
-				)}
+				))}
 
 			{auth && <Auth closeAuth={closeAuth} />}
 		</div>
