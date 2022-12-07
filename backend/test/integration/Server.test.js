@@ -74,7 +74,7 @@ describe('Server', () => {
   it('Should confirm if server was deleted successfully', async () => {
     const res = await request.get('/server/' + serverId).send();
     expect(res.status).to.equal(404);
-    console.log(res.body);
+    // console.log(res.body);
   });
 
   // it ("Should subscribe for push notification for a server", async () => {
