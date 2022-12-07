@@ -29,7 +29,7 @@ const Login = () => {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);
       localStorage.setItem('loggedInUser', userObj);
-      navigate('/');
+      navigate('/server');
     } else {
       console.log(responseObj, 'error');
     }

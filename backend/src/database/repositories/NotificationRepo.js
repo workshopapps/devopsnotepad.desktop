@@ -28,7 +28,7 @@ export default class NotificationRepo {
     static deleteWeeklyNotifications = async () => {
         const dbQuery = connection("notifications")
             .where(connection.raw(`DATEDIFF(CURDATE(), DATE(created_at)) > 7`))
-            .del();
+            // .del();
 
         return dbQuery;
     }
