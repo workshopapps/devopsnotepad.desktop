@@ -117,8 +117,6 @@ function SimpleNotification() {
 
 					{simpleNotification.map((notification) => (
 						<div key={notification.id} style={{ display: 'unset' }}>
-							{/* <h1 style={{ textAlign: 'start' }}>Today</h1> */}
-
 							<div className={styles.row}>
 								<img src={green} alt="" style={{ alignSelf: 'center' }} />
 
