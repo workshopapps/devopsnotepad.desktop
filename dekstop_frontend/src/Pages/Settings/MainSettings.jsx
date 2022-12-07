@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 
 import { Link } from 'react-router-dom';
-import { Security, AppSettings, Support } from './data';
+import { Security, Support } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
 
@@ -51,7 +51,7 @@ function Settings() {
 				</div>
 			))} */}
 
-				{AppSettings.map((appsettings) => (
+				{/* {AppSettings.map((appsettings) => (
 					<div key={appsettings.title}>
 						<small className={style.smallHead}>{appsettings.title}</small>
 
@@ -65,30 +65,34 @@ function Settings() {
 
 						<span className={style.border_bottom}> </span>
 					</div>
-				))}
+				))} */}
 
 				{Security.map((security) => (
-					<div key={security.title} className={style.border_top}>
+					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
-						<div className={style.account}>
-							<div className={style.accountProfile}>
-								{security.icon}
-								<Link to={security.slug}>{security.func}</Link>
+						
+							<div className={style.account}>
+								<div className={style.accountProfile}>
+								<Link to={security.modal}>
+									{security.icon}
+									</Link>
+									{security.func}
+								</div>
+								{/* {security.iconright} */}
 							</div>
-							{security.iconright}
-						</div>
+						
 					</div>
 				))}
 
 				{Support.map((support) => (
-					<div key={support.items}>
+					<div key={support.title2}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
 								<Link to={items.slug}>
 									<li key={items.list}>
-										<Link to={items.slug}>{items.list}</Link>
-										<Link to={items.slug}>{items.iconright}</Link>
+										{items.list}
+										<a href={items.slug}>{items.iconright}</a>
 									</li>
 								</Link>
 							))}
@@ -101,7 +105,3 @@ function Settings() {
 }
 
 export default Settings;
-
-
-	
-

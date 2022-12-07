@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Link } from 'react-router-dom';
-import Sidenav from '../../Components/SideNav/SideNav';
-import notified from './assets/999.png';
 import Vecctor from './assets/Vecctor.png';
 import Vectoor from './assets/Vectoor.png';
 import Vectorc from './assets/Vectorc.png';
@@ -12,7 +10,6 @@ import Vectorr from './assets/Vectorr.png';
 import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
-
 
 // Modal css
 const style = {
@@ -29,136 +26,132 @@ const style = {
 	boxShadow: '0px 4px 29px rgba(0, 0, 0, 0.12)',
 	p: 4,
 };
-
 function Note() {
 
+	const {id} = useParams()
+
 	// State
-	const [formDisplay, setFormDisplay] = React.useState(false);
-	const [open, setOpen] = React.useState(false);
-	const [inputs, setInputs] = React.useState('');
+	const [open, setOpen] = useState(false);
+	const [note, setNote] = useState(localStorage.getItem(`${id}`));
+	const [inputs, setInputs] = useState(note);
+	const [bold, setBold] = useState(false);
+	const [saveMsg, setSaveMsg] = useState(false);
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
 	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
-	const handleFormShow = () => {
-		setFormDisplay((prev) => !prev);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		localStorage.setItem(`${id}`, inputs);
+		setNote(localStorage.getItem('note'));
+		setInputs('');
+		setSaveMsg(true)
 	};
-	// styles
-	const styles = {
-		fontFamily: 'Manrope',
-		fontStyle: 'normal',
-		fontWeight: 700,
-		fontSize: '14px',
-		lineHeight: '24px',
-		color: '#202020',
-		borderBottom: '2px solid #111111',
+	const handleBold = () => setBold((prev) => !prev);
+	const deleteNote = () => {
+		localStorage.removeItem(`${id}`);
+		setNote('');
+		setOpen(false);
+		setSaveMsg(false)
 	};
+	const handleCancel = () => {
+		setOpen(false);
+	};
+
+	// Date
+	const date = new Date().getDate();
+	const hour = new Date().getHours();
+	const min = new Date().getMinutes();
+	const month = new Date().getMonth();
+	const startHere = 'Start note here...';
+	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
 		<div className={notesStyle.notesWrapper}>
-			<Sidenav />
 			<div className={notesStyle.notes}>
-				<h1 className={notesStyle.notesTitle}>HNG SERVER</h1>
 				<div className={notesStyle.notesContent}>
-					<div className={notesStyle.notesContentOne}>
-						<div className={notesStyle.notesContentOneDetails}>
-							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								End point:
-							</h2>
-							<p className={notesStyle.notesContentOneDetailsText}>
-								server-devops/18.20.31.10
-							</p>
-						</div>
-						<div className={notesStyle.notesContentOneDetails}>
-							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								IP Address:
-							</h2>
-							<p className={notesStyle.notesContentOneDetailsText}>
-								192.168.0.1
-							</p>
-						</div>
-						<div className={notesStyle.notesContentOneDetails}>
-							<h2 className={notesStyle.notesContentOneDetailsTitle}>
-								Server health:
-							</h2>
-							<button
-								className={notesStyle.notesContentOneDetailsText}
-								type="button"
-								id={notesStyle.notesContentOneDetailsBtn}
-							>
-								Excellent
-							</button>
-						</div>
-					</div>
 					<div className={notesStyle.notesContentTwo}>
-						<div className={notesStyle.notesContentwoBtns}>
-							<Link to="/note">
-								{' '}
-								<button
-									onClick={handleFormShow}
-									type="button"
-									className={notesStyle.notesContentwoBtn}
-									style={formDisplay ? styles : { color: '#6F6F6F' }}
-								>
-									Notes
-								</button>{' '}
-							</Link>
-							<button type="button" className={notesStyle.notesContentwoBtn}>
-								Passwords
-							</button>
-							<Link to="/notification">
-								<button type="button" className={notesStyle.notesContentwoBtn}>
-									Notifications
-								</button>
-								<img src={notified} alt="img" style={{ width: '20px' }} />{' '}
-							</Link>
-						</div>
-						{formDisplay ? (
-							<div className={notesStyle.notesFormDiv}>
-								<div className={notesStyle.notesFormIcons}>
-									<img
-										src={Vectorc}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectorr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectoor}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectorrr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vecctor}
-										alt="img"
-										id={notesStyle.deleteIcon}
-										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleOpen} onFocus={handleOpen}
-									/>
-								</div>
-								{
-									inputs.length > 0 ?
-								<p className={notesStyle.notesLastEdit} id={notesStyle.notesLastEdit}> 6:45pm, 15-11-22</p>:
-								<p className={notesStyle.notesLastEdit}>Last edit</p>
-								}
-								<form className={notesStyle.notesForm}>
-									<input
-										type="text"
-										placeholder="Start note here..."
-										className={notesStyle.notesFormInput}
-									onChange={handleChanges}
-									/>
-								</form>
+						<div className={notesStyle.notesFormDiv}>
+							<div className={notesStyle.notesFormIcons}>
+								<img
+									src={Vectorc}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleBold}
+									onFocus={handleBold}
+								/>
+								<img
+									src={Vectorr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectoor}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectorrr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vecctor}
+									alt="img"
+									id={notesStyle.deleteIcon}
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleOpen}
+									onFocus={handleOpen}
+								/>
 							</div>
-						) : null}
+							{inputs?.length > 0 ? (
+								<p
+									className={notesStyle.notesLastEdit}
+									id={notesStyle.notesLastEdit}
+								>
+									{hour}:{min}pm, {date}-{month}-22
+								</p>
+							) : (
+								<p className={notesStyle.notesLastEdit}>Last edit</p>
+							)}
+							{note ? (
+								<div className={notesStyle.noteTextDiv}>
+									<p
+										className={notesStyle.noteText}
+										style={bold ? boldStyle : {}}
+									>
+										{note}
+									</p>
+								</div>
+							) : (
+								<div>
+									{
+										saveMsg ?
+									<p>Note saved, successfully!</p> :
+									<p>{startHere}</p>
+									}
+									<form
+										className={notesStyle.notesForm}
+										onSubmit={handleSubmit}
+									>
+										<textarea
+											className={notesStyle.notesFormInput}
+											onChange={handleChanges}
+										/>
+										{
+											saveMsg ?
+											<button type="submit" className={notesStyle.notesSaveBtn}>
+											Edit Note
+										</button> :
+										<button type="submit" className={notesStyle.notesSaveBtn}>
+										Save Note
+									</button>
+										}
+										
+									</form>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -177,18 +170,26 @@ function Note() {
 								className={notesStyle.notesDeleteImg}
 							/>
 							<p className={notesStyle.notesDeleteNotification}>
-								Are you sure you want too delete notes? Notes deleted cannot be retrieved
+								Are you sure you want too delete notes? Notes deleted cannot be
+								retrieved
 							</p>
 							<div className={notesStyle.notesDeleteBtnDiv}>
 								<button
 									type="button"
 									className={notesStyle.notesDeleteBtn}
+									id={notesStyle.notesCancelBtn}
+									onMouseDownCapture={handleCancel}
+									onFocus={handleCancel}
 								>
 									Cancel
 								</button>
-								<button type="button" 
+								<button
+									type="button"
 									id={notesStyle.notesDeleteBtn}
-									className={notesStyle.notesDeleteBtn}>
+									className={notesStyle.notesDeleteBtn}
+									onMouseDownCapture={deleteNote}
+									onFocus={deleteNote}
+								>
 									Delete
 								</button>
 							</div>

@@ -23,7 +23,6 @@ function PasswordCard({ user, removePassword, editPassword }) {
 		editPassword: PropTypes.node.isRequired,
 	};
 
-
 	// Object Destructuring
 	const { name, password, id } = user;
 
@@ -32,13 +31,13 @@ function PasswordCard({ user, removePassword, editPassword }) {
 	const closeEditForm = useCallback(() => {
 		setShowEditForm(false);
 		setToggleOptionMenu(false);
-		document.body.style.overflow = "unset";
+		document.body.style.overflow = 'unset';
 	}, [showEditForm]);
 
-	const openShowEditForm=()=>{
-		setShowEditForm(true)
-		document.body.style.overflow = "hidden";
-	}
+	const openShowEditForm = () => {
+		setShowEditForm(true);
+		document.body.style.overflow = 'hidden';
+	};
 
 	const handleRemove = (value) =>
 		useCallback(() => {
@@ -66,14 +65,14 @@ function PasswordCard({ user, removePassword, editPassword }) {
 
 	const closeDeleteModal = useCallback(() => {
 		setShowDeleteModal(false);
-		setToggleOptionMenu(false)
-		document.body.style.overflow = "unset";
+		setToggleOptionMenu(false);
+		document.body.style.overflow = 'unset';
 	}, [showDeleteModal]);
 
-	const openDeleteModal =()=>{
+	const openDeleteModal = () => {
 		setShowDeleteModal(true);
-		document.body.style.overflow = "hidden";
-	}
+		document.body.style.overflow = 'hidden';
+	};
 
 	useEffect(() => {
 		setToggleVisibility(false);

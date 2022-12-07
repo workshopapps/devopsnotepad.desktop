@@ -1,12 +1,19 @@
 import { useState } from 'react';
+
+import { ValidateEmail, ValidatePassword } from './lib';
+
 import Button from '../CareerPage/Button/Button';
 import Input from '../Login/Input';
+import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Form.module.css';
 
-const Form = () => {
+const Form = (props) => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
-    name: '',
+    fullName: '',
     email: '',
     password: '',
     nameIsValid: false,
@@ -20,32 +27,24 @@ const Form = () => {
 
   const nameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, name: e.target.value };
+      return { ...prev, fullName: e.target.value };
     });
-
-    if (form.name.length >= 3) {
-      setForm((prev) => {
-        return { ...prev, nameIsValid: true };
-      });
-    } else {
-      setForm((prev) => {
-        return { ...prev, nameIsValid: false };
-      });
-    }
   };
 
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
       return { ...prev, email: e.target.value };
     });
+    const { passwordIsValid } = form;
+    const isValid = ValidateEmail(e.target.value);
 
-    if (form.email.includes('@')) {
+    if (passwordIsValid && isValid) {
       setForm((prev) => {
-        return { ...prev, emailIsValid: true };
+        return { ...prev, formIsValid: true };
       });
     } else {
       setForm((prev) => {
-        return { ...prev, emailIsValid: false };
+        return { ...prev, formIsValid: false };
       });
     }
   };
@@ -55,19 +54,10 @@ const Form = () => {
       return { ...prev, password: e.target.value };
     });
 
-    if (form.password.length > 6) {
-      setForm((prev) => {
-        return { ...prev, passwordIsValid: true };
-      });
-    } else {
-      setForm((prev) => {
-        return { ...prev, passwordIsValid: false };
-      });
-    }
+    const { emailIsValid } = form;
+    const isValid = ValidatePassword(e.target.value);
 
-    const { emailIsValid, passwordIsValid } = form;
-
-    if (emailIsValid && passwordIsValid) {
+    if (emailIsValid && isValid) {
       setForm((prev) => {
         return { ...prev, formIsValid: true };
       });
@@ -83,24 +73,74 @@ const Form = () => {
     setForm((prev) => {
       return { ...prev, nameIsFocus: true };
     });
+
+    if (form.fullName.length >= 3) {
+      setForm((prev) => {
+        return { ...prev, nameIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, nameIsValid: false };
+      });
+    }
   };
 
   const emailOnBlurHandler = (e) => {
     setForm((prev) => {
       return { ...prev, emailIsFocus: true };
     });
+
+    const isValid = ValidateEmail(form.email);
+    if (isValid) {
+      setForm((prev) => {
+        return { ...prev, emailIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, emailIsValid: false };
+      });
+    }
   };
 
   const passwordOnBlurHandler = (e) => {
     setForm((prev) => {
       return { ...prev, passwordIsFocus: true };
     });
+
+    const isValid = ValidatePassword(form.password);
+    if (isValid) {
+      setForm((prev) => {
+        return { ...prev, passwordIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, passwordIsValid: false };
+      });
+    }
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     // Send form details to backend
+    props.onSubmit({
+      name: form.fullName,
+      email: form.email,
+      password: form.password,
+    });
+
+    setForm({
+      fullName: '',
+      email: '',
+      password: '',
+      nameIsValid: false,
+      emailIsValid: false,
+      passwordIsValid: false,
+      nameIsFocus: false,
+      emailIsFocus: false,
+      passwordIsFocus: false,
+      formIsValid: false,
+    });
   };
 
   return (
@@ -115,7 +155,7 @@ const Form = () => {
         type='text'
         invalid={!form.nameIsValid && form.nameIsFocus ? 'invalid' : ''}
         placeholder='Enter your last name'
-        value={form.lastName}
+        value={form.fullName}
         onChange={nameOnChangeHandler}
         onBlur={nameOnBlurHandler}
       />
@@ -135,9 +175,7 @@ const Form = () => {
         onBlur={emailOnBlurHandler}
       />
       {form.emailIsFocus && !form.emailIsValid && (
-        <pre className={classes.invalid__input}>
-          Enter a email with the @ symbol
-        </pre>
+        <pre className={classes.invalid__input}>Enter a valid email.</pre>
       )}
       <Input
         id='password'
@@ -151,22 +189,31 @@ const Form = () => {
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
-          Enter a password of length 7 and above
+          MinLength(8), a uppercase, a lowercase, and a number.
         </pre>
       )}
-
-      <div className={classes.checkbox}>
-        <input
-          type='checkbox'
-          name='checkbox'
-          value='value'
-          id='checkbox'
-          className={classes.checkbox__input}
-        />
-        <label htmlFor='checkbox' className={classes.label}>
-          Remember me.
-        </label>
+      <div>
+        {props.isLoading && <LoadingSpinner />}
+        {!props.isLoading && props.error.hasError && (
+          <p
+            style={{ textAlign: 'center' }}
+          >{`Sign up failed! - ${props.error.message}`}</p>
+        )}
+        {props.message && (
+          <p className={classes.span__box}>
+            {props.message}{' '}
+            <span>
+              <Button
+                className={classes.success_button}
+                onClick={() => navigate('/login')}
+              >
+                Kindly log in to continue
+              </Button>
+            </span>
+          </p>
+        )}
       </div>
+
       <div className={classes.btn__box}>
         <Button
           id='btn__submit'
