@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { Link, useParams} from 'react-router-dom';
-import ServerContext from '../../../Components/Context/ServerContext';
+import React, {useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+// import ServerContext from '../../../Components/Context/ServerContext';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 // import { RiArrowUpLine } from 'react-icons/ri';
 import Sidenav from '../../../Components/SideNav/SideNav';
@@ -13,10 +13,10 @@ import bell from '../assets/bell.png';
 
 function AvailabilityNotification() {
 	// const { getServers, servers } = useContext(ServerContext);
-	const { serverNotifications } = useContext(ServerContext);
+	// const { serverNotifications } = useContext(ServerContext);
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
-	const [availabilityNotification, setAvailabilityNotification] = useState([])
+	const [availabilityNotification, setAvailabilityNotification] = useState([]);
 	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
 
@@ -29,8 +29,12 @@ function AvailabilityNotification() {
 
 	useEffect(() => {
 		getServer(id);
-		setSimpleNotification(serverNotifications);
-		setAvailabilityNotification([])
+		setSimpleNotification(() => {
+			const localData = localStorage.getItem(`${id}notif`);
+			return localData ? JSON.parse(localData) : [];
+		});
+
+		setAvailabilityNotification([]);
 	}, []);
 	// const { deviceId, id, ipAddress, name, notification, updated_at } =
 	// 	currentServer[0];
@@ -40,7 +44,11 @@ function AvailabilityNotification() {
 
 			<section className={styles.main}>
 				<div className={styles.container}>
-					<ServerInfo key={exactServer.id} ipAddress={exactServer.ipAddress} name={exactServer.name} />
+					<ServerInfo
+						key={exactServer.id}
+						ipAddress={exactServer.ipAddress}
+						name={exactServer.name}
+					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
 							{' '}
@@ -82,7 +90,9 @@ function AvailabilityNotification() {
 
 						<div className={styles.card2}>
 							<div>
-								<div className={styles.belly}>{availabilityNotification.length}</div>
+								<div className={styles.belly}>
+									{availabilityNotification.length}
+								</div>
 								<img src={bell} alt="" />
 							</div>
 							<p className={styles.noti}>Availability notifications</p>
