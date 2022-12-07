@@ -87,7 +87,7 @@ function Home() {
 					</div>
 				))}
 
-			{servers.length>0 && auth && <Auth closeAuth={closeAuth} />}
+			{auth && <Auth closeAuth={closeAuth} />}
 		</div>
 	);
 }
