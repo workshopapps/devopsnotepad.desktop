@@ -1,39 +1,50 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../../store/UserContext';
+import { AiOutlineClose } from 'react-icons/ai';
 
 import logo from './assets/logo.svg';
 import menuIcon from './assets/menu-icon.svg';
 import styles from './Navigation.module.css';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
-
-import { GoogleLogout } from 'react-google-login';
-import { gapi } from 'gapi-script';
-const clientId =
-  '336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com';
+import useFetch from '../../hooks/useFetch';
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const { user, addUserHandler } = useContext(UserContext);
-
-  const logOutHandler = () => {
-    addUserHandler(null);
-  };
+  const { isLoggedIn, addUserHandler } = useContext(UserContext);
 
   useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        clientId: clientId,
-        scope: '',
-      });
+    // Sticky navigation
+    const nav = document.querySelector('#nav');
+    const header = document.querySelector('.navigation__container');
+
+    const stickyNav = function (entries) {
+      const [entry] = entries;
+
+      if (!entry.isIntersecting) nav.classList.add(`${styles.sticky}`);
+      else nav.classList.remove(`${styles.sticky}`);
     };
-    gapi.load('client:auth2', initClient);
+
+    const headerObserver = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0,
+    });
+
+    headerObserver.observe(header);
   });
+
+  const { fetchRequest: logOut } = useFetch();
+  const logouthandler = () => {
+    logOut({
+      url: 'https://opspad.onrender.com/auth/logout',
+      method: 'GET',
+    });
+  };
 
   return (
     <section className='navigation__container'>
-      <div className={styles.navigation}>
+      <div className={styles.navigation} id='nav'>
         <div className={styles.inNavigation}>
           <div className={styles.mainNavigation}>
             <div className={styles.left}>
@@ -53,12 +64,17 @@ const Navigation = () => {
 
             <div className={styles.right}>
               <div className={styles.navAuthBtn}>
-                {user !== null ? (
-                  <GoogleLogout
-                    clientId={clientId}
-                    buttonText='Log out'
-                    onLogoutSuccess={logOutHandler}
-                  />
+                {isLoggedIn ? (
+                  <Link
+                    className={styles.login_link}
+                    to='/login'
+                    onClick={() => {
+                      addUserHandler(null);
+                      logouthandler();
+                    }}
+                  >
+                    Logout
+                  </Link>
                 ) : (
                   <Link className={styles.login_link} to='/login'>
                     Login
@@ -69,11 +85,14 @@ const Navigation = () => {
                 </Link>
               </div>
               <div className={styles.hamburgerBar}>
-                <img
-                  src={menuIcon}
-                  onClick={() => setOpen(true)}
-                  alt='menuIcon'
-                />
+                {!isOpen ? (
+                  <img src={menuIcon} alt='' onClick={() => setOpen(true)} />
+                ) : (
+                  <AiOutlineClose
+                    onClick={() => setOpen(false)}
+                    style={{ height: '3rem', width: '3rem', fill: '#102a63ed' }}
+                  />
+                )}
               </div>
             </div>
           </div>

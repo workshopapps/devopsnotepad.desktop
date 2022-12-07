@@ -1,162 +1,119 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/self-closing-comp */
-import React, { useState } from 'react';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import React, { useEffect, useState, useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import styles from './Notification.module.css';
-import red from './assets/red.png';
-import yellow from './assets/yellow.png';
-import green from './assets/green.png';
-import all from './assets/all.png';
-import Note from '../notes/Note';
+import ServerContext from '../../Components/Context/ServerContext';
+import copy from './assets/copy.png';
+import bell from './assets/bell.png';
 
 function Notification() {
-	const [isOpen, setIsOpen] = useState(false);
-	const toggling = () => setIsOpen(!isOpen);
+	const [loading, setLoading] = useState(false);
+	const [throwError, setThrowError] = useState(false);
+	const { servers, serverNotifications, handleServerNotifications } =
+		useContext(ServerContext);
+	const { id } = useParams();
+
+	const targetId = (list, Id) => {
+		const target = list.find((server) => server.id === Id);
+		return target.serverId;
+	};
+
+	// dayjs initializations
+	dayjs.extend(relativeTime);
+
+	// fetch Request
+	const fetchServerNotifications = async (list, Id) => {
+		setLoading(true);
+		try {
+			const res = await fetch(
+				`https://opspad.onrender.com/server/${targetId(
+					list,
+					Id
+				)}/notifications/`
+			);
+			if (res.ok) {
+				const data = await res.json();
+				const { notifications } = data;
+
+				const newNotification = notifications.map((c) => ({
+					id: c.id,
+					serverId: c.serverId,
+					logs: c.logs,
+					created_at: dayjs(c.created_at).fromNow(),
+					updated_at: c.updated_at,
+				}));
+
+				localStorage.setItem(`${id}notif`, JSON.stringify(newNotification));
+				handleServerNotifications(() => {
+					const localData = localStorage.getItem(`${id}notif`);
+					return localData ? JSON.parse(localData) : [];
+				});
+				setThrowError(false);
+			}
+		} catch (error) {
+			// eslint-disable-next-line
+			alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
+		}
+		setLoading(false);
+	};
+
+	useEffect(() => {
+		fetchServerNotifications(servers, id);
+	}, []);
 
 	return (
 		<div>
-			<Note />
-
 			<section className={styles.main}>
-				<div className={styles.container}>
-					<p className={styles.today}>Today</p>
-
-					<div className={styles.wrap}>
-						<p className={styles.sortBy}>Sort by </p>
-						<RiArrowDownSLine
-							style={{ cursor: 'pointer' }}
-							onClick={toggling}
-						/>
-
-						{isOpen && (
-							<ul className={styles.dropDown}>
-								<li>
-									<img
-										src={all}
-										alt=""
-										style={{
-											width: '10px',
-											height: '10px',
-											marginRight: '15px',
-										}}
-									/>
-									<p>All</p>
-								</li>
-
-								<li>
-									<img
-										src={green}
-										alt=""
-										style={{
-											width: '10px',
-											height: '10px',
-											marginRight: '15px',
-										}}
-									/>
-									<p>Success</p>
-								</li>
-
-								<li>
-									<img
-										src={yellow}
-										alt=""
-										style={{
-											width: '10px',
-											height: '10px',
-											marginRight: '15px',
-										}}
-									/>
-									<p>Warning</p>
-								</li>
-
-								<li>
-									<img
-										src={red}
-										alt=""
-										style={{
-											width: '10px',
-											height: '10px',
-											marginRight: '15px',
-										}}
-									/>
-									<p>Critial</p>
-								</li>
-							</ul>
-						)}
+				<div className={styles.contain}>
+					<div className={styles.wrapp}>
+						<p className={styles.endpoint}>Address:</p>
+						<p className={styles.point}>my-apache-server/12.13.12.14</p>
 					</div>
+
+					<img src={copy} alt="" style={{ cursor: 'pointer' }} />
 				</div>
+				{loading && <h1>Notifications are loading</h1>}
+				{throwError && (
+					<p>
+						An error has occurred while fetching notifications, please check
+						your internet connectivity and try again.
+					</p>
+				)}
 
-				<div>
-					<div className={styles.row}>
-						<img
-							src={green}
-							alt=""
-							style={{ width: '10px', height: '10px', marginRight: '20px' }}
-						/>
+				{!loading && !throwError && (
+					<div className={styles.wrappe}>
+						<Link to={`/server/${id}/notification/simpleNotification`}>
+							{' '}
+							<div className={styles.card}>
+								<div>
+									<div className={styles.bell}>
+										{serverNotifications.length || 0}
+									</div>
+									<img src={bell} alt="" />
+								</div>
+								<p className={styles.noti}>Simple Notifications</p>
+								<p className={styles.par}>
+									Regular notifications about your server.
+								</p>
+							</div>{' '}
+						</Link>
 
-						<p className={styles.hour}>
-							The software installation on HNG server was successful
-						</p>
-
-						<p className={styles.green}>1 hour ago</p>
+						<Link to={`/server/${id}/notification/availabilityNotification`}>
+							{' '}
+							<div className={styles.card}>
+								<div>
+									<div className={styles.belly}>0</div>
+									<img src={bell} alt="" />
+								</div>
+								<p className={styles.noti}>Availability notifications</p>
+								<p className={styles.par}>
+									Regular notifications about your server.
+								</p>
+							</div>{' '}
+						</Link>
 					</div>
-
-					<div className={styles.row}>
-						<img
-							src={red}
-							alt=""
-							style={{ width: '10px', height: '10px', marginRight: '20px' }}
-						/>
-
-						<p className={styles.hour}>
-							Server capacity is almost at its maximum capacity
-						</p>
-
-						<p className={styles.red}>1 hour ago</p>
-					</div>
-
-					<div className={styles.row}>
-						<img
-							src={yellow}
-							alt=""
-							style={{ width: '10px', height: '10px', marginRight: '20px' }}
-						/>
-
-						<p className={styles.hour}>Password change successful</p>
-
-						<p className={styles.yellow}>52 mins ago</p>
-					</div>
-				</div>
-
-				<div>
-					<p className={styles.yesterday}>Yesterday</p>
-
-					<div className={styles.row1}>
-						<img
-							src={red}
-							alt=""
-							style={{ width: '10px', height: '10px', marginRight: '20px' }}
-						/>
-
-						<p className={styles.hour1}>
-							Server capacity is almost at its maximum capacity
-						</p>
-
-						<p className={styles.red1}>1 hour ago</p>
-					</div>
-
-					<div className={styles.row1}>
-						<img
-							src={green}
-							alt=""
-							style={{ width: '10px', height: '10px', marginRight: '20px' }}
-						/>
-
-						<p className={styles.hour1}>Password change successful</p>
-
-						<p className={styles.yellow1}>52 mins ago</p>
-					</div>
-				</div>
+				)}
 			</section>
 		</div>
 	);

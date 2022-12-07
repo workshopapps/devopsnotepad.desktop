@@ -1,7 +1,8 @@
 import http from 'http';
 import stoppable from 'stoppable';
-import config, { validateConfig } from './config/index.js';
+import config from './config/index.js';
 import { migrate } from './database/setup.js';
+import PushNotification from './services/server/pushNotificationForServer.js';
 
 const startServer = async () => {
   global.isStartingUp = true;
@@ -31,9 +32,9 @@ const startServer = async () => {
 
 const start = async () => {
   try {
-    validateConfig();
     await migrate();
     await startServer();
+    await PushNotification.intializeCronJob();
   } catch (e) {
     console.log(e);
     process.exit(1);
