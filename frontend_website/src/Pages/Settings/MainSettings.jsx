@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from "axios";
+// import axios from "axios";
 import { Support } from './data';
 // import PropTypes from 'prop-types';
 import style from './MainSettings.module.css';
@@ -18,55 +18,78 @@ function Settings() {
 	const navigate = useNavigate();
 
 
-	// Proptype declaration
-	// Settings.propTypes = {
-	// 	changed: PropTypes.node.isRequired,
-	// };
+
 	function isAuthenticated() {
 		const user = JSON.parse(localStorage.getItem("loggedInUser"));
 		return user;
 	}
 
-	const API_URL = "https://opspad.hng.tech/auth/update-password";
-	// const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
-	
+	const API_URL = "https://opspad.onrender.com/api/auth/update-user-password";
+
+
+
 
 	const user = isAuthenticated();
-	// console.log(user)
 	const email = user.user.email;
 	const username = user.user.name;
+	const token = user.token;
+
 
 	async function changePassword(e) {
 		e.preventDefault();
 		console.log("Button is working")
 
-		try {
-			console.log("Try block is working")
-			// const data = {
-			// 	password: editpassword,
-			// 	id: user.user.id,
-			// 	token: user.token
-			// };
-			// console.log(data)
+		const data = {
+			oldPassword,
+			newPassword,
+		};
 
-			await axios.post(API_URL, {
-				oldPassword: oldPassword,
-				newPassword: newPassword,
-				// confirmPassword: confirmPassword
-			  })
-				
-				.then((response) => {
-					setNewPassword(response.data);
-				});
+		// try {
+		// 	const response = await fetch(API_URL, {
+		// 		method: "POST",
+		// 		headers: {
+		// 			"Content-Type": "application/json",
+		// 			'Authorization': `Bearer ${token}`,
+		// 		},
+		// 		body: JSON.stringify({
+		// 			oldPassword,
+		// 			newPassword
+		// 		})
+		// 	})
+		// 		.then(response => response.json())
+		// 		.then(data => {
+		// 			console.log(data);
+		// 			console.log(response, "This is working");
+		// 			alert('Password changed is  Successful');
+		// 			navigate('/');
+		// 		})
 
-			console.log("This is working")
-			alert('Password changed is  Successful');
-			navigate('/');
-		} catch (error) {
-			console.log(error.message)
+		// } catch (error) { console.log(error) }
 
+		const options =  {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${token}`,
+			}
 		}
+		
+		await fetch(API_URL, options)
+			.then(response => response.json())
+			.then(data => {
+				// do something with the data
+				console.log(data)
+			})
+			.catch(error => {
+				console.log(error);
+			});
+		console.log(options, "This is working")
+		alert('Password changed is  Successful');
+		navigate('/');
+
 		setNewPassword('');
+
 	}
 
 
