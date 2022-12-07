@@ -38,7 +38,7 @@ function Notification() {
         </div>
 
         <div className={styles.wrappe}>
-          <Link to='simpleNotifications'>
+          <Link to='simple_notifications'>
             <div className={styles.card}>
               <div>
                 <div className={styles.bell}>8</div>
@@ -51,8 +51,7 @@ function Notification() {
             </div>{' '}
           </Link>
 
-          <Link to='/availabilityNotification'>
-            {' '}
+          <Link to='availability_notification'>
             <div className={styles.card}>
               <div>
                 <div className={styles.belly}>0</div>

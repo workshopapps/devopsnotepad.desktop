@@ -172,3 +172,12 @@ section.main div.row {
 	width: 83%;
 	margin-left: 15px;
 }
+
+.readMore{
+	border: none;
+	font-size: 14px;
+	font-family: 'Manrope';
+	background: transparent;
+	cursor: pointer;
+	margin-left: 3px;
+}
