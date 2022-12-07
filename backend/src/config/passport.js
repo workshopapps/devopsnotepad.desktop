@@ -5,6 +5,7 @@ import passport from "passport";
 import {create } from "../services/user/authService.js";
 const GoogleStrategy = Passport.Strategy;
 
+
 export default () => {
   passport.serializeUser((user, done) => {
     done(null, user);

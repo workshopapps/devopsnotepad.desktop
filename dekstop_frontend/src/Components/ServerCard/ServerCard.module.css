@@ -86,7 +86,6 @@
 	line-height: 16px;
 	text-align: right;
 	text-transform: capitalize;
-	background: #b6dec5;
 }
 
 .server_health {
@@ -103,12 +102,22 @@
 	font-weight: 600;
 	font-size: 12px;
 	text-transform: uppercase;
+}
+
+.server_health_excellent {
+	background: #b6dec5;
+}
+.server_health_excellent span {
 	color: #0e6930;
 }
 
 .server_health_critical {
 	background: rgba(233, 17, 17, 0.08);
 }
-.server_health_critical > span {
+.server_health_critical span {
 	color: #e91111;
+}
+
+.server_health_critical_container {
+	width: 60px;
 }

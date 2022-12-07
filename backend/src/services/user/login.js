@@ -9,17 +9,17 @@ export default async function login(body, req, res) {
     const user = await UserRepo.getUserByEmail(body.email);
  
     if (!user) {
-        return res.send({message: "user not found"});
+        return res.status(404).send({message: "user not found"});
     }
-  
+    
     const comparePassword = await bcrypt.compare(body.password, user.password);
   
     if (!comparePassword) {
-        return res.send({message: "Wrong Password"}); 
+        return res.status(400).send({message: "Wrong Password"}); 
     }
 
     if (user.email_verified==="false") {
-        return res.send({message: "Pls, kindly check your e-mail to complete your registration"}); 
+        return res.status(200).send({message: "Pls, kindly check your e-mail to complete your registration"}); 
     }
 
     delete user.password;
