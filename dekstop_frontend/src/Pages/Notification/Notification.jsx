@@ -78,7 +78,12 @@ function Notification() {
 					<img src={copy} alt="" style={{ cursor: 'pointer' }} />
 				</div>
 				{loading && <h1>Notifications are loading</h1>}
-				{throwError && <p>An error has occurred while fetching notifications, please check your internet connectivity and try again.</p>}
+				{throwError && (
+					<p>
+						An error has occurred while fetching notifications, please check
+						your internet connectivity and try again.
+					</p>
+				)}
 
 				{!loading && !throwError && (
 					<div className={styles.wrappe}>
