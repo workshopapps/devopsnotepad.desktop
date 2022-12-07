@@ -4,13 +4,14 @@
 	box-sizing: border-box;
 }
 .container {
-	height: 100vh;
 	display: grid;
 	place-content: center;
 	font-family: 'Manrope';
-	position: absolute;
+	position: fixed;
 	inset: 0;
+	height: 100vh;
 	font-family: 'Manrope';
+	z-index: 20;
 }
 
 .dark_overlay {
@@ -30,8 +31,8 @@
 }
 
 .form {
-	width: 450px;
-	height: 450px;
+	width: 554px;
+	height: 495px;
 	padding: 54px 80px;
 	background: #ffffff;
 	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
@@ -40,7 +41,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	gap: 54px;
+	gap: 48px;
 	z-index: 20;
 }
 
@@ -107,4 +108,10 @@
 .btnDisabled {
 	opacity: 0.3;
 	cursor: not-allowed;
+}
+
+.loading {
+	text-align: center;
+	color: #ffffff;
+	margin-top: 10px;
 }

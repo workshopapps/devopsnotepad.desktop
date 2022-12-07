@@ -11,12 +11,9 @@ const Banner = () => {
       <div className={styles.inBanner}>
         <div className={styles.article}>
           <div className={styles.left}>
-            <h1>Ask questions, Get answers, Share ideas</h1>
-            <h3 className={styles.h3}>
-              Connect with opspad users around the world.
-            </h3>
+            <h1><span>Ask</span> questions, Get answers, Share ideas</h1>
             <p>
-              Our community has everything you need; ask questions, get answers,
+            Connect with opspad users around the world. Our community has everything you need; ask questions, get answers,
               and share ideas with like-minded users.
             </p>
             <div className={styles.right}>

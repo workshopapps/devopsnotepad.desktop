@@ -1,19 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-// import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import passwordStyle from './Password.module.css';
 import PasswordCard from './PasswordCard';
 import Add from './images/add.svg';
 import CreateForm from './components/createForm/CreateForm';
-// import Data from './Data';
-
-// Database
-// const allPasswords = Data.passwords;
 
 function Password() {
 	const {id} = useParams();
 	const [passwords, setPasswords] = useState(() => {
-		const localData = localStorage.getItem(`${id}passwords`);
+		const localData = localStorage.getItem(`${id}p`);
 		return localData ? JSON.parse(localData) : [];
 	});
 	
@@ -49,7 +44,7 @@ function Password() {
 	}
 
 	useEffect(() => {
-		localStorage.setItem(`${id}passwords`, JSON.stringify(passwords));
+		localStorage.setItem(`${id}p`, JSON.stringify(passwords));
 	}, [passwords]);
 
 	useEffect(() => {

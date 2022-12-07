@@ -35,7 +35,7 @@ const config = {
         CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     },
     session: {
-        secret: process.env.EXPRESS_SESSION_SECRET
+        secret: process.env.EXPRESS_SESSION_SECRET 
     }
 };
 export const validateConfig = () => {

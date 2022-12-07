@@ -3,7 +3,7 @@ import ServerRepo from "../../database/repositories/ServerRepo.js";
 import { ServiceError } from "../../lib/errors/index.js";
 
 export default async function create(body,params) {
-    const { log } = body;
+    const { logs } = body;
     const { serverId } = params;
 
     Object.assign(body, params);
@@ -16,6 +16,6 @@ export default async function create(body,params) {
     await NotificationRepo.create(body);
     
     return{
-        serverLog : log
+        serverLog : logs
     };
 }
