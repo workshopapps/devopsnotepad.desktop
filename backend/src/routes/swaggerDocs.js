@@ -181,11 +181,19 @@
  *                         schema:
  *                          type: object
  *                          required:
- *                              - email
+ *                              - token
+ *                              - id
+ *                              - password
  *                          properties:
- *                              email:
- *                                  type: string
- *                                  description: The email of the user
+ *                              id:
+ *                                type: string
+ *                                description: The registered user Id
+ *                              token:
+ *                                 type: string
+ *                                 description: The updated password token sent to user's email
+ *                              password:
+ *                                 type: string
+ *                                 description: The password of the user
  * 
  *         responses:
  *             '200':
@@ -473,7 +481,7 @@
  *                    type: number
  *                    required: false
  *             - in: path
- *               name: page
+ *               name: limit
  *               schema:
  *                    type: number
  *                    required: false
@@ -515,6 +523,19 @@
  *               schema:
  *                    type: string
  *                    required: true
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The notification logs for server
  * 
  *         responses:
  *             '200':
@@ -550,6 +571,20 @@
  *               schema:
  *                    type: string
  *                    required: true
+ * 
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The availability logs for endpoints
  * 
  *         responses:
  *             '200':
