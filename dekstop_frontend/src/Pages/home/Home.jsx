@@ -19,11 +19,11 @@ function Home() {
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
 	useEffect(() => {
 		getServers();
-		const isNewUser = localStorage.getItem('isNewUser');
+		const isNewUser = localStorage.getItem('isNewUser') || false;
 		if (!isNewUser) {
 			navigate('/onboarding');
 		}
-		const isAuthenticated = sessionStorage.getItem('isAuthenticated');
+		const isAuthenticated = sessionStorage.getItem('isAuthenticated') || false;
 		if (!isAuthenticated) setAuth(true);
 	});
 
