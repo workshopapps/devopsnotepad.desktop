@@ -1,7 +1,7 @@
 .container {
   margin-left: 228px;
   height: 100vh;
-  display: grid;
+  display: flex;
   place-content: center;
   font-family: 'Manrope';
 }
