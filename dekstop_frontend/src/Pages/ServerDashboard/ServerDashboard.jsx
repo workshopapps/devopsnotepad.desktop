@@ -1,13 +1,20 @@
 import React, { useContext } from 'react';
 import { Link, useParams, Outlet } from 'react-router-dom';
+
 import ServerContext from '../../Components/Context/ServerContext';
 import ServerInfo from '../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../Components/SideNav/SideNav';
 import styles from './ServerDashBoard.module.css';
 
 function ServerDashBoard() {
+	// const [availability, setAvailability] = useState(null);
 	const { servers } = useContext(ServerContext);
 	const params = useParams();
+	// const currentServerId = JSON.parse(localStorage.getItem('servers'))
+	// 	? JSON.parse(localStorage.getItem('servers')).find(
+	// 			(s) => s.id === params.id
+	// 	  ).serverId
+	// 	: null;
 
 	return (
 		<div>
@@ -17,7 +24,11 @@ function ServerDashBoard() {
 					.filter((server) => server.id === params.id)
 					.map((server) => (
 						<div key={server.id}>
-							<ServerInfo ipAddress={server.ipAddress} name={server.name} />
+							<ServerInfo
+								serverId={server.serverId}
+								ipAddress={server.ipAddress}
+								name={server.name}
+							/>
 							<div className={styles.wrapper}>
 								<Link to={`/server/${server.id}/note`}>
 									{' '}
