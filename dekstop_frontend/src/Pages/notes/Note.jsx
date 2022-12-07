@@ -147,7 +147,6 @@ function Note() {
 										Save Note
 									</button>
 										}
-										
 									</form>
 								</div>
 							)}
