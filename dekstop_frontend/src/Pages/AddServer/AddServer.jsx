@@ -20,7 +20,7 @@ function AddServer() {
 	function onMutate(e) {
 		setFormData((prev) => ({
 			...prev,
-			[e.target.id]: e.target.value,
+			[e.target.id]: e.target.value.trim(),
 		}));
 	}
 
