@@ -181,11 +181,19 @@
  *                         schema:
  *                          type: object
  *                          required:
- *                              - email
+ *                              - token
+ *                              - id
+ *                              - password
  *                          properties:
- *                              email:
+ *                              token:
  *                                  type: string
- *                                  description: The email of the user
+ *                                  description: Token used for request validation
+ *                              id:
+ *                                  type: string
+ *                                  description: The id of the user
+ *                              password:
+ *                                  type: string
+ *                                  description: The new password of the user
  * 
  *         responses:
  *             '200':
