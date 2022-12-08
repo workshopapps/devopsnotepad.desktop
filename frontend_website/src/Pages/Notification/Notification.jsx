@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Notification.module.css';
-// import Sidenav from '../../Components/SideNav/SideNav';
-// import ServerInfo from '../../Components/ServerInfo/ServerInfo';
+import Sidenav from '../../Component/SideNav/SideNav';
+import ServerInfo from '../../Component/ServerInfo/ServerInfo';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 
 function Notification() {
 	return (
 		<div>
-			{/* <Sidenav /> */}
+			<Sidenav />
 
 			<section className={styles.main}>
-				{/* <ServerInfo /> */}
+				<ServerInfo />
 
 				<div className={styles.contain}>
 					<div className={styles.wrapp}>
