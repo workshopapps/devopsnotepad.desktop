@@ -4,6 +4,7 @@ import { ref, onValue } from 'firebase/database';
 import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
@@ -78,7 +79,7 @@ function AvailabilityNotification() {
 	return (
 		<div>
 			<Sidenav />
-
+			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
 					<ServerInfo
