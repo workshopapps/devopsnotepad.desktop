@@ -1,7 +1,12 @@
 {
-	"name": "electron_setup",
+	"name": "devops_notepad",
 	"version": "0.3.0",
 	"private": true,
+	"description": "<your project description>",
+	"author": "<Team Sandpaper>",
+	"build": {
+		"appId": "<com.devops_notepad>"
+	},
 	"dependencies": {
 		"@electron-forge/publisher-github": "^6.0.3",
 		"@emotion/react": "^11.10.5",
@@ -10,11 +15,10 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
-		"electron": "^21.3.1",
-		"electron-builder": "^23.6.0",
-		"electron-forge": "5.2.4",
+		"dayjs": "^1.11.6",
 		"electron-is-dev": "^2.0.0",
 		"electron-prebuilt-compile": "^8.2.0",
+		"firebase": "^9.14.0",
 		"formik": "^2.2.9",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
@@ -61,6 +65,11 @@
 	"devDependencies": {
 		"@electron-forge/publisher-github": "^6.0.3",
 		"concurrently": "^7.6.0",
+		"electron": "^21.3.1",
+		"electron-builder": "^23.6.0",
+		"electron-forge": "5.2.4",
+		"electron-is-dev": "^2.0.0",
+		"electron-prebuilt-compile": "^8.2.0",
 		"eslint": "^8.28.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-prettier": "^8.5.0",

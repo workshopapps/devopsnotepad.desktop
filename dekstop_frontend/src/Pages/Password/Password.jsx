@@ -8,11 +8,10 @@ import CreateForm from './components/createForm/CreateForm';
 function Password() {
 	const {id} = useParams();
 	const [passwords, setPasswords] = useState(() => {
-		const localData = localStorage.getItem(`${id}`);
+		const localData = localStorage.getItem(`${id}p`);
 		return localData ? JSON.parse(localData) : [];
 	});
 	
-
 	const [showCreateform, setShowCreateform] = useState(null);
 	
 	// methods and functions
@@ -44,7 +43,7 @@ function Password() {
 	}
 
 	useEffect(() => {
-		localStorage.setItem(`${id}`, JSON.stringify(passwords));
+		localStorage.setItem(`${id}p`, JSON.stringify(passwords));
 	}, [passwords]);
 
 	useEffect(() => {

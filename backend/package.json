@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sentry/node": "^7.23.0",
+    "@sentry/tracing": "^7.23.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -34,12 +36,14 @@
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^2.3.0",
+    "knex-cli": "^1.0.2",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
     "node-cron": "^3.0.2",
     "nodemailer": "^6.8.0",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
+    "sequelize-cli": "^6.5.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
