@@ -1,0 +1,50 @@
+.ModalText {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: right;
+	color: #827d89;
+	background-color: unset;
+	border: 0 !important;
+	cursor: pointer;
+}
+
+.ModalContainer {
+	border: 1px solid #c8c5cb;
+	border-radius: 6px;
+	background: rgb(255, 255, 255);
+	overflow: auto;
+	outline: none;
+	padding: 24px;
+	margin-right: -89% !important;
+	transform: translate(153%, 150%);
+	width: 430px;
+}
+.ModalContainer img {
+	transform: translateX(25em);
+}
+
+.pushFlex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #efeef0;
+}
+.pushFlex h2 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	color: #180e25 !important;
+}
+.pushFlex button {
+	height: 7% !important;
+	width: 7% !important;
+}
+.pushToggle {
+	height: 7% !important;
+	width: 7% !important;
+}

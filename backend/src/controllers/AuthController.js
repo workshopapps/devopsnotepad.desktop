@@ -127,37 +127,27 @@ export default class AuthController {
 
       sendResetLink(email, name, id);
 
-      res.status(200).redirect('/login');
-      return { message: 'A password reset link has been sent to your email address' };
+      res.status(200).json({ message: 'A password reset link has been sent to your email address' });
     } catch (error) {
       console.error(error);
       next(error);
     }
   };
 
-  static updateUserPassword = async (req, res) => {
+  static updateUserPassword = async (req, res, next) => {
     try {
       const { token, id, password } = req.body;
 
-      /**
-       * Validate Request
-       */
-      const errors = validatePayload(req);
-
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
-
       await ResetTokenRepo.deleteExpiredTokens();
 
-      const storedToken = await ResetTokenRepo.getToken(token, id);
+      const storedTokens = await ResetTokenRepo.getTokens(token, id);
 
-      if (!storedToken) {
+      if (!storedTokens) {
         throw new Error('Invalid or expired password reset token');
       }
+      const currentToken = storedTokens.filter(record => bcrypt.compare(token, record.token));
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
-
-      if (!isValid) {
+      if (!currentToken) {
         throw new Error('Invalid or expired password reset token');
       }
 
@@ -167,12 +157,11 @@ export default class AuthController {
 
       if (!updatedUser) throw new NotFoundError('User not found');
 
-      res.status(200).redirect('/login');
-      return {
+      res.status(200).json({
         success: true,
         message: 'Password has been updated successfully',
         updatedUser,
-      };
+      });
     } catch (error) {
       next(error);
     }
@@ -227,6 +216,8 @@ export default class AuthController {
       if (updateUserPassword.validate(req.body).error) {
         return res.status(400).json(updateUserPassword.validate(req.body).error.details);
       }
+
+      if (!req.body.newPassword) return res.status(400).send(" New Password is required..");
       const { id } = req.session.user;
 
       // destruct request body

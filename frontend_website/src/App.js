@@ -35,6 +35,7 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Settings from './Pages/Settings/MainSettings';
 
 import classes from './App.module.css';
 import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
@@ -135,11 +136,12 @@ function App() {
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
-          <Route path='/checkemail' element={<CheckEmail />} />
-          <Route path='/verfication' element={<Verification />} />
-          <Route path='/newpassword' element={<NewPassword />} />
-          <Route path='/success' element={<Success />} />
+          <Route path="/checkemail" element={<CheckEmail />} />
+          <Route path="/verfication" element={<Verification />} />
+          <Route path="/api/auth/update-password?token=token&id=id" element={<NewPassword />} />
+          <Route path="/success" element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/settings' exact element={<Settings />} />
 
           {/* Server Dashbord */}
           <Route
@@ -151,7 +153,15 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route exact path='/add-server' element={<AddServer />} />
+          <Route
+            path='/add-server'
+            exact
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <AddServer />
+              </ProtectedRoute>
+            }
+          />
 
           <Route path='/server/:id' element={<ServerDashBoard />} />
           <Route

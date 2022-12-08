@@ -23,20 +23,27 @@ export function ServerProvider({ children }) {
 
 	// change the state of serverNotifications
 
-	const handleServerNotifications =(value)=>{
-		setServerNotifications(value)
-	}
+	const handleServerNotifications = (value) => {
+		setServerNotifications(value);
+	};
 
 	// Create new server
 	async function addServer(server) {
 		setLoading(true);
 		const id = await uuidv4();
-		server.id = id;
-		server.created_at = new Date();
+		const newServer = {
+			id,
+			serverId: server.serverId.trim(),
+			name: server.name,
+			ipAddress: server.ipAddress,
+			created_at: new Date(),
+		};
+		// server.id = id;
+		// server.created_at = new Date();
 		const data = (await JSON.parse(localStorage.getItem('servers')))
 			? JSON.parse(localStorage.getItem('servers'))
 			: [];
-		data.push(server);
+		data.push(newServer);
 		data.sort((a, b) => b.created_at - a.created_at);
 
 		localStorage.setItem('servers', JSON.stringify(data));
@@ -51,7 +58,7 @@ export function ServerProvider({ children }) {
 		const currentServers = servers.filter((i) => i.id !== server.id);
 		const currentServer = servers.find((i) => i.id === server.id);
 		currentServer.name = server.name;
-		currentServer.serverId = server.serverId;
+		currentServer.serverId = server.serverId.trim();
 		currentServer.ipAddress = server.ipAddress;
 		currentServer.updated_at = new Date();
 		currentServers.push(currentServer);
