@@ -16,6 +16,10 @@ function ServerDashBoard() {
 	// 	  ).serverId
 	// 	: null;
 
+	const activeStyle = {
+		borderBottom: '1px solid #202020',
+	};
+
 	return (
 		<div>
 			<Sidenav />
