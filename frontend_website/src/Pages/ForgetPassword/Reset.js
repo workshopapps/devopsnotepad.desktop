@@ -10,6 +10,7 @@ const Reset = () => {
         emailIsFocus: false,
         formIsValid: false,
     });
+    const [err, setErr] = useState('')
     const emailOnChangeHandler = (e) => {
         setForm((prev) => {
             return { ...prev, email: e.target.value };
@@ -44,7 +45,13 @@ const Reset = () => {
                 "Content-Type": "application/json"
             }
         })
-            .then(response => response.json())
+            .then((response) => {
+                response.json()
+                if (response.status === 200) (navigate('/success'))
+                else {
+                    setErr('Something went wrong :/')
+                }
+            })
             .then(json => console.log(json));
         navigate('/checkemail')
     }
@@ -54,6 +61,7 @@ const Reset = () => {
                 <img src={logo} alt="" />
             </div>
             <h1>PASSWORD RESET</h1>
+            <h3 style={{ color: 'red' }}>{err}</h3>
             <p>Enter your Opspad <span>username</span> or the <span>email address</span>  you
                 used to register.  We’ll send you an email with your username
                 and a link to reset your password.</p>
