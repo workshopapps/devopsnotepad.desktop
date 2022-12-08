@@ -1,4 +1,5 @@
-import React from 'react';
+import * as Sentry from "@sentry/react";
+import React, { useContext } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
@@ -39,6 +40,12 @@ import AvailabilityNotification from './Pages/Notification/AvailabilityNotificat
 import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification'
 
 import classes from './App.module.css';
+import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
+import ServerDashBoard from './Pages/Server/ServerDashboard/ServerDashboard';
+import AddServer from './Pages/Server/AddServer/AddServer';
+import Notification from './Pages/Server/Notification/Notification';
+import { UserContext } from './store/UserContext';
+
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
   return (
@@ -55,9 +62,10 @@ const ErrorFallback = (props) => {
 function App() {
   const navigate = useNavigate();
 
+  const { isLoggedIn } = useContext(UserContext);
+
   return (
     <React.Fragment>
-      <Navigation />
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -73,15 +81,49 @@ function App() {
           <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/careers' exact element={<CareerPage />} />
           <Route path='/contact-us' exact element={<ContactUs />} />
-          <Route path='/terms-of-service' exact element={<TermsOfService />} />
+          <Route
+            path='/terms-of-service'
+            exact
+            element={
+              <>
+                <Navigation />
+                <TermsOfService />
+                <Footer />
+              </>
+            }
+          />
           <Route path='/about-us' exact element={<About />} />
           <Route path='/features' exact element={<Features />} />
           <Route path='/news-room' exact element={<NewsRoom />} />
-          <Route path='/news-room/view-all' exact element={<NewsRoomViewMore />} />
+          <Route
+            path='/news-room/view-all'
+            exact
+            element={<NewsRoomViewMore />}
+          />
           <Route path='/demo' exact element={<DemoPage />} />
-          <Route path='/our-team' exact element={<OurTeam />} />
+          <Route
+            path='/our-team'
+            exact
+            element={
+              <>
+                <Navigation />
+                <OurTeam />
+                <Footer />
+              </>
+            }
+          />
           <Route path='/devops-community' exact element={<DevopsCommunity />} />
-          <Route path='/our-team/all-teams' exact element={<AllTeam />} />
+          <Route
+            path='/our-team/all-teams'
+            exact
+            element={
+              <>
+                <Navigation />
+                <AllTeam />
+                <Footer />
+              </>
+            }
+          />
           <Route path='/partner' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/podcasts' exact element={<PodCast />} />
@@ -103,13 +145,34 @@ function App() {
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
 
+          {/* Server Dashbord */}
+          <Route
+            path='/server'
+            exact
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <ServerDashBoard />
+              </ProtectedRoute>
+            }
+          />
+          <Route exact path='/add-server' element={<AddServer />} />
+
+          <Route path='/server/:id' element={<ServerDashBoard />}>
+            <Route path='notification' element={<Notification />}>
+              <Route
+                exact
+                path='simpleNotifications'
+                element={<div>Simple Notifications</div>}
+              />
+            </Route>
+          </Route>
+
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
         </Routes>
       </ErrorBoundary>
-      <Footer />
     </React.Fragment>
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);

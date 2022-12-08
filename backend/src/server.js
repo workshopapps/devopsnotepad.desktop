@@ -32,7 +32,7 @@ const startServer = async () => {
 
 const start = async () => {
   try {
-    // await migrate();
+    await migrate();
     await startServer();
     await PushNotification.intializeCronJob();
   } catch (e) {

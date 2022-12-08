@@ -11,6 +11,8 @@ import authenimgMobile from './Images/authenticationImgMobile.png';
 import bell from './Images/bell.png';
 import profileKey from './Images/profilekey.png';
 import abOpspadimg from './Images/aboutopspadimg.png';
+import Navigation from '../../Component/Navigation/Navigation';
+import Footer from '../../Component/Footer/Footer';
 
 // ======================= RENAMING THE STYLING FOR BETTER USAGE AND READABILITY ===========================
 const featureWrapper = FeatureCSS.featureWrapper;
@@ -83,6 +85,7 @@ const abOpsImg = FeatureCSS.abOpsImg;
 
 const Feature = () => {
   return (
+<<<<<<< HEAD
     <div className={featureWrapper}>
       <div className={feature}>
         <div className={opspadfeaturesminilandingpage}>
@@ -109,82 +112,131 @@ const Feature = () => {
               Tracking down server issues just got easier! OpsPad filters log to
               give you the best and most relevant information you need per time
               concerning your server(s).
+=======
+    <>
+      <Navigation />
+      <div className={featureWrapper}>
+        <div className={feature}>
+          <div className={opspadfeaturesminilandingpage}>
+            <h1 className={minilandpageheading}>
+              Ops<span>pad</span> features
+            </h1>
+            <p className={minilandpageparagraph}>
+              {' '}
+              We are changing the whole DevOps system
+>>>>>>> 044ef40dd9da1804b4ded72a9277f5525016c9d9
             </p>
+            <button className={minilandpagebtn}>Sign up for free</button>
           </div>
-        </div>
 
-        {/* ====================== NOTES SECTION ==================*/}
-        <div className={notesSection}>
-          <div className={notesText}>
-            <h2 className={notesTextHeading}>Notes</h2>
-            <p className={notesTextParagraph}>
-              You can make notes of specific events that occur on each server,
-              so you don't miss anything important while troubleshooting issues
-              related to those servers.
-            </p>
-          </div>
-          <div className={noteImgWrapper}>
-            <img src={noteimg} className={noteImg} alt='' />
-          </div>
-        </div>
-
-        {/*========================= PASSWORD SECTION ==================*/}
-        <div className={password}>
-          <div className={passwordImgWrapper}>
-            <img src={passwordimg} className={passwordImg} alt='' />
-            <img src={passwordimg2} className={passwordimgtwo} alt='' />
-          </div>
-          <div className={passwordText}>
-            <h2 className={passwordTextHeading}>Passwords</h2>
-            <p className={passwordTextParagraph}>
-              Manage password of Server Tools End user can put/manage (update)
-              server tools & access credentials for each server tools (user id,
-              password).
-            </p>
-          </div>
-        </div>
-
-        {/*============================= AUTENTICATION SECTION ======================*/}
-        <div className={autentication}>
-          <div className={autenticationText}>
-            <h2 className={autenticationTextHeading}>Authentication</h2>
-            <p className={autenticationTextParagraoh}>
-              End User is required to authenticate before viewing server tools
-              information and is required to Authenticate after a specified an
-              elapsed time period.
-            </p>
-          </div>
-          <div className={authenImgWrapper}>
-            <img src={authenimg} className={authenImg} alt='' />
-            <img src={authenimgMobile} className={authenImgMobile} alt='' />
-          </div>
-        </div>
-
-        {/* FLEXBILITY AND SECURITY SECTION */}
-        <div className={notificationandsigninoption}>
-          <div className={notificationandsigninoptionFlex}>
-            <div className={notifications}>
-              <img src={bell} className={Bell} alt='' />
-              <h4 className={notificationsHeading}>Notifications</h4>
-              <p className={notificationsParagraph}>
-                Receive notifications indicating the status of your server and
-                server tools.
-              </p>
+          {/* =================SERVERS SECTION ================*/}
+          <div className={servers}>
+            <div className={serverImgWrapper}>
+              <img src={serversImg} className={serverImg} alt='' />
             </div>
-            <div className={profile}>
-              <img src={profileKey} className={profileImg} alt='' />
-              <h4 className={profileHeading}>Single sign in Options (SSO)</h4>
-              <p className={profileParagraph}>
-                OpsPad allows you log in with a single ID across all your
-                devices.
+            <div className={serversText}>
+              <h2 className={serversTextHeading}>Servers</h2>
+              <p className={serversTextParagraph}>
+                Tracking down server issues just got easier! OpsPad filters log
+                to give you the best and most relevant information you need per
+                time concerning your server(s).
               </p>
             </div>
           </div>
-          <p className={notificationProfileText}>
-            Designed for flexibility and security...
-          </p>
+
+          {/* ====================== NOTES SECTION ==================*/}
+          <div className={notesSection}>
+            <div className={notesText}>
+              <h2 className={notesTextHeading}>Notes</h2>
+              <p className={notesTextParagraph}>
+                You can make notes of specific events that occur on each server,
+                so you don't miss anything important while troubleshooting
+                issues related to those servers.
+              </p>
+            </div>
+            <div className={noteImgWrapper}>
+              <img src={noteimg} className={noteImg} alt='' />
+            </div>
+          </div>
+
+          {/*========================= PASSWORD SECTION ==================*/}
+          <div className={password}>
+            <div className={passwordImgWrapper}>
+              <img src={passwordimg} className={passwordImg} alt='' />
+              <img src={passwordimg2} className={passwordimgtwo} alt='' />
+            </div>
+            <div className={passwordText}>
+              <h2 className={passwordTextHeading}>Passwords</h2>
+              <p className={passwordTextParagraph}>
+                Manage password of Server Tools End user can put/manage (update)
+                server tools & access credentials for each server tools (user
+                id, password).
+              </p>
+            </div>
+          </div>
+
+          {/*============================= AUTENTICATION SECTION ======================*/}
+          <div className={autentication}>
+            <div className={autenticationText}>
+              <h2 className={autenticationTextHeading}>Authentication</h2>
+              <p className={autenticationTextParagraoh}>
+                End User is required to authenticate before viewing server tools
+                information and is required to Authenticate after a specified an
+                elapsed time period.
+              </p>
+            </div>
+            <div className={authenImgWrapper}>
+              <img src={authenimg} className={authenImg} alt='' />
+              <img src={authenimgMobile} className={authenImgMobile} alt='' />
+            </div>
+          </div>
+
+          {/* FLEXBILITY AND SECURITY SECTION */}
+          <div className={notificationandsigninoption}>
+            <div className={notificationandsigninoptionFlex}>
+              <div className={notifications}>
+                <img src={bell} className={Bell} alt='' />
+                <h4 className={notificationsHeading}>Notifications</h4>
+                <p className={notificationsParagraph}>
+                  Receive notifications indicating the status of your server and
+                  server tools.
+                </p>
+              </div>
+              <div className={profile}>
+                <img src={profileKey} className={profileImg} alt='' />
+                <h4 className={profileHeading}>Single sign in Options (SSO)</h4>
+                <p className={profileParagraph}>
+                  OpsPad allows you log in with a single ID across all your
+                  devices.
+                </p>
+              </div>
+            </div>
+            <p className={notificationProfileText}>
+              Designed for flexibility and security...
+            </p>
+          </div>
+        </div>
+        {/* ABOUT OPSPAD SECTION  */}
+        <div className={aboutOpspad}>
+          <div className={aboutOpspadContent}>
+            <h4 className={aboutOpspadContentHeading}>About Opspad</h4>
+            <hr />
+            <p className={aboutOpspadContentParagraph}>
+              We are building the DevOp notepad exclusively for the devops
+              engineers A tool for managing and keeping track of servers,
+              remembering passwords for various tools used to access these
+              servers.share information, and work together.
+            </p>
+            <button className={aboutOpspadContentButton}>
+              Sign up for free
+            </button>
+          </div>
+          <div className={aboutOpspadImgWrapper}>
+            <img src={abOpspadimg} className={abOpsImg} alt='' />
+          </div>
         </div>
       </div>
+<<<<<<< HEAD
       {/* ABOUT OPSPAD SECTION  */}
       <div className={aboutOpspad}>
         <div className={aboutOpspadContent}>
@@ -205,6 +257,10 @@ const Feature = () => {
         </div>
       </div>
     </div>
+=======
+      <Footer />
+    </>
+>>>>>>> 044ef40dd9da1804b4ded72a9277f5525016c9d9
   );
 };
 

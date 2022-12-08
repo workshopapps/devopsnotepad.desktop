@@ -70,20 +70,22 @@ function Settings() {
 				{Security.map((security) => (
 					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
-						<Link to={security.modal}>
+						
 							<div className={style.account}>
 								<div className={style.accountProfile}>
+								<Link to={security.modal}>
 									{security.icon}
+									</Link>
 									{security.func}
 								</div>
-								{security.iconright}
+								{/* {security.iconright} */}
 							</div>
-						</Link>
+						
 					</div>
 				))}
 
 				{Support.map((support) => (
-					<div key={support.title}>
+					<div key={support.title2}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
