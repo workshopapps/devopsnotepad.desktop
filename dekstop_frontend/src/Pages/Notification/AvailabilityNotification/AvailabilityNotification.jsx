@@ -55,7 +55,6 @@ function AvailabilityNotification() {
 			const checkedLast = `${date.getDate()}/${
 				date.getMonth() + 1
 			}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
-			console.log(availability.last_checked);
 
 			// const last = new Date(availability.last_checked).getFullYear();
 			// const minutes = Math.floor(current - last);
