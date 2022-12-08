@@ -2,7 +2,7 @@ import create from '../services/user/create.js';
 import UserRepo from '../database/repositories/UserRepo.js';
 import login from '../services/user/login.js';
 import ResetTokenRepo from '../database/repositories/ResetTokenRepo.js';
-import { NotFoundError } from '../lib/errors/index.js';
+import { NotFoundError, ServiceError } from '../lib/errors/index.js';
 import { sendResetLink } from '../services/user/password_reset.js';
 import EmailVerificationTokenRepo from '../database/repositories/emailVerificationRepo.js';
 import bcrypt from 'bcrypt';
@@ -79,20 +79,18 @@ export default class AuthController {
     }
   };
 
-  static loginStatus = async (req, res) => {
-    if (req.user) {
-      res.status(200).json({
-        success: true,
-        message: 'Login was successful',
-        user: req.user,
-      });
-    } else {
-      res.status(401).json({
-        success: false,
-        message: 'Not Authenticated',
-      });
+  static loginStatus = async (req, res, next) => {
+    try {
+        res.status(200).json({
+          success: true,
+          message: 'Login was successful',
+          user: req.session.user,
+        });
+    } catch (error) {
+      throw new ServiceError(error);
     }
   };
+
   static loginFailed = async (req, res) => {
     res.status(401).json({
       success: false,
@@ -127,37 +125,27 @@ export default class AuthController {
 
       sendResetLink(email, name, id);
 
-      res.status(200).redirect('/login');
-      return { message: 'A password reset link has been sent to your email address' };
+      res.status(200).json({ message: 'A password reset link has been sent to your email address' });
     } catch (error) {
       console.error(error);
       next(error);
     }
   };
 
-  static updateUserPassword = async (req, res) => {
+  static updateUserPassword = async (req, res, next) => {
     try {
       const { token, id, password } = req.body;
 
-      /**
-       * Validate Request
-       */
-      const errors = validatePayload(req);
-
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
-
       await ResetTokenRepo.deleteExpiredTokens();
 
-      const storedToken = await ResetTokenRepo.getToken(token, id);
+      const storedTokens = await ResetTokenRepo.getTokens(token, id);
 
-      if (!storedToken) {
+      if (!storedTokens) {
         throw new Error('Invalid or expired password reset token');
       }
+      const currentToken = storedTokens.filter(record => bcrypt.compare(token, record.token));
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
-
-      if (!isValid) {
+      if (!currentToken) {
         throw new Error('Invalid or expired password reset token');
       }
 
@@ -167,12 +155,11 @@ export default class AuthController {
 
       if (!updatedUser) throw new NotFoundError('User not found');
 
-      res.status(200).redirect('/login');
-      return {
+      res.status(200).json({
         success: true,
         message: 'Password has been updated successfully',
         updatedUser,
-      };
+      });
     } catch (error) {
       next(error);
     }
@@ -212,7 +199,6 @@ export default class AuthController {
     try {
       // Validate with Joi
       const updateUserPassword = Joi.object({
-        id: Joi.string().required(),
         oldPassword: Joi.string().required(),
         newPassword: new PasswordComplexity({
           min: 8,
@@ -229,8 +215,11 @@ export default class AuthController {
         return res.status(400).json(updateUserPassword.validate(req.body).error.details);
       }
 
+      if (!req.body.newPassword) return res.status(400).send(" New Password is required..");
+      const { id } = req.session.user;
+
       // destruct request body
-      const { id, oldPassword, newPassword } = req.body;
+      const {oldPassword, newPassword } = req.body;
 
       // Get user from database
       const user = await UserRepo.getUserById(id);
@@ -240,13 +229,18 @@ export default class AuthController {
         return res.status(400).send('User Not Found');
       }
 
+      const comparePassword =  await bcrypt.compare(oldPassword, user.password);
+
       // Compare Old Password with new Password
-      if (oldPassword !== user.password) {
+      if (!comparePassword) {
         return res.status(400).send('User Passwords do not match');
       }
 
+      //hash new password
+       const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
+
       // Save new password
-      await UserRepo.updatePasswordById(id, newPassword);
+      await UserRepo.updatePasswordById(id, hashedPassword);
       // Success
       return res.status(201).send('Password Successfully Updated');
     } catch (error) {

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@media (max-width: 767px) {
+  .sidenav {
+    display: none !important;
+  }
+}
+
+div.sidenav {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(237, 237, 237);
+  padding: 3rem 3rem 2rem;
+}
+
+div.sidenav img.logo {
+  margin-bottom: 1.5rem;
+}
+
+div.sidenav div.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+}
+
+div.sidenav div.nav .navItem {
+  padding-right: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21.86px;
+  color: #202020;
+}
+
+div.sidenav button.btn {
+  background-color: #102a63;
+  color: white;
+  border-radius: 5px;
+  border: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  margin: 10px 0 0 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+.icon_tog {
+  cursor: pointer;
+  height: 3rem;
+  width: 5rem;
+  fill: #102a63;
+}
+.icon_tog:hover {
+  fill: #6287d7;
+}
+
+.button {
+  margin-top: 1.5rem;
+  padding: 1.2rem 2rem;
+  width: fit-content;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.button:hover {
+  background: #102a63ed;
+}
+
+.btn__svg {
+  color: #fff !important;
+  margin-left: 2rem;
+}
+.btn__svg:hover {
+  background: #102a63cb;
+}
+.sidenav__link:link {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  font-size: 18px;
+  color: rgba(32, 32, 32, 0.64);
+  font-weight: 500;
+  line-height: 21.86px;
+}
+
+.ul {
+  list-style: none;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.li {
+  width: 100%;
+  height: fit-content;
+  margin-top: 1.3rem;
+  text-align: center;
+}
+
+.li_link:link {
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(32, 32, 32, 0.64);
+}
+
+.li_link:hover {
+  background-color: #ededed;
+  color: #102a63;
+}

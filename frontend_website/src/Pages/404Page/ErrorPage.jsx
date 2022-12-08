@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Component/Footer/Footer';
+import Navigation from '../../Component/Navigation/Navigation';
 
 import Button from '../CareerPage/Button/Button';
 
@@ -21,7 +23,7 @@ const ErrorPage = () => {
         />
         <link rel='canonical' href='/404page' />
       </Helmet>
-
+      <Navigation />
       {/* Application */}
       <div className={classes.nopage__card}>
         <h1 className={classes.h1}>Error 404 page!</h1>
@@ -36,6 +38,7 @@ const ErrorPage = () => {
           Go home
         </Button>
       </div>
+      <Footer />
     </>
   );
 };

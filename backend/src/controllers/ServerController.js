@@ -5,6 +5,7 @@ import deleteSeversById from "../services/server/delete.js";
 
 import { validatePayload } from "../utils/index.js";
 import pushNotificationForServer from "../services/server/pushNotificationForServer.js";
+import sendEmail from "../utils/email/sendEmail.js";
 
 export default class ServerController {
     static create = async (req, res, next) => {
@@ -17,9 +18,12 @@ export default class ServerController {
             // Update this latter
             if (errors && Object.keys(errors).length > 0) throw errors;
 
-            const {id} = req.session.user;
+            const {id,email} = req.session.user;
 
             const result = await create(req.body, id);
+
+            // Send Email
+            sendEmail(email, "Server Created Successfully", { email: email, ipAddress: req.body.ipAddress, uuid: result.server.id }, "./template/createServer.handlebars");
             res.send({
                 success: true,
                 message: "server created successfully",
@@ -31,7 +35,7 @@ export default class ServerController {
     };
     static getAllServers = async (req, res, next) => {
         try {
-            const {id} = req.session.user;
+            const { id } = req.session.user;
             const result = await getAllServers(req.query, id);
             res.send({
                 success: true,
@@ -69,19 +73,6 @@ export default class ServerController {
                 success: true,
                 message: "servers deleted successfully",
                 result,
-            });
-        } catch (error) {
-            next(error);
-        }
-    };
-
-    static subscribe = async (req, res, next) => {
-        try {
-            await pushNotificationForServer(req);
-
-            res.send({
-                success: true,
-                message: "Subscription successful",
             });
         } catch (error) {
             next(error);

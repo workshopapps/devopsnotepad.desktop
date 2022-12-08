@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -25,30 +26,34 @@ const style = {
 	boxShadow: '0px 4px 29px rgba(0, 0, 0, 0.12)',
 	p: 4,
 };
-
 function Note() {
+
+	const {id} = useParams()
+
 	// State
 	const [open, setOpen] = useState(false);
-	const [note, setNote] = useState(localStorage.getItem('note'));
+	const [note, setNote] = useState(localStorage.getItem(`${id}`));
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
+	const [saveMsg, setSaveMsg] = useState(false);
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
 	const handleChanges = (e) => setInputs(e.target.value);
 	const handleClose = () => setOpen(false);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		localStorage.setItem('note', inputs);
-			setNote(localStorage.getItem('note'));
-			setInputs('');
+		localStorage.setItem(`${id}`, inputs);
+		setNote(localStorage.getItem('note'));
+		setInputs('');
+		setSaveMsg(true)
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
-		localStorage.removeItem('note');
+		localStorage.removeItem(`${id}`);
 		setNote('');
 		setOpen(false);
+		setSaveMsg(false)
 	};
 	const handleCancel = () => {
 		setOpen(false);
@@ -59,7 +64,6 @@ function Note() {
 	const hour = new Date().getHours();
 	const min = new Date().getMinutes();
 	const month = new Date().getMonth();
-
 	const startHere = 'Start note here...';
 	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
@@ -67,71 +71,86 @@ function Note() {
 			<div className={notesStyle.notes}>
 				<div className={notesStyle.notesContent}>
 					<div className={notesStyle.notesContentTwo}>
-							<div className={notesStyle.notesFormDiv}>
-								<div className={notesStyle.notesFormIcons}>
-									<img
-										src={Vectorc}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleBold}
-										onFocus={handleBold}
-									/>
-									<img
-										src={Vectorr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectoor}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vectorrr}
-										alt="img"
-										className={notesStyle.notesFormIcon}
-									/>
-									<img
-										src={Vecctor}
-										alt="img"
-										id={notesStyle.deleteIcon}
-										className={notesStyle.notesFormIcon}
-										onMouseDownCapture={handleOpen}
-										onFocus={handleOpen}
-									/>
-								</div>
-								{inputs?.length > 0 ? (
-									<p
-										className={notesStyle.notesLastEdit}
-										id={notesStyle.notesLastEdit}
-									>
-										{hour}:{min}pm, {date}-{month}-22
-									</p>
-								) : (
-									<p className={notesStyle.notesLastEdit}>Last edit</p>
-								)}
-								{
-									note ? 
-									<div className={notesStyle.noteTextDiv}>
-								<p
-									className={notesStyle.noteText}
-									style={bold ? boldStyle : {}}
-								>
-									{note}
-								</p>
-								</div> :
-								<div>
-<p>{startHere}</p>
-								<form className={notesStyle.notesForm} onSubmit={handleSubmit}>
-									<textarea
-										className={notesStyle.notesFormInput}
-										onChange={handleChanges}
-									/>
-									<button type='submit' className={notesStyle.notesSaveBtn}>Save Note</button>
-								</form>
-								</div>
-								}
+						<div className={notesStyle.notesFormDiv}>
+							<div className={notesStyle.notesFormIcons}>
+								<img
+									src={Vectorc}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleBold}
+									onFocus={handleBold}
+								/>
+								<img
+									src={Vectorr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectoor}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vectorrr}
+									alt="img"
+									className={notesStyle.notesFormIcon}
+								/>
+								<img
+									src={Vecctor}
+									alt="img"
+									id={notesStyle.deleteIcon}
+									className={notesStyle.notesFormIcon}
+									onMouseDownCapture={handleOpen}
+									onFocus={handleOpen}
+								/>
 							</div>
+							{inputs?.length > 0 ? (
+								<p
+									className={notesStyle.notesLastEdit}
+									id={notesStyle.notesLastEdit}
+								>
+									{hour}:{min}pm, {date}-{month}-22
+								</p>
+							) : (
+								<p className={notesStyle.notesLastEdit}>Last edit</p>
+							)}
+							{note ? (
+								<div className={notesStyle.noteTextDiv}>
+									<p
+										className={notesStyle.noteText}
+										style={bold ? boldStyle : {}}
+									>
+										{note}
+									</p>
+								</div>
+							) : (
+								<div>
+									{
+										saveMsg ?
+									<p>Note saved, successfully!</p> :
+									<p>{startHere}</p>
+									}
+									<form
+										className={notesStyle.notesForm}
+										onSubmit={handleSubmit}
+									>
+										<textarea
+											className={notesStyle.notesFormInput}
+											onChange={handleChanges}
+										/>
+										{
+											saveMsg ?
+											<button type="submit" className={notesStyle.notesSaveBtn}>
+											Edit Note
+										</button> :
+										<button type="submit" className={notesStyle.notesSaveBtn}>
+										Save Note
+									</button>
+										}
+									</form>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>

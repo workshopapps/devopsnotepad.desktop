@@ -9,7 +9,7 @@ function Auth({ closeAuth }) {
 
 	// Proptype declaration
 	Auth.propTypes = {
-		closeAuth: PropTypes.node.isRequired,
+		closeAuth: PropTypes.func.isRequired,
 	};
 
 	function handleSubmit(e) {
@@ -17,6 +17,7 @@ function Auth({ closeAuth }) {
 		const globalPassword = localStorage.getItem('userPassword');
 		console.log(globalPassword);
 		if (input === globalPassword) {
+			sessionStorage.setItem('isAuthenticated', true);
 			closeAuth();
 		}
 		if (input !== globalPassword) {
@@ -37,7 +38,7 @@ function Auth({ closeAuth }) {
 					</label>
 					<input
 						className={styleA.input}
-						type="text"
+						type="password"
 						name="password"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}

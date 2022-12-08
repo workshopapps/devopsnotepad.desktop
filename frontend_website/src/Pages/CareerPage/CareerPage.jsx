@@ -10,6 +10,8 @@ import Values from './Values/Values';
 import Words from './Words/Words';
 
 import classes from './CareerPage.module.css';
+import Navigation from '../../Component/Navigation/Navigation';
+import Footer from '../../Component/Footer/Footer';
 
 const CareerPage = () => {
   return (
@@ -20,7 +22,7 @@ const CareerPage = () => {
         <meta name='description' content='join our team' />
         <link rel='canonical' href='/careers' />
       </Helmet>
-
+      <Navigation />
       {/* Application */}
       <div className={classes.careerpage} data-testid='career__page'>
         <Header />
@@ -32,6 +34,7 @@ const CareerPage = () => {
         <Openings />
         <SignUp />
       </div>
+      <Footer />
     </>
   );
 };

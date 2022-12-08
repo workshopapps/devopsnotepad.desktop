@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /auth/signup:
+ * /api/auth/signup:
  *     post:
  *         summary: Registers a single user
  *         tags:
@@ -60,7 +60,7 @@
  *                                message:
  *                                     type: string
  *                                     description: failure message.
- * /auth/login:
+ * /api/auth/login:
  *     post:
  *         summary: Logs in a single user with correct login credentials
  *         tags:
@@ -116,7 +116,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /auth/reset-password:
+ * /api/auth/reset-password:
  *     post:
  *         summary: Initiates a reset password operation for a user
  *         tags:
@@ -168,7 +168,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /auth/update-password:
+ * /api/auth/update-password:
  *     post:
  *         summary: Allows a user recover account when password is forgotten
  *         tags:
@@ -228,7 +228,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /auth/verify-mail:
+ * /api/auth/verify-mail:
  *     post:
  *         summary: Initiates the email verification operation
  *         tags:
@@ -260,7 +260,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /auth/update-user-password:
+ * /api/auth/update-user-password:
  *     post:
  *         summary: changes password for a user
  *         tags:
@@ -316,7 +316,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /auth/logout:
+ * /api/auth/logout:
  *     get:
  *         summary: Logs out a single user
  *         tags:
@@ -339,7 +339,7 @@
  *                                     description: success message.
  *                                data:
  *                                     type: object
- * /server:
+ * /api/server:
  *     patch:
  *         summary: Updates server information for a single user
  *         tags:
@@ -389,7 +389,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /server/:
+ * /api/server/:
  *     post:
  *         summary: Creates server for a single user
  *         tags:
@@ -435,7 +435,7 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /server/delete:
+ * /api/server/delete:
  *     post:
  *         summary: Deletes selected servers for a single user
  *         tags:
@@ -467,7 +467,7 @@
  *                                     description: success message.
  *                                data:
  *                                     type: object
- * /server/all:
+ * /api/server/all:
  *      get:
  *         summary: Fetches all servers for a user
  *         security:
@@ -481,7 +481,7 @@
  *                    type: number
  *                    required: false
  *             - in: path
- *               name: page
+ *               name: limit
  *               schema:
  *                    type: number
  *                    required: false
@@ -512,7 +512,7 @@
  *                                     type: string
  *                                     description: fail message.
  *       
- * /server/{serverId}/notifications:
+ * /api/server/{serverId}/notifications:
  *     post:
  *         summary: Creates a single notification for a single server
  *         tags:
@@ -523,6 +523,19 @@
  *               schema:
  *                    type: string
  *                    required: true
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The notification logs for server
  * 
  *         responses:
  *             '200':
@@ -547,7 +560,56 @@
  *                                message:
  *                                     type: string
  *                                     description: fail message.
- * /server/{serverId}/notifications/:
+ * /api/server/{serverId}/availability:
+ *     post:
+ *         summary: Creates a single availability notification for an endpoint
+ *         tags:
+ *             - Availablity Notification
+ *         parameters:
+ *             - in: path
+ *               name: serverId
+ *               schema:
+ *                    type: string
+ *                    required: true
+ * 
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - logs
+ *                          properties:
+ *                              logs:
+ *                                  type: string
+ *                                  description: The availability logs for endpoints
+ * 
+ *         responses:
+ *             '200':
+ *                description: success
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '404':
+ *                 description: An error occured while creating new logs, server do not exist
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /api/server/{serverId}/notifications/:
  *     get:
  *         summary: Fetches all notifications for a single server
  *         tags:
