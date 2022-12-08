@@ -19,7 +19,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 	function onMutate(e) {
 		setFormData((prev) => ({
 			...prev,
-			[e.target.id]: e.target.value.trim(),
+			[e.target.id]: e.target.value,
 		}));
 		// console.log(e.target.value);
 	}
