@@ -9,16 +9,11 @@
   font-family: 'Manrope';
   font-style: normal;
 }
-.active {
-  fill: green;
-}
-.inactive {
-  fill: red;
-}
 
 .svg {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
+  fill: green;
 }
 
 .p {
