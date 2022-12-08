@@ -82,7 +82,7 @@ function SimpleNotification() {
 							{' '}
 							<div className={styles.card2}>
 								<div>
-									<div className={styles.belly}>0</div>
+									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>
@@ -116,7 +116,7 @@ function SimpleNotification() {
 
 								<Content notes={notification.logs} />
 
-								<p style={{ fontSize: '14px' }}>{notification.created_at}</p>
+								<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
 							</div>
 						</div>
 					))}
