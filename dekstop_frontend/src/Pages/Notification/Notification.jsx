@@ -104,7 +104,7 @@ function Notification() {
 							{' '}
 							<div className={styles.card}>
 								<div>
-									<div className={styles.belly}>0</div>
+									<div className={styles.belly}>1</div>
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>
