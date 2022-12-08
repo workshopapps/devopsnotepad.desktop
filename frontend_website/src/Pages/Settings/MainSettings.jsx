@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import axios from "axios";
+import axios from "axios";
 import { Support } from './data';
 // import PropTypes from 'prop-types';
 import style from './MainSettings.module.css';
@@ -24,7 +24,7 @@ function Settings() {
 		return user;
 	}
 
-	const API_URL = "https://opspad.onrender.com/api/auth/update-user-password";
+	const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
 
 
 
@@ -39,54 +39,25 @@ function Settings() {
 		e.preventDefault();
 		console.log("Button is working")
 
-		const data = {
-			oldPassword,
-			newPassword,
-		};
-
-		// try {
-		// 	const response = await fetch(API_URL, {
-		// 		method: "POST",
-		// 		headers: {
-		// 			"Content-Type": "application/json",
-		// 			'Authorization': `Bearer ${token}`,
-		// 		},
-		// 		body: JSON.stringify({
-		// 			oldPassword,
-		// 			newPassword
-		// 		})
-		// 	})
-		// 		.then(response => response.json())
-		// 		.then(data => {
-		// 			console.log(data);
-		// 			console.log(response, "This is working");
-		// 			alert('Password changed is  Successful');
-		// 			navigate('/');
-		// 		})
-
-		// } catch (error) { console.log(error) }
-
-		const options =  {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: {
-				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${token}`,
-			}
-		}
-		
-		await fetch(API_URL, options)
-			.then(response => response.json())
-			.then(data => {
-				// do something with the data
-				console.log(data)
-			})
-			.catch(error => {
-				console.log(error);
+		try {
+			const response = await axios.post(API_URL, {
+				oldPassword,
+				newPassword,
+			}, {
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${token}`,
+				}
 			});
-		console.log(options, "This is working")
-		alert('Password changed is  Successful');
-		navigate('/');
+			console.log(response.data);
+			console.log(response, "This is working")
+			alert('Password changed is  Successful');
+			navigate('/');
+
+		} catch (error) {
+			console.error(error);
+		}
+
 
 		setNewPassword('');
 
@@ -94,7 +65,7 @@ function Settings() {
 
 
 	return (
-		<div>
+		<div className={style.settingsPage}>
 			<Sidenav />
 			<div className={style.settingsContainer}>
 				<h1>Settings</h1>
