@@ -1,36 +1,62 @@
 import React, { useContext } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import { NavLink, useParams, Outlet } from 'react-router-dom';
+
 import ServerContext from '../../Components/Context/ServerContext';
 import ServerInfo from '../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../Components/SideNav/SideNav';
 import styles from './ServerDashBoard.module.css';
+import BackBtn from '../../Components/BackBtn/BackBtn';
 
 function ServerDashBoard() {
+	// const [availability, setAvailability] = useState(null);
 	const { servers } = useContext(ServerContext);
 	const params = useParams();
+	// const currentServerId = JSON.parse(localStorage.getItem('servers'))
+	// 	? JSON.parse(localStorage.getItem('servers')).find(
+	// 			(s) => s.id === params.id
+	// 	  ).serverId
+	// 	: null;
+
+	const activeStyle = {
+		borderBottom: '1px solid #202020',
+	};
 
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
 			<section className={styles.main}>
 				{servers
 					.filter((server) => server.id === params.id)
 					.map((server) => (
 						<div key={server.id}>
-							<ServerInfo ipAddress={server.ipAddress} name={server.name} />
+							<ServerInfo
+								serverId={server.serverId}
+								ipAddress={server.ipAddress}
+								name={server.name}
+							/>
 							<div className={styles.wrapper}>
-								<Link to={`/server/${server.id}/note`}>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/note`}
+								>
 									{' '}
 									<p className={styles.note}>Notes</p>{' '}
-								</Link>
-								<Link to={`/server/${server.id}/password`}>
+								</NavLink>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/password`}
+								>
 									{' '}
 									<p className={styles.note}>Password</p>{' '}
-								</Link>
-								<Link to={`/server/${server.id}/notification`}>
+								</NavLink>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/notification`}
+								>
 									{' '}
 									<p className={styles.note}>Notifications</p>{' '}
-								</Link>
+								</NavLink>
 							</div>
 							<Outlet context={[server]} />
 						</div>

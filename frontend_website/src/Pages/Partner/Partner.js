@@ -10,11 +10,6 @@ import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
 const Partner = () => {
-
-  // const [openText, setOpenText] = useState(true)
-  // const [openTechnologyText, setOpenTechnologyText] = useState(false)
-  // const [openChannelText, setOpenChannelText] = useState(false)
-
   return (
     <>
       <Navigation />
@@ -43,8 +38,8 @@ const Partner = () => {
             <h5>Technology Partner</h5>
             <h5>Channel Partner</h5>
             <a href="/contact-us">
-              <button>Become a Partner</button>
-            </a>
+            <button>Become a Partner</button>
+          </a>
           </div>
           <div className={style.handImageWrapper}>
             <img src={hands} className={style.handImage} alt='Imageof hands' />

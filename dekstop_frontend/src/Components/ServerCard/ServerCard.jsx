@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { ref, onValue } from 'firebase/database';
+import { db } from '../../firebase.config';
 import style from './ServerCard.module.css';
 import arrowUp from './Assets/arrow_up.svg';
 import arrowDown from './Assets/arrow_down.svg';
@@ -10,7 +12,8 @@ import ServerMenu from '../ServerMenu/ServerMenu';
 import EditServer from '../EditServer/EditServer';
 import DeleteServer from '../DeleteSever/DeleteServer';
 
-function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
+function ServerCard({ name, ipAddress, id, serverId }) {
+	const [availability, setAvailability] = useState(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isEditOpen, setIsEditOpen] = useState(false);
 	const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -22,6 +25,17 @@ function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 			document.body.style.overflow = 'auto';
 		}
 	});
+
+	const availabiltyNotificationsRef = ref(
+		db,
+		`opspad/notifications/${serverId}`
+	);
+	useEffect(() => {
+		onValue(availabiltyNotificationsRef, (snapshot) => {
+			const data = snapshot.val();
+			setAvailability(data.status);
+		});
+	}, []);
 
 	function closeDelete() {
 		setIsMenuOpen(false);
@@ -74,7 +88,7 @@ function ServerCard({ name, ipAddress, serverHealth, id, serverId }) {
 							</tr>
 							<tr>
 								<th>Server Health:</th>
-								{serverHealth ? (
+								{availability ? (
 									<td
 										className={`${style.server_health_container} ${style.server_health_excellent}`}
 									>
@@ -105,15 +119,13 @@ ServerCard.propTypes = {
 	serverId: PropTypes.string,
 	name: PropTypes.string,
 	ipAddress: PropTypes.string,
-	serverHealth: PropTypes.string,
 	id: PropTypes.string,
 };
 
 ServerCard.defaultProps = {
-	serverId: '4439593jf3-0f3-2k200004rf',
+	serverId: '05a00f79-762c-11ed-b8a3-fc3fdbff49c4',
 	name: 'HNG SERVER',
 	ipAddress: '192.168.0.1',
-	serverHealth: 'excellent',
 	id: '34380302dom',
 };
 

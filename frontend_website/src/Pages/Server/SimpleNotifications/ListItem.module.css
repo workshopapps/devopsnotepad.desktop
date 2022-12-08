@@ -1,0 +1,32 @@
+.li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 1.3rem 0;
+  border: 0.1rem solid #4b4b4b;
+  border-radius: 0.6rem;
+  font-family: 'Manrope';
+  font-style: normal;
+}
+
+.svg {
+  height: 1rem;
+  width: 1rem;
+  fill: green;
+}
+
+.p {
+  flex-basis: 85%;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4b4b4b;
+  margin-left: 1.4rem;
+  margin-right: auto;
+}
+.time {
+  flex-basis: 5%;
+  color: #6f6f6f;
+  font-weight: 400;
+  font-size: 14px;
+}

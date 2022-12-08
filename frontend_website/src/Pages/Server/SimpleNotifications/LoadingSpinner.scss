@@ -1,0 +1,30 @@
+.spinner__box {
+  width: 100%;
+  height: calc(100vh - 20rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #102a63;
+    margin-left: 2rem;
+  }
+}
+
+.spinner {
+  fill: #102a63;
+  height: 4rem;
+  width: 4rem;
+  animation: spinner linear 2s infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

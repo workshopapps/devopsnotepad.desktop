@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/react";
+import * as Sentry from '@sentry/react';
 import React, { useContext } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
@@ -35,13 +35,16 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
-import Notification from './Pages/Notification/Notification';
+import Settings from './Pages/Settings/MainSettings';
 
 import classes from './App.module.css';
 import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
 import ServerDashBoard from './Pages/Server/ServerDashboard/ServerDashboard';
 import AddServer from './Pages/Server/AddServer/AddServer';
+// import Notification from './Pages/Server/Notification/Notification';
 import { UserContext } from './store/UserContext';
+import Server from './Pages/Server/Server';
+import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -125,7 +128,6 @@ function App() {
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/podcasts' exact element={<PodCast />} />
           <Route path='/prices' exact element={<Prices />} />
-          <Route path='/notification' exact element={<Notification />} />
           <Route
             path='/prices/payment/:state/:id'
             exact
@@ -136,9 +138,13 @@ function App() {
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
           <Route path='/checkemail' element={<CheckEmail />} />
           <Route path='/verfication' element={<Verification />} />
-          <Route path='/newpassword' element={<NewPassword />} />
+          <Route
+            path='/api/auth/update-password'
+            element={<NewPassword />}
+          />
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/settings' exact element={<Settings />} />
 
           {/* Server Dashbord */}
           <Route
@@ -146,21 +152,25 @@ function App() {
             exact
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <ServerDashBoard />
+                <Server />
               </ProtectedRoute>
             }
           />
-          <Route exact path='/add-server' element={<AddServer />} />
+          <Route
+            path='/add-server'
+            exact
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <AddServer />
+              </ProtectedRoute>
+            }
+          />
 
-          <Route path='/server/:id' element={<ServerDashBoard />}>
-            <Route path='notification' element={<Notification />}>
-              <Route
-                exact
-                path='simpleNotifications'
-                element={<div>Simple Notifications</div>}
-              />
-            </Route>
-          </Route>
+          <Route path='/server/:id' element={<ServerDashBoard />} />
+          <Route
+            path='/server/:id/simple_notifications'
+            element={<SimpleNotifications />}
+          />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}
           <Route path='*' exact element={<ErrorPage />} />
