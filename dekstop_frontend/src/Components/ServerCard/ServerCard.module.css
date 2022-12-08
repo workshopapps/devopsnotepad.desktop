@@ -77,8 +77,8 @@
 	display: grid;
 	place-content: center;
 	padding: 4px 8px;
-	width: 49px;
-	height: 24px;
+	width: 77px;
+	height: 32px;
 	border-radius: 4px;
 	font-family: 'Manrope';
 	font-weight: 600;
@@ -116,8 +116,4 @@
 }
 .server_health_critical span {
 	color: #e91111;
-}
-
-.server_health_critical_container {
-	width: 60px;
 }
