@@ -1,4 +1,4 @@
-import UserRepo from "../../database/repositories/UserRepo.js";
+7import UserRepo from "../../database/repositories/UserRepo.js";
 import bcrypt from "bcrypt";
 import signJWT from "../../utils/jwthelper.js";
 
@@ -19,7 +19,7 @@ export default async function login(body, req, res) {
     }
 
     if (user.email_verified==="false") {
-        return res.status(400).send({message: "Pls, kindly check your e-mail to complete your registration"}); 
+        return res.status(401).send({message: "Pls, kindly check your e-mail to complete your registration"}); 
     }
 
     delete user.password;
