@@ -17,14 +17,16 @@
 }
 
 .p {
+  flex-basis: 85%;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   color: #4b4b4b;
   margin-left: 1.4rem;
   margin-right: auto;
 }
 .time {
+  flex-basis: 5%;
   color: #6f6f6f;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
 }

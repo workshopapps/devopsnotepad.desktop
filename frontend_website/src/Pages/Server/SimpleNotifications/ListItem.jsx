@@ -6,7 +6,7 @@ const ListItem = ({ up, description, time }) => {
     <li className={classes.li}>
       <FaCircle className={classes.svg} />
       <p className={classes.p}>{description}</p>
-      <time className={classes.time}>{time}</time>
+      <p className={classes.time}>{`${time} hrs ago`}</p>
     </li>
   );
 };
