@@ -20,7 +20,6 @@ const Faq = () => {
   const MobileAnswer = () => {
     return (
       <>
-        <Navigation />
         {/* for mobile view */}
         <div className={faq.mobileview}>
           <div className={faq.grid2Header}>Ans.</div>
@@ -41,7 +40,6 @@ const Faq = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   };

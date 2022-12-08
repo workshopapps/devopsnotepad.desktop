@@ -1,3 +1,8 @@
+.settingsPage {
+	display: flex;
+	width: 100%;
+}
+
 @media (max-width: 768px) {
 	.settingsContainer {
 		padding: 20px !important;
@@ -13,7 +18,8 @@
 }
 
 .settingsContainer {
-	padding: 1px 117px 80px 345px;
+	padding: 1px 70px 80px 70px;
+	flex-basis: 100%;
 }
 .settingsContainer h1 {
 	padding-top: 30px;
