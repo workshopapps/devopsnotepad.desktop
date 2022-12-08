@@ -1,23 +1,20 @@
 import React from "react";
 import forgetStyles from "../ForgetPassword/ForgetPassword.module.css"
 import successimg from "../ForgetPassword/Images/success.png"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Success = () => {
-    return ( 
+    const navigate = useNavigate()
+    return (
         <div className={forgetStyles.Success}>
-           
             <div className={forgetStyles.logoImg}>
-    <img src={successimg} alt="" />
-                    </div>
-        
-           <p>Your password has been changed successfully. </p>
-
-           <Link to='/' ><input type="submit" value="Back to login"/></Link>
-
+                <img src={successimg} alt="" />
+            </div>
+            <p>Your password has been changed successfully. </p>
+            <button onClick={() => navigate('/login')} className={forgetStyles.submitBtn} type="submit">Back to login {'>'}</button>
         </div>
-     );
+    );
 }
- 
+
 export default Success;
