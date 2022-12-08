@@ -33,6 +33,7 @@ function ServerCard({ name, ipAddress, id, serverId }) {
 	useEffect(() => {
 		onValue(availabiltyNotificationsRef, (snapshot) => {
 			const data = snapshot.val();
+			console.log(data);
 			setAvailability(data.status);
 		});
 	}, []);
