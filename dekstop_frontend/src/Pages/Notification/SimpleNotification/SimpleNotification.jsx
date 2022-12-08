@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './SimpleNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
@@ -33,6 +34,7 @@ function SimpleNotification() {
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
 
 			<section className={styles.main}>
 				<div className={styles.container}>
