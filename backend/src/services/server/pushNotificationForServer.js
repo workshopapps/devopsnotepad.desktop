@@ -214,6 +214,6 @@ export default class PushNotification {
       }
     );
 
-    // return task.start();
+    return task.start();
   }
 }
