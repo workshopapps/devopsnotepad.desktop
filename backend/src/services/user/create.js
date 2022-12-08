@@ -1,7 +1,7 @@
 import UserRepo from "../../database/repositories/UserRepo.js";
 import bcrypt from "bcrypt";
 import { sendEmailVerificationLink } from "../../services/user/emailVerification.js";
-import { ValidationError } from '../lib/errors/index.js';
+import { ValidationError } from '../../lib/errors/index.js';
 
 export default async function create(body) {
     body.email = body.email.toLowerCase();

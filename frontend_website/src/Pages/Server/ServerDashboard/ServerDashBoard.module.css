@@ -1,28 +1,18 @@
 .server {
   height: 100vh;
   width: 100%;
+  display: flex;
 }
 
 section.main {
-  margin-left: 300px;
-  margin-right: 100px;
+  flex-basis: 80%;
+  padding: 3rem 5rem;
 }
 
-div.wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-  font-size: 14px;
-  font-weight: 700;
-  color: #6f6f6f;
-}
-
-div.wrapper p.note {
+p.note {
+  width: fit-content;
   color: #8a8787 !important;
   margin-bottom: 4px;
-}
-
-.footer_list {
   border: 0.1rem solid #101e4391 !important;
   padding: 0.4rem 0.7rem;
   border-radius: 0.7rem;

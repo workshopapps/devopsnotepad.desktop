@@ -35,7 +35,9 @@ function AddServerSuccess({ closeSuccess, message }) {
           account.
         </p>
         <Link className={style.link} to='/server'>
-          <button type='button'>Back to Dashboard</button>
+          <button type='button' onClick={() => closeSuccess()}>
+            Back to Dashboard
+          </button>
         </Link>
       </div>
     </div>
