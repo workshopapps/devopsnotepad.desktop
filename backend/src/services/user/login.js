@@ -18,7 +18,7 @@ export default async function login(body, req, res) {
         return res.status(400).send({message: "invalid password"}); 
     }
 
-    if (user.email_verified===0) {
+    if (user.email_verified==="false") {
         return res.status(401).send({message: "Pls, kindly check your e-mail to complete your registration"}); 
     }
 
