@@ -98,14 +98,14 @@ const Form = (props) => {
         type='password'
         autoComplete='current-password'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='MinLength(8), a uppercase, a lowercase, and a number.'
+        placeholder='MinLength(8), uppercase, lowercase, character, number'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
-          MinLength(8), a uppercase, a lowercase, and a number.
+          MinLength(8), uppercase, lowercase, character, number
         </pre>
       )}
 
