@@ -54,6 +54,7 @@
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
+    "express-mysql-session": "^2.1.8",
     "husky": "7",
     "lint-staged": "^13.0.3",
     "mocha": "^10.1.0",
