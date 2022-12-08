@@ -35,7 +35,7 @@ const LandingPage = () => {
 
     fetchRequest(
       {
-        url: 'https://opspad.onrender.com/auth/success',
+        url: 'http://opspad.onrender.com/auth/success',
       },
       getSuccessData,
     );

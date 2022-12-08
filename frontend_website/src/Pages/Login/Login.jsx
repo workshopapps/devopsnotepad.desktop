@@ -25,6 +25,7 @@ const Login = () => {
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
+    console.log(responseObj, 'responseObj');
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);

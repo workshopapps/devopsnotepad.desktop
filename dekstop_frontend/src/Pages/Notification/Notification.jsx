@@ -27,7 +27,7 @@ function Notification() {
 		setLoading(true);
 		try {
 			const res = await fetch(
-				`https://opspad.onrender.com/server/${targetId(
+				`https://opspad.hng.tech/api/server/${targetId(
 					list,
 					Id
 				)}/notifications/`
@@ -53,7 +53,8 @@ function Notification() {
 			}
 		} catch (error) {
 			// eslint-disable-next-line
-			alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
+			// alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
+			setThrowError(true);
 		}
 		setLoading(false);
 	};
@@ -103,7 +104,6 @@ function Notification() {
 							{' '}
 							<div className={styles.card}>
 								<div>
-									<div className={styles.belly}>0</div>
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>

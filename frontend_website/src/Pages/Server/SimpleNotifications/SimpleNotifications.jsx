@@ -6,6 +6,7 @@ import classes from './SimpleNotifications.module.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
+import LoadingSpinner from './LoadingSpinner';
 const SimpleNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   // Getting the id to fetch notifications
@@ -21,20 +22,27 @@ const SimpleNotifications = () => {
   };
 
   //   Fetching notifications
-  const { fetchRequest: fetchNotifications } = useFetch();
+  const { isLoading, error, fetchRequest: fetchNotifications } = useFetch();
+
   useEffect(() => {
     const getNotifications = (nots) => {
-      console.log(nots);
-      setNotifications(nots);
+      const formattedNots = nots.notifications.map((not) => {
+        const time = new Date(not.created_at);
+        const hrs = time.getHours();
+        return {
+          id: not.id,
+          description: not.logs,
+          time: hrs,
+        };
+      });
+      setNotifications(formattedNots);
     };
-
     fetchNotifications(
       {
-        url: 'https://opspad.onrender.com/api/server/2975f888-732b-11ed-bb9c-129f0da43e4d/notifications/',
+        url: 'https://opspad.hng.tech/api/server/60a482ff-76ca-11ed-82ea-50ebf62a0ed9/notifications/',
       },
       getNotifications,
     );
-    console.log('Request sent');
   }, [fetchNotifications]);
 
   return (
@@ -45,12 +53,18 @@ const SimpleNotifications = () => {
       <div className={classes.right}>
         <BsFillBackspaceFill className={classes.back} onClick={backHandler} />
         {notifications.length > 0 && <NotificationList data={notifications} />}
-        {notifications.length === 0 && (
+        {!isLoading && !error.hasError && notifications.length === 0 && (
           <div className={classes.no_notifications}>
             <p>
               You have no notifications yet. Activity from your server wil be
               displayed here.
             </p>
+          </div>
+        )}
+        {isLoading && <LoadingSpinner />}
+        {error.hasError && (
+          <div className={classes.no_notifications}>
+            <p>{error.message}</p>
           </div>
         )}
       </div>
