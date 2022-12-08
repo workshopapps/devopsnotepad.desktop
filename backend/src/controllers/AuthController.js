@@ -200,7 +200,7 @@ export default class AuthController {
         throw new Error('Invalid or expired email verification token');
       }
 
-      await UserRepo.updateById(id, { email_verified: 'true' });
+      await UserRepo.updateById(id, { email_verified: true });
 
       return { message: 'email verified successfully' };
     } catch (error) {
