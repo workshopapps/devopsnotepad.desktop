@@ -180,16 +180,16 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='text'
+        type='password'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='MinLength(8), a uppercase, a lowercase, and a number.'
+        placeholder='MinLength(8), uppercase, lowercase, character, number.'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
-          MinLength(8), a uppercase, a lowercase, and a number.
+          MinLength(8), uppercase, lowercase, character, number
         </pre>
       )}
       <div>
@@ -201,13 +201,13 @@ const Form = (props) => {
         )}
         {props.message && (
           <p className={classes.span__box}>
-            {props.message}{' '}
+            Kindly check your inbox to verify your email
             <span>
               <Button
                 className={classes.success_button}
                 onClick={() => navigate('/login')}
               >
-                Kindly log in to continue
+                and then Login to continue
               </Button>
             </span>
           </p>

@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-// import * as dayjs from 'dayjs'
-// import relativeTime from 'dayjs/plugin/relativeTime.js';
-// import { RiArrowUpLine } from 'react-icons/ri';
-// import ServerContext from '../../../Components/Context/ServerContext';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './SimpleNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
 import Refill from '../assets/Refill.png';
 import green from '../assets/green.png';
 import bell from '../assets/bell.png';
+import Content from './SimpleContent';
 
 function SimpleNotification() {
-	// const { getServers, servers } = useContext(ServerContext);
-	// const { serverNotifications } = useContext(ServerContext);
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
-	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
 
 	const getServer = (code) => {
@@ -27,7 +22,6 @@ function SimpleNotification() {
 		const theServer = data.find((server) => server.id === code);
 		setExactServer(theServer);
 	};
-
 
 	useEffect(() => {
 		getServer(id);
@@ -40,6 +34,7 @@ function SimpleNotification() {
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
 
 			<section className={styles.main}>
 				<div className={styles.container}>
@@ -47,6 +42,7 @@ function SimpleNotification() {
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
 						name={exactServer.name}
+						serverId={exactServer.serverId}
 					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
@@ -88,7 +84,7 @@ function SimpleNotification() {
 							{' '}
 							<div className={styles.card2}>
 								<div>
-									<div className={styles.belly}>0</div>
+									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>
@@ -120,10 +116,9 @@ function SimpleNotification() {
 							<div className={styles.row}>
 								<img src={green} alt="" style={{ alignSelf: 'center' }} />
 
-								<p className={styles.pnote}>
-									{notification.logs.substring(0, 151)}
-								</p>
-								<p>{notification.created_at}</p>
+								<Content notes={notification.logs} />
+
+								<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
 							</div>
 						</div>
 					))}

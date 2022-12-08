@@ -5,20 +5,18 @@ import CheckEmailImage from "../ForgetPassword/Images/checkemail.png"
 import { Link } from "react-router-dom";
 
 const CheckEmail = () => {
-    return (    
+    return (
         <div className={forgetStyles.CheckEmail}>
             <div className={forgetStyles.image}>
-            <img src={CheckEmailImage} alt="" />
+                <img src={CheckEmailImage} alt="" />
             </div>
-            
+
             <h1>Check your Email</h1>
             <p>We have sent password revovery instructions to your inbox.</p>
             <br />
-            <Link to="/verfication" ><input type="submit" value="Open Email App"/></Link>
-           
-
+            <Link to="https://accounts.google.com" ><input type="submit" value="Open Email App" /></Link>
         </div>
-      );
+    );
 }
- 
+
 export default CheckEmail;

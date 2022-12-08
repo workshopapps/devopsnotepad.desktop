@@ -1,53 +1,92 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-// import ServerContext from '../../../Components/Context/ServerContext';
+import { ref, onValue } from 'firebase/database';
+import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
-// import { RiArrowUpLine } from 'react-icons/ri';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
 import Refill from '../assets/Refill.png';
-import red from '../assets/red.png';
 import bell from '../assets/bell.png';
+import arrowUp from './Assets/arrow_up.svg';
+import arrowDown from './Assets/arrow_down.svg';
 
 function AvailabilityNotification() {
-	// const { getServers, servers } = useContext(ServerContext);
-	// const { serverNotifications } = useContext(ServerContext);
+	const [availability, setAvailability] = useState(null);
+	// const [current, setCurrent] = useState(new Date().getTime());
+	const [time, setTime] = useState('');
+
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
-	const [availabilityNotification, setAvailabilityNotification] = useState([]);
+
 	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
 
-	const getServer = (code) => {
-		const localData = localStorage.getItem('servers');
-		const data = localData ? JSON.parse(localData) : [];
-		const theServer = data.find((server) => server.id === code);
-		setExactServer(theServer);
-	};
+	useEffect(() => {
+		const currentServer = JSON.parse(localStorage.getItem('servers'))
+			? JSON.parse(localStorage.getItem('servers')).find((s) => s.id === id)
+			: {};
+		setExactServer(currentServer);
+		//
+		const availabiltyNotificationsRef = ref(
+			db,
+			`opspad/notifications/${currentServer.serverId}`
+		);
+		onValue(availabiltyNotificationsRef, (snapshot) => {
+			const data = snapshot.val();
+			setAvailability(data);
+		});
+	}, []);
 
 	useEffect(() => {
-		getServer(id);
+		// Get simple notifications
 		setSimpleNotification(() => {
 			const localData = localStorage.getItem(`${id}notif`);
 			return localData ? JSON.parse(localData) : [];
 		});
-
-		setAvailabilityNotification([]);
 	}, []);
-	// const { deviceId, id, ipAddress, name, notification, updated_at } =
-	// 	currentServer[0];
+
+	useEffect(() => {
+		if (availability) {
+			const date = new Date(availability.last_checked);
+
+			// eslint-disable-next-line prefer-template
+			const checkedLast = `${date.getDate()}/${
+				date.getMonth() + 1
+			}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+
+			// const last = new Date(availability.last_checked).getFullYear();
+			// const minutes = Math.floor(current - last);
+			// const hours = Math.floor(current - last) % 24;
+			// const currentTime = {
+			// 	minutes,
+			// 	hours,
+			// };
+			// setTime(currentTime);
+			// console.log(last);
+			setTime(checkedLast);
+		}
+	}, [availability]);
+
+	// useEffect(() => {
+	// 	setInterval(() => {
+	// 		setCurrent(new Date().getTime());
+	// 	}, 60000);
+	// }, []);
+
 	return (
 		<div>
 			<Sidenav />
-
+			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
 					<ServerInfo
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
 						name={exactServer.name}
+						serverId={exactServer.serverId}
 					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
@@ -90,9 +129,6 @@ function AvailabilityNotification() {
 
 						<div className={styles.card2}>
 							<div>
-								<div className={styles.belly}>
-									{availabilityNotification.length}
-								</div>
 								<img src={bell} alt="" />
 							</div>
 							<p className={styles.noti}>Availability notifications</p>
@@ -107,27 +143,57 @@ function AvailabilityNotification() {
 					<Link to={`/server/${id}/notification`}>
 						<img src={Button} alt="" style={{ cursor: 'pointer' }} />{' '}
 					</Link>
-
-					<div className={styles.refill}>
-						<img src={Refill} alt="" />
-						<p className={styles.para}>
-							You have no notifications yet. Activity <br /> from your server
-							wil be displayed here.
-						</p>
-					</div>
-
-					<div style={{ display: 'none' }}>
-						<h1 style={{ textAlign: 'start' }}>Today</h1>
-
-						<div className={styles.row}>
-							<img src={red} alt="" />
-							<p style={{ paddingLeft: '10px' }}>
-								The software installation on HNG server was successful
-							</p>
-
-							<p>5mins ago</p>
+					{availability && (
+						<div className={styles.table_container}>
+							<table className={styles.table}>
+								<tbody>
+									<tr>
+										<th>Last Checked:</th>
+										<td className={styles.data}>{time}</td>
+									</tr>
+									<tr>
+										<th>Message:</th>
+										<td className={styles.data}>{availability.msg}</td>
+									</tr>
+									<tr>
+										<th>Server Health:</th>
+										{availability.status ? (
+											<td
+												className={`${styles.server_health_container} ${styles.server_health_excellent}`}
+											>
+												<div className={styles.server_health}>
+													<span>Up</span> <img src={arrowUp} alt="" />
+												</div>
+											</td>
+										) : (
+											<td
+												className={`${styles.server_health_container} ${styles.server_health_critical} ${styles.server_health_critical_container}`}
+											>
+												<div className={styles.server_health}>
+													<span>Down</span>{' '}
+													<img
+														className={styles.rotate}
+														src={arrowDown}
+														alt=""
+													/>
+												</div>
+											</td>
+										)}
+									</tr>
+								</tbody>
+							</table>
 						</div>
-					</div>
+					)}
+
+					{!availability && (
+						<div className={styles.refill}>
+							<img src={Refill} alt="" />
+							<p className={styles.para}>
+								You have no notifications yet. Activity <br /> from your server
+								wil be displayed here.
+							</p>
+						</div>
+					)}
 				</div>
 			</section>
 		</div>

@@ -40,7 +40,7 @@ describe("user authentication", () => {
             password: "@password1",
         });
         const id = 5;
-        await UserRepo.updateById(id, { email_verified: "true" });
+        await UserRepo.updateById(id, { email_verified: 1 });
 
         const res2 = await request.post("/auth/login").set("Content-Type", "application/json").send({
             email: "ExaMpleMail@gmail.com",

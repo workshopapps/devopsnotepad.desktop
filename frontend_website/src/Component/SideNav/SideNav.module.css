@@ -1,39 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .sidenav {
     display: none !important;
   }
-}
+} */
 
-div.main {
-  display: flex;
-}
-
-section.main div.sidenav {
-  height: 100%;
+div.sidenav {
+  height: 100vh;
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: rgb(237, 237, 237);
-  padding: 3.5rem 0.7rem 1rem;
-  position: fixed;
+  padding: 3rem 3rem 2rem;
 }
 
-section.main div.sidenav img.logo {
-  margin: 0 0 10px 30px;
-  width: 150px;
+div.sidenav img.logo {
+  margin-bottom: 1.5rem;
 }
 
-section.main div.sidenav div.nav {
+div.sidenav div.nav {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 0px;
 }
 
-section.main div.sidenav div.nav .navItem {
+div.sidenav div.nav .navItem {
   padding-right: 20px;
   font-weight: 600;
   font-size: 16px;
@@ -41,31 +35,7 @@ section.main div.sidenav div.nav .navItem {
   color: #202020;
 }
 
-section.main div.sidenav div.nav img {
-  margin-left: 30px;
-}
-
-.listItem {
-  padding: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21.86px;
-  color: rgba(32, 32, 32, 0.64);
-}
-
-.listItem:hover {
-  background-color: #ededed;
-  color: #102a63;
-}
-
-.dropDown {
-  width: 100%;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-section.main div.sidenav button.btn {
+div.sidenav button.btn {
   background-color: #102a63;
   color: white;
   border-radius: 5px;
@@ -78,49 +48,72 @@ section.main div.sidenav button.btn {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-  margin-left: 20px;
 }
 .icon_tog {
   cursor: pointer;
-  height: 2rem;
-  width: 3rem;
-}
-.icon_tog:hover {
+  height: 3rem;
+  width: 5rem;
   fill: #102a63;
 }
+.icon_tog:hover {
+  fill: #6287d7;
+}
 
-.btn a {
-  color: #fff !important;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+.button {
+  margin-top: 1.5rem;
+  padding: 1.2rem 2rem;
+  width: fit-content;
+  font-size: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
 }
-.btn svg {
-  color: #fff !important;
+
+.button:hover {
+  background: #102a63ed;
 }
-.btn a:hover {
+
+.btn__svg {
+  color: #fff !important;
+  margin-left: 2rem;
+}
+.btn__svg:hover {
   background: #102a63cb;
 }
-section.main div.sidenav p.settings {
-  font-size: 16px;
+.sidenav__link:link {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  font-size: 18px;
   color: rgba(32, 32, 32, 0.64);
   font-weight: 500;
   line-height: 21.86px;
-  margin-left: 25px;
-}
-.aa:link {
-  text-decoration: none;
-  width: 100%;
 }
 
-.listItem {
+.ul {
   list-style: none;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
-.settings {
-  margin-top: 1rem;
+.li {
+  width: 100%;
+  height: fit-content;
+  margin-top: 1.3rem;
+  text-align: center;
+}
+
+.li_link:link {
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(32, 32, 32, 0.64);
+}
+
+.li_link:hover {
+  background-color: #ededed;
+  color: #102a63;
 }

@@ -76,7 +76,6 @@ p{
   color: var(--pblaxk);
     font-size: 32px;
     font-weight: 700;
-    cursor: pointer;
 }
 
 .servicePartnerContent p{
@@ -92,7 +91,6 @@ p{
   margin: 0;
   margin-top: 20px;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .servicePartnerContent button{

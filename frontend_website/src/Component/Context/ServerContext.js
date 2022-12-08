@@ -85,6 +85,7 @@ export function ServerProvider({ children }) {
 			getServers,
 			setSuccess,
 		}),
+		// eslint-disable-next-line
 		[loading, success]
 	);
 
