@@ -53,11 +53,7 @@ function Notification() {
 			}
 		} catch (error) {
 			// eslint-disable-next-line
-			console.log(error);
-			setThrowError(true);
-			// alert(
-			// 	'Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.'
-			// );
+			alert('Error fetching notifications, check internet connectivity and try again. If error persists, try again after some time.')
 		}
 		setLoading(false);
 	};

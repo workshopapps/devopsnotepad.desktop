@@ -136,10 +136,10 @@ function App() {
           <Route path='/partners' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
-          <Route path='/checkemail' element={<CheckEmail />} />
-          <Route path='/verfication' element={<Verification />} />
-          <Route path='/newpassword' element={<NewPassword />} />
-          <Route path='/success' element={<Success />} />
+          <Route path="/checkemail" element={<CheckEmail />} />
+          <Route path="/verfication" element={<Verification />} />
+          <Route path="/api/auth/update-password" element={<NewPassword />} />
+          <Route path="/success" element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
           <Route path='/settings' exact element={<Settings />} />
 

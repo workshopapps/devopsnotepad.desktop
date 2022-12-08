@@ -127,25 +127,16 @@ export default class AuthController {
 
       sendResetLink(email, name, id);
 
-      res.status(200).redirect('/login');
-      return { message: 'A password reset link has been sent to your email address' };
+      res.status(200).json({ message: 'A password reset link has been sent to your email address' });
     } catch (error) {
       console.error(error);
       next(error);
     }
   };
 
-  static updateUserPassword = async (req, res) => {
+  static updateUserPassword = async (req, res, next) => {
     try {
       const { token, id, password } = req.body;
-
-      /**
-       * Validate Request
-       */
-      const errors = validatePayload(req);
-
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
 
       await ResetTokenRepo.deleteExpiredTokens();
 
@@ -167,12 +158,11 @@ export default class AuthController {
 
       if (!updatedUser) throw new NotFoundError('User not found');
 
-      res.status(200).redirect('/login');
-      return {
+      res.status(200).json({
         success: true,
         message: 'Password has been updated successfully',
         updatedUser,
-      };
+      });
     } catch (error) {
       next(error);
     }
