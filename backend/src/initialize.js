@@ -16,6 +16,8 @@ import session from "express-session";
 import passportSetup from "./config/passport.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import MySqlStore from 'express-mysql-session';
+import { development } from "../knexfile.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -82,19 +84,21 @@ const specs = swaggerJsDoc(options);
 //setting up swagger doc
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 
-app.get("/", (req, res) => {
-    res.send("<button><a href='/auth/google'>Login With Google</a></button>")
-});
-
 app.use(Sentry.Handlers.errorHandler());
 
 passportSetup();
+
+const store = MySqlStore(session);
+const sessionStore = new store(development.connection);
+
 app.use(session({
     secret: config.session.secret,
     resave: false,
     saveUninitialized: false,
+    store: sessionStore,
     cookie: { expires:  60 * 60 * 1000 } // 1 hour
 }));
+
 app.use(cookieParser());
 app.use(helmet());
 app.set("trust proxy", true);
