@@ -17,9 +17,9 @@ router.post("/signup", registerUserValidator, AuthController.signup);
 router.post("/login", loginUserValidator, AuthController.loginUser);
 router.get("/logout", AuthController.logoutUser);
 
-router.get("/success", AuthController.loginStatus);
-router.get("/failed", AuthController.loginFailed);
-router.get("/google", passport.authenticate("google"));
+router.get('/success', isAuthenticated(), AuthController.loginStatus);
+router.get('/failed', AuthController.loginFailed);
+router.get('/google', passport.authenticate('google'));
 router.get(
     "/google/callback",
     passport.authenticate("google", {
