@@ -140,15 +140,14 @@ export default class AuthController {
 
       await ResetTokenRepo.deleteExpiredTokens();
 
-      const storedToken = await ResetTokenRepo.getToken(token, id);
+      const storedTokens = await ResetTokenRepo.getTokens(token, id);
 
-      if (!storedToken) {
+      if (!storedTokens) {
         throw new Error('Invalid or expired password reset token');
       }
+      const currentToken = storedTokens.filter(record => bcrypt.compare(token, record.token));
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
-
-      if (!isValid) {
+      if (!currentToken) {
         throw new Error('Invalid or expired password reset token');
       }
 
