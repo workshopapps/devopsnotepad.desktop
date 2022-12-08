@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import { NavLink, useParams, Outlet } from 'react-router-dom';
 
 import ServerContext from '../../Components/Context/ServerContext';
 import ServerInfo from '../../Components/ServerInfo/ServerInfo';
@@ -30,18 +30,27 @@ function ServerDashBoard() {
 								name={server.name}
 							/>
 							<div className={styles.wrapper}>
-								<Link to={`/server/${server.id}/note`}>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/note`}
+								>
 									{' '}
 									<p className={styles.note}>Notes</p>{' '}
-								</Link>
-								<Link to={`/server/${server.id}/password`}>
+								</NavLink>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/password`}
+								>
 									{' '}
 									<p className={styles.note}>Password</p>{' '}
-								</Link>
-								<Link to={`/server/${server.id}/notification`}>
+								</NavLink>
+								<NavLink
+									style={({ isActive }) => (isActive ? activeStyle : undefined)}
+									to={`/server/${server.id}/notification`}
+								>
 									{' '}
 									<p className={styles.note}>Notifications</p>{' '}
-								</Link>
+								</NavLink>
 							</div>
 							<Outlet context={[server]} />
 						</div>
