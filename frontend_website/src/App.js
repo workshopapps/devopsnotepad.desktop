@@ -35,6 +35,7 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Settings from './Pages/Settings/MainSettings';
 
 import classes from './App.module.css';
 import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
@@ -140,6 +141,7 @@ function App() {
           <Route path="/api/auth/update-password" element={<NewPassword />} />
           <Route path="/success" element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/settings' exact element={<Settings />} />
 
           {/* Server Dashbord */}
           <Route
