@@ -38,7 +38,7 @@ const useFetch = () => {
           body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
           headers: requestConfig.headers ? requestConfig.headers : {},
         });
-
+        console.log(response);
         // If the response is not ok, throw an error
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
