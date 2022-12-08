@@ -24,13 +24,21 @@ const SimpleNotifications = () => {
   const { fetchRequest: fetchNotifications } = useFetch();
   useEffect(() => {
     const getNotifications = (nots) => {
-      console.log(nots);
-      setNotifications(nots);
+      const formattedNots = nots.notifications.map((not) => {
+        const time = new Date(not.created_at);
+        return {
+          id: not.id,
+          description: not.logs,
+          time: time,
+        };
+      });
+      console.log(formattedNots);
+      setNotifications(formattedNots);
     };
 
     fetchNotifications(
       {
-        url: 'https://opspad.onrender.com/api/server/2975f888-732b-11ed-bb9c-129f0da43e4d/notifications/',
+        url: 'https://opspad.onrender.com/server/2975f888-732b-11ed-bb9c-129f0da43e4d/notifications/',
       },
       getNotifications,
     );

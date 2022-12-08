@@ -17,7 +17,7 @@ const UserContextProvider = (props) => {
   // Functions to updates states. useCallback ensures that the functions are memoized
   const addUserHandler = useCallback((data) => {
     setUser(data);
-    if (data.message === 'Logged in Successfully' || data.success === true) {
+    if (data.message || data.success === true) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
