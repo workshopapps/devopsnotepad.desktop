@@ -2,7 +2,7 @@ import create from '../services/user/create.js';
 import UserRepo from '../database/repositories/UserRepo.js';
 import login from '../services/user/login.js';
 import ResetTokenRepo from '../database/repositories/ResetTokenRepo.js';
-import { NotFoundError } from '../lib/errors/index.js';
+import { NotFoundError, ServiceError } from '../lib/errors/index.js';
 import { sendResetLink } from '../services/user/password_reset.js';
 import EmailVerificationTokenRepo from '../database/repositories/emailVerificationRepo.js';
 import bcrypt from 'bcrypt';
@@ -79,20 +79,18 @@ export default class AuthController {
     }
   };
 
-  static loginStatus = async (req, res) => {
-    if (req.user) {
-      res.status(200).json({
-        success: true,
-        message: 'Login was successful',
-        user: req.user,
-      });
-    } else {
-      res.status(401).json({
-        success: false,
-        message: 'Not Authenticated',
-      });
+  static loginStatus = async (req, res, next) => {
+    try {
+        res.status(200).json({
+          success: true,
+          message: 'Login was successful',
+          user: req.session.user,
+        });
+    } catch (error) {
+      throw new ServiceError(error);
     }
   };
+
   static loginFailed = async (req, res) => {
     res.status(401).json({
       success: false,
@@ -184,7 +182,7 @@ export default class AuthController {
         throw new Error('Invalid or expired email verification token');
       }
 
-      await UserRepo.updateById(id, { email_verified: 1 });
+      await UserRepo.updateById(id, { email_verified: true });
 
       res.status(200).send({ message: 'email verified successfully' });
     } catch (error) {

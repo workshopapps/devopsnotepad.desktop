@@ -185,15 +185,15 @@
  *                              - id
  *                              - password
  *                          properties:
- *                              id:
- *                                type: string
- *                                description: The registered user Id
  *                              token:
- *                                 type: string
- *                                 description: The updated password token sent to user's email
+ *                                  type: string
+ *                                  description: Token used for request validation
+ *                              id:
+ *                                  type: string
+ *                                  description: The id of the user
  *                              password:
- *                                 type: string
- *                                 description: The password of the user
+ *                                  type: string
+ *                                  description: The new password of the user
  * 
  *         responses:
  *             '200':
