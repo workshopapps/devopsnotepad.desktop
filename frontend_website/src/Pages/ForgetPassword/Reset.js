@@ -47,13 +47,12 @@ const Reset = () => {
         })
             .then((response) => {
                 response.json()
-                if (response.status === 200) (navigate('/success'))
+                if (response.status === 200) (navigate('/checkemail'))
                 else {
                     setErr('Something went wrong :/')
                 }
             })
             .then(json => console.log(json));
-        navigate('/checkemail')
     }
     return (
         <div className={forgetStyles.Reset}>
