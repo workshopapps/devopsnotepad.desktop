@@ -35,10 +35,9 @@ const SimpleNotifications = () => {
       console.log(formattedNots);
       setNotifications(formattedNots);
     };
-
     fetchNotifications(
       {
-        url: 'https://opspad.onrender.com/server/2975f888-732b-11ed-bb9c-129f0da43e4d/notifications/',
+        url: 'https://opspad.hng.tech/api/60a482ff-76ca-11ed-82ea-50ebf62a0ed9/notifications',
       },
       getNotifications,
     );
