@@ -57,7 +57,7 @@ export default class AuthController {
           req.session.user.expires = false; // Cookie expires at end of session
         }
 
-        return res.send({
+        return res.status(200).send({
           message: 'Logged in Successfully',
           user: loggedInUser.user,
           token: loggedInUser.token,
@@ -140,15 +140,14 @@ export default class AuthController {
 
       await ResetTokenRepo.deleteExpiredTokens();
 
-      const storedToken = await ResetTokenRepo.getToken(token, id);
+      const storedTokens = await ResetTokenRepo.getTokens(token, id);
 
-      if (!storedToken) {
+      if (!storedTokens) {
         throw new Error('Invalid or expired password reset token');
       }
+      const currentToken = storedTokens.filter(record => bcrypt.compare(token, record.token));
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
-
-      if (!isValid) {
+      if (!currentToken) {
         throw new Error('Invalid or expired password reset token');
       }
 
@@ -170,19 +169,14 @@ export default class AuthController {
 
   static verifyEmail = async (req, res, next) => {
     try {
-      const errors = validatePayload(req);
-
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
       const { token, id } = req.query;
+      if (!token || !id) throw new NotFoundError('invalid link, request for a new link');
 
       await EmailVerificationTokenRepo.deleteExpiredTokens();
 
       const storedToken = await EmailVerificationTokenRepo.getToken(id);
 
-      if (!storedToken) {
-        throw new Error('Invalid or expired email verification token');
-      }
+      if (!storedToken) throw new NotFoundError('Invalid or expired email verification token');
 
       const isValid = await bcrypt.compare(token, storedToken.token);
 
@@ -190,9 +184,9 @@ export default class AuthController {
         throw new Error('Invalid or expired email verification token');
       }
 
-      await UserRepo.updateById(id, { email_verified: 'true' });
+      await UserRepo.updateById(id, { email_verified: 1 });
 
-      return { message: 'email verified successfully' };
+      res.status(200).send({ message: 'email verified successfully' });
     } catch (error) {
       next(error);
     }
