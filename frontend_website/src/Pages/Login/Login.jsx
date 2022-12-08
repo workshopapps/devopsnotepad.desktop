@@ -38,7 +38,7 @@ const Login = () => {
   const signInHandler = async (formData) => {
     LoginRequest(
       {
-        url: 'https://opspad.onrender.com/auth/login',
+        url: 'https://opspad.hng.tech/api/auth/login',
         method: 'POST',
         body: formData,
         headers: {
