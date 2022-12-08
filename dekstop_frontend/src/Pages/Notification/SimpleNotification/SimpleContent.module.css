@@ -1,0 +1,25 @@
+/* section.main div.row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	border: 1.5px solid #c7c7c7;
+	border-radius: 5px;
+	padding: 10px 20px;
+	width: 100%;
+	margin-bottom: 20px;
+} */
+
+.pnote{
+	width: 80%;
+	margin-left: 15px;
+}
+
+.readMore{
+	border: none;
+	font-size: 15px;
+	font-family: 'Manrope';
+	background: transparent;
+	color: #6f6f6f;
+	cursor: pointer;
+	margin-left: -3px;
+}

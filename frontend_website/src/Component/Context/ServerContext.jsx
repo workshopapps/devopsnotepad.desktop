@@ -1,5 +1,4 @@
 import { createContext, useMemo, useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 const ServerContext = createContext();
 
@@ -19,14 +18,13 @@ export function ServerProvider({ children }) {
   }
 
   // Create new server
-  async function addServer(server) {
+  async function addServer(serverFromResponse) {
     setLoading(true);
-    const id = await uuidv4();
-    server.id = id;
-    server.created_at = new Date();
-    const data = (await JSON.parse(localStorage.getItem('servers')))
-      ? JSON.parse(localStorage.getItem('servers'))
-      : [];
+    const { id, created_at } = serverFromResponse;
+    const server = { id, created_at };
+    let data = (await JSON.parse(localStorage.getItem('servers')))
+    if (data === null) { data = [] };
+
     data.push(server);
     data.sort((a, b) => b.created_at - a.created_at);
 

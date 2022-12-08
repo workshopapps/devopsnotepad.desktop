@@ -35,6 +35,7 @@ function Note() {
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
+	const [saveMsg, setSaveMsg] = useState(false);
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -45,12 +46,14 @@ function Note() {
 		localStorage.setItem(`${id}`, inputs);
 		setNote(localStorage.getItem('note'));
 		setInputs('');
+		setSaveMsg(true)
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
 		localStorage.removeItem(`${id}`);
 		setNote('');
 		setOpen(false);
+		setSaveMsg(false)
 	};
 	const handleCancel = () => {
 		setOpen(false);
@@ -122,7 +125,11 @@ function Note() {
 								</div>
 							) : (
 								<div>
+									{
+										saveMsg ?
+									<p>Note saved, successfully!</p> :
 									<p>{startHere}</p>
+									}
 									<form
 										className={notesStyle.notesForm}
 										onSubmit={handleSubmit}
@@ -131,9 +138,15 @@ function Note() {
 											className={notesStyle.notesFormInput}
 											onChange={handleChanges}
 										/>
+										{
+											saveMsg ?
+											<button type="submit" className={notesStyle.notesSaveBtn}>
+											Edit Note
+										</button> :
 										<button type="submit" className={notesStyle.notesSaveBtn}>
-											Save Note
-										</button>
+										Save Note
+									</button>
+										}
 									</form>
 								</div>
 							)}
