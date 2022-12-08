@@ -5,6 +5,7 @@ import ServerContext from '../../Components/Context/ServerContext';
 import ServerInfo from '../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../Components/SideNav/SideNav';
 import styles from './ServerDashBoard.module.css';
+import BackBtn from '../../Components/BackBtn/BackBtn';
 
 function ServerDashBoard() {
 	// const [availability, setAvailability] = useState(null);
@@ -23,6 +24,7 @@ function ServerDashBoard() {
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
 			<section className={styles.main}>
 				{servers
 					.filter((server) => server.id === params.id)
