@@ -40,6 +40,7 @@ function SimpleNotification() {
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
 						name={exactServer.name}
+						serverId={exactServer.serverId}
 					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
@@ -81,7 +82,7 @@ function SimpleNotification() {
 							{' '}
 							<div className={styles.card2}>
 								<div>
-									<div className={styles.belly}>0</div>
+									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>
@@ -113,9 +114,9 @@ function SimpleNotification() {
 							<div className={styles.row}>
 								<img src={green} alt="" style={{ alignSelf: 'center' }} />
 
-								<Content notes={notification.logs}/>
+								<Content notes={notification.logs} />
 
-								<p style={{fontSize: '14px'}}>{notification.created_at}</p>
+								<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
 							</div>
 						</div>
 					))}

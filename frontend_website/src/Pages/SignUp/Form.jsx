@@ -180,9 +180,9 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='text'
+        type='password'
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='MinLength(8), a uppercase, a lowercase, and a number.'
+        placeholder='Must be 7 characters'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
