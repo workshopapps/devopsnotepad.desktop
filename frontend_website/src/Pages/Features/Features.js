@@ -85,34 +85,6 @@ const abOpsImg = FeatureCSS.abOpsImg;
 
 const Feature = () => {
   return (
-<<<<<<< HEAD
-    <div className={featureWrapper}>
-      <div className={feature}>
-        <div className={opspadfeaturesminilandingpage}>
-          <h1 className={minilandpageheading}>
-            Ops<span>pad</span> features
-          </h1>
-          <p className={minilandpageparagraph}>
-            {' '}
-            We are changing the whole DevOps system
-          </p>
-          <a href='/signup'>
-             <button className={minilandpagebtn}>Sign up for free</button>
-          </a>
-        </div>
-
-        {/* =================SERVERS SECTION ================*/}
-        <div className={servers}>
-          <div className={serverImgWrapper}>
-            <img src={serversImg} className={serverImg} alt='' />
-          </div>
-          <div className={serversText}>
-            <h2 className={serversTextHeading}>Servers</h2>
-            <p className={serversTextParagraph}>
-              Tracking down server issues just got easier! OpsPad filters log to
-              give you the best and most relevant information you need per time
-              concerning your server(s).
-=======
     <>
       <Navigation />
       <div className={featureWrapper}>
@@ -124,9 +96,10 @@ const Feature = () => {
             <p className={minilandpageparagraph}>
               {' '}
               We are changing the whole DevOps system
->>>>>>> 044ef40dd9da1804b4ded72a9277f5525016c9d9
             </p>
-            <button className={minilandpagebtn}>Sign up for free</button>
+            <a href="/signup">
+              <button className={minilandpagebtn}>Sign up for free</button>
+            </a>
           </div>
 
           {/* =================SERVERS SECTION ================*/}
@@ -227,40 +200,19 @@ const Feature = () => {
               remembering passwords for various tools used to access these
               servers.share information, and work together.
             </p>
-            <button className={aboutOpspadContentButton}>
-              Sign up for free
-            </button>
+            <a href="/signup">
+              <button className={aboutOpspadContentButton}>
+                Sign up for free
+              </button>
+            </a>
           </div>
           <div className={aboutOpspadImgWrapper}>
             <img src={abOpspadimg} className={abOpsImg} alt='' />
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      {/* ABOUT OPSPAD SECTION  */}
-      <div className={aboutOpspad}>
-        <div className={aboutOpspadContent}>
-          <h4 className={aboutOpspadContentHeading}>About Opspad</h4>
-          <hr />
-          <p className={aboutOpspadContentParagraph}>
-            We are building the DevOp notepad exclusively for the devops
-            engineers A tool for managing and keeping track of servers,
-            remembering passwords for various tools used to access these
-            servers.share information, and work together.
-          </p>
-          <a href='/signup'>
-            <button className={aboutOpspadContentButton}>Sign up for free</button>
-          </a>
-        </div>
-        <div className={aboutOpspadImgWrapper}>
-          <img src={abOpspadimg} className={abOpsImg} alt='' />
-        </div>
-      </div>
-    </div>
-=======
       <Footer />
     </>
->>>>>>> 044ef40dd9da1804b4ded72a9277f5525016c9d9
   );
 };
 
