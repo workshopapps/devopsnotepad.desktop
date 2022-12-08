@@ -1,66 +1,21 @@
+.notesWrapper{
+	margin-left: -170px;
+}
 .notes {
-	margin-left: 13%;
+	margin-left: 0%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 60%;
 }
-.notesTitle {
-	text-align: center;
-	height: 44px;
-	top: 80px;
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 32px;
-	line-height: 44px;
-	color: #000000;
-}
 .notesContent {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
-.notesContentOne {
-	width: 260%;
-	border: 1px solid rgb(183, 182, 182);
-	padding: 10px 20px;
-	border-radius: 10px;
-	margin-left: -85%;
-}
-.notesContentOneDetails {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.notesContentOneDetailsTitle {
-	height: 25px;
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 25px;
-	color: #000000;
-}
-#notesContentOneDetailsBtn {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 12px;
-	line-height: 16px;
-	text-align: right;
-	text-transform: capitalize;
-	color: #0e6930;
-	border: 0;
-	padding: 8px 20px;
-	width: 93px;
-	height: 32px;
-	background: #b6dec5;
-	border-radius: 4px;
-}
 .notesContentTwo {
-	margin-left: -73%;
+	margin-left: 0;
 	margin-top: 15px;
 }
 .notesContentwoBtns {
@@ -70,10 +25,10 @@
 }
 .notesForm {
 	margin-top: 20px;
+	width: 287%;
 }
 .notesFormInput {
-	scroll-behavior: smooth;
-	width: 280%;
+	width: 100%;
 	resize: none;
 	height: 200px;
 	font-family: 'Manrope';
@@ -85,8 +40,9 @@
 	color: #000000;
 	outline: none;
 	border: 1px solid #f2f2f2;
-    overflow-x: auto;
 	border-radius: 15px;
+	margin: 0 20%;
+	margin-left: 0%;
 }
 .notesSaveBtn{
 	background: #102a63;
@@ -206,12 +162,8 @@
 	color: #102a63;
 }
 @media screen and (max-width: 1200px) {
-	.notesTitle {
-		margin-left: 10%;
-	}
-	.notesContentOne {
-		width: 180%;
-		margin-left: -35%;
+	.notesWrapper{
+		margin-left: 110px;
 	}
 	.notesContentTwo {
 		margin-left: -37%;
@@ -223,41 +175,44 @@
 	#notesLastEdit {
 		margin-left: 168%;
 	}
+	.notesForm{
+		width: 205%;
+	}
 }
-@media screen and (max-width: 940px) {
-	.notesTitle {
-		margin-left: 12%;
-	}
-	.notesContentOne {
-		width: 140%;
-		margin-left: -15%;
-	}
-	.notesContentTwo {
-		margin-left: -17%;
+@media screen and (max-width: 1024px) {
+	.notesWrapper{
+		margin-left: 110px;
 	}
 	.notesLastEdit {
-		margin-left: 152%;
+		margin-left: 165%;
 	}
 	#notesLastEdit {
-		margin-left: 128%;
+		margin-left: 155%;
+	}
+	.notesForm{
+		width: 173%;
 	}
 }
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 940px) {
+	.notesWrapper{
+		margin-left: 90px;
+	}
+	.notesForm{
+		width: 152%;
+	}
 	.notesDeleteNotification {
 		width: 310px;
 }
-
+.notesLastEdit{
+	margin-left: 140%;
+}
+#notesLastEdit{
+	margin-left: 132%;
+}
 }
 @media screen and (max-width: 768px) {
-	.notesTitle {
-		margin-left: -20%;
-	}
-	.notesContentOne {
-		width: 150%;
-		margin-left: -48%;
-	}
-	.notesContentTwo {
-		margin-left: -48%;
+	.notesForm{
+    width: 105%;
 	}
 	.notesLastEdit {
 		margin-left: 161%;
@@ -267,10 +222,6 @@
 	}
 }
 @media screen and (max-width: 580px) {
-	.notesContentOne {
-		width: 100%;
-		margin-left: -22%;
-	}
 	.notesContentTwo {
 		margin-left: -22%;
 	}
@@ -285,13 +236,6 @@
 	}
 }
 @media screen and (max-width: 320px) {
-	.notesTitle{
-		margin-left: -80%;
-	}
-	.notesContentOne {
-		width: 100%;
-		margin-left: -31%;
-	}
 	.notesContentTwo {
 		margin-left: -31%;
 	}
