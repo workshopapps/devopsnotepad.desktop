@@ -16,9 +16,6 @@ export default async function sendEmail(email, subject, payload, template) {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASSWORD,
             },
-            tls: {
-                rejectUnauthorized: false
-            }
         });
 
         const source = fs.readFileSync(path.join(__dirname, template), "utf8");

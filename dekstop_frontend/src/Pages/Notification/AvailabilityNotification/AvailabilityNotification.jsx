@@ -4,6 +4,7 @@ import { ref, onValue } from 'firebase/database';
 import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
@@ -14,8 +15,7 @@ import arrowDown from './Assets/arrow_down.svg';
 
 function AvailabilityNotification() {
 	const [availability, setAvailability] = useState(null);
-	const [checkedLast, setCheckedLast] = useState('');
-	const [current, setCurrent] = useState(new Date().getTime());
+	// const [current, setCurrent] = useState(new Date().getTime());
 	const [time, setTime] = useState('');
 
 	const [exactServer, setExactServer] = useState({});
@@ -37,7 +37,6 @@ function AvailabilityNotification() {
 		onValue(availabiltyNotificationsRef, (snapshot) => {
 			const data = snapshot.val();
 			setAvailability(data);
-			setCheckedLast(data.last_checked);
 		});
 	}, []);
 
@@ -51,28 +50,36 @@ function AvailabilityNotification() {
 
 	useEffect(() => {
 		if (availability) {
-			const last = new Date(checkedLast).getTime();
-			const diff = current - last;
-			const minutes = Math.floor(diff / 1000 / 60) % 60;
-			const hours = Math.floor(diff / 1000 / 60 / 60);
-			const currentTime = {
-				minutes,
-				hours,
-			};
-			setTime(currentTime);
-		}
-	}, [availability, current]);
+			const date = new Date(availability.last_checked);
 
-	useEffect(() => {
-		setInterval(() => {
-			setCurrent(new Date().getTime());
-		}, 60000);
-	}, []);
+			// eslint-disable-next-line prefer-template
+			const checkedLast = `${date.getDate()}/${
+				date.getMonth() + 1
+			}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+
+			// const last = new Date(availability.last_checked).getFullYear();
+			// const minutes = Math.floor(current - last);
+			// const hours = Math.floor(current - last) % 24;
+			// const currentTime = {
+			// 	minutes,
+			// 	hours,
+			// };
+			// setTime(currentTime);
+			// console.log(last);
+			setTime(checkedLast);
+		}
+	}, [availability]);
+
+	// useEffect(() => {
+	// 	setInterval(() => {
+	// 		setCurrent(new Date().getTime());
+	// 	}, 60000);
+	// }, []);
 
 	return (
 		<div>
 			<Sidenav />
-
+			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
 					<ServerInfo
@@ -142,11 +149,7 @@ function AvailabilityNotification() {
 								<tbody>
 									<tr>
 										<th>Last Checked:</th>
-										<td className={styles.data}>
-											{time.hours > 0 ? `${time.hours}` : ''}
-											{time.hours > 1 ? ' hours' : ' hour'} {time.minutes}{' '}
-											{time.minutes > 1 ? ' minutes' : ' minute'} ago
-										</td>
+										<td className={styles.data}>{time}</td>
 									</tr>
 									<tr>
 										<th>Message:</th>
