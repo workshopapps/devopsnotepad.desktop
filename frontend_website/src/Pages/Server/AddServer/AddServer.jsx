@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
 import ServerContext from '../../../Component/Context/ServerContext';
 
@@ -8,10 +9,10 @@ import style from './AddServer.module.css';
 
 function AddServer() {
   const { addServer, success, setSuccess, loading } = useContext(ServerContext);
-
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
-    ipAddress: '',
+    ipAddress: ''
   });
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
@@ -35,7 +36,24 @@ function AddServer() {
 
   function onSubmit(e) {
     e.preventDefault();
-    addServer(formData);
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser === null) { navigate('/login') };
+
+    const { token } = loggedInUser;
+    fetch('https://opspad.hng.tech/api/server', {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        ipAddress
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    })
+      .then(response => response.json())
+      .then(json => addServer(json.server))
+      .catch(e => console.log(e));
   }
 
   // Close successfully added server modal
@@ -83,9 +101,8 @@ function AddServer() {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>
