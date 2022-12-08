@@ -139,7 +139,7 @@ function App() {
           <Route path='/checkemail' element={<CheckEmail />} />
           <Route path='/verfication' element={<Verification />} />
           <Route
-            path='/api/auth/update-password?token=token&id=id'
+            path='/api/auth/update-password'
             element={<NewPassword />}
           />
           <Route path='/success' element={<Success />} />
