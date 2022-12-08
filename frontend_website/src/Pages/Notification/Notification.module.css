@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+body,
+html {
+	font-family: 'Manrope';
+}
+
+section.main div.contain {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+	margin-top: 20px;
+	border: 2px solid #f6f9ff;
+	background-color: #f6f9ff;
+	border-radius: 10px;
+	padding: 10px 30px;
+}
+
+section.main div.contain div.wrapp {
+	display: flex;
+	align-items: center;
+}
+
+section.main div.contain div.wrapp p.endpoint {
+	color: #102a63 !important;
+	font-size: 16px;
+	line-height: 4px;
+	font-weight: 600;
+}
+
+section.main div.contain div.wrapp p.point {
+	color: #102a63 !important;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+section.main div.wrappe {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 60%;
+}
+
+section.main div.wrappe div.card {
+	border: 1.5px solid #9bb7f6;
+	background-color: #f6f9ff;
+	border-radius: 10px;
+	padding: 20px;
+	padding-bottom: 50px;
+	padding-right: 50px;
+	margin-right: 30px;
+}
+
+section.main div.wrappe div.card div.bell {
+	position: absolute;
+	border: 1px solid #c83333;
+	background-color: #c83333;
+	color: white;
+	border-radius: 10px;
+	padding: 0 10px;
+	font-size: 10px;
+	left: 332px;
+}
+
+section.main div.wrappe div.card div.belly {
+	position: absolute;
+	border: 1px solid #c83333;
+	background-color: #c83333;
+	color: white;
+	border-radius: 10px;
+	padding: 0 10px;
+	font-size: 10px;
+	margin-left: 10px;
+}
+
+section.main div.wrappe div.card p.noti {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+section.main div.wrappe div.card p.par {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
+}
