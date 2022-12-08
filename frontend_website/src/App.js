@@ -153,7 +153,15 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route exact path='/add-server' element={<AddServer />} />
+          <Route
+            path='/add-server'
+            exact
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <AddServer />
+              </ProtectedRoute>
+            }
+          />
 
           <Route path='/server/:id' element={<ServerDashBoard />} />
           <Route

@@ -35,13 +35,13 @@ const Reset = () => {
     const handleSubmit = e => {
         e.preventDefault();
         fetch('https://opspad.hng.tech/api/auth/reset-password', {
-            mode: 'no-cors',
+            // mode: 'no-cors',
             method: "POST",
             body: JSON.stringify({
                 email: form.email
             }),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-Type": "application/json"
             }
         })
             .then(response => response.json())
