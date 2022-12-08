@@ -14,14 +14,15 @@ import arrowDown from './Assets/arrow_down.svg';
 
 function AvailabilityNotification() {
 	const [availability, setAvailability] = useState(null);
+	const [checkedLast, setCheckedLast] = useState('');
+	const [current, setCurrent] = useState(new Date().getTime());
+	const [time, setTime] = useState('');
 
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
 
 	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
-
-	console.log(availability);
 
 	useEffect(() => {
 		const currentServer = JSON.parse(localStorage.getItem('servers'))
@@ -36,6 +37,7 @@ function AvailabilityNotification() {
 		onValue(availabiltyNotificationsRef, (snapshot) => {
 			const data = snapshot.val();
 			setAvailability(data);
+			setCheckedLast(data.last_checked);
 		});
 	}, []);
 
@@ -45,6 +47,26 @@ function AvailabilityNotification() {
 			const localData = localStorage.getItem(`${id}notif`);
 			return localData ? JSON.parse(localData) : [];
 		});
+	}, []);
+
+	useEffect(() => {
+		if (availability) {
+			const last = new Date(checkedLast).getTime();
+			const diff = current - last;
+			const minutes = Math.floor(diff / 1000 / 60) % 60;
+			const hours = Math.floor(diff / 1000 / 60 / 60);
+			const currentTime = {
+				minutes,
+				hours,
+			};
+			setTime(currentTime);
+		}
+	}, [availability, current]);
+
+	useEffect(() => {
+		setInterval(() => {
+			setCurrent(new Date().getTime());
+		}, 60000);
 	}, []);
 
 	return (
@@ -100,7 +122,6 @@ function AvailabilityNotification() {
 
 						<div className={styles.card2}>
 							<div>
-								<div className={styles.belly} />
 								<img src={bell} alt="" />
 							</div>
 							<p className={styles.noti}>Availability notifications</p>
@@ -121,7 +142,11 @@ function AvailabilityNotification() {
 								<tbody>
 									<tr>
 										<th>Last Checked:</th>
-										<td className={styles.data}>{availability.last_checked}</td>
+										<td className={styles.data}>
+											{time.hours > 0 ? `${time.hours}` : ''}
+											{time.hours > 1 ? ' hours' : ' hour'} {time.minutes}{' '}
+											{time.minutes > 1 ? ' minutes' : ' minute'} ago
+										</td>
 									</tr>
 									<tr>
 										<th>Message:</th>
