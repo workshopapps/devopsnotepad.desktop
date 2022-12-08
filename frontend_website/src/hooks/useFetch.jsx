@@ -46,7 +46,6 @@ const useFetch = () => {
 
         // If the response is ok, get the data
         const responseBody = await response.json();
-
         // Send the data to the function that will use it
         // console.log(responseBody, 'responseBody');
         getRequestData(responseBody);
