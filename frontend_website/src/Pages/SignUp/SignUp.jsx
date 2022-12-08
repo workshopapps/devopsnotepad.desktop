@@ -35,7 +35,7 @@ const SignUp = () => {
   const signUpHandler = async (formData) => {
     createAccount(
       {
-        url: 'https://opspad.onrender.com/auth/signup',
+        url: 'https://opspad.hng.tech/api/auth/signup',
         method: 'POST',
         body: formData,
         headers: {

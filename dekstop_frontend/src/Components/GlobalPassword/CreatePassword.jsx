@@ -25,7 +25,7 @@ function CreatePassword({ closeOnboarding }) {
 		event.preventDefault();
 
 		localStorage.setItem('userPassword', password);
-
+		sessionStorage.setItem('isAuthenticated', true);
 		// alert('Password created successfully');
 
 		closeOnboarding();
