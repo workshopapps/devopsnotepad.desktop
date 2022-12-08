@@ -1,4 +1,5 @@
-import faq from './Faq.module.css';
+/* eslint-disable  */
+import faq from '../Component/Faq.module.css';
 const Button = () => {
     return (
         <div>
