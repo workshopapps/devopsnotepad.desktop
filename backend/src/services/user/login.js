@@ -1,6 +1,6 @@
 import UserRepo from "../../database/repositories/UserRepo.js";
 import bcrypt from "bcrypt";
-import { generateJWTToken } from "../../utils/index.js";
+// import { generateJWTToken } from "../../utils/index.js";
 
 export default async function login(body, req, res) {
 
