@@ -1,0 +1,84 @@
+.notifications {
+  width: 100%;
+  display: flex;
+}
+
+.back {
+  height: 3rem;
+  width: 3rem;
+  fill: #102a63;
+  cursor: pointer;
+}
+.back:hover {
+  fill: #405581;
+}
+
+.right {
+  flex-basis: 80%;
+  padding: 3rem 4rem;
+}
+
+.no_notifications {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no_notifications > p {
+  width: 40%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.available {
+  width: 100%;
+  margin-top: 4rem;
+  border: 0.1rem solid gray;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.innerdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.innerdiv:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.date {
+  font-size: 1.6rem;
+  color: rgb(59, 58, 58);
+}
+.message {
+  font-size: 1.6rem;
+  color: rgb(59, 58, 58);
+  letter-spacing: 0.1rem;
+}
+
+.status_active,
+.status_inactive {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+}
+.status_active {
+  background-color: green;
+}
+.status_inactive {
+  background-color: rgb(240, 119, 119);
+}
+
+.status_svg {
+  fill: white;
+  margin-left: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}

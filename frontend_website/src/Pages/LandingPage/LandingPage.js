@@ -24,26 +24,27 @@ import useFetch from '../../hooks/useFetch';
 import { UserContext } from '../../store/UserContext';
 
 const LandingPage = () => {
-  const { fetchRequest } = useFetch();
-  const { isLoggedIn, addUserHandler } = useContext(UserContext);
+  // const { fetchRequest } = useFetch();
+  // const { isLoggedIn, addUserHandler } = useContext(UserContext);
 
-  useEffect(() => {
-    const getSuccessData = (data) => {
-      console.log(data);
-      addUserHandler(data);
-    };
+  // useEffect(() => {
+  //   const getSuccessData = (data) => {
+  //     console.log(data);
+  //     addUserHandler(data);
+  //   };
 
-    fetchRequest(
-      {
-        url: 'http://opspad.onrender.com/auth/success',
-      },
-      getSuccessData,
-    );
-  }, [fetchRequest, addUserHandler]);
+  //   fetchRequest(
+  //     {
+  //       url: 'http://opspad.onrender.com/auth/success',
+  //     },
+  //     getSuccessData,
+  //   );
+  // }, [fetchRequest, addUserHandler]);
 
-  if (isLoggedIn) {
-    return <Navigate to='/server' />;
-  }
+  // if (isLoggedIn) {
+  //   return <Navigate to='/server' />;
+  // }
+
   return (
     <>
       <Navigation />
@@ -60,7 +61,7 @@ const LandingPage = () => {
             </p>
             <div className={style.landPage_btn}>
               <Link to='/signup'>Get Started for Free</Link>
-              <Link to='/how-it-works'>How it works</Link>
+              <Link to='/demo'>How it works</Link>
             </div>
           </div>
           <div className={style.landPage_imgFlex}>
