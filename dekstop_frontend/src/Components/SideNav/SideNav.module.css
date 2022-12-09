@@ -103,10 +103,10 @@ section.main div.sidenav button.btn {
 
 section.main div.sidenav p.settings {
 	font-size: 16px;
-	color: rgba(32, 32, 32, 0.64);
-	font-weight: 500;
+	color: #202020;
+	font-weight: 600;
 	line-height: 21.86px;
-	margin-left: 25px;
+	margin-left: 70px;
 }
 
 .listItem {
