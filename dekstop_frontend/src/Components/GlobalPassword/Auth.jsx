@@ -4,49 +4,54 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
 
-function Auth({ closeAuth }) {
-	const [input, setInput] = useState('');
+function Auth({ closeOnboarding }) {
+	const [password, setAuthPassword] = useState('');
 
 	// Proptype declaration
 	Auth.propTypes = {
-		closeAuth: PropTypes.func.isRequired,
+		closeOnboarding: PropTypes.func.isRequired,
 	};
 
-	function handleSubmit(e) {
+	// event handler for the authenticate button
+	function handleAuthenticate(e) {
 		e.preventDefault();
-		const globalPassword = localStorage.getItem('userPassword');
-		console.log(globalPassword);
-		if (input === globalPassword) {
-			sessionStorage.setItem('isAuthenticated', true);
-			closeAuth();
+		// get the current password from local storage
+		const storedPassword = localStorage.getItem('password');
+		console.log(storedPassword);
+
+		// compare the entered password with the one in local storage
+		if (password === storedPassword) {
+			sessionStorage.setItem('isAuthenticated', false);
+			closeOnboarding();
+			// if they match, show a success message
+			alert('Success! The password is correct.');
 		}
-		if (input !== globalPassword) {
-			alert('Access denied! Incorrect password');
+		if (password !== storedPassword) {
+			// if they don't match, show an error message
+			alert('Error! The password is incorrect.');
 		}
-		setInput('');
+		setAuthPassword('');
 	}
 
 	return (
 		<div className={styleA.formContainer}>
-			<form className={styleA.form} onSubmit={handleSubmit}>
+			<form className={styleA.form} onSubmit={handleAuthenticate}>
 				<div className={styleA.headerContainer}>
-					<h1 className={styleA.formHeader}>Enter password</h1>
+					<h3 className={styleA.formHeader}>Confirm password</h3>
 				</div>
-				<div className={styleA.control}>
-					<label className={styleA.label} htmlFor="password">
-						Password
-					</label>
-					<input
-						className={styleA.input}
-						type="password"
-						name="password"
-						value={input}
-						onChange={(e) => setInput(e.target.value)}
-					/>
+				<div className={styleA.content}>
+					<div className={styleA.control}>
+						<input
+							type="password"
+							name="password"
+							value={password}
+							onChange={(e) => setAuthPassword(e.target.value)}
+						/>
+					</div>
+					<button className={styleA.btn} type="submit">
+						Confirm
+					</button>
 				</div>
-				<button className={styleA.btn} type="submit">
-					Done
-				</button>
 			</form>
 		</div>
 	);
