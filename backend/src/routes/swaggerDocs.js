@@ -75,6 +75,7 @@
  *                          required:
  *                              - email
  *                              - password
+ *                              - rememberMe
  *                          properties:
  *                              email:
  *                                  type: string
@@ -82,6 +83,9 @@
  *                              password:
  *                                  type: string
  *                                  description: The password of the user
+ *                              rememberMe:
+ *                                  type: boolean
+ *                                  description: Keep user logged in
  * 
  *         responses:
  *             '200':
