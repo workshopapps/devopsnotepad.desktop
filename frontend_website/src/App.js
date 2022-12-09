@@ -142,6 +142,7 @@ function App() {
           <Route path='/checkemail' element={<CheckEmail />} />
           <Route path='/verfication' element={<Verification />} />
           <Route path='/api/auth/update-password' element={<NewPassword />} />
+          <Route path='/auth/update-password' element={<NewPassword />} />
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
           <Route path='/settings' exact element={<Settings />} />
