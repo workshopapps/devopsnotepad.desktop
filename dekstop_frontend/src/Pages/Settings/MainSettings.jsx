@@ -76,7 +76,7 @@ function Settings() {
 
 						<div className={style.account}>
 							<div className={style.accountProfile}>
-								<Link to={security.modal}>{security.icon}</Link>
+								{security.icon}
 								{security.func}
 							</div>
 							{/* {security.iconright} */}
@@ -85,7 +85,7 @@ function Settings() {
 				))}
 
 				{Support.map((support) => (
-					<div key={support.title2}>
+					<div className={style.support_cont} key={support.title2}>
 						<small className={style.smallHead}>{support.title}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
