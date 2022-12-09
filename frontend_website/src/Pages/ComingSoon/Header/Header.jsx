@@ -7,8 +7,15 @@ import Input from '../Input/Input';
 
 import classes from './Header.module.css';
 
+
+import ComingSoonModalCss from './ComingSoonModal.module.css';
+
+const comingsoonmodalWraper = ComingSoonModalCss.comingsoonmodalWraper
+const comingsoonmodal = ComingSoonModalCss.comingsoonmodal
+
 const Header = () => {
   const [email, setEmail] = useState('');
+  const [buttonclick, setButtonclick] = useState(false);
   return (
     <div className={classes.leftAligned} data-testid='coming__header'>
       <div className={classes.left}>
@@ -27,11 +34,20 @@ const Header = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         </label>
-        <Button className={classes.button}>Notify me</Button>
+        <Button className={classes.button} onClick={() => setButtonclick(true)}>Notify me</Button>
       </div>
       <figure className={classes.right}>
         <img src={img1} alt='updates' className={classes.img} />
       </figure>
+
+        { buttonclick &&
+          <div className={comingsoonmodalWraper}>
+            <div className={comingsoonmodal}>
+                <h1>You will be notified for future updates. <br /> <span>Please check your email</span></h1>
+                <button onClick={() => setButtonclick(false)}>Ok</button>
+            </div>
+        </div>
+        }
     </div>
   );
 };
