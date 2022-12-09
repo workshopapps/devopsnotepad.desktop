@@ -93,22 +93,3 @@ function SideNav() {
 }
 
 export default SideNav;
-
-
-// function Logout() {
-
-//   const navigate = useNavigate();
-//   useEffect(() => {
-//       fetch('https://opspad.hng.tech/api/auth/logout')
-//           .then(response => response.json())
-//           .then(() => {
-//               // redirect to login page or show a message
-//               navigate('/')
-//           })
-//           .catch(error => {
-//               console.error(error);
-//           });
-//   });
-
-//   return null;
-// }
