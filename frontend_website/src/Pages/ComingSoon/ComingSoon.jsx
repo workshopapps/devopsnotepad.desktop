@@ -7,6 +7,7 @@ import RightAligned from './RightAligned/RightAligned';
 import classes from './ComingSoon.module.css';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
+// import ComingSoonModal from './Modal/ComingSoonModal';
 
 const ComingSoon = () => {
   return (
