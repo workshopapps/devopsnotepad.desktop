@@ -62,18 +62,24 @@
   text-transform: capitalize;
 }
 
-.server_health_excellent {
-  background: #b6dec5;
-  color: #0e6930 !important;
+.status_active,
+.status_inactive {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
 }
-.server_health_critical {
-  background: rgba(233, 17, 17, 0.08);
-  color: #e91111 !important;
+.status_active {
+  background-color: green;
+}
+.status_inactive {
+  background-color: rgb(240, 119, 119);
 }
 
-.arrow {
-  color: #0e6930 !important;
-  margin-left: 10px;
-  width: 20px;
-  height: 20px;
+.status_svg {
+  fill: white;
+  margin-left: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
