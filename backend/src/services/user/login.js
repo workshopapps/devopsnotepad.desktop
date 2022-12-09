@@ -18,11 +18,9 @@ export default async function login(body, req, res) {
         return res.status(400).send({message: "Email or password incorrect"}); 
     }
 
-    const token = await generateJWTToken(user);
     const loggedInUser = {
         message: "A verification link has been sent to your e-mail. Kindly verify to complete registration",
         user,
-        token,
     };
     return loggedInUser;
 }
