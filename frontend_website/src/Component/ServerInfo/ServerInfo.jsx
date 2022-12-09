@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RiArrowUpLine } from 'react-icons/ri';
+import {
+  BsFillCloudArrowDownFill,
+  BsFillCloudArrowUpFill,
+} from 'react-icons/bs';
 import style from './ServerInfo.module.css';
 
-function ServerInfo({ name, ipAddress, serverHealth }) {
+function ServerInfo({ name, ipAddress, serverHealth, status }) {
   return (
     <div className={style.container}>
       <h2>{name}</h2>
@@ -15,14 +18,21 @@ function ServerInfo({ name, ipAddress, serverHealth }) {
           </tr>
           <tr>
             <th>Server Status:</th>
-            <td
-              className={`${style.server_health} ${
-                serverHealth.toLowerCase() === 'up'
-                  ? style.server_health_excellent
-                  : style.server_health_critical
-              }`}
-            >
-              {serverHealth} <RiArrowUpLine className={style.arrow} />
+            <td>
+              <p
+                className={`${
+                  status ? `${style.status_active}` : `${style.status_inactive}`
+                }`}
+              >
+                {status ? 'Up' : 'Down'}
+                <span>
+                  {status ? (
+                    <BsFillCloudArrowUpFill className={style.status_svg} />
+                  ) : (
+                    <BsFillCloudArrowDownFill className={style.status_svg} />
+                  )}
+                </span>
+              </p>
             </td>
           </tr>
         </tbody>
