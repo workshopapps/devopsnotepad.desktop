@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import { Security, Support } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
+import BackBtn from '../../Components/BackBtn/BackBtn';
 
 function Settings() {
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
+
 			<div className={style.settingsContainer}>
 				<h1>Settings</h1>
 
@@ -70,17 +73,14 @@ function Settings() {
 				{Security.map((security) => (
 					<div key={security.title}>
 						<small className={style.smallHead}>{security.title}</small>
-						
-							<div className={style.account}>
-								<div className={style.accountProfile}>
-								<Link to={security.modal}>
-									{security.icon}
-									</Link>
-									{security.func}
-								</div>
-								{/* {security.iconright} */}
+
+						<div className={style.account}>
+							<div className={style.accountProfile}>
+								<Link to={security.modal}>{security.icon}</Link>
+								{security.func}
 							</div>
-						
+							{/* {security.iconright} */}
+						</div>
 					</div>
 				))}
 

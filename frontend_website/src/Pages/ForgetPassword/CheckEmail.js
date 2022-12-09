@@ -15,8 +15,6 @@ const CheckEmail = () => {
             <p>We have sent password revovery instructions to your inbox.</p>
             <br />
             <Link to="https://accounts.google.com" ><input type="submit" value="Open Email App" /></Link>
-
-
         </div>
     );
 }

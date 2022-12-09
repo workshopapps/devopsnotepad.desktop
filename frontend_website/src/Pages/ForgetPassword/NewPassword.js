@@ -6,6 +6,7 @@ const NewPassword = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [reset, setReset] = useState(false)
+    const [err, setErr] = useState('')
     const [searchParams] = useSearchParams()
     const Params = Object.fromEntries([...searchParams])
     const navigate = useNavigate()
@@ -14,32 +15,38 @@ const NewPassword = () => {
 
         const data = {
             password: password,
-            confirmPassword: confirmPassword,
             token: Params.token,
             id: Params.id
         }
 
         fetch('https://opspad.hng.tech/api/auth/update-password', {
-            mode: 'no-cors',
+            // mode: 'no-cors',
             method: "POST",
-            body: data,
+            body: JSON.stringify({
+                data
+            }),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-Type": "application/json"
             }
         })
-            .then(response => response.json())
-            .then(json => {
-                console.log(json)
-                setReset(true)
+            .then((response) => {
+                response.json()
+                if (response.status === 200) {
+                    (navigate('/success'))
+                    setErr('')
+                }
+                else {
+                    setErr('Something went wrong :/')
+                }
             })
-            .catch(err => console.log(err))
-            (navigate('/success'))
+            .then(json => console.log(json));
     }
     return (
         <>
             {reset ? (navigate('/login')) : (
                 <div className={forgetStyles.NewPassword}>
                     <h1>Password Reset</h1>
+                    <h3 style={{ color: 'red' }}>{err}</h3>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="password">Password</label>
                         <input type="password" id="Email" name="email" required onChange={e => setPassword(e.target.value)} />

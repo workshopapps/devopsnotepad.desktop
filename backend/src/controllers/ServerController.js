@@ -18,7 +18,7 @@ export default class ServerController {
             // Update this latter
             if (errors && Object.keys(errors).length > 0) throw errors;
 
-            const {id,email} = req.session.user;
+            const {id, email} = req.session.user;
 
             const result = await create(req.body, id);
 
@@ -73,19 +73,6 @@ export default class ServerController {
                 success: true,
                 message: "servers deleted successfully",
                 result,
-            });
-        } catch (error) {
-            next(error);
-        }
-    };
-
-    static subscribe = async (req, res, next) => {
-        try {
-            await pushNotificationForServer(req);
-
-            res.send({
-                success: true,
-                message: "Subscription successful",
             });
         } catch (error) {
             next(error);
