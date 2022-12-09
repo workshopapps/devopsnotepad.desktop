@@ -22,12 +22,12 @@ export default class AuthController {
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
 
-      await create(req.body);
+      const user = await create(req.body);
 
       res.status(201).json({
         success: true,
         message: 'signup successful',
-        user: req.body,
+        user,
       });
     } catch (error) {
       next(error);
