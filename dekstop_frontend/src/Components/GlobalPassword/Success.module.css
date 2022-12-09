@@ -22,8 +22,8 @@
 	position: absolute;
 	top: 40%;
 	left: 50%;
-	transform: translate(-32%,-35%);
-	
+	transform: translate(-50%, -35%);
+
 	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
 	border-radius: 8px;
 	z-index: 30;
@@ -68,6 +68,11 @@
 	border-radius: 4px;
 	border: none;
 	padding: 16px 0;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
 }
 
 .card button:active {
