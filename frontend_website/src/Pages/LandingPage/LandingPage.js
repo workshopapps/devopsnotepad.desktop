@@ -60,7 +60,7 @@ const LandingPage = () => {
             </p>
             <div className={style.landPage_btn}>
               <Link to='/signup'>Get Started for Free</Link>
-              <Link to='/how-it-works'>How it works</Link>
+              <Link to='/demo'>How it works</Link>
             </div>
           </div>
           <div className={style.landPage_imgFlex}>
