@@ -27,9 +27,9 @@ function Success({ closeModal, onSuccessClick }) {
 					</svg>
 				</figure>
 
-				<h2>Changes Made Successfully </h2>
+				<h2>Password Changed Successfully </h2>
 
-				<p>You have successfully made changes to your profile</p>
+				<p>You have successfully made changes to your password</p>
 
 				<button onClick={onSuccessClick} type="button">
 					Back to Settings
