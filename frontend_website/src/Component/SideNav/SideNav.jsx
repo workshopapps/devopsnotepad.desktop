@@ -2,6 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
@@ -16,6 +17,26 @@ function SideNav() {
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
+
+  async function logout() {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    await axios.get('https://opspad.hng.tech/api/auth/logout', headers)
+      .then(response => console.log(response))
+      .then(navigate("/login"),
+        localStorage.removeItem("loggedInUser"))
+      .catch(error => {
+        console.error(error);
+      });
+
+    return null;
+  }
+
+
+
+
 
   return (
     <div className={styles.sidenav}>
@@ -62,8 +83,32 @@ function SideNav() {
       <Link to='/settings' className={styles.sidenav__link}>
         Settings
       </Link>
+
+
+      <button className={styles.logOutButton} onClick={logout}
+        style={{ position: 'absolute', bottom: '20px' }}
+      >Log Out</button>
     </div>
   );
 }
 
 export default SideNav;
+
+
+// function Logout() {
+
+//   const navigate = useNavigate();
+//   useEffect(() => {
+//       fetch('https://opspad.hng.tech/api/auth/logout')
+//           .then(response => response.json())
+//           .then(() => {
+//               // redirect to login page or show a message
+//               navigate('/')
+//           })
+//           .catch(error => {
+//               console.error(error);
+//           });
+//   });
+
+//   return null;
+// }
