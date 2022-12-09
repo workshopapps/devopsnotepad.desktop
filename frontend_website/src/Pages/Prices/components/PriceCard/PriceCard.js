@@ -17,7 +17,7 @@ const PriceCard = ({ card, id, toggleMonthly }) => {
           <ul className={style.list}>
             {card.list.map((item, index) => {
               return (
-                <li className={style.li}>
+                <li className={style.li} key={index}>
                   <img className={style.img} src={Checkbox} alt='' />
                   <span className={style.span}>{item}</span>
                 </li>
