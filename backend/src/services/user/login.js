@@ -7,20 +7,19 @@ export default async function login(body, req, res) {
     body.email = body.email.toLowerCase();
 
     const user = await UserRepo.getUserByEmail(body.email);
- 
+
     if (!user) {
-        return res.status(404).send({message: "Email or password incorrect"});
-    }
-    
-    const comparePassword = await bcrypt.compare(body.password, user.password);
-  
-    if (!comparePassword) {
-        return res.status(400).send({message: "Email or password incorrect"}); 
+        return res.status(404).send({ message: "Email or password incorrect" });
     }
 
-    const loggedInUser = {
+    const comparePassword = await bcrypt.compare(body.password, user.password);
+
+    if (!comparePassword) {
+        return res.status(400).send({ message: "Email or password incorrect" });
+    }
+    
+    return {
         message: "A verification link has been sent to your e-mail. Kindly verify to complete registration",
         user,
     };
-    return loggedInUser;
 }
