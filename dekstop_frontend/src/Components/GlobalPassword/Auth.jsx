@@ -24,7 +24,7 @@ function Auth({ closeOnboarding }) {
 			sessionStorage.setItem('isAuthenticated', false);
 			closeOnboarding();
 			// if they match, show a success message
-			alert('Success! The password is correct.');
+			alert('Authenticated');
 		}
 		if (password !== storedPassword) {
 			// if they don't match, show an error message
