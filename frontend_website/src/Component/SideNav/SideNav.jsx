@@ -7,6 +7,7 @@ import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
 import ServerContext from '../Context/ServerContext';
 import Button from '../../Pages/CareerPage/Button/Button';
+import ProfileBar from '../ProfileBar/ProfileBar';
 // import { ClassNames } from '@emotion/react';
 /* eslint-disable camelcase */
 
@@ -59,9 +60,7 @@ function SideNav() {
         </span>
       </Button>
 
-      <Link to='/settings' className={styles.sidenav__link}>
-        Settings
-      </Link>
+      <ProfileBar />
     </div>
   );
 }
