@@ -2,12 +2,12 @@
 import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
 import ServerContext from '../Context/ServerContext';
 import Button from '../../Pages/CareerPage/Button/Button';
+import ProfileBar from '../ProfileBar/ProfileBar';
 // import { ClassNames } from '@emotion/react';
 /* eslint-disable camelcase */
 
@@ -17,26 +17,6 @@ function SideNav() {
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
-
-  async function logout() {
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-
-    await axios.get('https://opspad.hng.tech/api/auth/logout', headers)
-      .then(response => console.log(response))
-      .then(navigate("/login"),
-        localStorage.removeItem("loggedInUser"))
-      .catch(error => {
-        console.error(error);
-      });
-
-    return null;
-  }
-
-
-
-
 
   return (
     <div className={styles.sidenav}>
@@ -80,14 +60,7 @@ function SideNav() {
         </span>
       </Button>
 
-      <Link to='/settings' className={styles.sidenav__link}>
-        Settings
-      </Link>
-
-
-      <button className={styles.logOutButton} onClick={logout}
-        style={{ position: 'absolute', bottom: '20px' }}
-      >Log Out</button>
+      <ProfileBar />
     </div>
   );
 }
