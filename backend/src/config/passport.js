@@ -1,5 +1,5 @@
 import Passport from "passport-google-oauth20";
-import UserRepo from '../database/repositories/UserRepo.js';
+import UserRepo from "../database/repositories/UserRepo.js";
 import config from "./index.js";
 import passport from "passport";
 import {create } from "../services/user/authService.js";
@@ -7,9 +7,9 @@ const GoogleStrategy = Passport.Strategy;
 
 
 export default () => {
-  passport.serializeUser((user, done) => {
-    done(null, user);
-  });
+    passport.serializeUser((user, done) => {
+        done(null, user);
+    });
 
     passport.deserializeUser((user, done) => {
         done(null, user);
