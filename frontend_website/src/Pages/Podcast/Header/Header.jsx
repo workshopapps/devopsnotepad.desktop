@@ -3,8 +3,10 @@ import pod1 from '../images/pod1.png';
 import Button from '../../CareerPage/Button/Button';
 
 import classes from './Header.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className={classes.leftAligned} data-testid='header' id='header'>
       <div className={classes.left}>
@@ -17,7 +19,9 @@ const Header = () => {
           promote your podcast. All you need for thriving & productive podcast.
         </p>
 
-        <Button className={classes.button}>Get started</Button>
+        <Button className={classes.button} onClick={() => navigate('/signup')}>
+          Get started
+        </Button>
       </div>
       <figure className={classes.right}>
         <img src={pod1} alt='updates' className={classes.img} />
