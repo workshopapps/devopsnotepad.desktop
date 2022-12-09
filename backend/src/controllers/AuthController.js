@@ -22,12 +22,12 @@ export default class AuthController {
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
 
-      await create(req.body);
+      const user = await create(req.body);
 
       res.status(201).json({
         success: true,
         message: 'signup successful',
-        user: req.body,
+        user,
       });
     } catch (error) {
       next(error);
@@ -47,7 +47,7 @@ export default class AuthController {
       const loggedInUser = await login(body, req, res);
 
       //set request cookie
-      if (loggedInUser.user && loggedInUser.token) {
+      if (loggedInUser.user) {
         req.session.user = loggedInUser.user;
         req.session.authorized = true;
 
@@ -60,7 +60,6 @@ export default class AuthController {
         return res.status(200).send({
           message: 'Logged in Successfully',
           user: loggedInUser.user,
-          token: loggedInUser.token,
         });
       }
     } catch (error) {
@@ -182,7 +181,7 @@ export default class AuthController {
         throw new Error('Invalid or expired email verification token');
       }
 
-      await UserRepo.updateById(id, { email_verified: true });
+      await UserRepo.updateById(id, { email_verified: 1 });
 
       res.status(200).send({ message: 'email verified successfully' });
     } catch (error) {

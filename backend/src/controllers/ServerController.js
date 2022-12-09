@@ -18,7 +18,7 @@ export default class ServerController {
             // Update this latter
             if (errors && Object.keys(errors).length > 0) throw errors;
 
-            const {id,email} = req.session.user;
+            const {id, email} = req.session.user;
 
             const result = await create(req.body, id);
 
