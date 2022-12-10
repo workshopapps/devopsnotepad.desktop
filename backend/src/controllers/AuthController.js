@@ -8,8 +8,12 @@ import EmailVerificationTokenRepo from '../database/repositories/emailVerificati
 import bcrypt from 'bcrypt';
 import Joi from 'joi';
 import PasswordComplexity from 'joi-password-complexity';
-
+import { OAuth2Client } from 'google-auth-library';
 import { validatePayload } from '../utils/index.js';
+import config from '../config/index.js';
+import signJWT from '../utils/jwthelper.js';
+
+const client = new OAuth2Client({ clientId: config.google.CLIENT_ID, clientSecret: config.google.CLIENT_SECRET });
 
 export default class AuthController {
   static signup = async (req, res, next) => {
@@ -80,22 +84,16 @@ export default class AuthController {
 
   static loginStatus = async (req, res, next) => {
     try {
-        res.status(200).json({
-          success: true,
-          message: 'Login was successful',
-          user: req.session.user,
-        });
+      res.status(200).json({
+        success: true,
+        message: 'Login was successful',
+        user: req.session.user,
+      });
     } catch (error) {
       throw new ServiceError(error);
     }
   };
 
-  static loginFailed = async (req, res) => {
-    res.status(401).json({
-      success: false,
-      message: 'Not Authenticated',
-    });
-  };
   static logout = async (req, res) => {
     req.logout();
     res.status(200).json({
@@ -142,7 +140,7 @@ export default class AuthController {
       if (!storedTokens) {
         throw new Error('Invalid or expired password reset token');
       }
-      const currentToken = storedTokens.filter(record => bcrypt.compare(token, record.token));
+      const currentToken = storedTokens.filter((record) => bcrypt.compare(token, record.token));
 
       if (!currentToken) {
         throw new Error('Invalid or expired password reset token');
@@ -209,11 +207,11 @@ export default class AuthController {
         return res.status(400).json(updateUserPassword.validate(req.body).error.details);
       }
 
-      if (!req.body.newPassword) return res.status(400).send(" New Password is required..");
+      if (!req.body.newPassword) return res.status(400).send(' New Password is required..');
       const { id } = req.session.user;
 
       // destruct request body
-      const {oldPassword, newPassword } = req.body;
+      const { oldPassword, newPassword } = req.body;
 
       // Get user from database
       const user = await UserRepo.getUserById(id);
@@ -223,7 +221,7 @@ export default class AuthController {
         return res.status(400).send('User Not Found');
       }
 
-      const comparePassword =  await bcrypt.compare(oldPassword, user.password);
+      const comparePassword = await bcrypt.compare(oldPassword, user.password);
 
       // Compare Old Password with new Password
       if (!comparePassword) {
@@ -231,7 +229,7 @@ export default class AuthController {
       }
 
       //hash new password
-       const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
+      const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
 
       // Save new password
       await UserRepo.updatePasswordById(id, hashedPassword);
@@ -239,6 +237,28 @@ export default class AuthController {
       return res.status(201).send('Password Successfully Updated');
     } catch (error) {
       return res.status(500).send(`An error occurred whiles updating user password ${error}`);
+    }
+  };
+
+  static googleLogin = async (req, res, next) => {
+    try {
+      const { token } = req.body;
+      const ticket = await client.verifyIdToken({ idToken: token, audience: config.google.CLIENT_ID });
+
+      const payload = ticket.getPayload();
+      let user = await UserRepo.getUserByEmail(payload.email);
+      if (!user) {
+        user = await UserRepo.create({
+          email: payload.email,
+          name: payload.name,
+          email_verified: payload.email_verified,
+        });
+      }
+      const userToken = await signJWT(user);
+
+      res.status(200).json({ user, userToken });
+    } catch (error) {
+      return next(error);
     }
   };
 }
