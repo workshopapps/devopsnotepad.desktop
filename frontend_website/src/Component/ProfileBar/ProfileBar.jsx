@@ -17,7 +17,7 @@ function ProfileBar() {
   }
 
   const user = isAuthenticated();
-  const username = user.user.name;
+  const username = user?.user?.name;
   const status = 'Online';
 
   const { addUserHandler } = useContext(UserContext);
