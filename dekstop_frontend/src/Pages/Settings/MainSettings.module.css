@@ -13,7 +13,10 @@
 }
 
 .settingsContainer {
-	padding: 1px 117px 80px 345px;
+	padding: 1px 125px 80px 345px;
+}
+.support_cont {
+	margin-right: 1px;
 }
 .settingsContainer h1 {
 	padding-top: 30px;

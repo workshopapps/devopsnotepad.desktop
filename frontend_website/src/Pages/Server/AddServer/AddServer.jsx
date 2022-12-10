@@ -9,10 +9,10 @@ import style from './AddServer.module.css';
 
 function AddServer() {
   const { addServer, success, setSuccess, loading } = useContext(ServerContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
-    ipAddress: ''
+    ipAddress: '',
   });
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
@@ -37,23 +37,28 @@ function AddServer() {
   function onSubmit(e) {
     e.preventDefault();
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    if (loggedInUser === null) { navigate('/login') };
-
+    if (loggedInUser === null) {
+      navigate('/login');
+    }
     const { token } = loggedInUser;
+    console.log(name, ipAddress, token);
     fetch('https://opspad.hng.tech/api/server', {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         name,
-        ipAddress
+        ipAddress,
       }),
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      }
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
-      .then(response => response.json())
-      .then(json => addServer(json.server))
-      .catch(e => console.log(e));
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((json) => addServer(json.server))
+      .catch((e) => console.error(e));
   }
 
   // Close successfully added server modal
@@ -65,12 +70,14 @@ function AddServer() {
   // Close success modal and route to dashboard
 
   return (
-    <div className={style.AddServer}>
+    <div className={style.addserver}>
       {success && (
         <AddServerSuccess message='created' closeSuccess={closeSuccess} />
       )}
-      <SideNav />
-      <div className={style.container}>
+      <div className={style.left}>
+        <SideNav />
+      </div>
+      <div className={style.right}>
         <h1>Create Server</h1>
 
         <form onSubmit={onSubmit} className={style.form}>

@@ -75,6 +75,7 @@
  *                          required:
  *                              - email
  *                              - password
+ *                              - rememberMe
  *                          properties:
  *                              email:
  *                                  type: string
@@ -82,6 +83,9 @@
  *                              password:
  *                                  type: string
  *                                  description: The password of the user
+ *                              rememberMe:
+ *                                  type: boolean
+ *                                  description: Keep user logged in
  * 
  *         responses:
  *             '200':
@@ -636,6 +640,64 @@
  *                                     type: object
  *             '404':
  *                 description: An error occured while creating new logs, server do not exist
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /contact-us/:
+ *     post:
+ *         summary: user sends inquiry and receives a mail
+ *         tags:
+ *             - Contact Us
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - firstname
+ *                              - lastname
+ *                              - email
+ *                              - subject
+ *                              - message
+ *                          properties:
+ *                              firstname:
+ *                                  type: string
+ *                                  description: The first name of the user
+ *                              lastname:
+ *                                  type: string
+ *                                  description: The last name of the user
+ *                              email:
+ *                                  type: string
+ *                                  description: The email address of the user
+ *                              subject:
+ *                                  type: string
+ *                                  description: The subject of the inquiry
+ *                              message:
+ *                                  type: string
+ *                                  description: The message body of the inquiry
+ * 
+ *         responses:
+ *             '200':
+ *                description: success
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             '400':
+ *                 description: Validation error
  *                 content:
  *                     application/json:
  *                        schema:

@@ -28,7 +28,7 @@ const useFetch = () => {
 
   // A function to fetch data
   const fetchRequest = useCallback(
-    async (requestConfig, getRequestData = () => {}) => {
+    async (requestConfig, getRequestData = () => { }) => {
       dispatchFn({ type: 'LOADING', value: true });
       dispatchFn({ type: 'ERROR', value: { hasError: false, message: '' } });
       try {
@@ -41,7 +41,7 @@ const useFetch = () => {
         // If the response is not ok, throw an error
         if (!response.ok) {
           const responseBody = await response.json();
-          throw new Error(`${responseBody.message}`);
+          throw new Error(`${responseBody.errors}`);
         }
 
         // If the response is ok, get the data

@@ -11,9 +11,10 @@ import classes from './Form.module.css';
 
 const Form = (props) => {
   const navigate = useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false)
+  const [passwordIcon] = useState(true)
   const [form, setForm] = useState({
-    fullName: '',
+    username: '',
     email: '',
     password: '',
     nameIsValid: false,
@@ -27,7 +28,7 @@ const Form = (props) => {
 
   const nameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, fullName: e.target.value };
+      return { ...prev, username: e.target.value };
     });
   };
 
@@ -74,7 +75,7 @@ const Form = (props) => {
       return { ...prev, nameIsFocus: true };
     });
 
-    if (form.fullName.length >= 3) {
+    if (form.username.length >= 3 && form.username.length <= 8) {
       setForm((prev) => {
         return { ...prev, nameIsValid: true };
       });
@@ -124,13 +125,13 @@ const Form = (props) => {
 
     // Send form details to backend
     props.onSubmit({
-      name: form.fullName,
+      name: form.username,
       email: form.email,
       password: form.password,
     });
 
     setForm({
-      fullName: '',
+      username: '',
       email: '',
       password: '',
       nameIsValid: false,
@@ -150,18 +151,18 @@ const Form = (props) => {
       data-testid='login__form'
     >
       <Input
-        id='name'
-        label='Name'
+        id='username'
+        label='Username'
         type='text'
         invalid={!form.nameIsValid && form.nameIsFocus ? 'invalid' : ''}
-        placeholder='Enter your last name'
-        value={form.fullName}
+        placeholder='Enter your username'
+        value={form.username}
         onChange={nameOnChangeHandler}
         onBlur={nameOnBlurHandler}
       />
       {form.nameIsFocus && !form.nameIsValid && (
         <pre className={classes.invalid__input}>
-          Enter a name of length 4 or above
+          Enter a username of length above 3 & not more than 8
         </pre>
       )}
       <Input
@@ -180,12 +181,15 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='password'
+        type={showPassword ? 'text' : 'password'}
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
         placeholder='MinLength(8), uppercase, lowercase, character, number.'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
+        passwordIcon={passwordIcon}
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
