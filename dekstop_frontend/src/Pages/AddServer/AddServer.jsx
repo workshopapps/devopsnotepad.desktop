@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect, useContext } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../Components/AddServerSuccess/AddServerSuccess';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
@@ -117,6 +117,9 @@ function AddServer() {
 		setFormData({ name: '', serverId: '', ipAddress: '' });
 	}
 
+	// Close success modal and route to dashboard
+	const navigate = useNavigate();
+
 	return (
 		<div className={style.AddServer}>
 			{success && (
@@ -125,6 +128,15 @@ function AddServer() {
 			<Sidenav />
 			<div className={style.container}>
 				<form onSubmit={onSubmit} className={style.form}>
+					<button
+						onClick={() => {
+							navigate('/');
+						}}
+						type="button"
+						className={style.close}
+					>
+						&times;
+					</button>
 					<h1>Add Server</h1>
 
 					<div className={style.inputs}>

@@ -43,6 +43,7 @@
 	align-items: center;
 	gap: 48px;
 	z-index: 20;
+	position: relative;
 }
 
 .inputs {
@@ -120,6 +121,16 @@
 
 .inputErr:focus {
 	outline: 2px #ea2a2a solid;
+}
+
+.close {
+	background-color: inherit;
+	border: none;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 30px;
+	cursor: pointer;
 }
 
 @media (max-width: 600px) {
