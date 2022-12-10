@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .p {
   text-align: center;
   font-size: 3rem;
@@ -32,4 +33,14 @@
 
 .button:hover {
   background: #102a63ed;
+}
+
+@media screen and (max-width: 560px) {
+  .server {
+    flex-direction: column;
+  }
+
+  .empty {
+    width: fit-content;
+  }
 }
