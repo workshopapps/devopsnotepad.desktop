@@ -1,5 +1,4 @@
 import express from 'express';
-import passport from 'passport';
 import config from '../config/index.js';
 import AuthController from '../controllers/AuthController.js';
 import isAuthenticated from '../middleware/authentication/isAuthenticated.js';
@@ -16,10 +15,6 @@ const router = express.Router();
 router.post('/signup', registerUserValidator, AuthController.signup);
 router.post('/login', loginUserValidator, AuthController.loginUser);
 router.get('/logout', AuthController.logoutUser);
-
-router.get('/success', isAuthenticated(), AuthController.loginStatus);
-
-// router.get("/logout", AuthController.logout);
 
 router.post('/reset-password', resetUserLinkValidator, AuthController.getResetLink);
 router.post('/update-password', updateUserPasswordValidator, AuthController.updateUserPassword);
