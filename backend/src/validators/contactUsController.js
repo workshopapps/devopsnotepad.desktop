@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 
-import { subjectValMsg, messageValMsg, nameValMsg, emailValMsg } from "./validationMsg"; 
+import { subjectValMsg, messageValMsg, nameValMsg, emailValMsg } from "./validationMsg.js"; 
 
 export const contactUsValidator = [
     body("firstname", nameValMsg)
