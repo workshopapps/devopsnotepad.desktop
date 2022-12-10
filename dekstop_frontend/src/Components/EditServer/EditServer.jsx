@@ -128,6 +128,9 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 				onClick={closeEditServer}
 			/>
 			<form onSubmit={onSubmit} className={style.form}>
+				<button onClick={closeSuccess} type="button" className={style.close}>
+					&times;
+				</button>
 				<h1>Edit Server</h1>
 				<div className={style.inputs}>
 					<div className={style.form_control}>
