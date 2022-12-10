@@ -22,7 +22,7 @@
   justify-content: flex-start;
 }
 
-.profile__img  img{
+.profile__img img {
   width: 60px;
   height: 60px;
   margin-right: 12px;
@@ -82,5 +82,14 @@
 .dropdown .dropdown__item img {
   display: inline;
   margin-right: 8px;
+
+}
+
+@media screen and (max-width: 560px) {
+
+  .menu {
+    position: absolute;
+    top: 10px;
+  }
 
 }
