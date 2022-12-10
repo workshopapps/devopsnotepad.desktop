@@ -1,168 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
 .faqContainer {
-  position: relative;
-  width: 100%;
-  padding: 0 0 0;
-  margin: 0 auto;
-  font-family: 'Manrope';
+	position: relative;
+	width: 100%;
+	padding: 0 0 0;
+	margin: 0 auto;
+	font-family: 'Manrope';
 }
 
 .faqContainer .faqHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 80vh;
-  margin-bottom: 100px;
-  background: #102a63;
-  background-image: url(./assets/faqHeader.png);
-  background-position: center;
-  background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80vh;
+	margin-bottom: 100px;
+	background: #102a63;
+	background-image: url(./assets/faqHeader.png);
+	background-position: center;
+	background-size: cover;
 }
 
 .faqHeader p {
-  max-width: 630px;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 56px;
-  line-height: 72px;
-  color: #fff;
-  text-align: center;
+	max-width: 630px;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 56px;
+	line-height: 72px;
+	color: #fff;
+	text-align: center;
 }
 
-.gridContainer {  
-  width: 100%;
-  margin-bottom: 250px;
-  padding: 0 12%;
-  display: grid;
-  grid-template-columns: 49% 49%;
-  justify-content: space-between;
-  border-radius: 8px;
+.gridContainer {
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: 50% 45%;
+	justify-content: space-between;
+	margin-bottom: 250px;
+	padding: 0 0% 0 75px;
+	width: 90%;
 }
 
 .grid1Header,
 .grid2Header {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-  color: #202020;
-  display: block;
-  margin-bottom: 50px;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	color: #202020;
+	display: block;
+	margin-bottom: 50px;
 }
 
 .btn,
 .btnColored {
-  font-family: 'Manrope';
-  min-height: 65px;
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  background-color: white;
-  text-align: left;
-  padding: 3%;
-  border: 1px solid #cdd8f3;
-  color: #143681;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+	font-family: 'Manrope';
+	min-height: 65px;
+	width: 100%;
+	border-radius: 8px;
+	margin-bottom: 24px;
+	background-color: white;
+	text-align: left;
+	padding: 3%;
+	border: 1px solid #cdd8f3;
+	color: #143681;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 .btnColored {
-  background-color: #143681;
-  color: white;
+	background-color: #143681;
+	color: white;
 }
 
 .ansgrid {
-  margin: 0;
-  background-color: #e9effd;
-  border-radius: 8px;
-  padding: 3%;
-  height: 450px;
-  color: #202020;
-  overflow-y: scroll;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+	margin: 0;
+	background-color: #e9effd;
+	border-radius: 8px;
+	padding: 3%;
+	height: 450px;
+	color: #202020;
+	overflow-y: scroll;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 .desktopView {
-  display: block;
+	display: block;
 }
 
 .mobileview {
-  display: none;
+	display: none;
 }
 
 @media only screen and (max-width: 950px) {
-  .gridContainer {
-    width: 100%;
-    margin-bottom: 250px;
-    padding: 0 6%;
-  }
+	.gridContainer {
+		width: 100%;
+		margin-bottom: 250px;
+		padding: 0 6%;
+	}
 
-  .btn,
-  .btnColored {
-    min-width: 250px;
-    min-height: 60px;
-    max-height: max-content;
-    padding: 3%;
-    font-size: 14px;
-    line-height: 22px;
-  }
+	.btn,
+	.btnColored {
+		min-width: 250px;
+		min-height: 60px;
+		max-height: max-content;
+		padding: 3%;
+		font-size: 14px;
+		line-height: 22px;
+	}
 }
 
 @media only screen and (max-width: 610px) {
-  .faqContainer {
-    width: 100%;
-  }
+	.faqContainer {
+		width: 100%;
+	}
 
-  .faqHeader p {
-    max-width: 630px;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
-  }
+	.faqHeader p {
+		max-width: 630px;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 40px;
+	}
 
-  .grid1Header,
-.grid2Header {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-  color: #202020;
-  display: block;
-  margin-bottom: 20px;
-}
+	.grid1Header,
+	.grid2Header {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 32px;
+		color: #202020;
+		display: block;
+		margin-bottom: 20px;
+	}
 
-.ansgrid {
-  margin: 0;
-  background-color: #e9effd;
-  border-radius: 8px;
-  padding: 3%;
-  max-height: 350px;
-  color: #202020;
-  overflow-y: scroll;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-}
+	.ansgrid {
+		margin: 0;
+		background-color: #e9effd;
+		border-radius: 8px;
+		padding: 3%;
+		max-height: 350px;
+		color: #202020;
+		overflow-y: scroll;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+	}
 
-  .gridContainer {
-    width: 100%;
-    margin-bottom: 250px;
-    padding: 0 6%;
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-between;
-    border-radius: 8px;
-  }
+	.gridContainer {
+		width: 100%;
+		margin-bottom: 250px;
+		padding: 0 6%;
+		display: grid;
+		grid-template-columns: 100%;
+		justify-content: space-between;
+		border-radius: 8px;
+	}
 
-  .desktopView {
-    display: none;
-  }
-  
-  .mobileview {
-    display: block;
-    margin-bottom: 24px;
-  }
+	.desktopView {
+		display: none;
+	}
+
+	.mobileview {
+		display: block;
+		margin-bottom: 24px;
+	}
 }
