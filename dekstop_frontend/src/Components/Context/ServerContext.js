@@ -102,7 +102,7 @@ export function ServerProvider({ children }) {
 			setSuccess,
 			handleServerNotifications,
 		}),
-		[loading, success, serverNotifications]
+		[servers, loading, success, serverNotifications]
 	);
 
 	return (
