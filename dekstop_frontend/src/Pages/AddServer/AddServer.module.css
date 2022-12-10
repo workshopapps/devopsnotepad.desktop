@@ -33,6 +33,7 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 48px;
+	position: relative;
 }
 
 .inputs {
@@ -109,4 +110,22 @@
 
 .inputErr:focus {
 	outline: 2px #ea2a2a solid;
+}
+
+@media (max-width: 767px) {
+	.container {
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 820px) {
+	.form {
+		width: 500px;
+	}
+}
+
+@media (max-width: 550px) {
+	.form {
+		width: 400px;
+	}
 }
