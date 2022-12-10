@@ -18,6 +18,10 @@ export default async function login(body, req, res) {
         return res.status(400).send({ message: "Email or password incorrect" });
     }
 
+    if (user.email_verified===0 && user.created_at>=new Date("2022-12-10T00:00:00")) {
+        return res.status(401).send({ message: "Email not verified" });
+    }
+
     return {
         user,
     };
