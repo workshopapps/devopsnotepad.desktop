@@ -9,7 +9,7 @@ import bcrypt from 'bcrypt';
 import Joi from 'joi';
 import PasswordComplexity from 'joi-password-complexity';
 import { OAuth2Client } from 'google-auth-library';
-import { validatePayload } from '../utils/index.js';
+import { generateJWTToken, validatePayload } from '../utils/index.js';
 import config from '../config/index.js';
 import signJWT from '../utils/jwthelper.js';
 
@@ -79,18 +79,6 @@ export default class AuthController {
       });
     } catch (error) {
       next(error);
-    }
-  };
-
-  static loginStatus = async (req, res, next) => {
-    try {
-      res.status(200).json({
-        success: true,
-        message: 'Login was successful',
-        user: req.session.user,
-      });
-    } catch (error) {
-      throw new ServiceError(error);
     }
   };
 
@@ -254,7 +242,9 @@ export default class AuthController {
           email_verified: payload.email_verified,
         });
       }
-      const userToken = await signJWT(user);
+      const userToken = await generateJWTToken(user);
+      req.session.user = user;
+      req.session.authorized = true;
 
       res.status(200).json({ user, userToken });
     } catch (error) {
