@@ -16,38 +16,14 @@ import {
 } from './Images';
 import style from '../LandingPage/LandingPage.module.css';
 import Carousl from './carousel/carousel';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
-import { useContext, useEffect } from 'react';
-import useFetch from '../../hooks/useFetch';
-import { UserContext } from '../../store/UserContext';
 
 const LandingPage = () => {
-  const { fetchRequest } = useFetch();
-  const { isLoggedIn, addUserHandler } = useContext(UserContext);
-
-  useEffect(() => {
-    const getSuccessData = (data) => {
-      console.log(data);
-      addUserHandler(data);
-    };
-
-    fetchRequest(
-      {
-        // url: 'https://opspad.onrender.com/auth/success',
-      },
-      getSuccessData,
-    );
-  }, [fetchRequest, addUserHandler]);
-
-  if (isLoggedIn) {
-    return <Navigate to='/server' />;
-  }
-
   return (
     <>
-      <Navigation isLoggodIn={isLoggedIn} />
+      <Navigation />
       <div>
         <div className={`${style.landPage_flex} ${style.landPage_section1}`}>
           <div className={style.landPage_col1}>
