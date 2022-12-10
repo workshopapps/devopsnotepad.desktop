@@ -10,7 +10,7 @@ import search from './Assets/search.svg';
 import Auth from '../../Components/GlobalPassword/Auth';
 
 function Home() {
-	const { servers, loading, getServers } = useContext(ServerContext);
+	const { servers, loading } = useContext(ServerContext);
 	const [query, setQuery] = useState('');
 	const [auth, setAuth] = useState(false);
 	const navigate = useNavigate();
@@ -18,7 +18,6 @@ function Home() {
 	// Initiate Onboarding
 	// Checks local storage if this is the first time the user is using the app, if not a new User, changes new user to true and initiates onboarding process
 	useEffect(() => {
-		getServers();
 		const isNewUser = localStorage.getItem('isNewUser') || false;
 		if (!isNewUser) {
 			navigate('/onboarding');
@@ -58,32 +57,38 @@ function Home() {
 							/>
 						</div>
 					)}
-					{filteredServers.map((server) => (
-						<ServerCard
-							key={server.id}
-							id={server.id}
-							serverId={server.serverId}
-							name={server.name}
-							ipAddress={server.ipAddress}
-							serverHealth={server.serverHealth}
-						/>
-					))}
+					{filteredServers
+						.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+						.map((server) => (
+							<ServerCard
+								key={server.id}
+								id={server.id}
+								serverId={server.serverId}
+								name={server.name}
+								ipAddress={server.ipAddress}
+								serverHealth={server.serverHealth}
+							/>
+						))}
 				</div>
 			)}
 
 			{!servers ||
 				(servers.length === 0 && (
 					<div className={style.no_server}>
-						<Link to="/add-server">
-							<figure>
-								<img src={addBg} alt="" aria-hidden />
-							</figure>
-						</Link>
+						<figure>
+							<img src={addBg} alt="" aria-hidden />
+						</figure>
 
 						<div className={style.no_server_content}>
 							<h2>Empty Server List</h2>
 							<p>You do not have any Servers yet.</p>
 						</div>
+
+						<Link to="/add-server">
+							<button className={style.btn} type="button">
+								Add New Server
+							</button>
+						</Link>
 					</div>
 				))}
 
