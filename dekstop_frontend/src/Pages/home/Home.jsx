@@ -57,16 +57,18 @@ function Home() {
 							/>
 						</div>
 					)}
-					{filteredServers.map((server) => (
-						<ServerCard
-							key={server.id}
-							id={server.id}
-							serverId={server.serverId}
-							name={server.name}
-							ipAddress={server.ipAddress}
-							serverHealth={server.serverHealth}
-						/>
-					))}
+					{filteredServers
+						.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+						.map((server) => (
+							<ServerCard
+								key={server.id}
+								id={server.id}
+								serverId={server.serverId}
+								name={server.name}
+								ipAddress={server.ipAddress}
+								serverHealth={server.serverHealth}
+							/>
+						))}
 				</div>
 			)}
 
