@@ -50,15 +50,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
 	width: 100%;
 }
 
 .form_control {
 	width: 100%;
+	padding-bottom: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+	position: relative;
 }
 
 .form_control label {
@@ -96,6 +97,7 @@
 	display: grid;
 	place-content: center;
 	border: none;
+	margin: -20px;
 }
 
 .form .btnEnabled:hover {
@@ -114,4 +116,8 @@
 	text-align: center;
 	color: #ffffff;
 	margin-top: 10px;
+}
+
+.inputErr:focus {
+	outline: 2px #ea2a2a solid;
 }
