@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect, useContext } from 'react';
+
 import AddServerSuccess from '../../Components/AddServerSuccess/AddServerSuccess';
 import ServerContext from '../../Components/Context/ServerContext';
 import Sidenav from '../../Components/SideNav/SideNav';
@@ -115,8 +116,6 @@ function AddServer() {
 		setSuccess(false);
 		setFormData({ name: '', serverId: '', ipAddress: '' });
 	}
-
-	// Close success modal and route to dashboard
 
 	return (
 		<div className={style.AddServer}>

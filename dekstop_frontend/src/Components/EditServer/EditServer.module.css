@@ -121,3 +121,14 @@
 .inputErr:focus {
 	outline: 2px #ea2a2a solid;
 }
+
+@media (max-width: 600px) {
+	.form {
+		width: 500px;
+	}
+}
+@media (max-width: 520px) {
+	.form {
+		width: 400px;
+	}
+}
