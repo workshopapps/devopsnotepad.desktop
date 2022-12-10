@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import forgetStyles from "../ForgetPassword/ForgetPassword.module.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import validator from 'validator'
+import { AiFillEyeInvisible } from 'react-icons/ai'
+import { AiFillEye } from 'react-icons/ai';
+import classes from '../Login/Input.module.css'
 
 const NewPassword = () => {
     const [password, setPassword] = useState('')
@@ -10,6 +13,8 @@ const NewPassword = () => {
     const [serverErr, setServerErr] = useState('')
     const [err, setErr] = useState('')
     const [searchParams] = useSearchParams()
+    const [showPassword, setShowPassword] = useState(false)
+    const [showPasswordConfirm, setShowPasswordConfirm] = useState(false)
     const Params = Object.fromEntries([...searchParams])
     const navigate = useNavigate()
     const handleSubmit = e => {
@@ -61,25 +66,42 @@ const NewPassword = () => {
                     <h3 style={{ color: 'red' }}>{serverErr}</h3>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="Email"
-                            name="email"
-                            required
-                            onChange={e => {
-                                setPassword(e.target.value);
-                                validate(e.target.value)
-                            }} />
+                        <div className={forgetStyles.InputContainer}>
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                id="Email"
+                                name="email"
+                                required
+                                className={forgetStyles.passwordInputs}
+                                onChange={e => {
+                                    setPassword(e.target.value);
+                                    validate(e.target.value)
+                                }} />
+                            <div className={classes.eye} style={{ top: '27px' }} onClick={() => setShowPassword(!showPassword)}>
+                                {showPassword ?
+                                    <span className={classes.eyeSvg}><AiFillEyeInvisible /></span> :
+                                    <span className={classes.eyeSvg}><AiFillEye /></span>}
+                            </div>
+                        </div>
                         <label htmlFor="password">Confirm Password</label>
-                        <input
-                            type="password"
-                            id="Email"
-                            name="email"
-                            required
-                            onChange={e => {
-                                setConfirmPassword(e.target.value);
-                                validate(e.target.value)
-                            }} />
+                        <div className={forgetStyles.InputContainer}>
+                            <input
+                                type={showPasswordConfirm ? 'text' : 'password'}
+                                id="Email"
+                                name="email"
+                                required
+                                className={forgetStyles.passwordInputs}
+                                onChange={e => {
+                                    setConfirmPassword(e.target.value);
+                                    validate(e.target.value)
+                                }} />
+                            <div className={classes.eye} style={{ top: '27px' }} onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}>
+                                {showPasswordConfirm ?
+                                    <span className={classes.eyeSvg}><AiFillEyeInvisible /></span> :
+                                    <span className={classes.eyeSvg}><AiFillEye /></span>}
+                            </div>
+                        </div>
+
                         {err === '' ? null :
                             <span style={{
                                 fontWeight: 'bold',

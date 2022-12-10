@@ -9,7 +9,7 @@ export const sendEmailVerificationLink = async(email, name, id) => {
 
     EmailVerificationTokenRepo.create({userId: id, token: hash});
     
-    const link = `${process.env.BASE_URL}/auth/verify-mail?token=${verificationToken}&id=${id}`;
+    const link = `${process.env.BASE_URL}/verifyemail?token=${verificationToken}&id=${id}`;
 
     sendEmail(email, "Email verification Request", {name: name, link: link}, "./template/emailVerification.handlebars");
 };
