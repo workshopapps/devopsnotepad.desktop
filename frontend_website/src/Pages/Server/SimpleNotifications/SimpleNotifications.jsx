@@ -26,7 +26,7 @@ const SimpleNotifications = () => {
 
   useEffect(() => {
     const getNotifications = (nots) => {
-      const formattedNots = nots.notifications.map((not) => {
+      const formattedNots = nots?.notifications.map((not) => {
         const time = new Date(not.created_at);
         const hrs = time.getHours();
         return {
