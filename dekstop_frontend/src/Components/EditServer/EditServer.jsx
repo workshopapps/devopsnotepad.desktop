@@ -55,7 +55,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 		}
 
 		// Server Id Validation
-		if (editServerId.length > 8 && editServerId.length < 36) {
+		if (editServerId.length > 1 && editServerId.length < 36) {
 			setServerIdValidation('Server ID must have at least 36 characters');
 		} else {
 			setServerIdValidation('');
@@ -72,7 +72,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 		// Name Validation
 		// If name is less than 5 characters
 		// If name is equal to or more than 30 characters
-		if (editName.length < 5) {
+		if (editName.length > 0 && editName.length < 5) {
 			setNameValidation('Server name must be at least 5 characters');
 		} else if (editName.length > 30) {
 			setNameValidation('Server name must be less than 30 characters');
@@ -155,7 +155,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 						{nameValidation && <FormError error={nameValidation} />}
 					</div>
 					<div className={style.form_control}>
-						<label htmlFor="ipAddress">IP Address </label>
+						<label htmlFor="ipAddress">IP Address&#40;Optional&#41; </label>
 						<input
 							onChange={onMutate}
 							type="text"

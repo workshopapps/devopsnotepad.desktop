@@ -55,7 +55,7 @@ function AddServer() {
 		}
 
 		// Server Id Validation
-		if (serverId.length > 8 && serverId.length < 36) {
+		if (serverId.length > 1 && serverId.length < 36) {
 			setServerIdValidation('Server ID must have at least 36 characters');
 		} else {
 			setServerIdValidation('');
@@ -72,7 +72,7 @@ function AddServer() {
 		// Name Validation
 		// If name is less than 5 characters
 		// If name is equal to or more than 30 characters
-		if (name.length < 5) {
+		if (name.length > 0 && name.length < 5) {
 			setNameValidation('Server name must be at least 5 characters');
 		} else if (name.length > 30) {
 			setNameValidation('Server name must be less than 30 characters');
