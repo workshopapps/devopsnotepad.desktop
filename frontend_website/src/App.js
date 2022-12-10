@@ -79,7 +79,7 @@ function App() {
           <Route path='/integrations' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
           <Route path='/signup' exact element={<SignUp />} />
-          <Route path='/auth/verify-mail' exact element={<VerifyEmail />} />
+          <Route path='/verifyemail' exact element={<VerifyEmail />} />
           <Route path='/login' exact element={<Login />} />
           <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/careers' exact element={<CareerPage />} />
