@@ -155,7 +155,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 						{nameValidation && <FormError error={nameValidation} />}
 					</div>
 					<div className={style.form_control}>
-						<label htmlFor="ipAddress">IP Address </label>
+						<label htmlFor="ipAddress">IP Address&#40;Optional&#41; </label>
 						<input
 							onChange={onMutate}
 							type="text"

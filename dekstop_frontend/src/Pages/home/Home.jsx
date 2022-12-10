@@ -75,9 +75,11 @@ function Home() {
 			{!servers ||
 				(servers.length === 0 && (
 					<div className={style.no_server}>
-						<figure>
-							<img src={addBg} alt="" aria-hidden />
-						</figure>
+						<Link to="/add-server">
+							<figure>
+								<img src={addBg} alt="" aria-hidden />
+							</figure>
+						</Link>
 
 						<div className={style.no_server_content}>
 							<h2>Empty Server List</h2>
