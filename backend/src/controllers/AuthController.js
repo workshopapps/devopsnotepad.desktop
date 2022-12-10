@@ -166,7 +166,7 @@ export default class AuthController {
 
   static verifyEmail = async (req, res, next) => {
     try {
-      const { token, id } = req.query;
+      const { token, id } = req.body;
       if (!token || !id) throw new NotFoundError('invalid link, request for a new link');
 
       await EmailVerificationTokenRepo.deleteExpiredTokens();
