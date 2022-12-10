@@ -13,6 +13,12 @@ import Footer from '../../Component/Footer/Footer';
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
+  const  req = await fetch("", {
+    method: "POST",
+    body: JSON.stringify(values),
+    headers: { 'Content-type': 'application/json' }
+  })
+const res = await req.json()
   alert('Form Submitted');
   actions.resetForm();
 };
