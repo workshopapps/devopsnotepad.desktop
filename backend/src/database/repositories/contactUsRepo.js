@@ -2,7 +2,7 @@ import connection from "../setup.js";
 import APIFeatures from "../../utils/apiFeatures.js";
 
 
-export default class UserRepo {
+export default class ContactUsRepo {
     static create = async (data) => {
         return await connection("contact_us").insert(data);
     };
