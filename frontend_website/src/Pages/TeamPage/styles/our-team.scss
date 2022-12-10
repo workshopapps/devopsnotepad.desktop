@@ -126,6 +126,9 @@
     padding-bottom: 3rem;
     .team__desc__and__images-inner {
       article {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
         .team__desc__cta {
           height: 48px;
           background: $primary;
