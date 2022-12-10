@@ -108,9 +108,8 @@ function AddServer() {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>
