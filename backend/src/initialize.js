@@ -12,7 +12,6 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
-import passportSetup from './config/passport.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import MySqlStore from 'express-mysql-session';
@@ -83,8 +82,6 @@ const specs = swaggerJsDoc(options);
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 app.use(Sentry.Handlers.errorHandler());
-
-passportSetup();
 
 const store = MySqlStore(session);
 const sessionStore = new store(development.connection);
