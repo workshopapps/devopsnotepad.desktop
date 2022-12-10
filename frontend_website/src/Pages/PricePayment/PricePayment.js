@@ -1,41 +1,18 @@
 import React from 'react';
 import style from './PricePayment.module.css';
 import PaymentForm from './components/PaymentForm/PaymentForm';
-import Checkbox from './images/checkmark.svg';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
+import { useParams } from 'react-router-dom';
+import PaymentPlan from './components/PaymentPlan';
 
 const PricePayment = () => {
+  const { state, id } = useParams()
   return (
     <>
       <Navigation />
       <section className={style.paymentContainer}>
-        <div className={`${style.cardContainer} ${style.cardBorder}`}>
-          <h2 className={style.order}>Your Order</h2>
-          <div className={style.card}>
-            <h4 className={style.title}>Professional</h4>
-            <h2 className={style.price}>200usd</h2>
-            <ul className={style.list}>
-              <li className={style.li}>
-                <img className={style.img} src={Checkbox} alt='' />
-                <span className={style.span}>Unlimited Servers</span>
-              </li>
-              <li className={style.li}>
-                <img className={style.img} src={Checkbox} alt='' />
-                <span className={style.span}>Unlimited notes</span>
-              </li>
-              <li className={style.li}>
-                <img className={style.img} src={Checkbox} alt='' />
-                <span className={style.span}>Unlimited downloads</span>
-              </li>
-              <li className={style.li}>
-                <img className={style.img} src={Checkbox} alt='' />
-                <span className={style.span}>Third party integration</span>
-              </li>
-            </ul>
-            <button className={style.btn}>Choose Professional</button>
-          </div>
-        </div>
+        <PaymentPlan state={state} id={id} />
         <PaymentForm />
       </section>
       <Footer />
