@@ -71,17 +71,15 @@ function AddServer() {
 
 		// Name Validation
 		// If name is less than 5 characters
+		// If name is equal to or more than 30 characters
 		if (name.length < 5) {
 			setNameValidation('Server name must be at least 5 characters');
-		} else {
-			setNameValidation('');
-		}
-		// If name is equal to or more than 30 characters
-		if (name.length > 30) {
+		} else if (name.length > 30) {
 			setNameValidation('Server name must be less than 30 characters');
 		} else {
 			setNameValidation('');
 		}
+		// If name is equal to or more than 30 characters
 
 		// Ip Validation
 		if (ipAddress.length > 0) {
