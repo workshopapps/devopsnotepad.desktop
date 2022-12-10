@@ -3,18 +3,36 @@ import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import ServerContext from '../Context/ServerContext';
 import AddServerSuccess from '../AddServerSuccess/AddServerSuccess';
+import FormError from '../FormError/FormError';
 import style from './EditServer.module.css';
 
 function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 	const { editServer, success, setSuccess, loading } =
 		useContext(ServerContext);
 	const [formData, setFormData] = useState({
-		name,
-		ipAddress,
-		serverId,
+		editName: name,
+		editIpAddress: ipAddress,
+		editServerId: serverId,
 		id,
 	});
+
+	const { editName, editIpAddress, editServerId } = formData;
+	const [serverIdValidation, setServerIdValidation] = useState('');
+	const [nameValidation, setNameValidation] = useState('');
+	const [ipValidation, setIpValidation] = useState('');
 	const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+
+	function validateUUID(uuid) {
+		const regexExp =
+			/^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
+		return regexExp.test(uuid);
+	}
+
+	function validateIP(ip) {
+		const regexExp =
+			/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+		return regexExp.test(ip);
+	}
 
 	function onMutate(e) {
 		setFormData((prev) => ({
@@ -25,12 +43,65 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 	}
 
 	useEffect(() => {
-		if (name !== '' && serverId !== '') {
-			setIsBtnDisabled(false);
-		} else {
+		if (
+			editName.length < 5 ||
+			editName.length > 30 ||
+			editServerId < 36 ||
+			validateUUID(editServerId) === false
+		) {
 			setIsBtnDisabled(true);
+		} else {
+			setIsBtnDisabled(false);
 		}
-	}, [name, serverId]);
+
+		// Server Id Validation
+		if (editServerId.length > 8 && editServerId.length < 36) {
+			setServerIdValidation('Server ID must have at least 36 characters');
+		} else {
+			setServerIdValidation('');
+		}
+
+		if (editServerId.length >= 36) {
+			if (validateUUID(editServerId) === false) {
+				setServerIdValidation('ServerId must be a valid UUID');
+			} else {
+				setServerIdValidation('');
+			}
+		}
+
+		// Name Validation
+		// If name is less than 5 characters
+		// If name is equal to or more than 30 characters
+		if (editName.length < 5) {
+			setNameValidation('Server name must be at least 5 characters');
+		} else if (editName.length > 30) {
+			setNameValidation('Server name must be less than 30 characters');
+		} else {
+			setNameValidation('');
+		}
+
+		// Ip Validation
+		if (editIpAddress.length > 0) {
+			if (validateIP(editIpAddress) === false) {
+				setIpValidation('Enter a valid IP address or leave field blank');
+				setIsBtnDisabled(true);
+			} else {
+				setIpValidation('');
+				setIsBtnDisabled(false);
+			}
+		} else {
+			setIpValidation('');
+		}
+
+		// console.log(name.length);
+	}, [
+		editServerId,
+		editName,
+		editIpAddress,
+		nameValidation,
+		ipValidation,
+		serverIdValidation,
+	]);
 
 	function onSubmit(e) {
 		e.preventDefault();
@@ -41,7 +112,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 	function closeSuccess() {
 		setSuccess(false);
 		closeEditServer();
-		setFormData({ name: '', serverId: '', ipAddress: '' });
+		// setFormData({ editName: '', editServerId: '', editIpAddress: '' });
 	}
 
 	return success ? (
@@ -54,6 +125,9 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 				onClick={closeEditServer}
 			/>
 			<form onSubmit={onSubmit} className={style.form}>
+				<button onClick={closeSuccess} type="button" className={style.close}>
+					&times;
+				</button>
 				<h1>Edit Server</h1>
 				<div className={style.inputs}>
 					<div className={style.form_control}>
@@ -62,9 +136,11 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 							required
 							onChange={onMutate}
 							type="text"
-							id="serverId"
-							value={formData.serverId}
+							id="editServerId"
+							value={editServerId}
+							className={serverIdValidation && style.inputErr}
 						/>
+						{serverIdValidation && <FormError error={serverIdValidation} />}
 					</div>
 					<div className={style.form_control}>
 						<label htmlFor="name">Server Name</label>
@@ -72,19 +148,23 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 							required
 							onChange={onMutate}
 							type="text"
-							id="name"
-							value={formData.name}
+							id="editName"
+							value={editName}
+							className={nameValidation && style.inputErr}
 						/>
+						{nameValidation && <FormError error={nameValidation} />}
 					</div>
 					<div className={style.form_control}>
 						<label htmlFor="ipAddress">IP Address </label>
 						<input
 							onChange={onMutate}
 							type="text"
-							id="ipAddress"
-							value={formData.ipAddress}
+							id="editIpAddress"
+							value={editIpAddress}
 							min="2"
+							className={ipValidation && style.inputErr}
 						/>
+						{ipValidation && <FormError error={ipValidation} />}
 					</div>
 				</div>
 
