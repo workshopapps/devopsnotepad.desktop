@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
 import ServerContext from '../../../Component/Context/ServerContext';
 
@@ -8,7 +9,7 @@ import style from './AddServer.module.css';
 
 function AddServer() {
   const { addServer, success, setSuccess, loading } = useContext(ServerContext);
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     ipAddress: '',
@@ -35,7 +36,29 @@ function AddServer() {
 
   function onSubmit(e) {
     e.preventDefault();
-    addServer(formData);
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser === null) {
+      navigate('/login');
+    }
+    const { token } = loggedInUser;
+    console.log(name, ipAddress, token);
+    fetch('https://opspad.hng.tech/api/server', {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        ipAddress,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((json) => addServer(json.server))
+      .catch((e) => console.error(e));
   }
 
   // Close successfully added server modal
@@ -47,12 +70,14 @@ function AddServer() {
   // Close success modal and route to dashboard
 
   return (
-    <div className={style.AddServer}>
+    <div className={style.addserver}>
       {success && (
         <AddServerSuccess message='created' closeSuccess={closeSuccess} />
       )}
-      <SideNav />
-      <div className={style.container}>
+      <div className={style.left}>
+        <SideNav />
+      </div>
+      <div className={style.right}>
         <h1>Create Server</h1>
 
         <form onSubmit={onSubmit} className={style.form}>
@@ -83,9 +108,8 @@ function AddServer() {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>

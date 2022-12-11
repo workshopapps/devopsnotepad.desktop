@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .sidenav {
     display: none !important;
   }
-}
+} */
 
 div.sidenav {
   height: 100vh;
@@ -49,12 +49,14 @@ div.sidenav button.btn {
   font-size: 14px;
   line-height: 16px;
 }
+
 .icon_tog {
   cursor: pointer;
   height: 3rem;
   width: 5rem;
   fill: #102a63;
 }
+
 .icon_tog:hover {
   fill: #6287d7;
 }
@@ -79,9 +81,11 @@ div.sidenav button.btn {
   color: #fff !important;
   margin-left: 2rem;
 }
+
 .btn__svg:hover {
   background: #102a63cb;
 }
+
 .sidenav__link:link {
   text-decoration: none;
   margin-top: 1.5rem;
@@ -116,4 +120,17 @@ div.sidenav button.btn {
 .li_link:hover {
   background-color: #ededed;
   color: #102a63;
+}
+
+@media screen and (max-width: 560px) {
+
+  div.sidenav {
+    height: 38vh;
+    justify-content: center;
+    width: auto;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+
 }

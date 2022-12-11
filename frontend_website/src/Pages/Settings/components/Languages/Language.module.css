@@ -1,0 +1,67 @@
+@media (max-width: 768px) {
+	.languageContainer {
+		padding: 89px 20px 0 !important;
+	}
+	.languageContainer h1 {
+		font-family: 'Inter' !important;
+		font-style: normal;
+		font-weight: 600 !important;
+		font-size: 16px !important;
+		line-height: 120% !important;
+		text-transform: capitalize !important;
+	}
+    .languageHead  {
+        gap: 97px !important;
+        text-align: center !important;
+    }
+}
+.languageContainer {
+	padding: 30px 117px 80px 245px;
+}
+.languageHead {
+	display: flex;
+	flex-direction: row;
+	gap: 245px;
+	align-items: center;
+	margin: 0 8px;
+}
+.languageHead h1 {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;color: #000000;
+    text-transform: uppercase;
+}
+.language_flexcol {
+	display: flex;
+	flex-direction: column;
+	margin: 0 8px;
+}
+.smallHead {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 60px;
+	color: #827d89;
+	text-transform: capitalize !important;
+	padding-bottom: 17px;
+}
+.language_flexcol label {
+	display: flex;
+	justify-content: space-between !important;
+	padding-bottom: 34px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	color: #180e25;
+}
+.language_flexcol input[type='radio'] {
+	width: 20px;
+}
+.language_flexcol input[type='radio']:checked {
+	accent-color: #102a63;
+}

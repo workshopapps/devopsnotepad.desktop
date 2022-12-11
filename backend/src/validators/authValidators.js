@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 import { body } from 'express-validator';
 
-import { nameValMsg, emailValMsg, passwordValMsg } from './validationMsg.js';
+import { nameValMsg, emailValMsg, passwordValMsg, loginPasswordMsg } from './validationMsg.js';
 
 const passwordMiddlewareHelper = () =>
   body('password', passwordValMsg)
@@ -13,14 +13,12 @@ const passwordMiddlewareHelper = () =>
       minLowercase: 1,
       minUppercase: 1,
       minNumbers: 1,
-      minSymbols: 1,
       returnScore: false,
       pointsPerUnique: 1,
       pointsPerRepeat: 0.5,
       pointsForContainingLower: 10,
       pointsForContainingUpper: 10,
       pointsForContainingNumber: 10,
-      pointsForContainingSymbol: 10,
     });
 
 export const registerUserValidator = [
@@ -31,7 +29,7 @@ export const registerUserValidator = [
   passwordMiddlewareHelper(),
 ];
 
-export const loginUserValidator = [body('email', emailValMsg).notEmpty().isEmail(), passwordMiddlewareHelper()];
+export const loginUserValidator = [body('email', emailValMsg).notEmpty().isEmail(), body('password', loginPasswordMsg).notEmpty().isString()];
 
 export const resetUserLinkValidator = [body('email', emailValMsg).notEmpty().isEmail()];
 

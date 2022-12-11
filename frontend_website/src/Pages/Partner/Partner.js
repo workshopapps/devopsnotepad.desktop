@@ -21,7 +21,9 @@ const Partner = () => {
             and are ready to offer their expertise to the mutual growth of our
             communities.
           </p>
-          <button>Become a Partner</button>
+          <a href="/contact-us">
+            <button>Become a Partner</button>
+          </a>
         </div>
 
         <div className={style.servicePartner}>
@@ -35,7 +37,9 @@ const Partner = () => {
             </p>
             <h5>Technology Partner</h5>
             <h5>Channel Partner</h5>
-            <button>Become a partner</button>
+            <a href="/contact-us">
+            <button>Become a Partner</button>
+          </a>
           </div>
           <div className={style.handImageWrapper}>
             <img src={hands} className={style.handImage} alt='Imageof hands' />

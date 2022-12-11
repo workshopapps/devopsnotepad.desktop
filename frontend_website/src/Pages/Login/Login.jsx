@@ -25,6 +25,7 @@ const Login = () => {
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
+    console.log(responseObj, 'responseObj');
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);
@@ -38,7 +39,7 @@ const Login = () => {
   const signInHandler = async (formData) => {
     LoginRequest(
       {
-        url: 'https://opspad.onrender.com/auth/login',
+        url: 'https://opspad.hng.tech/api/auth/login',
         method: 'POST',
         body: formData,
         headers: {

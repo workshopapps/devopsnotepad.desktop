@@ -1,0 +1,138 @@
+.section {
+  font-family: 'Manrope';
+}
+
+.tp_header {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(16, 42, 99, 0.9);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.container__head {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 188px;
+  left: 0px;
+  top: 80px;
+  margin-bottom: 2rem;
+  background: rgba(37, 99, 235, 0.6);
+  display: flex;
+}
+
+.nav__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__section > li {
+  margin-right: 100px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: larger;
+  color: black;
+  text-decoration: none;
+}
+
+.box {
+  width: 100%;
+  padding: 0 8rem;
+}
+
+.content__title {
+  color: #225ad6;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-weight: 600;
+  font-size: 24px;
+  padding-top: 30px;
+}
+
+.child__title {
+  padding-bottom: 1.5rem;
+  color: #225ad6;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.contact__us {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+
+.list {
+  padding-left: 2rem;
+  line-height: 2rem;
+}
+
+.list li {
+  margin: 1rem 0;
+}
+.span {
+  font-weight: 600;
+}
+.div {
+  margin: 1rem 0;
+  font-weight: 600;
+}
+p {
+  color: #6f6f6f;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.numlist {
+  list-style: decimal;
+}
+h4 {
+  color: #225ad6;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 3.5rem 0 1.5rem;
+}
+
+h5 {
+  color: #225ad6;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 1.5rem 0;
+}
+
+.h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  color: #225ad6;
+  margin: 2rem 0 0;
+}
+
+.h3 {
+  margin: 1.5rem 0;
+}
+
+@media only screen and (max-width: 850px) {
+  .box {
+    padding: 0 4rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .box {
+    padding: 0 2rem;
+  }
+}
