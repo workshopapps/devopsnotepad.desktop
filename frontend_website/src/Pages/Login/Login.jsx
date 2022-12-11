@@ -34,7 +34,7 @@ const Login = () => {
   const googleSignInHandler = useCallback(async (response) => {
     const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
       method: 'POST',
-      body: { token: response.credential },
+      body: JSON.stringify({ token: response.credential }),
       headers: {
         'Content-Type': 'application/json',
       },
