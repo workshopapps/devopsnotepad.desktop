@@ -34,8 +34,8 @@ const ContactUs = () => {
     isSubmitting,
   } = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       phone: '',
       subject: '',
       message: '',
@@ -163,42 +163,42 @@ const ContactUs = () => {
             <form action='#' autoComplete='off' onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='firstName'>First Name</label>
+                  <label for='firstname'>First Name</label>
                   <input
-                    id='firstName'
+                    id='firstname'
                     placeholder='What’s your first name?'
                     className={styles.end}
                     required
                     onChange={handleChange}
-                    value={values.firstName}
+                    value={values.firstname}
                     onBlur={handleBlur}
                   />
 
-                  {errors.firstName && touched.firstName && (
+                  {errors.firstname && touched.firstname && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.firstName}{' '}
+                      <RiCloseCircleFill /> {errors.firstname}{' '}
                     </p>
                   )}
                 </div>
 
                 <div className={styles.col}>
-                  <label for='lastName'>Last Name</label>
+                  <label for='lastname'>Last Name</label>
                   <input
                     type='text'
-                    id='lastName'
+                    id='lastname'
                     placeholder='What’s your last name?'
                     className={styles.start}
                     required
                     onChange={handleChange}
-                    value={values.lastName}
+                    value={values.lastname}
                     onBlur={handleBlur}
                   />
 
-                  {errors.lastName && touched.lastName && (
+                  {errors.lastname && touched.lastname && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.lastName}{' '}
+                      <RiCloseCircleFill /> {errors.lastname}{' '}
                     </p>
                   )}
                 </div>

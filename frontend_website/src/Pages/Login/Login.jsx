@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import google from '../../assets/login_page-assets/google.png';
+// import google from '../../assets/login_page-assets/google.png';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
 import useFetch from '../../hooks/useFetch';
@@ -18,10 +18,21 @@ const Login = () => {
   // Using a custom hook
   const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
 
-  // Sigin up with google
-  const googleSignInHandler = () => {
-    window.open('https://opspad.onrender.com/auth/google', '_self');
-  };
+  useEffect(() => {
+    window.google.accounts.id.initialize({
+      client_id: REACT_APP_GOOGLE_ID,
+      callback: googleSignInHandler,
+    });
+
+    window.google.accounts.id.renderButton(
+      document.getElementById('google-login'),
+      {
+        theme: 'outline',
+        size: 'large',
+      },
+    );
+    window.google.accounts.id.prompt();
+  }, []);
 
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
@@ -50,6 +61,20 @@ const Login = () => {
     );
   };
 
+  // Sigin up with google
+  const googleSignInHandler = async (response) => {
+    const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
+      method: 'POST',
+      body: { token: response.credential },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const res = await req.json();
+
+    getResponseData(res);
+  };
+
   return (
     <>
       <Navigation />
@@ -62,12 +87,7 @@ const Login = () => {
           <div className={classes.div}></div>
         </div>
         <div className={classes.svg__box}>
-          <img
-            src={google}
-            alt='Google'
-            className={classes.svg}
-            onClick={googleSignInHandler}
-          />
+          <div id='google-login'></div>
         </div>
         <h4 className={classes.h4}>
           Don’t have an account yet?{'  '}
