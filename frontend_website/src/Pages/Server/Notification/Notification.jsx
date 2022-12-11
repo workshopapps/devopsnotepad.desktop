@@ -4,13 +4,10 @@ import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 import ServerContext from '../../../Component/Context/ServerContext';
-import { UserContext } from '../../../store/UserContext';
 
-function Notification() {
+function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
-  const { simpleNotifications } = useContext(UserContext);
-  console.log(simpleNotifications);
   const params = useParams();
   const serverId = servers.find((server) => server.id === params.id);
 
@@ -44,7 +41,7 @@ function Notification() {
           <Link to='simple_notifications'>
             <div className={styles.card}>
               <div>
-                <div className={styles.bell}>{simpleNotifications?.length}</div>
+                <div className={styles.bell}>{total}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Logs</p>
