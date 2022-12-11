@@ -38,9 +38,11 @@ function Note() {
 	// State
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
-	const [noteTime, setNoteTime] = useState(localStorage.getItem(`${notesId}`));
+	const [noteTime, setNoteTime] = useState(
+		localStorage.getItem(`${notesId}`, time)
+	);
 	const [noteDate, setNoteDate] = useState(
-		localStorage.getItem(`${notesDateId}`)
+		localStorage.getItem(`${notesDateId}`, date)
 	);
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
@@ -113,28 +115,32 @@ function Note() {
 									onFocus={handleOpen}
 								/>
 							</div>
-							<p
-								className={notesStyle.notesLastEdit}
-								id={notesStyle.notesLastEdit}
-							>
-								{noteTime}, {noteDate}
-							</p>
 							{note ? (
 								<div className={notesStyle.noteTextDiv}>
 									<p
 										className={notesStyle.noteText}
-										style={bold ? boldStyle : {}}
 									>
-										{note}
+										<p
+											style={{ display: saveMsg ? 'block' : 'none' }}
+											className={notesStyle.savedNoteAlert}
+										>
+											Note saved, successfully!
+										</p>
+										<div className={notesStyle.savedNote}>
+											<p className={notesStyle.notesDisplay} 
+										style={bold ? boldStyle : {}}
+										>{note}</p>
+											<div id={notesStyle.notesLastEdit}>
+												<p id={notesStyle.notesLastEditText}>{noteTime}, {noteDate}</p>
+											</div>
+										</div>
 									</p>
 								</div>
 							) : (
 								<div>
-									{saveMsg ? (
-										<p>Note saved, successfully!</p>
-									) : (
-										<p>{startHere}</p>
-									)}
+									<p style={{ display: saveMsg ? 'none' : 'block' }}>
+										{startHere}
+									</p>
 									<form
 										className={notesStyle.notesForm}
 										onSubmit={handleSubmit}
