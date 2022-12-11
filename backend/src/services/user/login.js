@@ -13,7 +13,7 @@ export default async function login(body) {
         throw new AuthenticationError("Email or password incorrect")
     }
 
-    if (!user.password === null) {
+    if (user.password === null) {
         throw new AuthenticationError('Error. You probably signed up via google')
     }
 
