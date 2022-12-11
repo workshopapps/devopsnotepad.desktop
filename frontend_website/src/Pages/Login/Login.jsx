@@ -1,9 +1,7 @@
-import { GoogleLogin } from 'react-google-login';
-
-import { useContext } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import google from '../../assets/login_page-assets/google.png';
+// import google from '../../assets/login_page-assets/google.png';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
 import useFetch from '../../hooks/useFetch';
@@ -19,9 +17,9 @@ const Login = () => {
 
   // Using a custom hook
   const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
-
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
+    console.log(responseObj, 'Login response');
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);
@@ -31,6 +29,36 @@ const Login = () => {
       console.log(responseObj, 'error');
     }
   };
+
+  // Sigin up with google
+  const googleSignInHandler = useCallback(async (response) => {
+    const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
+      method: 'POST',
+      body: { token: response.credential },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const res = await req.json();
+    getResponseData(res);
+  }, []);
+
+  useEffect(() => {
+    window.google?.accounts?.id.initialize({
+      client_id:
+        '336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com',
+      callback: googleSignInHandler,
+    });
+
+    window.google?.accounts?.id.renderButton(
+      document.getElementById('google-login'),
+      {
+        theme: 'outline',
+        size: 'large',
+      },
+    );
+    window.google?.accounts?.id.prompt();
+  }, [googleSignInHandler]);
 
   const signInHandler = async (formData) => {
     LoginRequest(
@@ -46,30 +74,6 @@ const Login = () => {
     );
   };
 
-  // Google login
-  const getGoogleResponseData = (responseObj) => {
-    console.log(responseObj, 'google');
-  };
-
-  const successHandler = (response) => {
-    console.log(response);
-
-    const { tokenId } = response;
-    LoginRequest(
-      {
-        url: 'https://opspad.hng.tech/api/auth/google-login',
-        method: 'POST',
-        body: { token: tokenId },
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-      getGoogleResponseData,
-    );
-  };
-  const failureHandler = (responseObj) => {
-    console.log(responseObj);
-  };
   return (
     <>
       <Navigation />
@@ -82,20 +86,7 @@ const Login = () => {
           <div className={classes.div}></div>
         </div>
         <div className={classes.svg__box}>
-          <img
-            src={google}
-            alt='Google'
-            className={classes.svg}
-            // onClick={googleSignInHandler}
-          />
-          <GoogleLogin
-            buttonText=''
-            clientId='336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com'
-            onSuccess={successHandler}
-            onFailure={failureHandler}
-            cookiePolicy={'single_host-origin'}
-            className={classes.invisible}
-          />
+          <div id='google-login'></div>
         </div>
         <h4 className={classes.h4}>
           Don’t have an account yet?{'  '}

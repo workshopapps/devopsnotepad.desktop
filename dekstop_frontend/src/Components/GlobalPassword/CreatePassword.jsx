@@ -80,7 +80,7 @@ function CreatePassword({ closeOnboarding }) {
 					</div>
 				</form>
 				)}
-				{showAuth && <Auth closeOnboarding={onClick} />}
+				{showAuth && <Auth closeAuth={onClick} />}
 			</div>
 		</>
 	);
