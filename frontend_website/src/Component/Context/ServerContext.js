@@ -58,8 +58,8 @@ export function ServerProvider({ children }) {
     const currentServers = servers.filter((i) => i.id !== server.id);
     const currentServer = servers.find((i) => i.id === server.id);
     currentServer.name = server.name;
-    currentServer.serverId = server.serverId.trim();
-    currentServer.ipAddress = server.ipAddress;
+    currentServer.serverId = server?.serverId?.trim();
+    currentServer.ipAddress = server?.ipAddress;
     currentServer.updated_at = new Date();
     currentServers.push(currentServer);
     currentServers.sort((a, b) => b.created_at - a.created_at);
