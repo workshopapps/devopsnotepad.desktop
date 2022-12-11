@@ -23,7 +23,7 @@
 	position: absolute;
 	top: 40%;
 	left: calc(50% + 228px);
-	transform: translate(calc(-85%), -40%);
+	transform: translate(-85%, -40%);
 	box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
 	border-radius: 8px;
 	z-index: 30;
@@ -93,5 +93,12 @@
 		background: #ffffff;
 		width: 273.6px;
 		height: 230.4px;
+	}
+}
+
+@media (max-width: 767px) {
+	.card {
+		left: 50%;
+		transform: translate(-50%, -40%);
 	}
 }
