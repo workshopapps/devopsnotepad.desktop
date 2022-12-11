@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // import google from '../../assets/login_page-assets/google.png';
@@ -19,7 +19,7 @@ const Login = () => {
   const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    console.log(responseObj, 'responseObj');
+    console.log(responseObj, 'Login response');
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);
@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   // Sigin up with google
-  const googleSignInHandler = async (response) => {
+  const googleSignInHandler = useCallback(async (response) => {
     const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
       method: 'POST',
       body: { token: response.credential },
@@ -40,25 +40,25 @@ const Login = () => {
       },
     });
     const res = await req.json();
-
     getResponseData(res);
-  };
+  }, []);
 
   useEffect(() => {
-    window.google.accounts.id.initialize({
-      client_id: process.env.REACT_APP_GOOGLE_ID,
+    window.google?.accounts?.id.initialize({
+      client_id:
+        '336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com',
       callback: googleSignInHandler,
     });
 
-    window.google.accounts.id.renderButton(
+    window.google?.accounts?.id.renderButton(
       document.getElementById('google-login'),
       {
         theme: 'outline',
         size: 'large',
       },
     );
-    window.google.accounts.id.prompt();
-  }, []);
+    window.google?.accounts?.id.prompt();
+  }, [googleSignInHandler]);
 
   const signInHandler = async (formData) => {
     LoginRequest(
