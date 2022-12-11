@@ -93,11 +93,11 @@ export const Support = [
 			slug: '/about-us',
 			iconright: <FaChevronRight />,
 			},
-			{
-			list: 'Rate OpsPad',
-			slug: '/rate-opspad',
-			iconright: <FaChevronRight />,
-			},
+			// {
+			// list: 'Rate OpsPad',
+			// slug: '/rate-opspad',
+			// iconright: <FaChevronRight />,
+			// },
 			{
 			list: 'Terms & Condition',
 			slug: '/terms-of-service',

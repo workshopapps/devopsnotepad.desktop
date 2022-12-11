@@ -26,7 +26,7 @@ const AvailabiltyNotifications = () => {
 
     onValue(availabiltyNotificationsRef, (snapshot) => {
       const data = snapshot.val();
-      const now = new Date(data.last_checked);
+      const now = new Date(data?.last_checked);
       const options = {
         day: 'numeric',
         month: 'long',
@@ -39,8 +39,8 @@ const AvailabiltyNotifications = () => {
         now,
       );
       addAvailabilityNotifications({
-        message: data.msg,
-        status: data.status,
+        message: data?.msg,
+        status: data?.status,
         date: formattedDate,
       });
     });
@@ -100,7 +100,7 @@ const AvailabiltyNotifications = () => {
               <h4 className={classes.innerh4}>Server Health</h4>
               <p
                 className={`${
-                  availabilityNotifications.status
+                  availabilityNotifications?.status
                     ? `${classes.status_active}`
                     : `${classes.status_inactive}`
                 }`}

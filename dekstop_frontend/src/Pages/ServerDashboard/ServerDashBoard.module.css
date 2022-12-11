@@ -17,3 +17,10 @@ div.wrapper p.note {
 	color: #6f6f6f !important;
 	margin-bottom: 4px;
 }
+
+@media (max-width: 767px) {
+	section.main {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}

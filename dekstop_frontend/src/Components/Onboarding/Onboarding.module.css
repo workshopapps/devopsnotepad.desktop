@@ -88,3 +88,25 @@
 .btn:active {
 	transform: scale(0.95);
 }
+
+@media (max-width: 500px) {
+	.content > h1 {
+		font-size: 24px;
+	}
+
+	.content > p {
+		font-size: 18px;
+	}
+
+	.onboarding > figure {
+		max-width: 450px;
+		min-height: 385.2px;
+	}
+}
+
+@media (max-height: 700px) {
+	.container {
+		overflow: auto;
+		height: 100%;
+	}
+}
