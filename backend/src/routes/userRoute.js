@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 router.post('/signup', registerUserValidator, AuthController.signup);
-router.post('/login', loginUserValidator, isEmailVerified(), AuthController.loginUser);
+router.post('/login', loginUserValidator, AuthController.loginUser);
 router.get('/logout', AuthController.logoutUser);
 
 router.post('/reset-password', resetUserLinkValidator, AuthController.getResetLink);
