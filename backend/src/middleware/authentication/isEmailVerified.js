@@ -1,4 +1,4 @@
-import { AuthorizationError } from "../../lib/errors/index.js";
+import { AuthorizationError } from '../../lib/errors/index.js';
 
 export default (user) => {
         try {
