@@ -45,6 +45,7 @@
   background: #102a63;
   color: #ffffff;
   transition: all 0.3s;
+  margin-top: 1em;
 }
 
 .button:hover {

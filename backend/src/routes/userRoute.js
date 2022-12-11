@@ -1,6 +1,7 @@
 import express from 'express';
 import AuthController from '../controllers/AuthController.js';
 import isAuthenticated from '../middleware/authentication/isAuthenticated.js';
+import isEmailVerified from '../middleware/authentication/isEmailVerified.js';
 import {
   registerUserValidator,
   loginUserValidator,
@@ -12,7 +13,7 @@ import {
 const router = express.Router();
 
 router.post('/signup', registerUserValidator, AuthController.signup);
-router.post('/login', loginUserValidator, AuthController.loginUser);
+router.post('/login', loginUserValidator, isEmailVerified(), AuthController.loginUser);
 router.get('/logout', AuthController.logoutUser);
 
 router.post('/reset-password', resetUserLinkValidator, AuthController.getResetLink);
