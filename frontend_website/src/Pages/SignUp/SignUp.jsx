@@ -36,13 +36,13 @@ const SignUp = () => {
       },
     });
     const res = await req.json();
-
     getResponseData(res);
   }, []);
 
   useEffect(() => {
     window.google?.accounts?.id.initialize({
-      client_id: process.env.REACT_APP_GOOGLE_ID,
+      client_id:
+        '336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com',
       callback: googleSignInHandler,
     });
 
