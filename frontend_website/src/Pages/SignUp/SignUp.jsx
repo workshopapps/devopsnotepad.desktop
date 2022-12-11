@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../store/UserContext';
 
@@ -16,8 +16,9 @@ const SignUp = () => {
   const { addUserHandler } = useContext(UserContext);
   // Using a custom hook
   const { isLoading, error, fetchRequest: createAccount } = useFetch();
- // A function that will get response from the request made
+  // A function that will get response from the request made
   const getResponseData = (responseObj) => {
+    console.log(responseObj, 'Login Fresponse');
     addUserHandler(responseObj?.user);
     const userObj = JSON.stringify(responseObj);
     localStorage.setItem('signedInUser', userObj);
@@ -25,8 +26,8 @@ const SignUp = () => {
       setMessage('Success!!!');
     }
   };
-    // Sigin up with google
-  const googleSignInHandler = async (response) => {
+  // Sigin up with google
+  const googleSignInHandler = useCallback(async (response) => {
     const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
       method: 'POST',
       body: { token: response.credential },
@@ -37,23 +38,23 @@ const SignUp = () => {
     const res = await req.json();
 
     getResponseData(res);
-  };
+  }, []);
+
   useEffect(() => {
-    window.google.accounts.id.initialize({
+    window.google?.accounts?.id.initialize({
       client_id: process.env.REACT_APP_GOOGLE_ID,
       callback: googleSignInHandler,
     });
 
-    window.google.accounts.id.renderButton(
+    window.google?.accounts?.id.renderButton(
       document.getElementById('google-login'),
       {
         theme: 'outline',
         size: 'large',
       },
     );
-    window.google.accounts.id.prompt();
-  }, [])
- 
+    window.google?.accounts?.id.prompt();
+  }, [googleSignInHandler]);
 
   const signUpHandler = async (formData) => {
     createAccount(
@@ -68,8 +69,6 @@ const SignUp = () => {
       getResponseData,
     );
   };
-
-
 
   return (
     <>
@@ -88,7 +87,7 @@ const SignUp = () => {
           <div className={classes.div}></div>
         </div>
         <div className={classes.svg__box}>
-           <div id='google-login'></div>
+          <div id='google-login'></div>
         </div>
         <h4 className={classes.h4}>
           Already have an acount?{' '}
