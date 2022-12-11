@@ -77,3 +77,14 @@
 	background: #ededed;
 	color: #102a63;
 }
+
+@media (max-width: 600px) {
+	.delete {
+		width: 500px;
+	}
+}
+@media (max-width: 520px) {
+	.delete {
+		width: 400px;
+	}
+}

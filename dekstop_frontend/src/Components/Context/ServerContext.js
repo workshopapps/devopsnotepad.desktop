@@ -57,9 +57,9 @@ export function ServerProvider({ children }) {
 		setLoading(true);
 		const currentServers = servers.filter((i) => i.id !== server.id);
 		const currentServer = servers.find((i) => i.id === server.id);
-		currentServer.name = server.name;
-		currentServer.serverId = server.serverId.trim();
-		currentServer.ipAddress = server.ipAddress;
+		currentServer.name = server.editName;
+		currentServer.serverId = server.editServerId.trim();
+		currentServer.ipAddress = server.editIpAddress;
 		currentServer.updated_at = new Date();
 		currentServers.push(currentServer);
 		currentServers.sort((a, b) => b.created_at - a.created_at);
@@ -67,10 +67,8 @@ export function ServerProvider({ children }) {
 		// console.log(currentServers);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
 		setLoading(false);
+		setServers(currentServers);
 		setSuccess(true);
-		useEffect(() => {
-			setServers(currentServers);
-		});
 	}
 
 	// Delete Server
@@ -78,9 +76,7 @@ export function ServerProvider({ children }) {
 		setLoading(true);
 		const currentServers = servers.filter((i) => i.id !== currentId);
 		localStorage.setItem('servers', JSON.stringify(currentServers));
-		useEffect(() => {
-			setServers(currentServers);
-		}, [servers]);
+		setServers(currentServers);
 		setLoading(false);
 	}
 
@@ -91,7 +87,6 @@ export function ServerProvider({ children }) {
 	const requests = useMemo(
 		() => ({
 			servers,
-			// error,
 			loading,
 			success,
 			serverNotifications,
@@ -102,7 +97,7 @@ export function ServerProvider({ children }) {
 			setSuccess,
 			handleServerNotifications,
 		}),
-		[loading, success, serverNotifications]
+		[servers, loading, success, serverNotifications]
 	);
 
 	return (
