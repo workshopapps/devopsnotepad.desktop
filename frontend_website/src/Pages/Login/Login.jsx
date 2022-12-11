@@ -1,3 +1,5 @@
+import { GoogleLogin } from 'react-google-login';
+
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -18,14 +20,8 @@ const Login = () => {
   // Using a custom hook
   const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
 
-  // Sigin up with google
-  const googleSignInHandler = () => {
-    window.open('https://opspad.onrender.com/auth/google', '_self');
-  };
-
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    console.log(responseObj, 'responseObj');
     if (responseObj?.message === 'Logged in Successfully') {
       addUserHandler(responseObj);
       const userObj = JSON.stringify(responseObj);
@@ -50,6 +46,30 @@ const Login = () => {
     );
   };
 
+  // Google login
+  const getGoogleResponseData = (responseObj) => {
+    console.log(responseObj, 'google');
+  };
+
+  const successHandler = (response) => {
+    console.log(response);
+
+    const { tokenId } = response;
+    LoginRequest(
+      {
+        url: 'https://opspad.hng.tech/api/auth/google-login',
+        method: 'POST',
+        body: { token: tokenId },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+      getGoogleResponseData,
+    );
+  };
+  const failureHandler = (responseObj) => {
+    console.log(responseObj);
+  };
   return (
     <>
       <Navigation />
@@ -66,7 +86,15 @@ const Login = () => {
             src={google}
             alt='Google'
             className={classes.svg}
-            onClick={googleSignInHandler}
+            // onClick={googleSignInHandler}
+          />
+          <GoogleLogin
+            buttonText=''
+            clientId='336204185207-fhl85d0e7soq2fbukuv6bqb926re03gp.apps.googleusercontent.com'
+            onSuccess={successHandler}
+            onFailure={failureHandler}
+            cookiePolicy={'single_host-origin'}
+            className={classes.invisible}
           />
         </div>
         <h4 className={classes.h4}>
