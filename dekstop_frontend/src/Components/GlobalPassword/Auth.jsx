@@ -1,10 +1,16 @@
-/* eslint-disable  */
-import React, { useState, useCallback } from 'react';
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
 
-
-function Auth() {
+function Auth({ closeAuth }) {
 	const [password, setAuthPassword] = useState('');
+
+	// Proptype declaration
+	Auth.propTypes = {
+		closeAuth: PropTypes.func.isRequired,
+	};
 
 	// event handler for the authenticate button
 	function handleAuthenticate(e) {
@@ -16,9 +22,9 @@ function Auth() {
 		// compare the entered password with the one in local storage
 		if (password === storedPassword) {
 			sessionStorage.setItem('isAuthenticated', false);
+			closeAuth();
 			// if they match, show a success message
 			alert('Authenticated');
-		
 		}
 		if (password !== storedPassword) {
 			// if they don't match, show an error message
@@ -26,10 +32,6 @@ function Auth() {
 		}
 		setAuthPassword('');
 	}
-	const onClick = useCallback(() => {
-		localStorage.setItem('isNewUser', false);
-		window.location.reload();
-	}, []);
 
 	return (
 		<div className={styleA.formContainer}>
@@ -46,7 +48,7 @@ function Auth() {
 							onChange={(e) => setAuthPassword(e.target.value)}
 						/>
 					</div>
-					<button  onClick={onClick} className={styleA.btn} type="submit">
+					<button className={styleA.btn} type="submit">
 						Confirm
 					</button>
 				</div>
