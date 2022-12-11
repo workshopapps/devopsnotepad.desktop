@@ -1,6 +1,7 @@
 import express from 'express';
 import AuthController from '../controllers/AuthController.js';
 import isAuthenticated from '../middleware/authentication/isAuthenticated.js';
+import isEmailVerified from '../middleware/authentication/isEmailVerified.js';
 import {
   registerUserValidator,
   loginUserValidator,
