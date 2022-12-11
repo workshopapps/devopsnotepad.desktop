@@ -245,7 +245,7 @@ export default class AuthController {
       req.session.user = user;
       req.session.authorized = true;
 
-      res.status(200).json({ user, userToken });
+      res.status(200).json({ message: 'Logged in Successfully', user, userToken });
     } catch (error) {
       return next(error);
     }

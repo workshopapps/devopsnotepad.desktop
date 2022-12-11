@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../store/UserContext';
 
-import google from '../../assets/login_page-assets/google.png';
+// import google from '../../assets/login_page-assets/google.png';
 import useFetch from '../../hooks/useFetch';
 
 import Form from './Form';
@@ -16,13 +16,7 @@ const SignUp = () => {
   const { addUserHandler } = useContext(UserContext);
   // Using a custom hook
   const { isLoading, error, fetchRequest: createAccount } = useFetch();
-
-  // Sigin up with google
-  const googleSignInHandler = () => {
-    window.open('https://opspad.onrender.com/auth/google', '_self');
-  };
-
-  // A function that will get response from the request made
+ // A function that will get response from the request made
   const getResponseData = (responseObj) => {
     addUserHandler(responseObj?.user);
     const userObj = JSON.stringify(responseObj);
@@ -31,6 +25,35 @@ const SignUp = () => {
       setMessage('Success!!!');
     }
   };
+    // Sigin up with google
+  const googleSignInHandler = async (response) => {
+    const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
+      method: 'POST',
+      body: { token: response.credential },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const res = await req.json();
+
+    getResponseData(res);
+  };
+  useEffect(() => {
+    window.google.accounts.id.initialize({
+      client_id: process.env.REACT_APP_GOOGLE_ID,
+      callback: googleSignInHandler,
+    });
+
+    window.google.accounts.id.renderButton(
+      document.getElementById('google-login'),
+      {
+        theme: 'outline',
+        size: 'large',
+      },
+    );
+    window.google.accounts.id.prompt();
+  }, [])
+ 
 
   const signUpHandler = async (formData) => {
     createAccount(
@@ -45,6 +68,8 @@ const SignUp = () => {
       getResponseData,
     );
   };
+
+
 
   return (
     <>
@@ -63,12 +88,7 @@ const SignUp = () => {
           <div className={classes.div}></div>
         </div>
         <div className={classes.svg__box}>
-          <img
-            src={google}
-            alt='Google'
-            className={classes.svg}
-            onClick={googleSignInHandler}
-          />
+           <div id='google-login'></div>
         </div>
         <h4 className={classes.h4}>
           Already have an acount?{' '}
