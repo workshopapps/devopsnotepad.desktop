@@ -11,7 +11,7 @@ import PasswordComplexity from 'joi-password-complexity';
 import { OAuth2Client } from 'google-auth-library';
 import { generateJWTToken, validatePayload } from '../utils/index.js';
 import config from '../config/index.js';
-import signJWT from '../utils/jwthelper.js';
+// import signJWT from '../utils/jwthelper.js';
 
 const client = new OAuth2Client({ clientId: config.google.CLIENT_ID, clientSecret: config.google.CLIENT_SECRET });
 
