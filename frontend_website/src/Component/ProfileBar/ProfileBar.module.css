@@ -14,6 +14,7 @@
   width: 200px;
   height: 72px;
   border-radius: 45px 0 0 45px;
+  z-index: 99;
 }
 
 .profile {
