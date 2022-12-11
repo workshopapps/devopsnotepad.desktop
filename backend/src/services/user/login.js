@@ -1,22 +1,29 @@
 import UserRepo from "../../database/repositories/UserRepo.js";
 import bcrypt from "bcrypt";
-// import { generateJWTToken } from "../../utils/index.js";
+import isEmailVerified from "../../middleware/authentication/isEmailVerified.js";
+import { AuthenticationError } from "../../lib/errors/index.js";
 
-export default async function login(body, req, res) {
+export default async function login(body) {
 
     body.email = body.email.toLowerCase();
 
     const user = await UserRepo.getUserByEmail(body.email);
 
     if (!user) {
-        return res.status(404).send({ message: "Email or password incorrect" });
+        throw new AuthenticationError("Email or password incorrect")
+    }
+
+    if (!user.password === null) {
+        throw new AuthenticationError('Error. You probably signed up via google')
     }
 
     const comparePassword = await bcrypt.compare(body.password, user.password);
 
     if (!comparePassword) {
-        return res.status(400).send({ message: "Email or password incorrect" });
-    }
+        throw new AuthenticationError("Email or password incorrect")
+    } 
+
+    isEmailVerified(user);
 
     return {
         user,
