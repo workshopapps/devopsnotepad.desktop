@@ -25,7 +25,7 @@
 }
 .notesForm {
 	margin-top: 20px;
-	width: 287%;
+	width: 280%;
 }
 .notesFormInput {
 	width: 100%;
@@ -95,6 +95,8 @@
 }
 #notesLastEdit {
 	margin-left: 257%;
+	margin-top: -20px;
+
 }
 .noteTextDiv{
 	display: flex;
