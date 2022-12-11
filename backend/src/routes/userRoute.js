@@ -19,7 +19,7 @@ router.get('/logout', AuthController.logoutUser);
 router.post('/reset-password', resetUserLinkValidator, AuthController.getResetLink);
 router.post('/update-password', updateUserPasswordValidator, AuthController.updateUserPassword);
 
-router.get('/verify-mail', verifyUserPasswordValidator, AuthController.verifyEmail);
+router.post('/verify-email', verifyUserPasswordValidator, AuthController.verifyEmail);
 router.post('/update-user-password', isAuthenticated(), AuthController.updateUserPasswordFromMobile);
 
 // Google Login
