@@ -1,0 +1,26 @@
+.container * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 4px;
+}
+.icon {
+	height: 13px;
+	width: 13px;
+}
+.text {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	color: #ea2a2a;
+}
