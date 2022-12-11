@@ -8,6 +8,8 @@ import { ValidateEmail, ValidatePassword } from '../SignUp/lib';
 import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
 
 const Form = (props) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordIcon] = useState(true);
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -95,13 +97,15 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='password'
-        autoComplete='current-password'
+        type={showPassword ? 'text' : 'password'}
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='MinLength(8), uppercase, lowercase, character, number'
+        placeholder='MinLength(8), uppercase, lowercase, character, number.'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
+        passwordIcon={passwordIcon}
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
