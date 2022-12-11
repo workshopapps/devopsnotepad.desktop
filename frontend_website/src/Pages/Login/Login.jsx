@@ -17,23 +17,6 @@ const Login = () => {
 
   // Using a custom hook
   const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
-
-  useEffect(() => {
-    window.google.accounts.id.initialize({
-      client_id: REACT_APP_GOOGLE_ID,
-      callback: googleSignInHandler,
-    });
-
-    window.google.accounts.id.renderButton(
-      document.getElementById('google-login'),
-      {
-        theme: 'outline',
-        size: 'large',
-      },
-    );
-    window.google.accounts.id.prompt();
-  }, []);
-
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
     console.log(responseObj, 'responseObj');
@@ -45,20 +28,6 @@ const Login = () => {
     } else {
       console.log(responseObj, 'error');
     }
-  };
-
-  const signInHandler = async (formData) => {
-    LoginRequest(
-      {
-        url: 'https://opspad.hng.tech/api/auth/login',
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-      getResponseData,
-    );
   };
 
   // Sigin up with google
@@ -73,6 +42,36 @@ const Login = () => {
     const res = await req.json();
 
     getResponseData(res);
+  };
+
+  useEffect(() => {
+    window.google.accounts.id.initialize({
+      client_id: process.env.REACT_APP_GOOGLE_ID,
+      callback: googleSignInHandler,
+    });
+
+    window.google.accounts.id.renderButton(
+      document.getElementById('google-login'),
+      {
+        theme: 'outline',
+        size: 'large',
+      },
+    );
+    window.google.accounts.id.prompt();
+  }, []);
+
+  const signInHandler = async (formData) => {
+    LoginRequest(
+      {
+        url: 'https://opspad.hng.tech/api/auth/login',
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+      getResponseData,
+    );
   };
 
   return (
