@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ref, onValue } from 'firebase/database';
+import {ref, onValue} from 'firebase/database'
 import { db } from '../../firebase.config';
 import style from './ServerCard.module.css';
 import arrowUp from './Assets/arrow_up.svg';
