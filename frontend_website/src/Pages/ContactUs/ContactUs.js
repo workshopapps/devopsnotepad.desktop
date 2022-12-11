@@ -97,6 +97,7 @@ const ContactUs = () => {
 
                 <button
                   className={styles.btns}
+                  style={{marginTop: '-8px'}}
                   onClick={() =>
                     (window.location = 'mailto:sales@teamsandpaper.com')
                   }
@@ -118,6 +119,7 @@ const ContactUs = () => {
                 </p>
 
                 <button
+                  style={{marginTop: '68px'}}
                   className={styles.btns}
                   onClick={() =>
                     (window.location = 'mailto:partnerships@teamsandpaper.com')
