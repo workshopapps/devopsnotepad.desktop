@@ -1,12 +1,10 @@
 /* eslint-disable  */
 import React, { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styleA from './Auth.module.css';
 
 
 function Auth() {
 	const [password, setAuthPassword] = useState('');
-	const navigate = useNavigate();
 
 	// event handler for the authenticate button
 	function handleAuthenticate(e) {
