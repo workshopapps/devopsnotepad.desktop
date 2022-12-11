@@ -12,19 +12,22 @@ const VerifyEmail = () => {
 
   const getRequestData = (responseBody) => {
     console.log(responseBody, 'verifyemail');
-
     if (responseBody.message) {
-      navigate('/login');
+      navigate('https://opspad.hng.tech/login');
     }
   };
 
   const verifyEmailHandler = () => {
     const token = searchParams.get('token');
     const id = searchParams.get('id');
-    console.log(token, id, 'verifyemail');
     fetchRequest(
       {
-        url: `https://opspad.hng.tech/api/auth/verify-email?token=${token}&id=${id}`,
+        url: `https://opspad.hng.tech/api/auth/verify-email`,
+        method: 'POST',
+        body: { token: token, id: id },
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
       getRequestData,
     );

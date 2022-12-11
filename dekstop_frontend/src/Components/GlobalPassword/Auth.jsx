@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
 
-function Auth({ closeOnboarding }) {
+function Auth({ closeAuth }) {
 	const [password, setAuthPassword] = useState('');
 
 	// Proptype declaration
 	Auth.propTypes = {
-		closeOnboarding: PropTypes.func.isRequired,
+		closeAuth: PropTypes.func.isRequired,
 	};
 
 	// event handler for the authenticate button
@@ -22,7 +22,7 @@ function Auth({ closeOnboarding }) {
 		// compare the entered password with the one in local storage
 		if (password === storedPassword) {
 			sessionStorage.setItem('isAuthenticated', false);
-			closeOnboarding();
+			closeAuth();
 			// if they match, show a success message
 			alert('Authenticated');
 		}
