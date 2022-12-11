@@ -11,9 +11,8 @@ const VerifyEmail = () => {
   const { isLoading, error, fetchRequest } = useFetch();
 
   const getRequestData = (responseBody) => {
-    console.log(responseBody, 'verifyemail');
     if (responseBody.message) {
-      navigate('https://opspad.hng.tech/login');
+      navigate('/login');
     }
   };
 
