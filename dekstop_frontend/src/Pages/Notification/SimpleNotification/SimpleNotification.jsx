@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './SimpleNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
@@ -33,6 +34,7 @@ function SimpleNotification() {
 	return (
 		<div>
 			<Sidenav />
+			<BackBtn />
 
 			<section className={styles.main}>
 				<div className={styles.container}>
@@ -40,6 +42,7 @@ function SimpleNotification() {
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
 						name={exactServer.name}
+						serverId={exactServer.serverId}
 					/>
 					<div className={styles.wrapper}>
 						<Link to={`/server/${id}/note`}>
@@ -81,7 +84,7 @@ function SimpleNotification() {
 							{' '}
 							<div className={styles.card2}>
 								<div>
-									<div className={styles.belly}>0</div>
+									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
 								<p className={styles.noti}>Availability notifications</p>
@@ -113,9 +116,9 @@ function SimpleNotification() {
 							<div className={styles.row}>
 								<img src={green} alt="" style={{ alignSelf: 'center' }} />
 
-								<Content notes={notification.logs}/>
+								<Content notes={notification.logs} />
 
-								<p style={{fontSize: '14px'}}>{notification.created_at}</p>
+								<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
 							</div>
 						</div>
 					))}

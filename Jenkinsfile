@@ -28,18 +28,18 @@ pipeline {
 
 			}
 		}
-		stage("Build desktop-frontend"){
+		// stage("Build desktop-frontend"){
 
-			steps {
+		// 	steps {
 
-                dir ('devopsnotepad.desktop/dekstop_frontend') {
-                    sh "pwd"
-                    sh "npm i -f"
-                    sh "npm run build"
-                }
+        //         dir ('devopsnotepad.desktop/dekstop_frontend') {
+        //             sh "pwd"
+        //             sh "npm i -f"
+        //             sh "npm run build"
+        //         }
 
-			}
-		}
+		// 	}
+		// }
 
 		stage("Install dependencies for backend"){
 
@@ -68,13 +68,13 @@ pipeline {
 			}
 		}
 
-		stage("start desktop") {
+		// stage("start desktop") {
 		
-			steps {
-				sh "sudo systemctl stop opspad-desktop.service"
-				sh "sudo systemctl restart opspad-desktop.service"
-			}
-		}
+		// 	steps {
+		// 		sh "sudo systemctl stop opspad-desktop.service"
+		// 		sh "sudo systemctl restart opspad-desktop.service"
+		// 	}
+		// }
 		
 		stage("start backend") {
 		

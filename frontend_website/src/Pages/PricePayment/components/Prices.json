@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "plan": "Free",
+    "priceMonthly": "Free",
+    "priceYearly": "Free",
+    "offer": ["Three servers", "Unlimited notes", "Three downloads"]
+  },
+  {
+    "id": 1,
+    "plan": "Profesional",
+    "priceMonthly": "20usd",
+    "priceYearly": "200usd",
+    "offer": [
+      "Three servers",
+      "Unlimited notes",
+      "Three downloads",
+      "Third party integration"
+    ]
+  },
+  {
+    "id": 2,
+    "plan": "Organition",
+    "priceMonthly": "100usd",
+    "priceYearly": "1000usd",
+    "offer": [
+      "Three servers",
+      "Unlimited notes",
+      "Three downloads",
+      "Third party integration",
+      "Unlimited collaborators"
+    ]
+  }
+]
