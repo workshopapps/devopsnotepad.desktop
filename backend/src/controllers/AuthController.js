@@ -1,6 +1,7 @@
 import create from '../services/user/create.js';
 import UserRepo from '../database/repositories/UserRepo.js';
 import login from '../services/user/login.js';
+import resendEmailVerification from '../services/user/resendemailverification.js'
 import ResetTokenRepo from '../database/repositories/ResetTokenRepo.js';
 import { NotFoundError, ServiceError } from '../lib/errors/index.js';
 import { sendResetLink } from '../services/user/password_reset.js';
@@ -174,6 +175,34 @@ export default class AuthController {
     }
   };
 
+  static resendVerifyEmail = async (req, res, next) => {
+    try {
+      const validatePayload = Joi.object({
+        email: Joi.string().required().email().label("Email"),
+      }).strict();
+
+      if (validatePayload.validate(req.body).error) {
+        return res.status(400).json(validatePayload.validate(req.body).error.details);
+      }
+
+      const user = await resendEmailVerification(req.body);
+
+      if (user === "User Not found") {
+       return res.status(400).json({
+          success: false,
+          message: user,
+        });
+      }
+
+     return res.status(201).json({
+        success: true,
+        message: 'Verification link sent',
+        user,
+      });
+    } catch (error) {
+      next(error);
+    }
+  };
   static updateUserPasswordFromMobile = async (req, res) => {
     try {
       // Validate with Joi
@@ -224,6 +253,30 @@ export default class AuthController {
       return res.status(201).send('Password Successfully Updated');
     } catch (error) {
       return res.status(500).send(`An error occurred whiles updating user password ${error}`);
+    }
+  };
+
+  static googleLogin = async (req, res, next) => {
+    try {
+      const { token } = req.body;
+      const ticket = await client.verifyIdToken({ idToken: token, audience: config.google.CLIENT_ID });
+
+      const payload = ticket.getPayload();
+      let user = await UserRepo.getUserByEmail(payload.email);
+      if (!user) {
+        user = await UserRepo.create({
+          email: payload.email,
+          name: payload.name,
+          email_verified: payload.email_verified,
+        });
+      }
+      const userToken = await generateJWTToken(user);
+      req.session.user = user;
+      req.session.authorized = true;
+
+      res.status(200).json({ message: 'Logged in Successfully', user, userToken });
+    } catch (error) {
+      return next(error);
     }
   };
 
