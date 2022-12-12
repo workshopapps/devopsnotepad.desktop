@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -27,12 +27,23 @@ const style = {
 	p: 4,
 };
 function Note() {
+	const { id } = useParams();
+	const notesId = useId();
+	const notesDateId = useId();
 
-	const {id} = useParams()
+	// Date
+	const time = new Date().toTimeString().slice(0, 5);
+	const date = new Date().toLocaleDateString();
 
 	// State
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
+	const [noteTime, setNoteTime] = useState(
+		localStorage.getItem(`${notesId}`, time)
+	);
+	const [noteDate, setNoteDate] = useState(
+		localStorage.getItem(`${notesDateId}`, date)
+	);
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
@@ -44,26 +55,26 @@ function Note() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem(`${id}`, inputs);
-		setNote(localStorage.getItem('note'));
+		localStorage.setItem(`${notesId}`, time);
+		localStorage.setItem(`${notesDateId}`, date);
+		setNote(localStorage.getItem(`${id}`));
 		setInputs('');
-		setSaveMsg(true)
+		setSaveMsg(true);
+		setNoteTime(localStorage.getItem(`${notesId}`));
+		setNoteDate(localStorage.getItem(`${notesDateId}`));
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
 		localStorage.removeItem(`${id}`);
+		localStorage.removeItem(`${notesId}`);
+		localStorage.removeItem(`${notesDateId}`);
 		setNote('');
 		setOpen(false);
-		setSaveMsg(false)
+		setSaveMsg(false);
 	};
 	const handleCancel = () => {
 		setOpen(false);
 	};
-
-	// Date
-	const date = new Date().getDate();
-	const hour = new Date().getHours();
-	const min = new Date().getMinutes();
-	const month = new Date().getMonth();
 	const startHere = 'Start note here...';
 	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
@@ -104,32 +115,32 @@ function Note() {
 									onFocus={handleOpen}
 								/>
 							</div>
-							{inputs?.length > 0 ? (
-								<p
-									className={notesStyle.notesLastEdit}
-									id={notesStyle.notesLastEdit}
-								>
-									{hour}:{min}pm, {date}-{month}-22
-								</p>
-							) : (
-								<p className={notesStyle.notesLastEdit}>Last edit</p>
-							)}
 							{note ? (
 								<div className={notesStyle.noteTextDiv}>
 									<p
 										className={notesStyle.noteText}
-										style={bold ? boldStyle : {}}
 									>
-										{note}
+										<p
+											style={{ display: saveMsg ? 'block' : 'none' }}
+											className={notesStyle.savedNoteAlert}
+										>
+											Note saved, successfully!
+										</p>
+										<div className={notesStyle.savedNote}>
+											<p className={notesStyle.notesDisplay} 
+										style={bold ? boldStyle : {}}
+										>{note}</p>
+											<div id={notesStyle.notesLastEdit}>
+												<p id={notesStyle.notesLastEditText}>{noteTime}, {noteDate}</p>
+											</div>
+										</div>
 									</p>
 								</div>
 							) : (
 								<div>
-									{
-										saveMsg ?
-									<p>Note saved, successfully!</p> :
-									<p>{startHere}</p>
-									}
+									<p style={{ display: saveMsg ? 'none' : 'block' }}>
+										{startHere}
+									</p>
 									<form
 										className={notesStyle.notesForm}
 										onSubmit={handleSubmit}
@@ -138,15 +149,13 @@ function Note() {
 											className={notesStyle.notesFormInput}
 											onChange={handleChanges}
 										/>
-										{
-											saveMsg ?
+										{saveMsg ? (
+											{}
+										) : (
 											<button type="submit" className={notesStyle.notesSaveBtn}>
-											Edit Note
-										</button> :
-										<button type="submit" className={notesStyle.notesSaveBtn}>
-										Save Note
-									</button>
-										}
+												Save Note
+											</button>
+										)}
 									</form>
 								</div>
 							)}

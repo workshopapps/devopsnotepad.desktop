@@ -16,12 +16,15 @@ function SimpleNotification() {
 	const [simpleNotification, setSimpleNotification] = useState([]);
 	const { id } = useParams();
 
+
+
 	const getServer = (code) => {
 		const localData = localStorage.getItem('servers');
 		const data = localData ? JSON.parse(localData) : [];
 		const theServer = data.find((server) => server.id === code);
 		setExactServer(theServer);
 	};
+
 
 	useEffect(() => {
 		getServer(id);
@@ -31,11 +34,12 @@ function SimpleNotification() {
 		});
 	}, []);
 
+
+
 	return (
 		<div>
 			<Sidenav />
 			<BackBtn />
-
 			<section className={styles.main}>
 				<div className={styles.container}>
 					<ServerInfo
@@ -98,9 +102,13 @@ function SimpleNotification() {
 
 				<div className={styles.state}>
 					<Link to={`/server/${id}/notification`}>
-						<img src={Button} alt="" style={{ cursor: 'pointer' }} />{' '}
+						<img
+							src={Button}
+							alt=""
+							style={{ cursor: 'pointer', marginBottom: '15px' }}
+						/>{' '}
 					</Link>
-
+					<div className={styles.notiContainer}>
 					{simpleNotification.length === 0 && (
 						<div className={styles.refill}>
 							<img src={Refill} alt="" />
@@ -122,6 +130,7 @@ function SimpleNotification() {
 							</div>
 						</div>
 					))}
+					</div>
 				</div>
 			</section>
 		</div>
