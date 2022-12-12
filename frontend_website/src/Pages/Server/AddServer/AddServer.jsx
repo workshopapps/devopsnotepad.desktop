@@ -1,14 +1,17 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
 
 import SideNav from '../../../Component/SideNav/SideNav';
 import useFetch from '../../../hooks/useFetch';
+import { ServerContext } from '../../../store/ServerContext';
 import Button from '../../CareerPage/Button/Button';
 import style from './AddServer.module.css';
 
 function AddServer() {
+  const { addServers } = useContext(ServerContext);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -38,8 +41,10 @@ function AddServer() {
   const [success, setSuccess] = useState(false);
 
   const getResponse = (response) => {
-    console.log(response);
-    if (response.sucess === true) {
+    if (
+      response.success === true ||
+      response.message === 'server created successfully'
+    ) {
       setSuccess(true);
     }
   };
@@ -74,6 +79,18 @@ function AddServer() {
       name: '',
       ipAddress: '',
     });
+
+    // Fetch all servers again
+    const getResponseData = (data) => {
+      addServers(data);
+    };
+
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/all',
+      },
+      getResponseData,
+    );
   }
 
   // Close success modal and route to dashboard
