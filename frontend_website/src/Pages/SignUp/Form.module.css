@@ -27,7 +27,7 @@
 
 .invalid__input {
   margin-top: -1.6rem;
-  color: rgb(253, 46, 46);
+  color: rgba(253, 46, 46, 0.7);
   font-size: 1.4rem;
   margin-bottom: 1.4rem;
 }
@@ -81,4 +81,13 @@
 }
 .success_button:hover {
   background-color: #1c49aacd;
+}
+.error__message {
+  text-align: center;
+  border: 0.1rem solid rgba(255, 0, 0, 0.707);
+  font-size: 1.6rem;
+  background-color: rgba(255, 0, 0, 0.581);
+  color: white;
+  padding: 0.5rem 0;
+  border-radius: 10rem;
 }
