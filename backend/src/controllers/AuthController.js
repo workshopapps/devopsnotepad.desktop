@@ -252,37 +252,15 @@ export default class AuthController {
             return next(error);
         }
     };
-<<<<<<< HEAD
-
-    static deleteUser = async (req, res, next) => {
-        try {
-            // Validate with Joi
-            const validatePayload = Joi.object({
-                email: Joi.string().required(),
-=======
     static resendVerifyEmail = async (req, res, next) => {
         try {
             const validatePayload = Joi.object({
                 email: Joi.string().required().email().label("Email"),
->>>>>>> 23da1948e1d386ee3255c910ef563c1826a4a1dd
             }).strict();
 
             if (validatePayload.validate(req.body).error) {
                 return res.status(400).json(validatePayload.validate(req.body).error.details);
             }
-<<<<<<< HEAD
-            
-            // Deleter Servers
-             await removeuser(req.body)
-
-            // Clear session 
-            res.clearCookie("connect.sid");
-
-
-            res.status(200).json({ message: "User Successfully removed",});
-        } catch (error) {
-            return next(error);
-=======
 
             const user = await resendEmailVerification(req.body);
 
@@ -300,7 +278,29 @@ export default class AuthController {
             });
         } catch (error) {
             next(error);
->>>>>>> 23da1948e1d386ee3255c910ef563c1826a4a1dd
+        }
+    };
+    static deleteUser = async (req, res, next) => {
+        try {
+            // Validate with Joi
+            const validatePayload = Joi.object({
+                email: Joi.string().required(),
+            }).strict();
+
+            if (validatePayload.validate(req.body).error) {
+                return res.status(400).json(validatePayload.validate(req.body).error.details);
+            }
+
+            // Deleter Servers
+            await removeuser(req.body)
+
+            // Clear session 
+            res.clearCookie("connect.sid");
+
+
+            res.status(200).json({ message: "User Successfully removed", });
+        } catch (error) {
+            return next(error);
         }
     };
 }
