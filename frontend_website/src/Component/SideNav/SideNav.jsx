@@ -38,13 +38,9 @@ function SideNav() {
         )}
         {isOpen && servers.length > 0 && (
           <ul className={styles.ul}>
-            {servers.map((server) => (
-              <li className={styles.li}>
-                <Link
-                  key={server.id}
-                  to={`/server/${server.id}`}
-                  className={styles.li_link}
-                >
+            {servers.map((server, index) => (
+              <li className={styles.li} key={server.id}>
+                <Link to={`/server/${server.id}`} className={styles.li_link}>
                   {server.name}
                 </Link>
               </li>
