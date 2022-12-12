@@ -23,7 +23,11 @@
   margin-bottom: 2.5rem;
   margin-top: 2rem;
 }
-
+.invalid__input {
+  color: rgba(253, 46, 46, 0.7);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
 .form {
   width: 60%;
   padding: 5rem 6rem;
