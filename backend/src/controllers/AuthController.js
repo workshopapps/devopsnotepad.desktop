@@ -47,7 +47,7 @@ export default class AuthController {
 
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
-      const loggedInUser = await login(body, req, res);
+      const loggedInUser = await login(body);
 
       //set request cookie
       if (loggedInUser.user) {
@@ -245,7 +245,7 @@ export default class AuthController {
       req.session.user = user;
       req.session.authorized = true;
 
-      res.status(200).json({ user, userToken });
+      res.status(200).json({ message: 'Logged in Successfully', user, userToken });
     } catch (error) {
       return next(error);
     }
