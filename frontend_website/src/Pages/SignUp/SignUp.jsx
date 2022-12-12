@@ -18,7 +18,6 @@ const SignUp = () => {
   const { isLoading, error, fetchRequest: createAccount } = useFetch();
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
-    console.log(responseObj, 'Login Fresponse');
     addUserHandler(responseObj?.user);
     const userObj = JSON.stringify(responseObj);
     localStorage.setItem('signedInUser', userObj);

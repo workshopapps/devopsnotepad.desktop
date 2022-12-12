@@ -1,6 +1,13 @@
 @import './variables';
 @import './all-teams.scss';
 
+.h5 {
+  color: white;
+}
+.team {
+  color: #3f61d1 !important;
+}
+
 .our__team {
   section {
     margin-bottom: 5rem;
@@ -76,6 +83,7 @@
 
       @media screen and (max-width: $tablet) {
         .current__count {
+          color: #fff;
           font-size: 24px;
           font-weight: 700;
         }
@@ -85,6 +93,7 @@
       }
       @media screen and (max-width: $mobile) {
         .current__count {
+          color: #fff;
           font-size: 20px;
           font-weight: 700;
         }
@@ -101,6 +110,7 @@
           width: $icon_lg;
         }
         .current__count {
+          color: #fff;
           font-weight: 700;
           font-size: 36px;
         }

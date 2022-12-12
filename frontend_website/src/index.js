@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import UserContextProvider from './store/UserContext';
-import { ServerProvider } from './Component/Context/ServerContext';
+import ServerContextProvider from './store/ServerContext';
 
 process.env.NODE_ENV === 'production' &&
   Sentry.init({
@@ -27,9 +27,9 @@ root.render(
     <HelmetProvider>
       <Router>
         <UserContextProvider>
-          <ServerProvider>
+          <ServerContextProvider>
             <App />
-          </ServerProvider>
+          </ServerContextProvider>
         </UserContextProvider>
       </Router>
     </HelmetProvider>

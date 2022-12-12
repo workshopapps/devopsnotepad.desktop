@@ -69,10 +69,10 @@
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 18px;
-  color: #454141;
+  color: #5b5959;
   border: none;
   outline: none;
   cursor: pointer;
@@ -84,7 +84,7 @@
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
-  color: #0f2a63;
+  color: #092f80;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {

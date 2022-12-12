@@ -135,17 +135,7 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0 0' }}>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p
-            style={{
-              textAlign: 'center',
-              border: '.1rem solid red',
-              fontSize: '1.6rem',
-              backgroundColor: 'red',
-              color: 'white',
-              padding: '.5rem 0',
-              borderRadius: '10rem',
-            }}
-          >
+          <p className={classes.error__message}>
             {`Sign in failed! - ${props.error.message}`}
           </p>
         )}
