@@ -16,7 +16,10 @@ const ServerContextProvider = (props) => {
   // Functions to updates states. useCallback ensures that the functions are memoized
   const addServers = useCallback(async (data) => {
     const id = await uuidv4();
-    const formattedServers = data.map((server) => ({ id: id, ...server }));
+    const formattedServers = data.servers.map((server) => ({
+      id: id,
+      ...server,
+    }));
     console.log(formattedServers, 'formatted servers');
     setServers(formattedServers);
   }, []);
