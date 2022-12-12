@@ -3,6 +3,7 @@ import UserRepo from "../database/repositories/UserRepo.js";
 import login from "../services/user/login.js";
 import ResetTokenRepo from "../database/repositories/ResetTokenRepo.js";
 import { NotFoundError, ServiceError } from "../lib/errors/index.js";
+import resendEmailVerification from '../services/user/resendemailverification.js'
 import { sendResetLink } from "../services/user/password_reset.js";
 import EmailVerificationTokenRepo from "../database/repositories/emailVerificationRepo.js";
 import bcrypt from "bcrypt";
@@ -251,17 +252,25 @@ export default class AuthController {
             return next(error);
         }
     };
+<<<<<<< HEAD
 
     static deleteUser = async (req, res, next) => {
         try {
             // Validate with Joi
             const validatePayload = Joi.object({
                 email: Joi.string().required(),
+=======
+    static resendVerifyEmail = async (req, res, next) => {
+        try {
+            const validatePayload = Joi.object({
+                email: Joi.string().required().email().label("Email"),
+>>>>>>> 23da1948e1d386ee3255c910ef563c1826a4a1dd
             }).strict();
 
             if (validatePayload.validate(req.body).error) {
                 return res.status(400).json(validatePayload.validate(req.body).error.details);
             }
+<<<<<<< HEAD
             
             // Deleter Servers
              await removeuser(req.body)
@@ -273,6 +282,25 @@ export default class AuthController {
             res.status(200).json({ message: "User Successfully removed",});
         } catch (error) {
             return next(error);
+=======
+
+            const user = await resendEmailVerification(req.body);
+
+            if (user === "User Not found") {
+                return res.status(400).json({
+                    success: false,
+                    message: user,
+                });
+            }
+
+            return res.status(201).json({
+                success: true,
+                message: 'Verification link sent',
+                user,
+            });
+        } catch (error) {
+            next(error);
+>>>>>>> 23da1948e1d386ee3255c910ef563c1826a4a1dd
         }
     };
 }
