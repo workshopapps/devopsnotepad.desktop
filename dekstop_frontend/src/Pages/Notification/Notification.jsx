@@ -5,8 +5,8 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import styles from './Notification.module.css';
 import ServerContext from '../../Components/Context/ServerContext';
-import copy from './assets/copy.png';
-import bell from './assets/bell.png';
+import copy from './assets/copyip.svg';
+import bell from './assets/bell.svg';
 
 function Notification() {
 	const [loading, setLoading] = useState(false);

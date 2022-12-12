@@ -5,10 +5,10 @@ import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
 import styles from './AvailabilityNotification.module.css';
-import copy from '../assets/copy1.png';
-import Button from '../assets/Button.png';
-import Refill from '../assets/Refill.png';
-import bell from '../assets/bell.png';
+import copy from '../assets/copy1.svg';
+import Button from '../assets/Button.svg';
+import Refill from '../assets/Refill.svg';
+import bell from '../assets/bell.svg';
 import arrowUp from './Assets/arrow_up.svg';
 import arrowDown from './Assets/arrow_down.svg';
 
