@@ -164,3 +164,10 @@
 #notesDeleteBtn {
 	color: #102a63;
 }
+@media screen and (max-width: 1200px) {
+	#notesSaveBtn2 {
+		width: 150px;
+		height: 30px;
+		margin-right: 23%;
+	}
+}
