@@ -20,4 +20,7 @@ export default class UserRepo {
     static updatePasswordById = async (id, password) => {
         return await connection("users").where("id", id).update("password", password);    
     };
+    static removeUserByEmail = async (email) => {
+        return await connection("users").where("email", email).delete()
+    };
 }
