@@ -47,7 +47,7 @@ export default class AuthController {
 
       // Update this latter
       if (errors && Object.keys(errors).length > 0) throw errors;
-      const loggedInUser = await login(body, req, res);
+      const loggedInUser = await login(body);
 
       //set request cookie
       if (loggedInUser.user) {

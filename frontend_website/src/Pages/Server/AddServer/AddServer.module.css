@@ -20,7 +20,8 @@
   text-align: center;
   text-transform: uppercase;
   color: #202020;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 .form {
@@ -58,7 +59,7 @@
   margin-bottom: 0.8rem;
 }
 
-.form_control>input {
+.form_control > input {
   width: 100%;
   padding: 0.7rem 1rem;
   font-size: 16px;
@@ -67,7 +68,7 @@
   border-radius: 4px;
 }
 
-.form_control>input:focus {
+.form_control > input:focus {
   outline: none;
   border: 1px solid #424141;
 }
@@ -81,6 +82,19 @@
   background: #102a63;
   border-radius: 6px;
   border: none;
+}
+.button {
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  color: #ffffff;
+  background: #102a63;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  opacity: 0.8;
 }
 
 .form .btnEnabled:hover {
@@ -100,7 +114,6 @@
   text-align: center;
   margin-top: 10px;
 }
-
 
 @media screen and (max-width: 560px) {
   .addserver {
