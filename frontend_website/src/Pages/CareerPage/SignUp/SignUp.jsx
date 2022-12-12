@@ -49,8 +49,25 @@ const SignUp = () => {
   const [buttonclick, setButtonclick] = useState(false);
 
   const handleSubmit = event => {
-    event.preventDefault(); 
+    event.preventDefault();
     setEmail('');
+    fetch('https://opspad.hng.tech/api/notify-me/', {
+      method: 'POST',
+      body: JSON.stringify({
+        email
+      }),
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json",
+      }
+    }).then((response) => {
+      response.json()
+      if (response.status === 200) {
+        setButtonclick(true)
+      } else {
+        setButtonclick(false)
+      }
+    })
   };
 
   return (
@@ -61,7 +78,8 @@ const SignUp = () => {
         <label className={classes.label}>Your email</label>
         <Input
           className={classes.input}
-          type='text'
+          type='email'
+          required
           placeholder='email@example.com'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -78,15 +96,17 @@ const SignUp = () => {
         <div className={`${classes.box} ${classes.box_2}`}></div>
         <div className={`${classes.box} ${classes.box_3}`}></div>
       </div>
-
-      { buttonclick &&
-          <div className={comingsoonmodalWraper}>
-            <div className={comingsoonmodal}>
-                <h1>You will be notified for future updates. <br /> <span>Please check your email</span></h1>
-                <button onClick={() => setButtonclick(false)}>Ok</button>
-            </div>
+      s
+      {buttonclick &&
+        <div className={comingsoonmodalWraper}>
+          <div className={comingsoonmodal}>
+            <h1>You will be notified for future updates. <br />
+              <span>Please check your email</span>
+            </h1>
+            <button onClick={() => setButtonclick(false)}>Ok</button>
+          </div>
         </div>
-        }
+      }
     </section>
   );
 };
