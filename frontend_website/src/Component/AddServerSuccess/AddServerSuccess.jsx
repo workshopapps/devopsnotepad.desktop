@@ -1,10 +1,12 @@
 /* eslint-disable react/require-default-props */
+import { MdCancel } from 'react-icons/md';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './AddServerSuccess.module.css';
 
-function AddServerSuccess({ closeSuccess, message }) {
+function AddServerSuccess({ closeSuccess }) {
   return (
     <div className={style.container}>
       <div
@@ -13,6 +15,7 @@ function AddServerSuccess({ closeSuccess, message }) {
         aria-hidden='true'
       />
       <div className={style.card}>
+        <MdCancel className={style.close} onClick={closeSuccess} />
         <figure>
           <svg
             width='40'
@@ -28,12 +31,9 @@ function AddServerSuccess({ closeSuccess, message }) {
           </svg>
         </figure>
 
-        <h2>Server {message} Successfully </h2>
+        <h2>Server created Successfully </h2>
 
-        <p>
-          Server successfully created and server id has been emailed to the user
-          account.
-        </p>
+        <p>Kindly check your mail for the Server ID.</p>
         <Link className={style.link} to='/server'>
           <button type='button' onClick={() => closeSuccess()}>
             Back to Dashboard
