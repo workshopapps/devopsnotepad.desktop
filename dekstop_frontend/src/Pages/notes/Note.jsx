@@ -48,7 +48,6 @@ function Note() {
 	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
 	const [notification, setNotification] = useState(false);
-	const [startHere, setStartHere] = useState(false)
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -65,7 +64,6 @@ function Note() {
 		setNoteDate(localStorage.getItem(`${notesDateId}`));
 		setNotification(false);
 		setSaveMsg(true);
-		setStartHere(localStorage.getItem(`${id}`))
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
@@ -83,8 +81,6 @@ function Note() {
 		setSaveMsg(false);
 		setNotification(false);
 		setNote(false)
-		setInputs(localStorage.getItem(`${id}`))
-		setStartHere(localStorage.getItem(`${id}`))
 	};
 	const handleCheckNote = () => {
 		if(note) {
@@ -189,20 +185,20 @@ function Note() {
 						<div style={{ display: note ? 'none' : 'block' }}>
 							<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
 								{
-									startHere ? 
+									note ? 
 									<textarea
 									className={notesStyle.notesFormInput}
 									id={notesStyle.notesFormInput}
 									onChange={handleChanges}
 								>
-								 {startHere}
+							 {note}
 								</textarea> : 
 								<textarea
 								className={notesStyle.notesFormInput}
 								id={notesStyle.notesFormInput}
 								onChange={handleChanges}
 							>
-							 {note}
+								 Start note here....
 							</textarea>
 								}
 								<button type="submit" className={notesStyle.notesSaveBtn}>
