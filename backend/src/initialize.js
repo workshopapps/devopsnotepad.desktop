@@ -70,7 +70,7 @@ const options = {
     servers: [
       {
         //update to production url
-        url: config.app.url,
+        url: `${config.app.url}/api`,
       },
     ],
   },
