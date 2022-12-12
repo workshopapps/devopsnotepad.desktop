@@ -12,7 +12,7 @@ function Notification({ total }) {
   const serverId = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(serverId.textToCopy());
+    navigator.clipboard.writeText(`${serverId}`);
   };
 
   return (
