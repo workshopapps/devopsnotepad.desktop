@@ -9,7 +9,6 @@ import heroBG from './images/hero-bg.png';
 import faceIcon from './images/icons/face.png';
 import personIcon from './images/icons/person_outline.png';
 import devicesIcon from './images/icons/devices.png';
-
 import TeamMembersCounter from './components/TeamMembersCounter';
 import { TeamData } from './data/team-members';
 import TeamDeptInfo from './components/TeamDeptInfo';
@@ -26,7 +25,7 @@ const OurTeam = () => {
       <section className='hero container mb-0'>
         <article className='hero__desc'>
           <h1>
-            Meet The <span className='text-primary'>Team </span> Behind The
+            Meet The <span className='text-primary team'>Team </span> Behind The
             Development Of This App
           </h1>
           <p>
