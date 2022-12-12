@@ -105,7 +105,9 @@ div.sidenav button.btn {
   width: 100%;
   height: fit-content;
   margin-top: 1.3rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .li_link:link {
@@ -122,8 +124,18 @@ div.sidenav button.btn {
   color: #102a63;
 }
 
-@media screen and (max-width: 560px) {
+.name__icon {
+  margin-left: 1rem;
+  height: 1.3rem;
+  width: 1.5rem;
+  fill: #102a63;
+}
 
+.name__icon:hover {
+  fill: #102a63d5;
+}
+
+@media screen and (max-width: 560px) {
   div.sidenav {
     height: 38vh;
     justify-content: center;
@@ -131,6 +143,4 @@ div.sidenav button.btn {
     align-items: center;
     padding-top: 80px;
   }
-
-
 }
