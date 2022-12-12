@@ -103,9 +103,11 @@ function AddServer() {
         <SideNav />
       </div>
       <div className={style.right}>
-        <Button onClick={() => navigate('/server')} className={style.button}>
-          Back
-        </Button>
+        <div style={{ width: '60%', textAlign: 'left' }}>
+          <Button onClick={() => navigate('/server')} className={style.button}>
+            Back
+          </Button>
+        </div>
         <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
           <div className={style.inputs}>
