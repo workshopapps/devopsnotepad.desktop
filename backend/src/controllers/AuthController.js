@@ -3,6 +3,7 @@ import UserRepo from "../database/repositories/UserRepo.js";
 import login from "../services/user/login.js";
 import ResetTokenRepo from "../database/repositories/ResetTokenRepo.js";
 import { NotFoundError, ServiceError } from "../lib/errors/index.js";
+import resendEmailVerification from '../services/user/resendemailverification.js'
 import { sendResetLink } from "../services/user/password_reset.js";
 import EmailVerificationTokenRepo from "../database/repositories/emailVerificationRepo.js";
 import bcrypt from "bcrypt";
@@ -248,6 +249,34 @@ export default class AuthController {
             res.status(200).json({ message: "Logged in Successfully", user, userToken });
         } catch (error) {
             return next(error);
+        }
+    };
+    static resendVerifyEmail = async (req, res, next) => {
+        try {
+            const validatePayload = Joi.object({
+                email: Joi.string().required().email().label("Email"),
+            }).strict();
+
+            if (validatePayload.validate(req.body).error) {
+                return res.status(400).json(validatePayload.validate(req.body).error.details);
+            }
+
+            const user = await resendEmailVerification(req.body);
+
+            if (user === "User Not found") {
+                return res.status(400).json({
+                    success: false,
+                    message: user,
+                });
+            }
+
+            return res.status(201).json({
+                success: true,
+                message: 'Verification link sent',
+                user,
+            });
+        } catch (error) {
+            next(error);
         }
     };
 }
