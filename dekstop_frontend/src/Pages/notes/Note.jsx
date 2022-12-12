@@ -10,7 +10,7 @@ import Vectorr from './assets/Vectorr.png';
 import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
-
+  
 // Modal css
 const style = {
 	position: 'absolute',
@@ -38,11 +38,9 @@ function Note() {
 	// State
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
-	const [noteTime, setNoteTime] = useState(
-		localStorage.getItem(`${notesId}`, time)
-	);
+	const [noteTime, setNoteTime] = useState(localStorage.getItem(`${notesId}`));
 	const [noteDate, setNoteDate] = useState(
-		localStorage.getItem(`${notesDateId}`, date)
+		localStorage.getItem(`${notesDateId}`)
 	);
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
@@ -75,136 +73,142 @@ function Note() {
 	const handleCancel = () => {
 		setOpen(false);
 	};
+	const handleEdit = () => {
+		setSaveMsg(false)
+	}
 	const startHere = 'Start note here...';
 	const boldStyle = { fontWeight: '900', color: '#000000' };
+
 	return (
 		<div className={notesStyle.notesWrapper}>
-			<div className={notesStyle.notes}>
-				<div className={notesStyle.notesContent}>
-					<div className={notesStyle.notesContentTwo}>
-						<div className={notesStyle.notesFormDiv}>
-							<div className={notesStyle.notesFormIcons}>
-								<img
-									src={Vectorc}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleBold}
-									onFocus={handleBold}
-								/>
-								<img
-									src={Vectorr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectoor}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectorrr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vecctor}
-									alt="img"
-									id={notesStyle.deleteIcon}
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleOpen}
-									onFocus={handleOpen}
-								/>
-							</div>
-							{note ? (
-								<div className={notesStyle.noteTextDiv}>
-									<p
-										className={notesStyle.noteText}
-									>
-										<p
-											style={{ display: saveMsg ? 'block' : 'none' }}
-											className={notesStyle.savedNoteAlert}
-										>
-											Note saved, successfully!
-										</p>
-										<div className={notesStyle.savedNote}>
-											<p className={notesStyle.notesDisplay} 
-										style={bold ? boldStyle : {}}
-										>{note}</p>
-											<div id={notesStyle.notesLastEdit}>
-												<p id={notesStyle.notesLastEditText}>{noteTime}, {noteDate}</p>
-											</div>
-										</div>
-									</p>
-								</div>
-							) : (
-								<div>
-									<p style={{ display: saveMsg ? 'none' : 'block' }}>
-										{startHere}
-									</p>
-									<form
-										className={notesStyle.notesForm}
-										onSubmit={handleSubmit}
-									>
-										<textarea
-											className={notesStyle.notesFormInput}
-											onChange={handleChanges}
-										/>
-										{saveMsg ? (
-											{}
-										) : (
-											<button type="submit" className={notesStyle.notesSaveBtn}>
-												Save Note
-											</button>
-										)}
-									</form>
-								</div>
-							)}
+			<div className={notesStyle.notesContent}>
+				<div className={notesStyle.notesContentOne}>
+					<div className={notesStyle.notesFormDiv}>
+						<div className={notesStyle.notesFormIcons}>
+							<img
+								src={Vectorc}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+								onMouseDownCapture={handleBold}
+								onFocus={handleBold}
+							/>
+							<img
+								src={Vectorr}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vectoor}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vectorrr}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vecctor}
+								alt="img"
+								id={notesStyle.deleteIcon}
+								className={notesStyle.notesFormIcon}
+								onMouseDownCapture={handleOpen}
+								onFocus={handleOpen}
+							/>
 						</div>
+							<div className={notesStyle.noteTextDiv}>
+								<p className={notesStyle.noteText}>
+									<p
+										style={{ display: saveMsg ? 'block' : 'none' }}
+										className={notesStyle.savedNoteAlert}
+									>
+										Note saved, successfully!
+									</p>
+									<div className={notesStyle.savedNote}>
+										<p
+											className={notesStyle.notesDisplay}
+											style={bold ? boldStyle : {}}
+										>
+											<div 
+										style={{ display: saveMsg ? 'block' : 'none' }}
+										>
+											{note}
+										</div>
+										</p>
+										<div id={notesStyle.notesLastEdit}>
+											<p id={notesStyle.notesLastEditText}
+										style={{ display: saveMsg ? 'block' : 'none' }}
+											>
+												{noteTime}, {noteDate}
+											</p>
+										</div>
+										<button type='button' 
+										className={notesStyle.notesSaveBtn} 
+										id={notesStyle.notesSaveBtn}
+										style={{display: saveMsg ? 'block' : 'none'}}
+										onClick={handleEdit}
+										>Edit Note</button>
+									</div>
+								</p>
+							</div>
+							<div style={{display: saveMsg? 'none' : 'block'}}>
+								<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
+									<textarea
+										className={notesStyle.notesFormInput}
+										id={notesStyle.notesFormInput}
+										onChange={handleChanges}
+										placeholder = {startHere}
+									/>
+										<button type="submit" className={notesStyle.notesSaveBtn}>
+											Save Note
+										</button>
+								</form>
+							</div>
 					</div>
 				</div>
-			</div>
-			<Modal
-				open={open}
-				onClose={handleClose}
-				aria-labelledby="modal-modal-title"
-				aria-describedby="modal-modal-description"
-			>
-				<Box sx={style} className={notesStyle.notesBox}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						<div className={notesStyle.notesDeleteDiv}>
-							<img
-								src={deleteImg}
-								alt="img"
-								className={notesStyle.notesDeleteImg}
-							/>
-							<p className={notesStyle.notesDeleteNotification}>
-								Are you sure you want too delete notes? Notes deleted cannot be
-								retrieved
-							</p>
-							<div className={notesStyle.notesDeleteBtnDiv}>
-								<button
-									type="button"
-									className={notesStyle.notesDeleteBtn}
-									id={notesStyle.notesCancelBtn}
-									onMouseDownCapture={handleCancel}
-									onFocus={handleCancel}
-								>
-									Cancel
-								</button>
-								<button
-									type="button"
-									id={notesStyle.notesDeleteBtn}
-									className={notesStyle.notesDeleteBtn}
-									onMouseDownCapture={deleteNote}
-									onFocus={deleteNote}
-								>
-									Delete
-								</button>
+				<Modal
+					open={open}
+					onClose={handleClose}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description"
+				>
+					<Box sx={style} className={notesStyle.notesBox}>
+						<Typography id="modal-modal-title" variant="h6" component="h2">
+							<div className={notesStyle.notesDeleteDiv}>
+								<img
+									src={deleteImg}
+									alt="img"
+									className={notesStyle.notesDeleteImg}
+								/>
+								<p className={notesStyle.notesDeleteNotification}>
+									Are you sure you want too delete notes? Notes deleted cannot
+									be retrieved
+								</p>
+								<div className={notesStyle.notesDeleteBtnDiv}>
+									<button
+										type="button"
+										className={notesStyle.notesDeleteBtn}
+										id={notesStyle.notesCancelBtn}
+										onMouseDownCapture={handleCancel}
+										onFocus={handleCancel}
+									>
+										Cancel
+									</button>
+									<button
+										type="button"
+										id={notesStyle.notesDeleteBtn}
+										className={notesStyle.notesDeleteBtn}
+										onMouseDownCapture={deleteNote}
+										onFocus={deleteNote}
+									>
+										Delete
+									</button>
+								</div>
 							</div>
-						</div>
-					</Typography>
-				</Box>
-			</Modal>
+						</Typography>
+					</Box>
+				</Modal>
+			</div>
 		</div>
 	);
 }
