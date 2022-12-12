@@ -5,9 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
-import ServerContext from '../Context/ServerContext';
 import Button from '../../Pages/CareerPage/Button/Button';
 import ProfileBar from '../ProfileBar/ProfileBar';
+import { ServerContext } from '../../store/ServerContext';
 // import { ClassNames } from '@emotion/react';
 /* eslint-disable camelcase */
 
@@ -38,13 +38,9 @@ function SideNav() {
         )}
         {isOpen && servers.length > 0 && (
           <ul className={styles.ul}>
-            {servers.map((server) => (
-              <li className={styles.li}>
-                <Link
-                  key={server.id}
-                  to={`/server/${server.id}`}
-                  className={styles.li_link}
-                >
+            {servers.map((server, index) => (
+              <li className={styles.li} key={server.id}>
+                <Link to={`/server/${server.id}`} className={styles.li_link}>
                   {server.name}
                 </Link>
               </li>

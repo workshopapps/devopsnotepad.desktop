@@ -1,5 +1,5 @@
 .div {
-  width: 35%;
+  width: 40%;
   margin: 0 auto;
   height: 100vh;
   display: flex;
@@ -14,7 +14,6 @@
   text-transform: capitalize;
   font-weight: 600;
   margin-bottom: 4rem;
-  line-height: 2.5rem;
   color: rgb(68, 65, 65);
 }
 
@@ -57,5 +56,17 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .div {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .div {
+    width: 70%;
   }
 }

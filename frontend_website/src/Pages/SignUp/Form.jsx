@@ -200,7 +200,7 @@ const Form = (props) => {
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
           <p
-            style={{ textAlign: 'center' }}
+            className={classes.error__message}
           >{`Sign up failed! - ${props.error.message}`}</p>
         )}
         {props.message && (
