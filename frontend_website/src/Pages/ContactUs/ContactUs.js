@@ -36,7 +36,7 @@ const ContactUs = () => {
     initialValues: {
       firstname: '',
       lastname: '',
-      phone: '',
+      email: '',
       subject: '',
       message: '',
     },
@@ -208,22 +208,22 @@ const ContactUs = () => {
 
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='phone'>Phone Number</label>
+                  <label for='email'>Email</label>
                   <input
-                    type='number'
-                    id='phone'
+                    type='email'
+                    id='email'
                     placeholder='What’s your phone number?'
                     className={styles.end}
                     required
                     onChange={handleChange}
-                    value={values.phone}
+                    value={values.email}
                     onBlur={handleBlur}
                   />
 
-                  {errors.phone && touched.phone && (
+                  {errors.email && touched.email && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.phone}{' '}
+                      <RiCloseCircleFill /> {errors.email}{' '}
                     </p>
                   )}
                 </div>
