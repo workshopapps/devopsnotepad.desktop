@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './Onboarding.module.css';
 import screen1 from './Assets/screen1.svg';
 import CreatePassword from '../GlobalPassword/CreatePassword';
+import Auth from '../GlobalPassword/Auth';
 
 function Onboarding() {
 	const [createPassword, setCreatePassword] = useState(false);
@@ -39,8 +40,9 @@ function Onboarding() {
 					</button>
 				</div>
 			)}
-
+			{createPassword && <Auth closeOnboarding={onClick} />}
 			{createPassword && <CreatePassword closeOnboarding={onClick} />}
+			
 		</div>
 	);
 }

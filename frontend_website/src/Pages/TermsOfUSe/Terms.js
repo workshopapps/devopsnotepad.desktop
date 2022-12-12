@@ -14,18 +14,19 @@ const Terms = () => {
           start with the basics, including a few definitions that help you
           understandthese terms.  OpsPad ( “OpsPad,” “we,” “us) is a note-taking
           note-taking note note and documentation application that allows
-          management and server tracking features. These Terms of Use constitute
+          management and server tracking features. 
+        </p>
+        <p style={{marginTop: '10px'}}>These Terms of Use constitute
           a legally binding agreement made between you, whether personally or on
           behalf of an entity (“you”) and [Team Sandpaper] (“we”), concerning
-          your access to and use of the OpsPad website. 
-        </p>
+          your access to and use of the OpsPad website. </p>
         <p>
           You agree that by accessing the Site, you have read, understood, and
           agree to be bound by allof these Terms of Use. If you do not agree
           with all of these Terms of Use, you are prohibited from using the Site
           and must discontinue use immediately.
         </p>
-        <p>
+        <p style={{marginTop: '10px'}}>
           Supplemental Terms of Use or documents that may be posted on the Site
           from time to time are, as a result of this, expressly incorporated
           herein by reference. We reserve the right, in our sole discretion, to
@@ -41,7 +42,7 @@ const Terms = () => {
           revised Terms of Use by your continued use of the Site after the date
           such revised Terms of Use are posted.
         </p>
-        <h4>INTELLECTUAL PROPERTY RIGHT.</h4>
+        <h4 className={classes.inner__title}>INTELLECTUAL PROPERTY RIGHT.</h4>
         <p>
           Unless otherwise indicated, the Site is our proprietary property. All
           source code, databases, functionality, software, website designs,
@@ -56,7 +57,7 @@ const Terms = () => {
           any commercial purpose whatsoever, without our express prior written
           permission.
         </p>
-        <h4>RIGHT TO MODIFY THE OpsPad SERVICE</h4>
+        <h4 className={classes.inner__title}>RIGHT TO MODIFY THE OpsPad SERVICE</h4>
         <p>
           In our sole discretion, we retain the right to implement new elements
           as part of and ancillary to the OpsPad Service, including changes that
@@ -64,7 +65,7 @@ const Terms = () => {
           OpsPad  Software. We expect that any such modifications will enhance
           the overall OpsPad Service, but you may disagree with us.
         </p>
-        <h4>USER REPRESENTATIONS</h4>
+        <h4 className={classes.inner__title}>USER REPRESENTATIONS</h4>
         <p>
           By using the Site, you represent and warrant that: 
           <ul className={classes.list}>
@@ -99,7 +100,7 @@ const Terms = () => {
           </p>
            
         </p>
-        <h4>
+        <h4 className={classes.inner__title}>
           Are There Any Limitations On The Number Of Notes I Can Create, Access,
           or Edit With OpsPad?
         </h4>
@@ -108,7 +109,7 @@ const Terms = () => {
           create, access or edit. However, you may be limited by the hardware
           restrictions of your device.
         </p>
-        <h4>Can I Share My Account With Someone Else?</h4>
+        <h4 className={classes.inner__title}>Can I Share My Account With Someone Else?</h4>
         <p>
           OpsPad Service accounts should not be shared. If you share your Basic
           Subscriber Informationwith anyone, that other person may be able to
@@ -117,7 +118,7 @@ const Terms = () => {
           (or anyone you share your Basic Subscriber Information with) as a
           result of your or their actions under those circumstances.
         </p>
-        <h4>Are There Rules About What I Can Do on the OpsPad Service?</h4>
+        <h4 className={classes.inner__title}>Are There Rules About What I Can Do on the OpsPad Service?</h4>
         <p>
           Yes. Your use of the OpsPad must be in these Terms. Regarding your use
           of the OpsPad Service; agree that you are responsible for your conduct
@@ -129,7 +130,7 @@ const Terms = () => {
           all Content created, transmitted, stored, or displayed in your
           account, is your sole responsibility.
         </p>
-        <h4>What Information Does OpsPad  Collect?</h4>
+        <h4 className={classes.inner__title}>What Information Does OpsPad  Collect?</h4>
         <p>
           OpsPad allows you to input, upload, or store in the OpsPad Service any
           text and other data you choose to store concerning servers and logs.
@@ -171,7 +172,7 @@ const Terms = () => {
           </ul>
            
         </p>
-        <h4 style={{ 'margin-top': '-2rem' }}>
+        <h4 style={{ marginTop: '-2rem', fontWeight: '800' }}>
           How Does OpsPad Use My Information?
         </h4>
         <p>
@@ -201,7 +202,7 @@ const Terms = () => {
             </li>
           </ul>
         </p>
-        <h4>CHOICE OF LAW</h4>
+        <h4 className={classes.inner__title}>CHOICE OF LAW</h4>
         <p>
           The laws of the state or country where you live govern all claims and
           disputes under this agreement, including breach of contact claims and
@@ -215,12 +216,12 @@ const Terms = () => {
           other rights if the laws of your state or country do not permit it to
           do so.
         </p>
-        <h4>The End-User License Agreement:</h4>
+        <h4 className={classes.inner__title}>The End-User License Agreement:</h4>
         <p>
           This End-User License Agreement (&quot;EULA&quot;) is a legal
           agreement between you and OpsPad Website.
         </p>
-        <h4>License Grant</h4>
+        <h4 className={classes.inner__title}>License Grant</h4>
         <p>
           OpsPad Website hereby grants you a personal, non-transferable,
           non-exclusive licence to use the OpsPad software on your devices in
@@ -265,7 +266,7 @@ const Terms = () => {
             </li>
           </ul>
         </p>
-        <h4>SITE MANAGEMENT</h4>
+        <h4 className={classes.inner__title}>SITE MANAGEMENT</h4>
         <p>
           We reserve the right, but not the obligation, to: 
           <ul className={classes.numlist}>
@@ -295,7 +296,7 @@ const Terms = () => {
             </li>
           </ul>
         </p>
-        <h4>MISCELLANEOUS</h4>
+        <h4 className={classes.inner__title}>MISCELLANEOUS</h4>
         <p>
           These Terms of Use and any policies or operating rules posted by us on
           the Site constitute the entire agreement and understanding between you
@@ -328,7 +329,7 @@ const Terms = () => {
           electronic form of these Terms of Use and the lack of signing by the
           parties hereto to execute these Terms of Use.
         </p>
-        <h4>CONTACT US</h4>
+        <h4 className={classes.inner__title}>CONTACT US</h4>
         <div className='contact__us'>
           <p>
             To resolve a complaint regarding the Site or to receive further
