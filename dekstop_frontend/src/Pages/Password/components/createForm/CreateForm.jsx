@@ -79,7 +79,7 @@ function CreateForm({ closeShowForm, addPassword }) {
 						</svg>
 					</button>
 
-					<h1 className={create.formHeader}>Add Tool</h1>
+					<h1 className={create.formHeader}>Add Password</h1>
 				</div>
 				<div className={create.alignElements}>
 					<div className={create.control}>

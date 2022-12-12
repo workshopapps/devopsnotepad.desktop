@@ -88,7 +88,7 @@ function EditForm({ user, closeEditForm, handleEdit }) {
 						</svg>
 					</button>
 
-					<h1 className={create.formHeader}>Edit Tool</h1>
+					<h1 className={create.formHeader}>Edit Password</h1>
 				</div>
 				<div className={create.alignElements}>
 					<div className={create.control}>

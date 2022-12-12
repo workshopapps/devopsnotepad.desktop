@@ -123,7 +123,7 @@ function PasswordCard({ user, removePassword, editPassword }) {
 								onClick={openShowEditForm}
 							>
 								<img src={Edit} alt="" />
-								<span className={CardStyle.et}>Edit Tool</span>
+								<span className={CardStyle.et}>Edit Password</span>
 							</button>
 							<button
 								type="button"
@@ -131,7 +131,7 @@ function PasswordCard({ user, removePassword, editPassword }) {
 								className={CardStyle.dp}
 							>
 								<img src={Delete} alt="" />
-								<span className={CardStyle.dt}>Delete Tool</span>
+								<span className={CardStyle.dt}>Delete Password</span>
 							</button>
 						</div>
 					)}
