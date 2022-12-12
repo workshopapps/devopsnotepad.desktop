@@ -4,7 +4,6 @@ import { ref, onValue } from 'firebase/database';
 import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
-import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
 import copy from '../assets/copy1.png';
 import Button from '../assets/Button.png';
@@ -79,7 +78,6 @@ function AvailabilityNotification() {
 	return (
 		<div>
 			<Sidenav />
-			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
 					<ServerInfo
@@ -141,7 +139,12 @@ function AvailabilityNotification() {
 
 				<div className={styles.state}>
 					<Link to={`/server/${id}/notification`}>
-						<img src={Button} alt="" style={{ cursor: 'pointer' }} />{' '}
+						<img
+							className={styles.btn}
+							src={Button}
+							alt=""
+							style={{ cursor: 'pointer' }}
+						/>{' '}
 					</Link>
 					{availability && (
 						<div className={styles.table_container}>
