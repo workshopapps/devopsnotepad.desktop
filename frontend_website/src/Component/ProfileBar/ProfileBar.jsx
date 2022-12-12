@@ -51,7 +51,7 @@ function ProfileBar() {
 
                 await axios
                   .get('https://opspad.hng.tech/api/auth/logout', headers)
-                  .then((response) => console.log(response))
+                  .then((response) => response)
                   .then(
                     navigate('/login'),
                     localStorage.removeItem('loggedInUser'),
