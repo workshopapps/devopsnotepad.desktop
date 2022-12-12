@@ -5,9 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
-import ServerContext from '../Context/ServerContext';
 import Button from '../../Pages/CareerPage/Button/Button';
 import ProfileBar from '../ProfileBar/ProfileBar';
+import { ServerContext } from '../../store/ServerContext';
 // import { ClassNames } from '@emotion/react';
 /* eslint-disable camelcase */
 
