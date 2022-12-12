@@ -140,7 +140,10 @@ section.main div.wrappe div.card2 p.par {
 section.main div.state {
 	padding-left: 50px;
 	margin-top: 20px;
-	width: 100%;
+	height: 100vh;
+	/* width: 100%; */
+	/* overflow-x: visible; */
+	/* overflow-y: visible; */
 }
 
 section.main div.refill {
@@ -180,4 +183,11 @@ section.main div.row {
 	background: transparent;
 	cursor: pointer;
 	margin-left: 3px;
+}
+
+.notiContainer{
+	height: 90%;
+	overflow-y: auto;
+	width: 100%;
+	padding-right: 60px;
 }

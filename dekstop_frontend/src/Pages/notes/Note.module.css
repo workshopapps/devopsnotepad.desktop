@@ -1,5 +1,5 @@
-.notesWrapper{
-	margin-left: -170px;
+.notesWrapper {
+	margin-left: -200px;
 }
 .notes {
 	margin-left: 0%;
@@ -25,7 +25,21 @@
 }
 .notesForm {
 	margin-top: 20px;
-	width: 287%;
+	width: 280%;
+}
+.savedNoteAlert {
+	margin-top: -20px;
+}
+.savedNote {
+	display: flex;
+	margin-top: -30px;
+}
+.notesDisplay{
+	width: 110%;
+	margin-right: 20%;
+}
+#notesLastEdit{
+	width: 200px;
 }
 .notesFormInput {
 	width: 100%;
@@ -44,7 +58,7 @@
 	margin: 0 20%;
 	margin-left: 0%;
 }
-.notesSaveBtn{
+.notesSaveBtn {
 	background: #102a63;
 	color: #fff;
 	border: 0;
@@ -83,20 +97,7 @@
 	margin: 2px 10px;
 	margin-bottom: 15px;
 }
-.notesLastEdit {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	color: #acacac;
-	width: 100px;
-	margin-left: 273%;
-	margin-top: -20px;
-}
-#notesLastEdit {
-	margin-left: 257%;
-}
-.noteTextDiv{
+.noteTextDiv {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -104,7 +105,7 @@
 	width: 300px;
 	height: fit-content;
 }
-.noteText{
+.noteText {
 	width: 300%;
 	font-size: 18px;
 }
@@ -162,87 +163,86 @@
 	color: #102a63;
 }
 @media screen and (max-width: 1200px) {
-	.notesWrapper{
-		margin-left: 110px;
+	.notesWrapper {
+		margin-left: 65px;
 	}
 	.notesContentTwo {
 		margin-left: -37%;
 		margin-top: 15px;
 	}
-	.notesLastEdit {
-		margin-left: 195%;
+	.notesDisplay{
+      width: 46%
 	}
-	#notesLastEdit {
-		margin-left: 168%;
-	}
-	.notesForm{
+	.notesForm {
 		width: 205%;
 	}
 }
 @media screen and (max-width: 1024px) {
-	.notesWrapper{
+	.notesWrapper {
 		margin-left: 110px;
 	}
-	.notesLastEdit {
-		margin-left: 165%;
-	}
-	#notesLastEdit {
-		margin-left: 155%;
-	}
-	.notesForm{
+	.notesDisplay{
+		width: 35%
+	  }
+	.notesForm {
 		width: 173%;
 	}
 }
 @media screen and (max-width: 940px) {
-	.notesWrapper{
-		margin-left: 90px;
+	.notesWrapper {
+		margin-left: 110px;
 	}
-	.notesForm{
+	.notesDisplay{
+		margin-right: 10%;
+	}
+	.notesForm {
 		width: 152%;
 	}
 	.notesDeleteNotification {
 		width: 310px;
+	}
 }
-.notesLastEdit{
-	margin-left: 140%;
-}
-#notesLastEdit{
-	margin-left: 132%;
-}
+@media screen and (max-width: 840px) {
+	.notesDisplay{
+		margin-right: 31%;
+	}
+	.notesDisplay{
+		margin-right: 5%;
+		width: 30%
+	}
 }
 @media screen and (max-width: 768px) {
-	.notesForm{
-    width: 105%;
+	.notesDisplay{
+		margin-right: 22%;
 	}
-	.notesLastEdit {
-		margin-left: 161%;
+	.notesDisplay{
+		margin-right: 7%;
+		width: 20%
 	}
-	#notesLastEdit {
-		margin-left: 136%;
+	.notesForm {
+		width: 105%;
 	}
 }
 @media screen and (max-width: 580px) {
+	.notesWrapper{
+			margin-left: 65px;
+	}
+	.notesDisplay{
+		margin-right: 3%;
+		width: 12%
+	}
 	.notesContentTwo {
 		margin-left: -22%;
 	}
-	.notesLastEdit {
-		margin-left: 98%;
+	#notesLastEditText{
+		font-size: 12px;
 	}
-	.notesBox{
+	.notesBox {
 		width: 70% !important;
-	}
-	#notesLastEdit {
-		margin-left: 85%;
 	}
 }
 @media screen and (max-width: 320px) {
 	.notesContentTwo {
 		margin-left: -31%;
-	}
-	.notesLastEdit {
-		margin-left: 89%;
-	}
-	#notesLastEdit {
-		margin-left: 85%;
 	}
 }
