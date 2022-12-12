@@ -15,9 +15,9 @@ function deleteModal({ closeDeleteModal, runRemove, id }) {
 			<div className={deleteStyle.deleteModal}>
 				<div className={deleteStyle.centerItems}>
 					<img src={Warning} alt="" />
-					<h4 className={deleteStyle.header}>Delete Password</h4>
+					<h4 className={deleteStyle.header}>Delete Tool</h4>
 					<p className={deleteStyle.text}>
-						Are you sure you want to delete this password?
+						Are you sure you want to delete this tool?
 					</p>
 					<div className={deleteStyle.buttonContainer}>
 						<button
