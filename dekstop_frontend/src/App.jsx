@@ -36,13 +36,12 @@ function App() {
 						<Route path="notification" element={<Notification />} />
 					</Route>
 
-					<Route exact path="/note" element={<Note />} />
 					<Route exact path="/settings" element={<Settings />} />
 
 					<Route exact path="/add-server" element={<AddServer />} />
-					{/* <Route exact path="/notification" element={<Notification />} /> */}
+
 					<Route exact path="/onboarding" element={<Onboarding />} />
-					<Route exact path="/serverDashBoard" element={<ServerDashBoard />} />
+
 					<Route
 						exact
 						path="/server/:id/notification/simpleNotification"
