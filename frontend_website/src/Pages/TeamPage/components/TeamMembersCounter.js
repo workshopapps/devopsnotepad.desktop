@@ -6,7 +6,7 @@ const TeamMembersCounter = ({ icon, counts, position }) => {
       <div className='icon'>
         <img src={icon} alt={icon} />
       </div>
-      <h5 className='current__count fs-3'>{counts}</h5>
+      <h5 className='current__count fs-3 h5'>{counts}</h5>
       <p className='position text-light'>{position}</p>
     </div>
   );
