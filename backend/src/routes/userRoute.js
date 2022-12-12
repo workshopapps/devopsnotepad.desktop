@@ -21,6 +21,7 @@ router.post('/update-password', updateUserPasswordValidator, AuthController.upda
 
 router.post('/verify-email', verifyUserPasswordValidator, AuthController.verifyEmail);
 router.post('/update-user-password', isAuthenticated(), AuthController.updateUserPasswordFromMobile);
+router.post('/delete-user', isAuthenticated(), AuthController.deleteUser);
 
 // Google Login
 router.post('/google-login', AuthController.googleLogin);

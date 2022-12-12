@@ -11,6 +11,7 @@ import PasswordComplexity from "joi-password-complexity";
 import { OAuth2Client } from "google-auth-library";
 import { generateJWTToken, validatePayload } from "../utils/index.js";
 import config from "../config/index.js";
+import removeuser from "../services/user/remove.js";
 
 const client = new OAuth2Client({ clientId: config.google.CLIENT_ID, clientSecret: config.google.CLIENT_SECRET });
 
@@ -246,6 +247,30 @@ export default class AuthController {
             req.session.authorized = true;
 
             res.status(200).json({ message: "Logged in Successfully", user, userToken });
+        } catch (error) {
+            return next(error);
+        }
+    };
+
+    static deleteUser = async (req, res, next) => {
+        try {
+            // Validate with Joi
+            const validatePayload = Joi.object({
+                email: Joi.string().required(),
+            }).strict();
+
+            if (validatePayload.validate(req.body).error) {
+                return res.status(400).json(validatePayload.validate(req.body).error.details);
+            }
+            
+            // Deleter Servers
+             await removeuser(req.body)
+
+            // Clear session 
+            res.clearCookie("connect.sid");
+
+
+            res.status(200).json({ message: "User Successfully removed",});
         } catch (error) {
             return next(error);
         }
