@@ -12,9 +12,8 @@ function ServerDashBoard() {
   const params = useParams();
   const server = servers.find((server) => server.id === params.id);
 
-  const {
-    availabilityNotifications: { status },
-  } = useContext(UserContext);
+  const { simpleNotifications, availabilityNotifications } =
+    useContext(UserContext);
 
   return (
     <div className={styles.server}>
@@ -23,10 +22,10 @@ function ServerDashBoard() {
         <ServerInfo
           ipAddress={server?.id}
           name={server?.name}
-          status={status}
+          status={availabilityNotifications?.status}
         />
         <p className={styles.note}>Notifications</p>
-        <Notification />
+        <Notification total={simpleNotifications.length} />
       </section>
     </div>
   );
