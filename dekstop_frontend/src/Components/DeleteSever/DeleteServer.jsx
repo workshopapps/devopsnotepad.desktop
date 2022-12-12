@@ -20,7 +20,7 @@ function DeleteServer({ closeDelete, id }) {
 			/>
 			<div className={style.delete}>
 				<figure>
-					<img src={deleteIcon} alt="" />
+					<img src={deleteIcon} alt="" aria-hidden />
 				</figure>
 				<p>
 					Are you sure you want to delete this server? This action cannot be

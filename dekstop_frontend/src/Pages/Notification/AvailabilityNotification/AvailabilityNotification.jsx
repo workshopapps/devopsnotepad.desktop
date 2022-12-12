@@ -14,13 +14,11 @@ import arrowDown from './Assets/arrow_down.svg';
 
 function AvailabilityNotification() {
 	const [availability, setAvailability] = useState(null);
-	// const [current, setCurrent] = useState(new Date().getTime());
 	const [time, setTime] = useState('');
 
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
 
-	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
 
 	useEffect(() => {
@@ -51,29 +49,13 @@ function AvailabilityNotification() {
 		if (availability) {
 			const date = new Date(availability.last_checked);
 
-			// eslint-disable-next-line prefer-template
 			const checkedLast = `${date.getDate()}/${
 				date.getMonth() + 1
 			}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
-			// const last = new Date(availability.last_checked).getFullYear();
-			// const minutes = Math.floor(current - last);
-			// const hours = Math.floor(current - last) % 24;
-			// const currentTime = {
-			// 	minutes,
-			// 	hours,
-			// };
-			// setTime(currentTime);
-			// console.log(last);
 			setTime(checkedLast);
 		}
 	}, [availability]);
-
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		setCurrent(new Date().getTime());
-	// 	}, 60000);
-	// }, []);
 
 	return (
 		<div>
