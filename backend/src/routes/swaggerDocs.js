@@ -452,10 +452,12 @@
  *                         schema:
  *                          type: object
  *                          required:
- *                              - ids
+ *                           - serverIds
  *                          properties:
- *                              name:
+ *                              serverIds:
  *                                  type: array
+ *                                  items:
+ *                                      type: string
  *                                  description: The id's of the selected servers
  * 
  *         responses:
@@ -698,6 +700,48 @@
  *                                     type: object
  *             '400':
  *                 description: Validation error
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /notify-me/:
+ *     post:
+ *         summary: users suscribe to a waiting list
+ *         tags:
+ *             - Notify Me
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: user email address
+ * 
+ *         responses:
+ *             '200':
+ *                description: Successfully subcribed
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: successfully subcribed.
+ *                                data:
+ *                                     type: object
+ *             '400':
+ *                 description: Service error
  *                 content:
  *                     application/json:
  *                        schema:
