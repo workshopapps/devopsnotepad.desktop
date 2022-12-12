@@ -3,7 +3,7 @@ import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
-import ServerContext from '../../../Component/Context/ServerContext';
+import { ServerContext } from '../../../store/ServerContext';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
