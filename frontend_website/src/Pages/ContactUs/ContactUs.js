@@ -12,7 +12,7 @@ import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
 const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
   const  req = await fetch("https://opspad.hng.tech/api/contact-us", {
     method: "POST",
     body: JSON.stringify(values),
@@ -21,6 +21,9 @@ const onSubmit = async (values, actions) => {
 const res = await req.json()
   alert('Form Submitted');
   actions.resetForm();
+  } catch (error) {
+    console.log({error})
+  }
 };
 
 const ContactUs = () => {
@@ -162,7 +165,7 @@ const ContactUs = () => {
           </section>
 
           <section className={styles.wrapper}>
-            <form action='#' autoComplete='off' onSubmit={handleSubmit}>
+            <form  autoComplete='off' onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.col}>
                   <label for='firstname'>First Name</label>
@@ -212,14 +215,14 @@ const ContactUs = () => {
                   <input
                     type='email'
                     id='email'
-                    placeholder='What’s your phone number?'
+                    placeholder='What’s your email address?'
                     className={styles.end}
                     required
                     onChange={handleChange}
                     value={values.email}
                     onBlur={handleBlur}
                   />
-
+                  
                   {errors.email && touched.email && (
                     <p className={styles.errorMsg}>
                       {' '}
