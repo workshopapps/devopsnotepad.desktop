@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
-import ServerContext from '../../../Component/Context/ServerContext';
 
 import SideNav from '../../../Component/SideNav/SideNav';
 import useFetch from '../../../hooks/useFetch';
@@ -10,7 +9,6 @@ import Button from '../../CareerPage/Button/Button';
 import style from './AddServer.module.css';
 
 function AddServer() {
-  // const { addServer, success, setSuccess, loading } = useContext(ServerContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -41,7 +39,7 @@ function AddServer() {
 
   const getResponse = (response) => {
     console.log(response);
-    if (response.message === 'Sucess') {
+    if (response.sucess === true) {
       setSuccess(true);
     }
   };

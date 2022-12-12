@@ -1,13 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ServerContext from '../../Component/Context/ServerContext';
 import SideNav from '../../Component/SideNav/SideNav';
+import useFetch from '../../hooks/useFetch';
+import { ServerContext } from '../../store/ServerContext';
 import Button from '../CareerPage/Button/Button';
 
 import classes from './Server.module.css';
 function Server() {
   const navigate = useNavigate();
-  const { servers } = useContext(ServerContext);
+  // const { servers } = useContext(ServerContext);
+  const { servers, addServers } = useContext(ServerContext);
+
+  const { fetchRequest } = useFetch();
+
+  useEffect(() => {
+    const getResponseData = (data) => {
+      console.log(data, 'all servers');
+      addServers(data);
+    };
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/all',
+      },
+      getResponseData,
+    );
+  }, [fetchRequest, addServers]);
+
   return (
     <div className={classes.server}>
       <div>
