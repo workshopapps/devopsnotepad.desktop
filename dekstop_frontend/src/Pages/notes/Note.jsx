@@ -10,7 +10,7 @@ import Vectorr from './assets/Vectorr.png';
 import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
-  
+
 // Modal css
 const style = {
 	position: 'absolute',
@@ -27,6 +27,8 @@ const style = {
 	p: 4,
 };
 function Note() {
+	
+	// Ids
 	const { id } = useParams();
 	const notesId = useId();
 	const notesDateId = useId();
@@ -35,7 +37,7 @@ function Note() {
 	const time = new Date().toTimeString().slice(0, 5);
 	const date = new Date().toLocaleDateString();
 
-	// State
+	// States
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
 	const [noteTime, setNoteTime] = useState(localStorage.getItem(`${notesId}`));
@@ -45,6 +47,8 @@ function Note() {
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
+	const [notification, setNotification] = useState(false);
+	const [startHere, setStartHere] = useState(false)
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -57,9 +61,11 @@ function Note() {
 		localStorage.setItem(`${notesDateId}`, date);
 		setNote(localStorage.getItem(`${id}`));
 		setInputs('');
-		setSaveMsg(true);
 		setNoteTime(localStorage.getItem(`${notesId}`));
 		setNoteDate(localStorage.getItem(`${notesDateId}`));
+		setNotification(false);
+		setSaveMsg(true);
+		setStartHere(localStorage.getItem(`${id}`))
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
@@ -74,11 +80,21 @@ function Note() {
 		setOpen(false);
 	};
 	const handleEdit = () => {
+		setSaveMsg(false);
+		setNotification(false);
+		setNote(false)
+		setInputs(localStorage.getItem(`${id}`))
+		setStartHere(localStorage.getItem(`${id}`))
+	};
+	const handleCheckNote = () => {
+		if(note) {
+			setSaveMsg(true);
+		} else {
+		setNotification(true)
 		setSaveMsg(false)
-	}
-	const startHere = 'Start note here...';
+		}
+	};
 	const boldStyle = { fontWeight: '900', color: '#000000' };
-
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<div className={notesStyle.notesContent}>
@@ -116,54 +132,84 @@ function Note() {
 								onFocus={handleOpen}
 							/>
 						</div>
-							<div className={notesStyle.noteTextDiv}>
-								<p className={notesStyle.noteText}>
+						<div className={notesStyle.noteTextDiv}>
+							<p className={notesStyle.noteText}>
+								<p
+									style={{ display: saveMsg ? 'block' : 'none' }}
+									className={notesStyle.savedNoteAlert}
+								>
+									Server note:
+								</p>
+								<p
+									style={{ display: notification ? 'block' : 'none', color: 'red' }}
+									className={notesStyle.savedNoteAlert}
+								>
+									No note found! Create one and try again.
+								</p>
+								<div className={notesStyle.savedNote}>
 									<p
-										style={{ display: saveMsg ? 'block' : 'none' }}
-										className={notesStyle.savedNoteAlert}
+										className={notesStyle.notesDisplay}
+										style={bold ? boldStyle : {}}
 									>
-										Note saved, successfully!
-									</p>
-									<div className={notesStyle.savedNote}>
-										<p
-											className={notesStyle.notesDisplay}
-											style={bold ? boldStyle : {}}
-										>
-											<div 
-										style={{ display: saveMsg ? 'block' : 'none' }}
-										>
+										<div style={{ display: saveMsg ? 'block' : 'none' }}>
 											{note}
 										</div>
+									</p>
+									<div id={notesStyle.notesLastEdit}>
+										<p
+											id={notesStyle.notesLastEditText}
+											style={{ display: saveMsg ? 'block' : 'none' }}
+										>
+											{noteTime}, {noteDate}
 										</p>
-										<div id={notesStyle.notesLastEdit}>
-											<p id={notesStyle.notesLastEditText}
-										style={{ display: saveMsg ? 'block' : 'none' }}
-											>
-												{noteTime}, {noteDate}
-											</p>
-										</div>
-										<button type='button' 
-										className={notesStyle.notesSaveBtn} 
-										id={notesStyle.notesSaveBtn}
-										style={{display: saveMsg ? 'block' : 'none'}}
-										onClick={handleEdit}
-										>Edit Note</button>
 									</div>
-								</p>
-							</div>
-							<div style={{display: saveMsg? 'none' : 'block'}}>
-								<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
-									<textarea
-										className={notesStyle.notesFormInput}
-										id={notesStyle.notesFormInput}
-										onChange={handleChanges}
-										placeholder = {startHere}
-									/>
-										<button type="submit" className={notesStyle.notesSaveBtn}>
-											Save Note
+									{saveMsg ? (
+										<button
+											type="button"
+											className={notesStyle.notesSaveBtn}
+											id={notesStyle.notesSaveBtn}
+											style={{ display: saveMsg ? 'block' : 'none' }}
+											onClick={handleEdit}
+										>
+											Edit Note
 										</button>
-								</form>
-							</div>
+									) : (
+										<button
+											type="button"
+											className={notesStyle.notesSaveBtn}
+											id={notesStyle.notesSaveBtn2}
+											onClick={handleCheckNote}
+										>
+											Check Note
+										</button>
+									)}
+								</div>
+							</p>
+						</div>
+						<div style={{ display: note ? 'none' : 'block' }}>
+							<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
+								{
+									startHere ? 
+									<textarea
+									className={notesStyle.notesFormInput}
+									id={notesStyle.notesFormInput}
+									onChange={handleChanges}
+								>
+								 {startHere}
+								</textarea> : 
+								<textarea
+								className={notesStyle.notesFormInput}
+								id={notesStyle.notesFormInput}
+								onChange={handleChanges}
+							>
+							 {note}
+							</textarea>
+								}
+								<button type="submit" className={notesStyle.notesSaveBtn}>
+									Save Note
+								</button>
+							</form>
+						</div>
 					</div>
 				</div>
 				<Modal

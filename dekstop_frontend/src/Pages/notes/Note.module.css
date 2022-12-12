@@ -16,7 +16,9 @@
 	justify-content: space-between;
 }
 .savedNoteAlert {
-	margin-top: -20px;
+	margin-top: -10px;
+	font-weight: 600;
+	color: #102a63;
 }
 .savedNote {
 	display: flex;
@@ -59,7 +61,14 @@
 	margin: 10px 0;
 }
 #notesSaveBtn {
+	width: 150px;
 	height: 30px;
+	margin-right: -65px;
+}
+#notesSaveBtn2 {
+	width: 140px;
+	height: 30px;
+	margin-right: -45px;
 }
 .notesContentwoBtn {
 	margin-right: 10px;
