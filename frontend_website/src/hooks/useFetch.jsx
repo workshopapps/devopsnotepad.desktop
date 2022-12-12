@@ -28,7 +28,7 @@ const useFetch = () => {
 
   // A function to fetch data
   const fetchRequest = useCallback(
-    async (requestConfig, getRequestData = () => {}) => {
+    async (requestConfig, getRequestData = () => { }) => {
       dispatchFn({ type: 'LOADING', value: true });
       dispatchFn({ type: 'ERROR', value: { hasError: false, message: '' } });
       try {
