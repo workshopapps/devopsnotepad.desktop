@@ -32,7 +32,7 @@ function SideNav() {
     if (confirmDelete.toLowerCase() === 'no') {
       return;
     }
-
+    console.log('Starting the delete request');
     fetchRequest(
       {
         url: 'https://opspad.hng.tech/api/server/delete',
@@ -44,7 +44,7 @@ function SideNav() {
       },
       getDeleteResponse,
     );
-
+    console.log('I go executed to this place');
     // Getting the updated servers
     const getResponseData = (data) => {
       console.log(data, 'all servers');
@@ -79,13 +79,13 @@ function SideNav() {
         {isOpen && servers.length > 0 && (
           <ul className={styles.ul}>
             {servers.map((server, index) => (
-              <li className={styles.li} key={server.id}>
+              <li className={styles.li} key={server.userId}>
                 <Link to={`/server/${server.id}`} className={styles.li_link}>
                   {server.name}{' '}
                 </Link>
                 <MdDelete
                   className={styles.name__icon}
-                  onClick={() => deleteServerHandler(null, server.id)}
+                  onClick={() => deleteServerHandler(null, server.userId)}
                 />
               </li>
             ))}
