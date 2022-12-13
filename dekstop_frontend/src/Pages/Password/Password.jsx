@@ -62,7 +62,7 @@ function Password() {
 							type="button"
 							className={passwordStyle.btn}
 						>
-							<span className={passwordStyle.btnText}>Add new password</span>
+							<span className={passwordStyle.btnText}>Add New Password</span>
 							<img className={passwordStyle.btnIcon} src={Add} alt="" />
 						</button>
 					</div>

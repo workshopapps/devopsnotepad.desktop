@@ -344,7 +344,7 @@ function Terms ()  {
           <div>
             Or email us at{' '}
             <b style={{ color: '#225ad6', cursor: 'pointer' }}>
-              Teamsandpaper@gmail.com
+              <a href="mailto:Teamsandpaper@gmail.com">Teamsandpaper@gmail.com</a>
             </b>
           </div>
         </div>

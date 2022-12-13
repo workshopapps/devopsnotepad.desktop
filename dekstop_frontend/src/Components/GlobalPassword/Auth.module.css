@@ -25,9 +25,9 @@
 .content {
 	width: 307px;
 	margin: 40px auto 0 auto !important;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
 }
 
 .headerContainer {

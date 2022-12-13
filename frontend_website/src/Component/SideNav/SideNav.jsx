@@ -21,7 +21,15 @@ function SideNav() {
   const navigate = useNavigate();
   const { fetchRequest } = useFetch;
 
+  const getDeleteResponse = (responseObj) => {
+    console.log(responseObj, '/delete-server')
+  }
+
   const deleteServerHandler = (server_id) => {
+    const confirmDelete = prompt('Are you sure you want to delete server?').toLowerCase()
+    if (confirmDelete === 'no') {
+      return
+    }
     fetchRequest({
       url: 'https://opspad.hng.tech/api/server/delete',
       method: 'POST',
@@ -29,6 +37,7 @@ function SideNav() {
       headers: {
         'Content-Type': 'application/json',
       },
+      getDeleteResponse,
     });
 
     // Getting the updated servers
@@ -71,7 +80,7 @@ function SideNav() {
                 </Link>
                 <MdDelete
                   className={styles.name__icon}
-                  onClick={deleteServerHandler.bind(null, server.id)}
+                  onClick={() => deleteServerHandler(null, server.id)}
                 />
               </li>
             ))}
