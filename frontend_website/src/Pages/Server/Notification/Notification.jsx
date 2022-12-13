@@ -4,6 +4,7 @@ import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 import { ServerContext } from '../../../store/ServerContext';
+import { MdContentCopy } from 'react-icons/md';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,15 +29,10 @@ function Notification({ total }) {
               {isOpen ? `${server.userId}` : '******-******-******'}
             </p>
           </div>
-
-          <img
-            src={copy}
-            alt=''
-            className={styles.copy}
-            onClick={copyToClipboard}
-          />
+          <div className={styles.copy} onClick={copyToClipboard}>
+            <MdContentCopy />
+          </div>
         </div>
-
         <div className={styles.wrappe}>
           <Link to='simple_notifications'>
             <div className={styles.card}>
