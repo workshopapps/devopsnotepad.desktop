@@ -97,3 +97,9 @@ section.main div.wrappe div.card p.par {
 	border: none;
 	background: transparent;
 }
+
+@media ( max-width: 1040px){
+	section.main div.contain {
+		width: 374px;
+	}
+}
