@@ -12,6 +12,7 @@ import { ServerContext } from '../../store/ServerContext';
 import useFetch from '../../hooks/useFetch';
 import { ImMenu } from 'react-icons/im';
 import { AiOutlineClose } from 'react-icons/ai';
+import MobileProfile from './MobileProfile';
 
 /* eslint-disable camelcase */
 
@@ -177,15 +178,17 @@ function SideNav() {
 
             <Button
               className={styles.button}
-              onClick={() => navigate('/add-server')}
+              onClick={() => {
+                navigate('/add-server');
+                setNavIsOpen(false);
+              }}
             >
               Create Server{' '}
               <span>
                 <RiAddCircleLine className={styles.btn__svg} />
               </span>
             </Button>
-
-            {/* <ProfileBar /> */}
+            <MobileProfile />
           </div>
         )}
       </div>
