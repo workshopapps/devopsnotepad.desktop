@@ -26,7 +26,7 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server.userId}` : '******-******-******'}
+              {isOpen ? `${server?.userId}` : '******-******-******'}
             </p>
           </div>
           <div className={styles.icons}>
