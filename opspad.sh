@@ -7,17 +7,16 @@ while true; do
 
     ################################################################
 
-    if [ -z "$serverId" ] || [ -z "$FILEPATH" ]
-    then
-        echo "input cannot be blank. Please try again";
+    if [ -z "$serverId" ] || [ -z "$FILEPATH" ]; then
+        echo "input cannot be blank. Please try again"
     else
-        echo $FILEPATH;
+        echo $FILEPATH
 
         if [ ! -f $FILEPATH ]; then
             echo "File not found!. Please try again"
         else
-            echo $serverId;
-            break;
+            echo $serverId
+            break
         fi
     fi
     ################################################################
@@ -31,21 +30,29 @@ done
 # inotifywatch -e modify "$FILEPATH"
 
 # read each line of the file
-while read -r line; do
-  # print the line
-  sleep 1
+# while read -r line; do
+#     # print the line
+#     sleep 1
 
-  data=$(jq -n -Rsa --arg KEY 'logs' --arg VAL "$line" '{"\($KEY)":$VAL}')
+#     data=$(jq -n -Rsa --arg KEY 'logs' --arg VAL "$line" '{"\($KEY)":$VAL}')
 
-#   echo $data;
+#     #   echo $data;
 
-  curl -X POST -H "Content-Type: application/json" -d "$data" "http://localhost:9600/server/$serverId/notifications"
-  
-  # listen for write operations
-#   
- 
-# done < "$file"
-done < "$FILEPATH"
+#     curl -X POST -H "Content-Type: application/json" -d "$data" "$ENDPOINT"
 
+#     #
+
+#     # done < "$file"
+# done <"$FILEPATH"
+
+# listen for write operations
+while true; do
+    # Send each new line to the endpoint as it is written to the log file
+    tail -f "$FILEPATH" | while read -r line; do
+
+        data=$(jq -n -Rsa --arg KEY 'logs' --arg VAL "$line" '{"\($KEY)":$VAL}')
+        curl -X POST -H "Content-Type: application/json" -d "$data" "http://localhost:5000/server/$serverId/notifications"
+    done
+done
 
 # sudo apt install inotify-tools

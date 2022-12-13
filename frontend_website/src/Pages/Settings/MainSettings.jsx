@@ -7,7 +7,7 @@ import { ValidatePassword } from '../SignUp/lib';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Component/SideNav/SideNav';
 import styles from '../../Component/GlobalPassword/ChangePassword.module.css';
-import { AiFillEyeInvisible } from 'react-icons/ai'
+import { AiFillEyeInvisible, AiOutlineArrowLeft } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai';
 
 
@@ -101,9 +101,6 @@ function Settings() {
 		}
 	};
 
-
-
-
 	function isAuthenticated() {
 		const user = JSON.parse(localStorage.getItem("loggedInUser"));
 		return user;
@@ -142,34 +139,29 @@ function Settings() {
 
 
 	}
-
-
-
-
 	return (
 		<div className={style.settingsPage}>
-			<div>
+			{/* <div>
 				<Sidenav />
-			</div>
+			</div> */}
 			<div className={style.settingsContainer}>
-				<h1>Settings</h1>
-
+				<div className={style.pageTop}>
+					<div className={style.arrowLeft} onClick={() => navigate(-1)}>
+						<AiOutlineArrowLeft />
+					</div>
+					<h1>Settings</h1>
+				</div>
 				<div className={styles.subContainer}>
-
-
-
 					<div className={styles.change_pass}>
 						<form onSubmit={changePassword} className={styles.change_form}>
-
-							<div>
-								<h3>Edit Password</h3>
-
+							<div className={style.preFormContainer}>
+								<h6>PROFILE</h6>
 								<br />
 								<label>Existing mail</label>
 								<p>{email}</p>
 								<br />
 								<label htmlFor="username">Username</label>
-								<p>{username}</p>
+								<p className={style.userName}>{username}</p>
 							</div>
 
 							<div>
