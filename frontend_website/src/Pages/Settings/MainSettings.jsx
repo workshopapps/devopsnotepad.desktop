@@ -16,8 +16,6 @@ function Settings() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [showNewPassword, setShowNewPassword] = useState(false);
 	const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-	// const [passwordIcon] = useState(true);
-	// const [confirmPassword, setConfirmPassword] = useState('');
 	const navigate = useNavigate();
 	const [form, setForm] = useState({
 		oldPassword: '',
