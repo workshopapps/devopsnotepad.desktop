@@ -85,7 +85,7 @@ function SideNav() {
                 </Link>
                 <MdDelete
                   className={styles.name__icon}
-                  onClick={() => deleteServerHandler(null, server.userId)}
+                  onClick={deleteServerHandler.bind(null, server.userId)}
                 />
               </li>
             ))}
