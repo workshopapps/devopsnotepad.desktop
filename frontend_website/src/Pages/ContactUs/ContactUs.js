@@ -11,7 +11,7 @@ import { RiCloseCircleFill } from 'react-icons/ri';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
-const onSubmit = async (values, actions) => {
+const onSubmit = async (values) => {
   try {
   const  req = await fetch("https://opspad.hng.tech/api/contact-us", {
     method: "POST",
@@ -275,7 +275,7 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <button className={styles.btn} disabled={isSubmitting}>
+                <button type='submit' className={styles.btn} disabled={isSubmitting}>
                   Send Message
                 </button>
               </div>
