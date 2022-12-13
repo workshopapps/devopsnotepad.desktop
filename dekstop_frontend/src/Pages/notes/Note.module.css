@@ -31,8 +31,13 @@
 #notesLastEdit{
 	width: 200px;
 }
+#notesLastEditText{
+	background-color: #939394;
+	color: #fff;
+	width: fit-content;
+}
 .notesForm{
-	width: 300%;
+	width: 320%;
 	margin: 20px auto;
 }
 .notesFormInput {
@@ -165,9 +170,59 @@
 	color: #102a63;
 }
 @media screen and (max-width: 1200px) {
-	#notesSaveBtn2 {
-		width: 150px;
-		height: 30px;
-		margin-right: 23%;
+	.notesDisplay{
+		width: 45%;
+		margin-right: 8%;
 	}
+	.notesForm{
+		width: 250%;
+	}
+	#notesLastEdit{
+		margin-right: -60px;
+	}
+	#notesSaveBtn, #notesSaveBtn2 {
+		width: 90px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.notesDisplay{
+		width: 35%;
+}
+.notesForm{
+	width: 200%;
+}
+}
+@media screen and (max-width: 939px) {
+	.notesDisplay{
+		width: 50%;
+}
+	.savedNote{
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
+}
+.notesForm{
+	width: 172%;
+}
+}
+@media screen and (max-width: 840px) {
+	.notesForm{
+		width: 115%;
+}
+}
+@media screen and (max-width: 480px) {
+	.notesDisplay{
+		width: 40%;
+}
+}
+@media screen and (max-width: 380px) {
+	.notesDisplay{
+		width: 32.23%;
+}
+}
+@media screen and (max-width: 360px) {
+	.notesForm{
+		width: 93%;
+		margin-left: -2%;
+}
 }
