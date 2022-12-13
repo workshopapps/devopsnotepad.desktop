@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.svg';
@@ -11,12 +11,41 @@ import ServerContext from '../Context/ServerContext';
 function Sidenav() {
 	const { servers } = useContext(ServerContext);
 	const [isOpen, setIsOpen] = useState(false);
+	const [navbarOpen, setNavbarOpen] = useState(false);
 	const toggling = () => setIsOpen(!isOpen);
+
+	useEffect(() => {
+		if (navbarOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	});
 
 	return (
 		<div>
+			<button
+				type="button"
+				onClick={() => setNavbarOpen(!navbarOpen)}
+				className={`${styles.hamburger} ${navbarOpen ? styles.open : ''}`}
+			>
+				<span className={styles.line} />
+				<span className={styles.line} />
+				<span className={styles.line} />
+			</button>
+			{navbarOpen && (
+				<input
+					type="click"
+					onClick={() => setNavbarOpen(false)}
+					className={styles.overlay}
+				/>
+			)}
 			<section className={styles.main}>
-				<div className={styles.sidenav}>
+				<div
+					className={`${styles.sidenav} ${
+						navbarOpen ? styles.display_nav : ''
+					}`}
+				>
 					<Link to="/">
 						<img src={logo} alt="" className={styles.logo} />
 					</Link>

@@ -268,7 +268,9 @@ section.main div.row {
 	}
 
 	.btn {
-		margin-left: 20px;
+		position: absolute;
+		left: 30px;
+		top: 60px;
 	}
 }
 @media (max-width: 550px) {
@@ -306,7 +308,7 @@ section.main div.row {
 	}
 }
 
-.copyIp{
+.copyIp {
 	padding: 0;
 	outline: none;
 	margin: 0;
