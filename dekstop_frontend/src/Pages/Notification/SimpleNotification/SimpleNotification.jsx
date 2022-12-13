@@ -49,11 +49,11 @@ function SimpleNotification() {
 	}, []);
 
 	return (
-		<div>
+		<div className={styles.pageCon}>
 			<Sidenav />
-			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
+					<BackBtn />
 					<ServerInfo
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
@@ -148,7 +148,7 @@ function SimpleNotification() {
 
 										<Content notes={notification.logs} />
 
-										<p style={{ fontSize: '12px' }}>
+										<p className={styles.timeStamp} style={{ fontSize: '12px' }}>
 											{notification.created_at}
 										</p>
 									</div>
