@@ -5,11 +5,13 @@
   margin-bottom: 2rem;
   position: relative;
 }
+
 .label {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
   color: #6f6f6f;
 }
+
 .input {
   padding: 1.1rem 1rem;
   border-radius: 0.4rem;
@@ -19,6 +21,7 @@
   font-weight: 300;
   width: 100%;
 }
+
 .input:focus {
   outline: none;
 }
@@ -28,6 +31,10 @@
   font-weight: 400;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
+}
+
+.input[type='password']::placeholder {
+  font-size: 1rem;
 }
 
 .eye {

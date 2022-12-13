@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
+/* eslint-disable */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';

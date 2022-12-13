@@ -149,6 +149,7 @@ const AddServer = () => {
                 onChange={onMutate}
                 type='text'
                 id='ipAddress'
+                placeholder='A valid ip address e.g 192.158.1.38'
                 value={ipAddress}
                 min='2'
               />
@@ -161,9 +162,8 @@ const AddServer = () => {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>
