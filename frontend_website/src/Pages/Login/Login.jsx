@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // import google from '../../assets/login_page-assets/google.png';
@@ -12,11 +12,11 @@ import classes from './Login.module.css';
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const [message, setMessage] = useState('')
   const { addUserHandler } = useContext(UserContext);
 
   // Using a custom hook
-  const { isLoading, error, fetchRequest: LoginRequest } = useFetch();
+  const { isLoading, error, fetchRequest: LoginRequest, hideModal } = useFetch();
   // A function that will get response from the request made
   const getResponseData = (responseObj) => {
     if (responseObj?.message === 'Logged in Successfully') {
@@ -73,12 +73,35 @@ const Login = () => {
     );
   };
 
+  const getVerifiedResponse = (responseObj) => {
+    console.log(responseObj, '/verify-me');
+    setMessage(responseObj.user.prompt)
+  }
+
+  const verifyEmailHandler = (email) => {
+    hideModal()
+    LoginRequest(
+      {
+        url: 'https://opspad.hng.tech/api/auth/resend-verify-email',
+        method: 'POST',
+        body: {
+          email
+        },
+        accept: 'application/json',
+        headers: {
+          'Content-type': 'application/json',
+        },
+      },
+      getVerifiedResponse,
+    );
+  };
+
   return (
     <>
       <Navigation />
       <div className={classes.login} data-testid='login__page'>
         <h1 className={classes.h1}>Welcome back!</h1>
-        <Form onSubmit={signInHandler} isLoading={isLoading} error={error} />
+        <Form onSubmit={signInHandler} message={message} isLoading={isLoading} error={error} onVerify={verifyEmailHandler} />
         <div className={classes.p__box}>
           <div className={classes.div}></div>
           <p className={classes.p}>or sign in with</p>
