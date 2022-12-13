@@ -11,23 +11,21 @@ import { RiCloseCircleFill } from 'react-icons/ri';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
-const onSubmit = async (values, actions) => {
-  console.log(values, actions);
-  try {
-    const req = await fetch('https://opspad.hng.tech/api/contact-us', {
-      method: 'POST',
-      body: JSON.stringify(values),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const res = await req.json();
-    alert('Form Submitted');
-    actions.resetForm();
-  } catch (error) {
-    console.log({ error });
-  }
-};
-
 const ContactUs = () => {
+  const onSubmit = async (values, actions) => {
+    try {
+      const req = await fetch('https://opspad.hng.tech/api/contact-us', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const res = await req.json();
+      alert('Form Submitted');
+      actions.resetForm();
+    } catch (error) {
+      console.log({ error });
+    }
+  };
   const {
     values,
     errors,

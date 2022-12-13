@@ -26,6 +26,14 @@ function Home() {
 		if (!isAuthenticated) setAuth(true);
 	});
 
+	useEffect(() => {
+		if (auth) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	}, []);
+
 	// function to close authentication process
 	const closeAuth = useCallback(() => {
 		setAuth(false);

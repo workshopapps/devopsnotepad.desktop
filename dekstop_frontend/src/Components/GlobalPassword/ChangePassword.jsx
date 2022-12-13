@@ -7,12 +7,13 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable import/no-useless-path-segments */
 import React, { useState } from 'react';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { FaChevronRight } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import Success from '../GlobalPassword/Success';
 import styles from '../GlobalPassword/ChangePassword.module.css';
+import eye from './asset/eye.svg';
 // import Success from '../GlobalPassword/Success'
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
@@ -40,6 +41,11 @@ function ChangePassword() {
 	const [currentPassword, setCurrentPassword] = useState('');
 	const [newPassword, setNewPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
+	const [visibility, setVisibility] = useState({
+		current: false,
+		new: false,
+		confirm: false,
+	});
 
 	// event handler for the current password input field
 	const handleCurrentPasswordChange = (e) => {
@@ -82,6 +88,27 @@ function ChangePassword() {
 		window.location.reload();
 	}
 
+	function handlePasswordVisibility(e) {
+		if (e.target.parentElement.parentElement.id === 'currentPassword') {
+			setVisibility((prevState) => ({
+				...prevState,
+				current: !prevState.current,
+			}));
+		}
+		if (e.target.parentElement.parentElement.id === 'newPassword') {
+			setVisibility((prevState) => ({
+				...prevState,
+				new: !prevState.new,
+			}));
+		}
+		if (e.target.parentElement.parentElement.id === 'confirmPassword') {
+			setVisibility((prevState) => ({
+				...prevState,
+				confirm: !prevState.confirm,
+			}));
+		}
+	}
+
 	return (
 		<div>
 			{showSuccess && (
@@ -114,27 +141,54 @@ function ChangePassword() {
 						</div>
 						<div className={styles.change_Flex}>
 							<label htmlFor="password">Current Password</label>
-							<input
-								type="password"
-								value={currentPassword}
-								onChange={handleCurrentPasswordChange}
-							/>
+							<div id="currentPassword" className={styles.input_container}>
+								<input
+									type={visibility.current ? 'text' : 'password'}
+									value={currentPassword}
+									onChange={handleCurrentPasswordChange}
+								/>
+								<button type="button" onClick={handlePasswordVisibility}>
+									<img
+										src={eye}
+										alt="toggle password visibility"
+										className={visibility.current ? styles.visible : ''}
+									/>
+								</button>
+							</div>
 						</div>
 						<div className={styles.change_Flex}>
 							<label htmlFor="password">New Password</label>
-							<input
-								type="password"
-								value={newPassword}
-								onChange={handleNewPasswordChange}
-							/>
+							<div id="newPassword" className={styles.input_container}>
+								<input
+									type={visibility.new ? 'text' : 'password'}
+									value={newPassword}
+									onChange={handleNewPasswordChange}
+								/>
+								<button type="button" onClick={handlePasswordVisibility}>
+									<img
+										src={eye}
+										className={visibility.new ? styles.visible : ''}
+										alt="toggle password visibility"
+									/>
+								</button>
+							</div>
 						</div>
 						<div className={styles.change_Flex}>
 							<label htmlFor="password">Confirm New Password</label>
-							<input
-								type="password"
-								value={confirmPassword}
-								onChange={handleConfirmPasswordChange}
-							/>
+							<div id="confirmPassword" className={styles.input_container}>
+								<input
+									type={visibility.confirm ? 'text' : 'password'}
+									value={confirmPassword}
+									onChange={handleConfirmPasswordChange}
+								/>
+								<button type="button" onClick={handlePasswordVisibility}>
+									<img
+										src={eye}
+										alt="toggle password visibility"
+										className={visibility.confirm ? styles.visible : ''}
+									/>
+								</button>
+							</div>
 						</div>
 						<button>Save</button>
 					</form>

@@ -12,7 +12,7 @@ function Notification({ total }) {
   const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(`${server.id}`);
+    navigator.clipboard.writeText(`${server.userId}`);
   };
 
   return (
@@ -25,7 +25,7 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server.id}` : '******-******-******'}
+              {isOpen ? `${server.userId}` : '******-******-******'}
             </p>
           </div>
 
