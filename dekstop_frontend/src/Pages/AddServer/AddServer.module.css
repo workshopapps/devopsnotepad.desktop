@@ -1,4 +1,4 @@
-.AddServer * {
+.container * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -117,7 +117,7 @@
 	border: none;
 	position: absolute;
 	top: 10px;
-	left: 10px;
+	right: 10px;
 	font-size: 30px;
 	cursor: pointer;
 }
