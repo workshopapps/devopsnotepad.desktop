@@ -13,3 +13,10 @@ export function ValidatePassword(password) {
   }
   return false;
 }
+
+export function Validateusername(username) {
+  if (username.length >= 3 && username.length <= 8) {
+    return true;
+  }
+  return false;
+}

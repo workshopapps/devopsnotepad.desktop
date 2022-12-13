@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
