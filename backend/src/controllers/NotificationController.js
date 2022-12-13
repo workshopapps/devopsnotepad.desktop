@@ -10,6 +10,12 @@ export default class NotificationController {
       /**
        * Validate Request
        */
+
+      // console.log(req.body);
+      // return res.send({
+      //   success: true,
+      //   message: 'successful',
+      // });
       const errors = validatePayload(req);
 
       if (errors && Object.keys(errors).length > 0) throw errors;
@@ -19,7 +25,6 @@ export default class NotificationController {
       res.send({
         success: true,
         message: 'successful',
-        ...result,
       });
     } catch (error) {
       next(error);
