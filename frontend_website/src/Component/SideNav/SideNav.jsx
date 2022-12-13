@@ -22,23 +22,28 @@ function SideNav() {
   const { fetchRequest } = useFetch;
 
   const getDeleteResponse = (responseObj) => {
-    console.log(responseObj, '/delete-server')
-  }
+    console.log(responseObj, '/delete-server');
+  };
 
   const deleteServerHandler = (server_id) => {
-    const confirmDelete = prompt('Are you sure you want to delete server?').toLowerCase()
-    if (confirmDelete === 'no') {
-      return
+    const confirmDelete = prompt(
+      'Are you sure you want to delete server? Answer with a Yes or No',
+    );
+    if (confirmDelete.toLowerCase() === 'no') {
+      return;
     }
-    fetchRequest({
-      url: 'https://opspad.hng.tech/api/server/delete',
-      method: 'POST',
-      body: [server_id],
-      headers: {
-        'Content-Type': 'application/json',
+
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/delete',
+        method: 'POST',
+        body: [server_id],
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
       getDeleteResponse,
-    });
+    );
 
     // Getting the updated servers
     const getResponseData = (data) => {

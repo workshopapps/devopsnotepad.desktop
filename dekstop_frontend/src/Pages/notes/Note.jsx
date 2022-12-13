@@ -4,10 +4,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Vecctor from './assets/Vecctor.png';
-import Vectoor from './assets/Vectoor.png';
-import Vectorc from './assets/Vectorc.png';
-import Vectorr from './assets/Vectorr.png';
-import Vectorrr from './assets/Vectorrr.png';
 import notesStyle from './Note.module.css';
 import deleteImg from './assets/Vector (14).png';
 
@@ -44,7 +40,6 @@ function Note() {
 		localStorage.getItem(`${notesDateId}`)
 	);
 	const [inputs, setInputs] = useState(note);
-	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
 	const [notification, setNotification] = useState(false);
 	const [check, setCheck] = useState(false);
@@ -65,7 +60,6 @@ function Note() {
 		setNotification(false);
 		setSaveMsg(true);
 	};
-	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
 		localStorage.removeItem(`${id}`);
 		localStorage.removeItem(`${notesId}`);
@@ -91,35 +85,33 @@ function Note() {
 			setSaveMsg(false);
 		}
 	};
-	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<div className={notesStyle.notesContent}>
 				<div className={notesStyle.notesContentOne}>
 					<div className={notesStyle.notesFormDiv}>
 						<div className={notesStyle.notesFormIcons}>
-							<img
-								src={Vectorc}
-								alt="img"
-								className={notesStyle.notesFormIcon}
-								onMouseDownCapture={handleBold}
-								onFocus={handleBold}
-							/>
-							<img
-								src={Vectorr}
-								alt="img"
-								className={notesStyle.notesFormIcon}
-							/>
-							<img
-								src={Vectoor}
-								alt="img"
-								className={notesStyle.notesFormIcon}
-							/>
-							<img
-								src={Vectorrr}
-								alt="img"
-								className={notesStyle.notesFormIcon}
-							/>
+							{saveMsg ? (
+								<button
+									type="button"
+									className={notesStyle.notesSaveBtn}
+									id={notesStyle.notesSaveBtn}
+									style={{ display: saveMsg ? 'block' : 'none' }}
+									onClick={handleEdit}
+								>
+									Edit Note
+								</button>
+							) : (
+								<button
+									type="button"
+									className={notesStyle.notesSaveBtn}
+									id={notesStyle.notesSaveBtn2}
+									onClick={handleCheckNote}
+									style={{ display: check ? 'none' : 'block' }}
+								>
+									Check Note
+								</button>
+							)}
 							<img
 								src={Vecctor}
 								alt="img"
@@ -147,10 +139,7 @@ function Note() {
 									No note found! Create one and try again.
 								</p>
 								<div className={notesStyle.savedNote}>
-									<p
-										className={notesStyle.notesDisplay}
-										style={bold ? boldStyle : {}}
-									>
+									<p className={notesStyle.notesDisplay}>
 										<div style={{ display: saveMsg ? 'block' : 'none' }}>
 											{note}
 										</div>
@@ -163,27 +152,6 @@ function Note() {
 											{noteTime}, {noteDate}
 										</p>
 									</div>
-									{saveMsg ? (
-										<button
-											type="button"
-											className={notesStyle.notesSaveBtn}
-											id={notesStyle.notesSaveBtn}
-											style={{ display: saveMsg ? 'block' : 'none' }}
-											onClick={handleEdit}
-										>
-											Edit Note
-										</button>
-									) : (
-										<button
-											type="button"
-											className={notesStyle.notesSaveBtn}
-											id={notesStyle.notesSaveBtn2}
-											onClick={handleCheckNote}
-											style={{ display: check ? 'none' : 'block' }}
-										>
-											Check Note
-										</button>
-									)}
 								</div>
 							</p>
 						</div>
