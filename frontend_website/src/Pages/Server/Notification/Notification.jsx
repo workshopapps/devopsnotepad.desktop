@@ -41,9 +41,9 @@ function Notification({ total }) {
                 className={styles.eye}
               />
             )}
-            <div className={styles.copy} onClick={copyToClipboard}>
+            <button className={styles.copy} onClick={copyToClipboard}>
               <MdContentCopy />
-            </div>
+            </button>
           </div>
         </div>
 
