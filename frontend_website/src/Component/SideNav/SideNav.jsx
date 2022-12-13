@@ -19,7 +19,7 @@ function SideNav() {
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
-  const { fetchRequest } = useFetch;
+  const { fetchRequest } = useFetch();
 
   const getDeleteResponse = (responseObj) => {
     console.log(responseObj, '/delete-server');
@@ -38,7 +38,9 @@ function SideNav() {
       {
         url: 'https://opspad.hng.tech/api/server/delete',
         method: 'POST',
-        body: [server_id],
+        body: {
+          serverIds: [server_id],
+        },
         headers: {
           'Content-Type': 'application/json',
         },
