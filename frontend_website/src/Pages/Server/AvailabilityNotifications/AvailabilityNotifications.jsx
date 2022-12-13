@@ -16,15 +16,19 @@ import { useContext, useEffect } from 'react';
 import { UserContext } from '../../../store/UserContext';
 import { ServerContext } from '../../../store/ServerContext';
 import { useState } from 'react';
+import { useCallback } from 'react';
 const AvailabiltyNotifications = () => {
   const { availabilityNotifications, addAvailabilityNotifications } =
     useContext(UserContext);
+
+  const [loading, setLoading] = useState(false);
 
   const { id } = useParams();
   const { servers } = useContext(ServerContext);
   const server = servers.find((ser) => ser.id === id);
 
-  useEffect(() => {
+  const fetchNotifications = useCallback(() => {
+    setLoading(true);
     const availabiltyNotificationsRef = ref(
       db,
       `opspad/notifications/${server.userId}`,
@@ -50,7 +54,12 @@ const AvailabiltyNotifications = () => {
         date: formattedDate,
       });
     });
-  }, [addAvailabilityNotifications]);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchNotifications();
+  }, [fetchNotifications]);
 
   //   Navigating backward functionalitiy
   const navigate = useNavigate();
@@ -70,14 +79,14 @@ const AvailabiltyNotifications = () => {
       </div>
       <div className={classes.right}>
         <BsFillBackspaceFill className={classes.back} onClick={backHandler} />
-        {availabilityNotifications === null && (
+        {!loading && availabilityNotifications === null && (
           <div className={classes.no_notifications}>
             <p>
               <LoadingSpinner />
             </p>
           </div>
         )}
-        {isLoading && <LoadingSpinner />}
+        {loading && <LoadingSpinner />}
         {error.hasError && (
           <div className={classes.no_notifications}>
             <p>{error.message}</p>
