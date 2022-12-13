@@ -20,7 +20,6 @@ function Sidenav() {
 					<Link to="/">
 						<img src={logo} alt="" className={styles.logo} />
 					</Link>
-
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
 						<div className={styles.nav}>
 							<img src={Group} alt="" className={styles.navItem} />
@@ -50,19 +49,16 @@ function Sidenav() {
 								</ul>
 							</div>
 						)}
-					</div>
-
-					<button className={styles.btn}>
-						{' '}
-						<Link
-							to="/add-server"
-							style={{ color: 'white', textDecoration: 'none' }}
-						>
+					</div>{' '}
+					<Link
+						to="/add-server"
+						style={{ color: 'white', textDecoration: 'none' }}
+					>
+						<button className={styles.btn}>
 							Add Server
-						</Link>
-						<RiAddCircleLine style={{ marginLeft: '20px' }} />
-					</button>
-
+							<RiAddCircleLine style={{ marginLeft: '20px' }} />
+						</button>
+					</Link>
 					<Link to="/settings" style={{ textDecoration: 'none' }}>
 						{' '}
 						<p className={styles.settings}>Settings</p>{' '}
