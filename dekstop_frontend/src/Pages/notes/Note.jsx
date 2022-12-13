@@ -27,7 +27,6 @@ const style = {
 	p: 4,
 };
 function Note() {
-	
 	// Ids
 	const { id } = useParams();
 	const notesId = useId();
@@ -48,6 +47,7 @@ function Note() {
 	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
 	const [notification, setNotification] = useState(false);
+	const [check, setCheck] = useState(false);
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -80,14 +80,15 @@ function Note() {
 	const handleEdit = () => {
 		setSaveMsg(false);
 		setNotification(false);
-		setNote(false)
+		setNote(false);
+		setCheck(true);
 	};
 	const handleCheckNote = () => {
-		if(note) {
+		if (note) {
 			setSaveMsg(true);
 		} else {
-		setNotification(true)
-		setSaveMsg(false)
+			setNotification(true);
+			setSaveMsg(false);
 		}
 	};
 	const boldStyle = { fontWeight: '900', color: '#000000' };
@@ -137,7 +138,10 @@ function Note() {
 									Server note:
 								</p>
 								<p
-									style={{ display: notification ? 'block' : 'none', color: 'red' }}
+									style={{
+										display: notification ? 'block' : 'none',
+										color: 'red',
+									}}
 									className={notesStyle.savedNoteAlert}
 								>
 									No note found! Create one and try again.
@@ -175,6 +179,7 @@ function Note() {
 											className={notesStyle.notesSaveBtn}
 											id={notesStyle.notesSaveBtn2}
 											onClick={handleCheckNote}
+											style={{ display: check ? 'none' : 'block' }}
 										>
 											Check Note
 										</button>
@@ -184,23 +189,23 @@ function Note() {
 						</div>
 						<div style={{ display: note ? 'none' : 'block' }}>
 							<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
-								{
-									note ? 
+								{note ? (
 									<textarea
-									className={notesStyle.notesFormInput}
-									id={notesStyle.notesFormInput}
-									onChange={handleChanges}
-								>
-							 {note}
-								</textarea> : 
-								<textarea
-								className={notesStyle.notesFormInput}
-								id={notesStyle.notesFormInput}
-								onChange={handleChanges}
-							>
-								 Start note here....
-							</textarea>
-								}
+										className={notesStyle.notesFormInput}
+										id={notesStyle.notesFormInput}
+										onChange={handleChanges}
+									>
+										{note}
+									</textarea>
+								) : (
+									<textarea
+										className={notesStyle.notesFormInput}
+										id={notesStyle.notesFormInput}
+										onChange={handleChanges}
+									>
+										Start note here....
+									</textarea>
+								)}
 								<button type="submit" className={notesStyle.notesSaveBtn}>
 									Save Note
 								</button>
