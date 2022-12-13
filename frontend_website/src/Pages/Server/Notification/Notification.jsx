@@ -4,6 +4,7 @@ import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 import { ServerContext } from '../../../store/ServerContext';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,13 +29,25 @@ function Notification({ total }) {
               {isOpen ? `${server.userId}` : '******-******-******'}
             </p>
           </div>
-
-          <img
-            src={copy}
-            alt=''
-            className={styles.copy}
-            onClick={copyToClipboard}
-          />
+          <div className={styles.icons}>
+            {isOpen ? (
+              <AiFillEye
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            ) : (
+              <AiFillEyeInvisible
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            )}
+            <img
+              src={copy}
+              alt=''
+              className={styles.copy}
+              onClick={copyToClipboard}
+            />
+          </div>
         </div>
 
         <div className={styles.wrappe}>

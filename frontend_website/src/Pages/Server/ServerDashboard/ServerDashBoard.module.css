@@ -16,6 +16,7 @@ p.note {
   border: 0.1rem solid #101e4391 !important;
   padding: 0.4rem 0.7rem;
   border-radius: 0.7rem;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 767px) {
