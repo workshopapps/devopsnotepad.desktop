@@ -8,6 +8,8 @@ import { ValidateEmail, ValidatePassword } from '../SignUp/lib';
 import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
 
 const Form = (props) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordIcon] = useState(true);
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -95,13 +97,15 @@ const Form = (props) => {
       <Input
         id='password'
         label='Password'
-        type='password'
-        autoComplete='current-password'
+        type={showPassword ? 'text' : 'password'}
         invalid={!form.passwordIsValid && form.passwordIsFocus ? 'invalid' : ''}
-        placeholder='MinLength(8), uppercase, lowercase, character, number'
+        placeholder='MinLength(8), uppercase, lowercase, character, number.'
         value={form.password}
         onChange={passwordOnChangeHandler}
         onBlur={passwordOnBlurHandler}
+        passwordIcon={passwordIcon}
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
       />
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
@@ -131,17 +135,7 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0 0' }}>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p
-            style={{
-              textAlign: 'center',
-              border: '.1rem solid red',
-              fontSize: '1.6rem',
-              backgroundColor: 'red',
-              color: 'white',
-              padding: '.5rem 0',
-              borderRadius: '10rem',
-            }}
-          >
+          <p className={classes.error__message}>
             {`Sign in failed! - ${props.error.message}`}
           </p>
         )}

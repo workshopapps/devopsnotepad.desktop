@@ -12,7 +12,7 @@ import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
 const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
   const  req = await fetch("https://opspad.hng.tech/api/contact-us", {
     method: "POST",
     body: JSON.stringify(values),
@@ -21,6 +21,9 @@ const onSubmit = async (values, actions) => {
 const res = await req.json()
   alert('Form Submitted');
   actions.resetForm();
+  } catch (error) {
+    console.log({error})
+  }
 };
 
 const ContactUs = () => {
@@ -34,9 +37,9 @@ const ContactUs = () => {
     isSubmitting,
   } = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
-      phone: '',
+      firstname: '',
+      lastname: '',
+      email: '',
       subject: '',
       message: '',
     },
@@ -97,6 +100,7 @@ const ContactUs = () => {
 
                 <button
                   className={styles.btns}
+                  style={{marginTop: '-8px'}}
                   onClick={() =>
                     (window.location = 'mailto:sales@teamsandpaper.com')
                   }
@@ -118,6 +122,7 @@ const ContactUs = () => {
                 </p>
 
                 <button
+                  style={{marginTop: '68px'}}
                   className={styles.btns}
                   onClick={() =>
                     (window.location = 'mailto:partnerships@teamsandpaper.com')
@@ -160,45 +165,45 @@ const ContactUs = () => {
           </section>
 
           <section className={styles.wrapper}>
-            <form action='#' autoComplete='off' onSubmit={handleSubmit}>
+            <form  autoComplete='off' onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='firstName'>First Name</label>
+                  <label for='firstname'>First Name</label>
                   <input
-                    id='firstName'
+                    id='firstname'
                     placeholder='What’s your first name?'
                     className={styles.end}
                     required
                     onChange={handleChange}
-                    value={values.firstName}
+                    value={values.firstname}
                     onBlur={handleBlur}
                   />
 
-                  {errors.firstName && touched.firstName && (
+                  {errors.firstname && touched.firstname && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.firstName}{' '}
+                      <RiCloseCircleFill /> {errors.firstname}{' '}
                     </p>
                   )}
                 </div>
 
                 <div className={styles.col}>
-                  <label for='lastName'>Last Name</label>
+                  <label for='lastname'>Last Name</label>
                   <input
                     type='text'
-                    id='lastName'
+                    id='lastname'
                     placeholder='What’s your last name?'
                     className={styles.start}
                     required
                     onChange={handleChange}
-                    value={values.lastName}
+                    value={values.lastname}
                     onBlur={handleBlur}
                   />
 
-                  {errors.lastName && touched.lastName && (
+                  {errors.lastname && touched.lastname && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.lastName}{' '}
+                      <RiCloseCircleFill /> {errors.lastname}{' '}
                     </p>
                   )}
                 </div>
@@ -206,22 +211,22 @@ const ContactUs = () => {
 
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='phone'>Phone Number</label>
+                  <label for='email'>Email</label>
                   <input
-                    type='number'
-                    id='phone'
-                    placeholder='What’s your phone number?'
+                    type='email'
+                    id='email'
+                    placeholder='What’s your email address?'
                     className={styles.end}
                     required
                     onChange={handleChange}
-                    value={values.phone}
+                    value={values.email}
                     onBlur={handleBlur}
                   />
-
-                  {errors.phone && touched.phone && (
+                  
+                  {errors.email && touched.email && (
                     <p className={styles.errorMsg}>
                       {' '}
-                      <RiCloseCircleFill /> {errors.phone}{' '}
+                      <RiCloseCircleFill /> {errors.email}{' '}
                     </p>
                   )}
                 </div>
@@ -270,7 +275,7 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <button className={styles.btn} disabled={isSubmitting}>
+                <button type='submit' className={styles.btn} disabled={isSubmitting}>
                   Send Message
                 </button>
               </div>

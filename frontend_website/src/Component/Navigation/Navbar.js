@@ -31,10 +31,9 @@ const Navbar = ({ isOpen, setOpen }) => {
                   }`}
                 >
                   {menu.subMenu.map((sMenu, i) => (
-                    <li>
+                    <li key={i}>
                       <NavLink
                         to={`${sMenu.slug}`}
-                        key={i}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);

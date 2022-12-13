@@ -3,16 +3,16 @@ import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
-import ServerContext from '../../../Component/Context/ServerContext';
+import { ServerContext } from '../../../store/ServerContext';
 
-function Notification() {
+function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
   const params = useParams();
-  const serverId = servers.find((server) => server.id === params.id);
+  const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(serverId.textToCopy());
+    navigator.clipboard.writeText(`${server.id}`);
   };
 
   return (
@@ -25,7 +25,7 @@ function Notification() {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${serverId.id}` : '******-******-******'}
+              {isOpen ? `${server.id}` : '******-******-******'}
             </p>
           </div>
 
@@ -41,10 +41,10 @@ function Notification() {
           <Link to='simple_notifications'>
             <div className={styles.card}>
               <div>
-                <div className={styles.bell}>8</div>
+                <div className={styles.bell}>{total}</div>
                 <img src={bell} alt='' />
               </div>
-              <p className={styles.noti}>Simple Notifications</p>
+              <p className={styles.noti}>Logs</p>
               <p className={styles.par}>
                 Regular notifications about your server.
               </p>
@@ -54,10 +54,10 @@ function Notification() {
           <Link to='availability_notification'>
             <div className={styles.card}>
               <div>
-                <div className={styles.belly}>0</div>
+                <div className={styles.belly}>1</div>
                 <img src={bell} alt='' />
               </div>
-              <p className={styles.noti}>Availability notifications</p>
+              <p className={styles.noti}>Server notification</p>
               <p className={styles.par}>
                 Regular notifications about your server.
               </p>
