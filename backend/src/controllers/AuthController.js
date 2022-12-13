@@ -262,6 +262,7 @@ export default class AuthController {
                 return res.status(400).json(validatePayload.validate(req.body).error.details);
             }
 
+            // get user
             const user = await resendEmailVerification(req.body);
 
             if (user === "User Not found") {
