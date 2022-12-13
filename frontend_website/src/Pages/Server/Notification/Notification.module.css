@@ -125,6 +125,13 @@ html {
   section.main div.contain {
     width: auto;
     padding: 10px;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  section.main div.contain div.wrapp p.point {
+    margin-left: 0;
+    padding-top: 10px;
   }
   .wrapp {
     flex-basis: 100% !important;
