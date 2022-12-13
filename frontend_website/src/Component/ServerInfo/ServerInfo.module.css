@@ -82,3 +82,9 @@
   height: 2.5rem;
   width: 2.5rem;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}

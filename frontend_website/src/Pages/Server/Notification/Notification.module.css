@@ -9,7 +9,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 55%;
+  width: 62%;
   margin-top: 10px;
   background-color: #f6f9ff;
   border-radius: 10px;
@@ -17,6 +17,7 @@ html {
 }
 
 .wrapp {
+  flex-basis: 50% !important;
   display: flex;
   align-items: center;
 }
