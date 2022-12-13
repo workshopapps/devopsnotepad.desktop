@@ -23,7 +23,7 @@ export default class NotifyMeController {
             res.json({
                 success: true,
                 message: "Email saved successfully",
-             });
+            });
 
         } catch (error) {
             next(error);

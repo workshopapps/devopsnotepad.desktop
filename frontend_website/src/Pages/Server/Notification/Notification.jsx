@@ -3,16 +3,16 @@ import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
-import ServerContext from '../../../Component/Context/ServerContext';
+import { ServerContext } from '../../../store/ServerContext';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
   const params = useParams();
-  const serverId = servers.find((server) => server.id === params.id);
+  const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(serverId.textToCopy());
+    navigator.clipboard.writeText(`${server.id}`);
   };
 
   return (
@@ -25,7 +25,7 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${serverId.id}` : '******-******-******'}
+              {isOpen ? `${server.id}` : '******-******-******'}
             </p>
           </div>
 
