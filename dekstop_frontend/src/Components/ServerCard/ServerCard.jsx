@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {ref, onValue} from 'firebase/database'
+import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase.config';
 import style from './ServerCard.module.css';
 import arrowUp from './Assets/arrow_up.svg';
@@ -87,7 +87,7 @@ function ServerCard({ name, ipAddress, id, serverId }) {
 								<td className={style.data}>{ipAddress}</td>
 							</tr>
 							<tr>
-								<th>Server Health:</th>
+								<th>Server Status:</th>
 								{availability ? (
 									<td
 										className={`${style.server_health_container} ${style.server_health_excellent}`}
