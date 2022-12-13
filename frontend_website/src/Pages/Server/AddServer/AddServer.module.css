@@ -77,6 +77,13 @@
   border: 1px solid #424141;
 }
 
+.input::placeholder {
+  color: #acacac;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
 .btn {
   margin-top: 2.5rem;
   width: 100%;
@@ -122,5 +129,13 @@
 @media screen and (max-width: 560px) {
   .addserver {
     flex-direction: column;
+  }
+
+  .form {
+    width: 80%
+  }
+
+  .right {
+    margin-top: 20px;
   }
 }
