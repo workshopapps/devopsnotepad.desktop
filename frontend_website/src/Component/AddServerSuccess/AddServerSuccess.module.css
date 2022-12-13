@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   inset: 0;
   z-index: 20;
@@ -39,10 +39,15 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   cursor: pointer;
+  fill: #102a63;
 }
+.close:hover {
+  opacity: 0.7;
+}
+
 .card > figure {
   width: 40px;
   height: 40px;
@@ -67,16 +72,15 @@
 
 .card button {
   width: 100%;
-  max-width: 306px;
-  height: 48px;
   color: white;
+  font-size: 1.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #102a63;
   border-radius: 4px;
   border: none;
-  padding: 16px 0;
+  padding: 14px 0;
   transition: transform ease-in 0.3s, opacity ease-in 0.3s;
   cursor: pointer;
 }
@@ -95,10 +99,13 @@
   place-items: center;
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 767px) {
   .card {
+    padding: 4rem 6rem 2rem;
     background: #ffffff;
-    width: 273.6px;
-    height: 230.4px;
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

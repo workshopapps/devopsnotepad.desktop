@@ -14,14 +14,17 @@
   align-items: center;
 }
 
-.right h1 {
-  font-weight: 500;
+.h1box {
+  width: 100%;
+  border-bottom: 0.05rem solid rgba(128, 128, 128, 0.4);
+}
+
+.h1 {
+  font-weight: 600;
   font-size: 2.4rem;
   text-align: center;
-  text-transform: uppercase;
-  color: #202020;
-  margin-bottom: 2.5rem;
-  margin-top: 2rem;
+  color: #343434da;
+  margin-bottom: 0.8rem;
 }
 .invalid__input {
   color: rgba(253, 46, 46, 0.7);
@@ -41,6 +44,7 @@
 }
 
 .inputs {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

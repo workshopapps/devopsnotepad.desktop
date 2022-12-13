@@ -9,7 +9,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 55%;
+  width: 62%;
   margin-top: 10px;
   background-color: #f6f9ff;
   border-radius: 10px;
@@ -17,6 +17,7 @@ html {
 }
 
 .wrapp {
+  flex-basis: 50% !important;
   display: flex;
   align-items: center;
 }
@@ -118,48 +119,33 @@ html {
     flex-direction: column;
     width: auto;
     position: relative;
-    gap: 25px;
+    gap: 20px;
   }
 
   section.main div.contain {
     width: auto;
     padding: 10px;
-  }
-
-  .copy {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    border: 0;
-  }
-
-  section.main div.wrappe div.card {
-    margin-right: 0;
-  }
-
-  section.main div.wrappe div.card div.bell {
-    left: 30px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  section.main div.wrappe {
     flex-direction: column;
-    width: auto;
-    position: relative;
-    gap: 25px;
+    align-items: start;
   }
 
-  section.main div.contain {
-    width: auto;
-    padding: 10px;
+  section.main div.contain div.wrapp p.point {
+    margin-left: 0;
+    padding-top: 10px;
   }
-
+  .wrapp {
+    flex-basis: 100% !important;
+  }
   .copy {
     width: 30px;
     height: 30px;
     border-radius: 0;
     border: 0;
+  }
+
+  .endpoint {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   section.main div.wrappe div.card {

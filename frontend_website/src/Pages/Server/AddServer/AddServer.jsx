@@ -130,8 +130,10 @@ const AddServer = () => {
             className={style.svg}
           />
         </div>
-        <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
+          <div className={style.h1box}>
+            <h1 className={style.h1}>Create Server</h1>
+          </div>
           <div className={style.inputs}>
             <div className={style.form_control}>
               <label htmlFor='name'>Server Name</label>
