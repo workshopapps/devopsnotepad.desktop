@@ -81,9 +81,7 @@ const AvailabiltyNotifications = () => {
         <BsFillBackspaceFill className={classes.back} onClick={backHandler} />
         {!loading && availabilityNotifications === null && (
           <div className={classes.no_notifications}>
-            <p>
-              <LoadingSpinner />
-            </p>
+            <p>No notification available.</p>
           </div>
         )}
         {loading && <LoadingSpinner />}
