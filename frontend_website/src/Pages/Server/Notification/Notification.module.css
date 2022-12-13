@@ -99,3 +99,35 @@ section.main div.wrappe div.card p.par {
 .copy:hover {
   border: 0.08rem solid rgb(37, 56, 149);
 }
+
+
+@media screen and (max-width: 767px) {
+
+  section.main div.wrappe {
+    flex-direction: column;
+    width: auto;
+    position: relative;
+    gap: 25px;
+  }
+
+  section.main div.contain {
+    width: auto;
+    padding: 10px;
+  }
+
+  .copy {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    border: 0;
+  }
+
+  section.main div.wrappe div.card {
+    margin-right: 0;
+  }
+
+  section.main div.wrappe div.card div.bell {
+    left: 30px;
+  }
+
+}
