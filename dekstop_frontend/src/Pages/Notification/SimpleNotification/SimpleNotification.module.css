@@ -213,3 +213,25 @@ section.main div.row {
 	}
 }
 
+@media (max-width: 950px){
+	section.main{
+		margin-left: 300px ;
+		margin-right: 0;
+		width: unset;
+	}
+
+	div.state{
+		padding-left: none;
+	}
+
+	.notiContainer{
+		width: 80%;
+	}
+
+}
+
+@media(max-width: 767px){
+	section.main{
+		margin-left: 0;
+	}
+}
