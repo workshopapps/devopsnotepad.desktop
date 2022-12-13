@@ -53,6 +53,7 @@ function SideNav() {
       console.log(data, 'all servers');
       addServers(data);
     };
+
     fetchRequest(
       {
         url: 'https://opspad.hng.tech/api/server/all',
