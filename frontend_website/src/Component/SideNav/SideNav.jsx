@@ -19,14 +19,14 @@ function SideNav() {
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
-  const { fetchRequest } = useFetch;
+  const { fetchRequest } = useFetch();
 
   const getDeleteResponse = (responseObj) => {
     console.log(responseObj, '/delete-server');
   };
 
   const deleteServerHandler = (server_id) => {
-    console.log(server_id, typeof server_id);
+    console.log(server_id);
     const confirmDelete = prompt(
       'Are you sure you want to delete server? Answer with a Yes or No',
     );
