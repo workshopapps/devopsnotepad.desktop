@@ -3,7 +3,7 @@ import NotificationList from './NotificationList';
 import { BsFillBackspaceFill } from 'react-icons/bs';
 
 import classes from './SimpleNotifications.module.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 import LoadingSpinner from './LoadingSpinner';
