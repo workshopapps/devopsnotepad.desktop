@@ -338,7 +338,7 @@
 
   .landPage_groupedImg {
     transform: translate(1%, 6px);
-    width: 500px;
+    max-width: 500px;
     margin: auto;
   }
 
