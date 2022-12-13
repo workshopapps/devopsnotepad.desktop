@@ -10,6 +10,7 @@ import LoadingSpinner from './LoadingSpinner';
 import { useContext } from 'react';
 import { UserContext } from '../../../store/UserContext';
 import { ServerContext } from '../../../store/ServerContext';
+import { GiSandsOfTime } from 'react-icons/gi'
 const SimpleNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   // Getting the id to fetch notifications
@@ -61,6 +62,7 @@ const SimpleNotifications = () => {
         {notifications.length > 0 && <NotificationList data={notifications} />}
         {!isLoading && !error.hasError && notifications.length === 0 && (
           <div className={classes.no_notifications}>
+            <GiSandsOfTime />
             <p>
               You have no notifications yet. Activity from your server wil be
               displayed here.
