@@ -11,22 +11,21 @@ import { RiCloseCircleFill } from 'react-icons/ri';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
-const onSubmit = async (values, actions) => {
-  try {
-  const  req = await fetch("https://opspad.hng.tech/api/contact-us", {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: { 'Content-type': 'application/json' }
-  })
-const res = await req.json()
-  alert('Form Submitted');
-  actions.resetForm();
-  } catch (error) {
-    console.log({error})
-  }
-};
-
 const ContactUs = () => {
+  const onSubmit = async (values, actions) => {
+    try {
+      const req = await fetch('https://opspad.hng.tech/api/contact-us', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const res = await req.json();
+      alert('Form Submitted');
+      actions.resetForm();
+    } catch (error) {
+      console.log({ error });
+    }
+  };
   const {
     values,
     errors,
@@ -100,7 +99,7 @@ const ContactUs = () => {
 
                 <button
                   className={styles.btns}
-                  style={{marginTop: '-8px'}}
+                  style={{ marginTop: '-8px' }}
                   onClick={() =>
                     (window.location = 'mailto:sales@teamsandpaper.com')
                   }
@@ -122,7 +121,7 @@ const ContactUs = () => {
                 </p>
 
                 <button
-                  style={{marginTop: '68px'}}
+                  style={{ marginTop: '68px' }}
                   className={styles.btns}
                   onClick={() =>
                     (window.location = 'mailto:partnerships@teamsandpaper.com')
@@ -165,7 +164,7 @@ const ContactUs = () => {
           </section>
 
           <section className={styles.wrapper}>
-            <form  autoComplete='off' onSubmit={handleSubmit}>
+            <form autoComplete='off' onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.col}>
                   <label for='firstname'>First Name</label>
@@ -222,7 +221,7 @@ const ContactUs = () => {
                     value={values.email}
                     onBlur={handleBlur}
                   />
-                  
+
                   {errors.email && touched.email && (
                     <p className={styles.errorMsg}>
                       {' '}
@@ -275,7 +274,11 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <button type='submit' className={styles.btn} disabled={isSubmitting}>
+                <button
+                  type='submit'
+                  className={styles.btn}
+                  disabled={isSubmitting}
+                >
                   Send Message
                 </button>
               </div>

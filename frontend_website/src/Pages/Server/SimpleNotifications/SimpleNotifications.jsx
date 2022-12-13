@@ -9,11 +9,14 @@ import useFetch from '../../../hooks/useFetch';
 import LoadingSpinner from './LoadingSpinner';
 import { useContext } from 'react';
 import { UserContext } from '../../../store/UserContext';
+import { ServerContext } from '../../../store/ServerContext';
 const SimpleNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   // Getting the id to fetch notifications
-  // const { id } = useParams();
-  // console.log(id);
+  const { id } = useParams();
+
+  const { servers } = useContext(ServerContext);
+  const server = servers.find((ser) => ser.id === id);
 
   //   Navigating backward functionalitiy
   const navigate = useNavigate();
@@ -42,7 +45,7 @@ const SimpleNotifications = () => {
     };
     fetchNotifications(
       {
-        url: 'https://opspad.hng.tech/api/server/60a482ff-76ca-11ed-82ea-50ebf62a0ed9/notifications/',
+        url: `https://opspad.hng.tech/api/server/${server.userId}/notifications/`,
       },
       getNotifications,
     );

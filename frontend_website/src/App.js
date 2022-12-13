@@ -47,6 +47,7 @@ import Server from './Pages/Server/Server';
 import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
 import VerifyEmail from './Pages/SignUp/VerifyEmail';
 import AvailabiltyNotifications from './Pages/Server/AvailabilityNotifications/AvailabilityNotifications';
+import Download from './Pages/Download/Download';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -146,6 +147,7 @@ function App() {
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
           <Route path='/settings' exact element={<Settings />} />
+          <Route path='/download' exact element={<Download />} />
 
           {/* Server Dashbord */}
           <Route
