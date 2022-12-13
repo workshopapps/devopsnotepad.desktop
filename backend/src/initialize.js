@@ -4,19 +4,18 @@ import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import passport from 'passport';
 import notFoundHandler from './middleware/application/notFoundHandler.js';
 import errorHandler from './middleware/application/errorHandler.js';
 import config from './config/index.js';
 import routes from './routes/index.js';
-import swaggerUI from 'swagger-ui-express'
-import swaggerJsDoc from 'swagger-jsdoc'
+import swaggerUI from 'swagger-ui-express';
+import swaggerJsDoc from 'swagger-jsdoc';
 import cookieParser from 'cookie-parser';
-import session from "express-session";
-import passportSetup from './config/passport.js';
-import path from "path";
-import { fileURLToPath } from "url";
-
+import session from 'express-session';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import MySqlStore from 'express-mysql-session';
+import { development } from '../knexfile.js';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -25,7 +24,13 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 Sentry.init({
-  dsn: "https://2e6682078ed644e291c89ead3ac7a40c@o4504281385861120.ingest.sentry.io/4504282688520193",
+  dsn: 'https://03376006cefa482ca1468b11591c084c@o4504281385861120.ingest.sentry.io/4504292152836096',
+  integrations: [
+    // enable HTTP calls tracing
+    new Sentry.Integrations.Http({ tracing: true }),
+    // enable Express.js middleware tracing
+    new Tracing.Integrations.Express({ app }),
+  ],
 
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
@@ -33,20 +38,11 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-const transaction = Sentry.startTransaction({
-  op: "test",
-  name: "My First Test Transaction",
-});
-
-setTimeout(() => {
-  try {
-    foo();
-  } catch (e) {
-    Sentry.captureException(e);
-  } finally {
-    transaction.finish();
-  }
-}, 99);
+// RequestHandler creates a separate execution context using domains, so that every
+// transaction/span/breadcrumb is attached to its own Hub instance
+app.use(Sentry.Handlers.requestHandler());
+// TracingHandler creates a trace for every incoming request
+app.use(Sentry.Handlers.tracingHandler());
 
 //options object for swaggerjs
 const options = {
@@ -60,21 +56,21 @@ const options = {
     components: {
       securitySchemes: {
         bearerAuth: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT"
-        }
-      }
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
     },
     security: [
       {
-        bearerAuth: []
-      }
+        bearerAuth: [],
+      },
     ],
     servers: [
       {
         //update to production url
-        url: config.app.url,
+        url: `${config.app.url}/api`,
       },
     ],
   },
@@ -85,17 +81,21 @@ const specs = swaggerJsDoc(options);
 //setting up swagger doc
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
-app.get('/', (req, res) => {
-  res.send("<button><a href='/auth/google'>Login With Google</a></button>")
-});
+app.use(Sentry.Handlers.errorHandler());
 
-passportSetup();
-app.use(session({
+const store = MySqlStore(session);
+const sessionStore = new store(development.connection);
+
+app.use(
+  session({
     secret: config.session.secret,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge:  60 * 60 * 1000 } // 1 hour
-}));
+    store: sessionStore,
+    cookie: { expires: 60 * 60 * 1000 }, // 1 hour
+  })
+);
+
 app.use(cookieParser());
 app.use(helmet());
 app.set('trust proxy', true);
@@ -103,8 +103,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(morgan(config.env.isProduction ? 'common' : 'dev'));
 app.use(routes);
 app.use(notFoundHandler);

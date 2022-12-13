@@ -17,7 +17,7 @@ export default async function create(body) {
         throw new ValidationError("user already exists!!!");
     }
 
-    await UserRepo.create(body);
+    const user = await UserRepo.create(body);
 
     const registeredUser = await UserRepo.getUserByEmail(body.email);
 
@@ -25,4 +25,8 @@ export default async function create(body) {
 
     await sendEmailVerificationLink(email, name, id);
 
+    return {
+        prompt: "A verification link has been sent to your e-mail. Kindly verify to complete registration",
+        user
+    }
 }

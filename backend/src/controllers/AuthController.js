@@ -1,261 +1,306 @@
-import create from '../services/user/create.js';
-import UserRepo from '../database/repositories/UserRepo.js';
-import login from '../services/user/login.js';
-import ResetTokenRepo from '../database/repositories/ResetTokenRepo.js';
-import { NotFoundError } from '../lib/errors/index.js';
-import { sendResetLink } from '../services/user/password_reset.js';
-import EmailVerificationTokenRepo from '../database/repositories/emailVerificationRepo.js';
-import bcrypt from 'bcrypt';
-import Joi from 'joi';
-import PasswordComplexity from 'joi-password-complexity';
+import create from "../services/user/create.js";
+import UserRepo from "../database/repositories/UserRepo.js";
+import login from "../services/user/login.js";
+import ResetTokenRepo from "../database/repositories/ResetTokenRepo.js";
+import { NotFoundError, ServiceError } from "../lib/errors/index.js";
+import resendEmailVerification from '../services/user/resendemailverification.js'
+import { sendResetLink } from "../services/user/password_reset.js";
+import EmailVerificationTokenRepo from "../database/repositories/emailVerificationRepo.js";
+import bcrypt from "bcrypt";
+import Joi from "joi";
+import PasswordComplexity from "joi-password-complexity";
+import { OAuth2Client } from "google-auth-library";
+import { generateJWTToken, validatePayload } from "../utils/index.js";
+import config from "../config/index.js";
+import removeuser from "../services/user/remove.js";
 
-import { validatePayload } from '../utils/index.js';
+const client = new OAuth2Client({ clientId: config.google.CLIENT_ID, clientSecret: config.google.CLIENT_SECRET });
 
 export default class AuthController {
-  static signup = async (req, res, next) => {
-    try {
-      /**
+    static signup = async (req, res, next) => {
+        try {
+            /**
        * Validate Request
        */
-      const errors = validatePayload(req);
+            const errors = validatePayload(req);
 
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
+            // Update this latter
+            if (errors && Object.keys(errors).length > 0) throw errors;
 
-      await create(req.body);
+            const user = await create(req.body);
 
-      res.status(201).json({
-        success: true,
-        message: 'signup successful',
-        user: req.body,
-      });
-    } catch (error) {
-      next(error);
-    }
-  };
-
-  static loginUser = async (req, res, next) => {
-    const body = req.body;
-    try {
-      /**
-       * Validate Request
-       */
-      const errors = validatePayload(req);
-
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
-      const loggedInUser = await login(body, req, res);
-
-      //set request cookie
-      if (loggedInUser.user && loggedInUser.token) {
-        req.session.user = loggedInUser.user;
-        req.session.authorized = true;
-
-        if (body.rememberMe) {
-          req.session.user.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
-        } else {
-          req.session.user.expires = false; // Cookie expires at end of session
+            res.status(201).json({
+                success: true,
+                message: "signup successful",
+                user,
+            });
+        } catch (error) {
+            next(error);
         }
+    };
 
-        return res.send({
-          message: 'Logged in Successfully',
-          user: loggedInUser.user,
-          token: loggedInUser.token,
+    static loginUser = async (req, res, next) => {
+        const body = req.body;
+        try {
+            /**
+       * Validate Request
+       */
+            const errors = validatePayload(req);
+
+            // Update this latter
+            if (errors && Object.keys(errors).length > 0) throw errors;
+            const loggedInUser = await login(body);
+
+            //set request cookie
+            if (loggedInUser.user) {
+                req.session.user = loggedInUser.user;
+                req.session.authorized = true;
+
+                if (body.rememberMe) {
+                    req.session.user.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
+                } else {
+                    req.session.user.expires = false; // Cookie expires at end of session
+                }
+
+                return res.status(200).send({
+                    message: "Logged in Successfully",
+                    user: loggedInUser.user,
+                });
+            }
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    static logoutUser = async (req, res, next) => {
+        try {
+            res.clearCookie("connect.sid");
+            return res.send({
+                message: "logout successful",
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    static logout = async (req, res) => {
+        req.logout();
+        res.status(200).json({
+            success: true,
+            message: "Logout successful",
         });
-      }
-    } catch (error) {
-      next(error);
-    }
-  };
+    };
 
-  static logoutUser = async (req, res, next) => {
-    try {
-      res.clearCookie('connect.sid');
-      return res.send({
-        message: 'logout successful',
-      });
-    } catch (error) {
-      next(error);
-    }
-  };
+    static getResetLink = async (req, res, next) => {
+        const { email } = req.body;
 
-  static loginStatus = async (req, res) => {
-    if (req.user) {
-      res.status(200).json({
-        success: true,
-        message: 'Login was successful',
-        user: req.user,
-      });
-    } else {
-      res.status(401).json({
-        success: false,
-        message: 'Not Authenticated',
-      });
-    }
-  };
-  static loginFailed = async (req, res) => {
-    res.status(401).json({
-      success: false,
-      message: 'Not Authenticated',
-    });
-  };
-  static logout = async (req, res) => {
-    req.logout();
-    res.status(200).json({
-      success: true,
-      message: 'Logout successful',
-    });
-  };
-
-  static getResetLink = async (req, res, next) => {
-    const { email } = req.body;
-
-    try {
-      /**
+        try {
+            /**
        * Validate Request
        */
-      const errors = validatePayload(req);
+            const errors = validatePayload(req);
 
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
+            // Update this latter
+            if (errors && Object.keys(errors).length > 0) throw errors;
 
-      const registeredUser = await UserRepo.getUserByEmail(email);
+            const registeredUser = await UserRepo.getUserByEmail(email);
 
-      if (!registeredUser) throw new NotFoundError('Please input a valid registered email.');
+            if (!registeredUser) throw new NotFoundError("Please input a valid registered email.");
 
-      const { name, id } = registeredUser;
+            const { name, id } = registeredUser;
 
-      sendResetLink(email, name, id);
+            sendResetLink(email, name, id);
 
-      res.status(200).redirect('/login');
-      return { message: 'A password reset link has been sent to your email address' };
-    } catch (error) {
-      console.error(error);
-      next(error);
-    }
-  };
+            res.status(200).json({ message: "A password reset link has been sent to your email address" });
+        } catch (error) {
+            console.error(error);
+            next(error);
+        }
+    };
 
-  static updateUserPassword = async (req, res) => {
-    try {
-      const { token, id, password } = req.body;
+    static updateUserPassword = async (req, res, next) => {
+        try {
+            const { token, id, password } = req.body;
 
-      /**
-       * Validate Request
-       */
-      const errors = validatePayload(req);
+            await ResetTokenRepo.deleteExpiredTokens();
 
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
+            const storedTokens = await ResetTokenRepo.getTokens(token, id);
 
-      await ResetTokenRepo.deleteExpiredTokens();
+            if (!storedTokens) {
+                throw new Error("Invalid or expired password reset token");
+            }
+            const currentToken = storedTokens.filter((record) => bcrypt.compare(token, record.token));
 
-      const storedToken = await ResetTokenRepo.getToken(token, id);
+            if (!currentToken) {
+                throw new Error("Invalid or expired password reset token");
+            }
 
-      if (!storedToken) {
-        throw new Error('Invalid or expired password reset token');
-      }
+            const hashedPassword = await bcrypt.hash(password, Number(10));
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
+            const updatedUser = await UserRepo.updatePasswordById(id, hashedPassword);
 
-      if (!isValid) {
-        throw new Error('Invalid or expired password reset token');
-      }
+            if (!updatedUser) throw new NotFoundError("User not found");
 
-      const hashedPassword = await bcrypt.hash(password, Number(10));
+            res.status(200).json({
+                success: true,
+                message: "Password has been updated successfully",
+                updatedUser,
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
 
-      const updatedUser = await UserRepo.updatePasswordById(id, hashedPassword);
+    static verifyEmail = async (req, res, next) => {
+        try {
+            const { token, id } = req.body;
+            if (!token || !id) throw new NotFoundError("invalid link, request for a new link");
 
-      if (!updatedUser) throw new NotFoundError('User not found');
+            await EmailVerificationTokenRepo.deleteExpiredTokens();
 
-      res.status(200).redirect('/login');
-      return {
-        success: true,
-        message: 'Password has been updated successfully',
-        updatedUser,
-      };
-    } catch (error) {
-      next(error);
-    }
-  };
+            const storedToken = await EmailVerificationTokenRepo.getToken(id);
 
-  static verifyEmail = async (req, res, next) => {
-    try {
-      const errors = validatePayload(req);
+            if (!storedToken) throw new NotFoundError("Invalid or expired email verification token");
 
-      // Update this latter
-      if (errors && Object.keys(errors).length > 0) throw errors;
-      const { token, id } = req.query;
+            const isValid = await bcrypt.compare(token, storedToken.token);
 
-      await EmailVerificationTokenRepo.deleteExpiredTokens();
+            if (!isValid) {
+                throw new Error("Invalid or expired email verification token");
+            }
 
-      const storedToken = await EmailVerificationTokenRepo.getToken(id);
+            await UserRepo.updateById(id, { email_verified: 1 });
 
-      if (!storedToken) {
-        throw new Error('Invalid or expired email verification token');
-      }
+            res.status(200).send({ message: "email verified successfully" });
+        } catch (error) {
+            next(error);
+        }
+    };
 
-      const isValid = await bcrypt.compare(token, storedToken.token);
+    static updateUserPasswordFromMobile = async (req, res) => {
+        try {
+            // Validate with Joi
+            const updateUserPassword = Joi.object({
+                oldPassword: Joi.string().required(),
+                newPassword: new PasswordComplexity({
+                    min: 8,
+                    max: 25,
+                    lowerCase: 1,
+                    upperCase: 1,
+                    numeric: 1,
+                    symbol: 1,
+                    requirementCount: 4,
+                }),
+            }).strict();
 
-      if (!isValid) {
-        throw new Error('Invalid or expired email verification token');
-      }
+            if (updateUserPassword.validate(req.body).error) {
+                return res.status(400).json(updateUserPassword.validate(req.body).error.details);
+            }
 
-      await UserRepo.updateById(id, { email_verified: 'true' });
+            if (!req.body.newPassword) return res.status(400).send(" New Password is required..");
+            const { id } = req.session.user;
 
-      return { message: 'email verified successfully' };
-    } catch (error) {
-      next(error);
-    }
-  };
+            // destruct request body
+            const { oldPassword, newPassword } = req.body;
 
-  static updateUserPasswordFromMobile = async (req, res) => {
-    try {
-      // Validate with Joi
-      const updateUserPassword = Joi.object({
-        oldPassword: Joi.string().required(),
-        newPassword: new PasswordComplexity({
-          min: 8,
-          max: 25,
-          lowerCase: 1,
-          upperCase: 1,
-          numeric: 1,
-          symbol: 1,
-          requirementCount: 4,
-        }),
-      }).strict();
+            // Get user from database
+            const user = await UserRepo.getUserById(id);
 
-      if (updateUserPassword.validate(req.body).error) {
-        return res.status(400).json(updateUserPassword.validate(req.body).error.details);
-      }
-      const { id } = req.session.user;
+            // Throw error if user not found
+            if (!user) {
+                return res.status(400).send("User Not Found");
+            }
 
-      // destruct request body
-      const {oldPassword, newPassword } = req.body;
+            const comparePassword = await bcrypt.compare(oldPassword, user.password);
 
-      // Get user from database
-      const user = await UserRepo.getUserById(id);
+            // Compare Old Password with new Password
+            if (!comparePassword) {
+                return res.status(400).send("User Passwords do not match");
+            }
 
-      // Throw error if user not found
-      if (!user) {
-        return res.status(400).send('User Not Found');
-      }
+            //hash new password
+            const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
 
-      const comparePassword =  await bcrypt.compare(oldPassword, user.password);
+            // Save new password
+            await UserRepo.updatePasswordById(id, hashedPassword);
+            // Success
+            return res.status(201).send("Password Successfully Updated");
+        } catch (error) {
+            return res.status(500).send(`An error occurred whiles updating user password ${error}`);
+        }
+    };
 
-      // Compare Old Password with new Password
-      if (!comparePassword) {
-        return res.status(400).send('User Passwords do not match');
-      }
+    static googleLogin = async (req, res, next) => {
+        try {
+            const { token } = req.body;
+            const ticket = await client.verifyIdToken({ idToken: token, audience: config.google.CLIENT_ID });
 
-      //hash new password
-       const hashedPassword = await bcrypt.hash(newPassword, Number(process.env.BCRYPT_SALT));
+            const payload = ticket.getPayload();
+            let user = await UserRepo.getUserByEmail(payload.email);
+            if (!user) {
+                user = await UserRepo.create({
+                    email: payload.email,
+                    name: payload.name,
+                    email_verified: payload.email_verified,
+                });
+            }
+            const userToken = await generateJWTToken(user);
+            req.session.user = user;
+            req.session.authorized = true;
 
-      // Save new password
-      await UserRepo.updatePasswordById(id, hashedPassword);
-      // Success
-      return res.status(201).send('Password Successfully Updated');
-    } catch (error) {
-      return res.status(500).send(`An error occurred whiles updating user password ${error}`);
-    }
-  };
+            res.status(200).json({ message: "Logged in Successfully", user, userToken });
+        } catch (error) {
+            return next(error);
+        }
+    };
+    static resendVerifyEmail = async (req, res, next) => {
+        try {
+            const validatePayload = Joi.object({
+                email: Joi.string().required().email().label("Email"),
+            }).strict();
+
+            if (validatePayload.validate(req.body).error) {
+                return res.status(400).json(validatePayload.validate(req.body).error.details);
+            }
+
+            const user = await resendEmailVerification(req.body);
+
+            if (user === "User Not found") {
+                return res.status(400).json({
+                    success: false,
+                    message: user,
+                });
+            }
+
+            return res.status(201).json({
+                success: true,
+                message: 'Verification link sent',
+                user,
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
+    static deleteUser = async (req, res, next) => {
+        try {
+            // Validate with Joi
+            const validatePayload = Joi.object({
+                email: Joi.string().required(),
+            }).strict();
+
+            if (validatePayload.validate(req.body).error) {
+                return res.status(400).json(validatePayload.validate(req.body).error.details);
+            }
+
+            // Deleter Servers
+            await removeuser(req.body)
+
+            // Clear session 
+            res.clearCookie("connect.sid");
+
+
+            res.status(200).json({ message: "User Successfully removed", });
+        } catch (error) {
+            return next(error);
+        }
+    };
 }

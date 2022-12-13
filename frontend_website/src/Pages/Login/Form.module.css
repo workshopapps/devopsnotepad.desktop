@@ -17,17 +17,19 @@
 .contact__form {
   margin-top: 4rem;
 }
+
 .box {
   display: flex;
   justify-content: space-between;
 }
+
 .div {
   flex-basis: 45%;
 }
 
 .invalid__input {
   margin-top: -1.6rem;
-  color: rgb(253, 46, 46);
+  color: rgba(253, 46, 46, 0.7);
   font-size: 1.4rem;
   margin-bottom: 1.4rem;
 }
@@ -38,6 +40,7 @@
   align-items: center;
   color: #3d3d3ddb;
 }
+
 .password:link,
 .password:visited {
   text-decoration: none;
@@ -48,6 +51,7 @@
 .password:hover {
   color: #407cffe5;
 }
+
 .label {
   margin-left: 1.5rem;
   font-size: 1.5rem;
@@ -75,4 +79,38 @@
 
 .button:hover {
   background: #102a63ed;
+}
+
+.verifyBtnBox {
+  width: 100%;
+  text-align: center;
+}
+
+.verifyBtn {
+  color: #102a63;
+  background-color: #fff;
+  border: 1px solid #102a63;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  margin: 20px auto 0;
+  transition: all .3s;
+}
+
+.verifyMsg {
+  color: green;
+  text-align: center;
+}
+
+.verifyBtn:hover {
+  opacity: 0.6;
+}
+
+.error__message {
+  text-align: center;
+  border: 0.1rem solid rgba(255, 0, 0, 0.707);
+  font-size: 1.6rem;
+  background-color: rgba(255, 0, 0, 0.581);
+  color: white;
+  padding: 0.5rem 0;
+  border-radius: 10rem;
 }

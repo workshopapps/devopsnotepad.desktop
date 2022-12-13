@@ -9,6 +9,5 @@ router.post('/', createServerValidator, isAuthenticated(), ServerController.crea
 router.patch('/', updateServerValidator, isAuthenticated(), ServerController.update);
 router.get('/all', isAuthenticated(), ServerController.getAllServers);
 router.post('/delete', isAuthenticated(), ServerController.deleteServersById);
-router.post('/:server_id/subscribe', ServerController.subscribe);
 
 export default router;
