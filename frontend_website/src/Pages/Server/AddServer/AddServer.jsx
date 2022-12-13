@@ -56,6 +56,7 @@ const AddServer = () => {
   const [success, setSuccess] = useState(false);
 
   const getResponse = (response) => {
+    console.log(response);
     if (
       response.success === true ||
       response.message === 'server created successfully'
