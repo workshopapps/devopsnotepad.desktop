@@ -14,7 +14,7 @@ div.sidenav {
   align-items: flex-start;
   background-color: rgb(237, 237, 237);
   padding: 3rem 3rem 2rem;
-  position: fixed;
+  /* position: absolute; */
 }
 
 div.sidenav img.logo {
@@ -136,7 +136,7 @@ div.sidenav button.btn {
   fill: #102a63d5;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 767px) {
   div.sidenav {
     height: auto;
     justify-content: center;
