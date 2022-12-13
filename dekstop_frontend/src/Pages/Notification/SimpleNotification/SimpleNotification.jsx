@@ -110,7 +110,7 @@ function SimpleNotification() {
 									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
-								<p className={styles.noti}>Availability notifications</p>
+								<p className={styles.noti}>Server Notification</p>
 								<p className={styles.par}>
 									Regular notifications about your server.
 								</p>

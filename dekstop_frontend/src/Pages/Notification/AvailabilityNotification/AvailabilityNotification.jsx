@@ -4,6 +4,7 @@ import { ref, onValue } from 'firebase/database';
 import { db } from '../../../firebase.config';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
 import copy from '../assets/copy1.svg';
 import Button from '../assets/Button.svg';
@@ -77,6 +78,7 @@ function AvailabilityNotification() {
 			<Sidenav />
 			<section className={styles.main}>
 				<div className={styles.container}>
+					<BackBtn />
 					<ServerInfo
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
@@ -129,7 +131,7 @@ function AvailabilityNotification() {
 							<div>
 								<img src={bell} alt="" />
 							</div>
-							<p className={styles.noti}>Availability notifications</p>
+							<p className={styles.noti}>Server Notification</p>
 							<p className={styles.par}>
 								Regular notifications about your server.
 							</p>
@@ -159,7 +161,7 @@ function AvailabilityNotification() {
 										<td className={styles.data}>{availability.msg}</td>
 									</tr>
 									<tr>
-										<th>Server Health:</th>
+										<th>Server Status:</th>
 										{availability.status ? (
 											<td
 												className={`${styles.server_health_container} ${styles.server_health_excellent}`}
