@@ -18,8 +18,8 @@
 
 .card {
   background: #ffffff;
-  width: 342px;
-  height: 320px;
+  width: 500px;
+  height: 400px;
   position: absolute;
   top: 40%;
   left: calc(50% + 228px);

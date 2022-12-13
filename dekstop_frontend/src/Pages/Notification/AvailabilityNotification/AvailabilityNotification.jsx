@@ -14,14 +14,27 @@ import arrowDown from './Assets/arrow_down.svg';
 
 function AvailabilityNotification() {
 	const [availability, setAvailability] = useState(null);
-	// const [current, setCurrent] = useState(new Date().getTime());
 	const [time, setTime] = useState('');
 
 	const [exactServer, setExactServer] = useState({});
 	const [simpleNotification, setSimpleNotification] = useState([]);
 
-	// const [readMore, setReadMore] = useState(false)
 	const { id } = useParams();
+
+	// Functionality for copy Password
+	const handleIpCopy = () => {
+		if (exactServer.ipAddress) {
+			navigator.clipboard.writeText(exactServer.ipAddress);
+			setTimeout(() => {
+				// eslint-disable-next-line
+				alert('IP address copied to clipboard');
+			}, 500);
+		} else {
+			setTimeout(() => {
+				alert('No address to copy');
+			}, 500);
+		}
+	};
 
 	useEffect(() => {
 		const currentServer = JSON.parse(localStorage.getItem('servers'))
@@ -51,29 +64,13 @@ function AvailabilityNotification() {
 		if (availability) {
 			const date = new Date(availability.last_checked);
 
-			// eslint-disable-next-line prefer-template
 			const checkedLast = `${date.getDate()}/${
 				date.getMonth() + 1
 			}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
-			// const last = new Date(availability.last_checked).getFullYear();
-			// const minutes = Math.floor(current - last);
-			// const hours = Math.floor(current - last) % 24;
-			// const currentTime = {
-			// 	minutes,
-			// 	hours,
-			// };
-			// setTime(currentTime);
-			// console.log(last);
 			setTime(checkedLast);
 		}
 	}, [availability]);
-
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		setCurrent(new Date().getTime());
-	// 	}, 60000);
-	// }, []);
 
 	return (
 		<div>
@@ -104,10 +101,13 @@ function AvailabilityNotification() {
 					<div className={styles.contain}>
 						<div className={styles.wrapp}>
 							<p className={styles.endpoint}>Address:</p>
-							<p className={styles.point}>my-apache-server/12.13.12.14</p>
+							<p className={styles.point}>
+								{exactServer.ipAddress || 'No IP Address detected'}
+							</p>
 						</div>
-
-						<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+						<button type='button' onClick={handleIpCopy} className={styles.copyIp}>
+							<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+						</button>
 					</div>
 
 					<div className={styles.wrappe}>

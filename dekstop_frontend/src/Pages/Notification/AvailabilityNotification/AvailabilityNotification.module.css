@@ -304,3 +304,11 @@ section.main div.row {
 		left: 250px;
 	}
 }
+
+.copyIp{
+	padding: 0;
+	outline: none;
+	margin: 0;
+	border: none;
+	background: transparent;
+}
