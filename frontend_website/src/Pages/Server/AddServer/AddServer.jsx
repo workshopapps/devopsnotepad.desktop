@@ -52,7 +52,7 @@ const AddServer = () => {
   }, [name]);
 
   const { isLoading, error, fetchRequest } = useFetch();
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const getResponse = (response) => {
     console.log(response);
