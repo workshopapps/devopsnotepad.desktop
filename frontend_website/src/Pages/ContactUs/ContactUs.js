@@ -275,7 +275,7 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <button className={styles.btn} disabled={isSubmitting}>
+                <button type='submit' className={styles.btn} disabled={isSubmitting}>
                   Send Message
                 </button>
               </div>
