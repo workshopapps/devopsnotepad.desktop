@@ -20,7 +20,7 @@ function Notification({ total }) {
       <section className={styles.main}>
         <div className={styles.contain}>
           <div className={styles.wrapp}>
-            <p className={styles.endpoint}>UUID:</p>
+            <p className={styles.endpoint}>Server Id:</p>
             <p
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
