@@ -16,7 +16,7 @@ function Download() {
         <>
             <Navigation />
             <div className={style.download}>
-                <h2 className={style.download__header}>Opspad Donwloads</h2>
+                <h2 className={style.download__header}>Opspad Download</h2>
 
                 <div className={style.container}>
                     <div className={style.download__card}>
@@ -26,21 +26,21 @@ function Download() {
 
                         <p>Desktop App</p>
 
-                        <a href='https://www.googlecom' className={style.card__item} download>
+                        <a href='#' className={style.card__item} download>
                             <img className={style.device1} src={apple} alt="apple" />
                             <p>Opspad for macOS</p>
 
                             <img className={style.chevron} src={rightChevron} alt="arrow" />
                         </a>
 
-                        <a href='https://www.gg.com' className={style.card__item} download>
+                        <a href='#' className={style.card__item} download>
                             <img className={style.devices} src={windows} alt="WindowsOS" />
                             <p>Opspad for Windows (64-bit)</p>
 
                             <img className={style.chevron} src={rightChevron} alt="arrow" />
                         </a>
 
-                        <a href='https://www.gg.com' className={style.card__item}>
+                        <a href='https://#' className={style.card__item} download>
                             <img className={style.devices} src={windows} alt="WindowsOS" />
                             <p>Opspad for Windows (32-bit)</p>
 
@@ -55,7 +55,7 @@ function Download() {
                         </div>
 
                         <p>Mobile App</p>
-                        <a href='https://www.gg.com' className={style.card__item}>
+                        <a href='https://#' className={style.card__item} download>
                             <img className={style.device4} src={android} alt="AndriodOs" />
                             <p>Opspad for Android</p>
 
