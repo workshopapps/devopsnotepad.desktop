@@ -49,3 +49,15 @@
   width: 20px;
   height: 20px;
 }
+
+@media screen and (max-width: 1068px) {
+  .input[type='password']::placeholder {
+    font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .input[type='password']::placeholder {
+    font-size: .7rem;
+  }
+}
