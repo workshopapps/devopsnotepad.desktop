@@ -80,7 +80,7 @@ const Navigation = () => {
                     Login
                   </Link>
                 )}
-                <Link className={styles.download_link} to='/'>
+                <Link className={styles.download_link} to='/download'>
                   Download App
                 </Link>
               </div>
