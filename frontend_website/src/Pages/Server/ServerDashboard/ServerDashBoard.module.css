@@ -17,3 +17,9 @@ p.note {
   padding: 0.4rem 0.7rem;
   border-radius: 0.7rem;
 }
+
+@media screen and (max-width: 767px) {
+  .server {
+    flex-direction: column;
+  }
+}
