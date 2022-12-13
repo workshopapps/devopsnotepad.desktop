@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -27,15 +27,28 @@ const style = {
 	p: 4,
 };
 function Note() {
+	
+	// Ids
+	const { id } = useParams();
+	const notesId = useId();
+	const notesDateId = useId();
 
-	const {id} = useParams()
+	// Date
+	const time = new Date().toTimeString().slice(0, 5);
+	const date = new Date().toLocaleDateString();
 
-	// State
+	// States
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
+	const [noteTime, setNoteTime] = useState(localStorage.getItem(`${notesId}`));
+	const [noteDate, setNoteDate] = useState(
+		localStorage.getItem(`${notesDateId}`)
+	);
 	const [inputs, setInputs] = useState(note);
 	const [bold, setBold] = useState(false);
 	const [saveMsg, setSaveMsg] = useState(false);
+	const [notification, setNotification] = useState(false);
+	const [startHere, setStartHere] = useState(false)
 
 	// Handlers
 	const handleOpen = () => setOpen(true);
@@ -44,158 +57,204 @@ function Note() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem(`${id}`, inputs);
-		setNote(localStorage.getItem('note'));
+		localStorage.setItem(`${notesId}`, time);
+		localStorage.setItem(`${notesDateId}`, date);
+		setNote(localStorage.getItem(`${id}`));
 		setInputs('');
-		setSaveMsg(true)
+		setNoteTime(localStorage.getItem(`${notesId}`));
+		setNoteDate(localStorage.getItem(`${notesDateId}`));
+		setNotification(false);
+		setSaveMsg(true);
+		setStartHere(localStorage.getItem(`${id}`))
 	};
 	const handleBold = () => setBold((prev) => !prev);
 	const deleteNote = () => {
 		localStorage.removeItem(`${id}`);
+		localStorage.removeItem(`${notesId}`);
+		localStorage.removeItem(`${notesDateId}`);
 		setNote('');
 		setOpen(false);
-		setSaveMsg(false)
+		setSaveMsg(false);
 	};
 	const handleCancel = () => {
 		setOpen(false);
 	};
-
-	// Date
-	const date = new Date().getDate();
-	const hour = new Date().getHours();
-	const min = new Date().getMinutes();
-	const month = new Date().getMonth();
-	const startHere = 'Start note here...';
+	const handleEdit = () => {
+		setSaveMsg(false);
+		setNotification(false);
+		setNote(false)
+		setInputs(localStorage.getItem(`${id}`))
+		setStartHere(localStorage.getItem(`${id}`))
+	};
+	const handleCheckNote = () => {
+		if(note) {
+			setSaveMsg(true);
+		} else {
+		setNotification(true)
+		setSaveMsg(false)
+		}
+	};
 	const boldStyle = { fontWeight: '900', color: '#000000' };
 	return (
 		<div className={notesStyle.notesWrapper}>
-			<div className={notesStyle.notes}>
-				<div className={notesStyle.notesContent}>
-					<div className={notesStyle.notesContentTwo}>
-						<div className={notesStyle.notesFormDiv}>
-							<div className={notesStyle.notesFormIcons}>
-								<img
-									src={Vectorc}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleBold}
-									onFocus={handleBold}
-								/>
-								<img
-									src={Vectorr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectoor}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vectorrr}
-									alt="img"
-									className={notesStyle.notesFormIcon}
-								/>
-								<img
-									src={Vecctor}
-									alt="img"
-									id={notesStyle.deleteIcon}
-									className={notesStyle.notesFormIcon}
-									onMouseDownCapture={handleOpen}
-									onFocus={handleOpen}
-								/>
-							</div>
-							{inputs?.length > 0 ? (
+			<div className={notesStyle.notesContent}>
+				<div className={notesStyle.notesContentOne}>
+					<div className={notesStyle.notesFormDiv}>
+						<div className={notesStyle.notesFormIcons}>
+							<img
+								src={Vectorc}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+								onMouseDownCapture={handleBold}
+								onFocus={handleBold}
+							/>
+							<img
+								src={Vectorr}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vectoor}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vectorrr}
+								alt="img"
+								className={notesStyle.notesFormIcon}
+							/>
+							<img
+								src={Vecctor}
+								alt="img"
+								id={notesStyle.deleteIcon}
+								className={notesStyle.notesFormIcon}
+								onMouseDownCapture={handleOpen}
+								onFocus={handleOpen}
+							/>
+						</div>
+						<div className={notesStyle.noteTextDiv}>
+							<p className={notesStyle.noteText}>
 								<p
-									className={notesStyle.notesLastEdit}
-									id={notesStyle.notesLastEdit}
+									style={{ display: saveMsg ? 'block' : 'none' }}
+									className={notesStyle.savedNoteAlert}
 								>
-									{hour}:{min}pm, {date}-{month}-22
+									Server note:
 								</p>
-							) : (
-								<p className={notesStyle.notesLastEdit}>Last edit</p>
-							)}
-							{note ? (
-								<div className={notesStyle.noteTextDiv}>
+								<p
+									style={{ display: notification ? 'block' : 'none', color: 'red' }}
+									className={notesStyle.savedNoteAlert}
+								>
+									No note found! Create one and try again.
+								</p>
+								<div className={notesStyle.savedNote}>
 									<p
-										className={notesStyle.noteText}
+										className={notesStyle.notesDisplay}
 										style={bold ? boldStyle : {}}
 									>
-										{note}
+										<div style={{ display: saveMsg ? 'block' : 'none' }}>
+											{note}
+										</div>
 									</p>
-								</div>
-							) : (
-								<div>
-									{
-										saveMsg ?
-									<p>Note saved, successfully!</p> :
-									<p>{startHere}</p>
-									}
-									<form
-										className={notesStyle.notesForm}
-										onSubmit={handleSubmit}
-									>
-										<textarea
-											className={notesStyle.notesFormInput}
-											onChange={handleChanges}
-										/>
-										{
-											saveMsg ?
-											<button type="submit" className={notesStyle.notesSaveBtn}>
+									<div id={notesStyle.notesLastEdit}>
+										<p
+											id={notesStyle.notesLastEditText}
+											style={{ display: saveMsg ? 'block' : 'none' }}
+										>
+											{noteTime}, {noteDate}
+										</p>
+									</div>
+									{saveMsg ? (
+										<button
+											type="button"
+											className={notesStyle.notesSaveBtn}
+											id={notesStyle.notesSaveBtn}
+											style={{ display: saveMsg ? 'block' : 'none' }}
+											onClick={handleEdit}
+										>
 											Edit Note
-										</button> :
-										<button type="submit" className={notesStyle.notesSaveBtn}>
-										Save Note
-									</button>
-										}
-									</form>
+										</button>
+									) : (
+										<button
+											type="button"
+											className={notesStyle.notesSaveBtn}
+											id={notesStyle.notesSaveBtn2}
+											onClick={handleCheckNote}
+										>
+											Check Note
+										</button>
+									)}
 								</div>
-							)}
+							</p>
+						</div>
+						<div style={{ display: note ? 'none' : 'block' }}>
+							<form onSubmit={handleSubmit} className={notesStyle.notesForm}>
+								{
+									startHere ? 
+									<textarea
+									className={notesStyle.notesFormInput}
+									id={notesStyle.notesFormInput}
+									onChange={handleChanges}
+								>
+								 {startHere}
+								</textarea> : 
+								<textarea
+								className={notesStyle.notesFormInput}
+								id={notesStyle.notesFormInput}
+								onChange={handleChanges}
+							>
+							 {note}
+							</textarea>
+								}
+								<button type="submit" className={notesStyle.notesSaveBtn}>
+									Save Note
+								</button>
+							</form>
 						</div>
 					</div>
 				</div>
-			</div>
-			<Modal
-				open={open}
-				onClose={handleClose}
-				aria-labelledby="modal-modal-title"
-				aria-describedby="modal-modal-description"
-			>
-				<Box sx={style} className={notesStyle.notesBox}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						<div className={notesStyle.notesDeleteDiv}>
-							<img
-								src={deleteImg}
-								alt="img"
-								className={notesStyle.notesDeleteImg}
-							/>
-							<p className={notesStyle.notesDeleteNotification}>
-								Are you sure you want too delete notes? Notes deleted cannot be
-								retrieved
-							</p>
-							<div className={notesStyle.notesDeleteBtnDiv}>
-								<button
-									type="button"
-									className={notesStyle.notesDeleteBtn}
-									id={notesStyle.notesCancelBtn}
-									onMouseDownCapture={handleCancel}
-									onFocus={handleCancel}
-								>
-									Cancel
-								</button>
-								<button
-									type="button"
-									id={notesStyle.notesDeleteBtn}
-									className={notesStyle.notesDeleteBtn}
-									onMouseDownCapture={deleteNote}
-									onFocus={deleteNote}
-								>
-									Delete
-								</button>
+				<Modal
+					open={open}
+					onClose={handleClose}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description"
+				>
+					<Box sx={style} className={notesStyle.notesBox}>
+						<Typography id="modal-modal-title" variant="h6" component="h2">
+							<div className={notesStyle.notesDeleteDiv}>
+								<img
+									src={deleteImg}
+									alt="img"
+									className={notesStyle.notesDeleteImg}
+								/>
+								<p className={notesStyle.notesDeleteNotification}>
+									Are you sure you want too delete notes? Notes deleted cannot
+									be retrieved
+								</p>
+								<div className={notesStyle.notesDeleteBtnDiv}>
+									<button
+										type="button"
+										className={notesStyle.notesDeleteBtn}
+										id={notesStyle.notesCancelBtn}
+										onMouseDownCapture={handleCancel}
+										onFocus={handleCancel}
+									>
+										Cancel
+									</button>
+									<button
+										type="button"
+										id={notesStyle.notesDeleteBtn}
+										className={notesStyle.notesDeleteBtn}
+										onMouseDownCapture={deleteNote}
+										onFocus={deleteNote}
+									>
+										Delete
+									</button>
+								</div>
 							</div>
-						</div>
-					</Typography>
-				</Box>
-			</Modal>
+						</Typography>
+					</Box>
+				</Modal>
+			</div>
 		</div>
 	);
 }

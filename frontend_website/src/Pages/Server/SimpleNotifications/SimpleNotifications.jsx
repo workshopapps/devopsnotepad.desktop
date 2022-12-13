@@ -3,15 +3,17 @@ import NotificationList from './NotificationList';
 import { BsFillBackspaceFill } from 'react-icons/bs';
 
 import classes from './SimpleNotifications.module.css';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 import LoadingSpinner from './LoadingSpinner';
+import { useContext } from 'react';
+import { UserContext } from '../../../store/UserContext';
 const SimpleNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   // Getting the id to fetch notifications
-  const { id } = useParams();
-  console.log(id);
+  // const { id } = useParams();
+  // console.log(id);
 
   //   Navigating backward functionalitiy
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ const SimpleNotifications = () => {
   const backHandler = () => {
     navigate(`${pathname.slice(0, lastIndex)}`);
   };
-
+  const { addSimpleNotifications } = useContext(UserContext);
   //   Fetching notifications
   const { isLoading, error, fetchRequest: fetchNotifications } = useFetch();
 
@@ -36,6 +38,7 @@ const SimpleNotifications = () => {
         };
       });
       setNotifications(formattedNots);
+      addSimpleNotifications(formattedNots);
     };
     fetchNotifications(
       {
@@ -43,7 +46,7 @@ const SimpleNotifications = () => {
       },
       getNotifications,
     );
-  }, [fetchNotifications]);
+  }, [fetchNotifications, addSimpleNotifications]);
 
   return (
     <section className={classes.notifications}>
