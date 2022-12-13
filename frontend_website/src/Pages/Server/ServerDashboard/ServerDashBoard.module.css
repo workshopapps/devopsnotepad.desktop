@@ -12,6 +12,7 @@ section.main {
 p.note {
   padding: 0;
   margin-bottom: 4px;
+  width: fit-content;
   font-size: 14px;
   font-weight: 700;
   color: #202020;
