@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ValidateEmail, ValidatePassword } from './lib';
+import { ValidateEmail, ValidatePassword, Validateusername } from './lib';
 
 import Button from '../CareerPage/Button/Button';
 import Input from '../Login/Input';
@@ -30,6 +30,18 @@ const Form = (props) => {
     setForm((prev) => {
       return { ...prev, username: e.target.value };
     });
+    const { nameIsValid } = form;
+    const isValid = Validateusername(e.target.value);
+
+    if (nameIsValid && isValid) {
+      setForm((prev) => {
+        return { ...prev, formIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, formIsValid: false };
+      });
+    }
   };
 
   const emailOnChangeHandler = (e) => {

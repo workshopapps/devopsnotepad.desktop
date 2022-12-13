@@ -10,6 +10,7 @@
 	.settingsContainer {
 		padding: 20px !important;
 	}
+
 	.settingsContainer h1 {
 		font-family: 'Inter' !important;
 		font-style: normal;
@@ -130,6 +131,7 @@
 	padding: 1px 70px 80px 70px;
 	flex-basis: 100%;
 }
+
 .settingsContainer h1 {
 	padding-top: 30px;
 	text-align: left;
@@ -142,6 +144,7 @@
 	text-transform: uppercase;
 	margin-bottom: 24px;
 }
+
 .userHead {
 	display: flex;
 	flex-direction: row;
@@ -150,6 +153,7 @@
 	gap: 16px;
 	margin-bottom: 24px;
 }
+
 .userHead h3 {
 	font-family: 'Inter';
 	font-style: normal;
@@ -160,9 +164,11 @@
 	align-items: center;
 	color: #180e25;
 }
+
 .border_top {
 	border-top: 1px solid #efeef0;
 }
+
 .smallHead {
 	font-family: 'Inter';
 	font-style: normal;
@@ -172,25 +178,30 @@
 	color: #827d89;
 	text-transform: capitalize !important;
 }
+
 .account {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding-bottom: 25px;
 }
+
 .account a {
 	text-decoration: none !important;
 }
+
 .account svg {
 	color: #323232;
 	border-width: 1px;
 }
+
 .accountProfile {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 20px;
 }
+
 .accountProfile a {
 	display: flex;
 	color: #180e25;
@@ -201,6 +212,7 @@
 	line-height: 140%;
 	text-decoration: none;
 }
+
 .appSettings_cont {
 	display: flex;
 	align-items: center;
@@ -212,6 +224,7 @@
 	justify-content: space-between;
 	gap: 20px;
 }
+
 .appSettings h3 {
 	display: flex;
 	color: #180e25;
@@ -225,16 +238,19 @@
 	height: 56px;
 	align-items: center;
 }
+
 .appSettings svg {
 	color: #827d89;
 	border-width: 1px;
 }
+
 .appSettings {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 20px;
 }
+
 .appSettings a {
 	display: flex;
 	color: #180e25;
@@ -260,11 +276,13 @@
 	padding: 0 0 0 10px !important;
 	list-style: none !important;
 }
+
 .support li {
 	padding: 17px 0;
 	display: flex;
 	justify-content: space-between;
 }
+
 .support a {
 	text-decoration: none !important;
 	font-family: 'Inter';
