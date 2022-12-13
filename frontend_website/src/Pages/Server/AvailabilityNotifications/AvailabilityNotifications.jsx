@@ -14,14 +14,20 @@ import LoadingSpinner from '../SimpleNotifications/LoadingSpinner';
 import classes from './AvailabilityNotifications.module.css';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../../store/UserContext';
+import { ServerContext } from '../../../store/ServerContext';
+import { useState } from 'react';
 const AvailabiltyNotifications = () => {
   const { availabilityNotifications, addAvailabilityNotifications } =
     useContext(UserContext);
 
+  const { id } = useParams();
+  const { servers } = useContext(ServerContext);
+  const server = servers.find((ser) => ser.id === id);
+
   useEffect(() => {
     const availabiltyNotificationsRef = ref(
       db,
-      `opspad/notifications/60a482ff-76ca-11ed-82ea-50ebf62a0ed9`,
+      `opspad/notifications/${server.userId}`,
     );
 
     onValue(availabiltyNotificationsRef, (snapshot) => {
@@ -46,10 +52,6 @@ const AvailabiltyNotifications = () => {
     });
   }, [addAvailabilityNotifications]);
 
-  //   // Getting the id to fetch notifications
-  //   const { id } = useParams();
-  //   console.log(id);
-
   //   Navigating backward functionalitiy
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -68,16 +70,13 @@ const AvailabiltyNotifications = () => {
       </div>
       <div className={classes.right}>
         <BsFillBackspaceFill className={classes.back} onClick={backHandler} />
-        {!isLoading &&
-          !error.hasError &&
-          availabilityNotifications?.length === 0 && (
-            <div className={classes.no_notifications}>
-              <p>
-                Could not fetch notifications at the moment. Please check your
-                internet
-              </p>
-            </div>
-          )}
+        {availabilityNotifications === null && (
+          <div className={classes.no_notifications}>
+            <p>
+              <LoadingSpinner />
+            </p>
+          </div>
+        )}
         {isLoading && <LoadingSpinner />}
         {error.hasError && (
           <div className={classes.no_notifications}>
