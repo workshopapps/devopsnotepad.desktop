@@ -148,7 +148,11 @@ function ChangePassword() {
 									onChange={handleCurrentPasswordChange}
 								/>
 								<button type="button" onClick={handlePasswordVisibility}>
-									<img src={eye} alt="toggle password visibility" />
+									<img
+										src={eye}
+										alt="toggle password visibility"
+										className={visibility.current ? styles.visible : ''}
+									/>
 								</button>
 							</div>
 						</div>
@@ -161,7 +165,11 @@ function ChangePassword() {
 									onChange={handleNewPasswordChange}
 								/>
 								<button type="button" onClick={handlePasswordVisibility}>
-									<img src={eye} alt="toggle password visibility" />
+									<img
+										src={eye}
+										className={visibility.new ? styles.visible : ''}
+										alt="toggle password visibility"
+									/>
 								</button>
 							</div>
 						</div>
@@ -174,7 +182,11 @@ function ChangePassword() {
 									onChange={handleConfirmPasswordChange}
 								/>
 								<button type="button" onClick={handlePasswordVisibility}>
-									<img src={eye} alt="toggle password visibility" />
+									<img
+										src={eye}
+										alt="toggle password visibility"
+										className={visibility.confirm ? styles.visible : ''}
+									/>
 								</button>
 							</div>
 						</div>
