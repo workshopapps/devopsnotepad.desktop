@@ -2,10 +2,12 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import classes from './Terms.module.css';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 
 function Terms ()  {
   return (
     <>
+    <BackBtn/>
       <div className={classes.box}>
         <h4 className={classes.content__title}>Opspad Terms of Use</h4>
         <p className={classes.child__title}>v1- Update November 17th 2022</p>
@@ -342,7 +344,7 @@ function Terms ()  {
           <div>
             Or email us at{' '}
             <b style={{ color: '#225ad6', cursor: 'pointer' }}>
-              Teamsandpaper@gmail.com
+              <a href="mailto:Teamsandpaper@gmail.com">Teamsandpaper@gmail.com</a>
             </b>
           </div>
         </div>

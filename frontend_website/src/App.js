@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/react";
+import * as Sentry from '@sentry/react';
 import React, { useContext } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
@@ -35,6 +35,7 @@ import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import BestPractice from './Pages/BestPractice/BestPractices';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Settings from './Pages/Settings/MainSettings';
 
 import classes from './App.module.css';
 import ProtectedRoute from './Pages/Server/Protection/ProtectedRoute';
@@ -44,6 +45,8 @@ import AddServer from './Pages/Server/AddServer/AddServer';
 import { UserContext } from './store/UserContext';
 import Server from './Pages/Server/Server';
 import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
+import VerifyEmail from './Pages/SignUp/VerifyEmail';
+import AvailabiltyNotifications from './Pages/Server/AvailabilityNotifications/AvailabilityNotifications';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -76,6 +79,7 @@ function App() {
           <Route path='/integrations' element={<Integration />} />
           <Route path='/faq' exact element={<Faq />} />
           <Route path='/signup' exact element={<SignUp />} />
+          <Route path='/verifyemail' exact element={<VerifyEmail />} />
           <Route path='/login' exact element={<Login />} />
           <Route path='/coming-soon' exact element={<ComingSoon />} />
           <Route path='/careers' exact element={<CareerPage />} />
@@ -137,9 +141,11 @@ function App() {
           <Route path='/forgot-password' exact element={<ForgetPassword />} />
           <Route path='/checkemail' element={<CheckEmail />} />
           <Route path='/verfication' element={<Verification />} />
-          <Route path='/newpassword' element={<NewPassword />} />
+          <Route path='/api/auth/update-password' element={<NewPassword />} />
+          <Route path='/auth/update-password' element={<NewPassword />} />
           <Route path='/success' element={<Success />} />
           <Route path='/best-practices' exact element={<BestPractice />} />
+          <Route path='/settings' exact element={<Settings />} />
 
           {/* Server Dashbord */}
           <Route
@@ -151,12 +157,24 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route exact path='/add-server' element={<AddServer />} />
+          <Route
+            path='/add-server'
+            exact
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <AddServer />
+              </ProtectedRoute>
+            }
+          />
 
           <Route path='/server/:id' element={<ServerDashBoard />} />
           <Route
             path='/server/:id/simple_notifications'
             element={<SimpleNotifications />}
+          />
+          <Route
+            path='/server/:id/availability_notification'
+            element={<AvailabiltyNotifications />}
           />
 
           {/* This will be rendered on going to a path that does not exist in any of the paths above */}

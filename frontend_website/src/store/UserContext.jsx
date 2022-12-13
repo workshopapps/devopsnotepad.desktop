@@ -5,7 +5,11 @@ import { useCallback } from 'react';
 export const UserContext = React.createContext({
   isLoggedIn: false,
   user: {},
+  simpleNotifications: [],
+  availabilityNotifications: null,
   addUserHandler: () => {},
+  addSimpleNotifications: () => {},
+  addAvailabilityNotifications: () => {},
 });
 
 // Creating a component that will provide the context.
@@ -13,22 +17,36 @@ const UserContextProvider = (props) => {
   // Managing states
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [simpleNotifications, setSimpleNotifications] = useState([]);
+  const [availabilityNotifications, setAvailabilityNotifications] =
+    useState(null);
 
   // Functions to updates states. useCallback ensures that the functions are memoized
   const addUserHandler = useCallback((data) => {
     setUser(data);
-    if (data.message === 'Logged in Successfully' || data.success === true) {
+    if (data?.message) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
+  }, []);
+  const addAvailabilityNotifications = useCallback((nots) => {
+    setAvailabilityNotifications(nots);
+  }, []);
+
+  const addSimpleNotifications = useCallback((nots) => {
+    setSimpleNotifications(nots);
   }, []);
 
   // Data that is available in app wide state
   const data = {
     user,
     isLoggedIn,
+    simpleNotifications,
+    availabilityNotifications,
     addUserHandler,
+    addAvailabilityNotifications,
+    addSimpleNotifications,
   };
 
   return (

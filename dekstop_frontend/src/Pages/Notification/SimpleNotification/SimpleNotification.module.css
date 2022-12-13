@@ -3,7 +3,8 @@ section.main {
 	margin-right: 100px;
 	display: flex;
 
-	justify-content: space-between;
+	/* justify-content: space-between; */
+	/* justify-content: center; */
 }
 
 section.main div.container {
@@ -140,7 +141,8 @@ section.main div.wrappe div.card2 p.par {
 section.main div.state {
 	padding-left: 50px;
 	margin-top: 20px;
-	width: 100%;
+	height: 120vh;
+	width: 60%;
 }
 
 section.main div.refill {
@@ -149,6 +151,7 @@ section.main div.refill {
 	justify-content: center;
 	align-items: center;
 	margin-top: 150px;
+	margin-left: 100px;
 }
 
 section.main div.refill p.para {
@@ -180,4 +183,19 @@ section.main div.row {
 	background: transparent;
 	cursor: pointer;
 	margin-left: 3px;
+}
+
+.notiContainer{
+	height: 90%;
+	overflow-y: auto;
+	width: 100%;
+	padding-right: 60px;
+}
+
+.copyIp{
+	padding: 0;
+	outline: none;
+	margin: 0;
+	border: none;
+	background: transparent;
 }

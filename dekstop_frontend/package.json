@@ -15,9 +15,10 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
-		"dayjs": "^1.11.6",
+		"dayjs": "^1.11.7",
 		"electron-is-dev": "^2.0.0",
 		"electron-prebuilt-compile": "^8.2.0",
+		"firebase": "^9.15.0",
 		"formik": "^2.2.9",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
@@ -34,14 +35,14 @@
 	"main": "public/electron.js",
 	"homepage": "./",
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"lint": "eslint . --fix --max-warnings=0",
-		"format": "prettier . --write",
-		"eject": "react-scripts eject",
-		"dev": "electron .",
-		"release": "electron-builder"
+		"react-start": "react-scripts start",
+		"react-build": "react-scripts build",
+		"react-test": "react-scripts test --env=jsdom",
+		"react-eject": "react-scripts eject",
+		"electron-build": "electron-builder",
+		"release": "yarn react-build && electron-builder --publish=always",
+		"build": "yarn react-build && yarn electron-build",
+		"start": "react-scripts start"
 	},
 	"eslintConfig": {
 		"extends": [

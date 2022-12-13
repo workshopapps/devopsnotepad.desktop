@@ -1,0 +1,74 @@
+.user-pagination {
+  &__card {
+    padding: 1rem;
+    width: 80%;
+    margin: 2rem auto 3rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icons--box {
+    flex-basis: 30%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icons--prev,
+  &__icons--next {
+    height: 4rem;
+    width: 4rem;
+    fill: #344444;
+    cursor: pointer;
+    margin: 0 auto;
+
+    &:hover {
+      fill: #102a63;
+    }
+  }
+
+  &__icons--paragraph {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #102a63;
+  }
+
+  &__buttons {
+    flex-basis: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    & button {
+      text-align: center;
+      padding: 0.7rem 1.2rem;
+      margin: 0.5rem;
+      font-size: 1.7rem;
+      font-weight: bold;
+      background-color: rgba(92, 91, 91, 0.92);
+      color: rgb(226, 221, 221);
+      border-radius: 0.5rem;
+      border: 0.25rem solid transparent;
+      cursor: pointer;
+
+      &:hover {
+        border: 0.25rem solid #102a63;
+        background-color: white;
+        color: #102a63;
+      }
+
+      &:focus {
+        border: 0.25rem solid#102a63;
+        background-color: rgba(255, 255, 255, 0.838);
+        color: #102a63;
+      }
+    }
+  }
+}
+
+.not__allowed {
+  cursor: not-allowed !important;
+  fill: rgba(213, 208, 167, 0.745) !important;
+}

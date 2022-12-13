@@ -1,134 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
 .faqContainer {
-  width: 80%;
-  padding: 4% 0;
-  margin: 0 auto;
-  font-family: 'Manrope';
+	position: relative;
+	width: 100%;
+	padding: 0 0 0;
+	margin: 0 auto;
+	font-family: 'Manrope';
 }
 
-.faqHeader {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 64px;
-  line-height: 87px;
-  color: #353535;
+.faqContainer .faqHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80vh;
+	margin-bottom: 100px;
+	background: #102a63;
+	background-image: url(./assets/faqHeader.png);
+	background-position: center;
+	background-size: cover;
+}
+
+.faqHeader p {
+	max-width: 630px;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 56px;
+	line-height: 72px;
+	color: #fff;
+	text-align: center;
 }
 
 .gridContainer {
-  width: 100;
-  margin: 5% 0 0 0;
-  border: 2px solid lightgrey;
-  padding: 2% 3% 3% 3%;
-  display: grid;
-  grid-template-columns: 49% 49%;
-  justify-content: space-between;
-  border-radius: 8px;
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: 50% 45%;
+	justify-content: space-between;
+	margin-bottom: 250px;
+	padding: 0 0% 0 75px;
+	width: 90%;
 }
 
-.grid1Header {
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 75px;
-  color: #202020;
-  display: block;
-}
-
-.btn, .btnColored {
-  font-family: 'Manrope';
-  height: 65px;
-  width: 100%;
-  border-radius: 8px;
-  margin: 3% 0 0 0;
-  background-color: white;
-  text-align: left;
-  padding: 0 0 0 3%;
-  border: 1px solid #cdd8f3;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 33px;
-  color: #143681;
-  cursor: pointer;
-}
-
-.btnColored{
-  background-color: #143681;
-  color: white;
-}
-
+.grid1Header,
 .grid2Header {
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 75px;
-  color: #202020;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	color: #202020;
+	display: block;
+	margin-bottom: 50px;
+}
+
+.btn,
+.btnColored {
+	font-family: 'Manrope';
+	min-height: 65px;
+	width: 100%;
+	border-radius: 8px;
+	margin-bottom: 24px;
+	background-color: white;
+	text-align: left;
+	padding: 3%;
+	border: 1px solid #cdd8f3;
+	color: #143681;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.btnColored {
+	background-color: #143681;
+	color: white;
 }
 
 .ansgrid {
-  margin: 3% 0 0 0;
-  background-color: #e9effd;
-  border-radius: 8px;
-  padding: 3%;
-  height: 450px;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 33px;
-  color: #202020;
-  overflow-y: scroll;
+	margin: 0;
+	background-color: #e9effd;
+	border-radius: 8px;
+	padding: 3%;
+	height: 450px;
+	color: #202020;
+	overflow-y: scroll;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 .desktopView {
-  display: block;
+	display: block;
 }
 
 .mobileview {
-  display: none;
+	display: none;
 }
 
 @media only screen and (max-width: 950px) {
-  .desktopView {
-    display: none;
-  }
+	.gridContainer {
+		width: 100%;
+		margin-bottom: 250px;
+		padding: 0 6%;
+	}
 
-  .mobileview {
-    display: block;
-  }
+	.btn,
+	.btnColored {
+		min-width: 250px;
+		min-height: 60px;
+		max-height: max-content;
+		padding: 3%;
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
 
-  .gridContainer {
-    display: block;
-  }
+@media only screen and (max-width: 610px) {
+	.faqContainer {
+		width: 100%;
+	}
 
-  .grid1Header {
-    display: none;
-  }
+	.faqHeader p {
+		max-width: 630px;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 40px;
+	}
 
-  .buttonContainer {
-    /* width: 600px; */
-    overflow-x: auto;
-    display: flex;
-    /* flex-direction: row; */
-    padding: 0 0 5% 0;
-  }
+	.grid1Header,
+	.grid2Header {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 32px;
+		color: #202020;
+		display: block;
+		margin-bottom: 20px;
+	}
 
-  .btn, .btnColored {
-    min-width: 250px;
-    height: 60px;
-    font-size: 15px;
-    margin: 5% 2% 0 0;
-  }
+	.ansgrid {
+		margin: 0;
+		background-color: #e9effd;
+		border-radius: 8px;
+		padding: 3%;
+		max-height: 350px;
+		color: #202020;
+		overflow-y: scroll;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+	}
 
-  @media only screen and (max-width: 610px) {
-    .faqContainer {
-      width: 95%;
-      padding: 2% 0;
-      margin: 0 auto;
-      font-family: 'Manrope';
-    }
+	.gridContainer {
+		width: 100%;
+		margin-bottom: 250px;
+		padding: 0 6%;
+		display: grid;
+		grid-template-columns: 100%;
+		justify-content: space-between;
+		border-radius: 8px;
+	}
 
-    .faqHeader {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 34px;
-      line-height: 50px;
-      color: #353535;
-    }
-  }
+	.desktopView {
+		display: none;
+	}
+
+	.mobileview {
+		display: block;
+		margin-bottom: 24px;
+	}
 }

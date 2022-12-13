@@ -7,6 +7,12 @@ import { Link, NavLink } from 'react-router-dom';
 // import './Footer.css';
 
 const Footer = () => {
+  const scrollToTOp = () => {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
   return (
     <section data-testid='header__container'>
       <div className={styles.footer}>
@@ -31,6 +37,7 @@ const Footer = () => {
                               className={({ isActive }) =>
                                 isActive ? styles.footer_list : ''
                               }
+                              onClick={scrollToTOp}
                             >
                               {b.title}
                             </NavLink>
@@ -42,7 +49,7 @@ const Footer = () => {
                 ))}
 
                 <div className={`${styles.miUM} ${styles.right}`}>
-                  <h4>DOWNLOAD APP</h4>
+                  <h4>COMING SOON ON</h4>
                   <div className={styles.fDownloadAppLink}>
                     <Link to='/'>
                       <img src={googlePlay} alt='googlePlay' />

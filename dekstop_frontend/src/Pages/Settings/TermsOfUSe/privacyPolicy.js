@@ -1,12 +1,13 @@
 
-/* eslint-disable no-irregular-whitespace */
-/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable */
 import React from 'react';
 import classes from './Terms.module.css';
+import BackBtn from '../../../Components/BackBtn/BackBtn';
 
 function PrivacyPolicy () {
   return (
     <>
+    <BackBtn/>
       <div className={classes.box}>
         <div className={classes.content}>
           <h4 className={classes.content__title}>Opspad Privacy Policy</h4>
@@ -315,7 +316,8 @@ function PrivacyPolicy () {
           <h4>Security of Data</h4>
           <p>
             The security of your data is important to us but remember that no
-            method of transmission over the Internet or method of electronic
+            method of transmission over timport BackBtn from './../../../Components/BackBtn/BackBtn';
+he Internet or method of electronic
             storage is 100% secure. While we strive to use commercially
             acceptable means to protect your Personal Data, we cannot guarantee
             its absolute security.
