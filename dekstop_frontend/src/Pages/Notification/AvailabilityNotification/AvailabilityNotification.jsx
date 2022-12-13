@@ -6,10 +6,10 @@ import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
 import Sidenav from '../../../Components/SideNav/SideNav';
 import BackBtn from '../../../Components/BackBtn/BackBtn';
 import styles from './AvailabilityNotification.module.css';
-import copy from '../assets/copy1.png';
-import Button from '../assets/Button.png';
-import Refill from '../assets/Refill.png';
-import bell from '../assets/bell.png';
+import copy from '../assets/copy1.svg';
+import Button from '../assets/Button.svg';
+import Refill from '../assets/Refill.svg';
+import bell from '../assets/bell.svg';
 import arrowUp from './Assets/arrow_up.svg';
 import arrowDown from './Assets/arrow_down.svg';
 
@@ -21,6 +21,21 @@ function AvailabilityNotification() {
 	const [simpleNotification, setSimpleNotification] = useState([]);
 
 	const { id } = useParams();
+
+	// Functionality for copy Password
+	const handleIpCopy = () => {
+		if (exactServer.ipAddress) {
+			navigator.clipboard.writeText(exactServer.ipAddress);
+			setTimeout(() => {
+				// eslint-disable-next-line
+				alert('IP address copied to clipboard');
+			}, 500);
+		} else {
+			setTimeout(() => {
+				alert('No address to copy');
+			}, 500);
+		}
+	};
 
 	useEffect(() => {
 		const currentServer = JSON.parse(localStorage.getItem('servers'))
@@ -88,10 +103,13 @@ function AvailabilityNotification() {
 					<div className={styles.contain}>
 						<div className={styles.wrapp}>
 							<p className={styles.endpoint}>Address:</p>
-							<p className={styles.point}>my-apache-server/12.13.12.14</p>
+							<p className={styles.point}>
+								{exactServer.ipAddress || 'No IP Address detected'}
+							</p>
 						</div>
-
-						<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+						<button type='button' onClick={handleIpCopy} className={styles.copyIp}>
+							<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+						</button>
 					</div>
 
 					<div className={styles.wrappe}>

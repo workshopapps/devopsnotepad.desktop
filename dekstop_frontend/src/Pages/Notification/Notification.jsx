@@ -5,11 +5,12 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import styles from './Notification.module.css';
 import ServerContext from '../../Components/Context/ServerContext';
-import copy from './assets/copy.png';
-import bell from './assets/bell.png';
+import copy from './assets/copyip.svg';
+import bell from './assets/bell.svg';
 
 function Notification() {
 	const [loading, setLoading] = useState(false);
+	const [exactServer, setExactServer] = useState({});
 	const [throwError, setThrowError] = useState(false);
 	const { servers, serverNotifications, handleServerNotifications } =
 		useContext(ServerContext);
@@ -17,7 +18,23 @@ function Notification() {
 
 	const targetId = (list, Id) => {
 		const target = list.find((server) => server.id === Id);
+		setExactServer(target);
 		return target.serverId;
+	};
+
+	// Functionality for copy ip to clipboard
+	const handleIpCopy = () => {
+		if (exactServer.ipAddress) {
+			navigator.clipboard.writeText(exactServer.ipAddress);
+			setTimeout(() => {
+				// eslint-disable-next-line
+				alert('IP address copied to clipboard');
+			}, 500);
+		} else {
+			setTimeout(() => {
+				alert('No address to copy');
+			}, 500);
+		}
 	};
 
 	// dayjs initializations
@@ -70,10 +87,18 @@ function Notification() {
 				<div className={styles.contain}>
 					<div className={styles.wrapp}>
 						<p className={styles.endpoint}>Address:</p>
-						<p className={styles.point}>my-apache-server/12.13.12.14</p>
-					</div>
 
-					<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+						<p className={styles.point}>
+							{exactServer.ipAddress || 'No IP address detected'}
+						</p>
+					</div>
+					<button
+						type="button"
+						className={styles.copyIp}
+						onClick={handleIpCopy}
+					>
+						<img src={copy} alt="" style={{ cursor: 'pointer' }} />
+					</button>
 				</div>
 				{loading && <h1>Notifications are loading</h1>}
 				{throwError && (
