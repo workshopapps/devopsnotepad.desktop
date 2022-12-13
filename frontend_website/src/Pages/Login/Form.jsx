@@ -139,6 +139,15 @@ const Form = (props) => {
             {`Sign in failed! - ${props.error.message}`}
           </p>
         )}
+        {props.message && <p className={classes.verifyMsg}>
+          {props.message}
+        </p>}
+        {props.error.message === 'Kindly verify your email to continue.' && (
+          <div className={classes.verifyBtnBox}>
+            <Button onClick={() => props.onVerify(form.email)} id='btn__submit' type='submit' className={classes.verifyBtn}>
+              Click to verify
+            </Button>
+          </div>)}
       </div>
 
       <div className={classes.btn__box}>
