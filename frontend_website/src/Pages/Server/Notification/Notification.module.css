@@ -141,6 +141,8 @@ html {
 
   .wrapp {
     flex-basis: 100% !important;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .copy {
