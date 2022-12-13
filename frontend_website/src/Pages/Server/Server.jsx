@@ -5,6 +5,8 @@ import useFetch from '../../hooks/useFetch';
 import { ServerContext } from '../../store/ServerContext';
 import Button from '../CareerPage/Button/Button';
 
+import vector from './assets/Vector.png';
+
 import classes from './Server.module.css';
 function Server() {
   const navigate = useNavigate();
@@ -39,14 +41,16 @@ function Server() {
         )}
         {servers.length === 0 && (
           <section className={classes.empty}>
-            <p className={classes.p}>
-              Kindly click on the button below to create a server.
-            </p>
+            <div className={classes.div}>
+              <img src={vector} alt='empty' className={classes.img} />
+              <h4 className={classes.h4}>Empty Server List</h4>
+              <p className={classes.p}>You do not have a server yet</p>
+            </div>
             <Button
               className={classes.button}
               onClick={() => navigate('/add-server')}
             >
-              Create
+              Create Server
             </Button>
           </section>
         )}

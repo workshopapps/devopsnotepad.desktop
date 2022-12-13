@@ -34,7 +34,7 @@
 }
 
 .input[type='password']::placeholder {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .eye {
@@ -42,7 +42,6 @@
   top: 53px;
   right: 7%;
   transform: translateY(-50%);
-
 }
 
 .eyeSvg svg {
@@ -52,12 +51,12 @@
 
 @media screen and (max-width: 1068px) {
   .input[type='password']::placeholder {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
 @media screen and (max-width: 767px) {
   .input[type='password']::placeholder {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }

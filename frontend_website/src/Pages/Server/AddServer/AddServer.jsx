@@ -2,11 +2,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
-
+import { BiArrowBack } from 'react-icons/bi';
 import SideNav from '../../../Component/SideNav/SideNav';
 import useFetch from '../../../hooks/useFetch';
 import { ServerContext } from '../../../store/ServerContext';
-import Button from '../../CareerPage/Button/Button';
 import LoadingSpinner from '../SimpleNotifications/LoadingSpinner';
 import style from './AddServer.module.css';
 
@@ -126,9 +125,10 @@ const AddServer = () => {
       </div>
       <div className={style.right}>
         <div style={{ width: '60%', textAlign: 'left' }}>
-          <Button onClick={() => navigate('/server')} className={style.button}>
-            Back
-          </Button>
+          <BiArrowBack
+            onClick={() => navigate('/server')}
+            className={style.svg}
+          />
         </div>
         <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
@@ -162,8 +162,9 @@ const AddServer = () => {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
-              }`}
+            className={`${style.btn} ${
+              isBtnDisabled ? style.btnDisabled : style.btnEnabled
+            }`}
           >
             Done
           </button>
