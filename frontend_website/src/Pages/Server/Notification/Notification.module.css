@@ -119,14 +119,16 @@ html {
     flex-direction: column;
     width: auto;
     position: relative;
-    gap: 25px;
+    gap: 20px;
   }
 
   section.main div.contain {
     width: auto;
     padding: 10px;
   }
-
+  .wrapp {
+    flex-basis: 100% !important;
+  }
   .copy {
     width: 30px;
     height: 30px;
@@ -134,33 +136,9 @@ html {
     border: 0;
   }
 
-  section.main div.wrappe div.card {
-    margin-right: 0;
-  }
-
-  section.main div.wrappe div.card div.bell {
-    left: 30px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  section.main div.wrappe {
-    flex-direction: column;
-    width: auto;
-    position: relative;
-    gap: 25px;
-  }
-
-  section.main div.contain {
-    width: auto;
-    padding: 10px;
-  }
-
-  .copy {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    border: 0;
+  .endpoint {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   section.main div.wrappe div.card {
