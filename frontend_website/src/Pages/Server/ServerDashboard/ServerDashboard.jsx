@@ -12,6 +12,7 @@ function ServerDashBoard() {
 
   const params = useParams();
   const server = servers.find((server) => server.id === params.id);
+  console.log(server)
   const { simpleNotifications, availabilityNotifications } =
     useContext(UserContext);
 

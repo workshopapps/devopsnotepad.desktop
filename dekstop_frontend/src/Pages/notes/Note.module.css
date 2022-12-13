@@ -10,10 +10,29 @@
 	margin-left: 0;
 	margin-top: 15px;
 }
-.notesContentwoBtns {
+#notesSaveBtn {
+	width: 100px;
+	height: 30px;
+}
+#notesSaveBtn2 {
+	width: 100px;
+	height: 30px;
+}
+.notesFormIcons {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	margin-top: 20px;
+}
+.notesFormIcon {
+	width: 20px;
+	height: 20px;
+	background: #ededed;
+	border-radius: 2px;
+	border: 1px solid none;
+	padding: 5px;
+	cursor: pointer;
+	margin: 17px 10px;
+	margin-bottom: 15px;
 }
 .savedNoteAlert {
 	margin-top: -10px;
@@ -26,10 +45,11 @@
 }
 .notesDisplay{
 	width: 110%;
-	margin-right: 5%;
+	margin-right: 20%;
 }
 #notesLastEdit{
 	width: 200px;
+	margin-right: -9%;
 }
 #notesLastEditText{
 	background-color: #939394;
@@ -64,45 +84,6 @@
 	border-radius: 4px;
 	cursor: pointer;
 	margin: 10px 0;
-}
-#notesSaveBtn {
-	width: 150px;
-	height: 30px;
-	margin-right: -65px;
-}
-#notesSaveBtn2 {
-	width: 140px;
-	height: 30px;
-	margin-right: -45px;
-}
-.notesContentwoBtn {
-	margin-right: 10px;
-	border: 0;
-	background-color: #fff;
-	cursor: pointer;
-	left: 0%;
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 14px;
-	color: #202020;
-}
-.notesFormIcons {
-	display: flex;
-	align-items: center;
-	margin-top: 20px;
-	margin-left: -3%;
-}
-.notesFormIcon {
-	width: 20px;
-	height: 20px;
-	background: #ededed;
-	border-radius: 2px;
-	border: 1px solid none;
-	padding: 5px;
-	cursor: pointer;
-	margin: 2px 10px;
-	margin-bottom: 15px;
 }
 .noteTextDiv {
 	display: flex;
@@ -171,8 +152,8 @@
 }
 @media screen and (max-width: 1200px) {
 	.notesDisplay{
-		width: 45%;
-		margin-right: 8%;
+		width: 51%;
+		margin-right: 15%;
 	}
 	.notesForm{
 		width: 250%;
@@ -186,7 +167,7 @@
 }
 @media screen and (max-width: 1024px) {
 	.notesDisplay{
-		width: 35%;
+		width: 40%;
 }
 .notesForm{
 	width: 200%;
@@ -194,7 +175,7 @@
 }
 @media screen and (max-width: 939px) {
 	.notesDisplay{
-		width: 50%;
+		width: 55%;
 }
 	.savedNote{
 		display: flex;
@@ -206,6 +187,9 @@
 }
 }
 @media screen and (max-width: 840px) {
+	.notesDisplay{
+		width: 45%;
+}
 	.notesForm{
 		width: 115%;
 }
@@ -221,6 +205,15 @@
 }
 }
 @media screen and (max-width: 360px) {
+	.notesForm{
+		width: 93%;
+		margin-left: -2%;
+}
+}
+@media screen and (max-width: 320px) {
+	.notesDisplay{
+		width: 30%;
+}
 	.notesForm{
 		width: 93%;
 		margin-left: -2%;
