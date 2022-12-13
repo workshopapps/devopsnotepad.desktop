@@ -11,7 +11,10 @@ import { RiCloseCircleFill } from 'react-icons/ri';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
-const onSubmit = async (values, actions) => {
+
+
+const ContactUs = () => {
+  const onSubmit = async (values, actions) => {
   try {
   const  req = await fetch("https://opspad.hng.tech/api/contact-us", {
     method: "POST",
@@ -25,8 +28,6 @@ const res = await req.json()
     console.log({error})
   }
 };
-
-const ContactUs = () => {
   const {
     values,
     errors,
