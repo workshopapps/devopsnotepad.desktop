@@ -92,3 +92,10 @@
 .server_health_critical_container {
 	width: 60px;
 }
+
+@media (max-width: 767px) {
+	.container > h2 {
+		text-align: center;
+		margin-left: 0;
+	}
+}
