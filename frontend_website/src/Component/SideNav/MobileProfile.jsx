@@ -54,7 +54,7 @@ const MenuProfileBar = () => {
           onClick={() => setToggled((prev) => !prev)}
         />
       </div>
-      {!toggled && (
+      {toggled && (
         <div className={styles.profile__text}>
           <Link to='/settings' className={styles.settings}>
             <span>
