@@ -32,7 +32,7 @@ function Home() {
 		} else {
 			document.body.style.overflow = 'auto';
 		}
-	}, []);
+	});
 
 	// function to close authentication process
 	const closeAuth = useCallback(() => {
