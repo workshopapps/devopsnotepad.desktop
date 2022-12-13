@@ -24,8 +24,4 @@ p.note {
   .server {
     flex-direction: column;
   }
-
-  section.main {
-    padding: 3rem 2.75rem;
-  }
 }

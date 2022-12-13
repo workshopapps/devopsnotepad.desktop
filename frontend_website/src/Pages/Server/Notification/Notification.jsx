@@ -2,8 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
 import bell from './assets/bell.png';
+import { MdContentCopy } from 'react-icons/md'
 import { ServerContext } from '../../../store/ServerContext';
-import { MdContentCopy } from 'react-icons/md';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +29,24 @@ function Notification({ total }) {
               {isOpen ? `${server.userId}` : '******-******-******'}
             </p>
           </div>
-          <div className={styles.copy} onClick={copyToClipboard}>
-            <MdContentCopy />
+          <div className={styles.icons}>
+            {isOpen ? (
+              <AiFillEye
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            ) : (
+              <AiFillEyeInvisible
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            )}
+            <div className={styles.copy} onClick={copyToClipboard}>
+              <MdContentCopy />
+            </div>
           </div>
         </div>
+
         <div className={styles.wrappe}>
           <Link to='simple_notifications'>
             <div className={styles.card}>
