@@ -6,7 +6,7 @@ import {
 } from 'react-icons/bs';
 import style from './ServerInfo.module.css';
 
-function ServerInfo({ name, ipAddress, serverHealth, status }) {
+function ServerInfo({ name, ipAddress, status }) {
   return (
     <div className={style.container}>
       <h2>{name}</h2>
