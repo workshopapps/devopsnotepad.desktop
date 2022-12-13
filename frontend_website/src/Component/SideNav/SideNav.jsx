@@ -26,6 +26,7 @@ function SideNav() {
   };
 
   const deleteServerHandler = (server_id) => {
+    console.log(server_id);
     const confirmDelete = prompt(
       'Are you sure you want to delete server? Answer with a Yes or No',
     );
@@ -85,7 +86,7 @@ function SideNav() {
                 </Link>
                 <MdDelete
                   className={styles.name__icon}
-                  onClick={() => deleteServerHandler(null, server.userId)}
+                  onClick={deleteServerHandler.bind(null, server.userId)}
                 />
               </li>
             ))}
