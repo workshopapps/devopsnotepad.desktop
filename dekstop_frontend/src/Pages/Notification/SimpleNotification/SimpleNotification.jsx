@@ -78,7 +78,7 @@ function SimpleNotification() {
 							<p className={styles.endpoint}>Address:</p>
 							{/* <p className={styles.point}>{exactServer.ipAddress.length > 0? exactServer.ipAddress : 'No IP Adress declared'}</p> */}
 							<p className={styles.point}>
-								{exactServer.ipAddress || 'No IP Address declared'}
+								{exactServer.ipAddress || 'No IP Address detected'}
 							</p>
 						</div>
 
@@ -137,19 +137,23 @@ function SimpleNotification() {
 						</div>
 					)}
 
-					<div className={styles.notiContainer}>
-						{simpleNotification.map((notification) => (
-							<div key={notification.id} style={{ display: 'unset' }}>
-								<div className={styles.row}>
-									<img src={green} alt="" style={{ alignSelf: 'center' }} />
+					{simpleNotification.length > 0 && (
+						<div className={styles.notiContainer}>
+							{simpleNotification.map((notification) => (
+								<div key={notification.id} style={{ display: 'unset' }}>
+									<div className={styles.row}>
+										<img src={green} alt="" style={{ alignSelf: 'center' }} />
 
-									<Content notes={notification.logs} />
+										<Content notes={notification.logs} />
 
-									<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
+										<p style={{ fontSize: '12px' }}>
+											{notification.created_at}
+										</p>
+									</div>
 								</div>
-							</div>
-						))}
-					</div>
+							))}
+						</div>
+					)}
 				</div>
 			</section>
 		</div>

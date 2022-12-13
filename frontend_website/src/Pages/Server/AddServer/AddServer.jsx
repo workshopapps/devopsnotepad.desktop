@@ -1,19 +1,37 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
 
 import SideNav from '../../../Component/SideNav/SideNav';
 import useFetch from '../../../hooks/useFetch';
+import { ServerContext } from '../../../store/ServerContext';
 import Button from '../../CareerPage/Button/Button';
+import LoadingSpinner from '../SimpleNotifications/LoadingSpinner';
 import style from './AddServer.module.css';
 
-function AddServer() {
+function ValidateIPaddress(ipaddress) {
+  console.log(ipaddress);
+  if (
+    /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
+      ipaddress,
+    )
+  ) {
+    return true;
+  }
+  return false;
+}
+
+const AddServer = () => {
+  const { addServers } = useContext(ServerContext);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     ipAddress: '',
   });
+  const [ipIsValid, setIpIsValid] = useState(true);
+
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
   const { name, ipAddress } = formData;
@@ -38,8 +56,10 @@ function AddServer() {
   const [success, setSuccess] = useState(false);
 
   const getResponse = (response) => {
-    console.log(response);
-    if (response.sucess === true) {
+    if (
+      response.success === true ||
+      response.message === 'server created successfully'
+    ) {
       setSuccess(true);
     }
   };
@@ -50,6 +70,12 @@ function AddServer() {
 
   function onSubmit(e) {
     e.preventDefault();
+
+    if (!ValidateIPaddress(ipAddress)) {
+      setIpIsValid(false);
+      return;
+    } else setIpIsValid(true);
+
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser === null) {
       navigate('/login');
@@ -74,6 +100,18 @@ function AddServer() {
       name: '',
       ipAddress: '',
     });
+
+    // Fetch all servers again
+    const getResponseData = (data) => {
+      addServers(data);
+    };
+
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/all',
+      },
+      getResponseData,
+    );
   }
 
   // Close success modal and route to dashboard
@@ -86,9 +124,11 @@ function AddServer() {
         <SideNav />
       </div>
       <div className={style.right}>
-        <Button onClick={() => navigate('/server')} className={style.button}>
-          Back
-        </Button>
+        <div style={{ width: '60%', textAlign: 'left' }}>
+          <Button onClick={() => navigate('/server')} className={style.button}>
+            Back
+          </Button>
+        </div>
         <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
           <div className={style.inputs}>
@@ -111,11 +151,12 @@ function AddServer() {
                 value={ipAddress}
                 min='2'
               />
+              {!ipIsValid && (
+                <p className={style.invalid__input}>Invalid Ip Address</p>
+              )}
             </div>
           </div>
-          {isLoading && (
-            <p className={style.loading}> Creating Server, Please wait...</p>
-          )}
+          {isLoading && <LoadingSpinner />}
           <button
             disabled={isBtnDisabled}
             type='submit'
@@ -129,6 +170,6 @@ function AddServer() {
       </div>
     </div>
   );
-}
+};
 
 export default AddServer;

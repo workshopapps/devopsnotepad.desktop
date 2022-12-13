@@ -343,6 +343,92 @@
  *                                     description: success message.
  *                                data:
  *                                     type: object
+ * /auth/resend-verify-email:
+ *     post:
+ *         summary: request for new verification mail
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: The email address of the user
+ * 
+ *         responses:
+ *             '200':
+ *                description: Verification link sent
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             
+ *             '404':
+ *                 description: User Not found
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /auth/delete-user:
+ *     post:
+ *         summary: user delete personal account
+ *         tags:
+ *             - Auth
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: The email address of the user
+ * 
+ *         responses:
+ *             '200':
+ *                description: User Successfully removed
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: success message.
+ *                                data:
+ *                                     type: object
+ *             
+ *             '400':
+ *                 description: Invalid email address
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
  * /server:
  *     patch:
  *         summary: Updates server information for a single user
@@ -452,10 +538,12 @@
  *                         schema:
  *                          type: object
  *                          required:
- *                              - ids
+ *                           - serverIds
  *                          properties:
- *                              name:
+ *                              serverIds:
  *                                  type: array
+ *                                  items:
+ *                                      type: string
  *                                  description: The id's of the selected servers
  * 
  *         responses:
@@ -698,6 +786,48 @@
  *                                     type: object
  *             '400':
  *                 description: Validation error
+ *                 content:
+ *                     application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: fail message.
+ * /notify-me/:
+ *     post:
+ *         summary: users suscribe to a waiting list
+ *         tags:
+ *             - Notify Me
+ *         requestBody:
+ *             description: a json with all fields
+ *             required: true
+ *             content:
+ *                 application/json:
+ *                         schema:
+ *                          type: object
+ *                          required:
+ *                              - email
+ *                          properties:
+ *                              email:
+ *                                  type: string
+ *                                  description: user email address
+ * 
+ *         responses:
+ *             '200':
+ *                description: Successfully subcribed
+ *                content:
+ *                    application/json:
+ *                        schema:
+ *                            type: object
+ *                            properties:
+ *                                message:
+ *                                     type: string
+ *                                     description: successfully subcribed.
+ *                                data:
+ *                                     type: object
+ *             '400':
+ *                 description: Service error
  *                 content:
  *                     application/json:
  *                        schema:
