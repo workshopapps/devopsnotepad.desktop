@@ -26,7 +26,7 @@ function SideNav() {
   };
 
   const deleteServerHandler = (server_id) => {
-    console.log(server_id);
+    console.log(server_id, typeof server_id);
     const confirmDelete = prompt(
       'Are you sure you want to delete server? Answer with a Yes or No',
     );
@@ -38,7 +38,9 @@ function SideNav() {
       {
         url: 'https://opspad.hng.tech/api/server/delete',
         method: 'POST',
-        body: [server_id],
+        body: {
+          serverIds: [server_id],
+        },
         headers: {
           'Content-Type': 'application/json',
         },
