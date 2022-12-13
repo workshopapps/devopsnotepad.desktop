@@ -148,7 +148,9 @@ function Settings() {
 
 	return (
 		<div className={style.settingsPage}>
-			<Sidenav />
+			<div>
+				<Sidenav />
+			</div>
 			<div className={style.settingsContainer}>
 				<h1>Settings</h1>
 

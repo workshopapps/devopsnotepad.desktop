@@ -19,27 +19,35 @@ function SideNav() {
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
-  const { fetchRequest } = useFetch;
+  const { fetchRequest } = useFetch();
 
   const getDeleteResponse = (responseObj) => {
-    console.log(responseObj, '/delete-server')
-  }
+    console.log(responseObj, '/delete-server');
+  };
 
   const deleteServerHandler = (server_id) => {
-    const confirmDelete = prompt('Are you sure you want to delete server?').toLowerCase()
-    if (confirmDelete === 'no') {
-      return
+    console.log(server_id);
+    const confirmDelete = prompt(
+      'Are you sure you want to delete server? Answer with a Yes or No',
+    );
+    if (confirmDelete.toLowerCase() === 'no') {
+      return;
     }
-    fetchRequest({
-      url: 'https://opspad.hng.tech/api/server/delete',
-      method: 'POST',
-      body: [server_id],
-      headers: {
-        'Content-Type': 'application/json',
+    console.log('Starting the delete request');
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/delete',
+        method: 'POST',
+        body: {
+          serverIds: [server_id],
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
       getDeleteResponse,
-    });
-
+    );
+    console.log('I go executed to this place');
     // Getting the updated servers
     const getResponseData = (data) => {
       console.log(data, 'all servers');
@@ -74,13 +82,13 @@ function SideNav() {
         {isOpen && servers.length > 0 && (
           <ul className={styles.ul}>
             {servers.map((server, index) => (
-              <li className={styles.li} key={server.id}>
+              <li className={styles.li} key={server.userId}>
                 <Link to={`/server/${server.id}`} className={styles.li_link}>
                   {server.name}{' '}
                 </Link>
                 <MdDelete
                   className={styles.name__icon}
-                  onClick={() => deleteServerHandler(null, server.id)}
+                  onClick={deleteServerHandler.bind(null, server.userId)}
                 />
               </li>
             ))}

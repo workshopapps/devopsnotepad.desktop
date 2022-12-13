@@ -8,14 +8,12 @@ import Button from '../CareerPage/Button/Button';
 import classes from './Server.module.css';
 function Server() {
   const navigate = useNavigate();
-  // const { servers } = useContext(ServerContext);
   const { servers, addServers } = useContext(ServerContext);
 
   const { fetchRequest } = useFetch();
 
   useEffect(() => {
     const getResponseData = (data) => {
-      console.log(data, 'all servers');
       addServers(data);
     };
     fetchRequest(
