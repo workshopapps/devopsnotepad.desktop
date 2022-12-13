@@ -34,6 +34,7 @@ function SimpleNotification() {
 			}, 500);
 		} else {
 			setTimeout(() => {
+				// eslint-disable-next-line
 				alert('No address to copy');
 			}, 500);
 		}

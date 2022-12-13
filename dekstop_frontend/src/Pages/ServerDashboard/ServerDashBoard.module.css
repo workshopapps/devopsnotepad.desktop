@@ -18,6 +18,12 @@ div.wrapper p.note {
 	margin-bottom: 4px;
 }
 
+@media (max-width: 1150px){
+	div.wrapper{
+		width: 300px;
+	}
+}
+
 @media (max-width: 767px) {
 	section.main {
 		margin-left: 20px;

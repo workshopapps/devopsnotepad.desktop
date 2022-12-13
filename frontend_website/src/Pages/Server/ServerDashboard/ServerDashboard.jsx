@@ -20,7 +20,7 @@ function ServerDashBoard() {
       <SideNav />
       <section className={styles.main}>
         <ServerInfo
-          ipAddress={server?.id}
+          ipAddress={server?.ipAddress}
           name={server?.name}
           status={availabilityNotifications?.status}
         />

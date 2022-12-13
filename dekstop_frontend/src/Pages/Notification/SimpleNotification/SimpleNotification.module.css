@@ -199,3 +199,17 @@ section.main div.row {
 	border: none;
 	background: transparent;
 }
+
+@media (max-width: 1300px){
+	.container{
+		display: none;
+	}
+
+	section.main div.state {
+		padding-left: 50px;
+		margin-top: 20px;
+		height: 120vh;
+		width: 100%;
+	}
+}
+

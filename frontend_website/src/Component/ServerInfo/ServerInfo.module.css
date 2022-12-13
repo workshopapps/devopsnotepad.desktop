@@ -1,7 +1,7 @@
 .container {
-  width: 100%;
+  width: 85%;
   font-family: 'Inter';
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .container > h2 {
@@ -18,13 +18,12 @@
 
 .table {
   width: 100%;
-  padding: 16px 24px;
-  border: 1px solid #c7c7c7b0;
-  border-radius: 10px;
 }
 
 .table > tbody {
-  padding: 1rem;
+  padding: 1.2rem 2rem;
+  border: 1px solid #c7c7c7b0;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

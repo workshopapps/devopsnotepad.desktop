@@ -4,6 +4,7 @@ import styles from './Notification.module.css';
 import copy from './assets/copy.png';
 import bell from './assets/bell.png';
 import { ServerContext } from '../../../store/ServerContext';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 function Notification({ total }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ function Notification({ total }) {
   const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(`${server.id}`);
+    navigator.clipboard.writeText(`${server.userId}`);
   };
 
   return (
@@ -20,21 +21,33 @@ function Notification({ total }) {
       <section className={styles.main}>
         <div className={styles.contain}>
           <div className={styles.wrapp}>
-            <p className={styles.endpoint}>Ip address:</p>
+            <p className={styles.endpoint}>Server Id:</p>
             <p
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server.id}` : '******-******-******'}
+              {isOpen ? `${server.userId}` : '******-******-******'}
             </p>
           </div>
-
-          <img
-            src={copy}
-            alt=''
-            className={styles.copy}
-            onClick={copyToClipboard}
-          />
+          <div className={styles.icons}>
+            {isOpen ? (
+              <AiFillEye
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            ) : (
+              <AiFillEyeInvisible
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            )}
+            <img
+              src={copy}
+              alt=''
+              className={styles.copy}
+              onClick={copyToClipboard}
+            />
+          </div>
         </div>
 
         <div className={styles.wrappe}>
