@@ -40,7 +40,9 @@
     flex-direction: column;
   }
 
-  .empty {
+  .empty,
+  .available {
     width: fit-content;
+    margin-left: 0;
   }
 }
