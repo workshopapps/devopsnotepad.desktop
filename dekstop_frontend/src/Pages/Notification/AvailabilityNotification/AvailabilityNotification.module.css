@@ -264,19 +264,19 @@ section.main div.row {
 
 	.table_container {
 		max-width: 500px;
-		margin: auto;
+		margin: 40px auto 0;
 	}
 
 	.btn {
 		position: absolute;
-		left: 30px;
-		top: 60px;
+		left: 90px;
+		top: 15px;
 	}
 }
 @media (max-width: 550px) {
 	.table_container {
 		max-width: 400px;
-		margin: auto;
+		margin: 40px auto 0;
 	}
 }
 
