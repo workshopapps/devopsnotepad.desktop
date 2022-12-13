@@ -1,22 +1,48 @@
 /* eslint-disable react/button-has-type */
 import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
+import { MdDelete } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from './assets/logo.png';
 import Group from './assets/Group.png';
 import styles from './SideNav.module.css';
-import ServerContext from '../Context/ServerContext';
 import Button from '../../Pages/CareerPage/Button/Button';
 import ProfileBar from '../ProfileBar/ProfileBar';
-// import { ClassNames } from '@emotion/react';
+import { ServerContext } from '../../store/ServerContext';
+import useFetch from '../../hooks/useFetch';
+
 /* eslint-disable camelcase */
 
 function SideNav() {
-  const { servers } = useContext(ServerContext);
+  const { servers, addServers } = useContext(ServerContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggling = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
+  const { fetchRequest } = useFetch;
+
+  const deleteServerHandler = (server_id) => {
+    fetchRequest({
+      url: 'https://opspad.hng.tech/api/server/delete',
+      method: 'POST',
+      body: [server_id],
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // Getting the updated servers
+    const getResponseData = (data) => {
+      console.log(data, 'all servers');
+      addServers(data);
+    };
+    fetchRequest(
+      {
+        url: 'https://opspad.hng.tech/api/server/all',
+      },
+      getResponseData,
+    );
+  };
 
   return (
     <div className={styles.sidenav}>
@@ -41,8 +67,12 @@ function SideNav() {
             {servers.map((server, index) => (
               <li className={styles.li} key={server.id}>
                 <Link to={`/server/${server.id}`} className={styles.li_link}>
-                  {server.name}
+                  {server.name}{' '}
                 </Link>
+                <MdDelete
+                  className={styles.name__icon}
+                  onClick={deleteServerHandler.bind(null, server.id)}
+                />
               </li>
             ))}
           </ul>
