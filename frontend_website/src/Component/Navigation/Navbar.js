@@ -66,7 +66,7 @@ const Navbar = ({ isOpen, setOpen }) => {
               Login
             </Link>
           )}
-          <Link className={styles.download_link} to='/signup'>
+          <Link className={styles.download_link} to='/download'>
             Download App
           </Link>
         </div>
