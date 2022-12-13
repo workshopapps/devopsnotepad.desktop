@@ -7,8 +7,9 @@ html {
 
 .contain {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 62%;
   margin-top: 10px;
   background-color: #f6f9ff;
@@ -101,10 +102,16 @@ html {
 .copy {
   cursor: pointer;
   font-size: 1.7rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
 
 .copy:hover {
-  border: 0.08rem solid rgb(37, 56, 149);
+  color: rgb(37, 56, 149);
 }
 
 .eye {
@@ -145,12 +152,9 @@ html {
     align-items: flex-start;
   }
 
-  .copy {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    border: 0;
-  }
+  /* .copy {
+ 
+  } */
 
   .endpoint {
     font-size: 14px;
