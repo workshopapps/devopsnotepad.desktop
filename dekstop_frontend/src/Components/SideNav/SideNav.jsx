@@ -2,8 +2,8 @@
 import React, { useState, useContext } from 'react';
 import { RiArrowDownSLine, RiAddCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import logo from './assets/logo.png';
-import Group from './assets/Group.png';
+import logo from './assets/logo.svg';
+import Group from './assets/Group.svg';
 import styles from './SideNav.module.css';
 import ServerContext from '../Context/ServerContext';
 /* eslint-disable camelcase */
