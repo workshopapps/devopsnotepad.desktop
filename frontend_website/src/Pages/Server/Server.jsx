@@ -58,12 +58,12 @@ function Server() {
                     <th>Server Status:</th>
                     <td>
                       <p
-                        className={`${availabilityNotifications.status ? `${style.status_active}` : `${style.status_inactive}`
+                        className={`${availabilityNotifications?.status ? `${style.status_active}` : `${style.status_inactive}`
                           }`}
                       >
-                        {availabilityNotifications.status ? 'Up' : 'Down'}
+                        {availabilityNotifications?.status ? 'Up' : 'Down'}
                         <span>
-                          {availabilityNotifications.status ? (
+                          {availabilityNotifications?.status ? (
                             <BsFillCloudArrowUpFill className={style.status_svg} />
                           ) : (
                             <BsFillCloudArrowDownFill className={style.status_svg} />
