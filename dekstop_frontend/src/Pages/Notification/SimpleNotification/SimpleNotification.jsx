@@ -16,15 +16,12 @@ function SimpleNotification() {
 	const [simpleNotification, setSimpleNotification] = useState([]);
 	const { id } = useParams();
 
-
-
 	const getServer = (code) => {
 		const localData = localStorage.getItem('servers');
 		const data = localData ? JSON.parse(localData) : [];
 		const theServer = data.find((server) => server.id === code);
 		setExactServer(theServer);
 	};
-
 
 	useEffect(() => {
 		getServer(id);
@@ -33,8 +30,6 @@ function SimpleNotification() {
 			return localData ? JSON.parse(localData) : [];
 		});
 	}, []);
-
-
 
 	return (
 		<div>
@@ -91,7 +86,7 @@ function SimpleNotification() {
 									{/* <div className={styles.belly}>0</div> */}
 									<img src={bell} alt="" />
 								</div>
-								<p className={styles.noti}>Availability notifications</p>
+								<p className={styles.noti}>Server Notification</p>
 								<p className={styles.par}>
 									Regular notifications about your server.
 								</p>
@@ -109,27 +104,27 @@ function SimpleNotification() {
 						/>{' '}
 					</Link>
 					<div className={styles.notiContainer}>
-					{simpleNotification.length === 0 && (
-						<div className={styles.refill}>
-							<img src={Refill} alt="" />
-							<p className={styles.para}>
-								You have no notifications yet. Activity <br /> from your server
-								wil be displayed here.
-							</p>
-						</div>
-					)}
-
-					{simpleNotification.map((notification) => (
-						<div key={notification.id} style={{ display: 'unset' }}>
-							<div className={styles.row}>
-								<img src={green} alt="" style={{ alignSelf: 'center' }} />
-
-								<Content notes={notification.logs} />
-
-								<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
+						{simpleNotification.length === 0 && (
+							<div className={styles.refill}>
+								<img src={Refill} alt="" />
+								<p className={styles.para}>
+									You have no notifications yet. Activity <br /> from your
+									server wil be displayed here.
+								</p>
 							</div>
-						</div>
-					))}
+						)}
+
+						{simpleNotification.map((notification) => (
+							<div key={notification.id} style={{ display: 'unset' }}>
+								<div className={styles.row}>
+									<img src={green} alt="" style={{ alignSelf: 'center' }} />
+
+									<Content notes={notification.logs} />
+
+									<p style={{ fontSize: '12px' }}>{notification.created_at}</p>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
