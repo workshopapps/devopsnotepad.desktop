@@ -90,3 +90,10 @@ section.main div.wrappe div.card p.par {
 	line-height: 24px;
 	margin: 0;
 }
+.copyIp{
+	padding: 0;
+	outline: none;
+	margin: 0;
+	border: none;
+	background: transparent;
+}
