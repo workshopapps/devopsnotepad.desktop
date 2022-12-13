@@ -90,3 +90,18 @@ section.main div.wrappe div.card p.par {
 	line-height: 24px;
 	margin: 0;
 }
+
+@media screen and (max-width: 767px) {
+
+	section.main div.wrappe {
+		flex-direction: column;
+		width: auto;
+		position: relative;
+		gap: 25px;
+	}
+
+	section.main div.wrappe div.card div.bell {
+		left: 30px;
+	}
+
+}
