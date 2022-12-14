@@ -57,7 +57,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 		// Server Id Validation
 		if (editServerId.length > 1 && editServerId.length < 36) {
 			setServerIdValidation(
-				'Server ID must be valid UUID with at least 36 characters'
+				'Server ID must be valid UUID string with at least 36 characters'
 			);
 		} else {
 			setServerIdValidation('');
@@ -65,7 +65,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 
 		if (editServerId.length >= 36) {
 			if (validateUUID(editServerId) === false) {
-				setServerIdValidation('ServerId must be a valid UUID');
+				setServerIdValidation('ServerId must be a valid UUID string');
 			} else {
 				setServerIdValidation('');
 			}
