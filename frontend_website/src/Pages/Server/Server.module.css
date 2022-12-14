@@ -4,6 +4,25 @@
   display: flex;
 }
 
+.serverListContainer {
+  margin-top: 170px;
+}
+
+.serverListContainer .container {
+  margin: auto;
+}
+
+.serverOption {
+  position: relative;
+}
+
+.serverOption svg {
+  font-size: 20px;
+  position: absolute;
+  top: -16px;
+  right: 0;
+}
+
 .empty,
 .available {
   margin-left: 1rem;
@@ -14,13 +33,16 @@
   justify-content: center;
   align-items: center;
 }
+
 .div {
   text-align: center;
   color: #202020;
 }
+
 .img {
   margin-bottom: 2rem;
 }
+
 .h4 {
   margin: 1.5rem 0;
   font-weight: 600;
@@ -28,6 +50,7 @@
   letter-spacing: 0.1rem;
   color: #202020;
 }
+
 .p {
   margin-top: 1rem;
   font-size: 1.8rem;
@@ -51,6 +74,11 @@
 @media screen and (max-width: 767px) {
   .server {
     flex-direction: column;
+  }
+
+  .serverListContainer {
+    margin-top: 70px;
+    padding: 0 40px;
   }
 
   .empty,
