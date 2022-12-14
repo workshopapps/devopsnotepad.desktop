@@ -23,13 +23,13 @@ function Home() {
 			navigate('/onboarding');
 		}
 		const isAuthenticated = sessionStorage.getItem('isAuthenticated') || false;
-		if (!isAuthenticated){
+		if (!isAuthenticated) {
 			setAuth(true);
 		}
 	});
 
 	useEffect(() => {
-			document.body.style.overflow = 'hidden';
+		document.body.style.overflow = 'hidden';
 	}, []);
 
 	// function to close authentication process
@@ -48,7 +48,9 @@ function Home() {
 		if (!queryValue) {
 			return items;
 		}
-		return items.filter((item) => item.name.includes(queryValue));
+		return items.filter((item) =>
+			item.name.toLowerCase().includes(queryValue.toLowerCase())
+		);
 	}
 	const filteredServers = getFilteredServers(query, servers);
 
@@ -63,6 +65,7 @@ function Home() {
 						<div className={style.search}>
 							<img src={search} alt="filter servers" />
 							<input
+								placeholder="Search for server name"
 								value={query}
 								type="search"
 								onChange={(e) => setQuery(e.target.value)}
@@ -81,6 +84,9 @@ function Home() {
 								serverHealth={server.serverHealth}
 							/>
 						))}
+					{servers && filteredServers.length === 0 && (
+						<p className={style.bad_query}>No servers match your query</p>
+					)}
 				</div>
 			)}
 

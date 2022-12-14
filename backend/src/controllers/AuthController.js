@@ -263,6 +263,20 @@ export default class AuthController {
                 return res.status(400).json(validatePayload.validate(req.body).error.details);
             }
 
+            // retrieve User
+
+            const retrievedUser = await UserRepo.getUserByEmail(req.body.email)
+
+            if (!retrievedUser) {
+                return res.status(400).json({
+                    success: false,
+                    message: "user does not exist",
+                }); 
+            }
+
+            // delete users previos tokens 
+            await EmailVerificationTokenRepo.deleteUsersTokens(retrievedUser.id);
+
             const user = await resendEmailVerification(req.body);
 
             if (user === "User Not found") {
@@ -271,6 +285,7 @@ export default class AuthController {
                     message: user,
                 });
             }
+
 
             return res.status(201).json({
                 success: true,
