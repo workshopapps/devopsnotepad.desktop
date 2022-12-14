@@ -40,8 +40,8 @@ export const Links = [
         slug: '/faq',
       },
       {
-        title: 'Best Practices',
-        slug: '/best-practices',
+        title: 'Podcasts',
+        slug: '/podcasts',
       },
     ],
   },
@@ -63,27 +63,6 @@ export const Links = [
       {
         title: 'Demo',
         slug: '/demo',
-      },
-      {
-        title: 'CSR',
-        slug: '/csr',
-      },
-    ],
-  },
-  {
-    title: 'COMMUNITY',
-    list: [
-      {
-        title: 'DevOps Community',
-        slug: '/devops-community',
-      },
-      {
-        title: 'News Room',
-        slug: '/news-room',
-      },
-      {
-        title: 'Podcasts',
-        slug: '/podcasts',
       },
     ],
   },

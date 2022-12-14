@@ -1,10 +1,10 @@
 .container {
   width: 85%;
   font-family: 'Inter';
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
 }
 
-.container > h2 {
+.container>h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-.table > tbody {
+.table>tbody {
   padding: 1.2rem 2rem;
   border: 1px solid #c7c7c7b0;
   border-radius: 1rem;
@@ -69,9 +69,11 @@
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
 }
+
 .status_active {
   background-color: green;
 }
+
 .status_inactive {
   background-color: rgb(240, 119, 119);
 }
@@ -81,4 +83,34 @@
   margin-left: 1rem;
   height: 2.5rem;
   width: 2.5rem;
+}
+
+.Arrowsvg {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+
+  .pageTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    justify-content: center;
+    position: relative;
+  }
+
+  .Arrowsvg {
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+
+  .container>h2 {
+    margin: 0;
+    font-weight: 600;
+  }
 }

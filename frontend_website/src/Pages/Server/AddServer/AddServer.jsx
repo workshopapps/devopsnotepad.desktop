@@ -124,14 +124,16 @@ const AddServer = () => {
         <SideNav />
       </div>
       <div className={style.right}>
-        <div style={{ width: '60%', textAlign: 'left' }}>
+        <div className={style.PageTop} style={{ width: '60%', textAlign: 'left' }}>
           <BiArrowBack
             onClick={() => navigate('/server')}
             className={style.svg}
           />
         </div>
-        <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
+          <div className={style.h1box}>
+            <h1 className={style.h1}>Create Server</h1>
+          </div>
           <div className={style.inputs}>
             <div className={style.form_control}>
               <label htmlFor='name'>Server Name</label>
@@ -162,9 +164,8 @@ const AddServer = () => {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>
