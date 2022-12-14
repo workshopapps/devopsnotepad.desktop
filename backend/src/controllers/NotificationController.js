@@ -10,7 +10,7 @@ export default class NotificationController {
       /**
        * Validate Request
        */
-
+      console.log(req.body);
       const errors = validatePayload(req);
 
       if (errors && Object.keys(errors).length > 0) throw errors;
