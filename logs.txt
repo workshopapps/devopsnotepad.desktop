@@ -1,0 +1,8 @@
+Dec 13 02:52:42 paralelscorelinux-pc kernel: [417727.692699] pcieport 0000:00:1d.0: AER: Corrected error received: 0000:03:00.0
+Dec 13 02:52:42 paralelscorelinux-pc kernel: [417727.692723] nvme 0000:03:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, (Receiver ID)
+Dec 13 02:52:42 paralelscorelinux-pc kernel: [417727.692732] nvme 0000:03:00.0:   device [15b7:5006] error status/mask=00000001/0000e000
+Dec 13 02:52:42 paralelscorelinux-pc kernel: [417727.692742] nvme 0000:03:00.0:    [ 0] RxErr                  (First)
+Dec 13 02:53:20 paralelscorelinux-pc systemd-udevd[1051860]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.086817] br-57058f878c49: port 1(vethba7c039) entered blocking state
+Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.086838] br-57058f878c49: port 1(vethba7c039) entered disabled state
+Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.087071] device vethba7c039 entered promiscuous mode

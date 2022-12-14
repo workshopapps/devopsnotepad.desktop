@@ -6,7 +6,7 @@
 
 .empty,
 .available {
-  margin-left: 4rem;
+  margin-left: 1rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -14,18 +14,31 @@
   justify-content: center;
   align-items: center;
 }
-
-.p {
+.div {
   text-align: center;
-  font-size: 3rem;
+  color: #202020;
+}
+.img {
+  margin-bottom: 2rem;
+}
+.h4 {
+  margin: 1.5rem 0;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.1rem;
+  color: #202020;
+}
+.p {
+  margin-top: 1rem;
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
 }
 
 .button {
-  margin-top: 2rem;
-  width: 17rem;
-  height: 5rem;
+  margin-top: 4rem;
+  width: 25rem;
   font-size: 1.4rem;
+  padding: 1.3rem 0;
   background: #102a63;
   color: #ffffff;
   transition: all 0.3s;
@@ -35,12 +48,14 @@
   background: #102a63ed;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 767px) {
   .server {
     flex-direction: column;
   }
 
-  .empty {
-    width: fit-content;
+  .empty,
+  .available {
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ServerInfo from '../../../Components/ServerInfo/ServerInfo';
@@ -33,6 +34,7 @@ function SimpleNotification() {
 			}, 500);
 		} else {
 			setTimeout(() => {
+				// eslint-disable-next-line
 				alert('No address to copy');
 			}, 500);
 		}

@@ -3,19 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import SideNav from '../../Component/SideNav/SideNav';
 import useFetch from '../../hooks/useFetch';
 import { ServerContext } from '../../store/ServerContext';
+import { UserContext } from '../../store/UserContext';
 import Button from '../CareerPage/Button/Button';
+import style from '../../Component/ServerInfo/ServerInfo.module.css';
+import vector from './assets/Vector.png';
+import {
+  BsFillCloudArrowDownFill,
+  BsFillCloudArrowUpFill,
+} from 'react-icons/bs';
+import { SlOptionsVertical } from 'react-icons/sl'
 
 import classes from './Server.module.css';
 function Server() {
   const navigate = useNavigate();
-  // const { servers } = useContext(ServerContext);
   const { servers, addServers } = useContext(ServerContext);
+  const { availabilityNotifications } = useContext(UserContext);
 
   const { fetchRequest } = useFetch();
 
   useEffect(() => {
     const getResponseData = (data) => {
-      console.log(data, 'all servers');
       addServers(data);
     };
     fetchRequest(
@@ -33,22 +40,55 @@ function Server() {
       </div>
       <div style={{ flexBasis: '80%' }}>
         {servers.length > 0 && (
-          <section className={classes.available}>
-            <p className={classes.p}>
-              Kindly select a server from the server list.
-            </p>
-          </section>
-        )}
+          (servers?.map((server) => (
+            <div className={style.container}>
+              <div className={style.serverOption}>
+                <SlOptionsVertical />
+              </div>
+              <div className={style.pageTop} >
+                <h2>{server.name}</h2>
+              </div>
+              <table className={style.table}>
+                <tbody>
+                  <tr>
+                    <th>IP Address:</th>
+                    <td className={style.data}>{server.ipAddress}</td>
+                  </tr>
+                  <tr>
+                    <th>Server Status:</th>
+                    <td>
+                      <p
+                        className={`${availabilityNotifications?.status ? `${style.status_active}` : `${style.status_inactive}`
+                          }`}
+                      >
+                        {availabilityNotifications?.status ? 'Up' : 'Down'}
+                        <span>
+                          {availabilityNotifications?.status ? (
+                            <BsFillCloudArrowUpFill className={style.status_svg} />
+                          ) : (
+                            <BsFillCloudArrowDownFill className={style.status_svg} />
+                          )}
+                        </span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ))
+          ))}
         {servers.length === 0 && (
           <section className={classes.empty}>
-            <p className={classes.p}>
-              Kindly click on the button below to create a server.
-            </p>
+            <div className={classes.div}>
+              <img src={vector} alt='empty' className={classes.img} />
+              <h4 className={classes.h4}>Empty Server List</h4>
+              <p className={classes.p}>You do not have a server yet</p>
+            </div>
             <Button
               className={classes.button}
               onClick={() => navigate('/add-server')}
             >
-              Create
+              Create Server
             </Button>
           </section>
         )}

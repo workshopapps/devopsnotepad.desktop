@@ -1,0 +1,267 @@
+.download {
+  padding: 50px 0 100px;
+  margin: 0;
+  width: 100%;
+}
+
+.download__header {
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 72px;
+  color: #202020;
+  text-align: center;
+}
+
+.download .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: #102a63;
+  width: 100%;
+  padding: 40px 0 80px;
+  margin-top: 20px;
+}
+
+.download__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 46px;
+  gap: 24px;
+  width: 380px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.download__card > .device__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #2d6ffd;
+  border-radius: 8px;
+}
+
+.download__card > p {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 20px;
+}
+
+.card__item {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+}
+
+.card__item p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #202020;
+  margin: 0 16px 0 10px;
+}
+
+.card__item .devices {
+  width: 20px;
+  height: 20px;
+}
+
+.card__item .device1 {
+  width: 20px;
+  height: 24px;
+}
+
+.card__item .device4 {
+  width: 18px;
+  height: 22px;
+}
+
+.chevron {
+  width: 8px;
+  height: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .download {
+    padding: 40px 0 80px;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .download__header {
+    font-size:42px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .download .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding: 40px 0 80px;
+    margin-top: 30px;
+  }
+  
+  .download__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 46px;
+    gap: 24px;
+    width: 380px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 8px;
+  }
+  
+  .download__card > .device__frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #2d6ffd;
+    border-radius: 8px;
+  }
+  
+  .download__card > p {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #202020;
+    margin-bottom: 20px;
+  }
+  
+  .card__item {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+  }
+  
+  .card__item p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #202020;
+    margin: 0 16px 0 10px;
+  }
+  
+  .card__item .devices {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .card__item .device1 {
+    width: 20px;
+    height: 24px;
+  }
+  
+  .card__item .device4 {
+    width: 18px;
+    height: 22px;
+  }
+  
+  .chevron {
+    width: 8px;
+    height: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .download {
+    padding: 40px 0 80px;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .download__header {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  
+  .download .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    padding: 30px 24px 70px;
+    margin-top: 20px;
+  }
+  
+  .download__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 32px 36px;
+    gap: 24px;
+    width: 100%;
+    height: max-content;
+    border-radius: 8px;
+  }
+  
+  .download__card > .device__frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #2d6ffd;
+    border-radius: 8px;
+  }
+  
+  .download__card > p {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    color: #202020;
+    margin-bottom: 15px;
+  }
+  
+  .card__item {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+  }
+  
+  .card__item p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #202020;
+    margin: 0 16px 0 10px;
+  }
+  
+  .card__item .devices {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .card__item .device1 {
+    width: 20px;
+    height: 24px;
+  }
+  
+  .card__item .device4 {
+    width: 18px;
+    height: 22px;
+  }
+  
+  .chevron {
+    width: 8px;
+    height: 12px;
+  }
+}
