@@ -63,6 +63,10 @@ export const menuList = [
         title: 'Podcasts',
         slug: '/podcasts',
       },
+      {
+        title: 'Github',
+        slug: 'https://opspad-organization.gitbook.io/opspad-knowledge-base/',
+      },
     ],
   }
 ];
