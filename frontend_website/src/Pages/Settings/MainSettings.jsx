@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { Support } from './data';
@@ -10,7 +10,7 @@ import styles from '../../Component/GlobalPassword/ChangePassword.module.css';
 import { AiFillEyeInvisible, AiOutlineArrowLeft } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai';
 import DeleteAccount from './DeleteAccount/DeleteAccount';
-
+import { UserContext } from '../../store/UserContext';
 
 
 export default function Settings() {
@@ -29,6 +29,8 @@ export default function Settings() {
 		confirmPasswordIsValid: false,
 		confirmPasswordIsFocus: false,
 	});
+	const { addUserHandler } = useContext(UserContext);
+
 
 
 	// For Old Password
@@ -128,7 +130,7 @@ export default function Settings() {
 					'Authorization': `Bearer ${token}`,
 				}
 			});
-			// console.log(response.data);
+			console.log(response.data);
 			alert('Password changed is  Successful');
 			navigate('/');
 
@@ -153,6 +155,7 @@ export default function Settings() {
 			.then(
 				navigate('/'),
 				localStorage.removeItem('loggedInUser'),
+				addUserHandler(null)
 			)
 			.catch((error) => {
 				console.error(error);
