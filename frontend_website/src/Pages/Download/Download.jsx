@@ -55,7 +55,7 @@ function Download() {
                         </div>
 
                         <p>Mobile App</p>
-                        <a href='https://#' className={style.card__item} download>
+                        <a href='https://drive.google.com/file/d/1zbtFzeiZDfPYxm5z5wqayPWG5PZ-QDnP/view?usp=sharing' className={style.card__item} download>
                             <img className={style.device4} src={android} alt="AndriodOs" />
                             <p>Opspad for Android</p>
 
