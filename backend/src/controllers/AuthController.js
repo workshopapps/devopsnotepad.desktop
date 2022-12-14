@@ -154,18 +154,19 @@ export default class AuthController {
     static verifyEmail = async (req, res, next) => {
         try {
             const { token, id } = req.body;
-            if (!token || !id) throw new NotFoundError("invalid link, request for a new link");
 
+            if (!token || !id) throw new NotFoundError("invalid link, request for a new link");
             await EmailVerificationTokenRepo.deleteExpiredTokens();
 
             const storedToken = await EmailVerificationTokenRepo.getToken(id);
 
+            
             if (!storedToken) throw new NotFoundError("Invalid or expired email verification token");
-
+            
             const isValid = await bcrypt.compare(token, storedToken.token);
 
             if (!isValid) {
-                throw new Error("Invalid or expired email verification token");
+                throw new NotFoundError("Invalid or expired email verification token");
             }
 
             await UserRepo.updateById(id, { email_verified: 1 });
@@ -262,6 +263,20 @@ export default class AuthController {
                 return res.status(400).json(validatePayload.validate(req.body).error.details);
             }
 
+            // retrieve User
+
+            const retrievedUser = await UserRepo.getUserByEmail(req.body.email)
+
+            if (!retrievedUser) {
+                return res.status(400).json({
+                    success: false,
+                    message: "user does not exist",
+                }); 
+            }
+
+            // delete users previos tokens 
+            await EmailVerificationTokenRepo.deleteUsersTokens(retrievedUser.id);
+
             const user = await resendEmailVerification(req.body);
 
             if (user === "User Not found") {
@@ -270,6 +285,7 @@ export default class AuthController {
                     message: user,
                 });
             }
+
 
             return res.status(201).json({
                 success: true,

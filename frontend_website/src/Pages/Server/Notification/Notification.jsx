@@ -1,18 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { Link, useParams, Outlet } from 'react-router-dom';
 import styles from './Notification.module.css';
-import copy from './assets/copy.png';
 import bell from './assets/bell.png';
+import { MdContentCopy } from 'react-icons/md'
 import { ServerContext } from '../../../store/ServerContext';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-function Notification({ total }) {
+function Notification({ totalSimple, totalAvailable }) {
   const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
   const params = useParams();
   const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(`${server.userId}`);
+    navigator.clipboard.writeText(`${server.id}`);
   };
 
   return (
@@ -25,23 +26,32 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server.userId}` : '******-******-******'}
+              {isOpen ? `${server?.id}` : '******-******-******'}
             </p>
           </div>
-
-          <img
-            src={copy}
-            alt=''
-            className={styles.copy}
-            onClick={copyToClipboard}
-          />
+          <div className={styles.icons}>
+            {isOpen ? (
+              <AiFillEye
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            ) : (
+              <AiFillEyeInvisible
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={styles.eye}
+              />
+            )}
+            <button className={styles.copy} onClick={copyToClipboard}>
+              <MdContentCopy />
+            </button>
+          </div>
         </div>
 
         <div className={styles.wrappe}>
           <Link to='simple_notifications'>
             <div className={styles.card}>
               <div>
-                <div className={styles.bell}>{total}</div>
+                <div className={styles.bell}>{totalSimple}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Logs</p>
@@ -54,7 +64,7 @@ function Notification({ total }) {
           <Link to='availability_notification'>
             <div className={styles.card}>
               <div>
-                <div className={styles.belly}>1</div>
+                <div className={styles.belly}>{totalAvailable}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Server notification</p>

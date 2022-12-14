@@ -4,6 +4,39 @@
   display: flex;
 }
 
+.serverListContainer {
+  margin: 170px auto 0;
+}
+
+.serverListContainer .serverHeader {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-bottom: 35px;
+}
+
+.serverListContainer .container {
+  margin: auto;
+  position: relative;
+}
+
+.container .pageTopb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.Arrowsvg {
+  display: none;
+}
+
+.pageTopb h2 {
+  margin-bottom: 13px;
+}
+
 .empty,
 .available {
   margin-left: 1rem;
@@ -15,17 +48,34 @@
   align-items: center;
 }
 
-.p {
+.div {
   text-align: center;
-  font-size: 3rem;
+  color: #202020;
+}
+
+.img {
+  margin-bottom: 2rem;
+}
+
+.h4 {
+  margin: 1.5rem 0;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.1rem;
+  color: #202020;
+}
+
+.p {
+  margin-top: 1rem;
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
 }
 
 .button {
-  margin-top: 2rem;
-  width: 17rem;
-  height: 5rem;
+  margin-top: 4rem;
+  width: 25rem;
   font-size: 1.4rem;
+  padding: 1.3rem 0;
   background: #102a63;
   color: #ffffff;
   transition: all 0.3s;
@@ -40,7 +90,25 @@
     flex-direction: column;
   }
 
-  .empty {
-    width: fit-content;
+  .serverListContainer {
+    margin: 70px 0 0;
+    padding: 0 40px;
+  }
+
+  .pageTopb {
+    justify-content: center;
+  }
+
+  .Arrowsvg {
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+
+  .empty,
+  .available {
+    align-items: center;
+    justify-content: center;
   }
 }
