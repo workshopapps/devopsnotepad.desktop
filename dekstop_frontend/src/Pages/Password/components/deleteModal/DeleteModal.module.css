@@ -76,3 +76,9 @@
     background: #102a63;
     color: #fff;
 }
+
+@media (max-width: 650px){
+    .deleteModal{
+        width: 90%;
+    }
+}
