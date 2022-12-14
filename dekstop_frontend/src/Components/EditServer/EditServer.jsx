@@ -56,7 +56,9 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 
 		// Server Id Validation
 		if (editServerId.length > 1 && editServerId.length < 36) {
-			setServerIdValidation('Server ID must have at least 36 characters');
+			setServerIdValidation(
+				'Server ID must be valid UUID with at least 36 characters'
+			);
 		} else {
 			setServerIdValidation('');
 		}
@@ -134,6 +136,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 						<label htmlFor="serverId">Server ID</label>
 						<input
 							required
+							autoComplete="off"
 							onChange={onMutate}
 							type="text"
 							id="editServerId"
@@ -146,6 +149,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 						<label htmlFor="name">Server Name</label>
 						<input
 							required
+							autoComplete="off"
 							onChange={onMutate}
 							type="text"
 							id="editName"
@@ -158,6 +162,7 @@ function EditServer({ closeEditServer, name, ipAddress, serverId, id }) {
 						<label htmlFor="ipAddress">IP Address&#40;Optional&#41; </label>
 						<input
 							onChange={onMutate}
+							autoComplete="off"
 							type="text"
 							id="editIpAddress"
 							value={editIpAddress}
