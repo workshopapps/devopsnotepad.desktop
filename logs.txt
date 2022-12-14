@@ -6,3 +6,23 @@ Dec 13 02:53:20 paralelscorelinux-pc systemd-udevd[1051860]: ethtool: autonegoti
 Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.086817] br-57058f878c49: port 1(vethba7c039) entered blocking state
 Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.086838] br-57058f878c49: port 1(vethba7c039) entered disabled state
 Dec 13 02:53:20 paralelscorelinux-pc kernel: [417765.087071] device vethba7c039 entered promiscuous mode
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1717]: var-lib-docker-containers-52035390f80478fa800db678f8bc1a797e45e813d000675b928568add5b31044-mounts-shm.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1717]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc gnome-shell[1933]: Removing a network device that was not added
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1717]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1717]: var-lib-docker-containers-52035390f80478fa800db678f8bc1a797e45e813d000675b928568add5b31044-mounts-shm.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:15 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:18 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:20 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:18 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:18 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:18 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
+Dec 13 04:13:18 paralelscorelinux-pc systemd[1]: var-lib-docker-overlay2-229d21ba0955f9bfc3ea73e8f9d33c8cb2283e79144bc662992b45ac38b998df-merged.mount: Succeeded.
