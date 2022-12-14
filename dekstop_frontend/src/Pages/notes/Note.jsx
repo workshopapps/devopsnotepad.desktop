@@ -23,7 +23,6 @@ const style = {
 	p: 4,
 };
 function Note() {
-
 	// Ids
 	const { id } = useParams();
 
@@ -70,7 +69,7 @@ function Note() {
 			setSaveMsg(false);
 		}
 	};
-
+   const startHere = 'Start notes here...'
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<div className={notesStyle.notesContent}>
@@ -148,9 +147,8 @@ function Note() {
 										className={notesStyle.notesFormInput}
 										id={notesStyle.notesFormInput}
 										onChange={handleChanges}
-									>
-										Start note here....
-									</textarea>
+										placeholder={startHere}
+									/>
 								)}
 								<button type="submit" className={notesStyle.notesSaveBtn}>
 									Save Note
