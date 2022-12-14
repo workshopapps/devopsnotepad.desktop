@@ -73,7 +73,7 @@ section.wrapper form label {
   font-weight: 500;
   font-size: 14px;
   line-height: 16.94px;
-  margin-bottom: 10px;
+  margin-block: 10px;
 }
 
 section.wrapper form input {
@@ -93,22 +93,26 @@ section.wrapper form .row {
 }
 
 section.wrapper form .row .col {
-  width: 100%;
-  margin: 0;
+  /* width: 100%; */
+  margin: 5px;
+}
+section.wrapper form .row .col .start {
+  margin: 5px;
+  /* border: 3px solid red; */
+}
+section.wrapper form .row .col .end {
+  margin: 5px;
+  /* border: 3px solid red; */
 }
 
 @media screen and (min-width: 768px) {
   section.wrapper form .row {
-    display: flex;
     flex-direction: row;
+    gap: 15px;
   }
 
   section.wrapper form .row .col {
     width: 100%;
-  }
-
-  section.wrapper form div.row div.col input.end {
-    margin-right: 15px;
   }
 
   section.wrapper form {
@@ -153,13 +157,14 @@ section.wrapper form .row .col {
     line-height: 73.76px;
   }
 
-  section.wrapper form .row .end {
-    margin-right: 25px;
+  /* section.wrapper form .row .end {
+    margin-right: 0;
+    border: 2px solid blue;
   }
 
   section.wrapper form .row .start {
     margin: 0;
-  }
+  } */
 }
 
 @media screen and (min-width: 1300px) {
@@ -171,7 +176,7 @@ section.wrapper form .row .col {
 section.wrapper form .col {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 
 section.wrapper form .col textarea.message {
@@ -201,7 +206,7 @@ section.wrapper form .btn {
 }
 
 section.wrapper form .btn:hover {
-  opacity: .86;
+  opacity: 0.86;
 }
 
 section.wrap {
@@ -292,10 +297,10 @@ p.errorMsg {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 12px !important;
-  line-height: 14.52px;
+  /* line-height: 5.52px; */
   color: red;
   white-space: nowrap;
-  margin: 4px 0 12px;
+  margin: 5px 0;
 }
 
 section.support div.col1 div.card {
@@ -366,7 +371,7 @@ section.support div.col1 div.card p.assistance {
 }
 
 .btns:hover {
-  opacity: .86;
+  opacity: 0.86;
 }
 
 @media screen and (min-width: 768px) {

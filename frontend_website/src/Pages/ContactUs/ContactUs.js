@@ -11,21 +11,25 @@ import { RiCloseCircleFill } from 'react-icons/ri';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 
+const onSubmit = async (values, actions) => {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    const req = await fetch('https://opspad.hng.tech/api/contact-us', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: { 'Content-type': 'application/json' },
+    });
+    const res = await req.json();
+    console.log(values);
+    alert('Form Submitted ' + res.message);
+    actions.resetForm();
+  } catch (error) {
+    console.log({ error });
+  }
+};
+
 const ContactUs = () => {
-  const onSubmit = async (values, actions) => {
-    try {
-      const req = await fetch('https://opspad.hng.tech/api/contact-us', {
-        method: 'POST',
-        body: JSON.stringify(values),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      const res = await req.json();
-      alert('Form Submitted');
-      actions.resetForm();
-    } catch (error) {
-      console.log({ error });
-    }
-  };
   const {
     values,
     errors,
@@ -99,7 +103,6 @@ const ContactUs = () => {
 
                 <button
                   className={styles.btns}
-                  style={{ marginTop: '-8px' }}
                   onClick={() =>
                     (window.location = 'mailto:sales@teamsandpaper.com')
                   }
@@ -121,7 +124,6 @@ const ContactUs = () => {
                 </p>
 
                 <button
-                  style={{ marginTop: '68px' }}
                   className={styles.btns}
                   onClick={() =>
                     (window.location = 'mailto:partnerships@teamsandpaper.com')
@@ -164,14 +166,16 @@ const ContactUs = () => {
           </section>
 
           <section className={styles.wrapper}>
-            <form autoComplete='off' onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='firstname'>First Name</label>
+                  <label htmlFor='firstname'>First Name</label>
                   <input
+                    type='text'
                     id='firstname'
                     placeholder='What’s your first name?'
-                    className={styles.end}
+                    name='firstname'
+                    className={styles.start}
                     required
                     onChange={handleChange}
                     value={values.firstname}
@@ -180,19 +184,18 @@ const ContactUs = () => {
 
                   {errors.firstname && touched.firstname && (
                     <p className={styles.errorMsg}>
-                      {' '}
-                      <RiCloseCircleFill /> {errors.firstname}{' '}
+                      <RiCloseCircleFill /> {errors.firstname}
                     </p>
                   )}
                 </div>
 
                 <div className={styles.col}>
-                  <label for='lastname'>Last Name</label>
+                  <label htmlFor='lastname'>Last Name</label>
                   <input
                     type='text'
                     id='lastname'
                     placeholder='What’s your last name?'
-                    className={styles.start}
+                    className={styles.end}
                     required
                     onChange={handleChange}
                     value={values.lastname}
@@ -210,12 +213,12 @@ const ContactUs = () => {
 
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <label for='email'>Email</label>
+                  <label htmlFor='email'>Email</label>
                   <input
                     type='email'
                     id='email'
                     placeholder='What’s your email address?'
-                    className={styles.end}
+                    className={styles.start}
                     required
                     onChange={handleChange}
                     value={values.email}
@@ -231,12 +234,12 @@ const ContactUs = () => {
                 </div>
 
                 <div className={styles.col}>
-                  <label for='subject'>Subject</label>
+                  <label htmlFor='subject'>Subject</label>
                   <input
                     type='text'
                     placeholder='How can we help?'
                     id='subject'
-                    className={styles.start}
+                    className={styles.end}
                     required
                     onChange={handleChange}
                     value={values.subject}
@@ -245,40 +248,34 @@ const ContactUs = () => {
 
                   {errors.subject && touched.subject && (
                     <p className={styles.errorMsg}>
-                      {' '}
-                      <RiCloseCircleFill /> {errors.subject}{' '}
+                      <RiCloseCircleFill /> {errors.subject}
                     </p>
                   )}
                 </div>
               </div>
+              <div className={styles.row}>
+                <div className={styles.col}>
+                  <label for='message'>Your Message</label>
+                  <textarea
+                    id='message'
+                    rows='4'
+                    className={styles.message}
+                    placeholder='Hello there, I would like to talk about how to...'
+                    required
+                    onChange={handleChange}
+                    value={values.message}
+                    onBlur={handleBlur}
+                  ></textarea>
 
-              <div className={styles.col}>
-                <label for='message'>Your Message</label>
-                <textarea
-                  id='message'
-                  rows='4'
-                  className={styles.message}
-                  placeholder='Hello there, I would like to talk about how to...'
-                  required
-                  onChange={handleChange}
-                  value={values.message}
-                  onBlur={handleBlur}
-                ></textarea>
-
-                {errors.message && touched.message && (
-                  <p className={styles.errorMsg}>
-                    {' '}
-                    <RiCloseCircleFill /> {errors.message}{' '}
-                  </p>
-                )}
+                  {errors.message && touched.message && (
+                    <p className={styles.errorMsg}>
+                      <RiCloseCircleFill /> {errors.message}
+                    </p>
+                  )}
+                </div>
               </div>
-
               <div>
-                <button
-                  type='submit'
-                  className={styles.btn}
-                  disabled={isSubmitting}
-                >
+                <button className={styles.btn} disabled={isSubmitting}>
                   Send Message
                 </button>
               </div>
