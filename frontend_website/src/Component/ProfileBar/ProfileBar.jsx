@@ -18,8 +18,8 @@ function ProfileBar() {
 
   const user = isAuthenticated();
   const splitUser = user?.user?.name;
-  const userArr = splitUser.split(' ');
-  const username = userArr.reduce(function (a, b) {
+  const userArr = splitUser?.split(' ');
+  const username = userArr?.reduce(function(a, b) {
     return a.length <= b.length ? a : b;
   });
   const status = 'Online';
@@ -27,7 +27,7 @@ function ProfileBar() {
   const { addUserHandler } = useContext(UserContext);
 
   return (
-    <div className={styles.menu}>
+    <div className={styles.menu} >
       <div className={styles.profile}>
         <div className={styles.profile__img}>
           <img src={dummy} alt='' />

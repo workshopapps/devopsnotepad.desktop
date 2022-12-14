@@ -23,21 +23,25 @@ function Home() {
 			navigate('/onboarding');
 		}
 		const isAuthenticated = sessionStorage.getItem('isAuthenticated') || false;
-		if (!isAuthenticated) setAuth(true);
+		if (!isAuthenticated){
+			setAuth(true);
+		}
 	});
 
 	useEffect(() => {
-		if (auth) {
 			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
-	});
+	}, []);
 
 	// function to close authentication process
 	const closeAuth = useCallback(() => {
 		setAuth(false);
+		document.body.style.overflow = 'unset';
 	});
+
+	// const openShowForm = ()=>{
+	// 	setShowCreateform(true)
+	// 	document.body.style.overflow = "hidden";
+	// }
 
 	// Filter servers displayed by user query
 	function getFilteredServers(queryValue, items) {
