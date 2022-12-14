@@ -154,18 +154,19 @@ export default class AuthController {
     static verifyEmail = async (req, res, next) => {
         try {
             const { token, id } = req.body;
-            if (!token || !id) throw new NotFoundError("invalid link, request for a new link");
 
+            if (!token || !id) throw new NotFoundError("invalid link, request for a new link");
             await EmailVerificationTokenRepo.deleteExpiredTokens();
 
             const storedToken = await EmailVerificationTokenRepo.getToken(id);
 
+            
             if (!storedToken) throw new NotFoundError("Invalid or expired email verification token");
-
+            
             const isValid = await bcrypt.compare(token, storedToken.token);
 
             if (!isValid) {
-                throw new Error("Invalid or expired email verification token");
+                throw new NotFoundError("Invalid or expired email verification token");
             }
 
             await UserRepo.updateById(id, { email_verified: 1 });

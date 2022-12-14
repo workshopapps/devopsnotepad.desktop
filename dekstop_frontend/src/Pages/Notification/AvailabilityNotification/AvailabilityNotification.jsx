@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ref, onValue } from 'firebase/database';
@@ -32,6 +33,7 @@ function AvailabilityNotification() {
 			}, 500);
 		} else {
 			setTimeout(() => {
+				// eslint-disable-next-line
 				alert('No address to copy');
 			}, 500);
 		}

@@ -151,6 +151,7 @@ section.main div.refill {
 	justify-content: center;
 	align-items: center;
 	margin-top: 150px;
+	margin-left: 100px;
 }
 
 section.main div.refill p.para {
@@ -198,3 +199,17 @@ section.main div.row {
 	border: none;
 	background: transparent;
 }
+
+@media (max-width: 1300px){
+	.container{
+		display: none;
+	}
+
+	section.main div.state {
+		padding-left: 50px;
+		margin-top: 20px;
+		height: 120vh;
+		width: 100%;
+	}
+}
+

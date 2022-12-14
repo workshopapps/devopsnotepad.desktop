@@ -48,7 +48,7 @@ function ServerDashBoard() {
 									to={`/server/${server.id}/password`}
 								>
 									{' '}
-									<p className={styles.note}>Password</p>{' '}
+									<p className={styles.note}>Passwords</p>{' '}
 								</NavLink>
 								<NavLink
 									style={({ isActive }) => (isActive ? activeStyle : undefined)}

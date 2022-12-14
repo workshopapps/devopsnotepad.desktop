@@ -90,27 +90,17 @@ export const Support = [
 		items: [
 			{
 			list: 'About',
-			slug: '/about',
+			slug: 'https://opspad.hng.tech/about-us',
 			iconright: <FaChevronRight />,
 			},
 			{
-			list: 'Rate OpsPad',
-			slug: '/',
-			iconright: <FaChevronRight />,
-			},
-			{
-			list: 'Terms & Condition',
-			slug: '/terms-of-use',
-			iconright: <FaChevronRight />,
-			},
-			{
-			list: 'Privacy Policy',
-			slug: '/privacy-policy',
+			list: 'Terms of Service',
+			slug: 'https://opspad.hng.tech/terms-of-service',
 			iconright: <FaChevronRight />,
 			},
 			{
 			list: 'FAQs',
-			slug: '/faq',
+			slug: 'https://opspad.hng.tech/faq',
 			iconright: <FaChevronRight />,
 			}
 		],

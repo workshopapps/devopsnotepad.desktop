@@ -14,7 +14,7 @@ div.sidenav {
   align-items: flex-start;
   background-color: rgb(237, 237, 237);
   padding: 3rem 3rem 2rem;
-  position: fixed;
+  /* position: absolute; */
 }
 
 div.sidenav img.logo {
@@ -136,13 +136,58 @@ div.sidenav button.btn {
   fill: #102a63d5;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 767px) {
   div.sidenav {
-    height: auto;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    padding-top: 80px;
-    position: relative;
+    display: none;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .mobileBox {
+    display: none;
+  }
+}
+.fixed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 0.02rem solid rgba(128, 128, 128, 0.4);
+}
+.nav__svg {
+  height: 3rem;
+  width: 3rem;
+  fill: #102a63;
+  cursor: pointer;
+}
+.nav__svg:hover {
+  opacity: 0.7;
+}
+.mobile {
+  padding: 2rem;
+  position: absolute;
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: calc(100vh - 6.4rem);
+}
+.mobile__box {
+  width: 50%;
+}
+.no__server {
+  text-align: left;
+  margin: 0.5rem 0 0.5rem 2rem;
+}
+
+.mobile__nav {
+  display: flex;
+  align-items: center;
+}
+
+.mobile__img {
+  margin-right: 1rem;
+}
+
+.mobile__p {
+  margin-right: auto;
 }

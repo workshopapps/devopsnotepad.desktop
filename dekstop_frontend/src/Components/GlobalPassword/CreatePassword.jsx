@@ -11,13 +11,14 @@ import PropTypes from 'prop-types';
 import { AiFillInfoCircle } from 'react-icons/ai';
 import styles from '../GlobalPassword/CreatePassword.module.css';
 import Sidenav from './../SideNav/SideNav';
-import Auth  from '../GlobalPassword/Auth'
+import Auth from '../GlobalPassword/Auth';
+import eye from './asset/eye.svg';
 
 function CreatePassword({ closeOnboarding }) {
 	const [password, setPassword] = useState('');
 	const [showAuth, setShowAuth] = useState(false);
+	const [visibility, setVisibility] = useState(false);
 	const navigate = useNavigate();
-	
 
 	CreatePassword.propTypes = {
 		closeOnboarding: PropTypes.node.isRequired,
@@ -49,8 +50,7 @@ function CreatePassword({ closeOnboarding }) {
 		closeOnboarding();
 	};
 
-
-	  const onClick = useCallback(() => {
+	const onClick = useCallback(() => {
 		localStorage.setItem('isNewUser', false);
 		navigate('/');
 	}, []);
@@ -59,26 +59,45 @@ function CreatePassword({ closeOnboarding }) {
 		<>
 			<Sidenav />
 			<div className={styles.crea8_container}>
-			{!showAuth && (
-				<form className={styles.crea8_form} onSubmit={handleSubmit}>
-					<div className={styles.headerContainer}>
-						<h3>Create Password</h3>
-					</div>
-					<div className={styles.crea8_content}>
-						<div className={styles.crea8_Flex}>
-							<label htmlFor="password">Create Password</label>
-							<input type="password" value={password} onChange={handleChange} />
+				{!showAuth && (
+					<form className={styles.crea8_form} onSubmit={handleSubmit}>
+						<div className={styles.headerContainer}>
+							<h3>Create Password</h3>
 						</div>
-						<div className={styles.crea8_p}>
-							<AiFillInfoCircle />
-							<p>
-								Password created would be used to access saved servers in the
-								Application.
-							</p>
+						<div className={styles.crea8_content}>
+							<div className={styles.crea8_Flex}>
+								<label htmlFor="password">Create Password</label>
+
+								<div className={styles.input}>
+									<input
+										type={visibility ? 'text' : 'password'}
+										value={password}
+										onChange={handleChange}
+									/>
+									<button
+										type="button"
+										onClick={() => setVisibility(!visibility)}
+									>
+										<img
+											src={eye}
+											className={visibility ? styles.visi : ''}
+											alt="toggle password visibility"
+										/>
+									</button>
+								</div>
+							</div>
+							<div className={styles.crea8_p}>
+								<AiFillInfoCircle />
+								<p>
+									Password created would be used to access saved servers in the
+									Application.
+								</p>
+							</div>
+							<button type="submit" onClick={() => setShowAuth(true)}>
+								Done
+							</button>
 						</div>
-						<button type="submit" onClick={() => setShowAuth(true)}>Done</button>
-					</div>
-				</form>
+					</form>
 				)}
 				{showAuth && <Auth closeAuth={onClick} />}
 			</div>

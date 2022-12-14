@@ -1,11 +1,12 @@
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
+/* eslint-disable */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styleA from './Auth.module.css';
+import eye from './asset/eye.svg';
 
 function Auth({ closeAuth }) {
 	const [password, setAuthPassword] = useState('');
+	const [visibility, setVisibility] = useState(false);
 
 	// Proptype declaration
 	Auth.propTypes = {
@@ -17,7 +18,6 @@ function Auth({ closeAuth }) {
 		e.preventDefault();
 		// get the current password from local storage
 		const storedPassword = localStorage.getItem('password');
-		console.log(storedPassword);
 
 		// compare the entered password with the one in local storage
 		if (password === storedPassword) {
@@ -42,11 +42,18 @@ function Auth({ closeAuth }) {
 				<div className={styleA.content}>
 					<div className={styleA.control}>
 						<input
-							type="password"
+							type={visibility ? 'text' : 'password'}
 							name="password"
 							value={password}
 							onChange={(e) => setAuthPassword(e.target.value)}
 						/>
+						<button type="button" onClick={() => setVisibility(!visibility)}>
+							<img
+								className={visibility ? styleA.visi : ''}
+								src={eye}
+								alt="toggle password visibility"
+							/>
+						</button>
 					</div>
 					<button className={styleA.btn} type="submit">
 						Confirm

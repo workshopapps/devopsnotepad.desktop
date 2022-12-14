@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-lone-blocks */
 
 import { Link } from 'react-router-dom';
@@ -85,14 +86,16 @@ function Settings() {
 				))}
 
 				{Support.map((support) => (
-					<div className={style.support_cont} key={support.title2}>
-						<small className={style.smallHead}>{support.title}</small>
+					<div className={style.support_cont} key={support.items}>
+						<small className={style.smallHead}>{support.title2}</small>
 						<ul className={style.support}>
 							{support.items.map((items) => (
-								<Link to={items.slug}>
+								<Link to='' onClick={() =>
+								window.open(`${items.slug}`, '_blank')
+							}>
 									<li key={items.list}>
 										{items.list}
-										<a href={items.slug}>{items.iconright}</a>
+										{items.iconright}
 									</li>
 								</Link>
 							))}
