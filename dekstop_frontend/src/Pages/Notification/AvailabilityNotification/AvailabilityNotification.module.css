@@ -264,17 +264,19 @@ section.main div.row {
 
 	.table_container {
 		max-width: 500px;
-		margin: auto;
+		margin: 40px auto 0;
 	}
 
 	.btn {
-		margin-left: 20px;
+		position: absolute;
+		left: 90px;
+		top: 15px;
 	}
 }
 @media (max-width: 550px) {
 	.table_container {
 		max-width: 400px;
-		margin: auto;
+		margin: 40px auto 0;
 	}
 }
 
@@ -306,7 +308,7 @@ section.main div.row {
 	}
 }
 
-.copyIp{
+.copyIp {
 	padding: 0;
 	outline: none;
 	margin: 0;

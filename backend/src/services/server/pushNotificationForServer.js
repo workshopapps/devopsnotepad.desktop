@@ -2,7 +2,7 @@ import admin from 'firebase-admin';
 
 import { getDatabase } from 'firebase-admin/database';
 
-// import { check_ip_status } from '../../utils/index.js';
+import { check_ip_status } from '../../utils/index.js';
 
 import cron from 'node-cron';
 
@@ -163,44 +163,63 @@ export default class PushNotification {
           await Promise.all(
             servers.map(async (server) => {
               try {
-                // // const status = await check_ip_status(server.ipAddress);
+                const status = await check_ip_status(server.ipAddress);
 
                 // const status = true;
 
-                const notifications = await PushNotification.getAvailabilityByNotificationByServer(server.id);
+                const notificationRef = ref.child(`notifications/${server.id}`);
 
-                if (notifications && notifications.length === 1) {
-                  // Availability notifcation exists
-                  const notificationCreatedTime = new Date(notifications[0].created_at);
+                // const notifications = await PushNotification.getAvailabilityByNotificationByServer(server.id);
 
-                  const currentTime = new Date(); // Create a new Date object for the current time
-
-                  const timeDifference = currentTime - notificationCreatedTime;
-
-                  const minutes = Math.round(timeDifference / 60000);
-
-                  const status = minutes <= cronDuration + 1;
-
-                  const notificationRef = ref.child(`notifications/${server.id}`);
-
-                  if (!status) {
-                    console.log(
-                      `Created mins (${minutes}mins) for notification reception exceeds expected minutes (${cronDuration}mins) range. Kindly check potential issue with server`
-                    );
-                    //   Update the server error status
-                    return await updateDataPromise(notificationRef, {
-                      status,
-                      serverId: server.id,
-                      msg: 'server inactive',
-                    });
-                  }
-                  //   Update again to overwrite any previous error state which has been updated by the devops engineer
+                if (!status) {
+                  console.log(`Server is down kindly check potential issue with server`);
+                  //   Update the server error status
                   return await updateDataPromise(notificationRef, {
                     status,
                     serverId: server.id,
-                    msg: 'server active',
+                    msg: 'server unavailable',
                   });
                 }
+                //   Update again to overwrite any previous error state which has been updated by the devops engineer
+                console.log(`Server is available server`);
+                return await updateDataPromise(notificationRef, {
+                  status,
+                  serverId: server.id,
+                  msg: 'server available',
+                });
+
+                // if (notifications && notifications.length === 1) {
+                //   // Availability notifcation exists
+                //   const notificationCreatedTime = new Date(notifications[0].created_at);
+
+                //   const currentTime = new Date(); // Create a new Date object for the current time
+
+                //   const timeDifference = currentTime - notificationCreatedTime;
+
+                //   const minutes = Math.round(timeDifference / 60000);
+
+                //   const status = minutes <= cronDuration + 1;
+
+                //   const notificationRef = ref.child(`notifications/${server.id}`);
+
+                //   if (!status) {
+                //     console.log(
+                //       `Created mins (${minutes}mins) for notification reception exceeds expected minutes (${cronDuration}mins) range. Kindly check potential issue with server`
+                //     );
+                //     //   Update the server error status
+                //     return await updateDataPromise(notificationRef, {
+                //       status,
+                //       serverId: server.id,
+                //       msg: 'server inactive',
+                //     });
+                //   }
+                //   //   Update again to overwrite any previous error state which has been updated by the devops engineer
+                //   return await updateDataPromise(notificationRef, {
+                //     status,
+                //     serverId: server.id,
+                //     msg: 'server active',
+                //   });
+                // }
               } catch (error) {
                 console.error(error);
               }

@@ -34,6 +34,7 @@ function SimpleNotification() {
 			}, 500);
 		} else {
 			setTimeout(() => {
+				// eslint-disable-next-line
 				alert('No address to copy');
 			}, 500);
 		}
@@ -48,11 +49,11 @@ function SimpleNotification() {
 	}, []);
 
 	return (
-		<div>
+		<div className={styles.pageCon}>
 			<Sidenav />
-			<BackBtn />
 			<section className={styles.main}>
 				<div className={styles.container}>
+					<BackBtn />
 					<ServerInfo
 						key={exactServer.id}
 						ipAddress={exactServer.ipAddress}
@@ -100,7 +101,7 @@ function SimpleNotification() {
 							</div>
 							<p className={styles.noti}>Simple Notifications</p>
 							<p className={styles.par}>
-								Regular notifications about your server.
+							Regular log notifications about your server.
 							</p>
 						</div>
 
@@ -113,7 +114,7 @@ function SimpleNotification() {
 								</div>
 								<p className={styles.noti}>Server Notification</p>
 								<p className={styles.par}>
-									Regular notifications about your server.
+								Notification about your server&apos;s availability.
 								</p>
 							</div>{' '}
 						</Link>
@@ -124,6 +125,7 @@ function SimpleNotification() {
 					<Link to={`/server/${id}/notification`}>
 						<img
 							src={Button}
+							className={styles.btn}
 							alt=""
 							style={{ cursor: 'pointer', marginBottom: '15px' }}
 						/>{' '}
@@ -147,7 +149,7 @@ function SimpleNotification() {
 
 										<Content notes={notification.logs} />
 
-										<p style={{ fontSize: '12px' }}>
+										<p className={styles.timeStamp} style={{ fontSize: '12px' }}>
 											{notification.created_at}
 										</p>
 									</div>
