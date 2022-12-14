@@ -25,7 +25,7 @@ function ServerDashBoard() {
           status={availabilityNotifications?.status}
         />
         <p className={styles.note}>Notifications</p>
-        <Notification total={simpleNotifications.length} />
+        <Notification totalSimple={simpleNotifications.length} totalAvailable={availabilityNotifications.length} />
       </section>
     </div>
   );
