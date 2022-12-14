@@ -10,13 +10,14 @@ section.main {
 }
 
 p.note {
-  width: fit-content;
-  color: #8a8787 !important;
+  padding: 0;
   margin-bottom: 4px;
-  border: 0.1rem solid #101e4391 !important;
-  padding: 0.4rem 0.7rem;
-  border-radius: 0.7rem;
-  opacity: 0.7;
+  font-size: 14px;
+  font-weight: 700;
+  color: #202020;
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: 1px solid #202020;
 }
 
 @media screen and (max-width: 767px) {
