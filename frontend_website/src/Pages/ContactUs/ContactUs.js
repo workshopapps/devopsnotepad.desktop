@@ -15,7 +15,7 @@ const onSubmit = async (values, actions) => {
   try {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const req = await fetch('http://localhost:5000/contact-us', {
+    const req = await fetch('https://opspad.hng.tech/api/contact-us', {
       method: 'POST',
       body: JSON.stringify(values),
       headers: { 'Content-type': 'application/json' },
