@@ -31,13 +31,10 @@ const Navbar = ({ isOpen, setOpen }) => {
                   }`}
                 >
                   {menu.subMenu.map((sMenu, i) => {
-                    if (sMenu.title === "Github") {
-                      window.open(sMenu.slug, "_blank")
-                    }
                     return (
                     <li key={i}>
                       <NavLink
-                        to={sMenu.slug.length > 20 ? "" : sMenu.slug}
+                        to={sMenu.slug}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
