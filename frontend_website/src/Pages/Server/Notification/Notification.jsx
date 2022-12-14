@@ -6,14 +6,14 @@ import { MdContentCopy } from 'react-icons/md'
 import { ServerContext } from '../../../store/ServerContext';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-function Notification({ total }) {
+function Notification({ totalSimple, totalAvailable }) {
   const [isOpen, setIsOpen] = useState(false);
   const { servers } = useContext(ServerContext);
   const params = useParams();
   const server = servers.find((server) => server.id === params.id);
 
   const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(`${server.userId}`);
+    navigator.clipboard.writeText(`${server.id}`);
   };
 
   return (
@@ -26,7 +26,7 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server?.userId}` : '******-******-******'}
+              {isOpen ? `${server?.id}` : '******-******-******'}
             </p>
           </div>
           <div className={styles.icons}>
@@ -51,7 +51,7 @@ function Notification({ total }) {
           <Link to='simple_notifications'>
             <div className={styles.card}>
               <div>
-                <div className={styles.bell}>{total}</div>
+                <div className={styles.bell}>{totalSimple}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Logs</p>
@@ -64,12 +64,12 @@ function Notification({ total }) {
           <Link to='availability_notification'>
             <div className={styles.card}>
               <div>
-                <div className={styles.belly}>1</div>
+                <div className={styles.belly}>{totalAvailable || 0}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Server notification</p>
               <p className={styles.par}>
-                Regular notifications about your server.
+                Check your servers availabity.
               </p>
             </div>{' '}
           </Link>
