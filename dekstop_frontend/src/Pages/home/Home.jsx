@@ -59,6 +59,7 @@ function Home() {
 						<div className={style.search}>
 							<img src={search} alt="filter servers" />
 							<input
+								placeholder="Search for server name"
 								value={query}
 								type="search"
 								onChange={(e) => setQuery(e.target.value)}
