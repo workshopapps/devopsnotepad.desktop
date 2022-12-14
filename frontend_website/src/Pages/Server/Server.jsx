@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SideNav from '../../Component/SideNav/SideNav';
 import useFetch from '../../hooks/useFetch';
 import { ServerContext } from '../../store/ServerContext';
@@ -14,8 +14,10 @@ import {
 import { SlOptionsVertical } from 'react-icons/sl'
 
 import classes from './Server.module.css';
+import ServerOptionsModal from '../../Component/ServerOptionsModal/ServerOptionsModal';
 function Server() {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false)
   const { servers, addServers } = useContext(ServerContext);
   const { availabilityNotifications } = useContext(UserContext);
 
@@ -41,12 +43,15 @@ function Server() {
       <div className={classes.serverListContainer} style={{ flexBasis: '80%' }}>
         {servers.length > 0 && (
           (servers?.map((server) => (
-            <div className={style.container}>
-              <div className={style.pageTop}>
-                <div className={style.serverOption}>
-                  <SlOptionsVertical />
+            <Link to={`/server/${server.id}`}>
+              <div className={style.container}>
+                <div className={`${style.pageTop} ${classes.pageTopb}`}>
+                  <div className={style.serverOption} onClick={() => setShowModal()}>
+                    <SlOptionsVertical />
+                  </div>
+                  <h2>{server.name}</h2>
+                  {showModal && (<ServerOptionsModal />)}
                 </div>
-                <h2>{server.name}</h2>
                 <table className={style.table}>
                   <tbody>
                     <tr>
@@ -74,26 +79,27 @@ function Server() {
                   </tbody>
                 </table>
               </div>
-              ))
+            </Link>
+          ))
           ))}
-              {servers.length === 0 && (
-                <section className={classes.empty}>
-                  <div className={classes.div}>
-                    <img src={vector} alt='empty' className={classes.img} />
-                    <h4 className={classes.h4}>Empty Server List</h4>
-                    <p className={classes.p}>You do not have a server yet</p>
-                  </div>
-                  <Button
-                    className={classes.button}
-                    onClick={() => navigate('/add-server')}
-                  >
-                    Create Server
-                  </Button>
-                </section>
-              )}
+        {servers.length === 0 && (
+          <section className={classes.empty}>
+            <div className={classes.div}>
+              <img src={vector} alt='empty' className={classes.img} />
+              <h4 className={classes.h4}>Empty Server List</h4>
+              <p className={classes.p}>You do not have a server yet</p>
             </div>
+            <Button
+              className={classes.button}
+              onClick={() => navigate('/add-server')}
+            >
+              Create Server
+            </Button>
+          </section>
+        )}
+      </div>
     </div>
-      );
+  );
 }
 
-      export default Server;
+export default Server;

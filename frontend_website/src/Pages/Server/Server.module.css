@@ -12,6 +12,10 @@
   margin: auto;
 }
 
+.container .pageTopb {
+  justify-content: flex-start;
+}
+
 .serverOption {
   position: relative;
 }
