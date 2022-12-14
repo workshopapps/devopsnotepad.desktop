@@ -199,3 +199,49 @@ section.main div.row {
 	border: none;
 	background: transparent;
 }
+
+@media (max-width: 1300px){
+	.container{
+		display: none;
+	}
+
+	section.main div.state {
+		padding-left: 50px;
+		margin-top: 20px;
+		height: 120vh;
+		width: 100%;
+	}
+}
+
+@media (max-width: 950px){
+	section.main{
+		margin-left: 300px ;
+		margin-right: 0;
+		width: unset;
+	}
+
+	div.state{
+		padding-left: none;
+	}
+
+	.notiContainer{
+		width: 80%;
+	}
+
+}
+
+@media(max-width: 767px){
+	section.main{
+		margin-left: 0;
+	}
+
+	.btn {
+		left: 80px;
+		top: 14px;
+		position: absolute;
+	}
+
+	.notiContainer{
+		margin-top: 50px;
+	}
+}

@@ -60,35 +60,9 @@ export const menuList = [
         slug: '/faq',
       },
       {
-        title: 'CSR',
-        slug: '/csr',
-      },
-      {
-        title: 'Best Practices',
-        slug: '/best-practices',
-      },
-    ],
-  },
-  {
-    title: 'Community',
-    type: 'button',
-    subMenu: [
-      {
-        title: 'DevOps Community',
-        slug: '/devops-community',
-      },
-      {
-        title: 'News Room',
-        slug: '/news-room',
-      },
-      {
         title: 'Podcasts',
         slug: '/podcasts',
       },
-      {
-        title: 'Term Of Service',
-        slug: '/terms-of-service',
-      },
     ],
-  },
+  }
 ];

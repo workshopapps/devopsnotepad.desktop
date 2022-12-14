@@ -33,6 +33,7 @@ function AvailabilityNotification() {
 			}, 500);
 		} else {
 			setTimeout(() => {
+				// eslint-disable-next-line
 				alert('No address to copy');
 			}, 500);
 		}
@@ -123,7 +124,7 @@ function AvailabilityNotification() {
 								</div>
 								<p className={styles.noti}>Simple Notifications</p>
 								<p className={styles.par}>
-									Regular notifications about your server.
+								Regular log notifications about your server.
 								</p>
 							</div>{' '}
 						</Link>
@@ -134,7 +135,7 @@ function AvailabilityNotification() {
 							</div>
 							<p className={styles.noti}>Server Notification</p>
 							<p className={styles.par}>
-								Regular notifications about your server.
+							Notification about your server&apos;s availability.
 							</p>
 						</div>
 					</div>
