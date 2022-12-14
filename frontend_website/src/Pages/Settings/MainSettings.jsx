@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { Support } from './data';
@@ -9,10 +9,11 @@ import Sidenav from '../../Component/SideNav/SideNav';
 import styles from '../../Component/GlobalPassword/ChangePassword.module.css';
 import { AiFillEyeInvisible, AiOutlineArrowLeft } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai';
+import DeleteAccount from './DeleteAccount/DeleteAccount';
+import { UserContext } from '../../store/UserContext';
 
 
-
-function Settings() {
+export default function Settings() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [showNewPassword, setShowNewPassword] = useState(false);
 	const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -28,6 +29,8 @@ function Settings() {
 		confirmPasswordIsValid: false,
 		confirmPasswordIsFocus: false,
 	});
+	const { addUserHandler } = useContext(UserContext);
+
 
 
 	// For Old Password
@@ -109,14 +112,13 @@ function Settings() {
 	const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
 
 	const user = isAuthenticated();
-	const email = user.user.email;
-	const username = user.user.name;
-	const token = user.token;
+	const email = user?.user?.email;
+	const username = user?.user?.name;
+	const token = user?.token;
 
 	// Submit handler function
 	async function changePassword(e) {
 		e.preventDefault();
-		console.log("Button is working")
 
 		try {
 			const response = await axios.post(API_URL, {
@@ -129,7 +131,6 @@ function Settings() {
 				}
 			});
 			console.log(response.data);
-			console.log(response, "This is working")
 			alert('Password changed is  Successful');
 			navigate('/');
 
@@ -137,8 +138,35 @@ function Settings() {
 			console.error(error);
 		}
 
-
 	}
+
+	async function deleteUser(e) {
+		e.preventDefault();
+
+		const headers = {
+			'Content-Type': 'application/json',
+		};
+
+		await axios
+			.post('https://opspad.hng.tech/api/auth/delete-user', {
+				"email": email
+			}, headers)
+			.then((response) => response)
+			.then(
+				navigate('/'),
+				localStorage.removeItem('loggedInUser'),
+				addUserHandler(null)
+			)
+			.catch((error) => {
+				console.error(error);
+			});
+
+		return null;
+	}
+
+
+
+
 	return (
 		<div className={style.settingsPage}>
 			{/* <div>
@@ -259,9 +287,9 @@ function Settings() {
 						</ul>
 					</div>
 				))}
+
+				<DeleteAccount handleDelete={deleteUser} />
 			</div>
 		</div >
 	);
 }
-
-export default Settings;
