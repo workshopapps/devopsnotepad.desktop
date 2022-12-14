@@ -8,6 +8,14 @@
   margin: 170px auto 0;
 }
 
+.serverListContainer .serverHeader {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-bottom: 35px;
+}
+
 .serverListContainer .container {
   margin: auto;
   position: relative;
@@ -17,21 +25,17 @@
   display: flex;
   align-items: center;
   margin-bottom: 35px;
-  position: relative;
   justify-content: flex-start;
+  position: relative;
 }
 
-.pageTopb div {
-  position: absolute;
-  right: 0;
+.Arrowsvg {
+  display: none;
 }
 
-/* .serverOption svg {
-  font-size: 20px;
-  position: absolute;
-  top: -16px;
-  right: 0;
-} */
+.pageTopb h2 {
+  margin-bottom: 13px;
+}
 
 .empty,
 .available {
@@ -87,8 +91,19 @@
   }
 
   .serverListContainer {
-    margin-top: 70px;
+    margin: 70px 0 0;
     padding: 0 40px;
+  }
+
+  .pageTopb {
+    justify-content: center;
+  }
+
+  .Arrowsvg {
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
   }
 
   .empty,

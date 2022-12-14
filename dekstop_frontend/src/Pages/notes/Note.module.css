@@ -52,8 +52,8 @@
 	margin-right: -9%;
 }
 #notesLastEditText{
-	background-color: #939394;
-	color: #fff;
+	color: #939394;
+	background-color: #fff;
 	width: fit-content;
 }
 .notesForm{
@@ -192,6 +192,9 @@
 }
 	.notesForm{
 		width: 115%;
+}
+.notesBox{
+		width: 90%;
 }
 }
 @media screen and (max-width: 480px) {
