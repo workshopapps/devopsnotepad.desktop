@@ -101,7 +101,7 @@ function SimpleNotification() {
 							</div>
 							<p className={styles.noti}>Simple Notifications</p>
 							<p className={styles.par}>
-								Regular notifications about your server.
+							Regular log notifications about your server.
 							</p>
 						</div>
 
@@ -114,7 +114,7 @@ function SimpleNotification() {
 								</div>
 								<p className={styles.noti}>Server Notification</p>
 								<p className={styles.par}>
-									Regular notifications about your server.
+								Notification about your server&apos;s availability.
 								</p>
 							</div>{' '}
 						</Link>
