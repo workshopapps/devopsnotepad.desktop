@@ -24,6 +24,9 @@
 	margin-left: -3px;
 }
 
-@media (max-width: 1300px){
-	
+@media (max-width: 950px){
+	.pnote{
+		width: 70%;
+	}
 }
+
