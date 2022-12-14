@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SideNav from '../../Component/SideNav/SideNav';
 import useFetch from '../../hooks/useFetch';
 import { ServerContext } from '../../store/ServerContext';
@@ -14,8 +14,10 @@ import {
 import { SlOptionsVertical } from 'react-icons/sl'
 
 import classes from './Server.module.css';
+import ServerOptionsModal from '../../Component/ServerOptionsModal/ServerOptionsModal';
 function Server() {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false)
   const { servers, addServers } = useContext(ServerContext);
   const { availabilityNotifications } = useContext(UserContext);
 
@@ -38,42 +40,45 @@ function Server() {
       <div>
         <SideNav />
       </div>
-      <div style={{ flexBasis: '80%' }}>
+      <div className={classes.serverListContainer} style={{ flexBasis: '80%' }}>
         {servers.length > 0 && (
           (servers?.map((server) => (
             <div className={style.container}>
-              <div className={style.serverOption}>
-                <SlOptionsVertical />
-              </div>
-              <div className={style.pageTop} >
+              <div className={classes.pageTopb}>
+                <div className={style.serverOption} onClick={() => setShowModal(!showModal)}>
+                  <SlOptionsVertical />
+                </div>
                 <h2>{server.name}</h2>
+                {showModal && (<ServerOptionsModal />)}
               </div>
-              <table className={style.table}>
-                <tbody>
-                  <tr>
-                    <th>IP Address:</th>
-                    <td className={style.data}>{server.ipAddress}</td>
-                  </tr>
-                  <tr>
-                    <th>Server Status:</th>
-                    <td>
-                      <p
-                        className={`${availabilityNotifications?.status ? `${style.status_active}` : `${style.status_inactive}`
-                          }`}
-                      >
-                        {availabilityNotifications?.status ? 'Up' : 'Down'}
-                        <span>
-                          {availabilityNotifications?.status ? (
-                            <BsFillCloudArrowUpFill className={style.status_svg} />
-                          ) : (
-                            <BsFillCloudArrowDownFill className={style.status_svg} />
-                          )}
-                        </span>
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <Link to={`/server/${server.id}`}>
+                <table className={style.table}>
+                  <tbody>
+                    <tr>
+                      <th>IP Address:</th>
+                      <td className={style.data}>{server.ipAddress}</td>
+                    </tr>
+                    <tr>
+                      <th>Server Status:</th>
+                      <td>
+                        <p
+                          className={`${availabilityNotifications?.status ? `${style.status_active}` : `${style.status_inactive}`
+                            }`}
+                        >
+                          {availabilityNotifications?.status ? 'Up' : 'Down'}
+                          <span>
+                            {availabilityNotifications?.status ? (
+                              <BsFillCloudArrowUpFill className={style.status_svg} />
+                            ) : (
+                              <BsFillCloudArrowDownFill className={style.status_svg} />
+                            )}
+                          </span>
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </Link>
             </div>
           ))
           ))}
