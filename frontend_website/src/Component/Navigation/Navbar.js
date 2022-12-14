@@ -37,7 +37,7 @@ const Navbar = ({ isOpen, setOpen }) => {
                     return (
                     <li key={i}>
                       <NavLink
-                        to={`${sMenu.slug}`}
+                        to={sMenu.slug.length > 20 ? "" : sMenu.slug}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
