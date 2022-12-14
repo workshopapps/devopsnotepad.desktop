@@ -14,7 +14,7 @@ function ServerInfo({ name, ipAddress, status }) {
     <div className={style.container}>
       <div className={style.pageTop} >
         <BiArrowBack
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/servers')}
           className={style.Arrowsvg}
         />
         <h2>{name}</h2>

@@ -69,7 +69,7 @@ function Notification({ totalSimple, totalAvailable }) {
               </div>
               <p className={styles.noti}>Server notification</p>
               <p className={styles.par}>
-                Regular notifications about your server.
+                Check your servers availabity.
               </p>
             </div>{' '}
           </Link>
