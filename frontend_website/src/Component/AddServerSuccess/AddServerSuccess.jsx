@@ -36,7 +36,7 @@ function AddServerSuccess({ closeSuccess }) {
         <p>Kindly check your mail for the Server ID.</p>
         <Link className={style.link} to='/server'>
           <button type='button' onClick={() => closeSuccess()}>
-            Back to Dashboard
+            Proceed
           </button>
         </Link>
       </div>

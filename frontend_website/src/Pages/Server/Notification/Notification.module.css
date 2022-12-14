@@ -5,30 +5,32 @@ html {
   font-family: 'Manrope';
 }
 
-section.main div.contain {
+.contain {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  width: 55%;
+  align-items: flex-start;
+  width: 62%;
   margin-top: 10px;
   background-color: #f6f9ff;
   border-radius: 10px;
   padding: 10px 30px;
 }
 
-section.main div.contain div.wrapp {
+.wrapp {
+  flex-basis: 50% !important;
   display: flex;
   align-items: center;
 }
 
-section.main div.contain div.wrapp p.endpoint {
+.endpoint {
   color: #102a63 !important;
   font-size: 16px;
   line-height: 4px;
   font-weight: 600;
 }
 
-section.main div.contain div.wrapp p.point {
+.point {
   color: #102a63 !important;
   font-size: 16px;
   line-height: 24px;
@@ -36,14 +38,14 @@ section.main div.contain div.wrapp p.point {
   margin-left: 10px;
 }
 
-section.main div.wrappe {
+.wrappe {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   width: 65%;
 }
 
-section.main div.wrappe div.card {
+.card {
   border: 1.5px solid #9bb7f6;
   background-color: #f6f9ff;
   border-radius: 10px;
@@ -53,7 +55,7 @@ section.main div.wrappe div.card {
   margin-right: 30px;
 }
 
-section.main div.wrappe div.card div.bell {
+.bell {
   position: absolute;
   border: 1px solid #c83333;
   background-color: #c83333;
@@ -64,7 +66,7 @@ section.main div.wrappe div.card div.bell {
   left: 332px;
 }
 
-section.main div.wrappe div.card div.belly {
+.belly {
   position: absolute;
   border: 1px solid #c83333;
   background-color: #c83333;
@@ -75,7 +77,7 @@ section.main div.wrappe div.card div.belly {
   margin-left: 10px;
 }
 
-section.main div.wrappe div.card p.noti {
+.noti {
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -83,43 +85,80 @@ section.main div.wrappe div.card p.noti {
   margin-bottom: 10px;
 }
 
-section.main div.wrappe div.card p.par {
+.par {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   margin: 0;
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .copy {
   cursor: pointer;
-  border: 0.08rem solid transparent;
-  border-radius: 1rem;
+  font-size: 1.7rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
 
 .copy:hover {
-  border: 0.08rem solid rgb(37, 56, 149);
+  color: rgb(37, 56, 149);
 }
 
+.eye {
+  height: 2rem;
+  width: 2rem;
+  fill: #102a63;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+.eye:hover {
+  opacity: 0.7;
+}
 
 @media screen and (max-width: 767px) {
-
   section.main div.wrappe {
     flex-direction: column;
     width: auto;
     position: relative;
-    gap: 25px;
+    gap: 20px;
   }
 
   section.main div.contain {
     width: auto;
     padding: 10px;
+    flex-direction: column;
+    align-items: start;
   }
 
-  .copy {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    border: 0;
+  section.main div.contain div.wrapp p.point {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+
+  .wrapp {
+    flex-basis: 100% !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* .copy {
+ 
+  } */
+
+  .endpoint {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   section.main div.wrappe div.card {
@@ -129,5 +168,4 @@ section.main div.wrappe div.card p.par {
   section.main div.wrappe div.card div.bell {
     left: 30px;
   }
-
 }
