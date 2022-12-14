@@ -43,15 +43,15 @@ function Server() {
       <div className={classes.serverListContainer} style={{ flexBasis: '80%' }}>
         {servers.length > 0 && (
           (servers?.map((server) => (
-            <Link to={`/server/${server.id}`}>
-              <div className={style.container}>
-                <div className={`${style.pageTop} ${classes.pageTopb}`}>
-                  <div className={style.serverOption} onClick={() => setShowModal()}>
-                    <SlOptionsVertical />
-                  </div>
-                  <h2>{server.name}</h2>
-                  {showModal && (<ServerOptionsModal />)}
+            <div className={style.container}>
+              <div className={`${style.pageTop} ${classes.pageTopb}`}>
+                <div className={style.serverOption} onClick={() => setShowModal()}>
+                  <SlOptionsVertical />
                 </div>
+                <h2>{server.name}</h2>
+                {showModal && (<ServerOptionsModal />)}
+              </div>
+              <Link to={`/server/${server.id}`}>
                 <table className={style.table}>
                   <tbody>
                     <tr>
@@ -78,8 +78,8 @@ function Server() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))
           ))}
         {servers.length === 0 && (
