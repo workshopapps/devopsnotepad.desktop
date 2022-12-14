@@ -64,7 +64,7 @@ function Notification({ totalSimple, totalAvailable }) {
           <Link to='availability_notification'>
             <div className={styles.card}>
               <div>
-                <div className={styles.belly}>{totalAvailable}</div>
+                <div className={styles.belly}>{totalAvailable || 0}</div>
                 <img src={bell} alt='' />
               </div>
               <p className={styles.noti}>Server notification</p>
