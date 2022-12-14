@@ -23,7 +23,6 @@ const style = {
 	p: 4,
 };
 function Note() {
-
 	// Ids
 	const { id } = useParams();
 
@@ -148,9 +147,8 @@ function Note() {
 										className={notesStyle.notesFormInput}
 										id={notesStyle.notesFormInput}
 										onChange={handleChanges}
-									>
-										Start note here....
-									</textarea>
+										placeholder="Start note here...."
+									/>
 								)}
 								<button type="submit" className={notesStyle.notesSaveBtn}>
 									Save Note
