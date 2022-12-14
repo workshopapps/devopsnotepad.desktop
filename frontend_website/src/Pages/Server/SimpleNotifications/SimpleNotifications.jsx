@@ -46,7 +46,7 @@ const SimpleNotifications = () => {
     };
     fetchNotifications(
       {
-        url: `https://opspad.hng.tech/api/server/${server.userId}/notifications/`,
+        url: `https://opspad.hng.tech/api/server/${server.id}/notifications/`,
       },
       getNotifications,
     );

@@ -17,21 +17,17 @@
   display: flex;
   align-items: center;
   margin-bottom: 35px;
-  position: relative;
   justify-content: flex-start;
+  position: relative;
 }
 
-.pageTopb div {
-  position: absolute;
-  right: 0;
+.Arrowsvg {
+  display: none;
 }
 
-/* .serverOption svg {
-  font-size: 20px;
-  position: absolute;
-  top: -16px;
-  right: 0;
-} */
+.pageTopb h2 {
+  margin-bottom: 13px;
+}
 
 .empty,
 .available {
@@ -89,6 +85,17 @@
   .serverListContainer {
     margin-top: 70px;
     padding: 0 40px;
+  }
+
+  .pageTopb {
+    justify-content: center;
+  }
+
+  .Arrowsvg {
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
   }
 
   .empty,

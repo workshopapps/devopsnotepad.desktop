@@ -31,7 +31,7 @@ const AvailabiltyNotifications = () => {
     setLoading(true);
     const availabiltyNotificationsRef = ref(
       db,
-      `opspad/notifications/${server.userId}`,
+      `opspad/notifications/${server.id}`,
     );
 
     onValue(availabiltyNotificationsRef, (snapshot) => {
@@ -105,11 +105,10 @@ const AvailabiltyNotifications = () => {
             <div className={classes.innerdiv}>
               <h4 className={classes.innerh4}>Server Health</h4>
               <p
-                className={`${
-                  availabilityNotifications?.status
+                className={`${availabilityNotifications?.status
                     ? `${classes.status_active}`
                     : `${classes.status_inactive}`
-                }`}
+                  }`}
               >
                 {availabilityNotifications?.status ? 'Up' : 'Down'}
                 <span>
