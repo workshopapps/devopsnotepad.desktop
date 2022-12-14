@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -25,20 +25,10 @@ const style = {
 function Note() {
 	// Ids
 	const { id } = useParams();
-	const notesId = useId();
-	const notesDateId = useId();
-
-	// Date
-	const time = new Date().toTimeString().slice(0, 5);
-	const date = new Date().toLocaleDateString();
 
 	// States
 	const [open, setOpen] = useState(false);
 	const [note, setNote] = useState(localStorage.getItem(`${id}`));
-	const [noteTime, setNoteTime] = useState(localStorage.getItem(`${notesId}`));
-	const [noteDate, setNoteDate] = useState(
-		localStorage.getItem(`${notesDateId}`)
-	);
 	const [inputs, setInputs] = useState(note);
 	const [saveMsg, setSaveMsg] = useState(false);
 	const [notification, setNotification] = useState(false);
@@ -51,19 +41,13 @@ function Note() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		localStorage.setItem(`${id}`, inputs);
-		localStorage.setItem(`${notesId}`, time);
-		localStorage.setItem(`${notesDateId}`, date);
 		setNote(localStorage.getItem(`${id}`));
 		setInputs('');
-		setNoteTime(localStorage.getItem(`${notesId}`));
-		setNoteDate(localStorage.getItem(`${notesDateId}`));
 		setNotification(false);
 		setSaveMsg(true);
 	};
 	const deleteNote = () => {
 		localStorage.removeItem(`${id}`);
-		localStorage.removeItem(`${notesId}`);
-		localStorage.removeItem(`${notesDateId}`);
 		setNote('');
 		setOpen(false);
 		setSaveMsg(false);
@@ -85,6 +69,7 @@ function Note() {
 			setSaveMsg(false);
 		}
 	};
+
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<div className={notesStyle.notesContent}>
@@ -144,14 +129,6 @@ function Note() {
 											{note}
 										</div>
 									</p>
-									<div id={notesStyle.notesLastEdit}>
-										<p
-											id={notesStyle.notesLastEditText}
-											style={{ display: saveMsg ? 'block' : 'none' }}
-										>
-											{noteTime}, {noteDate}
-										</p>
-									</div>
 								</div>
 							</p>
 						</div>
@@ -170,9 +147,8 @@ function Note() {
 										className={notesStyle.notesFormInput}
 										id={notesStyle.notesFormInput}
 										onChange={handleChanges}
-									>
-										Start note here....
-									</textarea>
+										placeholder="Start note here...."
+									/>
 								)}
 								<button type="submit" className={notesStyle.notesSaveBtn}>
 									Save Note

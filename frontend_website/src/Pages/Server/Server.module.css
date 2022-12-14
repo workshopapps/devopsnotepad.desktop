@@ -8,6 +8,14 @@
   margin: 170px auto 0;
 }
 
+.serverListContainer .serverHeader {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-bottom: 35px;
+}
+
 .serverListContainer .container {
   margin: auto;
   position: relative;
@@ -83,7 +91,7 @@
   }
 
   .serverListContainer {
-    margin-top: 70px;
+    margin: 70px 0 0;
     padding: 0 40px;
   }
 

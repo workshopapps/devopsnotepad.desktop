@@ -25,13 +25,13 @@ const AvailabiltyNotifications = () => {
 
   const { id } = useParams();
   const { servers } = useContext(ServerContext);
-  const server = servers.find((ser) => ser.id === id);
+  const server = servers?.find((ser) => ser.id === id);
 
   const fetchNotifications = useCallback(() => {
     setLoading(true);
     const availabiltyNotificationsRef = ref(
       db,
-      `opspad/notifications/${server.id}`,
+      `opspad/notifications/${server?.id}`,
     );
 
     onValue(availabiltyNotificationsRef, (snapshot) => {
@@ -106,8 +106,8 @@ const AvailabiltyNotifications = () => {
               <h4 className={classes.innerh4}>Server Health</h4>
               <p
                 className={`${availabilityNotifications?.status
-                    ? `${classes.status_active}`
-                    : `${classes.status_inactive}`
+                  ? `${classes.status_active}`
+                  : `${classes.status_inactive}`
                   }`}
               >
                 {availabilityNotifications?.status ? 'Up' : 'Down'}
