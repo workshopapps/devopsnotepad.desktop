@@ -3,24 +3,15 @@
 	width: 100%;
 }
 
-@media (max-width: 768px) {
-	.settingsContainer {
-		padding: 20px !important;
-	}
-	.settingsContainer h1 {
-		font-family: 'Inter' !important;
-		font-style: normal;
-		font-weight: 600 !important;
-		font-size: 16px !important;
-		line-height: 120% !important;
-		text-transform: capitalize !important;
-	}
-}
-
 .settingsContainer {
 	padding: 1px 70px 80px 70px;
 	flex-basis: 100%;
 }
+
+.pageTop .arrowLeft {
+	display: none;
+}
+
 .settingsContainer h1 {
 	padding-top: 30px;
 	text-align: left;
@@ -33,6 +24,7 @@
 	text-transform: uppercase;
 	margin-bottom: 24px;
 }
+
 .userHead {
 	display: flex;
 	flex-direction: row;
@@ -41,19 +33,47 @@
 	gap: 16px;
 	margin-bottom: 24px;
 }
-.userHead h3 {
+
+
+.userHead h6 {
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 140%;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 12.1px;
 	display: flex;
 	align-items: center;
-	color: #180e25;
+	color: #827D89;
 }
+
+.preFormContainer h6 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 12.1px;
+	display: flex;
+	align-items: center;
+	color: #827D89;
+}
+
 .border_top {
 	border-top: 1px solid #efeef0;
 }
+
+.userName {
+	width: 100%;
+	height: 48px;
+	background: #ffffff;
+	border: 1px solid #D4D4D4;
+	border-radius: 6px;
+	margin: 8px 0 16px;
+	outline: none;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+
 .smallHead {
 	font-family: 'Inter';
 	font-style: normal;
@@ -63,25 +83,30 @@
 	color: #827d89;
 	text-transform: capitalize !important;
 }
+
 .account {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding-bottom: 25px;
 }
+
 .account a {
 	text-decoration: none !important;
 }
+
 .account svg {
 	color: #323232;
 	border-width: 1px;
 }
+
 .accountProfile {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 20px;
 }
+
 .accountProfile a {
 	display: flex;
 	color: #180e25;
@@ -92,27 +117,20 @@
 	line-height: 140%;
 	text-decoration: none;
 }
+
 .appSettings_cont {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-/* .appSettings_cont a {
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 15px;
-	text-align: right;
 
-	text-decoration: none;
-} */
 .appSettings {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
 }
+
 .appSettings h3 {
 	display: flex;
 	color: #180e25;
@@ -126,16 +144,19 @@
 	height: 56px;
 	align-items: center;
 }
+
 .appSettings svg {
 	color: #827d89;
 	border-width: 1px;
 }
+
 .appSettings {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 20px;
 }
+
 .appSettings a {
 	display: flex;
 	color: #180e25;
@@ -161,11 +182,13 @@
 	padding: 0 0 0 10px !important;
 	list-style: none !important;
 }
+
 .support li {
 	padding: 17px 0;
 	display: flex;
 	justify-content: space-between;
 }
+
 .support a {
 	text-decoration: none !important;
 	font-family: 'Inter';
@@ -174,4 +197,165 @@
 	font-size: 16px;
 	line-height: 140%;
 	color: #000000 !important;
+}
+
+@media (max-width: 768px) {
+	.settingsPage {
+		flex-direction: column;
+	}
+
+	.settingsContainer {
+		padding: 20px !important;
+	}
+
+	.pageTop {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 25px;
+		position: relative;
+	}
+
+	.pageTop .arrowLeft {
+		display: block;
+		left: 0;
+		position: absolute;
+		font-size: 13px;
+		color: #202020;
+	}
+
+	.settingsContainer h1 {
+		font-family: 'Inter' !important;
+		font-style: normal;
+		font-weight: 600 !important;
+		font-size: 16px !important;
+		line-height: 19.2px !important;
+		align-self: center;
+		text-transform: capitalize !important;
+		padding-top: 0;
+		margin-bottom: 0;
+	}
+
+	.userHead {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 0px;
+		gap: 16px;
+		margin-bottom: 24px;
+	}
+
+	.userHead h3 {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 140%;
+		display: flex;
+		align-items: center;
+		color: #180e25;
+	}
+
+	.border_top {
+		border-top: 1px solid #efeef0;
+	}
+
+	.smallHead {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 60px;
+		color: #827d89;
+		text-transform: capitalize !important;
+	}
+
+	.account {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 20px;
+	}
+
+	.account a {
+		text-decoration: none !important;
+	}
+
+	.account svg {
+		color: #323232;
+		border-width: 1px;
+	}
+
+	.accountProfile {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.accountProfile a {
+		display: flex;
+		color: #180e25;
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		text-decoration: none;
+	}
+
+	.appSettings_cont {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.appSettings {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.appSettings h3 {
+		font-weight: 500;
+		font-size: 16px;
+		height: 48px;
+		align-items: center;
+	}
+
+	.appSettings svg {
+		color: #827d89;
+		border-width: 1px;
+	}
+
+	.appSettings {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.appSettings a {
+		font-size: 14px;
+		line-height: 120%;
+		text-decoration: none !important;
+	}
+
+	.support {
+		padding: 0 0 0 6px !important;
+		list-style: none !important;
+	}
+
+	.support li {
+		padding: 14px 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.support a {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		color: #000000 !important;
+	}
 }

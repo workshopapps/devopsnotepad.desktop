@@ -2,11 +2,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddServerSuccess from '../../../Component/AddServerSuccess/AddServerSuccess';
-
+import { BiArrowBack } from 'react-icons/bi';
 import SideNav from '../../../Component/SideNav/SideNav';
 import useFetch from '../../../hooks/useFetch';
 import { ServerContext } from '../../../store/ServerContext';
-import Button from '../../CareerPage/Button/Button';
 import LoadingSpinner from '../SimpleNotifications/LoadingSpinner';
 import style from './AddServer.module.css';
 
@@ -56,6 +55,7 @@ const AddServer = () => {
   const [success, setSuccess] = useState(false);
 
   const getResponse = (response) => {
+    console.log(response);
     if (
       response.success === true ||
       response.message === 'server created successfully'
@@ -124,13 +124,16 @@ const AddServer = () => {
         <SideNav />
       </div>
       <div className={style.right}>
-        <div style={{ width: '60%', textAlign: 'left' }}>
-          <Button onClick={() => navigate('/server')} className={style.button}>
-            Back
-          </Button>
+        <div className={style.PageTop} style={{ width: '60%', textAlign: 'left' }}>
+          <BiArrowBack
+            onClick={() => navigate('/server')}
+            className={style.svg}
+          />
         </div>
-        <h1>Create Server</h1>
         <form onSubmit={onSubmit} className={style.form}>
+          <div className={style.h1box}>
+            <h1 className={style.h1}>Create Server</h1>
+          </div>
           <div className={style.inputs}>
             <div className={style.form_control}>
               <label htmlFor='name'>Server Name</label>
