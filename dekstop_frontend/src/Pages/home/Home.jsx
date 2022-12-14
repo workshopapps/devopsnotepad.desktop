@@ -48,7 +48,9 @@ function Home() {
 		if (!queryValue) {
 			return items;
 		}
-		return items.filter((item) => item.name.includes(queryValue));
+		return items.filter((item) =>
+			item.name.toLowerCase().includes(queryValue.toLowerCase())
+		);
 	}
 	const filteredServers = getFilteredServers(query, servers);
 
