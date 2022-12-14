@@ -36,7 +36,7 @@ filehash=0
 parsedAndinitiateRequest(){
   local data=$(jq -n -Rsa --arg KEY 'logs' --arg VAL "$1" '{"\($KEY)":$VAL}')
   sleep 1
-  curl -X POST -H "Content-Type: application/json" -d "$data" "https://opspad.hng.tech/api/server/$serverId/notifications"
+  curl -X POST -H "Content-Type: application/json" -d "$data" "http://localhost:9600/server/3c8c8baf-7601-11ed-8b19-b808cf2f05d4/notifications"
   echo "\n"
   echo "Successfully posted line $2"
 }
