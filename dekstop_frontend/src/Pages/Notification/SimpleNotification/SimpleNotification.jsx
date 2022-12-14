@@ -125,6 +125,7 @@ function SimpleNotification() {
 					<Link to={`/server/${id}/notification`}>
 						<img
 							src={Button}
+							className={styles.btn}
 							alt=""
 							style={{ cursor: 'pointer', marginBottom: '15px' }}
 						/>{' '}

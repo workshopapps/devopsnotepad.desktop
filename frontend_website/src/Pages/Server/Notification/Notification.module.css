@@ -7,8 +7,9 @@ html {
 
 .contain {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 62%;
   margin-top: 10px;
   background-color: #f6f9ff;
@@ -43,6 +44,7 @@ html {
   justify-content: space-between;
   width: 65%;
 }
+
 .card {
   border: 1.5px solid #9bb7f6;
   background-color: #f6f9ff;
@@ -89,27 +91,37 @@ html {
   line-height: 24px;
   margin: 0;
 }
+
 .icons {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+
 .copy {
   cursor: pointer;
-  border: 0.08rem solid transparent;
-  border-radius: 1rem;
+  font-size: 1.7rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
 
 .copy:hover {
-  border: 0.08rem solid rgb(37, 56, 149);
+  color: rgb(37, 56, 149);
 }
 
 .eye {
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
   fill: #102a63;
   cursor: pointer;
   margin-right: 1.5rem;
 }
+
 .eye:hover {
   opacity: 0.7;
 }
@@ -133,15 +145,16 @@ html {
     margin-left: 0;
     padding-top: 10px;
   }
+
   .wrapp {
     flex-basis: 100% !important;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .copy {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    border: 0;
-  }
+
+  /* .copy {
+ 
+  } */
 
   .endpoint {
     font-size: 14px;

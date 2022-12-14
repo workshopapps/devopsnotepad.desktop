@@ -124,7 +124,7 @@ const AddServer = () => {
         <SideNav />
       </div>
       <div className={style.right}>
-        <div style={{ width: '60%', textAlign: 'left' }}>
+        <div className={style.PageTop} style={{ width: '60%', textAlign: 'left' }}>
           <BiArrowBack
             onClick={() => navigate('/server')}
             className={style.svg}
@@ -164,9 +164,8 @@ const AddServer = () => {
           <button
             disabled={isBtnDisabled}
             type='submit'
-            className={`${style.btn} ${
-              isBtnDisabled ? style.btnDisabled : style.btnEnabled
-            }`}
+            className={`${style.btn} ${isBtnDisabled ? style.btnDisabled : style.btnEnabled
+              }`}
           >
             Done
           </button>

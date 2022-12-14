@@ -234,4 +234,14 @@ section.main div.row {
 	section.main{
 		margin-left: 0;
 	}
+
+	.btn {
+		left: 80px;
+		top: 14px;
+		position: absolute;
+	}
+
+	.notiContainer{
+		margin-top: 50px;
+	}
 }
