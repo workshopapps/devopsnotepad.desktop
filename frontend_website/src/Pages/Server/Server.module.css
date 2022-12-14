@@ -10,6 +10,7 @@
 
 .serverListContainer .container {
   margin: auto;
+  position: relative;
 }
 
 .container .pageTopb {
