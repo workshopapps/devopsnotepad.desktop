@@ -70,7 +70,7 @@ function About() {
 							className={classes.btn}
 							to=""
 							onClick={() =>
-								window.open('https://opspad.hng.tech/contact-us', '_blank')
+								window.open('https://opspad.hng.tech/contact-us', '_blank', rel='noreferrer')
 							}
 						>
 							Contact us
