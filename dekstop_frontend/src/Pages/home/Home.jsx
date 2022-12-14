@@ -82,7 +82,7 @@ function Home() {
 								serverHealth={server.serverHealth}
 							/>
 						))}
-					{filteredServers.length === 0 && (
+					{servers && filteredServers.length === 0 && (
 						<p className={style.bad_query}>No servers match your query</p>
 					)}
 				</div>
