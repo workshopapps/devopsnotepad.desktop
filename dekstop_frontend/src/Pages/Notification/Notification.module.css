@@ -103,3 +103,9 @@ section.main div.wrappe div.card p.par {
 		width: 374px;
 	}
 }
+
+@media (max-width: 767px){
+	section.main div.wrappe div.card div.bell {
+		left: 51px;
+	}
+}
