@@ -41,14 +41,8 @@ function Server() {
         {servers.length > 0 && (
           (servers?.map((server) => (
             <div className={style.container}>
-              <div className={classes.pageTopb}>
-                <BiArrowBack
-                  onClick={() => navigate(-1)}
-                  className={classes.Arrowsvg}
-                />
-                <h2>{server.name}</h2>
-              </div>
               <Link to={`/server/${server.id}`}>
+                <h2>{server.name}</h2>
                 <table className={style.table}>
                   <tbody>
                     <tr>
