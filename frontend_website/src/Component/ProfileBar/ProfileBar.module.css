@@ -6,7 +6,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 40px;
   right: 0;
   background-color: #102a63;
@@ -89,10 +89,21 @@
   .menu {
     position: absolute;
     top: 10px;
+    right: -110px;
     padding: 6px;
     max-width: 160px;
     height: 55px;
     border-radius: 45px 0 0 45px;
+  }
+
+  .menu:hover {
+    animation: hidebar 800ms ease-in forwards;
+  }
+
+  @keyframes hidebar {
+    0%   {right: -110px;}
+    50%  {right: -75px;}
+    100% {right: 0px;}
   }
 
   .profile {
@@ -140,5 +151,27 @@
   .dropdown .dropdown__item img {
     display: inline;
     margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu {
+    position: absolute;
+    top: 10px;
+    right: -110px;
+    padding: 6px;
+    max-width: 160px;
+    height: 55px;
+    border-radius: 45px 0 0 45px;
+  }
+
+  .menu:hover {
+    animation: hidebar 800ms ease-in forwards;
+  }
+
+  @keyframes hidebar {
+    0%   {right: -110px;}
+    50%  {right: -75px;}
+    100% {right: 0px;}
   }
 }

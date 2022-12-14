@@ -88,12 +88,12 @@ function Settings() {
 				{Support.map((support) => (
 					<div className={style.support_cont} key={support.items}>
 						<small className={style.smallHead}>{support.title2}</small>
-						<ul className={style.support}>
+						<ul className={style.support} key={support.title2}>
 							{support.items.map((items) => (
 								<Link to='' onClick={() =>
 								window.open(`${items.slug}`, '_blank')
 							}>
-									<li key={items.list}>
+									<li key={items.items}>
 										{items.list}
 										{items.iconright}
 									</li>

@@ -26,14 +26,14 @@ function Download() {
 
                         <p>Desktop App</p>
 
-                        <a href='#' className={style.card__item} download>
+                        <a href='https://#' className={style.card__item} download>
                             <img className={style.device1} src={apple} alt="apple" />
                             <p>Opspad for macOS</p>
 
                             <img className={style.chevron} src={rightChevron} alt="arrow" />
                         </a>
 
-                        <a href='#' className={style.card__item} download>
+                        <a href='https://#' className={style.card__item} download>
                             <img className={style.devices} src={windows} alt="WindowsOS" />
                             <p>Opspad for Windows (64-bit)</p>
 
