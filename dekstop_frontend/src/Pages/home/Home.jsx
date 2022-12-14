@@ -23,13 +23,13 @@ function Home() {
 			navigate('/onboarding');
 		}
 		const isAuthenticated = sessionStorage.getItem('isAuthenticated') || false;
-		if (!isAuthenticated){
+		if (!isAuthenticated) {
 			setAuth(true);
 		}
 	});
 
 	useEffect(() => {
-			document.body.style.overflow = 'hidden';
+		document.body.style.overflow = 'hidden';
 	}, []);
 
 	// function to close authentication process
@@ -82,6 +82,9 @@ function Home() {
 								serverHealth={server.serverHealth}
 							/>
 						))}
+					{filteredServers.length === 0 && (
+						<p className={style.bad_query}>No servers match your query</p>
+					)}
 				</div>
 			)}
 
