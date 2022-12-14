@@ -1,0 +1,172 @@
+.dlt__header {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #a90000;
+  margin-top: 50px;
+}
+
+.dlt__desc {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  color: #000000;
+  margin-top: 24px;
+}
+
+.dlt__btn {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  background: #a90000;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 16px 18px;
+  width: max-content;
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: hsla(266, 45%, 10%, 0.4);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.confirmPopup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 468px;
+  height: 288px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 40px;
+}
+
+.dlt__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background: #f8e6e6;
+  border-radius: 8px;
+}
+
+.confirmPopup p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #262626;
+}
+
+.confirmPopup__btn {
+  display: flex;
+  gap: 16px;
+}
+
+.confirmPopup__btn div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 18px;
+  gap: 10px;
+  width: 120px;
+  height: 48px;
+  border-radius: 6px;
+
+  width: 120px;
+  height: 48px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.confirmPopup__btn .cancel {
+  background: #102a63;
+  color: #ededed;
+}
+
+.confirmPopup__btn .delete {
+  background: #ededed;
+  color: #102a63;
+}
+
+@media screen and (max-width: 767px) {
+  .dlt__header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .dlt__desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .dlt__btn {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    background: #a90000;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  .confirmPopup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 342px;
+    height: 288px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 40px;
+    margin: 0 16px;
+  }
+
+  .dlt__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    background: #f8e6e6;
+    border-radius: 8px;
+  }
+
+  .confirmPopup p {
+    width: 250px;
+    line-height: 20px;
+  }
+}
