@@ -44,8 +44,8 @@ function Server() {
         {servers.length > 0 && (
           (servers?.map((server) => (
             <div className={style.container}>
-              <div className={`${style.pageTop} ${classes.pageTopb}`}>
-                <div className={style.serverOption} onClick={() => setShowModal()}>
+              <div className={classes.pageTopb}>
+                <div className={style.serverOption} onClick={() => setShowModal(true)}>
                   <SlOptionsVertical />
                 </div>
                 <h2>{server.name}</h2>
