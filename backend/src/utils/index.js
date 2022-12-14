@@ -55,9 +55,9 @@ export async function generateJWTToken(payload, expires, secret = config.app.sec
           reject(err);
         }
         resolve(token);
-      },
+      }
     );
-  })
+  });
 }
 
 export async function decodeToken(token) {
