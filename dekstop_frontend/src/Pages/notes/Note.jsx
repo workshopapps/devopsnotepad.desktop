@@ -69,7 +69,7 @@ function Note() {
 			setSaveMsg(false);
 		}
 	};
-   const startHere = 'Start notes here...'
+   const startHere = 'Start notes here....'
 	return (
 		<div className={notesStyle.notesWrapper}>
 			<div className={notesStyle.notesContent}>
