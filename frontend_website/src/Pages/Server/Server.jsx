@@ -11,13 +11,10 @@ import {
   BsFillCloudArrowDownFill,
   BsFillCloudArrowUpFill,
 } from 'react-icons/bs';
-import { SlOptionsVertical } from 'react-icons/sl'
-
 import classes from './Server.module.css';
-import ServerOptionsModal from '../../Component/ServerOptionsModal/ServerOptionsModal';
+import { BiArrowBack } from 'react-icons/bi';
 function Server() {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false)
   const { servers, addServers } = useContext(ServerContext);
   const { availabilityNotifications } = useContext(UserContext);
 
@@ -41,17 +38,12 @@ function Server() {
         <SideNav />
       </div>
       <div className={classes.serverListContainer} style={{ flexBasis: '80%' }}>
+        <h2>Server List</h2>
         {servers.length > 0 && (
           (servers?.map((server) => (
             <div className={style.container}>
-              <div className={classes.pageTopb}>
-                <div className={style.serverOption} onClick={() => setShowModal(!showModal)}>
-                  <SlOptionsVertical />
-                </div>
-                <h2>{server.name}</h2>
-                {showModal && (<ServerOptionsModal />)}
-              </div>
               <Link to={`/server/${server.id}`}>
+                <h2>{server.name}</h2>
                 <table className={style.table}>
                   <tbody>
                     <tr>
