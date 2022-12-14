@@ -5,11 +5,20 @@ import {
   BsFillCloudArrowUpFill,
 } from 'react-icons/bs';
 import style from './ServerInfo.module.css';
+import { BiArrowBack } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 function ServerInfo({ name, ipAddress, status }) {
+  const navigate = useNavigate()
   return (
     <div className={style.container}>
-      <h2>{name}</h2>
+      <div className={style.pageTop} >
+        <BiArrowBack
+          onClick={() => navigate(-1)}
+          className={style.Arrowsvg}
+        />
+        <h2>{name}</h2>
+      </div>
       <table className={style.table}>
         <tbody>
           <tr>
@@ -20,9 +29,8 @@ function ServerInfo({ name, ipAddress, status }) {
             <th>Server Status:</th>
             <td>
               <p
-                className={`${
-                  status ? `${style.status_active}` : `${style.status_inactive}`
-                }`}
+                className={`${status ? `${style.status_active}` : `${style.status_inactive}`
+                  }`}
               >
                 {status ? 'Up' : 'Down'}
                 <span>

@@ -26,7 +26,7 @@ function Notification({ total }) {
               className={styles.point}
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              {isOpen ? `${server.userId}` : '******-******-******'}
+              {isOpen ? `${server?.userId}` : '******-******-******'}
             </p>
           </div>
           <div className={styles.icons}>
@@ -41,9 +41,9 @@ function Notification({ total }) {
                 className={styles.eye}
               />
             )}
-            <div className={styles.copy} onClick={copyToClipboard}>
+            <button className={styles.copy} onClick={copyToClipboard}>
               <MdContentCopy />
-            </div>
+            </button>
           </div>
         </div>
 
