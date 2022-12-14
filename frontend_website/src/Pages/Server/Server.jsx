@@ -38,7 +38,7 @@ function Server() {
       <div>
         <SideNav />
       </div>
-      <div style={{ flexBasis: '80%' }}>
+      <div className={classes.serverListContainer} style={{ flexBasis: '80%' }}>
         {servers.length > 0 && (
           (servers?.map((server) => (
             <div className={style.container}>
