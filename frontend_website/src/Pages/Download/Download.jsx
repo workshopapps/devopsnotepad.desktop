@@ -26,21 +26,21 @@ function Download() {
 
                         <p>Desktop App</p>
 
-                        <a href='https://#' className={style.card__item} download>
+                        <a href='https://drive.google.com/file/d/1DyvJZORzS4BPVaUdXYPyfSto_0XEIqzA/view?usp=share_link' className={style.card__item} download>
                             <img className={style.device1} src={apple} alt="apple" />
                             <p>Opspad for macOS</p>
 
                             <img className={style.chevron} src={rightChevron} alt="arrow" />
                         </a>
 
-                        <a href='https://#' className={style.card__item} download>
+                        <a href='https://github.com/workshopapps/devopsnotepad.desktop/releases/download/v0.1.0/OpsPad.0.3.0.exe' className={style.card__item} download>
                             <img className={style.devices} src={windows} alt="WindowsOS" />
                             <p>Opspad for Windows (64-bit)</p>
 
                             <img className={style.chevron} src={rightChevron} alt="arrow" />
                         </a>
 
-                        <a href='https://#' className={style.card__item} download>
+                        <a href='https://github.com/workshopapps/devopsnotepad.desktop/releases/download/v0.1.0/OpsPad.0.3.0.exe' className={style.card__item} download>
                             <img className={style.devices} src={windows} alt="WindowsOS" />
                             <p>Opspad for Windows (32-bit)</p>
 
@@ -55,7 +55,7 @@ function Download() {
                         </div>
 
                         <p>Mobile App</p>
-                        <a href='https://#' className={style.card__item} download>
+                        <a href='https://drive.google.com/file/d/1zbtFzeiZDfPYxm5z5wqayPWG5PZ-QDnP/view?usp=sharing' className={style.card__item} download>
                             <img className={style.device4} src={android} alt="AndriodOs" />
                             <p>Opspad for Android</p>
 
