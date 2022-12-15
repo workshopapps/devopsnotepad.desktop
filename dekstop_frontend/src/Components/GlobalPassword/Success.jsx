@@ -31,7 +31,7 @@ function Success({ closeModal, onSuccessClick }) {
 
 				<p>You have successfully made changes to your password</p>
 
-				<button onClick={onSuccessClick} type="button">
+				<button onClick={onSuccessClick} type="button" style={{cursor: "pointer"}}>
 					Back to Settings
 				</button>
 			</div>
