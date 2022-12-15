@@ -30,10 +30,11 @@ const Navbar = ({ isOpen, setOpen }) => {
                     menuOpen[i] ? styles.show : ''
                   }`}
                 >
-                  {menu.subMenu.map((sMenu, i) => (
+                  {menu.subMenu.map((sMenu, i) => {
+                    return (
                     <li key={i}>
                       <NavLink
-                        to={`${sMenu.slug}`}
+                        to={sMenu.slug}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
@@ -45,7 +46,7 @@ const Navbar = ({ isOpen, setOpen }) => {
                         {sMenu.title}
                       </NavLink>
                     </li>
-                  ))}
+                  )})}
                 </ul>
               )}
             </div>
