@@ -36,7 +36,8 @@ import developersLG1 from '../images/team/developers/tablets-and-desktops/develo
 import developersLG2 from '../images/team/developers/tablets-and-desktops/developers-slide2.png';
 import developersLG3 from '../images/team/developers/tablets-and-desktops/developers-slide3.png';
 import developersLG4 from '../images/team/developers/tablets-and-desktops/developers-slide4.png';
-import developersLG5 from '../images/team/developers/tablets-and-desktops/developers-slide5.png';
+import developersLG5 from '../images/team/developers/tablets-and-desktops/developers-slide5.svg';
+import developersLG6 from '../images/team/developers/tablets-and-desktops/developers-slide6.svg';
 import developersSM1 from '../images/team/developers/phones/developers-slide1.png';
 import developersSM2 from '../images/team/developers/phones/developers-slide2.png';
 import developersSM3 from '../images/team/developers/phones/developers-slide3.png';
@@ -44,6 +45,11 @@ import developersSM4 from '../images/team/developers/phones/developers-slide4.pn
 import developersSM5 from '../images/team/developers/phones/developers-slide5.png';
 import developersSM6 from '../images/team/developers/phones/developers-slide6.png';
 import developersSM7 from '../images/team/developers/phones/developers-slide7.png';
+import developersSM8 from '../images/team/developers/phones/developers-slide8.svg';
+import developersSM9 from '../images/team/developers/phones/developers-slide9.svg';
+import developersSM10 from '../images/team/developers/phones/developers-slide10.svg';
+import developersSM11 from '../images/team/developers/phones/developers-slide11.svg';
+import developersSM12 from '../images/team/developers/phones/developers-slide12.svg';
 
 export const TeamData = [
   {
@@ -329,6 +335,7 @@ export const TeamData = [
       developersLG3,
       developersLG4,
       developersLG5,
+      developersLG6,
     ],
     mobileSlides: [
       developersSM1,
@@ -337,8 +344,12 @@ export const TeamData = [
       developersSM4,
       developersSM5,
       developersSM6,
-      developersSM6,
       developersSM7,
+      developersSM8,
+      developersSM9,
+      developersSM10,
+      developersSM11,
+      developersSM12,
     ],
   },
 ];
