@@ -307,6 +307,21 @@ export const TeamData = [
       {
         name: 'Ochuko J.',
       },
+      {
+        name: 'Tega A. A.',
+      },
+      {
+        name: 'Idris Y.',
+      },
+      {
+        name: 'Michael A.',
+      },
+      {
+        name: 'Edori A.',
+      },
+      {
+        name: 'Blessing U.',
+      },
     ],
     desktopSlides: [
       developersLG1,
