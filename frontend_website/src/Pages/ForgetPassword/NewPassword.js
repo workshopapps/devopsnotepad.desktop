@@ -21,7 +21,7 @@ const NewPassword = () => {
         e.preventDefault();
 
 
-        fetch('https://opspad.hng.tech/api/auth/update-password', {
+        fetch('https://opspad.dev/api/auth/update-password', {
             // mode: 'no-cors',
             method: "POST",
             body: JSON.stringify(

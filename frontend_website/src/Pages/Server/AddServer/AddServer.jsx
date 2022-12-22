@@ -83,7 +83,7 @@ const AddServer = () => {
     const { token } = loggedInUser;
     fetchRequest(
       {
-        url: 'https://opspad.hng.tech/api/server',
+        url: 'https://opspad.dev/api/server',
         method: 'POST',
         body: {
           name,
@@ -108,7 +108,7 @@ const AddServer = () => {
 
     fetchRequest(
       {
-        url: 'https://opspad.hng.tech/api/server/all',
+        url: 'https://opspad.dev/api/server/all',
       },
       getResponseData,
     );
