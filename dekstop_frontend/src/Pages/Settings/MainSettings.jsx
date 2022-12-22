@@ -2,10 +2,12 @@
 /* eslint-disable no-lone-blocks */
 
 import { Link } from 'react-router-dom';
+// import { FaChevronRight } from 'react-icons/fa';
 import { Security, Support } from './data';
 import style from './MainSettings.module.css';
 import Sidenav from '../../Components/SideNav/SideNav';
 import BackBtn from '../../Components/BackBtn/BackBtn';
+// import ChangePassword from '../../Components/GlobalPassword/ChangePassword';
 
 function Settings() {
 	return (
@@ -72,28 +74,28 @@ function Settings() {
 				))} */}
 
 				{Security.map((security) => (
-					<div key={security.title}>
+					<>
 						<small className={style.smallHead}>{security.title}</small>
-
-						<div className={style.account}>
-							<div className={style.accountProfile}>
-								{security.icon}
-								{security.func}
-							</div>
-							{/* {security.iconright} */}
+						<div
+							key={security.title}
+							className={style.accountProfile}
+						>
+							{security.icon}
+							{security.func}
 						</div>
-					</div>
+					</>
 				))}
 
 				{Support.map((support) => (
 					<div className={style.support_cont} key={support.items}>
 						<small className={style.smallHead}>{support.title2}</small>
-						<ul className={style.support}>
+						<ul className={style.support} key={support.title2}>
 							{support.items.map((items) => (
-								<Link to='' onClick={() =>
-								window.open(`${items.slug}`, '_blank')
-							}>
-									<li key={items.list}>
+								<Link
+									to=""
+									onClick={() => window.open(`${items.slug}`, '_blank')}
+								>
+									<li key={items.items}>
 										{items.list}
 										{items.iconright}
 									</li>

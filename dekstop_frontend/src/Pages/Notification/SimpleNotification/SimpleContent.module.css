@@ -12,6 +12,7 @@
 .pnote{
 	width: 80%;
 	margin-left: 15px;
+	overflow-x: scroll;
 }
 
 .readMore{

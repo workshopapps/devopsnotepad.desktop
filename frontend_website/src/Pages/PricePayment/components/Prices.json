@@ -8,7 +8,7 @@
   },
   {
     "id": 1,
-    "plan": "Profesional",
+    "plan": "Professional",
     "priceMonthly": "20usd",
     "priceYearly": "200usd",
     "offer": [
@@ -20,7 +20,7 @@
   },
   {
     "id": 2,
-    "plan": "Organition",
+    "plan": "Organization",
     "priceMonthly": "100usd",
     "priceYearly": "1000usd",
     "offer": [

@@ -13,10 +13,6 @@ import Onboarding from './Components/Onboarding/Onboarding';
 import ServerDashBoard from './Pages/ServerDashboard/ServerDashboard';
 import SimpleNotification from './Pages/Notification/SimpleNotification/SimpleNotification';
 import AvailabilityNotification from './Pages/Notification/AvailabilityNotification/AvailabilityNotification';
-import About from './Pages/Settings/About/About';
-import Terms from './Pages/Settings/TermsOfUSe/Terms';
-import PrivacyPolicy from './Pages/Settings/TermsOfUSe/privacyPolicy';
-import Faq from './Pages/Settings/Faq/Faq';
 
 function App() {
 	return (
@@ -24,10 +20,6 @@ function App() {
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="about" element={<About />} />
-					<Route path="terms-of-use" element={<Terms />} />
-					<Route path="privacy-policy" element={<PrivacyPolicy />} />
-					<Route path="faq" element={<Faq />} />
 
 					<Route path="/server/:id" element={<ServerDashBoard />}>
 						<Route index element={<Note />} />

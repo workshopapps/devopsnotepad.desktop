@@ -55,15 +55,18 @@ function AddServer() {
 		}
 
 		// Server Id Validation
+		// Server Id must be a valid UUID string
 		if (serverId.length > 1 && serverId.length < 36) {
-			setServerIdValidation('Server ID must have at least 36 characters');
+			setServerIdValidation(
+				'Server ID must be valid UUID string with at least 36 characters'
+			);
 		} else {
 			setServerIdValidation('');
 		}
 
 		if (serverId.length >= 36) {
 			if (validateUUID(serverId) === false) {
-				setServerIdValidation('ServerId must be a valid UUID');
+				setServerIdValidation('ServerId must be a valid UUID string');
 			} else {
 				setServerIdValidation('');
 			}
@@ -142,6 +145,7 @@ function AddServer() {
 							<label htmlFor="serverId">Server ID</label>
 							<input
 								required
+								autoComplete="off"
 								onChange={onMutate}
 								type="text"
 								id="serverId"
@@ -155,6 +159,7 @@ function AddServer() {
 							<label htmlFor="name">Server Name</label>
 							<input
 								required
+								autoComplete="off"
 								onChange={onMutate}
 								type="text"
 								id="name"
@@ -168,6 +173,7 @@ function AddServer() {
 							<label htmlFor="ipAddress">IP Address &#40;Optional&#41; </label>
 							<input
 								onChange={onMutate}
+								autoComplete="off"
 								type="text"
 								id="ipAddress"
 								value={ipAddress}
