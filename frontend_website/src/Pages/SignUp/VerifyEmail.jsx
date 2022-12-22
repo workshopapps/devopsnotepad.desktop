@@ -21,7 +21,7 @@ const VerifyEmail = () => {
     const id = searchParams.get('id');
     fetchRequest(
       {
-        url: `https://opspad.hng.tech/api/auth/verify-email`,
+        url: `https://opspad.dev/api/auth/verify-email`,
         method: 'POST',
         body: { token: token, id: id },
         headers: {

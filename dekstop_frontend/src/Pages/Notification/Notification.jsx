@@ -45,7 +45,7 @@ function Notification() {
 		setLoading(true);
 		try {
 			const res = await fetch(
-				`https://opspad.hng.tech/api/server/${targetId(
+				`https://opspad.dev/api/server/${targetId(
 					list,
 					Id
 				)}/notifications/`

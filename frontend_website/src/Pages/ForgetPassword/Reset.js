@@ -35,7 +35,7 @@ const Reset = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        fetch('https://opspad.hng.tech/api/auth/reset-password', {
+        fetch('https://opspad.dev/api/auth/reset-password', {
             // mode: 'no-cors',
             method: "POST",
             body: JSON.stringify({

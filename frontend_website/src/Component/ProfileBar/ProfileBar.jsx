@@ -54,7 +54,7 @@ function ProfileBar() {
                 };
 
                 await axios
-                  .get('https://opspad.hng.tech/api/auth/logout', headers)
+                  .get('https://opspad.dev/api/auth/logout', headers)
                   .then((response) => response)
                   .then(
                     navigate('/login'),

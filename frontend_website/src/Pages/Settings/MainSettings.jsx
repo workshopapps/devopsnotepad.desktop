@@ -109,7 +109,7 @@ export default function Settings() {
 		return user;
 	}
 
-	const API_URL = "https://opspad.hng.tech/api/auth/update-user-password";
+	const API_URL = "https://opspad.dev/api/auth/update-user-password";
 
 	const user = isAuthenticated();
 	const email = user?.user?.email;
@@ -148,7 +148,7 @@ export default function Settings() {
 		};
 
 		await axios
-			.post('https://opspad.hng.tech/api/auth/delete-user', {
+			.post('https://opspad.dev/api/auth/delete-user', {
 				"email": email
 			}, headers)
 			.then((response) => response)
