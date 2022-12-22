@@ -38,7 +38,7 @@ while read -r line; do
 
      echo '\n'
 
-    curl -X POST -H "Content-Type: application/json" -d "$data" "https://opspad.hng.tech/api/server/$serverId/notifications"
+    curl -X POST -H "Content-Type: application/json" -d "$data" "https://opspad.dev/api/server/$serverId/notifications"
 
 done < "$FILEPATH"
 

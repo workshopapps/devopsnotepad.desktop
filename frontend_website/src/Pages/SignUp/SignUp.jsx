@@ -27,7 +27,7 @@ const SignUp = () => {
   };
   // Sigin up with google
   const googleSignInHandler = useCallback(async (response) => {
-    const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
+    const req = await fetch('https://opspad.dev/api/auth/google-login', {
       method: 'POST',
       body: JSON.stringify({ token: response.credential }),
       headers: {
@@ -58,7 +58,7 @@ const SignUp = () => {
   const signUpHandler = async (formData) => {
     createAccount(
       {
-        url: 'https://opspad.hng.tech/api/auth/signup',
+        url: 'https://opspad.dev/api/auth/signup',
         method: 'POST',
         body: formData,
         headers: {
