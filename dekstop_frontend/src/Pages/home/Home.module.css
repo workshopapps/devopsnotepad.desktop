@@ -83,6 +83,7 @@
 
 .search > input {
 	width: 100%;
+	font-size: 14px;
 }
 
 .search:focus-within {
@@ -92,6 +93,11 @@
 .search > img {
 	width: 11.66px;
 	height: 11.66px;
+}
+
+.bad_query {
+	font-size: 18px;
+	font-weight: 600;
 }
 
 .btn {

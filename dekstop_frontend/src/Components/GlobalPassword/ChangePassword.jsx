@@ -85,6 +85,7 @@ function ChangePassword() {
 	}
 	function closeSuccess() {
 		setShowSuccess(false);
+		navigate('/settings')
 		window.location.reload();
 	}
 
@@ -110,7 +111,7 @@ function ChangePassword() {
 	}
 
 	return (
-		<div>
+		<>
 			{showSuccess && (
 				<Success
 					// eslint-disable-next-line react/jsx-no-bind
@@ -120,12 +121,11 @@ function ChangePassword() {
 					}}
 				/>
 			)}
-			<div className={styles.anchor}>
 				<div className={styles.anchor} onClick={openModal}>
 					<h2>Change Password</h2>
-					<FaChevronRight />
+					<FaChevronRight/>
 				</div>
-			</div>
+				
 			<Modal
 				isOpen={modalIsOpen}
 				// onAfterOpen={afterOpenModal}
@@ -194,8 +194,9 @@ function ChangePassword() {
 					</form>
 				</div>
 			</Modal>
-		</div>
+			</>
 	);
 }
 
 export default ChangePassword;
+

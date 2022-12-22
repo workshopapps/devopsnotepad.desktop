@@ -62,7 +62,8 @@ export const menuList = [
       {
         title: 'Podcasts',
         slug: '/podcasts',
-      },
+      }
+      
     ],
   }
 ];

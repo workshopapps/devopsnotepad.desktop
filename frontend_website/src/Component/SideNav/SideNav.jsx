@@ -95,13 +95,13 @@ function SideNav() {
           {isOpen && servers.length > 0 && (
             <ul className={styles.ul}>
               {servers.map((server, index) => (
-                <li className={styles.li} key={server.userId}>
+                <li className={styles.li} key={server.id}>
                   <Link to={`/server/${server.id}`} className={styles.li_link}>
                     {server.name}{' '}
                   </Link>
                   <MdDelete
                     className={styles.name__icon}
-                    onClick={deleteServerHandler.bind(null, server.userId)}
+                    onClick={deleteServerHandler.bind(null, server.id)}
                   />
                 </li>
               ))}
@@ -158,7 +158,7 @@ function SideNav() {
               {isOpen && servers.length > 0 && (
                 <ul className={styles.ul}>
                   {servers.map((server, index) => (
-                    <li className={styles.li} key={server.userId}>
+                    <li className={styles.li} key={server.id}>
                       <Link
                         to={`/server/${server.id}`}
                         className={styles.li_link}
@@ -168,7 +168,7 @@ function SideNav() {
                       </Link>
                       <MdDelete
                         className={styles.name__icon}
-                        onClick={deleteServerHandler.bind(null, server.userId)}
+                        onClick={deleteServerHandler.bind(null, server.id)}
                       />
                     </li>
                   ))}
@@ -197,3 +197,4 @@ function SideNav() {
 }
 
 export default SideNav;
+
