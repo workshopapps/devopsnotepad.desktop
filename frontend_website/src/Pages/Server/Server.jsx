@@ -26,7 +26,7 @@ function Server() {
     };
     fetchRequest(
       {
-        url: 'https://opspad.hng.tech/api/server/all',
+        url: 'https://opspad.dev/api/server/all',
       },
       getResponseData,
     );
