@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { menuList } from './NavData';
+import { navMenu } from './NavData';
 import styles from './Navigation.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../store/UserContext';
@@ -14,7 +15,7 @@ const Navbar = ({ isOpen, setOpen }) => {
   return (
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
       <ul className={styles.menuUlList}>
-        <div className={styles.menuBox}>
+        {/* <div className={styles.menuBox}>
           {menuList.map((menu, i) => (
             <div key={i} className={styles.sMki}>
               <button
@@ -50,7 +51,22 @@ const Navbar = ({ isOpen, setOpen }) => {
               )}
             </div>
           ))}
-        </div>
+        </div> */}
+
+        {navMenu.map((menu, i) => (
+          <li key={i} className={styles.menuLi}>
+            <NavLink
+              to={`${menu.slug}`}
+              onClick={() => {
+                handleMenuToggle(false);
+                setOpen(false);
+              }}
+              className={({ isActive }) => (isActive ? styles.footer_list : '')}
+            >
+              {menu.title}
+            </NavLink>
+          </li>
+        ))}
 
         <div className={styles.navAuthBtn}>
           {user !== null ? (
@@ -66,8 +82,8 @@ const Navbar = ({ isOpen, setOpen }) => {
               Login
             </Link>
           )}
-          <Link className={styles.download_link} to='/download'>
-            Download App
+          <Link className={styles.download_link} to='/demo'>
+            See Demo
           </Link>
         </div>
       </ul>
