@@ -128,7 +128,6 @@ function App() {
               </>
             }
           />
-          <Route path='/partner' exact element={<Partner />} />
           <Route path='/csr' exact element={<Csr />} />
           <Route path='/podcasts' exact element={<PodCast />} />
           <Route path='/prices' exact element={<Prices />} />
