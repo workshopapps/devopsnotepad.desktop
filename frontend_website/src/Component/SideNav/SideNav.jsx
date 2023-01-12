@@ -43,7 +43,7 @@ function SideNav() {
     console.log('Starting the delete request');
     fetchRequest(
       {
-        url: 'https://opspad.hng.tech/api/server/delete',
+        url: 'https://opspad.dev/api/server/delete',
         method: 'POST',
         body: {
           serverIds: [server_id],
@@ -63,7 +63,7 @@ function SideNav() {
 
     fetchRequest(
       {
-        url: 'https://opspad.hng.tech/api/server/all',
+        url: 'https://opspad.dev/api/server/all',
       },
       getResponseData,
     );
@@ -197,3 +197,4 @@ function SideNav() {
 }
 
 export default SideNav;
+
