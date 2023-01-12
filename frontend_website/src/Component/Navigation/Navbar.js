@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 // import { menuList } from './NavData';
 import { navMenu } from './NavData';
 import styles from './Navigation.module.css';
@@ -31,10 +31,11 @@ const Navbar = ({ isOpen, setOpen }) => {
                     menuOpen[i] ? styles.show : ''
                   }`}
                 >
-                  {menu.subMenu.map((sMenu, i) => (
+                  {menu.subMenu.map((sMenu, i) => {
+                    return (
                     <li key={i}>
                       <NavLink
-                        to={`${sMenu.slug}`}
+                        to={sMenu.slug}
                         onClick={() => {
                           handleMenuToggle(false);
                           setOpen(false);
@@ -46,7 +47,7 @@ const Navbar = ({ isOpen, setOpen }) => {
                         {sMenu.title}
                       </NavLink>
                     </li>
-                  ))}
+                  )})}
                 </ul>
               )}
             </div>

@@ -16,7 +16,7 @@ const Header = () => {
   const handleSubmit = event => {
     event.preventDefault();
     setEmail('');
-    fetch('https://opspad.hng.tech/api/notify-me/', {
+    fetch('https://opspad.dev/api/notify-me/', {
       method: 'POST',
       body: JSON.stringify({
         email

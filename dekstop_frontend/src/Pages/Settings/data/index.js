@@ -90,17 +90,17 @@ export const Support = [
 		items: [
 			{
 			list: 'About',
-			slug: 'https://opspad.hng.tech/about-us',
+			slug: 'https://opspad.dev/about-us',
 			iconright: <FaChevronRight />,
 			},
 			{
 			list: 'Terms of Service',
-			slug: 'https://opspad.hng.tech/terms-of-service',
+			slug: 'https://opspad.dev/terms-of-service',
 			iconright: <FaChevronRight />,
 			},
 			{
 			list: 'FAQs',
-			slug: 'https://opspad.hng.tech/faq',
+			slug: 'https://opspad.dev/faq',
 			iconright: <FaChevronRight />,
 			}
 		],

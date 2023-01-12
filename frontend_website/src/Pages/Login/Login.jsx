@@ -31,7 +31,7 @@ const Login = () => {
 
   // Sigin up with google
   const googleSignInHandler = useCallback(async (response) => {
-    const req = await fetch('https://opspad.hng.tech/api/auth/google-login', {
+    const req = await fetch('https://opspad.dev/api/auth/google-login', {
       method: 'POST',
       body: JSON.stringify({ token: response.credential }),
       headers: {
@@ -62,7 +62,7 @@ const Login = () => {
   const signInHandler = async (formData) => {
     LoginRequest(
       {
-        url: 'https://opspad.hng.tech/api/auth/login',
+        url: 'https://opspad.dev/api/auth/login',
         method: 'POST',
         body: formData,
         headers: {
@@ -82,7 +82,7 @@ const Login = () => {
     hideModal()
     LoginRequest(
       {
-        url: 'https://opspad.hng.tech/api/auth/resend-verify-email',
+        url: 'https://opspad.dev/api/auth/resend-verify-email',
         method: 'POST',
         body: {
           email
