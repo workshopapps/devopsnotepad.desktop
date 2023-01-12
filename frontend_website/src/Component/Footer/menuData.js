@@ -11,40 +11,36 @@ export const Links = [
         slug: '/our-team',
       },
       {
-        title: 'Partners',
-        slug: '/partners',
-      },
-      {
-        title: 'Contact Us',
-        slug: '/contact-us',
+        title: 'FAQs',
+        slug: '/faq',
       },
       {
         title: 'Careers',
         slug: '/careers',
       },
       {
-        title: 'Terms of Service',
+        title: 'Terms and Policy',
         slug: '/terms-of-service',
       },
     ],
   },
-  {
-    title: 'RESOURCES',
-    list: [
-      {
-        title: 'Coming Soon',
-        slug: '/coming-soon',
-      },
-      {
-        title: 'FAQs',
-        slug: '/faq',
-      },
-      {
-        title: 'Podcasts',
-        slug: '/podcasts',
-      },
-    ],
-  },
+  // {
+  //   title: 'RESOURCES',
+  //   list: [
+  //     {
+  //       title: 'Coming Soon',
+  //       slug: '/coming-soon',
+  //     },
+  //     {
+  //       title: 'FAQs',
+  //       slug: '/faq',
+  //     },
+  //     {
+  //       title: 'Podcasts',
+  //       slug: '/podcasts',
+  //     },
+  //   ],
+  // },
   {
     title: 'PRODUCT',
     list: [
@@ -57,7 +53,7 @@ export const Links = [
         slug: '/integrations',
       },
       {
-        title: 'Prices',
+        title: 'Pricing',
         slug: '/prices',
       },
       {
