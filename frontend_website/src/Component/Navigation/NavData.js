@@ -1,69 +1,84 @@
-export const menuList = [
+// export const menuList = [
+//   {
+//     title: 'Product',
+//     type: 'button',
+//     subMenu: [
+//       {
+//         title: 'Features',
+//         slug: '/features',
+//       },
+//       {
+//         title: 'Integrations',
+//         slug: '/integrations',
+//       },
+//       {
+//         title: 'Prices',
+//         slug: '/prices',
+//       },
+//       {
+//         title: 'Demo',
+//         slug: '/demo',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'Company',
+//     type: 'button',
+//     subMenu: [
+//       {
+//         title: 'About Us',
+//         slug: '/about-us',
+//       },
+//       {
+//         title: 'Our Team',
+//         slug: '/our-team',
+//       },
+//       {
+//         title: 'Partners',
+//         slug: '/partners',
+//       },
+//       {
+//         title: 'Contact Us',
+//         slug: '/contact-us',
+//       },
+//       {
+//         title: 'Careers',
+//         slug: '/careers',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'Resources',
+//     type: 'button',
+//     subMenu: [
+//       {
+//         title: 'Coming Soon',
+//         slug: '/coming-soon',
+//       },
+//       {
+//         title: 'FAQs',
+//         slug: '/faq',
+//       },
+//       {
+//         title: 'Podcasts',
+//         slug: '/podcasts',
+//       },
+//     ],
+//   }
+// ];
+
+// New Navbar data
+export const navMenu = [
   {
-    title: 'Product',
-    type: 'button',
-    subMenu: [
-      {
-        title: 'Features',
-        slug: '/features',
-      },
-      {
-        title: 'Integrations',
-        slug: '/integrations',
-      },
-      {
-        title: 'Prices',
-        slug: '/prices',
-      },
-      {
-        title: 'Demo',
-        slug: '/demo',
-      },
-    ],
+    title: 'Features',
+    slug: '/features',
   },
   {
-    title: 'Company',
-    type: 'button',
-    subMenu: [
-      {
-        title: 'About Us',
-        slug: '/about-us',
-      },
-      {
-        title: 'Our Team',
-        slug: '/our-team',
-      },
-      {
-        title: 'Partners',
-        slug: '/partners',
-      },
-      {
-        title: 'Contact Us',
-        slug: '/contact-us',
-      },
-      {
-        title: 'Careers',
-        slug: '/careers',
-      },
-    ],
+    title: 'Contact Us',
+    slug: '/contact-us',
   },
   {
-    title: 'Resources',
-    type: 'button',
-    subMenu: [
-      {
-        title: 'Coming Soon',
-        slug: '/coming-soon',
-      },
-      {
-        title: 'FAQs',
-        slug: '/faq',
-      },
-      {
-        title: 'Podcasts',
-        slug: '/podcasts',
-      }
-      
-    ],
+    title: 'Download App',
+    slug: '/download',
   }
-];
+]
