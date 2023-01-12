@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { menuList } from './NavData';
+// import { menuList } from './NavData';
 import { navMenu } from './NavData';
 import styles from './Navigation.module.css';
 import { Link, NavLink } from 'react-router-dom';
@@ -8,9 +8,9 @@ import { UserContext } from '../../store/UserContext';
 const Navbar = ({ isOpen, setOpen }) => {
   const { user, addUserHandler } = useContext(UserContext);
 
-  const [menuOpen, setMenuOpen] = useState({});
-  const handleMenuToggle = (index) =>
-    setMenuOpen((state) => ({ [index]: !state[index] }));
+  // const [menuOpen, setMenuOpen] = useState({});
+  // const handleMenuToggle = (index) =>
+  //   setMenuOpen((state) => ({ [index]: !state[index] }));
 
   return (
     <nav className={`${styles.inMenuBar} ${isOpen ? styles.openMenu : ''}`}>
@@ -57,10 +57,10 @@ const Navbar = ({ isOpen, setOpen }) => {
           <li key={i} className={styles.menuLi}>
             <NavLink
               to={`${menu.slug}`}
-              onClick={() => {
-                handleMenuToggle(false);
-                setOpen(false);
-              }}
+              // onClick={() => {
+              //   handleMenuToggle(false);
+              //   setOpen(false);
+              // }}
               className={({ isActive }) => (isActive ? styles.footer_list : '')}
             >
               {menu.title}
