@@ -43,6 +43,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  list-style-type: none;
 }
 
 .navigation .mainNavigation .inMenuBar .menuUlList li a {
@@ -50,23 +51,30 @@
   font-style: normal;
   font-weight: 500;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
-  color: #202020;
-  padding: 10px;
+  color: #000000;
+  margin: 10px 20px 0 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ffffff transparent;
 }
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
+.navigation .mainNavigation .inMenuBar .menuUlList .menuLi a:hover {
+  color: #102A63;
+  border-bottom: 1px solid #102A63;
+}
+
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
   position: relative;
   display: flex;
   gap: 25px;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .sMki {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .sMki {
   position: relative;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 600;
@@ -77,17 +85,17 @@
   outline: none;
   cursor: pointer;
   background-color: transparent;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title i {
   margin-left: 8px;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title:hover {
   color: #092f80;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown {
   position: absolute;
   z-index: 999;
   top: 30px;
@@ -101,26 +109,26 @@
   display: none;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
   list-style: none;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown.show {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown.show {
   display: block;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li:hover {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li:hover {
   background-color: #e1dbdbbe;
   color: #1e4cae;
   font-weight: bold;
   width: 100%;
-}
+} */
 
-.navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
+/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a {
   text-align: center;
   color: #3b3a3a;
   width: 100%;
-}
+} */
 
-.navigation
+/* .navigation
   .mainNavigation
   .inMenuBar
   .menuUlList
@@ -131,9 +139,9 @@
   border: 0.5px solid #e5e5e5;
   margin: 0;
   padding: 0;
-}
+} */
 
-.navigation
+/* .navigation
   .mainNavigation
   .inMenuBar
   .menuUlList
@@ -142,18 +150,14 @@
   li
   .link_line:last-child {
   border: none;
-}
-
-/* .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .dropdown li a:last-child {
-    color: red;
 } */
 
-.navigation .mainNavigation .right {
+/* .navigation .mainNavigation .right {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-left: 15px;
-}
+} */
 
 .navigation .mainNavigation .inMenuBar .menuUlList .navAuthBtn {
   display: none;
@@ -276,6 +280,12 @@
     padding: 10px;
     display: flex;
     padding-left: 50px;
+    margin: 0;
+    border: none;
+  }
+
+  .navigation .mainNavigation .inMenuBar .menuUlList li a:hover {
+    border: none;
   }
 
   .navigation .mainNavigation .inMenuBar .menuUlList .menuBox {
@@ -328,6 +338,11 @@
   .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
     padding-left: 40px;
     padding-right: 45px;
+    border: none;
+  }
+
+  .navigation .mainNavigation .inMenuBar .menuUlList .menuLi a:hover {
+    border: none;
   }
 
   .navigation .mainNavigation .inMenuBar .logo .inLogo {
@@ -363,6 +378,8 @@
   .navigation .mainNavigation .inMenuBar .menuUlList .menuBox .menu_title {
     padding-left: 16px;
     padding-right: 30px;
+    margin: 0;
+    border: none;
   }
 
   .navigation .mainNavigation .inMenuBar .logo .inLogo,

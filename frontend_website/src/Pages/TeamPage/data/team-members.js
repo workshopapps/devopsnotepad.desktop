@@ -331,6 +331,9 @@ export const TeamData = [
       {
         name: 'Blessing U.',
       },
+      {
+        name: 'Victor O.',
+      }
     ],
     desktopSlides: [
       developersLG1,
