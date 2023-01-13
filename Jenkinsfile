@@ -11,8 +11,8 @@ pipeline {
 
 			steps {
 				sh "pwd"
-				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
-				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
+// 				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
+// 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
 			}
 		}
     
