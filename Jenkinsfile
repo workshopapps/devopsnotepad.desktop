@@ -55,7 +55,7 @@ pipeline {
 		stage("move repo") {
 		
 			steps {
-				sh "sudo rm -r /home/de-marauder/opspad/devopsnotepad.desktop"
+// 				sh "sudo rm -r /home/de-marauder/opspad/devopsnotepad.desktop"
 				sh "sudo mkdir -p /home/de-marauder/opspad/devopsnotepad.desktop"
 				sh "sudo cp -r ${WORKSPACE}/* /home/de-marauder/opspad/devopsnotepad.desktop/"
 			}
