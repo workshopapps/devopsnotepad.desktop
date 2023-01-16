@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 20;
 }
 
@@ -21,7 +21,7 @@
 .form {
   width: 836px;
   height: fit-content;
-  padding: 48px;
+  padding: 24px 48px;
   background: #ffffff;
   border-radius: 16px;
   position: absolute;
@@ -31,4 +31,96 @@
   z-index: 40;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
+  justify-content: center;
 }
+
+.form h2 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #202020;
+}
+
+.form_control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 354px;
+}
+
+.form_control label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+}
+
+.form_control input {
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  padding: 12px;
+  color: #aaaaaa;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.feedback {
+  width: 100%;
+}
+
+.feedback textarea {
+  width: 100%;
+  height: 138px;
+  padding: 16px 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(230, 230, 230, 0.18);
+  color: #aaaaaa;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.terms {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+  color: #202020;
+}
+
+.terms span {
+  color: #2563eb;
+}
+
+.submit {
+  display: grid;
+  place-content: center;
+  padding: 12px 32px;
+  width: 109px;
+  height: 48px;
+  background: #102a63;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+  border: none;
+}
+
+.form h2,
+.job,
+.feedback,
+.terms,
+.submit {
+  grid-column: span 2; /* 1/3 */
+}
+
+/* .terms,
+.submit {
+  margin-top: -12px;
+} */
