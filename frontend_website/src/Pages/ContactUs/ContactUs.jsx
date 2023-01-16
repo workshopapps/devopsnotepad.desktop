@@ -14,24 +14,26 @@ function ContactUs() {
           learn how Opspad can solve your server management challenges.
         </p>
 
-        <div className={style.card}>
-          <h2>Support</h2>
-          <p>
-            Reach out to our support team to report any issues and learn more
-            about our platform.
-          </p>
-          <button className={style.btn}>Contact Support</button>
-        </div>
+        <div className={style.card_container}>
+          <div className={style.card}>
+            <h2>Support</h2>
+            <p>
+              Reach out to our support team to report any issues and learn more
+              about our platform.
+            </p>
+            <button className={style.btn}>Contact Support</button>
+          </div>
 
-        <div className={style.card}>
-          <h2>Admin</h2>
-          <p>
-            Have any suggestions on improvements or bug report reach out to our
-            admin team.
-          </p>
-          <a href='!#' className={style.btn}>
-            Email Admin
-          </a>
+          <div className={style.card}>
+            <h2>Admin</h2>
+            <p>
+              Have any suggestions on improvements or bug report reach out to
+              our admin team.
+            </p>
+            <a href='!#' className={style.btn}>
+              Email Admin
+            </a>
+          </div>
         </div>
       </section>
       <Footer />

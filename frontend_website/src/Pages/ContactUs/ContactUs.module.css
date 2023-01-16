@@ -1,1 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
+
+.container {
+  padding: 38px 80px; /*160px 80px 76px*/
+  display: flex;
+  flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  background-image: url('./assets/bg_shape.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 905px 932.73px;
+}
+
+.container h1 {
+  font-weight: 800;
+  font-size: 56px;
+  margin-bottom: 32px;
+}
+
+.container > p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  max-width: 826px;
+}
+
+.card_container {
+  margin-top: 72px;
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  width: 628px;
+  height: 394px;
+  background: #e6ebf4;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 114px 53px 56px 32px;
+}
+
+.card h2 {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.card p {
+  max-width: 543px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #6f6f6f;
+}
+
+.card .btn {
+  display: grid;
+  place-content: center;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 200px;
+  height: 56px;
+  background: #102a63;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+}
