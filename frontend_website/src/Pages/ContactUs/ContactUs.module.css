@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   font-family: 'Manrope', sans-serif;
-  background-image: url('./assets/bg_shape.svg');
+  background-image: url('./assets/bgShape.svg');
   background-repeat: no-repeat;
   background-position: right;
   background-size: 905px 932.73px;
@@ -47,7 +47,7 @@
 }
 
 .card p {
-  max-width: 543px;
+  /* max-width: 543px; */
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
@@ -67,4 +67,44 @@
   color: #ffffff;
   font-weight: 600;
   font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    background-position-x: 400px;
+    background-position-y: bottom;
+    /* background-size: 700px 932.73px; */
+  }
+
+  .card {
+    width: 400px;
+    height: 400px;
+    padding: 53px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 22px 32px; /*160px 80px 76px*/
+  }
+
+  .card {
+    width: 380px;
+    height: 312px;
+    padding: 32px;
+    gap: 24px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .card .btn {
+    padding: 15px 22.5px;
+    font-size: 14px;
+  }
 }
