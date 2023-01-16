@@ -7,20 +7,20 @@ pipeline {
 	agent any
 	stages {
 
-		stage("Get repo"){
+// 		stage("Get repo"){
 
-			steps {
-				sh "pwd"
-				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
-				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
-			}
-		}
+// 			steps {
+// 				sh "pwd"
+// // 				sh "rm -rf ${WORKSPACE}/devopsnotepad.desktop"
+// // 				sh "git clone https://github.com/workshopapps/devopsnotepad.desktop.git"
+// 			}
+// 		}
     
 		stage("Build frontend"){
 
 			steps {
 
-                dir ('devopsnotepad.desktop/frontend_website') {
+                dir ('frontend_website') {
                     sh "pwd"
                     sh "npm i -f"
                     sh "npm run build"
@@ -32,7 +32,7 @@ pipeline {
 
 			steps {
 
-                dir ('devopsnotepad.desktop/dekstop_frontend') {
+                dir ('dekstop_frontend') {
                     sh "pwd"
                     sh "npm i -f"
                     sh "npm run build"
@@ -45,7 +45,7 @@ pipeline {
 
 			steps {
 
-                dir ('devopsnotepad.desktop/backend') {
+                dir ('backend') {
                     sh "npm i"
                 }
 
@@ -56,7 +56,8 @@ pipeline {
 		
 			steps {
 				sh "sudo rm -r /home/de-marauder/opspad/devopsnotepad.desktop"
-				sh "sudo cp -r ${WORKSPACE}/devopsnotepad.desktop /home/de-marauder/opspad/"
+				sh "sudo mkdir -p /home/de-marauder/opspad/devopsnotepad.desktop"
+				sh "sudo cp -r ${WORKSPACE}/* /home/de-marauder/opspad/devopsnotepad.desktop/"
 			}
 		}
 

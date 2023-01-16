@@ -80,8 +80,8 @@ const Navigation = () => {
                     Login
                   </Link>
                 )}
-                <Link className={styles.download_link} to='/download'>
-                  Download App
+                <Link className={styles.download_link} to='/demo'>
+                  See Demo
                 </Link>
               </div>
               <div className={styles.hamburgerBar}>
