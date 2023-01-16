@@ -2,10 +2,12 @@ import React from 'react';
 import style from './ContactUs.module.css';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
+import ContactUsForm from '../../Component/ContactUsForm/ContactUsForm';
 
 function ContactUs() {
   return (
-    <>
+    <div className={style.contact}>
+      <ContactUsForm />
       <Navigation />
       <section className={style.container}>
         <h1>Get in touch</h1>
@@ -37,7 +39,7 @@ function ContactUs() {
         </div>
       </section>
       <Footer />
-    </>
+    </div>
   );
 }
 
