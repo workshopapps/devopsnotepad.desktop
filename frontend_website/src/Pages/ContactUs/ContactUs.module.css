@@ -11,7 +11,7 @@
   background-size: 905px 932.73px;
 }
 
-.container h1 {
+.container > h1 {
   font-weight: 800;
   font-size: 56px;
   margin-bottom: 32px;
@@ -106,5 +106,58 @@
   .card .btn {
     padding: 15px 22.5px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    background-image: url('./assets/BgShapeMobile.svg');
+    background-size: 406.21px 469px;
+    background-position-x: 200px;
+    background-position-y: top;
+    padding: 67.6px 24px 96px;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .container > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 383px;
+  }
+
+  .container > h1,
+  .container > p {
+    text-align: center;
+  }
+
+  .card_container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 69px;
+  }
+
+  .card {
+    gap: 0;
+    text-align: left;
+  }
+
+  .card h2 {
+    margin-bottom: 40px;
+  }
+
+  .card p {
+    line-height: 24px;
+  }
+
+  .card .btn {
+    margin-top: 48px;
+    padding: 17px 30px;
   }
 }
