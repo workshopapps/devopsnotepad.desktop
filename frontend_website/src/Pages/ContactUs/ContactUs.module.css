@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
 
+.contact_wrapper {
+  display: relative;
+}
+
 .container {
   padding: 38px 80px; /*160px 80px 76px*/
   display: flex;

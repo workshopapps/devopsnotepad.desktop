@@ -6,7 +6,7 @@ import ContactUsForm from '../../Component/ContactUsForm/ContactUsForm';
 
 function ContactUs() {
   return (
-    <div className={style.contact}>
+    <div className={style.contact_wrapper}>
       <ContactUsForm />
       <Navigation />
       <section className={style.container}>
