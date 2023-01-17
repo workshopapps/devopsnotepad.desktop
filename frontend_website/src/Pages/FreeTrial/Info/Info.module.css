@@ -1,0 +1,47 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    gap: 41px;
+    padding: 80px 71px;
+    background-color: #FCFCFC;
+}
+
+.infoCard {
+    text-align: center;
+}
+
+.imgWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #F6F9FF;
+}
+
+.infoCard h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+}
+
+.infoCard p {
+    font-size: 18px;
+    color: black;
+}
+
+@media screen and (max-width: 819px) {
+    .info {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .info {
+        padding: 23.5px 16px 23.5px 16px;
+    }
+}

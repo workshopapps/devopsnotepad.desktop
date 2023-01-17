@@ -1,0 +1,68 @@
+.accordion {
+    padding: 23.5px 100px 23.5px 80px;
+    background-color: #F6F9FF;
+}
+
+.accordionItem {
+    padding: 40px;
+    border-bottom: 1px solid #E0EAFF;
+}
+
+.accordionItemO {
+    padding: 40px;
+    border-bottom: 1px solid #E0EAFF;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.times {
+    width: 24px;
+    height: 24px;
+    fill: #102A63;
+}
+
+.plus {
+    width: 16px;
+    height: 16px;
+    fill: #102A63;
+}
+
+.accordionTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleH1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #102A63;
+}
+
+.accordionContent ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .accordion {
+        padding: 18px 24px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .accordion {
+        padding: 23.5px 16px 23.5px 16px;
+    }
+
+    .titleH1 {
+        font-size: 20px;
+    }
+
+    .times,
+    .plus {
+        width: 14px;
+        height: 14px;
+    }
+}

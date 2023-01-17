@@ -1,0 +1,33 @@
+/* .slide {
+    overflow-x: scroll;
+} */
+
+.slideH1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #202020;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.blue {
+    color: #2563EB;
+}
+
+.images {
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    overflow: -moz-scrollbars-none;  /* Firefox */
+}
+
+.images::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+@media screen and (max-width: 650px) {
+    .slideH1 {
+        font-size: 24px;
+    }
+}
