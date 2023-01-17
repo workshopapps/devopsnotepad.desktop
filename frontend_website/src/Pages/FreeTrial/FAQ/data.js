@@ -11,65 +11,28 @@ export const accordionData = [
     },
     {
         title: 'How secure is my server information?',
-        content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-            reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-            quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-            pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-            quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-            Repudiandae, mollitia id reprehenderit a ab odit!`,
-        // list: [
-        //     'Get notified of your server status immediately.',
-        //     'Store passwords of server tools for every server.',
-        //     'Write down notes to keep track of key events for any server. '
-        // ],
-        // more: 'Opspad is available on Windows, Mac and android operating systems. This gives you the flexibility to access and manage your server from almost anywhere.`'
+        content: `Your access credentials for your server tools are stored offline in your device database.`,
     },
     {
         title: 'How do I save my logs?',
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-        quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-        dolor ut sequi minus iste? Quas?`,
-        // list: [
-        //     'Get notified of your server status immediately.',
-        //     'Store passwords of server tools for every server.',
-        //     'Write down notes to keep track of key events for any server. '
-        // ],
-        // more: 'Opspad is available on Windows, Mac and android operating systems. This gives you the flexibility to access and manage your server from almost anywhere.`'
+        content: `Currently, your serve tools are store offline in your device database.`,
+
     },
     {
         title: 'Do i need a server ID for each server?',
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-        quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-        dolor ut sequi minus iste? Quas?`,
-        // list: [
-        //     'Get notified of your server status immediately.',
-        //     'Store passwords of server tools for every server.',
-        //     'Write down notes to keep track of key events for any server. '
-        // ],
-        // more: 'Opspad is available on Windows, Mac and android operating systems. This gives you the flexibility to access and manage your server from almost anywhere.`'
+        content: `A server ID is created for each server registered from your 
+        administrative dashboard on your web account. This server ID is also sent
+         to your registered email account and is used on the bash script to configure
+          what logs you want to receive.`
     },
     {
         title: 'What server information does opspad provide?',
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-        quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-        dolor ut sequi minus iste? Quas?`,
-        // list: [
-        //     'Get notified of your server status immediately.',
-        //     'Store passwords of server tools for every server.',
-        //     'Write down notes to keep track of key events for any server. '
-        // ],
-        // more: 'Opspad is available on Windows, Mac and android operating systems. This gives you the flexibility to access and manage your server from almost anywhere.`'
+        content: `Opspad checks if your servers are running or are down using the availability feature and also displays logs for any server you configured.`,
     },
     {
         title: 'How can i use opspad?',
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-        quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-        dolor ut sequi minus iste? Quas?`,
-        // list: [
-        //     'Get notified of your server status immediately.',
-        //     'Store passwords of server tools for every server.',
-        //     'Write down notes to keep track of key events for any server. '
-        // ],
-        // more: 'Opspad is available on Windows, Mac and android operating systems. This gives you the flexibility to access and manage your server from almost anywhere.`'
+        content: `please refer to the user guide here:
+https://opspad-organization.gitbook.io/opspad-knowledge-base/`,
+
     }
 ];
