@@ -30,7 +30,7 @@ const HeroSection = () => {
     return (
         <div className={style.THero}>
             <div className={style.THeroText}>
-                <h1 className={style.HeroH1}>Manage your server at a go <span className={style.HeroH1Blue}>for free</span></h1>
+                <h1 className={style.HeroH1}>Manage your server on the go <span className={style.HeroH1Blue}>for free</span></h1>
                 <p>Save time and work more efficiently using Opspad. Sign-Up
                     for a free trial and get to setup your account to view any
                     type of logs in less than a minute added with safely storing

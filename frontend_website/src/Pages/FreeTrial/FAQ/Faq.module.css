@@ -43,11 +43,31 @@
     flex-direction: column;
     gap: 20px;
     margin: 20px;
+    font-size: 20px;
+}
+
+.accordionContent p {
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 768px) {
     .accordion {
         padding: 18px 24px;
+    }
+
+    .titleH1 {
+        font-size: 20px;
+        gap: 22.1px;
+    }
+
+    .accordionContent ul {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .accordionContent p {
+        font-size: 16px;
+        font-weight: 500;
     }
 }
 
