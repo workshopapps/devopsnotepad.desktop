@@ -2,7 +2,30 @@ import React, { useState } from 'react';
 import style from './ContactUsForm.module.css';
 
 function ContactUsForm({ closeContact }) {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    job: '',
+    feedback: '',
+  });
+
+  const { firstName, lastName, email, company, job, feedback } = formData;
+
+  function onMutateForm(e) {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+  }
+
+  function onSubmitForm(e) {
+    e.preventDefault();
+
+    console.log(formData);
+  }
+
   return (
     <div className={style.container}>
       <input
@@ -10,7 +33,7 @@ function ContactUsForm({ closeContact }) {
         className={style.dark_overlay}
         onClick={closeContact}
       />
-      <form className={style.form}>
+      <form className={style.form} onSubmit={onSubmitForm}>
         <h2>Contact Support</h2>
         <div className={`${style.form_control} ${style.first_name}`}>
           <label htmlFor='firstName'>First Name</label>
@@ -18,6 +41,9 @@ function ContactUsForm({ closeContact }) {
             type='text'
             id='firstName'
             placeholder='What’s your first name?'
+            value={firstName}
+            onChange={onMutateForm}
+            required
           />
         </div>
         <div className={`${style.form_control} ${style.last_name}`}>
@@ -26,34 +52,51 @@ function ContactUsForm({ closeContact }) {
             type='text'
             id='lastName'
             placeholder='What’s your last name?'
+            value={lastName}
+            onChange={onMutateForm}
+            required
           />
         </div>
         <div className={`${style.form_control} ${style.email}`}>
           <label htmlFor='email'>Email Address</label>
           <input
-            type='text'
+            type='email'
             id='email'
             placeholder='What’s your email address?'
+            value={email}
+            onChange={onMutateForm}
+            required
           />
         </div>
         <div className={`${style.form_control} ${style.company}`}>
-          <label htmlFor='companyName'>Company Name</label>
+          <label htmlFor='company'>Company Name</label>
           <input
             type='text'
-            id='companyName'
+            id='company'
             placeholder='Where do you work?'
+            value={company}
+            onChange={onMutateForm}
           />
         </div>
         <div className={`${style.form_control} ${style.job}`}>
-          <label htmlFor='JobFunction'>Job Function</label>
-          <input type='text' id='JobFunction' placeholder='What do you do?' />
+          <label htmlFor='job'>Job Function</label>
+          <input
+            type='text'
+            id='job'
+            placeholder='What do you do?'
+            value={job}
+            onChange={onMutateForm}
+          />
         </div>
         <div className={`${style.form_control} ${style.feedback}`}>
           <label htmlFor='feedback'>Comment your feedback</label>
           <textarea
             name='feedback'
             id='feedback'
-            placeholder='Drop a comment '
+            placeholder='Drop a comment'
+            value={feedback}
+            onChange={onMutateForm}
+            required
           ></textarea>{' '}
         </div>
 
