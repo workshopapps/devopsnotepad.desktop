@@ -45,6 +45,10 @@
   padding: 114px 53px 56px 32px;
 }
 
+.card a {
+  cursor: not-allowed;
+}
+
 .card h2 {
   font-weight: 800;
   font-size: 32px;

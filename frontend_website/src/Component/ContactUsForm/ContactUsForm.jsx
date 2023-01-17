@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import style from './ContactUsForm.module.css';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
@@ -50,6 +51,13 @@ function ContactUsForm({ closeContact }) {
     console.log(formData);
   }
 
+  const navigate = useNavigate();
+  function onClickPrivacy() {
+    closeContact();
+    navigate('/terms-of-service');
+    setTimeout(() => {}, 500);
+  }
+
   return (
     <div className={style.container}>
       <input
@@ -58,6 +66,9 @@ function ContactUsForm({ closeContact }) {
         onClick={closeContact}
       />
       <form className={style.form} onSubmit={onSubmitForm}>
+        <button className={style.close} type='button' onClick={closeContact}>
+          <p>&times;</p>
+        </button>
         <h2>Contact Support</h2>
         <div className={`${style.form_control} ${style.first_name}`}>
           <label htmlFor='firstName'>First Name</label>
@@ -126,7 +137,7 @@ function ContactUsForm({ closeContact }) {
 
         <span className={style.terms}>
           By submitting this form, I confirm that I have read and agree to the{' '}
-          <span>Privacy Policy</span>
+          <span onClick={onClickPrivacy}>Privacy Policy</span>
         </span>
 
         <div className={style.submit}>

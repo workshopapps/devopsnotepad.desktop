@@ -41,6 +41,17 @@
   justify-content: center;
   overflow: auto;
   scroll-behavior: smooth;
+  animation-name: form;
+  animation-duration: 0.4s;
+}
+
+@keyframes form {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 50%;
+  }
 }
 
 .form h2 {
@@ -110,6 +121,7 @@
 
 .terms span {
   color: #2563eb;
+  cursor: pointer;
 }
 
 .submit {
@@ -130,6 +142,22 @@
   font-size: 13px;
   color: #ffffff;
   border: none;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  height: fit-content;
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+
+.close p {
+  font-size: 48px;
+  font-weight: 800;
+  color: #202020;
 }
 
 .form h2,
@@ -172,6 +200,11 @@
     column-gap: 18px;
     padding: 18px 28px;
   }
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -183,6 +216,16 @@
     row-gap: 14px;
     padding: 18px 12px;
     overflow: auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+  }
+
+  .close p {
+    font-weight: 600;
   }
 
   .form h2,
@@ -201,9 +244,6 @@
   .form {
     grid-template-columns: 1fr;
     width: 320px;
-    column-gap: 0px;
-    row-gap: 14px;
-    padding: 18px 12px;
   }
 
   .form::-webkit-scrollbar {
@@ -218,5 +258,11 @@
     height: 600px;
     row-gap: 18px;
     padding: 12px;
+  }
+
+  .close {
+    position: absolute;
+    top: 12px;
+    right: 28px;
   }
 }
