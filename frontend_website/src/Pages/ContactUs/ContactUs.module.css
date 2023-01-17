@@ -1,403 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
 
-section.container {
-  padding-bottom: 50px;
-  background: linear-gradient(
-    to top,
-    #e9effd 0%,
-    #e9effd 80%,
-    white 80%,
-    white 100%
-  );
+.contact_wrapper {
+  display: relative;
 }
 
-section.contact {
-  padding-top: 80px;
-  text-align: center;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column !important;
-}
-
-p {
-  margin: 0;
-}
-
-section.contact .contactUs {
-  color: #102a63 !important;
-  text-align: center;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  line-height: 22px !important;
-  margin-bottom: 16px !important;
-  font-family: 'Inter', sans-serif !important;
-}
-
-section.contact .inTouch {
-  font-family: 'Manrope', sans-serif !important;
-  font-weight: 800 !important;
-  font-size: 54px !important;
-  line-height: 40px !important;
-  margin-bottom: 16px !important;
-  color: #202020 !important;
-}
-
-section.contact .help {
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 18px !important;
-  line-height: 28px !important;
-  color: #777777 !important;
-  margin-bottom: 30px !important;
-}
-
-section.wrapper {
+.container {
+  padding: 38px 80px; /*160px 80px 76px*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-section.wrapper form {
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
-  background-color: white;
-  padding: 30px 16px;
-  width: 90%;
-}
-
-section.wrapper form label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16.94px;
-  margin-block: 10px;
-}
-
-section.wrapper form input {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 24px;
-  padding: 9px;
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
-  outline: none;
-}
-
-section.wrapper form .row {
-  display: flex;
-  flex-direction: column;
-}
-
-section.wrapper form .row .col {
-  /* width: 100%; */
-  margin: 5px;
-}
-section.wrapper form .row .col .start {
-  margin: 5px;
-  /* border: 3px solid red; */
-}
-section.wrapper form .row .col .end {
-  margin: 5px;
-  /* border: 3px solid red; */
-}
-
-@media screen and (min-width: 768px) {
-  section.wrapper form .row {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  section.wrapper form .row .col {
-    width: 100%;
-  }
-
-  section.wrapper form {
-    width: 80%;
-  }
-
-  section.contact .inTouch {
-    font-size: 48px !important;
-    line-height: 65.57px !important;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  section.wrapper form {
-    width: 65%;
-    padding: 30px 50px;
-  }
-
-  section.wrapp {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-
-  section.wrapp .comp {
-    width: 30%;
-    display: flex;
-    align-items: center;
-  }
-
-  section.wrapp .comp1 {
-    margin-right: 40px;
-  }
-
-  section.wrapp .comp p.opsPad {
-    margin-left: 30px;
-  }
-
-  section.contact .in-touch {
-    font-size: 54px;
-    line-height: 73.76px;
-  }
-
-  /* section.wrapper form .row .end {
-    margin-right: 0;
-    border: 2px solid blue;
-  }
-
-  section.wrapper form .row .start {
-    margin: 0;
-  } */
-}
-
-@media screen and (min-width: 1300px) {
-  section.wrapp .comp {
-    width: 25%;
-  }
-}
-
-section.wrapper form .col {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: flex-start; */
-}
-
-section.wrapper form .col textarea.message {
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
-  outline: none;
-  padding: 6px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 24px;
-  resize: none;
-}
-
-section.wrapper form .btn {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  background-color: #102a63;
-  color: white;
-  padding: 15px;
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-section.wrapper form .btn:hover {
-  opacity: 0.86;
-}
-
-section.wrap {
-  margin-top: 40px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-section.wrap .reachOut {
-  margin-bottom: 16px;
   font-family: 'Manrope', sans-serif;
-  font-weight: 800 !important;
-  font-size: 32px !important;
-  line-height: 43.71px !important;
-  color: #202020;
+  background-image: url('./assets/bgShape.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 905px 932.73px;
 }
 
-section.wrap .canHelp {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  color: #777777;
-  margin: 0 0 12px;
-  max-width: 342px;
-}
-
-section.wrapp .comp p.opspad {
-  font-family: 'Manrope', sans-serif;
+.container > h1 {
   font-weight: 800;
-  font-size: 18px;
-  line-height: 20px;
-  padding: 10px;
+  font-size: 56px;
+  margin-bottom: 32px;
 }
 
-section.wrapp .comp p.opsPad {
-  font-family: 'Inter', sans-serif;
+.container > p {
   font-weight: 600;
-  font-size: 18px;
-  line-height: 32px;
-  color: #2563eb;
+  font-size: 24px;
+  line-height: 140%;
+  max-width: 826px;
 }
 
-@media screen and (max-width: 767px) {
-  section.wrapp {
-    display: flex;
-    flex-direction: column;
-  }
-
-  section.wrap .canHelp {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    line-height: 24px !important;
-    color: #777777;
-    margin: 0 16px 12px;
-  }
-
-  section.wrapp .comp {
-    margin: 0 20px;
-  }
-
-  section.contact .inTouch {
-    font-size: 32px !important;
-    line-height: 40px !important;
-  }
+.card_container {
+  margin-top: 72px;
+  display: flex;
+  gap: 24px;
 }
 
-@media screen and (min-width: 481px) {
-  section.wrapp .comp {
-    margin: 0 10px;
-  }
-}
-
-section.wrapp .comp {
-  border-radius: 5px;
-  border: 1.5px solid #dfe1eb;
-  text-align: center;
-  padding: 25px 0;
-  margin-bottom: 25px;
-  background-color: white;
-}
-
-p.errorMsg {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 12px !important;
-  /* line-height: 5.52px; */
-  color: red;
-  white-space: nowrap;
-  margin: 5px 0;
-}
-
-section.support div.col1 div.card {
-  font-family: 'Manrope', sans-serif !important;
-  background-color: white;
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
+.card {
+  width: 628px;
+  height: 394px;
+  background: #e6ebf4;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 20px;
-  padding: 40px 20px;
+  gap: 32px;
+  padding: 114px 53px 56px 32px;
 }
 
-@media screen and (min-width: 640px) {
-  section.support div.card {
-    width: 80%;
-    margin: 10px 20px;
+.card a {
+  cursor: not-allowed;
+}
+
+.card h2 {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.card p {
+  /* max-width: 543px; */
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #6f6f6f;
+}
+
+.card .btn {
+  display: grid;
+  place-content: center;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 200px;
+  height: 56px;
+  background: #102a63;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    background-position-x: 400px;
+    background-position-y: bottom;
+    /* background-size: 700px 932.73px; */
   }
 
-  section.support {
-    justify-content: center;
+  .card {
+    width: 400px;
+    height: 400px;
+    padding: 53px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 22px 32px; /*160px 80px 76px*/
+  }
+
+  .card {
+    width: 380px;
+    height: 312px;
+    padding: 32px;
+    justify-content: space-evenly;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .card .btn {
+    padding: 15px 22.5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    background-image: url('./assets/BgShapeMobile.svg');
+    background-size: 406.21px 469px;
+    background-position-x: 225px;
+    background-position-y: top;
+    padding: 67.6px 24px 96px;
     align-items: center;
   }
 
-  .col1 {
-    width: 100%;
-    display: flex;
+  .container h1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .container > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 383px;
+  }
+
+  .container > h1,
+  .container > p {
+    text-align: center;
+  }
+
+  .card_container {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-top: 69px;
+  }
+
+  .card {
+    gap: 0;
+    text-align: left;
+  }
+
+  .card h2 {
+    margin-bottom: 40px;
+  }
+
+  .card p {
+    line-height: 24px;
+  }
+
+  .card .btn {
+    margin-top: 48px;
+    padding: 17px 30px;
   }
 }
 
-section.support div.col1 div.card p.supportP {
-  font-family: 'Manrope', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 20px !important;
-  line-height: 27.32px !important;
-  margin: 15px !important;
-  text-align: center !important;
-  color: #202020 !important;
-}
-
-section.support div.col1 div.card p.assistance {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  line-height: 24px !important;
-  color: #444444 !important;
-  text-align: center !important;
-}
-
-.btns {
-  background-color: #102a63;
-  color: white;
-  width: 100%;
-  border: 1.5px solid #dfe1eb;
-  border-radius: 5px;
-  margin-top: 20px;
-  padding: 15px;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 22px;
-  cursor: pointer;
-}
-
-.btns:hover {
-  opacity: 0.86;
-}
-
-@media screen and (min-width: 768px) {
-  .col1 {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+@media (max-width: 400px) {
+  .card {
+    width: 320px;
+    height: 312px;
+    padding: 16px;
+    justify-content: space-evenly;
   }
-
-  .support {
-    padding: 0 55px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .support {
-    padding: 0 200px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .support {
-    padding: 0 250px;
-  }
-}
-
-section.support div.col1 div.card img {
-  width: 70px;
 }
