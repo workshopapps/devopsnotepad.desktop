@@ -82,6 +82,32 @@
     }
 }
 
+@media screen and (min-width: 969px) and (max-width: 1279px) {
+    
+    .THero {
+        gap: 80px;
+    }
+
+    .THeroText {
+        width: 50%;
+    }
+    
+    .HeroH1 {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    .THeroImg {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .button {
+        width: 230px;
+        white-space: nowrap;
+    }
+}
+
 @media only screen and (max-width: 968px) {
     .THero {
         flex-direction: column;

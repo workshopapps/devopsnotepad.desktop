@@ -17,17 +17,26 @@
 
 .images {
     display: flex;
-    overflow-x: scroll;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    overflow: -moz-scrollbars-none;  /* Firefox */
+    animation: slide 3s linear infinite alternate;
 }
 
-.images::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
 
 @media screen and (max-width: 650px) {
     .slideH1 {
         font-size: 24px;
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }
