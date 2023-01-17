@@ -1,0 +1,8 @@
+.contact__form {
+  padding: 8rem;
+}
+@media only screen and (max-width: 650px) {
+  .contact__form {
+    padding: 4rem 2.5rem 6rem;
+  }
+}
