@@ -13,11 +13,11 @@
 }
 
 .input {
-  padding: 1.1rem 1rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.4rem;
   border: 0.1rem solid #acacac;
   margin: 0.7rem 0 1.4rem 0;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 300;
   width: 100%;
 }
@@ -31,32 +31,4 @@
   font-weight: 400;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
-}
-
-.input[type='password']::placeholder {
-  font-size: 1.2rem;
-}
-.input[type='text']::placeholder {
-  font-size: 1.2rem;
-}
-
-.eye {
-  position: absolute;
-  top: 53px;
-  right: 7%;
-  transform: translateY(-50%);
-}
-
-.eyeSvg svg {
-  width: 20px;
-  height: 20px;
-}
-
-@media screen and (max-width: 1068px) {
-  .input[type='password']::placeholder {
-    font-size: 1rem;
-  }
-  .input[type='text']::placeholder {
-    font-size: 1rem;
-  }
 }
