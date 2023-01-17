@@ -96,7 +96,7 @@
     width: 380px;
     height: 312px;
     padding: 32px;
-    gap: 24px;
+    justify-content: space-evenly;
   }
 
   .card h2 {
@@ -163,5 +163,14 @@
   .card .btn {
     margin-top: 48px;
     padding: 17px 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 320px;
+    height: 312px;
+    padding: 16px;
+    justify-content: space-evenly;
   }
 }
