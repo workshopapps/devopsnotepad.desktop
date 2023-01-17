@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import style from './ContactUsForm.module.css';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import { message } from 'antd';
 
 function ContactUsForm({ closeContact }) {
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +26,7 @@ function ContactUsForm({ closeContact }) {
 
   async function onSubmitForm(e) {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await fetch('https://opspad.dev/api/contact-us', {
         method: 'POST',
@@ -32,10 +35,19 @@ function ContactUsForm({ closeContact }) {
       });
 
       const data = await response.json();
+      setLoading(false);
+      setMessage('Successfully submitted your message');
       console.log(data);
     } catch (error) {
       console.log(error);
+      setMessage(
+        'An error occurred while submitting your message, please try again.',
+      );
     }
+    setTimeout(() => {
+      setMessage('');
+    }, 5000);
+    setLoading(false);
     console.log(formData);
   }
 
@@ -110,7 +122,7 @@ function ContactUsForm({ closeContact }) {
             value={feedback}
             onChange={onMutateForm}
             required
-          ></textarea>{' '}
+          />
         </div>
 
         <span className={style.terms}>
@@ -122,7 +134,8 @@ function ContactUsForm({ closeContact }) {
           <button className={style.btn} type='submit'>
             Submit
           </button>
-          <LoadingAnimation />
+          {loading && <LoadingAnimation />}
+          {message && <span>{message}</span>}
         </div>
       </form>
     </div>

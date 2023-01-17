@@ -86,8 +86,8 @@
   border-radius: 6px;
   box-shadow: 0px 4px 8px rgba(230, 230, 230, 0.18);
   margin-bottom: 0 !important;
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 500 !important;
+  font-size: 13px !important;
 }
 
 .feedback textarea::placeholder,
@@ -97,7 +97,13 @@
   font-size: 13px;
 }
 
-.terms {
+.feedback textarea:focus {
+  backdrop-filter: 0;
+  filter: blur(0);
+}
+
+.terms,
+.submit > span {
   display: block;
   font-weight: 400;
   font-size: 14px;
@@ -107,6 +113,12 @@
 
 .terms span {
   color: #2563eb;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .btn {
