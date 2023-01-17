@@ -1,0 +1,20 @@
+/* .TWrapper {
+    padding: 23.5px 100px 23.5px 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .TWrapper {
+    padding: 23.5px 32px 23.5px 32px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .TWrapper {
+    padding: 23.5px 16px 23.5px 16px;
+  }
+} */
+
+.TWrapper {
+  overflow-x : hidden;
+}
