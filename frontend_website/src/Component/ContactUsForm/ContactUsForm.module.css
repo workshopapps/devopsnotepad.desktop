@@ -1,0 +1,268 @@
+.container {
+  font-family: 'Manrope', sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.container * {
+  margin: 0;
+  padding: 0;
+}
+
+.dark_overlay {
+  background: rgba(10, 9, 9, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.form {
+  width: 836px;
+  height: fit-content;
+  padding: 24px 48px;
+  background: #ffffff;
+  border-radius: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
+  justify-content: center;
+  overflow: auto;
+  scroll-behavior: smooth;
+  animation-name: form;
+  animation-duration: 0.4s;
+}
+
+@keyframes form {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+.form h2 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #202020;
+}
+
+.form_control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* width: 354px; */
+}
+
+.form_control label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+}
+
+.form_control input {
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+}
+
+.feedback {
+  width: 100%;
+}
+
+.feedback textarea {
+  width: 100%;
+  height: 138px;
+  padding: 16px 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(230, 230, 230, 0.18);
+  margin-bottom: 0 !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.feedback textarea::placeholder,
+.form_control input::placeholder {
+  color: #aaaaaa;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.terms,
+.submit > span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+  color: #202020;
+}
+
+.terms span {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  display: grid;
+  place-content: center;
+  padding: 12px 32px;
+  width: 109px;
+  height: 48px;
+  background: #102a63;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+  border: none;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  height: fit-content;
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+
+.close p {
+  font-size: 48px;
+  font-weight: 800;
+  color: #202020;
+}
+
+.form h2,
+.job,
+.feedback,
+.terms,
+.submit {
+  grid-column: span 2; /* 1/3 */
+}
+
+.form::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.form::-webkit-scrollbar-track {
+  /* display: none; */
+  -webkit-box-shadow: inset 0 0 6px transparent;
+}
+
+.form::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 9, 9, 0.7);
+  /* box-shadow: inset 0 0 6px #ffffff; */
+}
+
+/* .terms,
+.submit {
+  margin-top: -12px;
+} */
+@media (max-width: 1000px) {
+  .form {
+    width: 650px;
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 500px;
+    column-gap: 18px;
+    padding: 18px 28px;
+  }
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 500px;
+    height: 600px;
+    column-gap: 0px;
+    row-gap: 14px;
+    padding: 18px 12px;
+    overflow: auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+  }
+
+  .close p {
+    font-weight: 600;
+  }
+
+  .form h2,
+  .form_control,
+  .terms,
+  .submit {
+    grid-column: span 2; /* 1/3 */
+  }
+
+  .feedback textarea {
+    height: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 320px;
+  }
+
+  .form::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 320px;
+    height: 600px;
+    row-gap: 18px;
+    padding: 12px;
+  }
+
+  .close {
+    position: absolute;
+    top: 12px;
+    right: 28px;
+  }
+}
