@@ -1,0 +1,107 @@
+.contact__form {
+  width: 65%;
+  margin: 0 auto;
+  padding: 3rem 5rem;
+  box-shadow: 0px 8px 16px rgba(205, 218, 240, 0.79);
+  border-radius: 20px;
+}
+
+.h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row__left {
+  flex-basis: 45%;
+}
+.row__right {
+  flex-basis: 45%;
+}
+
+.h3 {
+  font-size: 1.6rem;
+  letter-spacing: 0.06rem;
+  margin: 2rem 0;
+}
+.link:link {
+  color: blue;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: rgba(0, 0, 255, 0.872);
+}
+
+.btn__box {
+  width: 20%;
+}
+
+.button {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63ed;
+}
+
+.error__message {
+  text-align: center;
+  border: 0.1rem solid rgba(255, 0, 0, 0.707);
+  font-size: 1.6rem;
+  background-color: rgba(255, 0, 0, 0.581);
+  color: white;
+  padding: 0.5rem 0;
+  border-radius: 10rem;
+}
+
+.invalid__input {
+  margin-top: -1.6rem;
+  color: rgba(253, 46, 46, 0.7);
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .contact__form {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.07rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+  .row__left {
+    width: 100%;
+  }
+  .row__right {
+    width: 100%;
+  }
+
+  .h3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    margin: 1rem 0;
+  }
+  .link {
+    color: blue;
+  }
+
+  .btn__box {
+    width: 40%;
+  }
+}

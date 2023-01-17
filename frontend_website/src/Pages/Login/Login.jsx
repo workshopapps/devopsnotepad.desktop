@@ -12,35 +12,46 @@ import classes from './Login.module.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
   const { addUserHandler } = useContext(UserContext);
 
   // Using a custom hook
-  const { isLoading, error, fetchRequest: LoginRequest, hideModal } = useFetch();
+  const {
+    isLoading,
+    error,
+    fetchRequest: LoginRequest,
+    hideModal,
+  } = useFetch();
   // A function that will get response from the request made
-  const getResponseData = (responseObj) => {
-    if (responseObj?.message === 'Logged in Successfully') {
-      addUserHandler(responseObj);
-      const userObj = JSON.stringify(responseObj);
-      localStorage.setItem('loggedInUser', userObj);
-      navigate('/server');
-    } else {
-      console.log(responseObj, 'error');
-    }
-  };
+  const getResponseData = useCallback(
+    (responseObj) => {
+      if (responseObj?.message === 'Logged in Successfully') {
+        addUserHandler(responseObj);
+        const userObj = JSON.stringify(responseObj);
+        localStorage.setItem('loggedInUser', userObj);
+        navigate('/server');
+      } else {
+        console.log(responseObj, 'error');
+      }
+    },
+    [addUserHandler, navigate],
+  );
 
   // Sigin up with google
-  const googleSignInHandler = useCallback(async (response) => {
-    const req = await fetch('https://opspad.dev/api/auth/google-login', {
-      method: 'POST',
-      body: JSON.stringify({ token: response.credential }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const res = await req.json();
-    getResponseData(res);
-  }, []);
+  const googleSignInHandler = useCallback(
+    async (response) => {
+      const req = await fetch('https://opspad.dev/api/auth/google-login', {
+        method: 'POST',
+        body: JSON.stringify({ token: response.credential }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const res = await req.json();
+      getResponseData(res);
+    },
+    [getResponseData],
+  );
 
   useEffect(() => {
     window.google?.accounts?.id.initialize({
@@ -75,17 +86,17 @@ const Login = () => {
 
   const getVerifiedResponse = (responseObj) => {
     console.log(responseObj, '/verify-me');
-    setMessage(responseObj.user.prompt)
-  }
+    setMessage(responseObj.user.prompt);
+  };
 
   const verifyEmailHandler = (email) => {
-    hideModal()
+    hideModal();
     LoginRequest(
       {
         url: 'https://opspad.dev/api/auth/resend-verify-email',
         method: 'POST',
         body: {
-          email
+          email,
         },
         accept: 'application/json',
         headers: {
@@ -101,7 +112,13 @@ const Login = () => {
       <Navigation />
       <div className={classes.login} data-testid='login__page'>
         <h1 className={classes.h1}>Welcome back!</h1>
-        <Form onSubmit={signInHandler} message={message} isLoading={isLoading} error={error} onVerify={verifyEmailHandler} />
+        <Form
+          onSubmit={signInHandler}
+          message={message}
+          isLoading={isLoading}
+          error={error}
+          onVerify={verifyEmailHandler}
+        />
         <div className={classes.p__box}>
           <div className={classes.div}></div>
           <p className={classes.p}>or sign in with</p>

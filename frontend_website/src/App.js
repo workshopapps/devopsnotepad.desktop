@@ -4,7 +4,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
-import LandingPage from './Pages/LandingPage/LandingPage';
+import LandingPage from './Pages/NewLandingPage/LandingPage';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Footer from './Component/Footer/Footer';
 import Navigation from './Component/Navigation/Navigation';
