@@ -109,7 +109,7 @@
   color: #2563eb;
 }
 
-.submit {
+.btn {
   display: grid;
   place-content: center;
   padding: 12px 32px;

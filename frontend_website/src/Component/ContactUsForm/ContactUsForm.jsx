@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import style from './ContactUsForm.module.css';
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 function ContactUsForm({ closeContact }) {
   const [formData, setFormData] = useState({
@@ -20,9 +21,21 @@ function ContactUsForm({ closeContact }) {
     }));
   }
 
-  function onSubmitForm(e) {
+  async function onSubmitForm(e) {
     e.preventDefault();
 
+    try {
+      const response = await fetch('https://opspad.dev/api/contact-us', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
     console.log(formData);
   }
 
@@ -105,9 +118,12 @@ function ContactUsForm({ closeContact }) {
           <span>Privacy Policy</span>
         </span>
 
-        <button className={style.submit} type='submit'>
-          Submit
-        </button>
+        <div className={style.submit}>
+          <button className={style.btn} type='submit'>
+            Submit
+          </button>
+          <LoadingAnimation />
+        </div>
       </form>
     </div>
   );
