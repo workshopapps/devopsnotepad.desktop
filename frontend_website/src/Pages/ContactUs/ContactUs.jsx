@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './ContactUs.module.css';
 import Navigation from '../../Component/Navigation/Navigation';
 import Footer from '../../Component/Footer/Footer';
 import ContactUsForm from '../../Component/ContactUsForm/ContactUsForm';
 
 function ContactUs() {
+  const [showContactForm, setShowContactForm] = useState(false);
+
+  function openContactForm() {
+    setShowContactForm(true);
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactForm() {
+    setShowContactForm(false);
+    document.body.style.overflow = 'auto';
+  }
   return (
     <div className={style.contact_wrapper}>
-      <ContactUsForm />
-      <Navigation />
+      {showContactForm && <ContactUsForm closeContact={closeContactForm} />}
+
+      {!showContactForm && <Navigation />}
       <section className={style.container}>
         <h1>Get in touch</h1>
         <p>
@@ -23,7 +34,13 @@ function ContactUs() {
               Reach out to our support team to report any issues and learn more
               about our platform.
             </p>
-            <button className={style.btn}>Contact Support</button>
+            <button
+              type='button'
+              className={style.btn}
+              onClick={openContactForm}
+            >
+              Contact Support
+            </button>
           </div>
 
           <div className={style.card}>

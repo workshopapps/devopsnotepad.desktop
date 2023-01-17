@@ -1,10 +1,10 @@
 .container {
+  font-family: 'Manrope', sans-serif;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /* overflow: hidden; */
   z-index: 20;
 }
 
@@ -25,7 +25,7 @@
 
 .form {
   width: 836px;
-  height: fit-content;
+  max-height: 785;
   padding: 24px 48px;
   background: #ffffff;
   border-radius: 16px;
@@ -39,6 +39,8 @@
   column-gap: 32px;
   row-gap: 24px;
   justify-content: center;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .form h2 {
@@ -52,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 354px;
+  /* width: 354px; */
 }
 
 .form_control label {
@@ -95,11 +97,6 @@
   color: #aaaaaa;
   font-weight: 500;
   font-size: 13px;
-}
-
-.feedback textarea:focus {
-  backdrop-filter: 0;
-  filter: blur(0);
 }
 
 .terms,
@@ -147,3 +144,65 @@
 .submit {
   margin-top: -12px;
 } */
+@media (max-width: 1000px) {
+  .form {
+    width: 650px;
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 500px;
+    column-gap: 18px;
+    padding: 18px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 500px;
+    column-gap: 0px;
+    row-gap: 14px;
+    padding: 18px 12px;
+    overflow: auto;
+  }
+
+  .form h2,
+  .form_control,
+  .terms,
+  .submit {
+    grid-column: span 2; /* 1/3 */
+  }
+
+  .feedback textarea {
+    height: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 320px;
+    max-height: 889px;
+    column-gap: 0px;
+    row-gap: 14px;
+    padding: 18px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form {
+    grid-template-columns: 1fr;
+    width: 320px;
+    height: 600px;
+    row-gap: 12px;
+    padding: 12px;
+  }
+
+  .form h2 {
+    font-size: 20px;
+  }
+}

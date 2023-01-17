@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import style from './ContactUsForm.module.css';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
-import { message } from 'antd';
 
 function ContactUsForm({ closeContact }) {
   const [loading, setLoading] = useState(false);
