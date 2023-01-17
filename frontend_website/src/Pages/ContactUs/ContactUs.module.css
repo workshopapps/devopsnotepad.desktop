@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
+
+.contact_wrapper {
+  display: relative;
+}
+
+.container {
+  padding: 38px 80px; /*160px 80px 76px*/
+  display: flex;
+  flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  background-image: url('./assets/bgShape.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 905px 932.73px;
+}
+
+.container > h1 {
+  font-weight: 800;
+  font-size: 56px;
+  margin-bottom: 32px;
+}
+
+.container > p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  max-width: 826px;
+}
+
+.card_container {
+  margin-top: 72px;
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  width: 628px;
+  height: 394px;
+  background: #e6ebf4;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 114px 53px 56px 32px;
+}
+
+.card a {
+  cursor: not-allowed;
+}
+
+.card h2 {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.card p {
+  /* max-width: 543px; */
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #6f6f6f;
+}
+
+.card .btn {
+  display: grid;
+  place-content: center;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 200px;
+  height: 56px;
+  background: #102a63;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    background-position-x: 400px;
+    background-position-y: bottom;
+    /* background-size: 700px 932.73px; */
+  }
+
+  .card {
+    width: 400px;
+    height: 400px;
+    padding: 53px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 22px 32px; /*160px 80px 76px*/
+  }
+
+  .card {
+    width: 380px;
+    height: 312px;
+    padding: 32px;
+    justify-content: space-evenly;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .card .btn {
+    padding: 15px 22.5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    background-image: url('./assets/BgShapeMobile.svg');
+    background-size: 406.21px 469px;
+    background-position-x: 225px;
+    background-position-y: top;
+    padding: 67.6px 24px 96px;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .container > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 383px;
+  }
+
+  .container > h1,
+  .container > p {
+    text-align: center;
+  }
+
+  .card_container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 69px;
+  }
+
+  .card {
+    gap: 0;
+    text-align: left;
+  }
+
+  .card h2 {
+    margin-bottom: 40px;
+  }
+
+  .card p {
+    line-height: 24px;
+  }
+
+  .card .btn {
+    margin-top: 48px;
+    padding: 17px 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 320px;
+    height: 312px;
+    padding: 16px;
+    justify-content: space-evenly;
+  }
+}
