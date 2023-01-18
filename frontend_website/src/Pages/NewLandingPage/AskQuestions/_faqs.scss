@@ -1,7 +1,100 @@
+.faqs {
+  background-color: #102a63;
+  padding: 8rem;
+  @media screen and (max-width: 62.5em) {
+    padding: 4rem;
+  }
+  @media screen and (max-width: 50em) {
+    padding: 2rem;
+  }
+
+  &-title {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    @media screen and (max-width: 62.5em) {
+      font-size: 3.5rem;
+    }
+    @media screen and (max-width: 37.5em) {
+      font-size: 2.5rem;
+    }
+    @media screen and (max-width: 28.125em) {
+      font-size: 2rem;
+    }
+    line-height: 4.8rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  &-questions {
+    list-style: none;
+  }
+  &-question {
+    background-color: transparent;
+    border-bottom: 1px solid rgba($color: #cdd6da, $alpha: 0.3);
+    & > * {
+      padding: 2.5rem;
+      @media screen and (max-width: 40em) {
+        padding: 2rem;
+      }
+    }
+    &__open {
+      margin-top: 2.5rem;
+      background-color: rgba(224, 234, 255, 0.08);
+      border-radius: 2rem;
+      border-bottom: none;
+    }
+    &_que {
+      color: white;
+      text-align: left;
+      background-color: transparent;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 700;
+      font-size: 2.4rem;
+      @media screen and (max-width: 37.5em) {
+        font-size: 1.4rem;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+      & > span:first-child {
+        flex-basis: 80%;
+      }
+      & > span:last-child {
+        position: relative;
+        & > * {
+          background-color: #ffffff;
+        }
+      }
+    }
+    &__ans {
+      color: white;
+      padding-top: 2.5rem;
+      font-size: 2rem;
+      @media screen and (max-width: 37.5em) {
+        font-size: 1.2rem;
+      }
+      text-align: justify;
+      &-close {
+        display: none;
+      }
+      &-open {
+        display: block;
+      }
+    }
+  }
+}
+
 .u-cross {
   display: inline-block;
   width: 2rem;
   height: 1px;
+  @media screen and (max-width: 28.125em) {
+    width: 1rem;
+    height: 0.5px;
+  }
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,66 +110,5 @@
   }
   &-toCancelH {
     transform: translate(-50%, -50%) rotate(135deg);
-  }
-}
-
-.faqs {
-  background-color: #102a63;
-  padding: 8rem;
-  color: white;
-  &-title {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 4.8rem;
-    text-align: center;
-    color: #ffffff;
-  }
-  &-questions {
-    list-style: none;
-  }
-  &-question {
-    padding: 3.5rem;
-    background-color: transparent;
-    border-bottom: 1px solid rgba($color: #cdd6da, $alpha: 0.3);
-    &__open {
-      margin-top: 2.5rem;
-      background-color: rgba(224, 234, 255, 0.08);
-      border-radius: 2rem;
-      border-bottom: none;
-    }
-    &_que {
-      background-color: transparent;
-      cursor: pointer;
-      width: 100%;
-      font-weight: 700;
-      font-size: 2.4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: none;
-      color: white;
-
-      & > span:last-child {
-        position: relative;
-        & > * {
-          background-color: #ffffff;
-        }
-      }
-    }
-    &__ans {
-      padding-top: 2.5rem;
-      font-size: 2rem;
-      text-align: justify;
-      color: white;
-
-      &-close {
-        display: none;
-      }
-      &-open {
-        display: block;
-      }
-    }
   }
 }
