@@ -234,7 +234,7 @@ const Form = (props) => {
       </div>
       <h3 className={classes.h3}>
         By submitting this form, I confirm that I have read and agree to the{' '}
-        <Link to='/privacy-policy' className={classes.link}>
+        <Link to='/terms-of-service' className={classes.link}>
           Privacy Policy.
         </Link>
       </h3>

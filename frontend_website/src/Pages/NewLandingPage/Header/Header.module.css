@@ -44,12 +44,12 @@
 
 .btn__primary {
   color: #ffffff;
-  background-color: #225ad6;
+  background-color: #102a63;
 }
 
 .btn__secondary {
   margin-left: 2rem;
-  color: #225ad6;
+  color: #102a63;
   background-color: #ffffff;
   border: 0.1rem solid #225ad6;
 }
@@ -58,9 +58,8 @@
 }
 
 .btn__secondary:hover {
-  opacity: 0.7;
+  opacity: 0.86;
 }
-
 .right {
   flex-basis: 45%;
 }
@@ -73,12 +72,12 @@
 
 @media only screen and (max-width: 650px) {
   .header {
-    padding: 4rem 4rem 0;
     flex-direction: column;
     text-align: center;
   }
 
   .left {
+    padding: 4rem 4rem 0;
     width: 100%;
   }
 
@@ -143,7 +142,7 @@
 
   .img {
     height: 70vh;
-    width: 90%;
+    width: 100%;
     object-fit: cover;
   }
 }

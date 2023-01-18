@@ -1,7 +1,9 @@
 import headerImg from '../assets/header_img.png';
 import Button from '../../CareerPage/Button/Button';
 import classes from './Header.module.css';
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header className={classes.header}>
       <div className={classes.left}>
@@ -17,10 +19,16 @@ const Header = () => {
           the go
         </p>
         <div className={classes.btn__box}>
-          <Button className={`${classes.btn} ${classes.btn__primary}`}>
+          <Button
+            className={`${classes.btn} ${classes.btn__primary}`}
+            onClick={() => navigate('/free-trial')}
+          >
             Try Free
           </Button>
-          <Button className={`${classes.btn} ${classes.btn__secondary}`}>
+          <Button
+            className={`${classes.btn} ${classes.btn__secondary}`}
+            onClick={() => navigate('/demo')}
+          >
             Get a Demo
           </Button>
         </div>
