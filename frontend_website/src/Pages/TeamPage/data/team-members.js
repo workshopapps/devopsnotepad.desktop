@@ -242,6 +242,9 @@ export const TeamData = [
         name: 'Osazee O.',
       },
       {
+        name: 'Dread',
+      },
+      {
         name: 'Francis U.',
       },
       {

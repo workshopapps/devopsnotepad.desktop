@@ -21,12 +21,11 @@ const Footer = () => {
         <div className={styles.inFooter}>
           <div className={styles.mainFooter}>
             <div>
-              <div className={styles.logo}>
+              <div className={`${styles.logo} ${styles.logoF}`}>
                 <Link to='/'>
                   <img src={logo} alt='' />
                 </Link>
               </div>
-
               <div className={styles.dMFooter}>
                 {Links.map((link, linkKey) => (
                   <div key={linkKey} className={styles.miUM}>
@@ -54,6 +53,11 @@ const Footer = () => {
             </div>
 
             <div className={`${styles.iUM} ${styles.right}`}>
+              <div className={`${styles.logo} ${styles.logoZ}`}>
+                <Link to='/'>
+                  <img src={logo} alt='' />
+                </Link>
+              </div>
               <h3 className={styles.right__title}>Be the first to know</h3>
 
               <div className={styles.notify__ctn}>

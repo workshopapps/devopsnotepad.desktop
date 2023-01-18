@@ -70,8 +70,8 @@
 // New Navbar data
 export const navMenu = [
   {
-    title: 'Features',
-    slug: '/features',
+    title: 'Integrations',
+    slug: '/integrations',
   },
   {
     title: 'Contact Us',
