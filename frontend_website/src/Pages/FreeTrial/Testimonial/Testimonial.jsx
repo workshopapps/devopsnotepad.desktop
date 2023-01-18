@@ -36,7 +36,7 @@ const Testimonial = () => {
                         <BsFillStarFill />
                     </div>
                     <h4>{card.name}</h4>
-                    <p>{card.text}</p>
+                    <p className={style.cardText}>{card.text}</p>
                 </div>
             ))}
         </section>

@@ -17,7 +17,7 @@
 
 .images {
     display: flex;
-    animation: slide 3s linear infinite alternate;
+    animation: slide 15s linear infinite alternate;
 }
 
 
@@ -29,14 +29,14 @@
 
 @keyframes slide {
     from {
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        -moz-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        -o-transform: translateX(100%);
+        transform: translateX(10%);
+        -webkit-transform: translateX(10%);
+        -moz-transform: translateX(10%);
+        -ms-transform: translateX(10%);
+        -o-transform: translateX(10%);
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX(-350%);
     }
 }

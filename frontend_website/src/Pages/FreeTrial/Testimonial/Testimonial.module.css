@@ -36,6 +36,10 @@
     align-items: center;
 }
 
+.cardText {
+    font-style: italic;
+}
+
 .head svg {
     display: block;
     height: 37.33px;
