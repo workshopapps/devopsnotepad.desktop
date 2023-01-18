@@ -317,6 +317,10 @@
   .navigation .mainNavigation .right .hamburgerBar {
     display: block;
   }
+
+  .navigation .mainNavigation .right .navAuthBtn {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -354,10 +358,6 @@
     padding-left: 60px;
   }
 
-  .navigation .mainNavigation .right .navAuthBtn {
-    display: none;
-  }
-
   .navigation .mainNavigation .inMenuBar .menuUlList .navAuthBtn {
     display: block;
     padding-left: 40px;
@@ -392,6 +392,7 @@
     padding-left: 40px;
   }
 }
+
 .sticky {
   width: 100%;
   position: fixed;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { FaTimes } from 'react-icons/fa'
 import style from '../Faq.module.css'
@@ -19,6 +20,7 @@ const Accordion = ({ Data }) => {
                         {Data.list?.map(x => <li>{x}</li>)}
                     </ul>
                     <p>{Data?.more}</p>
+                    <Link href={Data?.link}>{Data?.link}</Link>
                 </div>
             ) : null}
         </div>

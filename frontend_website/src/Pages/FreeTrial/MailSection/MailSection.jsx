@@ -43,8 +43,8 @@ const MailSection = () => {
                 </label>
                 <button className={style.button}>Start free trial</button>
             </form>
-            <p>We do not sell or share your information with anyone
-                By entering your email, you agree to receive marketing emails from Opspad.</p>
+            <p>We do not sell or share your information with anyone</p>
+            <p>By entering your email, you agree to receive marketing emails from Opspad.</p>
         </div>
     )
 }
