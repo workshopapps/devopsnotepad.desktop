@@ -1,12 +1,12 @@
 import { useState } from 'react';
 // Mobile images
-import notesImg from '../assets/notes.png';
-import passwordImg from '../assets/passwords.png';
-import notificationImg from '../assets/notification.png';
+import notesImg from '../assets/notes.gif';
+import passwordImg from '../assets/passwords.gif';
+import notificationImg from '../assets/notification.gif';
 // PC images
-import pnotesImg from '../assets/pnotes.png';
-import ppasswordImg from '../assets/ppasswords.png';
-import pnotificationImg from '../assets/pnotification.png';
+import pnotesImg from '../assets/pserver.gif';
+import ppasswordImg from '../assets/ppasswords.gif';
+import pnotificationImg from '../assets/pnotification.gif';
 
 // React Icons
 import { BiNotepad } from 'react-icons/bi';

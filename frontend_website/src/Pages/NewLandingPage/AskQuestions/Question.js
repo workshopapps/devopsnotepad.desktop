@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './_faqs.scss';
 
 const Question = (props) => {
@@ -27,13 +28,37 @@ const Question = (props) => {
           ></span>
         </span>
       </button>
-      <p
+      <div
         className={`faqs-question__ans ${
           showAns ? 'faqs-question__ans-open' : 'faqs-question__ans-close'
         }`}
       >
-        {props.queInfo.ans}
-      </p>
+        {props.queInfo.ans && (
+          <p style={{ fontSize: '1.4rem', color: 'white' }}>
+            {props.queInfo.ans}
+          </p>
+        )}
+        {props.queInfo.list && (
+          <ul style={{ margin: '1.5rem 0' }}>
+            {props.queInfo.list.map((li, index) => (
+              <li
+                key={index}
+                style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
+              >
+                {li}
+              </li>
+            ))}
+          </ul>
+        )}
+        {props.queInfo.link && (
+          <Link
+            to={`${props.queInfo.link}`}
+            style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
+          >
+            {props.queInfo.link}
+          </Link>
+        )}
+      </div>
     </li>
   );
 };
