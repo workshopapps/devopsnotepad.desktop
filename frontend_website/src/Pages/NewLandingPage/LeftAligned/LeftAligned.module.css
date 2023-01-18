@@ -39,7 +39,7 @@
 }
 
 .svg__box {
-  color: blue;
+  color: #225ad6;
   background-color: #fff;
   border-radius: 50%;
   padding: 0.8rem;
@@ -53,7 +53,7 @@
   fill: #8d9fc7;
   padding: 1.2rem;
   border-radius: 50%;
-  border: 0.5rem solid blue;
+  border: 0.5rem solid #225ad6;
 }
 .text {
   width: 50rem;
@@ -105,7 +105,7 @@
   border-radius: 2rem;
   margin-left: -4.5rem;
   padding: 0.4rem 0.4rem 0.4rem 5.3rem;
-  background-color: blue;
+  background-color: #225ad6;
   color: #fff;
 }
 .active_h5 {
@@ -174,11 +174,10 @@
     fill: #8d9fc7;
     padding: 1rem;
     border-radius: 50%;
-    border: 0.5rem solid blue;
+    border: 0.5rem solid #225ad6;
   }
   .text {
     width: 48rem;
-    height: 8rem;
     margin-left: -4rem;
     padding: 0.3rem 0.4rem 0.6rem 5rem;
   }
@@ -198,7 +197,7 @@
   /* Active left Item */
   .active_svg__box {
     color: #fff;
-    background-color: blue;
+    background-color: #225ad6;
     border-radius: 50%;
     padding: 0.7rem;
     box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.12);
@@ -214,7 +213,6 @@
   }
   .active_text {
     width: 54rem;
-    height: 9.5rem;
     margin-left: -4rem;
     padding: 0.1rem 0.6rem 0.8rem 4.6rem;
   }
