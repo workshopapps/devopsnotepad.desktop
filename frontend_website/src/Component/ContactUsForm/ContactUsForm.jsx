@@ -59,7 +59,6 @@ function ContactUsForm({ closeContact }) {
   function onClickPrivacy() {
     closeContact();
     navigate('/terms-of-service');
-    setTimeout(() => {}, 500);
   }
 
   return (
