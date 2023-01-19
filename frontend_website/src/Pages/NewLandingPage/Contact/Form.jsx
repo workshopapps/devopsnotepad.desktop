@@ -5,6 +5,7 @@ import { ValidateEmail } from '../../SignUp/lib';
 import Input from './Input';
 
 import classes from './Form.module.css';
+import LoadingSpinner from '../../../Component/LoadingSpinner/LoadingSpinner';
 const Form = (props) => {
   const [form, setForm] = useState({
     email: '',
@@ -241,11 +242,11 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0 0' }}>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p className={classes.error__message}>{`${props.error.message}`}</p>
+          <p className={classes.error__message}>{`${props.error?.message}`}</p>
         )}
         {!props.isLoading && !props.error.hasError && (
           <div className={classes.success__message}>
-            {props.response.message}
+            {props.response?.message}
           </div>
         )}
       </div>
