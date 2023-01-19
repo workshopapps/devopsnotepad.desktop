@@ -7,6 +7,7 @@ import Checkmark from './assets/Checkmark.svg';
 
 function GetDemo() {
   const navigate = useNavigate();
+
   return (
     <div className={style.container}>
       <header className={style.header}>
@@ -109,7 +110,13 @@ function GetDemo() {
 
           <p className={style.terms}>
             By providing information in this form, you agree to{' '}
-            <span>Opspad Privacy Policy</span>
+            <span
+              onClick={() => {
+                navigate('/terms-of-service');
+              }}
+            >
+              Opspad Privacy Policy
+            </span>
           </p>
 
           <button type='submit' className={style.submit}>

@@ -166,3 +166,30 @@ header {
 .job > select {
   color: #aaaaaa;
 }
+
+.terms {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #202020;
+}
+
+.terms > span {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.submit {
+  display: grid;
+  place-content: center;
+  padding: 16.2327px 18.2618px;
+  gap: 10.15px;
+  height: 38.08px;
+  background: #102a63;
+  border-radius: 6.08727px;
+  font-weight: 600;
+  font-size: 14.2036px;
+  color: #ffffff;
+  border: none;
+}
