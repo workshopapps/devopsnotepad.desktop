@@ -9,6 +9,7 @@
 .footer .mainFooter {
   display: flex;
   align-items: flex-end;
+  flex-direction: row-reverse;
   gap: 20%;
   padding-top: 64px;
   padding-bottom: 64px;
