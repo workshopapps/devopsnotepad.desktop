@@ -57,14 +57,15 @@
 }
 .text {
   width: 50rem;
-  height: 8.5rem;
   z-index: 10;
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 2rem;
-  margin-left: -4.5rem;
-  padding: 0.4rem 0.4rem 0.4rem 5.3rem;
+  margin-left: -5.5rem;
+  padding: 1.5rem 1rem 1.5rem 6rem;
 }
+
 .h5 {
+  margin-bottom: 1rem;
   color: #102a63;
   font-weight: 600;
   font-size: 1.3rem;
@@ -72,7 +73,6 @@
 }
 
 .p {
-  margin-top: -0.3rem;
   color: #202020;
   font-weight: 500;
   font-size: 1.05rem;
@@ -99,12 +99,11 @@
 }
 .active_text {
   width: 52rem;
-  height: 11rem;
   z-index: 10;
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 2rem;
-  margin-left: -4.5rem;
-  padding: 0.4rem 0.4rem 0.4rem 5.3rem;
+  margin-left: -5.5rem;
+  padding: 1.5rem 1rem 1.5rem 6rem;
   background-color: #225ad6;
   color: #fff;
 }
@@ -213,8 +212,8 @@
   }
   .active_text {
     width: 54rem;
-    margin-left: -4rem;
-    padding: 0.1rem 0.6rem 0.8rem 4.6rem;
+    margin-left: -5.5rem;
+    padding: 1.5rem 1rem 1.5rem 6rem;
   }
   .active_h5 {
     font-weight: 600;
