@@ -72,6 +72,7 @@
 
 @media only screen and (max-width: 650px) {
   .header {
+    padding: 0%;
     flex-direction: column;
     text-align: center;
   }
@@ -138,6 +139,7 @@
   }
   .right {
     width: 100%;
+    padding: 2rem 1rem 0;
   }
 
   .img {
