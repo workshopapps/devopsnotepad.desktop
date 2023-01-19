@@ -48,8 +48,8 @@
 }
 
 .svg {
-  height: 8rem;
-  width: 8rem;
+  height: 9.5rem;
+  width: 9.5rem;
   fill: #8d9fc7;
   padding: 1.2rem;
   border-radius: 50%;
@@ -65,18 +65,18 @@
 }
 
 .h5 {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   color: #102a63;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.8rem;
 }
 
 .p {
   color: #202020;
   font-weight: 500;
-  font-size: 1.05rem;
-  line-height: 1.6rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 /* Active left Item */
@@ -108,16 +108,16 @@
   color: #fff;
 }
 .active_h5 {
+  margin: 0 0 1.5rem;
   color: inherit;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   line-height: 2.2rem;
 }
 .active_p {
-  margin-top: -0.3rem;
   color: inherit;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.8rem;
 }
 
@@ -181,15 +181,15 @@
     padding: 0.3rem 0.4rem 0.6rem 5rem;
   }
   .h5 {
+    margin: 0 0 0.8rem;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 1.4rem;
   }
 
   .p {
-    margin-top: -0.3rem;
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.6rem;
   }
 
@@ -204,8 +204,8 @@
   }
 
   .active_svg {
-    height: 9rem;
-    width: 9rem;
+    height: 10rem;
+    width: 10rem;
     fill: #b7c4de;
     padding: 0.7rem;
     z-index: 30;
@@ -213,9 +213,10 @@
   .active_text {
     width: 54rem;
     margin-left: -5.5rem;
-    padding: 1.5rem 1rem 1.5rem 6rem;
+    padding: 1rem 1rem 1rem 6rem;
   }
   .active_h5 {
+    margin: 0 0 0.8rem;
     font-weight: 600;
     font-size: 1.3rem;
     line-height: 1.6rem;
