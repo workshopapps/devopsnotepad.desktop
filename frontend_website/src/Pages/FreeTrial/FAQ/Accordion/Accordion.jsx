@@ -16,11 +16,14 @@ const Accordion = ({ Data }) => {
             {isActive ? (
                 <div className={style.accordionContent}>
                     <p>{Data.content}</p>
-                    <ul>
-                        {Data.list?.map(x => <li>{x}</li>)}
-                    </ul>
+                    {Data.list ? (
+                        <ul>
+                            {Data.list?.map(x => <li>{x}</li>)}
+                        </ul>
+                    ) : null}
+                    
                     <p>{Data?.more}</p>
-                    <Link href={Data?.link}>{Data?.link}</Link>
+                    <Link style={{fontSize: '14px'}} className={style.link} href={Data?.link}>{Data?.link}</Link>
                 </div>
             ) : null}
         </div>
