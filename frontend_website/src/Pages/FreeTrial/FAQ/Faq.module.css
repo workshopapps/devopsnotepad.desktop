@@ -30,12 +30,17 @@
 .accordionTitle {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .titleH1 {
     font-size: 24px;
     font-weight: 700;
     color: #102A63;
+}
+
+.accordionContent {
+    padding-top: 40px;
 }
 
 .accordionContent ul {
@@ -68,6 +73,10 @@
     .accordionContent p {
         font-size: 16px;
         font-weight: 500;
+    }
+
+    .link {
+        font-size: 14px;
     }
 }
 
