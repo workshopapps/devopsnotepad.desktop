@@ -1,4 +1,4 @@
-import macBook from '../assets/group.png';
+import macBook from '../assets/group.gif';
 import classes from './RightAligned.module.css';
 const RightAligned = () => {
   return (

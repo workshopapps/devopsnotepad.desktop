@@ -4,7 +4,7 @@ import notesImg from '../assets/notes.gif';
 import passwordImg from '../assets/passwords.gif';
 import notificationImg from '../assets/notification.gif';
 // PC images
-import pnotesImg from '../assets/pserver.gif';
+import pnotesImg from '../assets/pnotes.gif';
 import ppasswordImg from '../assets/ppasswords.gif';
 import pnotificationImg from '../assets/pnotification.gif';
 
