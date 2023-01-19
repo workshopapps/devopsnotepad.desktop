@@ -71,7 +71,7 @@ const Form = (props) => {
     setForm((prev) => {
       return { ...prev, firstNameIsFocus: true };
     });
-    if (e.target.value.length > 4) {
+    if (e.target.value.length > 3) {
       setForm((prev) => {
         return { ...prev, firstNameIsValid: true };
       });
@@ -238,19 +238,18 @@ const Form = (props) => {
           Privacy Policy.
         </Link>
       </h3>
-      {/* <div style={{ margin: '3rem 0 0' }}>
+      <div style={{ margin: '3rem 0 0' }}>
         {props.isLoading && <LoadingSpinner />}
         {!props.isLoading && props.error.hasError && (
-          <p className={classes.error__message}>
-            {`Sign in failed! - ${props.error.message}`}
-          </p>
+          <p className={classes.error__message}>{`${props.error.message}`}</p>
         )}
-        {props.message && <p className={classes.verifyMsg}>
-          {props.message}
-        </p>}
-        
+        {!props.isLoading && !props.error.hasError && (
+          <div className={classes.success__message}>
+            {props.response.message}
+          </div>
+        )}
       </div>
-*/}
+
       <div className={classes.btn__box}>
         <Button id='btn__submit' type='submit' className={classes.button}>
           Get Started
