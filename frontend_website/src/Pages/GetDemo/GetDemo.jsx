@@ -27,6 +27,16 @@ function GetDemo() {
 
   async function onSubmitForm(e) {
     e.preventDefault();
+    console.log(formData);
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      company: '',
+      job: '',
+    });
+    // If post successful route to demo page
+    navigate('/demo');
   }
 
   return (
@@ -105,6 +115,7 @@ function GetDemo() {
               type='text'
               placeholder='What’s your first name?'
               onChange={onMutateForm}
+              required
             />
           </div>
 
@@ -116,6 +127,7 @@ function GetDemo() {
               type='text'
               placeholder='What’s your last name?'
               onChange={onMutateForm}
+              required
             />
           </div>
 
@@ -127,6 +139,7 @@ function GetDemo() {
               type='email'
               placeholder='What’s your email address?'
               onChange={onMutateForm}
+              required
             />
           </div>
 
@@ -138,6 +151,7 @@ function GetDemo() {
               type='text'
               placeholder='Where do you work?'
               onChange={onMutateForm}
+              required
             />
           </div>
 
@@ -149,6 +163,7 @@ function GetDemo() {
               id='job'
               value={job}
               onChange={onMutateForm}
+              required
             >
               <option className={style.none} value=''>
                 What do you do?
