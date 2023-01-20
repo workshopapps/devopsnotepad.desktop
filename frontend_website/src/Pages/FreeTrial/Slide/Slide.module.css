@@ -16,22 +16,15 @@
 }
 
 .images {
-<<<<<<< HEAD
   display: flex;
   animation: slide 18s linear infinite alternate;
-=======
-    display: flex;
-    animation: slideDesktop 30s linear infinite alternate;
->>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
 }
 
 @media screen and (max-width: 650px) {
-<<<<<<< HEAD
   .slideH1 {
     font-size: 24px;
   }
 }
-
 @keyframes slide {
   from {
     transform: translateX(10%);
@@ -45,43 +38,6 @@
     transform: translateX(-350%);
   }
 }
-=======
-    .slideH1 {
-        font-size: 24px;
-    }
-
-    .images {
-    display: flex;
-    animation: slideMobile 30s linear infinite alternate;
+.slideH1 {
+  font-size: 24px;
 }
-}
-
-
-@keyframes slideDesktop {
-    from {
-        transform: translateX(10%);
-        -webkit-transform: translateX(10%);
-        -moz-transform: translateX(10%);
-        -ms-transform: translateX(10%);
-        -o-transform: translateX(10%);
-    }
-
-    to {
-        transform: translateX(-400%);
-    }
-}
-
-@keyframes slideMobile {
-    from {
-        transform: translateX(10%);
-        -webkit-transform: translateX(10%);
-        -moz-transform: translateX(10%);
-        -ms-transform: translateX(10%);
-        -o-transform: translateX(10%);
-    }
-
-    to {
-        transform: translateX(-1650%);
-    }
-}
->>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
