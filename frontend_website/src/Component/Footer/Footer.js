@@ -1,4 +1,4 @@
-import logo from './assets/newlogo.png';
+import logo from './assets/newlogoo.svg';
 import googlePlay from './assets/googleplay.svg';
 import appStore from './assets/appstore.svg';
 import linkedin from './assets/linkedin.svg';
