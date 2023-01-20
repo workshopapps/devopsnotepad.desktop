@@ -3,16 +3,8 @@ export const Links = [
     title: 'COMPANY',
     list: [
       {
-        title: 'About Us',
-        slug: '/about-us',
-      },
-      {
         title: 'Our Team',
         slug: '/our-team',
-      },
-      {
-        title: 'FAQs',
-        slug: '/faq',
       },
       {
         title: 'Careers',
