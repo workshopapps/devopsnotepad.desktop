@@ -49,6 +49,7 @@ import VerifyEmail from './Pages/SignUp/VerifyEmail';
 import AvailabiltyNotifications from './Pages/Server/AvailabilityNotifications/AvailabilityNotifications';
 import Download from './Pages/Download/Download';
 import FreeTrial from './Pages/FreeTrial/FreeTrial';
+import GetDemo from './Pages/GetDemo/GetDemo';
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -149,6 +150,7 @@ function App() {
           <Route path='/settings' exact element={<Settings />} />
           <Route path='/download' exact element={<Download />} />
           <Route path='/free-trial' exact element={<FreeTrial />} />
+          <Route path='/get-demo' exact element={<GetDemo />} />
 
           {/* Server Dashbord */}
           <Route

@@ -14,7 +14,10 @@ const Integration = () => {
         <div className={styles.banner}>
           <div className={styles.inBanner}>
             <div className={styles.subtitle}>
-              <h1>Get more from opspad app with our integrations</h1>
+              <h1>
+                Experience more ease with our seamless integrations{' '}
+                <span>coming soon</span>
+              </h1>
             </div>
             <div className={styles.banner_img}>
               <img src={bannerImg} alt='bannerImg' />
