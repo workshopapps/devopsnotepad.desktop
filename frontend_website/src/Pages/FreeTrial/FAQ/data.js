@@ -31,7 +31,7 @@ export const accordionData = [
     },
     {
         title: 'How can i use opspad?',
-        content: `please refer to the user guide here:`,
+        content: `Please refer to the user guide here:`,
         link: `https://opspad-organization.gitbook.io/opspad-knowledge-base/`
 
 
