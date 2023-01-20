@@ -74,7 +74,8 @@
   color: #333333;
 }
 
-.form_control input {
+.form_control input,
+.job > select {
   border: 1px solid #d5d5d5;
   border-radius: 6px;
   display: flex;
@@ -85,6 +86,7 @@
   font-weight: 500;
   font-size: 13px;
   margin-bottom: 0 !important;
+  color: #333333;
 }
 
 .feedback {
@@ -108,6 +110,26 @@
   color: #aaaaaa;
   font-weight: 500;
   font-size: 13px;
+}
+
+.email > input {
+  margin: 0 !important;
+  font-size: 13px !important;
+}
+
+.job > select {
+  font-weight: 500;
+  font-size: 13px;
+  color: #333333;
+}
+
+.job > select:invalid,
+.job > select option[value=''] {
+  color: #aaaaaa;
+}
+
+.none {
+  color: #aaaaaa;
 }
 
 .terms,
