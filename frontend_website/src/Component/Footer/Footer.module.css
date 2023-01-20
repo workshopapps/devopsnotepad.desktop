@@ -151,6 +151,7 @@
   font-size: 14px;
   line-height: 22px;
   color: #565454;
+  white-space: nowrap;
 }
 
 .fSocials {
