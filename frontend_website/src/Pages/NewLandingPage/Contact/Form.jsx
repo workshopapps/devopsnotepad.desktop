@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../CareerPage/Button/Button';
-import { ValidateEmail } from '../../SignUp/lib';
+// import { ValidateEmail } from '../../SignUp/lib';
 import Input from './Input';
 
 import classes from './Form.module.css';
