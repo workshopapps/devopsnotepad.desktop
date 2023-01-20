@@ -85,21 +85,15 @@
   border-radius: 0.4rem;
   border: 0.1rem solid #acacac;
   margin: 0.7rem 0 1.4rem 0;
-  font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
   color: #acacac;
   width: 100%;
 }
 
 .select:focus {
   outline: none;
-}
-
-.select::placeholder {
-  color: #acacac;
-  font-weight: 400;
-  font-size: 1.4rem;
-  letter-spacing: 0.1rem;
 }
 
 .input {
