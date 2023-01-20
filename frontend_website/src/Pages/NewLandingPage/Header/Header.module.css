@@ -1,5 +1,5 @@
 .header {
-  padding: 8rem 8rem 0;
+  padding: 8rem 0 0 8rem;
   font-family: 'Manrope';
   font-style: normal;
   display: flex;
@@ -61,12 +61,12 @@
   opacity: 0.86;
 }
 .right {
-  flex-basis: 45%;
+  flex-basis: 50%;
 }
 
 .img {
-  height: 70vh;
-  width: 90%;
+  height: 83vh;
+  width: 100%;
   object-fit: cover;
 }
 

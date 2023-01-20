@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
-import Faq from './FAQ/Faq';
+import Faq from './FAQ/Faq'
 import style from './FreeTrial.module.css'
 import HeroSection from './HeroSection/HeroSection';
 import Info from './Info/Info';
