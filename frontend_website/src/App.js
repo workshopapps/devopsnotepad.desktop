@@ -31,6 +31,8 @@ import Success from './Pages/ForgetPassword/Success';
 import NewPassword from './Pages/ForgetPassword/NewPassword';
 import { About } from './Pages/About/About';
 import TermsOfService from './Pages/TermsOfUSe/Index';
+import Download from './Pages/Download/Download';
+import FreeTrial from './Pages/FreeTrial/FreeTrial';
 
 //////////////////////////////////// Unused components ////////////////////
 // import Csr from './Pages/Csr/Csr';
@@ -55,12 +57,8 @@ import { UserContext } from './store/UserContext';
 // import Server from './Pages/Server/Server';
 // import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
 // import AvailabiltyNotifications from './Pages/Server/AvailabilityNotifications/AvailabilityNotifications';
-// import Download from './Pages/Download/Download';
-// import FreeTrial from './Pages/FreeTrial/FreeTrial';
 
 // Lazy-loading (Dynamic imports)
-const FreeTrial = lazy(() => import('./Pages/FreeTrial/FreeTrial'));
-const Download = lazy(() => import('./Pages/Download/Download'));
 
 const Server = lazy(() => import('./Pages/Server/Server'));
 const AddServer = lazy(() => import('./Pages/Server/AddServer/AddServer'));
