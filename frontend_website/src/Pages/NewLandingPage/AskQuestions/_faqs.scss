@@ -33,7 +33,7 @@
     background-color: transparent;
     border-bottom: 1px solid rgba($color: #cdd6da, $alpha: 0.3);
     & > * {
-      padding: 2.5rem;
+      padding: 1.5rem 2.5rem;
       @media screen and (max-width: 40em) {
         padding: 2rem;
       }
