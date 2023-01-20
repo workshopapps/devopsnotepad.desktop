@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './_faqs.scss';
 
 const Question = (props) => {
@@ -51,12 +50,14 @@ const Question = (props) => {
           </ul>
         )}
         {props.queInfo.link && (
-          <Link
-            to={`${props.queInfo.link}`}
-            style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={`${props.queInfo.link}`}
+           style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
           >
             {props.queInfo.link}
-          </Link>
+          </a>
         )}
       </div>
     </li>
