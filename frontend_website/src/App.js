@@ -47,7 +47,6 @@ import classes from './App.module.css';
 
 // Context
 import { UserContext } from './store/UserContext';
-<<<<<<< HEAD
 
 // import Settings from './Pages/Settings/MainSettings';
 // import ServerDashBoard from './Pages/Server/ServerDashboard/ServerDashboard';
@@ -75,15 +74,6 @@ const SimpleNotifications = lazy(() =>
   import('./Pages/Server/SimpleNotifications/SimpleNotifications'),
 );
 const Settings = lazy(() => import('./Pages/Settings/MainSettings'));
-=======
-import Server from './Pages/Server/Server';
-import SimpleNotifications from './Pages/Server/SimpleNotifications/SimpleNotifications';
-import VerifyEmail from './Pages/SignUp/VerifyEmail';
-import AvailabiltyNotifications from './Pages/Server/AvailabilityNotifications/AvailabilityNotifications';
-import Download from './Pages/Download/Download';
-import FreeTrial from './Pages/FreeTrial/FreeTrial';
-import GetDemo from './Pages/GetDemo/GetDemo';
->>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
 
 // Error Boundary FallbackComponent: This is the function that will be called whenever the errorboundary component caught an error
 const ErrorFallback = (props) => {
@@ -111,7 +101,6 @@ function App() {
           navigate('/');
         }}
       >
-<<<<<<< HEAD
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path='/' exact element={<LandingPage />} />
@@ -135,82 +124,6 @@ function App() {
             />
             <Route path='/about-us' exact element={<About />} />
             <Route path='/features' exact element={<Features />} />
-=======
-        <Routes>
-          <Route path='/' exact element={<LandingPage />} />
-          <Route path='/integrations' element={<Integration />} />
-          <Route path='/faq' exact element={<Faq />} />
-          <Route path='/signup' exact element={<SignUp />} />
-          <Route path='/verifyemail' exact element={<VerifyEmail />} />
-          <Route path='/login' exact element={<Login />} />
-          <Route path='/coming-soon' exact element={<ComingSoon />} />
-          <Route path='/careers' exact element={<CareerPage />} />
-          <Route path='/contact-us' exact element={<ContactUs />} />
-          <Route
-            path='/terms-of-service'
-            exact
-            element={
-              <>
-                <Navigation />
-                <TermsOfService />
-                <Footer />
-              </>
-            }
-          />
-          <Route path='/about-us' exact element={<About />} />
-          <Route path='/features' exact element={<Features />} />
-          <Route path='/news-room' exact element={<NewsRoom />} />
-          <Route
-            path='/news-room/view-all'
-            exact
-            element={<NewsRoomViewMore />}
-          />
-          <Route path='/demo' exact element={<DemoPage />} />
-          <Route
-            path='/our-team'
-            exact
-            element={
-              <>
-                <Navigation />
-                <OurTeam />
-                <Footer />
-              </>
-            }
-          />
-          <Route path='/devops-community' exact element={<DevopsCommunity />} />
-          <Route
-            path='/our-team/all-teams'
-            exact
-            element={
-              <>
-                <Navigation />
-                <AllTeam />
-                <Footer />
-              </>
-            }
-          />
-          <Route path='/csr' exact element={<Csr />} />
-          <Route path='/podcasts' exact element={<PodCast />} />
-          <Route path='/prices' exact element={<Prices />} />
-          <Route
-            path='/prices/payment/:state/:id'
-            exact
-            element={<PricePayment />}
-          />
-          <Route path='/partners' exact element={<Partner />} />
-          <Route path='/csr' exact element={<Csr />} />
-          <Route path='/forgot-password' exact element={<ForgetPassword />} />
-          <Route path='/checkemail' element={<CheckEmail />} />
-          <Route path='/verfication' element={<Verification />} />
-          <Route path='/api/auth/update-password' element={<NewPassword />} />
-          <Route path='/auth/update-password' element={<NewPassword />} />
-          <Route path='/success' element={<Success />} />
-          <Route path='/best-practices' exact element={<BestPractice />} />
-          <Route path='/settings' exact element={<Settings />} />
-          <Route path='/download' exact element={<Download />} />
-          <Route path='/free-trial' exact element={<FreeTrial />} />
-          <Route path='/get-demo' exact element={<GetDemo />} />
->>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
 
             <Route path='/demo' exact element={<DemoPage />} />
             <Route
