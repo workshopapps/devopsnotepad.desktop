@@ -21,6 +21,7 @@
 
 .THeroImg {
     border-radius: 40px;
+    object-fit: cover;
 }
 
 .HeroForm {
