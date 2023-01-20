@@ -3,25 +3,49 @@
 } */
 
 .slideH1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 48px;
-    color: #202020;
-    text-align: center;
-    padding-top: 60px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #202020;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .blue {
-    color: #2563EB;
+  color: #2563eb;
 }
 
 .images {
+<<<<<<< HEAD
+  display: flex;
+  animation: slide 18s linear infinite alternate;
+=======
     display: flex;
     animation: slideDesktop 30s linear infinite alternate;
+>>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
 }
 
-
 @media screen and (max-width: 650px) {
+<<<<<<< HEAD
+  .slideH1 {
+    font-size: 24px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    -moz-transform: translateX(10%);
+    -ms-transform: translateX(10%);
+    -o-transform: translateX(10%);
+  }
+
+  to {
+    transform: translateX(-350%);
+  }
+}
+=======
     .slideH1 {
         font-size: 24px;
     }
@@ -60,3 +84,4 @@
         transform: translateX(-1650%);
     }
 }
+>>>>>>> 2b1b327f0d13d5152e5fa59cf5fe5de54fbb14ff
