@@ -32,8 +32,22 @@ const Footer = () => {
                     <h4 className={styles.miUM__title}>{link.title}</h4>
                     {link.list && (
                       <ul style={{ listStyle: 'none', padding: 0 }}>
-                        {link.list.map((b, i) => (
-                          <li key={i} className={styles.footer_lists}>
+                        {link.list.map((b, i) => {
+                          let url = 'https://opspad-organization.gitbook.io/opspad-knowledge-base/'
+                          if (b.slug === url) {
+                            return (<li key={i} className={styles.footer_lists}>
+                                <a
+                                  target='_blank'
+                                  rel='noreferrer'
+                                  href={url}
+                                  className={styles.userGuide}
+                                  onClick={scrollToTOp}
+                                >
+                                  {b.title}
+                                </a>
+                            </li> )
+                          } 
+                          return <li key={i} className={styles.footer_lists}>
                             <NavLink
                               to={`${b.slug}`}
                               className={({ isActive }) =>
@@ -44,7 +58,7 @@ const Footer = () => {
                               {b.title}
                             </NavLink>
                           </li>
-                        ))}
+                        })}
                       </ul>
                     )}
                   </div>
