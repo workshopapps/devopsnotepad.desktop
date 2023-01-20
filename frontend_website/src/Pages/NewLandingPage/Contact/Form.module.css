@@ -87,13 +87,14 @@
   margin: 0.7rem 0 1.4rem 0;
   font-size: 1.6rem;
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.801);
+  color: #acacac;
   width: 100%;
 }
 
 .select:focus {
   outline: none;
 }
+
 .select::placeholder {
   color: #acacac;
   font-weight: 400;
