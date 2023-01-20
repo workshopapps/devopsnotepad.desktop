@@ -130,7 +130,7 @@ const LeftAligned = () => {
             </div>
             <div
               className={`${
-                tab !== 'c' ? `${classes.text}` : `${classes.active_text}`
+                tab !== 'c' ? `${classes.text} ${classes.height}` : `${classes.active_text} ${classes.height}`
               }`}
             >
               <h5
