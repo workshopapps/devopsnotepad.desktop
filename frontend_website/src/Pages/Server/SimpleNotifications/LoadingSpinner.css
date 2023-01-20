@@ -1,0 +1,51 @@
+.spinner__box {
+  width: 100%;
+  height: calc(100vh - 20rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.spinner__box h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #102a63;
+  margin-left: 2rem;
+}
+
+.spinner {
+  fill: #102a63;
+  height: 4rem;
+  width: 4rem;
+  -webkit-animation: spinner linear 2s infinite;
+          animation: spinner linear 2s infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=LoadingSpinner.css.map */

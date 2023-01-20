@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../../store/UserContext';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import logo from './assets/logo.svg';
+import logo from './assets/newlogoo.svg';
 import menuIcon from './assets/menu-icon.svg';
 import styles from './Navigation.module.css';
 import Navbar from './Navbar';
@@ -80,7 +80,7 @@ const Navigation = () => {
                     Login
                   </Link>
                 )}
-                <Link className={styles.download_link} to='/demo'>
+                <Link className={styles.download_link} to='/get-demo'>
                   See Demo
                 </Link>
               </div>

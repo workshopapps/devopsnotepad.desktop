@@ -46,7 +46,7 @@
 }
 
 .card a {
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .card h2 {
