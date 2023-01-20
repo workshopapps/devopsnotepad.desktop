@@ -49,7 +49,7 @@ function ContactUs() {
               Have any suggestions on improvements or bug report reach out to
               our admin team.
             </p>
-            <a href='!#' className={style.btn}>
+            <a href='mailto:admin@opspad.dev' className={style.btn}>
               Email Admin
             </a>
           </div>

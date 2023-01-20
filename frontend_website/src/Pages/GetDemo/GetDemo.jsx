@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import style from './GetDemo.module.css';
 import Slide from '../FreeTrial/Slide/Slide';
