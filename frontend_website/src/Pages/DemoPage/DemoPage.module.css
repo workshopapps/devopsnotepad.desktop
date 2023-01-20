@@ -1,93 +1,254 @@
-.demoPage {
-  width: 100%;
-  padding: 80px;
+div.wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
 }
 
-.demoPage .container {
+div.wrap1 {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+section.wrapper {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.container .text {
-  width: 40%;
+section.wrapper h1.heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
 }
 
-.container .text h2 {
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 72px;
-  color: #353535;
-  margin-bottom: 32px;
+section.wrapper h1.heading span.ease {
+  color: #2563eb;
 }
 
-.container .text ul li {
+section.wrapper p.parag {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+section.wrapper img.ImgOne {
+  width: 100%;
+  padding-top: 15px;
+}
+
+.videoCtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+
+div.wrap h1.head {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.wrap1 h1.head {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.wrap h1.head span.spa {
+  color: #2563eb;
+}
+
+div.wrap1 h1.head span.spa {
+  color: #2563eb;
+}
+
+div img.Imgtwo {
+  width: 100%;
+}
+
+ul {
+  margin-top: 20px;
   font-weight: 500;
   font-size: 16px;
   line-height: 32px;
-  color: #292929;
-  margin-bottom: 16px;
+  margin-left: 20px;
+  text-align: start;
 }
 
-.videoCtn .video {
-  background: rgba(49, 49, 49, 0.75);
-  border-radius: 8px;
-  width: 628px;
-  height: 410px;
-}
-
-.videoCtn p {
+button.btn {
+  color: white;
+  background-color: #102a63;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-  color: #353535;
-  margin-top: 32px;
+  font-size: 18px;
+  line-height: 16px;
+  padding: 20px 0px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  width: 93%;
+  margin: 40px 16px;
 }
 
-@media screen and (max-width: 968px) {
-  .demoPage {
-    width: 100%;
-    padding: 70px 24px;
+button.btn1 {
+  color: white;
+  background-color: #102a63;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 16px;
+  padding: 20px 0px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  width: 93%;
+  margin: 40px 16px;
+}
+
+div.con {
+  display: none;
+}
+
+@media screen and (min-width: 986px) {
+  section.wrapper {
+    flex-direction: row;
+    /* margin: 40px 120px; */
   }
 
-  .demoPage .container {
-    display: flex;
-    flex-direction: column;
+  section.wrapper div.wrapp {
+    text-align: start;
+    width: 50%;
+  }
+
+  .imgWrap {
+    width: 50%;
+  }
+
+  div.wrap {
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
   }
 
-  .container .text {
-    width: 100%;
+  div.wrap1 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
-  .container .text h2 {
+  div.wrap h1.head {
+    display: none;
+  }
+
+  div.wrap1 h1.head {
+    display: none;
+  }
+
+  div.con {
+    display: block;
+  }
+
+  div.wrap img.Imgtwo {
+    width: 50%;
+  }
+
+  div.wrap1 img.Imgtwo {
+    width: 50%;
+  }
+
+  div.wrap div.package {
+    width: 50%;
+    padding-left: 20px;
+  }
+
+  div.wrap1 div.package {
+    width: 50%;
+    padding-left: 20px;
+  }
+
+  div.con h1.header {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 35px;
     line-height: 40px;
-    text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
-  .container .text ul li {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    margin: 0 auto 24px;
-    max-width: 370px;
+  div.con h1.header span.paying {
+    color: #143681;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section.wrapper {
+    flex-direction: row;
+    margin: 40px;
   }
 
-  .videoCtn .video {
-    background: rgba(49, 49, 49, 0.75);
-    border-radius: 8px;
-    width: 100%;
-    height: 248px;
+  div.wrap {
+    margin: 40px;
   }
 
-  .videoCtn p {
-    margin-top: 24px;
-    text-align: center;
+  div.wrap1 {
+    margin: 40px;
   }
-  
+}
+
+@media screen and (min-width: 1500px) {
+  section.wrapper {
+    flex-direction: row;
+    margin: 40px 120px;
+  }
+
+  div.wrap {
+    margin: 40px 120px;
+  }
+
+  div.wrap1 {
+    margin: 40px 120px;
+  }
+
+  button.btn {
+    padding: 20px 0px;
+    width: 30%;
+  }
+
+  button.btn1 {
+    padding: 20px 10px;
+    width: 40%;
+  }
+
+  section.wrapper div.wrapp h1.heading {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 72px;
+  }
+
+  section.wrapper div.wrapp p.parag {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-top: 20px;
+    margin-right: 100px;
+  }
+
+  div.package div.con h1.header {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 72px;
+  }
+
+  ul {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+  }
 }
