@@ -1,4 +1,4 @@
-import logo from './assets/logo.svg';
+import logo from './assets/newlogoo.svg';
 import googlePlay from './assets/googleplay.svg';
 import appStore from './assets/appstore.svg';
 import linkedin from './assets/linkedin.svg';
@@ -58,7 +58,7 @@ const Footer = () => {
                   <img src={logo} alt='' />
                 </Link>
               </div>
-              <h3 className={styles.right__title}>Be the first to know</h3>
+              <h3 className={styles.right__title}>Get notified of recent updates</h3>
 
               <div className={styles.notify__ctn}>
                 <label>

@@ -58,9 +58,9 @@ export const getMoreT = [
     slug: 'https://mail.google.com/',
   },
   {
-    heading: 'JIra',
+    heading: 'Jira',
     content:
-      'Jira helps teams plan, assign, track, report, and manage work. The integration with Jira imakes it easy to create and assign issues from triggered alerts in OPspad.',
+      'Jira helps teams plan, assign, track, report, and manage work. The integration with Jira makes it easy to create and assign issues from triggered alerts in OPspad.',
     img: jira,
     linkLabel: 'Learn More',
     slug: 'https://www.atlassian.com/software/jira',
