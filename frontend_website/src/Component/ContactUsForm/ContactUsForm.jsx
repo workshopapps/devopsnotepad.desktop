@@ -118,13 +118,24 @@ function ContactUsForm({ closeContact }) {
         </div>
         <div className={`${style.form_control} ${style.job}`}>
           <label htmlFor='job'>Job Function</label>
-          <input
-            type='text'
+          <select
+            className={job === '' ? style.none : ''}
+            name='job'
             id='job'
-            placeholder='What do you do?'
             value={job}
             onChange={onMutateForm}
-          />
+            required
+          >
+            <option className={style.none} value=''>
+              What do you do?
+            </option>
+            <option value='DevOps'>DevOps</option>
+            <option value='IT Admin'>IT Admin</option>
+            <option value='Software Engineer'>Software Engineer</option>
+            <option value='Server/System Admin'>Server/System Admin</option>
+            <option value='Executive'>Executive</option>
+            <option value='Others'>Others</option>
+          </select>
         </div>
         <div className={`${style.form_control} ${style.feedback}`}>
           <label htmlFor='feedback'>Comment your feedback</label>
