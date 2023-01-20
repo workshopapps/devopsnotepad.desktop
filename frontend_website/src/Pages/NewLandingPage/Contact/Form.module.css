@@ -94,6 +94,12 @@
 .select:focus {
   outline: none;
 }
+.select::placeholder {
+  color: #acacac;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
 
 .input {
   padding: 0.9rem 1rem;
