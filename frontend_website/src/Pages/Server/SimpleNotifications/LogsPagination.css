@@ -1,0 +1,96 @@
+.user-pagination__card {
+  padding: 1rem;
+  width: 80%;
+  margin: 2rem auto 3rem;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user-pagination__icons--box {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-pagination__icons--prev, .user-pagination__icons--next {
+  height: 4rem;
+  width: 4rem;
+  fill: #344444;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.user-pagination__icons--prev:hover, .user-pagination__icons--next:hover {
+  fill: #102a63;
+}
+
+.user-pagination__icons--paragraph {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #102a63;
+}
+
+.user-pagination__buttons {
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.user-pagination__buttons button {
+  text-align: center;
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  background-color: rgba(92, 91, 91, 0.92);
+  color: #e2dddd;
+  border-radius: 0.5rem;
+  border: 0.25rem solid transparent;
+  cursor: pointer;
+}
+
+.user-pagination__buttons button:hover {
+  border: 0.25rem solid #102a63;
+  background-color: white;
+  color: #102a63;
+}
+
+.user-pagination__buttons button:focus {
+  border: 0.25rem solid #102a63;
+  background-color: rgba(255, 255, 255, 0.838);
+  color: #102a63;
+}
+
+.not__allowed {
+  cursor: not-allowed !important;
+  fill: rgba(213, 208, 167, 0.745) !important;
+}
+/*# sourceMappingURL=LogsPagination.css.map */

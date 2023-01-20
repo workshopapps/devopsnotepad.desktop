@@ -74,6 +74,48 @@
   margin-bottom: 1.4rem;
 }
 
+.label {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #6f6f6f;
+}
+
+.select {
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #acacac;
+  margin: 0.7rem 0 1.4rem 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.801);
+  width: 100%;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.input {
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #acacac;
+  font-size: 1.6rem;
+  font-weight: 300;
+  width: 100%;
+  margin-top: 1.6rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #acacac;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+
 @media only screen and (max-width: 650px) {
   .contact__form {
     width: 100%;

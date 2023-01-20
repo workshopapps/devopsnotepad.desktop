@@ -17,7 +17,7 @@
 
 .images {
     display: flex;
-    animation: slide 15s linear infinite alternate;
+    animation: slideDesktop 30s linear infinite alternate;
 }
 
 
@@ -25,9 +25,15 @@
     .slideH1 {
         font-size: 24px;
     }
+
+    .images {
+    display: flex;
+    animation: slideMobile 30s linear infinite alternate;
+}
 }
 
-@keyframes slide {
+
+@keyframes slideDesktop {
     from {
         transform: translateX(10%);
         -webkit-transform: translateX(10%);
@@ -37,6 +43,20 @@
     }
 
     to {
-        transform: translateX(-350%);
+        transform: translateX(-400%);
+    }
+}
+
+@keyframes slideMobile {
+    from {
+        transform: translateX(10%);
+        -webkit-transform: translateX(10%);
+        -moz-transform: translateX(10%);
+        -ms-transform: translateX(10%);
+        -o-transform: translateX(10%);
+    }
+
+    to {
+        transform: translateX(-1650%);
     }
 }
