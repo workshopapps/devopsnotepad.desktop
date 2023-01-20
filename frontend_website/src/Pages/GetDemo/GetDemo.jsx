@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import style from './GetDemo.module.css';
+import Slide from '../FreeTrial/Slide/Slide';
 import Back from './assets/BackArrow.svg';
 import OpspadLogo from './assets/OpspadLogo.svg';
 import Checkmark from './assets/Checkmark.svg';
@@ -124,6 +125,17 @@ function GetDemo() {
           </button>
         </form>
       </main>
+
+      <section className={style.clients}>
+        <Slide />
+        {/* <h2>
+          <span>Trusted </span>by happy Clients
+        </h2>
+        <div className={style.client_list}>
+        </div>
+         */}
+        <div className={style.footer}></div>
+      </section>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 .container {
-  padding: 58.51px 24px 173.92px;
+  padding: 58.51px 0 173.92px;
   font-family: 'Manrope', sans-serif;
 }
 
@@ -7,19 +7,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
+}
+
+.header,
+.main,
+.form {
+  padding-right: 24px;
+  padding-left: 24px;
 }
 
 .header > * {
   border: none;
   background: none;
-  margin-bottom: 24px;
 }
 
 .main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 56px;
 }
 
 .main_heading {
@@ -47,6 +53,7 @@ header {
   border-top-right-radius: 0px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  margin-bottom: 56px;
 }
 
 .content h2 {
@@ -184,7 +191,6 @@ header {
   display: grid;
   place-content: center;
   padding: 16.2327px 18.2618px;
-  gap: 10.15px;
   height: 38.08px;
   background: #102a63;
   border-radius: 6.08727px;
@@ -192,4 +198,82 @@ header {
   font-size: 14.2036px;
   color: #ffffff;
   border: none;
+}
+
+.clients {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .submit {
+    padding: 20px 30px;
+    width: 200px;
+    height: 56px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    align-self: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 58.51px 0 0;
+  }
+
+  .content {
+    padding: 73px 24px 73px;
+  }
+
+  .content h2 {
+    font-size: 40px;
+  }
+
+  .content > p {
+    font-size: 20px;
+  }
+
+  .terms {
+    font-size: 16px;
+  }
+
+  .clients {
+    display: block;
+    margin-top: 56px;
+    width: 100%;
+  }
+
+  .clients > h2 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #202020;
+    text-align: center;
+    width: 100%;
+  }
+
+  .clients > h2 > span {
+    color: #2563eb;
+  }
+
+  .client_list {
+    padding: 45px 0px 45px 80px;
+    width: 100%;
+    height: 149px; /* 210px; */
+
+    background: #ffffff;
+  }
+
+  .footer {
+    /* padding: 48px; */
+
+    width: 100%;
+    height: 149px; /*298*/
+    background: #102a63;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    padding: 61.51px 0 0;
+  }
 }
