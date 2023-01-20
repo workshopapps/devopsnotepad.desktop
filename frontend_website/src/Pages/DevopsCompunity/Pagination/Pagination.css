@@ -1,0 +1,119 @@
+.pagination__card {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 4rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pagination__icons--prev, .pagination__icons--next {
+  border-radius: 0.5rem;
+  border: 0.1rem solid #5c5a5a69;
+  padding: 0 0.7rem;
+  height: 3.5rem;
+  width: 6rem;
+  fill: #8b8888;
+  cursor: pointer;
+}
+
+.pagination__icons--prev:hover, .pagination__icons--next:hover {
+  fill: #494747;
+}
+
+.pagination__icons--end, .pagination__icons--start {
+  border-radius: 0.5rem;
+  border: 0.1rem solid #5c5a5a69;
+  padding: 0 0.7rem;
+  margin: 0 0.3rem;
+  height: 3.5rem;
+  width: 6rem;
+  fill: #8b8888;
+  cursor: pointer;
+}
+
+.pagination__icons--end:hover, .pagination__icons--start:hover {
+  fill: #494747;
+}
+
+.pagination__buttons {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.pagination__buttons button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #706c6c;
+  border-radius: 0.5rem;
+  border: 0.15rem solid #5c5a5a69;
+  cursor: pointer;
+}
+
+.pagination__buttons button:hover {
+  border: 0.15rem solid #111fff;
+}
+
+.pagination__buttons button:focus {
+  border: 0.15rem solid #111fff;
+}
+
+.pagination__buttons .btn__active {
+  border: 0.15rem solid #111fff !important;
+}
+
+.not__allowed {
+  cursor: not-allowed !important;
+  fill: #5c5a5a68 !important;
+}
+
+@media only screen and (max-width: 850px) {
+  .pagination__card {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .pagination__card {
+    width: 100%;
+  }
+  .pagination__icons--prev, .pagination__icons--next {
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    width: 4rem;
+  }
+  .pagination__icons--end, .pagination__icons--start {
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    width: 4rem;
+  }
+  .pagination__buttons {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .pagination__buttons button {
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    margin: 0.3rem;
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=Pagination.css.map */
