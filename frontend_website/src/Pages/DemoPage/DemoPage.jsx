@@ -9,53 +9,67 @@ import two from './assets/two.png';
 import three from './assets/three.png';
 
 const DemoPage = () => {
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   const signedUp = JSON.parse(localStorage.getItem('servers'))
+  //     ? JSON.parse(localStorage.getItem('simef'))
+  //     : false;
+
+  //   if (!signedUp) {
+  //     navigate('/get-demo');
+  //   }
+  // }, []);
+
   return (
     <>
       <Navigation />
 
       <div className={styles.container}>
-        <section className={styles.wrapper}>
-          <div className={styles.wrapp}>
-            <h1 className={styles.heading}>
-              Get Ready To <br /> Experience{' '}
-              <span className={styles.ease}>Ease</span> With <br /> Opspad
-            </h1>
-            <p className={styles.parag}>
-              One of our team members will reach out to you to answer any
-              questions you may have. Meanwhile , get to know us a little better
-            </p>
-          </div>
+        <div className={styles.main}>
+          <section className={styles.wrapper}>
+            <div className={styles.wrapp}>
+              <h1 className={styles.heading}>
+                Get Ready To <br /> Experience{' '}
+                <span className={styles.ease}>Ease</span> With <br /> Opspad
+              </h1>
+              <p className={styles.parag}>
+                One of our team members will reach out to you to answer any
+                questions you may have. Meanwhile , get to know us a little
+                better
+              </p>
+            </div>
 
-          <div className={styles.imgWrap}>
-            <img src={one} alt='' className={styles.ImgOne} />
-          </div>
-        </section>
+            <div className={styles.imgWrap}>
+              <img src={one} alt='' className={styles.ImgOne} />
+            </div>
+          </section>
 
-        <div className={styles.videoCtn}>
-          <ReactPlayer
-            className={styles.video}
-            url='https://youtu.be/TcUlnDJwtPg'
-          ></ReactPlayer>
+          <div className={styles.videoCtn}>
+            <ReactPlayer
+              className={styles.video}
+              url='https://youtu.be/TcUlnDJwtPg'
+            ></ReactPlayer>
+          </div>
         </div>
 
         <div className={styles.wrap}>
-          <h1 className={styles.head}>
+          <h2 className={styles.head}>
             Use Opspad <span className={styles.spa}>without paying</span>{' '}
-          </h1>
+          </h2>
 
           <img src={two} alt='' className={styles.Imgtwo} />
 
           <div className={styles.package}>
             <div className={styles.con}>
-              <h1 className={styles.header}>
+              <h2 className={styles.header}>
                 {' '}
                 Use Opspad <span className={styles.paying}>
                   without paying
                 </span>{' '}
-              </h1>
+              </h2>
             </div>
 
-            <ul>
+            <ul className={styles.list}>
               <li>Follow the information on the user guide.</li>
               <li>Get setup in less than a minute</li>
               <li>
@@ -72,22 +86,22 @@ const DemoPage = () => {
         </div>
 
         <div className={styles.wrap1}>
-          <h1 className={styles.head}>
+          <h2 className={styles.head}>
             We’d love to <span className={styles.spa}>get your feedback</span>{' '}
             on Opspad{' '}
-          </h1>
+          </h2>
           <img src={three} alt='' className={styles.Imgtwo} />
 
           <div className={styles.package}>
             <div className={styles.con}>
-              <h1 className={styles.header}>
+              <h2 className={styles.header}>
                 We’d love to{' '}
                 <span className={styles.paying}>get your feedback</span> on
                 Opspad{' '}
-              </h1>
+              </h2>
             </div>
 
-            <ul>
+            <ul className={styles.list}>
               <li>
                 We’d love to tailor our product features to match your exact
                 need
@@ -102,7 +116,7 @@ const DemoPage = () => {
             >
               {' '}
               <button className={styles.btn1}>
-                Take A 90-second Survey
+                Take a 30-second Survey
               </button>{' '}
             </a>
           </div>
