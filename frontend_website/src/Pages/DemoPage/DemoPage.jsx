@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
 import styles from './DemoPage.module.css';
 
 const DemoPage = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const signedUp = JSON.parse(localStorage.getItem('servers'))
+      ? JSON.parse(localStorage.getItem('simef'))
+      : false;
+
+    if (!signedUp) {
+      navigate('/get-demo');
+    }
+  }, []);
+
   return (
     <>
       <Navigation />
