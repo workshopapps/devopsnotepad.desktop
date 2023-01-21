@@ -3,60 +3,41 @@
 } */
 
 .slideH1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 48px;
-    color: #202020;
-    text-align: center;
-    padding-top: 60px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #202020;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .blue {
-    color: #2563EB;
+  color: #2563eb;
 }
 
 .images {
-    display: flex;
-    animation: slideDesktop 30s linear infinite alternate;
+  display: flex;
+  animation: slide 18s linear infinite alternate;
 }
-
 
 @media screen and (max-width: 650px) {
-    .slideH1 {
-        font-size: 24px;
-    }
-
-    .images {
-    display: flex;
-    animation: slideMobile 30s linear infinite alternate;
+  .slideH1 {
+    font-size: 24px;
+  }
 }
+@keyframes slide {
+  from {
+    transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    -moz-transform: translateX(10%);
+    -ms-transform: translateX(10%);
+    -o-transform: translateX(10%);
+  }
+
+  to {
+    transform: translateX(-350%);
+  }
 }
-
-
-@keyframes slideDesktop {
-    from {
-        transform: translateX(10%);
-        -webkit-transform: translateX(10%);
-        -moz-transform: translateX(10%);
-        -ms-transform: translateX(10%);
-        -o-transform: translateX(10%);
-    }
-
-    to {
-        transform: translateX(-400%);
-    }
-}
-
-@keyframes slideMobile {
-    from {
-        transform: translateX(10%);
-        -webkit-transform: translateX(10%);
-        -moz-transform: translateX(10%);
-        -ms-transform: translateX(10%);
-        -o-transform: translateX(10%);
-    }
-
-    to {
-        transform: translateX(-1650%);
-    }
+.slideH1 {
+  font-size: 24px;
 }

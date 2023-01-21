@@ -1,18 +1,22 @@
 export const Links = [
   {
-    title: 'COMPANY',
+    title: 'EXPLORE',
     list: [
       {
         title: 'Our Team',
         slug: '/our-team',
       },
       {
-        title: 'Careers',
-        slug: '/careers',
+        title: 'Contact us ',
+        slug: '/contact-us',
       },
       {
         title: 'Terms and Policy',
         slug: '/terms-of-service',
+      },
+      {
+        title: 'User Guide',
+        slug: 'https://opspad-organization.gitbook.io/opspad-knowledge-base/',
       },
     ],
   },
@@ -44,9 +48,13 @@ export const Links = [
         title: 'Integrations',
         slug: '/integrations',
       },
+      // {
+      //   title: 'Pricing',
+      //   slug: '/prices',
+      // },
       {
-        title: 'Pricing',
-        slug: '/prices',
+        title: 'Try free',
+        slug: '/free-trial',
       },
       {
         title: 'Demo',

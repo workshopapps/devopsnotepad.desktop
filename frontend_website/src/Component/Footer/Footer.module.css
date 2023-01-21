@@ -47,9 +47,18 @@
 
 .miUM li {
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .miUM li a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #868686;
+}
+
+.userGuide {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
