@@ -47,6 +47,7 @@
 
 .miUM li {
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .miUM li a {
