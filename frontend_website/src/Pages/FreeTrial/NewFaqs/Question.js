@@ -8,11 +8,11 @@ const Question = (props) => {
   };
   return (
     <li
-      className={`faqs-question ${
-        showAns ? 'faqs-question__open' : 'faqs-question__close'
+      className={`nfaqs-question ${
+        showAns ? 'nfaqs-question__open' : 'nfaqs-question__close'
       }`}
     >
-      <button className='faqs-question_que' onClick={toggleShowAnsHandler}>
+      <button className='nfaqs-question_que' onClick={toggleShowAnsHandler}>
         <span>{props.queInfo.que}</span>
         <span>
           <span
@@ -28,12 +28,12 @@ const Question = (props) => {
         </span>
       </button>
       <div
-        className={`faqs-question__ans ${
-          showAns ? 'faqs-question__ans-open' : 'faqs-question__ans-close'
+        className={`nfaqs-question__ans ${
+          showAns ? 'nfaqs-question__ans-open' : 'nfaqs-question__ans-close'
         }`}
       >
         {props.queInfo.ans && (
-          <p style={{ fontSize: '1.4rem', color: 'white' }}>
+          <p style={{ fontSize: '1.4rem', color: '#4B4B4B' }}>
             {props.queInfo.ans}
           </p>
         )}
@@ -42,7 +42,11 @@ const Question = (props) => {
             {props.queInfo.list.map((li, index) => (
               <li
                 key={index}
-                style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
+                style={{
+                  margin: '1rem 0',
+                  fontSize: '1.4rem',
+                  color: '#4B4B4B',
+                }}
               >
                 {li}
               </li>
@@ -54,7 +58,7 @@ const Question = (props) => {
             target='_blank'
             rel='noreferrer'
             href={`${props.queInfo.link}`}
-           style={{ margin: '1rem 0', fontSize: '1.4rem', color: 'white' }}
+            style={{ margin: '1rem 0', fontSize: '1.4rem', color: '#4B4B4B' }}
           >
             {props.queInfo.link}
           </a>

@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 .tab_active {
-  box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px -10px 8px -6px rgba(0, 0, 0, 0.12);
   border-radius: 14px 14px 0px 0px;
   color: #5182ef;
 }
@@ -63,7 +63,9 @@
   margin-left: -5.5rem;
   padding: 1.5rem 1rem 1.5rem 6rem;
 }
-
+.height {
+  height: 8.5rem;
+}
 .h5 {
   margin: 0 0 1rem;
   color: #102a63;
@@ -92,7 +94,7 @@
 .active_svg {
   height: 11rem;
   width: 11rem;
-  fill: #8d9fc7;
+  fill: #ffffff;
   padding: 1rem;
   border-radius: 50%;
   border: 0.7rem solid #fff;
