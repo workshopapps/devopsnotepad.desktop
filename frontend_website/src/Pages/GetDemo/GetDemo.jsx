@@ -55,7 +55,7 @@ function GetDemo({ setDemoView }) {
         >
           <img src={Back} alt='go back to previous page' />
         </button>
-        <Link to={'/'}>
+        <Link className={style.home_link} to={'/'}>
           <img src={OpspadLogo} alt='Home Link' />
         </Link>
       </header>
