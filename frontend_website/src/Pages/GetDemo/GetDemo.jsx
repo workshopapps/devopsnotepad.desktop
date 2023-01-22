@@ -6,7 +6,7 @@ import Back from './assets/BackArrow.svg';
 import OpspadLogo from './assets/OpspadLogo.svg';
 import Checkmark from './assets/Checkmark.svg';
 
-function GetDemo() {
+function GetDemo({ setDemoView }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -35,9 +35,28 @@ function GetDemo() {
       company: '',
       job: '',
     });
-    // If post successful route to demo page
-    navigate('/demo');
+
+    // If Post request is successful, create a variable in local storage with a value of true
+    localStorage.setItem(
+      'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
+      JSON.stringify(true),
+    );
+    // If post request is display demo by changing demoView to true in demo
+    setDemoView();
   }
+
+  // useEffect(() => {
+  //   const signedUp = JSON.parse(
+  //     localStorage.getItem('d5339e41-f0c2-46b9-b3bb-038c767c4ebb'),
+  //   )
+  //     ? JSON.parse(localStorage.getItem('d5339e41-f0c2-46b9-b3bb-038c767c4ebb'))
+  //     : false;
+
+  //   if (signedUp) {
+  //     navigate('/demo');
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className={style.container}>
