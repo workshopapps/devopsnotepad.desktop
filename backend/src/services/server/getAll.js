@@ -31,7 +31,7 @@ export default async function getAllServers(query, id) {
         }
 
     return {
-        message: `${servers.length} servers founde`,
+        message: `${servers.length} servers found`,
         currentPage: currentPage,
         limit: limits,
         servers: paginated.results,

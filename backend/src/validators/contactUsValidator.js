@@ -11,7 +11,11 @@ export const contactUsValidator = [
         .notEmpty()
         .custom((value) => value.length > 1),
 
-    body("subject", subjectValMsg)
+    body("company", subjectValMsg)
+        .notEmpty()
+        .custom((value) => value.length > 1),
+
+    body("role", subjectValMsg)
         .notEmpty()
         .custom((value) => value.length > 1),
 
