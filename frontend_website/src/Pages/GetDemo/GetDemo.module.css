@@ -1,5 +1,5 @@
 .container {
-  padding: 58.51px 0 173.92px;
+  padding: 58.51px 0 0;
   font-family: 'Manrope', sans-serif;
 }
 
@@ -20,6 +20,17 @@ header {
 .header > * {
   border: none;
   background: none;
+}
+
+.header > .home_link {
+  width: 45.15px;
+  height: 45.91px;
+  border-top: none;
+}
+.header > .home_link > img {
+  width: 100%;
+  height: 100%;
+  border-top: none;
 }
 
 .main {
@@ -53,7 +64,7 @@ header {
   border-top-right-radius: 0px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-bottom: 56px;
+  /* margin-bottom: 56px; */
 }
 
 .content > h1 {
@@ -211,8 +222,15 @@ header {
 }
 
 .clients {
-  display: none;
+  width: 100%;
+  margin-top: 87.92px;
   overflow: hidden;
+}
+
+.footer {
+  width: 100%;
+  height: 298px; /*298*/
+  background: #102a63;
 }
 
 @media (min-width: 640px) {
@@ -249,9 +267,7 @@ header {
   }
 
   .clients {
-    display: block;
-    margin-top: 56px;
-    width: 100%;
+    margin-top: 100px; /*134*/
   }
 
   .clients > h2 {
@@ -272,12 +288,6 @@ header {
     height: 149px; /* 210px; */
 
     background: #ffffff;
-  }
-
-  .footer {
-    width: 100%;
-    height: 149px; /*298*/
-    background: #102a63;
   }
 }
 
