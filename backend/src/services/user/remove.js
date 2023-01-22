@@ -3,7 +3,8 @@ import ServerRepo from "../../database/repositories/ServerRepo.js";
 import sendEmail from "../../utils/email/sendEmail.js";
 
 export default async function removeuser(body) {
-    body.email = body.email.toLowerCase();
+    const email = body.email.toLowerCase();
+    const year = new Date().getFullYear();
 
     // retrie all servers
     const servers = await ServerRepo.getAllServers()
@@ -14,8 +15,7 @@ export default async function removeuser(body) {
 
     // Deleter user
     await UserRepo.removeUserByEmail(body.email)
-    const email = body.email
-    await sendEmail(email, "Message received", { email }, "./template/removeUser.handlebars");
+    await sendEmail(email, "Message received", { email, year }, "./template/removeUser.handlebars");
 
     return "User Remove successfully"
 }

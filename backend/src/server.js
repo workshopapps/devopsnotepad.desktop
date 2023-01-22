@@ -34,7 +34,7 @@ const start = async () => {
     try {
         await migrate();
         await startServer();
-        await PushNotification.intializeCronJob();
+        // await PushNotification.intializeCronJob();
     } catch (e) {
         console.log(e);
         process.exit(1);
