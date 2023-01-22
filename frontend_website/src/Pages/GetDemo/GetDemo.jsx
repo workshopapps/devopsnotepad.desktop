@@ -45,19 +45,6 @@ function GetDemo({ setDemoView }) {
     setDemoView();
   }
 
-  // useEffect(() => {
-  //   const signedUp = JSON.parse(
-  //     localStorage.getItem('d5339e41-f0c2-46b9-b3bb-038c767c4ebb'),
-  //   )
-  //     ? JSON.parse(localStorage.getItem('d5339e41-f0c2-46b9-b3bb-038c767c4ebb'))
-  //     : false;
-
-  //   if (signedUp) {
-  //     navigate('/demo');
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   return (
     <div className={style.container}>
       <header className={style.header}>
@@ -215,12 +202,6 @@ function GetDemo({ setDemoView }) {
 
       <section className={style.clients}>
         <Slide />
-        {/* <h2>
-          <span>Trusted </span>by happy Clients
-        </h2>
-        <div className={style.client_list}>
-        </div>
-         */}
         <div aria-hidden='true' className={style.footer}></div>
       </section>
     </div>
