@@ -11,9 +11,6 @@ function Demo() {
       ? JSON.parse(localStorage.getItem('d5339e41-f0c2-46b9-b3bb-038c767c4ebb'))
       : false;
 
-    // if (!signedUp) {
-    //   setDemoView(false);
-    // }
     signedUp ? setDemoView(true) : setDemoView(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
