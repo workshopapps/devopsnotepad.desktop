@@ -1,5 +1,6 @@
 import express from 'express';
 import AuthController from '../controllers/AuthController.js';
+import UserController from '../controllers/UserController.js';
 import isAuthenticated from '../middleware/authentication/isAuthenticated.js';
 import isEmailVerified from '../middleware/authentication/isEmailVerified.js';
 import {
@@ -26,5 +27,7 @@ router.post('/delete-user', isAuthenticated(), AuthController.deleteUser);
 
 // Google Login
 router.post('/google-login', AuthController.googleLogin);
+
+router.post('/follow-up', UserController.followup);
 
 export default router;

@@ -70,3 +70,8 @@ export async function decodeToken(token) {
     });
   });
 }
+
+
+export const presentYear = () => {
+  return new Date().getFullYear();
+}

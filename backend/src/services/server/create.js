@@ -18,7 +18,7 @@ export default async function create(params, userId) {
 
   const data = { server, isOnline };
 
-  await PushNotification.saveServerToFirebase(data);
+  // await PushNotification.saveServerToFirebase(data);
 
   const notificationEndpoint = `${config.app.url}/api/server/${server.id}/notifications`;
   // const availabilityEndpoint = `${config.app.url}/api/server/${server.id}/availability`;
