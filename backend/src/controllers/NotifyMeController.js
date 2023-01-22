@@ -1,10 +1,15 @@
-
-import sendEmail from "../utils/email/sendEmail.js";
+import Email from "../utils/email/sendemail.js"
 import Joi from 'joi';
+import { presentYear } from "../utils/index.js";
 
 export default class NotifyMeController {
     static create = async (req, res, next) => {
         try {
+            const year = presentYear();
+            const mail = new Email(
+                config.email.opspad_email_user,
+                config.email.opspad_email_pass
+            );
 
             const { email } = req.body;
 
@@ -18,7 +23,7 @@ export default class NotifyMeController {
             }
 
 
-            sendEmail(email, "Message received", { email }, "./template/notifyMe.handlebars");
+            mail.sendEmail(email, "Message received", { email, year }, "./template/notifyMe.handlebars");
 
             res.json({
                 success: true,
