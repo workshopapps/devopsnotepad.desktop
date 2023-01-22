@@ -9,17 +9,6 @@ import two from './assets/two.png';
 import three from './assets/three.png';
 
 const DemoPage = () => {
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   const signedUp = JSON.parse(localStorage.getItem('servers'))
-  //     ? JSON.parse(localStorage.getItem('simef'))
-  //     : false;
-
-  //   if (!signedUp) {
-  //     navigate('/get-demo');
-  //   }
-  // }, []);
-
   return (
     <>
       <Navigation />
