@@ -1,5 +1,4 @@
 import connection from "../setup.js";
-import APIFeatures from "../../utils/apiFeatures.js";
 
 
 export default class ContactUsRepo {
@@ -7,8 +6,11 @@ export default class ContactUsRepo {
         return await connection("contact_us").insert(data);
     };
 
-    static getContacts = async (query) => {
-        const dbQuery = connection("notifications");
-        return new APIFeatures(dbQuery, query).paginate().sort().query;
+    static getAllContacts = async () => {
+        return connection.select().table("contact_us");
     };
+
+    static getFollowUpUsers = async () => {
+        return connection("contact_us").whereNull("message");
+    }
 }

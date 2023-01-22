@@ -36,6 +36,14 @@ const config = {
     },
     session: {
         secret: process.env.EXPRESS_SESSION_SECRET 
+    },
+    email: {
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        support_email_user: process.env.SUPPORT_EMAIL_USER,
+        support_email_pass: process.env.SUPPORT_EMAIL_PASS,
+        opspad_email_user: process.env.OPSPAD_EMAIL_USER,
+        opspad_email_pass: process.env.OPSPAD_EMAIL_PASS,
     }
 };
 export const validateConfig = () => {
