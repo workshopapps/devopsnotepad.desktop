@@ -4,38 +4,61 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { ServiceError } from "../../lib/errors/index.js";
+import config from "../../config/index.js";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default async function sendEmail(email, subject, payload, template) {
-    try {
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
+export default class Email {
+    constructor (user, password) {
+        this.user = user;
+        this.password = password;
+    }
+
+    createTransport() {
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: config.email.host,
+            port: config.email.port,
+            secure: false, // true for 465, false for other ports
+            logger: true,
+            debug: true,
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD,
+                user: this.user, // generated ethereal user
+                pass: this.password, // generated ethereal password
             },
         });
 
-        const source = fs.readFileSync(path.join(__dirname, template), "utf8");
-        const compiledTemplate = handlebars.compile(source);
+        return transporter;
+    };
 
-        const mailOptions = {
-            from: process.env.FROM_EMAIL,
-            to: email,
-            subject: subject,
-            html: compiledTemplate(payload),
-        };
-
-        transporter.sendMail(mailOptions, function (error, info) {
+    send(transporter, mailOptions) {
+        transporter.sendMail(mailOptions, function (error) {
             if (error) {
-                console.log(error);
-            } else {
-                console.log("Email sent: " + info.response);
+                throw new ServiceError(error);
             }
         });
-    } catch (error) {
-        return error;
+    }
+
+    sendEmail(email, subject, payload, templatePath) {
+        try {
+            // Transporter authenticates with support email credentials
+            const transporter = this.createTransport();
+            const source = fs.readFileSync(path.join(__dirname, templatePath), "utf8");
+            const compiledTemplate = handlebars.compile(source);
+
+            const mailOptions = {
+                to: email,
+                subject,
+                html: compiledTemplate(payload),
+            };
+
+            this.send(transporter, mailOptions);
+
+        } catch (error) {
+            return error;
+        }
     }
 }

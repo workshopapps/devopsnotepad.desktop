@@ -5,11 +5,18 @@ import deleteSeversById from '../services/server/delete.js';
 
 import { validatePayload } from '../utils/index.js';
 import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
-import sendEmail from '../utils/email/sendEmail.js';
+import Email from '../utils/email/sendEmail.js';
+import config from '../config/index.js';
 
 export default class ServerController {
   static create = async (req, res, next) => {
     try {
+
+      let year = new Date().getFullYear();
+        let mail = new Email(
+          config.email.opspad_email_user,
+          config.email.opspad_email_pass
+        );
       /**
        * Validate Request
        */
@@ -23,10 +30,10 @@ export default class ServerController {
       const result = await create(req.body, id);
 
       // Send Email
-      sendEmail(
+      mail.sendEmail(
         email,
         'Server Created Successfully',
-        { email: email, ipAddress: req.body.ipAddress, uuid: result.server.id },
+        { email: email, ipAddress: req.body.ipAddress, uuid: result.server.id, year },
         './template/createServer.handlebars'
       );
       res.send({
