@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import style from './GetDemo.module.css';
 import Slide from '../FreeTrial/Slide/Slide';
+import LoadingAnimation from '../../Component/LoadingAnimation/LoadingAnimation';
 import Back from './assets/BackArrow.svg';
 import OpspadLogo from './assets/OpspadLogo.svg';
 import Checkmark from './assets/Checkmark.svg';
 
 function GetDemo({ setDemoView }) {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [errorSuccessMessage, setErrorSuccessMessage] = useState('');
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     email: '',
     company: '',
-    job: '',
+    role: '',
   });
 
-  const { firstName, lastName, email, company, job } = formData;
+  const { firstname, lastname, email, company, role } = formData;
 
   function onMutateForm(e) {
     setFormData((prev) => ({
@@ -27,22 +30,50 @@ function GetDemo({ setDemoView }) {
 
   async function onSubmitForm(e) {
     e.preventDefault();
-    console.log(formData);
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      company: '',
-      job: '',
-    });
+    setLoading(true);
+    try {
+      const response = await fetch('https://opspad.dev/api/admin/follow-up', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    // If Post request is successful, create a variable in local storage with a value of true
-    localStorage.setItem(
-      'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
-      JSON.stringify(true),
-    );
-    // If post request is display demo by changing demoView to true in demo
-    setDemoView();
+      // If response is not successful, throw an error
+      if (!response.ok) {
+        throw new Error('Bad fetch response');
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setLoading(false);
+
+      // If Post request is successful, create a variable in local storage with a value of true
+      localStorage.setItem(
+        'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
+        JSON.stringify(true),
+      );
+
+      // If post request is successful display demo by changing demoView to 1 in demo
+      setTimeout(() => {
+        if (response.ok) setDemoView();
+      }, 2000);
+
+      setErrorSuccessMessage('Your demo is now ready');
+      setFormData({
+        firstname: '',
+        lastname: '',
+        email: '',
+        company: '',
+        role: '',
+      });
+    } catch (error) {
+      setErrorSuccessMessage(`An error occurred: ${error.message}, 
+      Please try again later`);
+    }
+    setTimeout(() => {
+      setErrorSuccessMessage('');
+    }, 5000);
+    setLoading(false);
   }
 
   return (
@@ -114,10 +145,10 @@ function GetDemo({ setDemoView }) {
           </div>
 
           <div className={`${style.form_control} ${style.first_name}`}>
-            <label htmlFor='firstName'>First Name</label>
+            <label htmlFor='firstname'>First Name</label>
             <input
-              id='firstName'
-              value={firstName}
+              id='firstname'
+              value={firstname}
               type='text'
               placeholder='What’s your first name?'
               onChange={onMutateForm}
@@ -126,10 +157,10 @@ function GetDemo({ setDemoView }) {
           </div>
 
           <div className={`${style.form_control} ${style.last_name}`}>
-            <label htmlFor='lastName'>Last Name</label>
+            <label htmlFor='lastname'>Last Name</label>
             <input
-              id='lastName'
-              value={lastName}
+              id='lastname'
+              value={lastname}
               type='text'
               placeholder='What’s your last name?'
               onChange={onMutateForm}
@@ -162,12 +193,12 @@ function GetDemo({ setDemoView }) {
           </div>
 
           <div className={`${style.form_control} ${style.job}`}>
-            <label htmlFor='job'>Job Function</label>
+            <label htmlFor='role'>Job Function</label>
             <select
-              className={job === '' ? style.none : ''}
-              name='job'
-              id='job'
-              value={job}
+              className={role === '' ? style.none : ''}
+              name='role'
+              id='role'
+              value={role}
               onChange={onMutateForm}
               required
             >
@@ -197,6 +228,11 @@ function GetDemo({ setDemoView }) {
           <button type='submit' className={style.submit}>
             See Demo
           </button>
+
+          <div className={style.loading}>
+            {loading && <LoadingAnimation />}
+            {errorSuccessMessage && <span>{errorSuccessMessage}</span>}
+          </div>
         </form>
       </main>
 

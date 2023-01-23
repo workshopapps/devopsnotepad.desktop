@@ -3,15 +3,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
 }
 .lds_ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border: 8px solid #102a63;
   border-radius: 50%;
   animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
