@@ -1,8 +1,8 @@
-import ContactUsRepo from "../../database/repositories/contactUsRepo.js";
+import AdminRepo from "../../database/repositories/adminRepo.js";
 import papa from "papaparse";
 
 export default async function get () {
-    const followUpUsers = await ContactUsRepo.getFollowUpUsers();
+    const followUpUsers = await AdminRepo.getFollowUpUsers();
 
     const config = {
         header: true,
@@ -10,5 +10,6 @@ export default async function get () {
     }
 
     const csv = papa.unparse(followUpUsers, config);
+
     return csv;
 }
