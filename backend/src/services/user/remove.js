@@ -1,6 +1,6 @@
 import UserRepo from "../../database/repositories/UserRepo.js";
 import ServerRepo from "../../database/repositories/ServerRepo.js";
-import sendEmail from "../../utils/email/sendEmail.js";
+import sendEmail from "../../utils/email/sendemail.js";
 
 export default async function removeuser(body) {
     const email = body.email.toLowerCase();
