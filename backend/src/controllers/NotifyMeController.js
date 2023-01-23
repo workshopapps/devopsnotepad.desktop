@@ -1,6 +1,7 @@
 import Email from "../utils/email/sendemail.js"
 import Joi from 'joi';
 import { presentYear } from "../utils/index.js";
+import config from "../config/index.js";
 
 export default class NotifyMeController {
     static create = async (req, res, next) => {
