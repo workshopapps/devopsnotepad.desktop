@@ -19,10 +19,9 @@ export default class Email {
 
     createTransport() {
         let transporter = nodemailer.createTransport({
-            service: 'gmail',
             host: config.email.host,
             port: config.email.port,
-            secure: false, // true for 465, false for other ports
+            secure: true, // true for 465, false for other ports
             logger: true,
             debug: true,
             auth: {
@@ -50,6 +49,7 @@ export default class Email {
             const compiledTemplate = handlebars.compile(source);
 
             const mailOptions = {
+                from: this.user,
                 to: email,
                 subject,
                 html: compiledTemplate(payload),
