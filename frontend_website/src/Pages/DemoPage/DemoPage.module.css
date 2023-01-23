@@ -49,7 +49,7 @@ section.wrapper img.ImgOne {
   margin-bottom: 20px;
 }
 
-div.wrap h1.head {
+div.wrap h2.head {
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
@@ -57,7 +57,7 @@ div.wrap h1.head {
   text-align: center;
 }
 
-div.wrap1 h1.head {
+div.wrap1 h2.head {
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
@@ -65,11 +65,11 @@ div.wrap1 h1.head {
   text-align: center;
 }
 
-div.wrap h1.head span.spa {
+div.wrap h2.head span.spa {
   color: #2563eb;
 }
 
-div.wrap1 h1.head span.spa {
+div.wrap1 h2.head span.spa {
   color: #2563eb;
 }
 
@@ -77,7 +77,7 @@ div img.Imgtwo {
   width: 100%;
 }
 
-ul {
+.list {
   margin-top: 20px;
   font-weight: 500;
   font-size: 16px;
@@ -145,11 +145,11 @@ div.con {
     align-items: center;
   }
 
-  div.wrap h1.head {
+  div.wrap h2.head {
     display: none;
   }
 
-  div.wrap1 h1.head {
+  div.wrap1 h2.head {
     display: none;
   }
 
@@ -175,14 +175,14 @@ div.con {
     padding-left: 20px;
   }
 
-  div.con h1.header {
+  div.con h2.header {
     font-weight: 700;
     font-size: 35px;
     line-height: 40px;
     margin-bottom: 20px;
   }
 
-  div.con h1.header span.paying {
+  div.con h2.header span.paying {
     color: #143681;
   }
 }
@@ -203,13 +203,20 @@ div.con {
 }
 
 @media screen and (min-width: 1500px) {
+  .main {
+    margin-bottom: 160px;
+  }
+
   section.wrapper {
     flex-direction: row;
-    margin: 40px 120px;
+    margin: 40px 120px 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   div.wrap {
-    margin: 40px 120px;
+    margin: 0 120px 40px;
+    padding: 0;
   }
 
   div.wrap1 {
@@ -240,15 +247,37 @@ div.con {
     margin-right: 100px;
   }
 
-  div.package div.con h1.header {
-    font-weight: 800;
-    font-size: 56px;
-    line-height: 72px;
+  div.package {
+    padding-left: 0 !important;
   }
 
-  ul {
+  div.package .con .header {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .list {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 0;
+  }
+
+  .package .btn,
+  .package .btn1 {
     font-weight: 600;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 16px;
+  }
+
+  .Imgtwo {
+    width: 610px !important;
+    height: 451px !important;
+  }
+
+  .wrap1 h2,
+  .wrap1 .list li,
+  .wrap1 .btn1 {
+    margin-left: 32px;
   }
 }
