@@ -16,15 +16,16 @@ function Demo() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function showDemo() {
+    setDemoView(1);
+    window.scrollTo(0, 0);
+  }
+
   return demoView ? (
     demoView === 1 ? (
       <DemoPage />
     ) : (
-      <GetDemo
-        setDemoView={() => {
-          setDemoView(1);
-        }}
-      />
+      <GetDemo setDemoView={showDemo} />
     )
   ) : (
     <div></div>
