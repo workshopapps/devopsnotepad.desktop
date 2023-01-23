@@ -53,7 +53,7 @@ function GetDemo({ setDemoView }) {
         JSON.stringify(true),
       );
 
-      // If post request is successful display demo by changing demoView to true in demo
+      // If post request is successful display demo by changing demoView to 1 in demo
       setTimeout(() => {
         if (response.ok) setDemoView();
       }, 2000);
