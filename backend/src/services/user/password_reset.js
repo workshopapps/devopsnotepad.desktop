@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import bcrypt from "bcrypt";
 import ResetTokenRepo from "../../database/repositories/ResetTokenRepo.js";
-import Email from "../../utils/email/sendEmail.js";
+import Email from "../../utils/email/sendemail.js";
 
 export const sendResetLink = async(email, name, id) => {
     const mail = new Email(
