@@ -20,7 +20,7 @@ import CareerPage from './Pages/CareerPage/CareerPage';
 import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
-import DemoPage from './Pages/DemoPage/DemoPage';
+import Demo from './Pages/Demo/Demo';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
@@ -33,6 +33,7 @@ import { About } from './Pages/About/About';
 import TermsOfService from './Pages/TermsOfUSe/Index';
 import Download from './Pages/Download/Download';
 import FreeTrial from './Pages/FreeTrial/FreeTrial';
+import GetDemo from './Pages/GetDemo/GetDemo';
 
 //////////////////////////////////// Unused components ////////////////////
 // import Csr from './Pages/Csr/Csr';
@@ -123,7 +124,8 @@ function App() {
             <Route path='/about-us' exact element={<About />} />
             <Route path='/features' exact element={<Features />} />
 
-            <Route path='/demo' exact element={<DemoPage />} />
+            <Route path='/demo' exact element={<Demo />} />
+            <Route path='/get-demo' exact element={<GetDemo />} />
             <Route
               path='/our-team'
               exact
