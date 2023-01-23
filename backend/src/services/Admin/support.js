@@ -1,5 +1,5 @@
 import config from "../../config/index.js";
-import Email from "../../utils/email/sendemail.js";
+import Email from "../../utils/email/sendEmail.js";
 import { presentYear } from "../../utils/index.js";
 
 export default async function support(payload){
