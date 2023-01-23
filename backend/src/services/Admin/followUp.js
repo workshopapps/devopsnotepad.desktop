@@ -1,6 +1,6 @@
 import config from "../../config/index.js";
 import AdminRepo from "../../database/repositories/adminRepo.js";
-import Email from "../../utils/email/sendEmail.js";
+import Email from "../../utils/email/sendemail.js";
 import { presentYear } from "../../utils/index.js";
 
 export default async function create(params) {
