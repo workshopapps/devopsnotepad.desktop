@@ -5,17 +5,17 @@ import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 function ContactUsForm({ closeContact }) {
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [errorSuccessMessage, setErrorSuccessMessage] = useState('');
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     email: '',
     company: '',
-    job: '',
-    feedback: '',
+    role: '',
+    message: '',
   });
 
-  const { firstName, lastName, email, company, job, feedback } = formData;
+  const { firstname, lastname, email, company, role, message } = formData;
 
   function onMutateForm(e) {
     setFormData((prev) => ({
@@ -24,37 +24,47 @@ function ContactUsForm({ closeContact }) {
     }));
   }
 
+  // Submits form to the server on click submit button
   async function onSubmitForm(e) {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('https://opspad.dev/api/contact-us', {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        'https://opspad.dev/api/admin/contact-support',
+        {
+          method: 'POST',
+          headers: { 'Content-type': 'application/json' },
+          body: JSON.stringify(formData),
+        },
+      );
 
+      // If response is not successful, throw an error
       if (!response.ok) {
         throw new Error('Bad fetch response');
       }
 
-      const data = await response.json();
+      // const data = await response.json();
       setLoading(false);
-      setMessage('Successfully submitted your message');
-      console.log(data);
+      setErrorSuccessMessage('Successfully submitted your message');
+      setFormData({
+        firstname: '',
+        lastname: '',
+        email: '',
+        company: '',
+        role: '',
+        message: '',
+      });
     } catch (error) {
-      console.log(error);
-      setMessage(
-        'An error occurred while submitting your message, please try again.',
-      );
+      setErrorSuccessMessage(`An error occurred: ${error.message}, 
+      Please try again later`);
     }
     setTimeout(() => {
-      setMessage('');
+      setErrorSuccessMessage('');
     }, 5000);
     setLoading(false);
-    console.log(formData);
   }
 
+  // Redirects user to terms of service page on call
   const navigate = useNavigate();
   function onClickPrivacy() {
     closeContact();
@@ -74,23 +84,23 @@ function ContactUsForm({ closeContact }) {
         </button>
         <h2>Contact Support</h2>
         <div className={`${style.form_control} ${style.first_name}`}>
-          <label htmlFor='firstName'>First Name</label>
+          <label htmlFor='firstname'>First Name</label>
           <input
             type='text'
-            id='firstName'
+            id='firstname'
             placeholder='What’s your first name?'
-            value={firstName}
+            value={firstname}
             onChange={onMutateForm}
             required
           />
         </div>
         <div className={`${style.form_control} ${style.last_name}`}>
-          <label htmlFor='lastName'>Last Name</label>
+          <label htmlFor='lastname'>Last Name</label>
           <input
             type='text'
-            id='lastName'
+            id='lastname'
             placeholder='What’s your last name?'
-            value={lastName}
+            value={lastname}
             onChange={onMutateForm}
             required
           />
@@ -117,12 +127,12 @@ function ContactUsForm({ closeContact }) {
           />
         </div>
         <div className={`${style.form_control} ${style.job}`}>
-          <label htmlFor='job'>Job Function</label>
+          <label htmlFor='role'>Job Function</label>
           <select
-            className={job === '' ? style.none : ''}
-            name='job'
-            id='job'
-            value={job}
+            className={role === '' ? style.none : ''}
+            name='role'
+            id='role'
+            value={role}
             onChange={onMutateForm}
             required
           >
@@ -138,12 +148,12 @@ function ContactUsForm({ closeContact }) {
           </select>
         </div>
         <div className={`${style.form_control} ${style.feedback}`}>
-          <label htmlFor='feedback'>Comment your feedback</label>
+          <label htmlFor='message'>Comment your feedback</label>
           <textarea
-            name='feedback'
-            id='feedback'
+            name='message'
+            id='message'
             placeholder='Drop a comment'
-            value={feedback}
+            value={message}
             onChange={onMutateForm}
             required
           />
@@ -159,7 +169,7 @@ function ContactUsForm({ closeContact }) {
             Submit
           </button>
           {loading && <LoadingAnimation />}
-          {message && <span>{message}</span>}
+          {errorSuccessMessage && <span>{errorSuccessMessage}</span>}
         </div>
       </form>
     </div>
