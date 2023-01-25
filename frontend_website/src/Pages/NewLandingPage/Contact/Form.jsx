@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Button from '../../CareerPage/Button/Button';
 // import { ValidateEmail } from '../../SignUp/lib';
 import Input from './Input';
-import { AiFillCloseCircle } from 'react-icons/ai';
 
 import classes from './Form.module.css';
 import LoadingSpinner from '../../../Component/LoadingSpinner/LoadingSpinner';
@@ -249,27 +248,16 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0' }}>
         {props?.isLoading && <LoadingSpinner />}
         {!props?.isLoading && props?.error?.hasError && (
-          <div className={classes.status}>
-            <p className={classes.error__message}>
-              {`${props?.error?.message}. Try again.`}{' '}
-            </p>
-            <p onClick={props.hideErrorModal}>
-              <AiFillCloseCircle className={classes.error__icon} />
-            </p>
-          </div>
+          <p className={classes.error__message}>
+            {`${props?.error?.message}. Try again!!!`}{' '}
+          </p>
         )}
         {!props?.isLoading &&
           !props?.error?.hasError &&
           props.response?.message === 'successful' && (
-            <div className={classes.status}>
-              {' '}
-              <p className={classes.success__message}>
-                Your details has been submitted successfully.
-              </p>
-              <span onClick={props.hideSuccessModal}>
-                <AiFillCloseCircle className={classes.success__icon} />
-              </span>
-            </div>
+            <p className={classes.success__message}>
+              Your details has been submitted successfully.
+            </p>
           )}
       </div>
 
