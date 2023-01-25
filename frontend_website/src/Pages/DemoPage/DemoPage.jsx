@@ -14,29 +14,32 @@ const DemoPage = () => {
       <Navigation />
 
       <div className={style.container}>
-        <section className={style.main}>
-          <div className={style.main_text}>
-            <h1>
-              Get Ready To Experience <span>Ease</span> With Opspad
-            </h1>
-            <p>
-              One of our team members will reach out to you to answer any
-              questions you may have. Meanwhile , get to know us a little better
-            </p>
-          </div>
+        <section className={style.main_container}>
+          <div className={style.main}>
+            <div className={style.main_text}>
+              <h1>
+                Get Ready To Experience <span>Ease</span> With Opspad
+              </h1>
+              <p>
+                One of our team members will reach out to you to answer any
+                questions you may have. Meanwhile , get to know us a little
+                better
+              </p>
+            </div>
 
-          <figure aria-hidden='true'>
-            <img src={one} alt='header image' aria-hidden='true' />
-          </figure>
-
-          <div className={style.videoCtn}>
+            <figure aria-hidden='true'>
+              <img src={one} alt='header image' aria-hidden='true' />
+            </figure>
+            {/* <div className={style.videoCtn}>
             <ReactPlayer
               className={style.video}
               url='https://youtu.be/TcUlnDJwtPg'
             ></ReactPlayer>
+          </div> */}
           </div>
 
-          {/* <div className={style.video_container}>
+          <div className={style.video_wrap}>
+            <div className={style.video_container}>
               <iframe
                 className={style.video}
                 src='https://www.youtube.com/embed/TcUlnDJwtPg'
@@ -48,8 +51,8 @@ const DemoPage = () => {
               web-share'
                 allowfullscreen
               ></iframe>
-            
-          </div> */}
+            </div>
+          </div>
         </section>
 
         <section className={style.action_container}>
