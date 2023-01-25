@@ -88,7 +88,7 @@ const DemoPage = () => {
                 need
               </li>
               <li>We want to hear from you about any concerns you have</li>
-              <li>Your feedback helps us gauge what your preferences are</li>
+              <li>Your feedback helps us gauge your preferences</li>
             </ul>
 
             <a
