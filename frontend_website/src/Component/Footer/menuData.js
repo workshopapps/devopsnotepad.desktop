@@ -40,10 +40,10 @@ export const Links = [
   {
     title: 'PRODUCT',
     list: [
-      {
-        title: 'Features',
-        slug: '/features',
-      },
+      // {
+      //   title: 'Features',
+      //   slug: '/features',
+      // },
       {
         title: 'Integrations',
         slug: '/integrations',
