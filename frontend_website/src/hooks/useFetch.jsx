@@ -28,7 +28,7 @@ const useFetch = () => {
 
   // A function to fetch data
   const fetchRequest = useCallback(
-    async (requestConfig, getRequestData = () => { }) => {
+    async (requestConfig, getRequestData = () => {}) => {
       dispatchFn({ type: 'LOADING', value: true });
       dispatchFn({ type: 'ERROR', value: { hasError: false, message: '' } });
       try {
@@ -55,6 +55,12 @@ const useFetch = () => {
           type: 'ERROR',
           value: { hasError: true, message: err.message || 'An error ocurred' },
         });
+        setTimeout(() => {
+          dispatchFn({
+            type: 'ERROR',
+            value: { hasError: false, message: '' },
+          });
+        }, 1500);
       }
       // After the request has been made, set the loading state to false
       dispatchFn({ type: 'LOADING', value: false });
