@@ -172,6 +172,16 @@
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
+  cursor: pointer;
+  transition: transform ease-in 0.3s;
+}
+
+.action_button:hover {
+  color: #ffffff !important;
+}
+
+.action_button:active {
+  transform: scale(0.95);
 }
 
 @media (min-width: 600px) and (max-width: 1000px) {

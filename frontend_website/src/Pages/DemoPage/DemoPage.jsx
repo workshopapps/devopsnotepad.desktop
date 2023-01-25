@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
 import style from './DemoPage.module.css';
@@ -30,12 +29,6 @@ const DemoPage = () => {
             <figure aria-hidden='true'>
               <img src={one} alt='header image' aria-hidden='true' />
             </figure>
-            {/* <div className={style.videoCtn}>
-            <ReactPlayer
-              className={style.video}
-              url='https://youtu.be/TcUlnDJwtPg'
-            ></ReactPlayer>
-          </div> */}
           </div>
 
           <div className={style.video_wrap}>
