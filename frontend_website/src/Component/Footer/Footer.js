@@ -128,9 +128,9 @@ const Footer = () => {
             <div className={styles.fDownload}>
               <h5 className={styles.fDownload__text}>Download App</h5>
               <div className={styles.fDownloadAppLink}>
-                <Link to='/'>
+                <a href='https://play.google.com/store/apps/details?id=com.workshopapps.devopsnotepad&hl=en&gl=US'>
                   <img src={googlePlay} alt='googlePlay' />
-                </Link>
+                </a>
                 <Link to='/'>
                   <img src={appStore} alt='appStore' />
                 </Link>
