@@ -14,18 +14,15 @@ const Contact = () => {
 
   const getResponseData = useCallback(
     (responseObj) => {
-      console.log('Contact responseObj', responseObj);
       setResponse(responseObj);
     },
     [setResponse],
   );
 
   const getFormDatas = (datas) => {
-    console.log('formDetails', datas);
-
     SubmitContactRequest(
       {
-        url: '',
+        url: 'https://opspad.dev/api/admin/follow-up',
         method: 'POST',
         body: datas,
         headers: {
@@ -42,8 +39,9 @@ const Contact = () => {
         onSubmit={getFormDatas}
         isLoading={isLoading}
         error={error}
-        hideModal={hideModal}
+        hideErrorModal={hideModal}
         response={response}
+        hideSuccessModal={getResponseData}
       />
     </section>
   );
