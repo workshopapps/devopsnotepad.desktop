@@ -53,43 +53,27 @@
   background: #102a63bc;
 }
 
-.status {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .error__message {
-  flex-basis: 85%;
+  width: 85%;
+  margin: 0 auto;
   text-align: center;
-  border: 0.1rem solid rgba(255, 0, 0, 0.591);
+  border: 0.1rem solid rgba(255, 0, 0, 0.3);
   font-size: 1.6rem;
-  background-color: rgba(249, 38, 38, 0.449);
+  background-color: rgba(249, 38, 38, 0.3);
   color: white;
   padding: 0.5rem 0;
   font-weight: 400;
   letter-spacing: 0.1rem;
   border-radius: 10rem;
 }
-.error__icon {
-  height: 3.5rem;
-  width: 3.5rem;
-  fill: rgba(253, 29, 29, 0.427);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.error__icon:hover {
-  fill: rgba(251, 11, 11, 0.641);
-}
 
 .success__message {
-  flex-basis: 85%;
+  width: 85%;
+  margin: 0 auto;
   text-align: center;
-  border: 0.1rem solid rgba(0, 128, 0, 0.475);
+  border: 0.1rem solid rgba(0, 128, 0, 0.3);
   font-size: 1.6rem;
-  background-color: rgba(0, 128, 0, 0.475);
+  background-color: rgba(0, 128, 0, 0.3);
   border-radius: 10rem;
   padding: 0.5rem 0;
   margin: 0.9rem 0;
@@ -99,17 +83,6 @@
   text-align: center;
 }
 
-.success__icon {
-  height: 3.5rem;
-  width: 3.5rem;
-  fill: green;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.success__icon:hover {
-  fill: rgba(0, 128, 0, 0.794);
-}
 .invalid__input {
   margin-top: -1.6rem;
   color: rgba(253, 46, 46, 0.7);

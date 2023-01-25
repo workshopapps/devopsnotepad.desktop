@@ -5,16 +5,14 @@ import { useState } from 'react';
 import { useCallback } from 'react';
 const Contact = () => {
   const [response, setResponse] = useState(null);
-  const {
-    isLoading,
-    error,
-    fetchRequest: SubmitContactRequest,
-    hideModal,
-  } = useFetch();
+  const { isLoading, error, fetchRequest: SubmitContactRequest } = useFetch();
 
   const getResponseData = useCallback(
     (responseObj) => {
       setResponse(responseObj);
+      setTimeout(() => {
+        setResponse();
+      }, 1500);
     },
     [setResponse],
   );
@@ -39,9 +37,7 @@ const Contact = () => {
         onSubmit={getFormDatas}
         isLoading={isLoading}
         error={error}
-        hideErrorModal={hideModal}
         response={response}
-        hideSuccessModal={getResponseData}
       />
     </section>
   );
