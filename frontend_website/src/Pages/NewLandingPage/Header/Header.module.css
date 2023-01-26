@@ -53,7 +53,7 @@
   margin-left: 2rem;
   color: #102a63;
   background-color: #ffffff;
-  border: 0.1rem solid #225ad6;
+  border: 0.1rem solid #102a63;
 }
 .btn__primary:hover {
   background: #102a63ed;
@@ -78,7 +78,7 @@
 @media only screen and (max-width: 650px) {
   .header {
     height: unset;
-    padding: 0%;
+    padding: 0;
     flex-direction: column;
     text-align: center;
   }
@@ -93,7 +93,7 @@
     color: #202020;
     font-weight: 700;
     font-size: 2.8rem;
-    line-height: 4.4rem;
+    line-height: 4rem;
   }
 
   .span {
@@ -107,10 +107,10 @@
     line-height: 2.8rem;
   }
   .p {
-    margin-top: 1.5rem;
+    margin: 0;
   }
   .btn__box {
-    margin-top: 1rem;
+    margin-top: .3rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -118,16 +118,15 @@
     align-items: center;
   }
   .btn {
-    width: 30rem;
+    width: 20rem;
     height: 5rem;
-    margin: 1.4rem auto;
+    margin: .7rem auto;
     font-size: 1.5rem;
     transition: 0.3s;
   }
 
   .btn__primary {
     color: #ffffff;
-    background-color: #225ad6;
   }
 
   .btn__primary:hover {
@@ -135,10 +134,8 @@
   }
 
   .btn__secondary {
-    margin-bottom: 1.5rem;
-    color: #225ad6;
+    /* margin-bottom: 1.5rem; */
     background-color: #ffffff;
-    border: 0.1rem solid #225ad6;
   }
 
   .btn__secondary:hover {
@@ -147,10 +144,11 @@
   .right {
     width: 100%;
     padding: 0 1rem 0;
-    margin-bottom: 0;
+    margin-bottom: -3rem;
   }
 
   .img {
+    margin-top: 3rem;
     height: 70vh;
     width: 100%;
     object-fit: cover;

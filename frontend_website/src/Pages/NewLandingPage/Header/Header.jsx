@@ -10,12 +10,13 @@ const Header = () => {
         <h1 className={classes.h1}>
           <span className={classes.span}>Reduce</span> downtime and <span className={classes.span}>simplify</span> server management with our all in one tool
         </h1>
-        <h4 className={classes.h4}>
+        {/* <h4 className={classes.h4}>
+          
+        </h4> */}
+        <p className={classes.p}>
           Setup environment in less than 100 seconds, fetch real-time logs, manage passwords for server tools, recieve notificationsof your server status on mobile
-        </h4>
-        {/* <p className={classes.p}>
-         
-        </p> */}
+        </p>
+
         <div className={classes.btn__box}>
           <Button
             className={`${classes.btn} ${classes.btn__primary}`}
