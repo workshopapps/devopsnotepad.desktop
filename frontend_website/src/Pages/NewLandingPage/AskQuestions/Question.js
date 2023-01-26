@@ -15,13 +15,13 @@ const Question = (props) => {
       <button className='faqs-question_que' onClick={toggleShowAnsHandler}>
         <span>{props.queInfo.que}</span>
         <span>
-          <span
-            className={`u-cross ${
+          <span style={{ color: 'white' }}
+            className={`ucross ${
               showAns ? 'u-cross-toCancelV' : 'u-cross-vertical'
             }`}
           ></span>
           <span
-            className={`u-cross ${
+            className={`ucross ${
               showAns ? 'u-cross-toCancelH' : 'u-cross-horizontal'
             }`}
           ></span>
