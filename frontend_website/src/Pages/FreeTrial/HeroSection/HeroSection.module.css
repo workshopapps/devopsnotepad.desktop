@@ -114,7 +114,7 @@
         flex-direction: column;
         margin-top: 0;
         position: relative;
-        padding-bottom: 250px;
+        padding-bottom: 300px;
         gap: 20px;
     }
 
@@ -128,7 +128,7 @@
 @media only screen and (max-width: 650px) {
     .THero {
         padding: 23.5px 32px 23.5px 32px;
-        padding-bottom: 265px;
+        padding-bottom: 300px;
     }
 
     .HeroH1 {
@@ -168,4 +168,10 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+
+@media only screen and (max-width: 300px) {
+    .THero  {
+        padding-bottom: 352px;
+    }
 }
