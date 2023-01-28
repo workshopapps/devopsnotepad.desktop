@@ -5,6 +5,8 @@
   "dependencies": {
     "@mui/material": "^5.10.15",
     "@sentry/react": "^7.23.0",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@sentry/tracing": "^7.23.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
