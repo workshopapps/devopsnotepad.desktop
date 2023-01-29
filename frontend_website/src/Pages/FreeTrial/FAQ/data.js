@@ -1,7 +1,7 @@
 export const accordionData = [
     {
         title: 'What is Opspad and how does it work?',
-        content: `Opspad is a server & logging and infrastructural monitoring tool. With Opspad you can do the following:`,
+        content: `Opspad is a server management and logging tool. With Opspad you can do the following:`,
         list: [
             'Get notified of your server status immediately.',
             'Store passwords of server tools for every server.',
