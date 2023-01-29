@@ -6,7 +6,7 @@ import { presentYear } from "../../utils/index.js";
 export default async function create(params) {
     const {email, firstName, lastName} = params;
     const year = presentYear();
-    const videoUrl = "www.google.com";
+    const videoUrl = "https://opspad.dev/demo";
 
     await AdminRepo.createContact(params);
     
