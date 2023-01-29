@@ -5,7 +5,7 @@ import deleteSeversById from '../services/server/delete.js';
 
 import { validatePayload } from '../utils/index.js';
 import pushNotificationForServer from '../services/server/pushNotificationForServer.js';
-import Email from '../utils/email/sendEmail.js';
+import Email from '../utils/email/sendemail.js';
 import config from '../config/index.js';
 
 export default class ServerController {

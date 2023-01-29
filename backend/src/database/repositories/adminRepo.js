@@ -1,8 +1,8 @@
 import connection from "../setup.js";
 
 
-export default class ContactUsRepo {
-    static create = async (data) => {
+export default class AdminRepo {
+    static createContact = async (data) => {
         return await connection("contact_us").insert(data);
     };
 

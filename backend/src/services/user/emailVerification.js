@@ -1,4 +1,3 @@
-import sendEmail from "../../utils/email/sendEmail.js";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
 import EmailVerificationTokenRepo from "../../database/repositories/emailVerificationRepo.js";

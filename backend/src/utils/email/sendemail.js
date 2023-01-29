@@ -8,10 +8,19 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default async function sendEmail(email, subject, payload, template) {
-    try {
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
+export default class Email {
+    constructor (user, password) {
+        this.user = user;
+        this.password = password;
+    }
+
+    createTransport() {
+        let transporter = nodemailer.createTransport({
+            host: config.email.host,
+            port: config.email.port,
+            secure: true, // true for 465, false for other ports
+            logger: true,
+            debug: true,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASSWORD,
@@ -35,7 +44,26 @@ export default async function sendEmail(email, subject, payload, template) {
                 console.log("Email sent: " + info.response);
             }
         });
-    } catch (error) {
-        return error;
+    }
+
+    sendEmail(email, subject, payload, templatePath) {
+        try {
+            // Transporter authenticates with support email credentials
+            const transporter = this.createTransport();
+            const source = fs.readFileSync(path.join(__dirname, templatePath), "utf8");
+            const compiledTemplate = handlebars.compile(source);
+
+            const mailOptions = {
+                from: this.user,
+                to: email,
+                subject,
+                html: compiledTemplate(payload),
+            };
+
+            this.send(transporter, mailOptions);
+
+        } catch (error) {
+            return error;
+        }
     }
 }
