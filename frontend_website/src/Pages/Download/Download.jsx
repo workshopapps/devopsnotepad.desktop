@@ -1,11 +1,11 @@
 import Footer from '../../Component/Footer/Footer';
 import Navigation from '../../Component/Navigation/Navigation';
 import style from './Download.module.css';
-import apple from './assets/apple.png';
-import windows from './assets/windows.png';
-import mobile from './assets/mobile.png';
-import desktop from './assets/desktop.png';
-import android from './assets/android.png';
+import apple from './assets/macos.png';
+import windows from './assets/uil_windows.png';
+import mobile from './assets/dw-mobile.png';
+import desktop from './assets/dw-desktop.png';
+import android from './assets/uil_android.png';
 import rightChevron from './assets/right-chevron.png';
 
 
