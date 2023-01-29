@@ -17,10 +17,9 @@ import OurTeam from './Pages/TeamPage/OurTeam';
 import AllTeam from './Pages/TeamPage/AllTeam';
 import ComingSoon from './Pages/ComingSoon/ComingSoon';
 import CareerPage from './Pages/CareerPage/CareerPage';
-import Features from './Pages/Features/Features';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
-import DemoPage from './Pages/DemoPage/DemoPage';
+import Demo from './Pages/Demo/Demo';
 import ErrorPage from './Pages/404Page/ErrorPage';
 import Prices from './Pages/Prices/Prices';
 import PricePayment from './Pages/PricePayment/PricePayment';
@@ -33,6 +32,7 @@ import { About } from './Pages/About/About';
 import TermsOfService from './Pages/TermsOfUSe/Index';
 import Download from './Pages/Download/Download';
 import FreeTrial from './Pages/FreeTrial/FreeTrial';
+import GetDemo from './Pages/GetDemo/GetDemo';
 
 //////////////////////////////////// Unused components ////////////////////
 // import Csr from './Pages/Csr/Csr';
@@ -43,6 +43,8 @@ import FreeTrial from './Pages/FreeTrial/FreeTrial';
 // import BestPractice from './Pages/BestPractice/BestPractices';
 // import NewsRoom from './Pages/NewsRoom/NewsRoom';
 // import NewsRoomViewMore from './Pages/NewsRoom/NewsRoomViewMore';
+// import Features from './Pages/Features/Features';
+
 
 // App styling
 import classes from './App.module.css';
@@ -121,9 +123,9 @@ function App() {
               }
             />
             <Route path='/about-us' exact element={<About />} />
-            <Route path='/features' exact element={<Features />} />
 
-            <Route path='/demo' exact element={<DemoPage />} />
+            <Route path='/demo' exact element={<Demo />} />
+            <Route path='/get-demo' exact element={<GetDemo />} />
             <Route
               path='/our-team'
               exact
@@ -165,6 +167,7 @@ function App() {
             {/* <Route path='/podcasts' exact element={<PodCast />} /> */}
             {/* <Route path='/best-practices' exact element={<BestPractice />} /> */}
             {/* <Route path='/partners' exact element={<Partner />} /> */}
+            {/* <Route path='/features' exact element={<Features />} /> */}
 
             <Route path='/prices' exact element={<Prices />} />
             <Route

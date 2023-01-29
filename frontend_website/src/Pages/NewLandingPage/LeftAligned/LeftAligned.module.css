@@ -42,7 +42,7 @@
   color: #225ad6;
   background-color: #fff;
   border-radius: 50%;
-  padding: 0.8rem;
+  padding: 1.5rem;
   box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.12);
   z-index: 20;
 }
@@ -56,15 +56,18 @@
   border: 0.5rem solid #225ad6;
 }
 .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50rem;
   z-index: 10;
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 2rem;
-  margin-left: -5.5rem;
-  padding: 1.5rem 1rem 1.5rem 6rem;
+  margin-left: -5.8rem;
+  padding: 1.8rem 1rem 1.8rem 6.8rem;
 }
 .height {
-  height: 8.5rem;
+  height: 10.5rem;
 }
 .h5 {
   margin: 0 0 1rem;
@@ -86,7 +89,8 @@
   color: #fff;
   background-color: blue;
   border-radius: 50%;
-  padding: 0.7rem;
+  padding: 1.5rem;
+
   box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.12);
   z-index: 20;
 }
@@ -100,17 +104,20 @@
   border: 0.7rem solid #fff;
 }
 .active_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 52rem;
   z-index: 10;
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 2rem;
-  margin-left: -5.5rem;
-  padding: 1.5rem 1rem 1.5rem 6rem;
+  margin-left: -5.8rem;
+  padding: 1.5rem 1rem 1.5rem 6.8rem;
   background-color: #225ad6;
   color: #fff;
 }
 .active_h5 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   color: inherit;
   font-weight: 600;
   font-size: 1.7rem;
@@ -178,9 +185,12 @@
     border: 0.5rem solid #225ad6;
   }
   .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 48rem;
     margin-left: -4rem;
-    padding: 0.3rem 0.4rem 0.6rem 5rem;
+    padding: 1.5rem 0.4rem 1.5rem 5rem;
   }
   .h5 {
     margin: 0 0 0.8rem;
@@ -213,21 +223,23 @@
     z-index: 30;
   }
   .active_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 54rem;
     margin-left: -5.5rem;
-    padding: 1rem 1rem 1rem 6rem;
+    padding: 1.5rem 1rem 1.5rem 6rem;
   }
   .active_h5 {
     margin: 0 0 0.8rem;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     line-height: 1.6rem;
   }
   .active_p {
-    margin-top: -0.3rem;
     color: inherit;
     font-weight: 400;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     line-height: 1.6rem;
   }
 }

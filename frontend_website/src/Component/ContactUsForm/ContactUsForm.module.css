@@ -260,6 +260,15 @@
   .feedback textarea {
     height: 100px;
   }
+
+  .submit {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submit > span {
+    line-height: 1;
+  }
 }
 
 @media (max-width: 500px) {

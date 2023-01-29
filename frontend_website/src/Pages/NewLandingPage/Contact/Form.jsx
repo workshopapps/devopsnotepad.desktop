@@ -123,10 +123,10 @@ const Form = (props) => {
     // Send form details to backend
     props.onSubmit({
       email: form.email,
-      firstName: form.firstName,
-      lastName: form.lastName,
-      job: job,
-      companyName: form.companyName,
+      firstname: form.firstName,
+      lastname: form.lastName,
+      role: job,
+      company: form.companyName,
     });
   };
 
@@ -147,9 +147,9 @@ const Form = (props) => {
             onChange={firstNameOnChangeHandler}
             onBlur={firstNameOnBlurHandler}
           />
-          {form.firstNameIsFocus && !form.firstNameIsValid && (
+          {/* {form.firstNameIsFocus && !form.firstNameIsValid && (
             <pre className={classes.invalid__input}>MinLength(3)</pre>
-          )}
+          )} */}
         </div>
         <div className={classes.row__right}>
           <Input
@@ -164,9 +164,9 @@ const Form = (props) => {
             onChange={lastNameOnChangeHandler}
             onBlur={lastNameOnBlurHandler}
           />
-          {form.lastNameIsFocus && !form.lastNameIsValid && (
+          {/* {form.lastNameIsFocus && !form.lastNameIsValid && (
             <pre className={classes.invalid__input}>MinLength(4)</pre>
-          )}
+          )} */}
         </div>
       </div>
       <div className={classes.row}>
@@ -181,9 +181,9 @@ const Form = (props) => {
             onChange={emailOnChangeHandler}
             onBlur={emailOnBlurHandler}
           />
-          {form.emailIsFocus && !form.emailIsValid && (
+          {/* {form.emailIsFocus && !form.emailIsValid && (
             <pre className={classes.invalid__input}>Enter a valid email</pre>
-          )}
+          )} */}
         </div>
         <div className={classes.row__right}>
           <Input
@@ -200,11 +200,11 @@ const Form = (props) => {
             onChange={companyNameOnChangeHandler}
             onBlur={companyNameOnBlurHandler}
           />
-          {form.companyNameIsFocus && !form.companyNameIsValid && (
+          {/* {form.companyNameIsFocus && !form.companyNameIsValid && (
             <pre className={classes.invalid__input}>
               Enter a valid Company name
             </pre>
-          )}
+          )} */}
         </div>
       </div>
       <div className={classes.row}>
@@ -215,13 +215,13 @@ const Form = (props) => {
             onChange={jobOnChangeHandler}
             className={classes.select}
           >
-            <option value='what'>What do you do?</option>
-            <option value='devops'>DevOps</option>
-            <option value='it_admin'>IT Admin</option>
-            <option value='sofware_engineers'>Software Engineer</option>
-            <option value='server__system--admin'>Server/System Admin</option>
+            <option value=''>What do you do?</option>
+            <option value='DevOps'>DevOps</option>
+            <option value='IT Admin'>IT Admin</option>
+            <option value='Software Engineer'>Software Engineer</option>
+            <option value='Server/System Admin'>Server/System Admin</option>
             <option value='Executive'>Executive</option>
-            <option value='others'>Others</option>
+            <option value='Others'>Others</option>
           </select>
         </div>
         {form.job !== 'others' && (
@@ -248,13 +248,17 @@ const Form = (props) => {
       <div style={{ margin: '3rem 0' }}>
         {props?.isLoading && <LoadingSpinner />}
         {!props?.isLoading && props?.error?.hasError && (
-          <p className={classes.error__message}>{`${props?.error?.message}`}</p>
+          <p className={classes.error__message}>
+            {`${props?.error?.message}. Try again!!!`}{' '}
+          </p>
         )}
-        {!props?.isLoading && !props?.error?.hasError && (
-          <div className={classes.success__message}>
-            {props?.response?.message}
-          </div>
-        )}
+        {!props?.isLoading &&
+          !props?.error?.hasError &&
+          props.response?.message === 'successful' && (
+            <p className={classes.success__message}>
+              Your details has been submitted successfully.
+            </p>
+          )}
       </div>
 
       <div className={classes.btn__box}>

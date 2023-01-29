@@ -87,10 +87,12 @@
   }
 }
 
-.u-cross {
+.ucross {
+  background-color: #fff !important;
+  color: #ffffff;
   display: inline-block;
   width: 2rem;
-  height: 1px;
+  height: 1px; 
   @media screen and (max-width: 28.125em) {
     width: 1rem;
     height: 0.5px;
