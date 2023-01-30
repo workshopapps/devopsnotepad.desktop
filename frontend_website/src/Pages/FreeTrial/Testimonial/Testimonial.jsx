@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Testimonial.module.css'
-import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs'
+import { BsFillStarFill } from 'react-icons/bs'
 
 import imgNwoman from '../Img/Nwoman.jpg'
 import imgNman from '../Img/Nman.jpg'
