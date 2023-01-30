@@ -1,4 +1,5 @@
 import Form from './Form';
+import { useNavigate } from 'react-router-dom';
 import classes from './Contact.module.css';
 import useFetch from '../../../hooks/useFetch';
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import { useCallback } from 'react';
 const Contact = () => {
   const [response, setResponse] = useState(null);
   const { isLoading, error, fetchRequest: SubmitContactRequest } = useFetch();
+  const navigate = useNavigate();
 
   const getResponseData = useCallback(
     (responseObj) => {
@@ -29,6 +31,12 @@ const Contact = () => {
       },
       getResponseData,
     );
+
+    localStorage.setItem(
+      'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
+      JSON.stringify(true),
+    );
+    navigate('/demo');
   };
 
   return (

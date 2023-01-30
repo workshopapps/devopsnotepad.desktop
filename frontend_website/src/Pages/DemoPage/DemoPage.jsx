@@ -6,6 +6,9 @@ import style from './DemoPage.module.css';
 import one from './assets/one.png';
 import two from './assets/two.png';
 import three from './assets/three.png';
+import { poster } from './assets/opspad_demo_video_poster.jpg';
+import opspadWebm from '../../assets/demo_assets/opspad_video.webm';
+import opspadMp4 from '../../assets/demo_assets/opspad_video.mp4';
 
 const DemoPage = () => {
   return (
@@ -31,7 +34,19 @@ const DemoPage = () => {
             </figure>
           </div>
 
-          <div className={style.video_wrap}>
+          <div className={style.video_container}>
+            <video
+              className={style.video}
+              controls
+              preload='none'
+              poster='one-does-not-simply-placeholder.jpg'
+            >
+              <source src={opspadWebm} type='video/webm' />
+              <source src={opspadMp4} type='video/mp4' />
+            </video>
+          </div>
+
+          {/* <div className={style.video_wrap}>
             <div className={style.video_container}>
               <iframe
                 className={style.video}
@@ -45,7 +60,7 @@ const DemoPage = () => {
                 allowfullscreen
               ></iframe>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <section className={style.action_container}>
@@ -88,6 +103,7 @@ const DemoPage = () => {
               className={style.action_button}
               rel='noreferrer noopener'
               href='https://docs.google.com/forms/d/1CLL4OCQ3-HMMcJxQKaNJo6EZg3yAOl3N4UC0bvhHB4I/edit?usp=drivesdk'
+              target='_blank'
             >
               Take a 30-second survey
             </a>
