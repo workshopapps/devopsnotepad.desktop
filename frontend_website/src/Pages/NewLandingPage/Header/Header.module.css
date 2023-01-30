@@ -149,8 +149,8 @@
 
   .img {
     margin-top: 3rem;
-    height: 70vh;
-    width: 85%;
-    object-fit: cover;
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
   }
 }
