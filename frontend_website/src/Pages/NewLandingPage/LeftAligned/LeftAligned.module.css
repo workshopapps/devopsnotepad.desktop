@@ -177,8 +177,8 @@
   }
 
   .svg {
-    height: 9rem;
-    width: 9rem;
+    height: 9.5rem;
+    width: 9.5rem;
     fill: #8d9fc7;
     padding: 1rem;
     border-radius: 50%;
@@ -186,7 +186,7 @@
   }
   .text {
     display: flex;
-    height: 10rem;
+    height: 10.5rem;
     flex-direction: column;
     justify-content: center;
     width: 48rem;
