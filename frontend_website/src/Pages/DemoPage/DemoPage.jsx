@@ -6,9 +6,9 @@ import style from './DemoPage.module.css';
 import one from './assets/one.png';
 import two from './assets/two.png';
 import three from './assets/three.png';
-import { poster } from './assets/opspad_demo_video_poster.jpg';
 import opspadWebm from '../../assets/demo_assets/opspad_video.webm';
 import opspadMp4 from '../../assets/demo_assets/opspad_video.mp4';
+import videoPoster from './assets/opspad_demo_video_poster.jpg';
 
 const DemoPage = () => {
   return (
@@ -39,7 +39,7 @@ const DemoPage = () => {
               className={style.video}
               controls
               preload='none'
-              poster='one-does-not-simply-placeholder.jpg'
+              poster={videoPoster}
             >
               <source src={opspadWebm} type='video/webm' />
               <source src={opspadMp4} type='video/mp4' />
