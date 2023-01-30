@@ -7,6 +7,11 @@
     padding: 80px;
 }
 
+.head img{
+    max-width: 100%;
+    border-radius: 50%;
+}
+
 .card {
     background-color: #fff;
     box-shadow: 0px 8px 16px rgba(205, 218, 240, 0.79);
@@ -26,7 +31,7 @@
 }
 
 .head {
-    background-color: #102A63;
+    /* background-color: #102A63; */
     display: flex;
     margin: auto;
     width: 80px;
@@ -59,6 +64,7 @@
     margin-top: 18px !important;
     margin-bottom: 8px !important;
 }
+
 
 @media screen and (max-width: 650px) {
     .testimonial {
