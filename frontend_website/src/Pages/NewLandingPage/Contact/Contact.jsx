@@ -2,8 +2,7 @@ import Form from './Form';
 import { useNavigate } from 'react-router-dom';
 import classes from './Contact.module.css';
 import useFetch from '../../../hooks/useFetch';
-import { useState } from 'react';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 const Contact = () => {
   const [response, setResponse] = useState(null);
   const { isLoading, error, fetchRequest: SubmitContactRequest } = useFetch();
@@ -12,11 +11,18 @@ const Contact = () => {
   const getResponseData = useCallback(
     (responseObj) => {
       setResponse(responseObj);
+      if (responseObj.message === 'successful') {
+        localStorage.setItem(
+          'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
+          JSON.stringify(true),
+        );
+        navigate('/demo');
+      }
       setTimeout(() => {
         setResponse();
       }, 1500);
     },
-    [setResponse],
+    [setResponse, navigate],
   );
 
   const getFormDatas = (datas) => {
@@ -31,15 +37,6 @@ const Contact = () => {
       },
       getResponseData,
     );
-
-    // If the response is ok, set the below value in local storage to true. That value conditionally renders either the demo form or demo page.
-    /* if (response) {
-      localStorage.setItem(
-        'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
-        JSON.stringify(true),
-      );
-      navigate('/demo');
-    } */
   };
 
   return (

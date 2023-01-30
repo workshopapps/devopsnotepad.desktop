@@ -8,11 +8,12 @@ import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner';
 import { useNavigate } from 'react-router-dom';
 
 import classes from './Form.module.css';
+import { useEffect } from 'react';
 
 const Form = (props) => {
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false)
-  const [passwordIcon] = useState(true)
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordIcon] = useState(true);
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -25,6 +26,17 @@ const Form = (props) => {
     passwordIsFocus: false,
     formIsValid: false,
   });
+
+  useEffect(() => {
+    const enteredEmail = JSON.parse(localStorage.getItem('enteredEmail'));
+    console.log(enteredEmail, 'a');
+
+    if (enteredEmail) {
+      setForm((prev) => {
+        return { ...prev, email: enteredEmail };
+      });
+    }
+  }, []);
 
   const nameOnChangeHandler = (e) => {
     setForm((prev) => {
