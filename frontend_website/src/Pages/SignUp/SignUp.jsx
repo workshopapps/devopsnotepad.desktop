@@ -17,26 +17,32 @@ const SignUp = () => {
   // Using a custom hook
   const { isLoading, error, fetchRequest: createAccount } = useFetch();
   // A function that will get response from the request made
-  const getResponseData = (responseObj) => {
-    addUserHandler(responseObj?.user);
-    const userObj = JSON.stringify(responseObj);
-    localStorage.setItem('signedInUser', userObj);
-    if (responseObj?.success) {
-      setMessage('Success!!!');
-    }
-  };
+  const getResponseData = useCallback(
+    (responseObj) => {
+      addUserHandler(responseObj?.user);
+      const userObj = JSON.stringify(responseObj);
+      localStorage.setItem('signedInUser', userObj);
+      if (responseObj?.success) {
+        setMessage('Success!!!');
+      }
+    },
+    [addUserHandler],
+  );
   // Sigin up with google
-  const googleSignInHandler = useCallback(async (response) => {
-    const req = await fetch('https://opspad.dev/api/auth/google-login', {
-      method: 'POST',
-      body: JSON.stringify({ token: response.credential }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const res = await req.json();
-    getResponseData(res);
-  }, []);
+  const googleSignInHandler = useCallback(
+    async (response) => {
+      const req = await fetch('https://opspad.dev/api/auth/google-login', {
+        method: 'POST',
+        body: JSON.stringify({ token: response.credential }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const res = await req.json();
+      getResponseData(res);
+    },
+    [getResponseData],
+  );
 
   useEffect(() => {
     window.google?.accounts?.id.initialize({

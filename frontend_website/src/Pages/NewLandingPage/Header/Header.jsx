@@ -8,13 +8,17 @@ const Header = () => {
     <header className={classes.header}>
       <div className={classes.left}>
         <h1 className={classes.h1}>
-          <span className={classes.span}>Reduce</span> downtime and <span className={classes.span}>simplify</span> server management with our all in one tool
+          <span className={classes.span}>Reduce</span> downtime and{' '}
+          <span className={classes.span}>simplify</span> server management with
+          our all in one tool
         </h1>
         {/* <h4 className={classes.h4}>
           
         </h4> */}
         <p className={classes.p}>
-          Setup environment in less than 100 seconds, fetch real-time logs, manage passwords for server tools, recieve notificationsof your server status on mobile
+          Setup environment in less than 100 seconds, fetch real-time logs,
+          manage passwords for server tools, receive notifications of your
+          server status on mobile
         </p>
 
         <div className={classes.btn__box}>
