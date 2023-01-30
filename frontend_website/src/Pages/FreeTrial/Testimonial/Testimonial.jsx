@@ -1,24 +1,34 @@
 import React from 'react'
 import style from './Testimonial.module.css'
-import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs'
+import { BsFillStarFill } from 'react-icons/bs'
+
+import imgNwoman from '../Img/Nwoman.jpg'
+import imgNman from '../Img/Nman.jpg'
+import imgWman from '../Img/WMan.jpg'
+import imgWman1 from '../Img/WMan1.jpg'
+// import imgWman1 from '../Img/Nman.jpg'
 
 const Testimonial = () => {
     const data = [
         {
-            name: 'Sarah Walter',
-            text: '"I’ve been able to move around more, knowing I can track my servers on the go!"'
+            name: 'Glory James',
+            text: '"I’ve been able to move around more, knowing I can track my servers on the go!"',
+            img: imgNwoman
         },
         {
-            name: 'David Onyezuru',
-            text: '"It’s amazing how quickly and easily it is to configure the type of logs you want to receive."'
+            name: 'Stephen friday',
+            text: '"It’s amazing how quickly and easily it is to configure the type of logs you want to receive."',
+            img: imgNman
         },
         {
-            name: 'Raymond Akinbote',
-            text: '“I usually keep relevant server information in a separate notepad. I believe opspad was watching people like me before servers "'
+            name: 'Bernard Davis',
+            text: '“I usually keep relevant server information in a separate notepad. I believe opspad was watching people like me before servers "',
+            img: imgWman
         },
         {
-            name: ' Bolu Ajoke',
-            text: '“Having a hard time remembering passwords for various server tools, Opspad has made saving tool credentials a breeze”'
+            name: ' Philip Anderson',
+            text: '“Having a hard time remembering passwords for various server tools, Opspad has made saving tool credentials a breeze”',
+            img: imgWman1
         }
     ]
     return (
@@ -26,7 +36,8 @@ const Testimonial = () => {
             {data.map((card) => (
                 <div className={style.card}>
                     <div className={style.head}>
-                        <BsFillPersonFill />
+                        {/* <BsFillPersonFill /> */}
+                        <img style={style.testimonialImage} src={card.img} alt="" />
                     </div>
                     <div className={style.rating}>
                         <BsFillStarFill />
