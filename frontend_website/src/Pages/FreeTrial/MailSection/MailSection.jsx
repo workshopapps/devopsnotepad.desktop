@@ -11,8 +11,6 @@ const MailSection = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email, 'c');
-
     localStorage.setItem('enteredEmail', JSON.stringify(email));
     navigate('/signup');
 

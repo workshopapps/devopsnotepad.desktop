@@ -12,8 +12,6 @@ const HeroSection = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email, 'd');
-
     localStorage.setItem('enteredEmail', JSON.stringify(email));
     navigate('/signup');
     // fetch('https://opspad.dev/api/notify-me/', {
