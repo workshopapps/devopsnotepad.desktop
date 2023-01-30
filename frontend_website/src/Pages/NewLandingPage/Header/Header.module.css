@@ -110,7 +110,7 @@
     margin: 0;
   }
   .btn__box {
-    margin-top: .3rem;
+    margin-top: 0.3rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@
   .btn {
     width: 20rem;
     height: 5rem;
-    margin: .7rem auto;
+    margin: 0.7rem auto;
     font-size: 1.5rem;
     transition: 0.3s;
   }
@@ -150,7 +150,7 @@
   .img {
     margin-top: 3rem;
     height: 70vh;
-    width: 100%;
+    width: 85%;
     object-fit: cover;
   }
 }
