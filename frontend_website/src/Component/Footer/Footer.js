@@ -33,9 +33,11 @@ const Footer = () => {
                     {link.list && (
                       <ul style={{ listStyle: 'none', padding: 0 }}>
                         {link.list.map((b, i) => {
-                          let url = 'https://opspad-organization.gitbook.io/opspad-knowledge-base/'
+                          let url =
+                            'https://opspad-organization.gitbook.io/opspad-knowledge-base/';
                           if (b.slug === url) {
-                            return (<li key={i} className={styles.footer_lists}>
+                            return (
+                              <li key={i} className={styles.footer_lists}>
                                 <a
                                   target='_blank'
                                   rel='noreferrer'
@@ -45,19 +47,22 @@ const Footer = () => {
                                 >
                                   {b.title}
                                 </a>
-                            </li> )
-                          } 
-                          return <li key={i} className={styles.footer_lists}>
-                            <NavLink
-                              to={`${b.slug}`}
-                              className={({ isActive }) =>
-                                isActive ? styles.footer_list : ''
-                              }
-                              onClick={scrollToTOp}
-                            >
-                              {b.title}
-                            </NavLink>
-                          </li>
+                              </li>
+                            );
+                          }
+                          return (
+                            <li key={i} className={styles.footer_lists}>
+                              <NavLink
+                                to={`${b.slug}`}
+                                className={({ isActive }) =>
+                                  isActive ? styles.footer_list : ''
+                                }
+                                onClick={scrollToTOp}
+                              >
+                                {b.title}
+                              </NavLink>
+                            </li>
+                          );
                         })}
                       </ul>
                     )}
@@ -72,7 +77,9 @@ const Footer = () => {
                   <img src={logo} alt='' />
                 </Link>
               </div>
-              <h3 className={styles.right__title}>Get notified of recent updates</h3>
+              <h3 className={styles.right__title}>
+                Get notified of recent updates
+              </h3>
 
               <div className={styles.notify__ctn}>
                 <label>
@@ -97,16 +104,16 @@ const Footer = () => {
           </div>
 
           <div className={styles.mobile__fDownload}>
-              <h5 className={styles.fDownload__text}>Download App</h5>
-              <div className={styles.fDownloadAppLink}>
-                <Link to='https://play.google.com/store/apps/details?id=com.workshopapps.devopsnotepad&hl=en&gl=US'>
-                  <img src={googlePlay} alt='googlePlay' />
-                </Link>
-                <Link to='/'>
-                  <img src={appStore} alt='appStore' />
-                </Link>
-              </div>
+            <h5 className={styles.fDownload__text}>Download App</h5>
+            <div className={styles.fDownloadAppLink}>
+              <a href='https://play.google.com/store/apps/details?id=com.workshopapps.devopsnotepad&hl=en&gl=US'>
+                <img src={googlePlay} alt='googlePlay' />
+              </a>
+              <Link to='/'>
+                <img src={appStore} alt='appStore' />
+              </Link>
             </div>
+          </div>
 
           <div className={styles.bottomFooter}>
             <span className={styles.f_copyright}>
@@ -116,11 +123,11 @@ const Footer = () => {
             <div className={styles.fSocials}>
               <h5 className={styles.fSocials__text}>Follow us</h5>
 
-              <a href='https://www.twitter.com'>
+              <a href='https://twitter.com/opspad_dev'>
                 <img src={twitter} alt='twitter' />
               </a>
 
-              <a href='https://www.linkedin.com'>
+              <a href='https://www.linkedin.com/company/opspad/'>
                 <img src={linkedin} alt='linkedin' />
               </a>
             </div>

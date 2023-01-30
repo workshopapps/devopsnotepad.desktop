@@ -177,8 +177,8 @@
   }
 
   .svg {
-    height: 8rem;
-    width: 8rem;
+    height: 9rem;
+    width: 9rem;
     fill: #8d9fc7;
     padding: 1rem;
     border-radius: 50%;
@@ -186,6 +186,7 @@
   }
   .text {
     display: flex;
+    height: 10rem;
     flex-direction: column;
     justify-content: center;
     width: 48rem;
@@ -203,6 +204,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 1.6rem;
+    margin-bottom: -1.2rem;
   }
 
   /* Active left Item */
@@ -216,8 +218,8 @@
   }
 
   .active_svg {
-    height: 10rem;
-    width: 10rem;
+    height: 12rem;
+    width: 12rem;
     fill: #b7c4de;
     padding: 0.7rem;
     z-index: 30;
@@ -227,6 +229,7 @@
     flex-direction: column;
     justify-content: center;
     width: 54rem;
+    height: 11.8rem;
     margin-left: -5.5rem;
     padding: 1.5rem 1rem 1.5rem 6rem;
   }
@@ -241,5 +244,6 @@
     font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.6rem;
+    margin-bottom: -1.2rem;
   }
 }
