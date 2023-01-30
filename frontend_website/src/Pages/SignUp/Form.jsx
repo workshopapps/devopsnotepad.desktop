@@ -29,8 +29,6 @@ const Form = (props) => {
 
   useEffect(() => {
     const enteredEmail = JSON.parse(localStorage.getItem('enteredEmail'));
-    console.log(enteredEmail, 'a');
-
     if (enteredEmail) {
       setForm((prev) => {
         return { ...prev, email: enteredEmail };
