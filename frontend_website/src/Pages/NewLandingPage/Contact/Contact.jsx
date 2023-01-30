@@ -32,11 +32,14 @@ const Contact = () => {
       getResponseData,
     );
 
-    localStorage.setItem(
-      'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
-      JSON.stringify(true),
-    );
-    navigate('/demo');
+    // If the response is ok, set the below value in local storage to true. That value conditionally renders either the demo form or demo page.
+    /* if (response) {
+      localStorage.setItem(
+        'd5339e41-f0c2-46b9-b3bb-038c767c4ebb',
+        JSON.stringify(true),
+      );
+      navigate('/demo');
+    } */
   };
 
   return (
